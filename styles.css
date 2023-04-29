@@ -7361,6 +7361,18 @@ p-radiobutton {
   color: #cc3556;
   font-weight: bold; }
 
+.hljs .hljs-tag {
+  color: #e06c75; }
+
+.hljs .hljs-selector-class {
+  color: #d19a66; }
+
+.hljs .hljs-number {
+  color: #56b6c2; }
+
+.hljs .hljs-selector-tag {
+  color: #e06c75; }
+
 @keyframes fade-out {
   0% {
     transform: scale(1);
@@ -8319,7 +8331,7 @@ button {
 .markdown ul {
   margin-top: 0;
   margin-bottom: 1.6rem;
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   line-height: 1.65;
   text-align: justify; }
 
