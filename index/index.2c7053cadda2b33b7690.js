@@ -576,7 +576,7 @@ eval("module.exports = \":host:before {\\n  content: \\\"\\\";\\n  display: bloc
   \*******************************************************************/
 /***/ ((module) => {
 
-eval("module.exports = \":host {\\n  height: 60rem;\\n  display: flex;\\n  flex-direction: column;\\n  justify-content: center;\\n}\\n\\n.banner {\\n  width: 70rem;\\n  margin: auto;\\n}\";\n\n//# sourceURL=webpack://learntime.github.io/./src/app/pages/index/components/stage/stage.component.scss?");
+eval("module.exports = \":host {\\n  height: 60rem;\\n  display: flex;\\n  flex-direction: column;\\n  justify-content: center;\\n}\\n\\n.banner {\\n  max-width: 70rem;\\n  margin: auto;\\n}\";\n\n//# sourceURL=webpack://learntime.github.io/./src/app/pages/index/components/stage/stage.component.scss?");
 
 /***/ }),
 
