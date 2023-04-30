@@ -3,8 +3,8 @@
             <html lang="en">
             <head>
                 <meta charset="utf-8" />
-                <title>Learn Time | Microsoft logo using HTML & CSS</title>
-                <meta name="description" content="In this article, we will learn how to draw Microsoft logo using HTML and CSS. With easy-to-understand source code, you'll be able to follow along and create your own version">
+                <title>Learn Time | Toggle Input using HTML & CSS</title>
+                <meta name="description" content="In this article, we will learn how to create a Toggle Input using HTML and CSS. With easy-to-understand source code, you'll be able to follow along and create your own version">
                 <meta name="viewport" content="width=device-width,initial-scale=1" />
                 <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
                 <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
@@ -31,14 +31,14 @@
                     .loader.hide {opacity: 0;}
                 </style>
                 
-            <meta property="og:title" content="Microsoft logo using HTML & CSS" />
-            <meta property="og:description" content="In this article, we will learn how to draw Microsoft logo using HTML and CSS. With easy-to-understand source code, you'll be able to follow along and create your own version" />
-            <meta property="og:image" content="https://learntime.net/assets/images/csstips/microsoft-logo.png" />
+            <meta property="og:title" content="Toggle Input using HTML & CSS" />
+            <meta property="og:description" content="In this article, we will learn how to create a Toggle Input using HTML and CSS. With easy-to-understand source code, you'll be able to follow along and create your own version" />
+            <meta property="og:image" content="https://learntime.net/assets/images/csstips/toggle-input.png" />
             <meta name="twitter:card" content="summary_large_image">
             <meta name="twitter:creator" content="@learntimenet">
-            <meta name="twitter:title" content="Microsoft logo using HTML & CSS">
-            <meta name="twitter:description" content="In this article, we will learn how to draw Microsoft logo using HTML and CSS. With easy-to-understand source code, you'll be able to follow along and create your own version">
-            <meta name="twitter:image" content="https://learntime.net/assets/images/csstips/microsoft-logo.png">
+            <meta name="twitter:title" content="Toggle Input using HTML & CSS">
+            <meta name="twitter:description" content="In this article, we will learn how to create a Toggle Input using HTML and CSS. With easy-to-understand source code, you'll be able to follow along and create your own version">
+            <meta name="twitter:image" content="https://learntime.net/assets/images/csstips/toggle-input.png">
         
                 <script>
                     var disqus_config = function () {
@@ -46,7 +46,7 @@
                         this.page.identifier = window.location.pathname.replace('/fr', '');
                     };
                 </script>
-            <script defer src="/csstips/microsoft-logo/microsoft-logo.6b13956217575726b39b.js"></script></head>
+            <script defer src="/csstips/toggle-input/toggle-input.9a3d184abc49793ff0a1.js"></script></head>
             <body>
                 <div class="loader">
                     <svg class="loader-logo" width="600" height="600" viewBox="0 0 600 600" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -68,55 +68,64 @@
                     <app-desktop-navbar></app-desktop-navbar>
                     <main class="max-width">
         
-<app-main metadata="{&quot;title&quot;:&quot;Microsoft logo using HTML & CSS&quot;,&quot;description&quot;:&quot;In this article, we will learn how to draw Microsoft logo using HTML and CSS. With easy-to-understand source code, you'll be able to follow along and create your own version&quot;,&quot;tags&quot;:[&quot;html&quot;,&quot;css&quot;],&quot;image&quot;:&quot;http://img.youtube.com/vi/kBneWj-kPqQ/maxresdefault.jpg&quot;,&quot;date&quot;:&quot;20230429&quot;,&quot;category&quot;:&quot;csstips&quot;,&quot;slug&quot;:&quot;csstips/microsoft-logo&quot;}" html="<h1 id=&quot;introduction&quot;>Introduction</h1>
+<app-main metadata="{&quot;title&quot;:&quot;Toggle Input using HTML & CSS&quot;,&quot;description&quot;:&quot;In this article, we will learn how to create a Toggle Input using HTML and CSS. With easy-to-understand source code, you'll be able to follow along and create your own version&quot;,&quot;tags&quot;:[&quot;html&quot;,&quot;css&quot;],&quot;image&quot;:&quot;/assets/images/default-blog-image.jpg&quot;,&quot;date&quot;:&quot;20230430&quot;,&quot;category&quot;:&quot;csstips&quot;,&quot;slug&quot;:&quot;csstips/toggle-input&quot;}" html="<h1 id=&quot;introduction&quot;>Introduction</h1>
 <p>In this article, we will find the source code that we have used in the following Youtube Shorts 
-that shows how to draw Microsoft logo using HTML and CSS</p>
-<iframe width=&quot;357&quot; height=&quot;635&quot; src=&quot;https://www.youtube.com/embed/kBneWj-kPqQ&quot; title=&quot;Microsoft logo using HTML &amp; CSS #shorts&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&quot; allowfullscreen></iframe>
+that shows how to create a Toggle Input using HTML and CSS</p>
+<div class=&quot;youtube-video-coming-soon&quot;>Youtube video Coming Soon</div>
+
+<!-- <iframe width=&quot;357&quot; height=&quot;635&quot; src=&quot;https://www.youtube.com/embed/kBneWj-kPqQ&quot; title=&quot;Microsoft logo using HTML &amp; CSS #shorts&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&quot; allowfullscreen></iframe> -->
 
 <h2 id=&quot;html-code&quot;>HTML code</h2>
 <pre><code class=&quot;language-html&quot;>
-&amp;lt;div class=&quot;logo&quot;&amp;gt;
-  &amp;lt;div class=&quot;red&quot;&amp;gt;&amp;lt;/div&amp;gt;
-  &amp;lt;div class=&quot;green&quot;&amp;gt;&amp;lt;/div&amp;gt;
-  &amp;lt;div class=&quot;blue&quot;&amp;gt;&amp;lt;/div&amp;gt;
-  &amp;lt;div class=&quot;yellow&quot;&amp;gt;&amp;lt;/div&amp;gt;
-&amp;lt;/div&amp;gt;
+&amp;lt;label&amp;gt;
+  &amp;lt;input type=&quot;checkbox&quot; checked&amp;gt;
+  &amp;lt;div class=&quot;toggle-switch&quot;&amp;gt;&amp;lt;/div&amp;gt;
+&amp;lt;/label&amp;gt;
 </code></pre>
 <h2 id=&quot;css-code&quot;>CSS Code</h2>
 <pre><code class=&quot;language-html&quot;>
 &amp;lt;style&amp;gt;
   body {
+    background-color: #282c34;
     display: flex;
     align-items: center;
     justify-content: center;
     height: 100vh;
-    background: #282c34;
-  }
-  .logo {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 5px;
   }
 
-  .logo &amp;gt; * {
-    width: 50px;
-    height: 50px;
+  .toggle-switch {
+    background-color: #ccc;
+    height: 64px;
+    width: 150px;
+    border-radius: 100px;
+    position: relative;
+    cursor: pointer;
+    transition: background-color 0.25s;
   }
 
-  .red {
-    background: #f44336;
+  .toggle-switch:before {
+    content: &quot;&quot;;
+    background-color: #fff;
+    height: 56px;
+    width: 56px;
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    border-radius: 100px;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.25);
+    transition: left 0.25s;
   }
 
-  .green {
-    background: #4caf50;
+  input {
+    visibility: hidden;
   }
 
-  .blue {
-    background: #2196f3;
+  input:checked+.toggle-switch {
+    background-color: #56c080;
   }
 
-  .yellow {
-    background: #ffc107;
+  input:checked+.toggle-switch:before {
+    left: 90px;
   }
 &amp;lt;/style&amp;gt;
 </code></pre>

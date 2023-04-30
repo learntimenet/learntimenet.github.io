@@ -8522,6 +8522,16 @@ iframe {
 .markdown .previous-article-label-prefix {
   text-align: right; }
 
+.markdown .youtube-video-coming-soon {
+  width: 100%;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #eeeeee;
+  font-size: 2.2rem;
+  border-radius: 0.3rem; }
+
 div[class^='language-'] {
   margin-bottom: 1.45rem; }
 
