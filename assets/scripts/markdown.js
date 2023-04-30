@@ -204,6 +204,14 @@ function highlightCodeLines() {
   });
 }
 
+function resizeIFrame() {
+  document.querySelectorAll('iframe').forEach(frame => {
+    frame.style.width = "100%";
+    frame.style.height = "500px";
+    frame.setAttribute('frameborder', '0');
+  });
+}
+
 document.addEventListener('DOMContentLoaded', (event) => {
   highlight();
   formatCodeTabs();
@@ -214,6 +222,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
   addNextArticleLinkArrowIcon();
   formatShellCommands();
   highlightCodeLines();
+  resizeIFrame();
 });
 
 
