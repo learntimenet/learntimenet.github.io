@@ -7539,6 +7539,9 @@ button {
   white-space: nowrap !important;
   width: fit-content !important; }
 
+iframe {
+  border-radius: 3px; }
+
 /* cyrillic-ext */
 @font-face {
   font-family: 'Roboto Mono';
