@@ -8586,7 +8586,7 @@ pre.highlight .code-line-number span {
   transition-property: color; }
 
 pre.highlight .code-copy-icon {
-  opacity: 0;
+  opacity: 1;
   position: absolute;
   top: 1.5rem;
   right: 1.5rem;
@@ -8596,9 +8596,6 @@ pre.highlight .code-copy-icon {
   color: var(--code-copy-icon-color);
   transition: var(--transition);
   transition-property: color opacity; }
-
-pre.highlight:hover .code-copy-icon {
-  opacity: 1; }
 
 pre.highlight .code-copy-icon:hover {
   color: var(--code-copy-icon-color-on-hover); }
