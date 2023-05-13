@@ -536,7 +536,7 @@ eval("module.exports = \":host {\\n  position: absolute;\\n  top: 2rem;\\n  righ
   \****************************************************************/
 /***/ ((module) => {
 
-eval("module.exports = \"main {\\n  margin-top: -14rem;\\n}\\n\\n.section-container {\\n  margin-top: -12rem;\\n  padding: 3rem;\\n}\\n@media screen and (min-width: 768px) {\\n  .section-container {\\n    padding: 5rem;\\n  }\\n}\\n@media screen and (min-width: 1024px) {\\n  .section-container {\\n    padding: 8rem;\\n  }\\n}\";\n\n//# sourceURL=webpack://learntime.github.io/./src/app/pages/blog/components/main/main.component.scss?");
+eval("module.exports = \"main {\\n  margin-top: -14rem;\\n}\\n\\n.section-container {\\n  margin-top: -12rem;\\n  padding: 5rem 3rem;\\n}\\n@media screen and (min-width: 768px) {\\n  .section-container {\\n    padding: 5rem;\\n  }\\n}\\n@media screen and (min-width: 1024px) {\\n  .section-container {\\n    padding: 8rem;\\n  }\\n}\";\n\n//# sourceURL=webpack://learntime.github.io/./src/app/pages/blog/components/main/main.component.scss?");
 
 /***/ }),
 
