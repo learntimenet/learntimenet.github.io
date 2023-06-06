@@ -135,7 +135,7 @@ eval("// Module\nvar code = \"<iconify-icon #icon [icon]=\\\"iconName\\\" class=
   \*******************************************************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-eval("// Imports\nvar ___HTML_LOADER_GET_SOURCE_FROM_IMPORT___ = __webpack_require__(/*! ../../../../node_modules/html-loader/dist/runtime/getUrl.js */ \"./node_modules/html-loader/dist/runtime/getUrl.js\");\nvar ___HTML_LOADER_IMPORT_0___ = __webpack_require__(/*! ../../assets/logo.svg */ \"./src/app/assets/logo.svg\");\n// Module\nvar ___HTML_LOADER_REPLACEMENT_0___ = ___HTML_LOADER_GET_SOURCE_FROM_IMPORT___(___HTML_LOADER_IMPORT_0___);\nvar code = \"<a class=\\\"logo\\\" href='/'>\\r\\n    <img src='\" + ___HTML_LOADER_REPLACEMENT_0___ + \"' alt='logo' />\\r\\n</a>\";\n// Exports\nmodule.exports = code;\n\n//# sourceURL=webpack://learntime.github.io/./src/app/components/navbar-logo/navbar-logo.component.html?");
+eval("// Imports\nvar ___HTML_LOADER_GET_SOURCE_FROM_IMPORT___ = __webpack_require__(/*! ../../../../node_modules/html-loader/dist/runtime/getUrl.js */ \"./node_modules/html-loader/dist/runtime/getUrl.js\");\nvar ___HTML_LOADER_IMPORT_0___ = __webpack_require__(/*! ../../assets/logo-with-text.png */ \"./src/app/assets/logo-with-text.png\");\n// Module\nvar ___HTML_LOADER_REPLACEMENT_0___ = ___HTML_LOADER_GET_SOURCE_FROM_IMPORT___(___HTML_LOADER_IMPORT_0___);\nvar code = \"<a class=\\\"logo\\\" href='/'>\\r\\n    <img src='\" + ___HTML_LOADER_REPLACEMENT_0___ + \"' alt='logo' />\\r\\n</a>\";\n// Exports\nmodule.exports = code;\n\n//# sourceURL=webpack://learntime.github.io/./src/app/components/navbar-logo/navbar-logo.component.html?");
 
 /***/ }),
 
@@ -1528,6 +1528,17 @@ eval("\n/**\n * @license Angular v15.1.0-next.0\n * (c) 2010-2022 Google LLC. ht
 
 /***/ }),
 
+/***/ "./src/app/assets/logo-with-text.png":
+/*!*******************************************!*\
+  !*** ./src/app/assets/logo-with-text.png ***!
+  \*******************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+eval("module.exports = __webpack_require__.p + \"assets/logo-with-text-9bfd0ff4be4353b93359.png\";\n\n//# sourceURL=webpack://learntime.github.io/./src/app/assets/logo-with-text.png?");
+
+/***/ }),
+
 /***/ "./src/app/assets/logo.svg":
 /*!*********************************!*\
   !*** ./src/app/assets/logo.svg ***!
@@ -1535,7 +1546,7 @@ eval("\n/**\n * @license Angular v15.1.0-next.0\n * (c) 2010-2022 Google LLC. ht
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
-eval("module.exports = __webpack_require__.p + \"assets/logo-f34d5b7a22ad4bca5fc6.svg\";\n\n//# sourceURL=webpack://learntime.github.io/./src/app/assets/logo.svg?");
+eval("module.exports = __webpack_require__.p + \"assets/logo-8d639f440b146cd544fb.svg\";\n\n//# sourceURL=webpack://learntime.github.io/./src/app/assets/logo.svg?");
 
 /***/ }),
 

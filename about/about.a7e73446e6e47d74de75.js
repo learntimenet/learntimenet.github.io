@@ -135,7 +135,7 @@ eval("// Module\nvar code = \"<iconify-icon #icon [icon]=\\\"iconName\\\" class=
   \*******************************************************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-eval("// Imports\nvar ___HTML_LOADER_GET_SOURCE_FROM_IMPORT___ = __webpack_require__(/*! ../../../../node_modules/html-loader/dist/runtime/getUrl.js */ \"./node_modules/html-loader/dist/runtime/getUrl.js\");\nvar ___HTML_LOADER_IMPORT_0___ = __webpack_require__(/*! ../../assets/logo.svg */ \"./src/app/assets/logo.svg\");\n// Module\nvar ___HTML_LOADER_REPLACEMENT_0___ = ___HTML_LOADER_GET_SOURCE_FROM_IMPORT___(___HTML_LOADER_IMPORT_0___);\nvar code = \"<a class=\\\"logo\\\" href='/'>\\r\\n    <img src='\" + ___HTML_LOADER_REPLACEMENT_0___ + \"' alt='logo' />\\r\\n</a>\";\n// Exports\nmodule.exports = code;\n\n//# sourceURL=webpack://learntime.github.io/./src/app/components/navbar-logo/navbar-logo.component.html?");
+eval("// Imports\nvar ___HTML_LOADER_GET_SOURCE_FROM_IMPORT___ = __webpack_require__(/*! ../../../../node_modules/html-loader/dist/runtime/getUrl.js */ \"./node_modules/html-loader/dist/runtime/getUrl.js\");\nvar ___HTML_LOADER_IMPORT_0___ = __webpack_require__(/*! ../../assets/logo-with-text.png */ \"./src/app/assets/logo-with-text.png\");\n// Module\nvar ___HTML_LOADER_REPLACEMENT_0___ = ___HTML_LOADER_GET_SOURCE_FROM_IMPORT___(___HTML_LOADER_IMPORT_0___);\nvar code = \"<a class=\\\"logo\\\" href='/'>\\r\\n    <img src='\" + ___HTML_LOADER_REPLACEMENT_0___ + \"' alt='logo' />\\r\\n</a>\";\n// Exports\nmodule.exports = code;\n\n//# sourceURL=webpack://learntime.github.io/./src/app/components/navbar-logo/navbar-logo.component.html?");
 
 /***/ }),
 
@@ -246,16 +246,6 @@ eval("// Module\nvar code = \"<app-icon-button pTooltip=\\\"Like\\\" tooltipPosi
 /***/ ((module) => {
 
 eval("// Module\nvar code = \"<app-icon-button #disableSoundButton (action)=\\\"onDisable()\\\" icon='akar-icons:sound-on' color=\\\"#ed673e\\\"></app-icon-button>\\r\\n<app-icon-button #enableSoundButton (action)=\\\"onEnable()\\\" icon='akar-icons:sound-off' color=\\\"#ed673e\\\"></app-icon-button>\\r\\n\";\n// Exports\nmodule.exports = code;\n\n//# sourceURL=webpack://learntime.github.io/./src/app/components/switcher/sound-switcher/sound-switcher.component.html?");
-
-/***/ }),
-
-/***/ "./src/app/pages/favourites/components/main/main.component.html":
-/*!**********************************************************************!*\
-  !*** ./src/app/pages/favourites/components/main/main.component.html ***!
-  \**********************************************************************/
-/***/ ((module) => {
-
-eval("// Module\nvar code = \"<app-page-title title=\\\"My Favourites\\\"></app-page-title>\\r\\n<app-blog-list *ngIf=\\\"quizzes.length > 0\\\" [quizzes]=\\\"quizzes\\\"></app-blog-list>\\r\\n<app-no-items *ngIf=\\\"quizzes.length == 0\\\" description=\\\"You haven’t liked any quiz yet\\\"></app-no-items>\\r\\n<app-comments></app-comments>\";\n// Exports\nmodule.exports = code;\n\n//# sourceURL=webpack://learntime.github.io/./src/app/pages/favourites/components/main/main.component.html?");
 
 /***/ }),
 
@@ -527,16 +517,6 @@ eval("module.exports = \"\";\n\n//# sourceURL=webpack://learntime.github.io/./sr
 /***/ ((module) => {
 
 eval("module.exports = \":host {\\n  position: absolute;\\n  top: 2rem;\\n  right: 4rem;\\n  color: #ed673e;\\n  opacity: 0.8;\\n}\\n:host:hover {\\n  opacity: 1;\\n}\";\n\n//# sourceURL=webpack://learntime.github.io/./src/app/components/switcher/sound-switcher/sound-switcher.component.scss?");
-
-/***/ }),
-
-/***/ "./src/app/pages/favourites/components/main/main.component.scss":
-/*!**********************************************************************!*\
-  !*** ./src/app/pages/favourites/components/main/main.component.scss ***!
-  \**********************************************************************/
-/***/ ((module) => {
-
-eval("module.exports = \"app-blog-list {\\n  margin-top: -12rem;\\n  margin-bottom: 3rem;\\n}\";\n\n//# sourceURL=webpack://learntime.github.io/./src/app/pages/favourites/components/main/main.component.scss?");
 
 /***/ }),
 
@@ -1440,36 +1420,25 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 /***/ }),
 
-/***/ "./src/app/pages/favourites/components/main/main.component.ts":
-/*!********************************************************************!*\
-  !*** ./src/app/pages/favourites/components/main/main.component.ts ***!
-  \********************************************************************/
+/***/ "./src/app/pages/about/about.main.ts":
+/*!*******************************************!*\
+  !*** ./src/app/pages/about/about.main.ts ***!
+  \*******************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"MainComponent\": () => (/* binding */ MainComponent)\n/* harmony export */ });\n/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ \"./node_modules/@angular/core/fesm2020/core.mjs\");\n/* harmony import */ var _components_switcher_like_switcher_like_switcher_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../components/switcher/like-switcher/like-switcher.component */ \"./src/app/components/switcher/like-switcher/like-switcher.component.ts\");\n/* harmony import */ var _utils_favourites_utils__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../utils/favourites-utils */ \"./src/app/utils/favourites-utils.js\");\nvar __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {\r\n    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;\r\n    if (typeof Reflect === \"object\" && typeof Reflect.decorate === \"function\") r = Reflect.decorate(decorators, target, key, desc);\r\n    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;\r\n    return c > 3 && r && Object.defineProperty(target, key, r), r;\r\n};\r\n\r\n\r\n\r\nvar MainComponent = /** @class */ (function () {\r\n    function MainComponent() {\r\n    }\r\n    MainComponent.prototype.ngOnInit = function () {\r\n        this.update();\r\n        document.addEventListener(_components_switcher_like_switcher_like_switcher_component__WEBPACK_IMPORTED_MODULE_0__.QUIZ_LIKE_CHANGE_EVENT, this.update.bind(this));\r\n    };\r\n    MainComponent.prototype.update = function () {\r\n        this.quizzes = _utils_favourites_utils__WEBPACK_IMPORTED_MODULE_1__.FavouritesUtils.get();\r\n    };\r\n    MainComponent = __decorate([\r\n        (0,_angular_core__WEBPACK_IMPORTED_MODULE_2__.Component)({\r\n            selector: 'app-main',\r\n            template: __webpack_require__(/*! ./main.component.html */ \"./src/app/pages/favourites/components/main/main.component.html\"),\r\n            styles: [__webpack_require__(/*! .//main.component.scss */ \"./src/app/pages/favourites/components/main/main.component.scss\")],\r\n        })\r\n    ], MainComponent);\r\n    return MainComponent;\r\n}());\r\n\r\n\n\n//# sourceURL=webpack://learntime.github.io/./src/app/pages/favourites/components/main/main.component.ts?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/platform-browser-dynamic */ \"./node_modules/@angular/platform-browser-dynamic/fesm2020/platform-browser-dynamic.mjs\");\n/* harmony import */ var _about_module__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./about.module */ \"./src/app/pages/about/about.module.ts\");\n/* harmony import */ var zone_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! zone.js */ \"./node_modules/zone.js/fesm2015/zone.js\");\n/* harmony import */ var zone_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(zone_js__WEBPACK_IMPORTED_MODULE_1__);\n\r\n\r\n\r\n(0,_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_2__.platformBrowserDynamic)().bootstrapModule(_about_module__WEBPACK_IMPORTED_MODULE_0__.AboutModule);\r\n\n\n//# sourceURL=webpack://learntime.github.io/./src/app/pages/about/about.main.ts?");
 
 /***/ }),
 
-/***/ "./src/app/pages/favourites/favourites.main.ts":
-/*!*****************************************************!*\
-  !*** ./src/app/pages/favourites/favourites.main.ts ***!
-  \*****************************************************/
+/***/ "./src/app/pages/about/about.module.ts":
+/*!*********************************************!*\
+  !*** ./src/app/pages/about/about.module.ts ***!
+  \*********************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/platform-browser-dynamic */ \"./node_modules/@angular/platform-browser-dynamic/fesm2020/platform-browser-dynamic.mjs\");\n/* harmony import */ var _favourites_module__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./favourites.module */ \"./src/app/pages/favourites/favourites.module.ts\");\n/* harmony import */ var zone_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! zone.js */ \"./node_modules/zone.js/fesm2015/zone.js\");\n/* harmony import */ var zone_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(zone_js__WEBPACK_IMPORTED_MODULE_1__);\n\r\n\r\n\r\n(0,_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_2__.platformBrowserDynamic)().bootstrapModule(_favourites_module__WEBPACK_IMPORTED_MODULE_0__.FavouritesModule);\r\n\n\n//# sourceURL=webpack://learntime.github.io/./src/app/pages/favourites/favourites.main.ts?");
-
-/***/ }),
-
-/***/ "./src/app/pages/favourites/favourites.module.ts":
-/*!*******************************************************!*\
-  !*** ./src/app/pages/favourites/favourites.module.ts ***!
-  \*******************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"FavouritesModule\": () => (/* binding */ FavouritesModule)\n/* harmony export */ });\n/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/core */ \"./node_modules/@angular/core/fesm2020/core.mjs\");\n/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/platform-browser */ \"./node_modules/@angular/platform-browser/fesm2020/platform-browser.mjs\");\n/* harmony import */ var _components_footer_footer_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../components/footer/footer.component */ \"./src/app/components/footer/footer.component.ts\");\n/* harmony import */ var _components_navbar_mobile_navbar_mobile_navbar_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../components/navbar/mobile-navbar/mobile-navbar.component */ \"./src/app/components/navbar/mobile-navbar/mobile-navbar.component.ts\");\n/* harmony import */ var _components_navbar_desktop_navbar_desktop_navbar_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../components/navbar/desktop-navbar/desktop-navbar.component */ \"./src/app/components/navbar/desktop-navbar/desktop-navbar.component.ts\");\n/* harmony import */ var _components_privacy_consentement_privacy_consentement_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../components/privacy-consentement/privacy-consentement.component */ \"./src/app/components/privacy-consentement/privacy-consentement.component.ts\");\n/* harmony import */ var _components_main_main_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/main/main.component */ \"./src/app/pages/favourites/components/main/main.component.ts\");\n/* harmony import */ var _components_shared_module__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../components/shared-module */ \"./src/app/components/shared-module.ts\");\n/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/common */ \"./node_modules/@angular/common/fesm2020/common.mjs\");\nvar __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {\r\n    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;\r\n    if (typeof Reflect === \"object\" && typeof Reflect.decorate === \"function\") r = Reflect.decorate(decorators, target, key, desc);\r\n    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;\r\n    return c > 3 && r && Object.defineProperty(target, key, r), r;\r\n};\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\nvar FavouritesModule = /** @class */ (function () {\r\n    function FavouritesModule() {\r\n    }\r\n    FavouritesModule = __decorate([\r\n        (0,_angular_core__WEBPACK_IMPORTED_MODULE_6__.NgModule)({\r\n            declarations: [\r\n                _components_main_main_component__WEBPACK_IMPORTED_MODULE_4__.MainComponent,\r\n            ],\r\n            imports: [\r\n                _angular_common__WEBPACK_IMPORTED_MODULE_7__.CommonModule,\r\n                _angular_platform_browser__WEBPACK_IMPORTED_MODULE_8__.BrowserModule,\r\n                _components_shared_module__WEBPACK_IMPORTED_MODULE_5__.SharedModule\r\n            ],\r\n            providers: [],\r\n            bootstrap: [\r\n                _components_navbar_mobile_navbar_mobile_navbar_component__WEBPACK_IMPORTED_MODULE_1__.MobileNavbarComponent,\r\n                _components_navbar_desktop_navbar_desktop_navbar_component__WEBPACK_IMPORTED_MODULE_2__.DesktopNavbarComponent,\r\n                _components_footer_footer_component__WEBPACK_IMPORTED_MODULE_0__.FooterComponent,\r\n                _components_main_main_component__WEBPACK_IMPORTED_MODULE_4__.MainComponent,\r\n                _components_privacy_consentement_privacy_consentement_component__WEBPACK_IMPORTED_MODULE_3__.PrivacyConsentementComponent,\r\n            ],\r\n            schemas: [_angular_core__WEBPACK_IMPORTED_MODULE_6__.CUSTOM_ELEMENTS_SCHEMA, _angular_core__WEBPACK_IMPORTED_MODULE_6__.NO_ERRORS_SCHEMA]\r\n        })\r\n    ], FavouritesModule);\r\n    return FavouritesModule;\r\n}());\r\n\r\n\n\n//# sourceURL=webpack://learntime.github.io/./src/app/pages/favourites/favourites.module.ts?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"AboutModule\": () => (/* binding */ AboutModule)\n/* harmony export */ });\n/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/common */ \"./node_modules/@angular/common/fesm2020/common.mjs\");\n/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/core */ \"./node_modules/@angular/core/fesm2020/core.mjs\");\n/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/platform-browser */ \"./node_modules/@angular/platform-browser/fesm2020/platform-browser.mjs\");\n/* harmony import */ var _components_comments_comments_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../components/comments/comments.component */ \"./src/app/components/comments/comments.component.ts\");\n/* harmony import */ var _components_footer_footer_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../components/footer/footer.component */ \"./src/app/components/footer/footer.component.ts\");\n/* harmony import */ var _components_navbar_desktop_navbar_desktop_navbar_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../components/navbar/desktop-navbar/desktop-navbar.component */ \"./src/app/components/navbar/desktop-navbar/desktop-navbar.component.ts\");\n/* harmony import */ var _components_navbar_mobile_navbar_mobile_navbar_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../components/navbar/mobile-navbar/mobile-navbar.component */ \"./src/app/components/navbar/mobile-navbar/mobile-navbar.component.ts\");\n/* harmony import */ var _components_page_title_page_title_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../components/page-title/page-title.component */ \"./src/app/components/page-title/page-title.component.ts\");\n/* harmony import */ var _components_privacy_consentement_privacy_consentement_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../components/privacy-consentement/privacy-consentement.component */ \"./src/app/components/privacy-consentement/privacy-consentement.component.ts\");\n/* harmony import */ var _components_shared_module__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../components/shared-module */ \"./src/app/components/shared-module.ts\");\nvar __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {\r\n    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;\r\n    if (typeof Reflect === \"object\" && typeof Reflect.decorate === \"function\") r = Reflect.decorate(decorators, target, key, desc);\r\n    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;\r\n    return c > 3 && r && Object.defineProperty(target, key, r), r;\r\n};\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\nvar AboutModule = /** @class */ (function () {\r\n    function AboutModule() {\r\n    }\r\n    AboutModule = __decorate([\r\n        (0,_angular_core__WEBPACK_IMPORTED_MODULE_7__.NgModule)({\r\n            declarations: [],\r\n            imports: [\r\n                _angular_common__WEBPACK_IMPORTED_MODULE_8__.CommonModule,\r\n                _angular_platform_browser__WEBPACK_IMPORTED_MODULE_9__.BrowserModule,\r\n                _components_shared_module__WEBPACK_IMPORTED_MODULE_6__.SharedModule\r\n            ],\r\n            providers: [],\r\n            bootstrap: [\r\n                _components_navbar_mobile_navbar_mobile_navbar_component__WEBPACK_IMPORTED_MODULE_3__.MobileNavbarComponent,\r\n                _components_navbar_desktop_navbar_desktop_navbar_component__WEBPACK_IMPORTED_MODULE_2__.DesktopNavbarComponent,\r\n                _components_page_title_page_title_component__WEBPACK_IMPORTED_MODULE_4__.PageTitleComponent,\r\n                _components_footer_footer_component__WEBPACK_IMPORTED_MODULE_1__.FooterComponent,\r\n                _components_privacy_consentement_privacy_consentement_component__WEBPACK_IMPORTED_MODULE_5__.PrivacyConsentementComponent,\r\n                _components_comments_comments_component__WEBPACK_IMPORTED_MODULE_0__.CommentsComponent,\r\n            ],\r\n            schemas: [_angular_core__WEBPACK_IMPORTED_MODULE_7__.CUSTOM_ELEMENTS_SCHEMA, _angular_core__WEBPACK_IMPORTED_MODULE_7__.NO_ERRORS_SCHEMA]\r\n        })\r\n    ], AboutModule);\r\n    return AboutModule;\r\n}());\r\n\r\n\n\n//# sourceURL=webpack://learntime.github.io/./src/app/pages/about/about.module.ts?");
 
 /***/ }),
 
@@ -1517,6 +1486,17 @@ eval("\n/**\n * @license Angular v15.1.0-next.0\n * (c) 2010-2022 Google LLC. ht
 
 /***/ }),
 
+/***/ "./src/app/assets/logo-with-text.png":
+/*!*******************************************!*\
+  !*** ./src/app/assets/logo-with-text.png ***!
+  \*******************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+eval("module.exports = __webpack_require__.p + \"assets/logo-with-text-9bfd0ff4be4353b93359.png\";\n\n//# sourceURL=webpack://learntime.github.io/./src/app/assets/logo-with-text.png?");
+
+/***/ }),
+
 /***/ "./src/app/assets/logo.svg":
 /*!*********************************!*\
   !*** ./src/app/assets/logo.svg ***!
@@ -1524,7 +1504,7 @@ eval("\n/**\n * @license Angular v15.1.0-next.0\n * (c) 2010-2022 Google LLC. ht
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
-eval("module.exports = __webpack_require__.p + \"assets/logo-f34d5b7a22ad4bca5fc6.svg\";\n\n//# sourceURL=webpack://learntime.github.io/./src/app/assets/logo.svg?");
+eval("module.exports = __webpack_require__.p + \"assets/logo-8d639f440b146cd544fb.svg\";\n\n//# sourceURL=webpack://learntime.github.io/./src/app/assets/logo.svg?");
 
 /***/ }),
 
@@ -1782,7 +1762,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module can't be inlined because the eval devtool is used.
-/******/ 	var __webpack_exports__ = __webpack_require__("./src/app/pages/favourites/favourites.main.ts");
+/******/ 	var __webpack_exports__ = __webpack_require__("./src/app/pages/about/about.main.ts");
 /******/ 	
 /******/ })()
 ;
