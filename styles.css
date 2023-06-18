@@ -8523,6 +8523,7 @@ iframe {
   text-align: right; }
 
 .markdown .coming-soon {
+  content: 'Coming Soon';
   width: 100%;
   height: 400px;
   display: flex;

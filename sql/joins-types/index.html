@@ -3,8 +3,8 @@
             <html lang="en">
             <head>
                 <meta charset="utf-8" />
-                <title>Learn Time | Darken Background Image</title>
-                <meta name="description" content="In this article, we will learn how to darken background image using HTML and CSS. With easy-to-understand source code, you'll be able to follow along and create your own version">
+                <title>Learn Time | SQL Joins Types</title>
+                <meta name="description" content="In this article, we will learn how the JavaScript runtime add Nummber and String with easy-to-understand examples">
                 <meta name="viewport" content="width=device-width,initial-scale=1" />
                 <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
                 <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
@@ -31,14 +31,14 @@
                     .loader.hide {opacity: 0;}
                 </style>
                 
-            <meta property="og:title" content="Darken Background Image" />
-            <meta property="og:description" content="In this article, we will learn how to darken background image using HTML and CSS. With easy-to-understand source code, you'll be able to follow along and create your own version" />
-            <meta property="og:image" content="https://learntime.net/assets/images/csstips/darken-background-image.png" />
+            <meta property="og:title" content="SQL Joins Types" />
+            <meta property="og:description" content="In this article, we will learn how the JavaScript runtime add Nummber and String with easy-to-understand examples" />
+            <meta property="og:image" content="https://learntime.net/assets/images/sql/joins-types.png" />
             <meta name="twitter:card" content="summary_large_image">
             <meta name="twitter:creator" content="@learntimenet">
-            <meta name="twitter:title" content="Darken Background Image">
-            <meta name="twitter:description" content="In this article, we will learn how to darken background image using HTML and CSS. With easy-to-understand source code, you'll be able to follow along and create your own version">
-            <meta name="twitter:image" content="https://learntime.net/assets/images/csstips/darken-background-image.png">
+            <meta name="twitter:title" content="SQL Joins Types">
+            <meta name="twitter:description" content="In this article, we will learn how the JavaScript runtime add Nummber and String with easy-to-understand examples">
+            <meta name="twitter:image" content="https://learntime.net/assets/images/sql/joins-types.png">
         
                 <script>
                     var disqus_config = function () {
@@ -46,7 +46,7 @@
                         this.page.identifier = window.location.pathname.replace('/fr', '');
                     };
                 </script>
-            <script defer src="/csstips/darken-background-image/darken-background-image.7a914593025b7d77d05e.js"></script></head>
+            <script defer src="/sql/joins-types/joins-types.49b7dbbb618364e55069.js"></script></head>
             <body>
                 <div class="loader">
                     <svg class="loader-logo" width="600" height="600" viewBox="0 0 600 600" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -68,48 +68,238 @@
                     <app-desktop-navbar></app-desktop-navbar>
                     <main class="max-width">
         
-<app-main metadata="{&quot;title&quot;:&quot;Darken Background Image&quot;,&quot;description&quot;:&quot;In this article, we will learn how to darken background image using HTML and CSS. With easy-to-understand source code, you'll be able to follow along and create your own version&quot;,&quot;tags&quot;:[&quot;html&quot;,&quot;css&quot;],&quot;image&quot;:&quot;http://img.youtube.com/vi/IXJA-N26LDg/maxresdefault.jpg&quot;,&quot;date&quot;:&quot;20230506&quot;,&quot;category&quot;:&quot;csstips&quot;,&quot;slug&quot;:&quot;csstips/darken-background-image&quot;}" html="<h1 id=&quot;introduction&quot;>Introduction</h1>
-<p>In this article, we will find the source code that we have used in the following Youtube Video 
-that shows how to darken background image using HTML and CSS</p>
-<iframe width=&quot;357&quot; height=&quot;635&quot; src=&quot;https://www.youtube.com/embed/IXJA-N26LDg&quot; title=&quot;Darken Background Image using HTML and CSS #shorts&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&quot; allowfullscreen></iframe>
+<app-main metadata="{&quot;title&quot;:&quot;SQL Joins Types&quot;,&quot;description&quot;:&quot;In this article, we will learn how the JavaScript runtime add Nummber and String with easy-to-understand examples&quot;,&quot;tags&quot;:[&quot;sql&quot;],&quot;image&quot;:&quot;/assets/images/default-blog-image.jpg&quot;,&quot;date&quot;:&quot;20230618&quot;,&quot;category&quot;:&quot;sql&quot;,&quot;slug&quot;:&quot;sql/joins-types&quot;}" html="<style>
+  .sql-join-type {
+  /* all: initial; */
+  margin-top: 0px;
+  height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  padding-bottom: 20px;
+}
+.circle {
+  --size: 180px;
+  width: var(--size);
+  height: var(--size);
+  border-radius: 50%;
+  border: 3px solid #1f222b;
+  position: relative;
+  background-color: transparent;
+  transition: all .3s ease-in;
+  overflow: hidden;
+}
 
-<h2 id=&quot;html-code&quot;>HTML code</h2>
-<pre><code class=&quot;language-html&quot;>&amp;lt;body&amp;gt;
-  &amp;lt;div class=&quot;card&quot;&amp;gt;&amp;lt;/div&amp;gt;
-  &amp;lt;div class=&quot;card dark&quot;&amp;gt;&amp;lt;/div&amp;gt;
-&amp;lt;/body&amp;gt;
+.circle .label {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #222;
+  font-size: 75px;
+  font-family: 'ui-serif';
+  font-weight: 200;
+  transition: all .3s ease-in;
+}
+
+.circle .label-B {
+  padding-left: 25px;
+}
+
+.circle .label-A {
+  padding-right: 25px;
+}
+
+.circle-IA {
+  position: absolute;
+  background-color: #ffbe2f;
+  right: -123px;
+}
+
+.circle-B {
+  margin-left: -60px;
+  margin-top: 6px;
+}
+.circle-IB {
+  margin-top: -6px;
+  position: absolute;
+  background-color: #ffbe2f;
+  left: -123px;
+}
+</style>
+
+<h1 id=&quot;video-tutorial&quot;>Video Tutorial</h1>
+<div class=&quot;coming-soon&quot;>Coming Soon</div>
+
+<!-- <iframe width=&quot;357&quot; height=&quot;635&quot; src=&quot;https://www.youtube.com/embed/vBwxgSiqmF4&quot; title=&quot;Can you find the correct answer of the following JavaScript code 🤔 #shorts&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&quot; allowfullscreen></iframe> -->
+
+<h2 id=&quot;inner-join&quot;>INNER JOIN</h2>
+<p>Combines rows from two tables based on a related column between them</p>
+<style>
+  .inner-join .circle-A  {background-color: transparent;}
+  .inner-join .circle-IA {background-color: #ffbe2f;}
+  .inner-join .circle-IB {background-color: #ffbe2f;}
+  .inner-join .circle-B  {background-color: transparent;}
+</style>
+<div class=&quot;sql-join-type inner-join&quot;>
+  <div class=&quot;circle circle-A&quot;>
+    <span class=&quot;label label-A&quot;>A</span>
+    <div class=&quot;circle circle-IA&quot;></div>
+  </div>
+  <div class=&quot;circle circle-B&quot;>
+    <span class=&quot;label label-B&quot;>B</span>
+    <div class=&quot;circle circle-IB&quot;></div>
+  </div>
+</div>
+
+<pre><code class=&quot;language-sql&quot;>SELECT *
+FROM A
+INNER JOIN B ON A.key = B.key
 </code></pre>
-<h2 id=&quot;css-code&quot;>CSS Code</h2>
-<pre><code class=&quot;language-html&quot;>&amp;lt;style&amp;gt;
-  body {
-    background-color: #282c34;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    column-gap: 20px;
-    height: 100vh;
-  }
-  .card {
-    background-image: url(image.png);
-    background-size: cover;
-    width: 200px;
-    height: 200px;
-    border-radius: 10px;
-    position: relative;
-    overflow: hidden;
-  }
-  .dark::after {
-    content: &quot;&quot;;
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-  }
-&amp;lt;/style&amp;gt;
+<h2 id=&quot;left-join&quot;>LEFT JOIN</h2>
+<p>Returns all the rows from the left table and the matching rows from the right table based on a specified condition. If there are no matches in the right table, NULL values are returned for the columns of the right table</p>
+<style>
+  .left-join .circle-A  {background-color: #ffbe2f;}
+  .left-join .circle-IA {background-color: #ffbe2f;}
+  .left-join .circle-IB {background-color: #ffbe2f;}
+  .left-join .circle-B  {background-color: transparent;}
+</style>
+<div class=&quot;sql-join-type left-join&quot;>
+  <div class=&quot;circle circle-A&quot;>
+    <span class=&quot;label label-A&quot;>A</span>
+    <div class=&quot;circle circle-IA&quot;></div>
+  </div>
+  <div class=&quot;circle circle-B&quot;>
+    <span class=&quot;label label-B&quot;>B</span>
+    <div class=&quot;circle circle-IB&quot;></div>
+  </div>
+</div>
+
+<pre><code class=&quot;language-sql&quot;>SELECT *
+FROM A
+LEFT JOIN B ON A.key = B.key
 </code></pre>
-<h2 id=&quot;conclusion&quot;>Conclusion</h2>
+<h2 id=&quot;left-excluding-join&quot;>LEFT EXCLUDING JOIN</h2>
+<p>Returns all of the rows in the left table that do not match any rows in the right table</p>
+<style>
+  .left-excluding-join .circle-A  {background-color: #ffbe2f;}
+  .left-excluding-join .circle-IA {background-color: var(--white-color);}
+  .left-excluding-join .circle-IB {background-color: var(--white-color);}
+  .left-excluding-join .circle-B  {background-color: transparent;}
+</style>
+<div class=&quot;sql-join-type left-excluding-join&quot;>
+  <div class=&quot;circle circle-A&quot;>
+    <span class=&quot;label label-A&quot;>A</span>
+    <div class=&quot;circle circle-IA&quot;></div>
+  </div>
+  <div class=&quot;circle circle-B&quot;>
+    <span class=&quot;label label-B&quot;>B</span>
+    <div class=&quot;circle circle-IB&quot;></div>
+  </div>
+</div>
+
+<pre><code class=&quot;language-sql&quot;>SELECT *
+FROM A
+LEFT JOIN B ON A.key = B.key
+WHERE B.key IS NULL
+</code></pre>
+<h2 id=&quot;right-join&quot;>RIGHT JOIN</h2>
+<p>Rturns all the rows from the right table and the matching rows from the left table based on a specified condition. If there are no matches in the left table, NULL values are returned for the columns of the left table</p>
+<style>
+  .right-join .circle-A  {background-color: var(--white-color);}
+  .right-join .circle-IA {background-color: #ffbe2f;}
+  .right-join .circle-IB {background-color: #ffbe2f;}
+  .right-join .circle-B  {background-color: #ffbe2f;}
+</style>
+<div class=&quot;sql-join-type right-join&quot;>
+  <div class=&quot;circle circle-A&quot;>
+    <span class=&quot;label label-A&quot;>A</span>
+    <div class=&quot;circle circle-IA&quot;></div>
+  </div>
+  <div class=&quot;circle circle-B&quot;>
+    <span class=&quot;label label-B&quot;>B</span>
+    <div class=&quot;circle circle-IB&quot;></div>
+  </div>
+</div>
+
+<pre><code class=&quot;language-sql&quot;>SELECT *
+FROM A
+RIGHT JOIN B ON A.key = B.key
+</code></pre>
+<h2 id=&quot;right-excluding-join&quot;>RIGHT EXCLUDING JOIN</h2>
+<p>Returns all of the rows in the right table that do not match any rows in the left table</p>
+<style>
+  .right-excluding-join .circle-A  {background-color: var(--white-color);}
+  .right-excluding-join .circle-IA {background-color: var(--white-color);}
+  .right-excluding-join .circle-IB {background-color: var(--white-color);}
+  .right-excluding-join .circle-B  {background-color: #ffbe2f;}
+</style>
+<div class=&quot;sql-join-type right-excluding-join&quot;>
+  <div class=&quot;circle circle-A&quot;>
+    <span class=&quot;label label-A&quot;>A</span>
+    <div class=&quot;circle circle-IA&quot;></div>
+  </div>
+  <div class=&quot;circle circle-B&quot;>
+    <span class=&quot;label label-B&quot;>B</span>
+    <div class=&quot;circle circle-IB&quot;></div>
+  </div>
+</div>
+
+<pre><code class=&quot;language-sql&quot;>SELECT *
+FROM A
+RIGHT JOIN B ON A.key = B.key
+WHERE A.key IS NULL
+</code></pre>
+<h2 id=&quot;outer-join&quot;>OUTER JOIN</h2>
+<p>Combines the rows from two or more tables based on a specified condition, and includes unmatched rows from one or both tables</p>
+<style>
+  .outer-join .circle-A  {background-color: #ffbe2f;}
+  .outer-join .circle-IA {background-color: #ffbe2f;}
+  .outer-join .circle-IB {background-color: #ffbe2f;}
+  .outer-join .circle-B  {background-color: #ffbe2f;}
+</style>
+<div class=&quot;sql-join-type outer-join&quot;>
+  <div class=&quot;circle circle-A&quot;>
+    <span class=&quot;label label-A&quot;>A</span>
+    <div class=&quot;circle circle-IA&quot;></div>
+  </div>
+  <div class=&quot;circle circle-B&quot;>
+    <span class=&quot;label label-B&quot;>B</span>
+    <div class=&quot;circle circle-IB&quot;></div>
+  </div>
+</div>
+
+<pre><code class=&quot;language-sql&quot;>SELECT *
+FROM A
+FULL OUTER JOIN B ON A.key = B.key
+</code></pre>
+<h2 id=&quot;outer-excluding-join&quot;>OUTER EXCLUDING JOIN</h2>
+<p>Return all of the rows in the left table and all of the records in the right table that do not match</p>
+<style>
+  .outer-excluding-join .circle-A  {background-color: #ffbe2f;}
+  .outer-excluding-join .circle-IA {background-color: var(--white-color);}
+  .outer-excluding-join .circle-IB {background-color: var(--white-color);}
+  .outer-excluding-join .circle-B  {background-color: #ffbe2f;}
+</style>
+<div class=&quot;sql-join-type outer-excluding-join&quot;>
+  <div class=&quot;circle circle-A&quot;>
+    <span class=&quot;label label-A&quot;>A</span>
+    <div class=&quot;circle circle-IA&quot;></div>
+  </div>
+  <div class=&quot;circle circle-B&quot;>
+    <span class=&quot;label label-B&quot;>B</span>
+    <div class=&quot;circle circle-IB&quot;></div>
+  </div>
+</div>
+
+<pre><code class=&quot;language-sql&quot;>SELECT *
+FROM A
+FULL OUTER JOIN B ON A.key = B.key
+WHERE A.key IS NULL OR B.key IS NULL
+</code></pre>
+<h1 id=&quot;conclusion&quot;>Conclusion</h1>
 <p>Thank you for reading. We hope you found it useful!</p>
 " blogs="[{&quot;title&quot;:&quot;Todo App using HTML CSS & JS&quot;,&quot;description&quot;:&quot;In this article, we will learn how to create Todo App using HTML, CSS and Javascript. With easy-to-understand source code, you'll be able to follow along and create your own version&quot;,&quot;tags&quot;:[&quot;html&quot;,&quot;css&quot;,&quot;javascript&quot;],&quot;image&quot;:&quot;http://img.youtube.com/vi/T1lBgZVgryw/maxresdefault.jpg&quot;,&quot;date&quot;:&quot;20230529&quot;,&quot;category&quot;:&quot;apps&quot;,&quot;slug&quot;:&quot;apps/todo-list&quot;},{&quot;title&quot;:&quot;Countdown Timer using HTML CSS & JS&quot;,&quot;description&quot;:&quot;In this article, we will learn how to create a Countdown Timer using HTML, CSS and JavaScript. With easy-to-understand source code, you'll be able to follow along and create your own version&quot;,&quot;tags&quot;:[&quot;html&quot;,&quot;css&quot;,&quot;javascript&quot;],&quot;image&quot;:&quot;http://img.youtube.com/vi/q6fFsOX2ihE/maxresdefault.jpg&quot;,&quot;date&quot;:&quot;20230605&quot;,&quot;category&quot;:&quot;apps&quot;,&quot;slug&quot;:&quot;apps/count-down&quot;},{&quot;title&quot;:&quot;Microsoft logo using HTML & CSS&quot;,&quot;description&quot;:&quot;In this article, we will learn how to draw Microsoft logo using HTML and CSS. With easy-to-understand source code, you'll be able to follow along and create your own version&quot;,&quot;tags&quot;:[&quot;html&quot;,&quot;css&quot;],&quot;image&quot;:&quot;http://img.youtube.com/vi/kBneWj-kPqQ/maxresdefault.jpg&quot;,&quot;date&quot;:&quot;20230429&quot;,&quot;category&quot;:&quot;csstips&quot;,&quot;slug&quot;:&quot;csstips/microsoft-logo&quot;},{&quot;title&quot;:&quot;Toggle Switch using HTML & CSS&quot;,&quot;description&quot;:&quot;In this article, we will learn how to create a Toggle Switch using HTML and CSS. With easy-to-understand source code, you'll be able to follow along and create your own version&quot;,&quot;tags&quot;:[&quot;html&quot;,&quot;css&quot;],&quot;image&quot;:&quot;http://img.youtube.com/vi/HN3wu8QKtUA/maxresdefault.jpg&quot;,&quot;date&quot;:&quot;20230430&quot;,&quot;category&quot;:&quot;csstips&quot;,&quot;slug&quot;:&quot;csstips/toggle-switch&quot;},{&quot;title&quot;:&quot;Scroll to the Top Button&quot;,&quot;description&quot;:&quot;In this article, we will learn how to create a Scroll to the Top Button using HTML, CSS and Javascript. With easy-to-understand source code, you'll be able to follow along and create your own version&quot;,&quot;tags&quot;:[&quot;html&quot;,&quot;css&quot;],&quot;image&quot;:&quot;http://img.youtube.com/vi/7Vc_Di-qYEk/maxresdefault.jpg&quot;,&quot;date&quot;:&quot;20230503&quot;,&quot;category&quot;:&quot;csstips&quot;,&quot;slug&quot;:&quot;csstips/scroll-top-button&quot;},{&quot;title&quot;:&quot;Darken Background Image&quot;,&quot;description&quot;:&quot;In this article, we will learn how to darken background image using HTML and CSS. With easy-to-understand source code, you'll be able to follow along and create your own version&quot;,&quot;tags&quot;:[&quot;html&quot;,&quot;css&quot;],&quot;image&quot;:&quot;http://img.youtube.com/vi/IXJA-N26LDg/maxresdefault.jpg&quot;,&quot;date&quot;:&quot;20230506&quot;,&quot;category&quot;:&quot;csstips&quot;,&quot;slug&quot;:&quot;csstips/darken-background-image&quot;},{&quot;title&quot;:&quot;Netflix Logo using HTML and CSS&quot;,&quot;description&quot;:&quot;In this article, we will learn how to create Netflix Logo using HTML and CSS. With easy-to-understand source code, you'll be able to follow along and create your own version&quot;,&quot;tags&quot;:[&quot;html&quot;,&quot;css&quot;],&quot;image&quot;:&quot;http://img.youtube.com/vi/0oNqgcZ8YiA/maxresdefault.jpg&quot;,&quot;date&quot;:&quot;20230508&quot;,&quot;category&quot;:&quot;csstips&quot;,&quot;slug&quot;:&quot;csstips/netflix-logo&quot;},{&quot;title&quot;:&quot;Adding Number and String in JavaScript&quot;,&quot;description&quot;:&quot;In this article, we will learn how the JavaScript runtime add Nummber and String with easy-to-understand examples&quot;,&quot;tags&quot;:[&quot;html&quot;,&quot;css&quot;],&quot;image&quot;:&quot;http://img.youtube.com/vi/vBwxgSiqmF4/maxresdefault.jpg&quot;,&quot;date&quot;:&quot;20230513&quot;,&quot;category&quot;:&quot;javascript&quot;,&quot;slug&quot;:&quot;javascript/add-number-and-string&quot;},{&quot;title&quot;:&quot;SQL Joins Types&quot;,&quot;description&quot;:&quot;In this article, we will learn how the JavaScript runtime add Nummber and String with easy-to-understand examples&quot;,&quot;tags&quot;:[&quot;sql&quot;],&quot;image&quot;:&quot;/assets/images/default-blog-image.jpg&quot;,&quot;date&quot;:&quot;20230618&quot;,&quot;category&quot;:&quot;sql&quot;,&quot;slug&quot;:&quot;sql/joins-types&quot;}]"></app-main>
 
