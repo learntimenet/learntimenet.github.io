@@ -123,6 +123,10 @@
     border-radius: 3px;
     transition: all .3s ease-in;
   }
+  .changed-element {
+    background-color: #ff6057;
+    color: #eee;
+  }
   .indexes {
     padding-top: 5px;
     display: flex;
@@ -152,50 +156,82 @@
 
 <!-- <blockquote class=&quot;tiktok-embed&quot; cite=&quot;https://www.tiktok.com/@learntime.net/video/7236759371072408858&quot; data-video-id=&quot;7236759371072408858&quot; style=&quot;max-width: 605px;min-width: 325px;&quot; > <section> <a target=&quot;_blank&quot; title=&quot;@learntime.net&quot; href=&quot;https://www.tiktok.com/@learntime.net?refer=embed&quot;>@learntime.net</a> Learn CSS Flexbox justify-content under one minute <a title=&quot;shorts&quot; target=&quot;_blank&quot; href=&quot;https://www.tiktok.com/tag/shorts?refer=embed&quot;>#Shorts</a> <a target=&quot;_blank&quot; title=&quot;♬ son original  - Learn Time&quot; href=&quot;https://www.tiktok.com/music/son-original-Learn-Time-7236759647544625947?refer=embed&quot;>♬ son original  - Learn Time</a> </section> </blockquote> <script async src=&quot;https://www.tiktok.com/embed.js&quot;></script> -->
 
-  <div style=&quot;margin: 0 auto;&quot;>
+  <!-- <div style=&quot;margin: 0 auto;&quot;>
     <iframe src=&quot;https://www.tiktok.com/embed/v2/7236759371072408858&quot; width=&quot;100%&quot; height=&quot;750px&quot; frameborder=&quot;0&quot; allowfullscreen></iframe>
-  </div>
+  </div> -->
 
 <h2 id=&quot;push-method&quot;>Push Method</h2>
-<p>Adds the specified elements to the end of an array</p>
+<p>Adds the specified to the end of an array</p>
 <pre><code class=&quot;language-javascript&quot;>const array = [&quot;4&quot;, &quot;10&quot;, &quot;5&quot;];
 array.push(&quot;20&quot;);
 </code></pre>
-<style>
-  .push .element4 {
-    background-color: #ff6057;
-    color: #eee;
-  }
-</style>
 <div class=&quot;output-container&quot;>
   <span class=&quot;label label-before&quot;>Before</span>
   <span class=&quot;label label-after&quot;>After</span>
   <div class=&quot;output before&quot;>
     <div class=&quot;array&quot;>
-      <div class=&quot;element element1&quot;>4</div>
-      <div class=&quot;element element2&quot;>10</div>
-      <div class=&quot;element element3&quot;>5</div>
+      <div class=&quot;element&quot;>4</div>
+      <div class=&quot;element&quot;>10</div>
+      <div class=&quot;element&quot;>5</div>
     </div>
     <div class=&quot;indexes&quot;>
-      <span class=&quot;index index0&quot;>0</span>
-      <span class=&quot;index index1&quot;>1</span>
-      <span class=&quot;index index2&quot;>2</span>
-      <span class=&quot;index index3&quot;>3</span>
+      <span class=&quot;index&quot;>0</span>
+      <span class=&quot;index&quot;>1</span>
+      <span class=&quot;index&quot;>2</span>
+      <span class=&quot;index&quot;>3</span>
     </div>
   </div>
 
   <div class=&quot;output after push&quot;>
     <div class=&quot;array&quot;>
-      <div class=&quot;element element1&quot;>4</div>
-      <div class=&quot;element element2&quot;>10</div>
-      <div class=&quot;element element3&quot;>5</div>
-      <div class=&quot;element element4&quot;>20</div>
+      <div class=&quot;element&quot;>4</div>
+      <div class=&quot;element&quot;>10</div>
+      <div class=&quot;element&quot;>5</div>
+      <div class=&quot;element changed-element&quot;>20</div>
     </div>
     <div class=&quot;indexes&quot;>
-      <span class=&quot;index index0&quot;>0</span>
-      <span class=&quot;index index1&quot;>1</span>
-      <span class=&quot;index index2&quot;>2</span>
-      <span class=&quot;index index3&quot;>3</span>
+      <span class=&quot;index&quot;>0</span>
+      <span class=&quot;index&quot;>1</span>
+      <span class=&quot;index&quot;>2</span>
+      <span class=&quot;index&quot;>3</span>
+    </div>
+  </div>
+</div>
+
+<h2 id=&quot;unshift-method&quot;>Unshift Method</h2>
+<p>Adds the specified to the beginning of an array</p>
+<pre><code class=&quot;language-javascript&quot;>const array = [&quot;4&quot;, &quot;10&quot;, &quot;5&quot;];
+array.unshift(&quot;20&quot;);
+</code></pre>
+<div class=&quot;output-container&quot;>
+  <span class=&quot;label label-before&quot;>Before</span>
+  <span class=&quot;label label-after&quot;>After</span>
+  <div class=&quot;output before&quot;>
+    <div class=&quot;array&quot;>
+      <div class=&quot;element&quot;>4</div>
+      <div class=&quot;element&quot;>10</div>
+      <div class=&quot;element&quot;>5</div>
+    </div>
+    <div class=&quot;indexes&quot;>
+      <span class=&quot;index&quot;>0</span>
+      <span class=&quot;index&quot;>1</span>
+      <span class=&quot;index&quot;>2</span>
+      <span class=&quot;index&quot;>3</span>
+    </div>
+  </div>
+
+  <div class=&quot;output after&quot;>
+    <div class=&quot;array&quot;>
+      <div class=&quot;element changed-element&quot;>20</div>
+      <div class=&quot;element&quot;>4</div>
+      <div class=&quot;element&quot;>10</div>
+      <div class=&quot;element&quot;>5</div>
+    </div>
+    <div class=&quot;indexes&quot;>
+      <span class=&quot;index&quot;>0</span>
+      <span class=&quot;index&quot;>1</span>
+      <span class=&quot;index&quot;>2</span>
+      <span class=&quot;index&quot;>3</span>
     </div>
   </div>
 </div>
