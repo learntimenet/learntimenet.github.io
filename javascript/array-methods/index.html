@@ -118,7 +118,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: 'Roboto Mono';
+    font-family: 'Circular';
     font-size: 20px;
     border-radius: 3px;
     transition: all .3s ease-in;
@@ -232,6 +232,174 @@ array.unshift(&quot;20&quot;);
       <span class=&quot;index&quot;>1</span>
       <span class=&quot;index&quot;>2</span>
       <span class=&quot;index&quot;>3</span>
+    </div>
+  </div>
+</div>
+
+
+<h2 id=&quot;pop-method&quot;>Pop Method</h2>
+<p>Removes the last element from an array and returns that element</p>
+<pre><code class=&quot;language-javascript&quot;>const array = [&quot;20&quot;, &quot;4&quot;, &quot;10&quot;, &quot;5&quot;];
+array.pop();
+</code></pre>
+<div class=&quot;output-container&quot;>
+  <span class=&quot;label label-before&quot;>Before</span>
+  <span class=&quot;label label-after&quot;>After</span>
+  <div class=&quot;output before&quot;>
+    <div class=&quot;array&quot;>
+      <div class=&quot;element&quot;>20</div>
+      <div class=&quot;element&quot;>4</div>
+      <div class=&quot;element&quot;>10</div>
+      <div class=&quot;element&quot;>5</div>
+    </div>
+    <div class=&quot;indexes&quot;>
+      <span class=&quot;index&quot;>0</span>
+      <span class=&quot;index&quot;>1</span>
+      <span class=&quot;index&quot;>2</span>
+      <span class=&quot;index&quot;>3</span>
+    </div>
+  </div>
+
+  <div class=&quot;output after&quot;>
+    <div class=&quot;array&quot;>
+      <div class=&quot;element&quot;>4</div>
+      <div class=&quot;element&quot;>10</div>
+      <div class=&quot;element&quot;>5</div>
+    </div>
+    <div class=&quot;indexes&quot;>
+      <span class=&quot;index&quot;>0</span>
+      <span class=&quot;index&quot;>1</span>
+      <span class=&quot;index&quot;>2</span>
+      <span class=&quot;index&quot;>3</span>
+    </div>
+  </div>
+</div>
+
+<h2 id=&quot;shift-method&quot;>Shift Method</h2>
+<p>Removes the first element from an array and returns that element</p>
+<pre><code class=&quot;language-javascript&quot;>const array = [&quot;20&quot;, &quot;4&quot;, &quot;10&quot;, &quot;5&quot;];
+array.pop();
+</code></pre>
+<div class=&quot;output-container&quot;>
+  <span class=&quot;label label-before&quot;>Before</span>
+  <span class=&quot;label label-after&quot;>After</span>
+  <div class=&quot;output before&quot;>
+    <div class=&quot;array&quot;>
+      <div class=&quot;element&quot;>20</div>
+      <div class=&quot;element&quot;>4</div>
+      <div class=&quot;element&quot;>10</div>
+      <div class=&quot;element&quot;>5</div>
+    </div>
+    <div class=&quot;indexes&quot;>
+      <span class=&quot;index&quot;>0</span>
+      <span class=&quot;index&quot;>1</span>
+      <span class=&quot;index&quot;>2</span>
+      <span class=&quot;index&quot;>3</span>
+    </div>
+  </div>
+
+  <div class=&quot;output after&quot;>
+    <div class=&quot;array&quot;>
+      <div class=&quot;element&quot;>20</div>
+      <div class=&quot;element&quot;>4</div>
+      <div class=&quot;element&quot;>10</div>
+    </div>
+    <div class=&quot;indexes&quot;>
+      <span class=&quot;index&quot;>0</span>
+      <span class=&quot;index&quot;>1</span>
+      <span class=&quot;index&quot;>2</span>
+      <span class=&quot;index&quot;>3</span>
+    </div>
+  </div>
+</div>
+
+<h2 id=&quot;shift-method-1&quot;>Shift Method</h2>
+<p>Changes the contents of an array by removing or replacing existing elements and/or adding new elements</p>
+<h3 id=&quot;example-1&quot;>Example 1</h3>
+<pre><code class=&quot;language-javascript&quot;>const array = [&quot;20&quot;, &quot;4&quot;, &quot;10&quot;, &quot;5&quot;];
+array.splice(2, 0, &quot;50&quot;, &quot;99&quot;);
+</code></pre>
+<p>The first parameter (2) defines the position where new elements should be <b>added</b>.</p>
+<p>The second parameter (0) defines <b>how many</b> elements should be <b>removed</b>.</p>
+<p>The rest of the parameters (&quot;50&quot; , &quot;99&quot;) define the new elements to be added.</p>
+<div class=&quot;output-container&quot;>
+  <span class=&quot;label label-before&quot;>Before</span>
+  <span class=&quot;label label-after&quot;>After</span>
+  <div class=&quot;output before&quot;>
+    <div class=&quot;array&quot;>
+      <div class=&quot;element&quot;>20</div>
+      <div class=&quot;element&quot;>4</div>
+      <div class=&quot;element&quot;>10</div>
+      <div class=&quot;element&quot;>5</div>
+    </div>
+    <div class=&quot;indexes&quot;>
+      <span class=&quot;index&quot;>0</span>
+      <span class=&quot;index&quot;>1</span>
+      <span class=&quot;index&quot;>2</span>
+      <span class=&quot;index&quot;>3</span>
+      <span class=&quot;index&quot;>4</span>
+      <span class=&quot;index&quot;>5</span>
+    </div>
+  </div>
+
+  <div class=&quot;output after&quot;>
+    <div class=&quot;array&quot;>
+      <div class=&quot;element&quot;>20</div>
+      <div class=&quot;element&quot;>4</div>
+      <div class=&quot;element changed-element&quot;>50</div>
+      <div class=&quot;element changed-element&quot;>99</div>
+      <div class=&quot;element&quot;>10</div>
+      <div class=&quot;element&quot;>5</div>
+    </div>
+    <div class=&quot;indexes&quot;>
+      <span class=&quot;index&quot;>0</span>
+      <span class=&quot;index&quot;>1</span>
+      <span class=&quot;index&quot;>2</span>
+      <span class=&quot;index&quot;>3</span>
+      <span class=&quot;index&quot;>4</span>
+      <span class=&quot;index&quot;>5</span>
+    </div>
+  </div>
+</div>
+
+<h3 id=&quot;example-2&quot;>Example 2</h3>
+<pre><code class=&quot;language-javascript&quot;>const array = [&quot;20&quot;, &quot;4&quot;, &quot;10&quot;, &quot;5&quot;];
+array.splice(2, 1);
+</code></pre>
+<p>The first parameter (2) defines the position where new elements should be <b>added</b>.</p>
+<p>The second parameter (1) defines <b>how many</b> elements should be <b>removed</b>.</p>
+<p>The rest of the parameters are omitted. No new elements will be added.</p>
+<div class=&quot;output-container&quot;>
+  <span class=&quot;label label-before&quot;>Before</span>
+  <span class=&quot;label label-after&quot;>After</span>
+  <div class=&quot;output before&quot;>
+    <div class=&quot;array&quot;>
+      <div class=&quot;element&quot;>20</div>
+      <div class=&quot;element&quot;>4</div>
+      <div class=&quot;element changed-element&quot;>10</div>
+      <div class=&quot;element&quot;>5</div>
+    </div>
+    <div class=&quot;indexes&quot;>
+      <span class=&quot;index&quot;>0</span>
+      <span class=&quot;index&quot;>1</span>
+      <span class=&quot;index&quot;>2</span>
+      <span class=&quot;index&quot;>3</span>
+      <span class=&quot;index&quot;>4</span>
+    </div>
+  </div>
+
+  <div class=&quot;output after&quot;>
+    <div class=&quot;array&quot;>
+      <div class=&quot;element&quot;>20</div>
+      <div class=&quot;element&quot;>4</div>
+      <div class=&quot;element&quot;>5</div>
+    </div>
+    <div class=&quot;indexes&quot;>
+      <span class=&quot;index&quot;>0</span>
+      <span class=&quot;index&quot;>1</span>
+      <span class=&quot;index&quot;>2</span>
+      <span class=&quot;index&quot;>3</span>
+      <span class=&quot;index&quot;>4</span>
     </div>
   </div>
 </div>
