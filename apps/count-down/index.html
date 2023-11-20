@@ -49,7 +49,7 @@
                         this.page.identifier = window.location.pathname.replace('/fr', '');
                     };
                 </script>
-            <script defer src="/apps/count-down/count-down.b8bd5f149e43b836d154.js"></script></head>
+            <script defer src="/apps/count-down/count-down.c280ff7b8819689b40a1.js"></script></head>
             <body>
                 <div class="loader">
                     <svg class="loader-logo" width="1000" height="1000" viewBox="0 0 1000 1000" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -77,148 +77,146 @@
                     <app-desktop-navbar></app-desktop-navbar>
                     <main class="max-width">
         
-<app-main metadata="{&quot;title&quot;:&quot;Countdown Timer using HTML CSS & JS&quot;,&quot;description&quot;:&quot;In this article, we will learn how to create a Countdown Timer using HTML, CSS and JavaScript. With easy-to-understand source code, you'll be able to follow along and create your own version&quot;,&quot;tags&quot;:[&quot;html&quot;,&quot;css&quot;,&quot;javascript&quot;],&quot;image&quot;:&quot;http://img.youtube.com/vi/q6fFsOX2ihE/maxresdefault.jpg&quot;,&quot;date&quot;:&quot;20230605&quot;,&quot;category&quot;:&quot;apps&quot;,&quot;slug&quot;:&quot;apps/count-down&quot;}" html="<h1 id=&quot;introduction&quot;>Introduction</h1>
-<p>In this article, we will learn how to create a Countdown Timer using HTML, CSS and JavaScript. With easy-to-understand source code, you&#39;ll be able to follow along and create your own version</p>
-<h2 id=&quot;video-tutorial&quot;>Video tutorial</h2>
+<app-main metadata="{&quot;title&quot;:&quot;Countdown Timer using HTML CSS & JS&quot;,&quot;description&quot;:&quot;In this article, we will learn how to create a Countdown Timer using HTML, CSS and JavaScript. With easy-to-understand source code, you'll be able to follow along and create your own version&quot;,&quot;tags&quot;:[&quot;html&quot;,&quot;css&quot;,&quot;javascript&quot;],&quot;image&quot;:&quot;http://img.youtube.com/vi/q6fFsOX2ihE/maxresdefault.jpg&quot;,&quot;date&quot;:&quot;20230605&quot;,&quot;category&quot;:&quot;apps&quot;,&quot;slug&quot;:&quot;apps/count-down&quot;}" html="<h1>Introduction</h1>
+<p>In this article, we will learn how to create a Countdown Timer using HTML, CSS and JavaScript. With easy-to-understand source code, you'll be able to follow along and create your own version</p>
+<h2>Video tutorial</h2>
 <iframe width=&quot;900&quot; height=&quot;506&quot; src=&quot;https://www.youtube.com/embed/q6fFsOX2ihE&quot; title=&quot;&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&quot; allowfullscreen></iframe>
-
-<h2 id=&quot;source-code&quot;>Source code</h2>
-<div class=&quot;code-tabs&quot;></div>
-
+<h2>Source code</h2>
+<p><strong>code-tabs</strong></p>
 <ul>
-<li><p>index.html</p>
-
-<pre><code class=&quot;language-html&quot;>&amp;lt;!DOCTYPE html&amp;gt;
-&amp;lt;html lang=&quot;en&quot;&amp;gt;
-&amp;lt;head&amp;gt;
-  &amp;lt;meta charset=&quot;UTF-8&quot;&amp;gt;
-  &amp;lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&amp;gt;
-  &amp;lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&amp;gt;
-  &amp;lt;title&amp;gt;COUNT DOWN&amp;lt;/title&amp;gt;
-  &amp;lt;link rel=&quot;stylesheet&quot; href=&quot;./style.css&quot;&amp;gt;
-&amp;lt;/head&amp;gt;
-&amp;lt;body&amp;gt;
-  &amp;lt;main&amp;gt;
-    &amp;lt;h1&amp;gt;Comming Soon&amp;lt;/h1&amp;gt;
-    &amp;lt;div class=&quot;container&quot;&amp;gt;
-      &amp;lt;div class=&quot;counter-container&quot;&amp;gt;
-        &amp;lt;span id=&quot;days&quot; class=&quot;counter&quot;&amp;gt;0&amp;lt;/span&amp;gt;
-        &amp;lt;span&amp;gt;Days&amp;lt;/span&amp;gt;
-      &amp;lt;/div&amp;gt;
-      &amp;lt;div class=&quot;counter-container&quot;&amp;gt;
-        &amp;lt;span id=&quot;hours&quot; class=&quot;counter&quot;&amp;gt;0&amp;lt;/span&amp;gt;
-        &amp;lt;span&amp;gt;Hours&amp;lt;/span&amp;gt;
-      &amp;lt;/div&amp;gt;
-      &amp;lt;div class=&quot;counter-container&quot;&amp;gt;
-        &amp;lt;span id=&quot;minutes&quot; class=&quot;counter&quot;&amp;gt;0&amp;lt;/span&amp;gt;
-        &amp;lt;span&amp;gt;Minutes&amp;lt;/span&amp;gt;
-      &amp;lt;/div&amp;gt;
-      &amp;lt;div class=&quot;counter-container&quot;&amp;gt;
-        &amp;lt;span id=&quot;seconds&quot; class=&quot;counter&quot;&amp;gt;0&amp;lt;/span&amp;gt;
-        &amp;lt;span&amp;gt;Seconds&amp;lt;/span&amp;gt;
-      &amp;lt;/div&amp;gt;
-    &amp;lt;/div&amp;gt;
-  &amp;lt;/main&amp;gt;
-  &amp;lt;script src=&quot;./script.js&quot;&amp;gt;&amp;lt;/script&amp;gt;
-  &amp;lt;script src=&quot;./snow.js&quot;&amp;gt;&amp;lt;/script&amp;gt;
-&amp;lt;/body&amp;gt;
-&amp;lt;/html&amp;gt;
+<li>
+<p>index.html</p>
+<pre class=&quot;highlight&quot;><code class=&quot;hljs&quot;><span class=&quot;hljs-meta&quot;>&amp;lt;!DOCTYPE <span class=&quot;hljs-keyword&quot;>html</span>&amp;gt;</span>
+<span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>html</span> <span class=&quot;hljs-attr&quot;>lang</span>=<span class=&quot;hljs-string&quot;>&quot;en&quot;</span>&amp;gt;</span>
+<span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>head</span>&amp;gt;</span>
+  <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>meta</span> <span class=&quot;hljs-attr&quot;>charset</span>=<span class=&quot;hljs-string&quot;>&quot;UTF-8&quot;</span>&amp;gt;</span>
+  <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>meta</span> <span class=&quot;hljs-attr&quot;>http-equiv</span>=<span class=&quot;hljs-string&quot;>&quot;X-UA-Compatible&quot;</span> <span class=&quot;hljs-attr&quot;>content</span>=<span class=&quot;hljs-string&quot;>&quot;IE=edge&quot;</span>&amp;gt;</span>
+  <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>meta</span> <span class=&quot;hljs-attr&quot;>name</span>=<span class=&quot;hljs-string&quot;>&quot;viewport&quot;</span> <span class=&quot;hljs-attr&quot;>content</span>=<span class=&quot;hljs-string&quot;>&quot;width=device-width, initial-scale=1.0&quot;</span>&amp;gt;</span>
+  <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>title</span>&amp;gt;</span>COUNT DOWN<span class=&quot;hljs-tag&quot;>&amp;lt;/<span class=&quot;hljs-name&quot;>title</span>&amp;gt;</span>
+  <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>link</span> <span class=&quot;hljs-attr&quot;>rel</span>=<span class=&quot;hljs-string&quot;>&quot;stylesheet&quot;</span> <span class=&quot;hljs-attr&quot;>href</span>=<span class=&quot;hljs-string&quot;>&quot;./style.css&quot;</span>&amp;gt;</span>
+<span class=&quot;hljs-tag&quot;>&amp;lt;/<span class=&quot;hljs-name&quot;>head</span>&amp;gt;</span>
+<span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>body</span>&amp;gt;</span>
+  <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>main</span>&amp;gt;</span>
+    <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>h1</span>&amp;gt;</span>Comming Soon<span class=&quot;hljs-tag&quot;>&amp;lt;/<span class=&quot;hljs-name&quot;>h1</span>&amp;gt;</span>
+    <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>div</span> <span class=&quot;hljs-attr&quot;>class</span>=<span class=&quot;hljs-string&quot;>&quot;container&quot;</span>&amp;gt;</span>
+      <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>div</span> <span class=&quot;hljs-attr&quot;>class</span>=<span class=&quot;hljs-string&quot;>&quot;counter-container&quot;</span>&amp;gt;</span>
+        <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>span</span> <span class=&quot;hljs-attr&quot;>id</span>=<span class=&quot;hljs-string&quot;>&quot;days&quot;</span> <span class=&quot;hljs-attr&quot;>class</span>=<span class=&quot;hljs-string&quot;>&quot;counter&quot;</span>&amp;gt;</span>0<span class=&quot;hljs-tag&quot;>&amp;lt;/<span class=&quot;hljs-name&quot;>span</span>&amp;gt;</span>
+        <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>span</span>&amp;gt;</span>Days<span class=&quot;hljs-tag&quot;>&amp;lt;/<span class=&quot;hljs-name&quot;>span</span>&amp;gt;</span>
+      <span class=&quot;hljs-tag&quot;>&amp;lt;/<span class=&quot;hljs-name&quot;>div</span>&amp;gt;</span>
+      <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>div</span> <span class=&quot;hljs-attr&quot;>class</span>=<span class=&quot;hljs-string&quot;>&quot;counter-container&quot;</span>&amp;gt;</span>
+        <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>span</span> <span class=&quot;hljs-attr&quot;>id</span>=<span class=&quot;hljs-string&quot;>&quot;hours&quot;</span> <span class=&quot;hljs-attr&quot;>class</span>=<span class=&quot;hljs-string&quot;>&quot;counter&quot;</span>&amp;gt;</span>0<span class=&quot;hljs-tag&quot;>&amp;lt;/<span class=&quot;hljs-name&quot;>span</span>&amp;gt;</span>
+        <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>span</span>&amp;gt;</span>Hours<span class=&quot;hljs-tag&quot;>&amp;lt;/<span class=&quot;hljs-name&quot;>span</span>&amp;gt;</span>
+      <span class=&quot;hljs-tag&quot;>&amp;lt;/<span class=&quot;hljs-name&quot;>div</span>&amp;gt;</span>
+      <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>div</span> <span class=&quot;hljs-attr&quot;>class</span>=<span class=&quot;hljs-string&quot;>&quot;counter-container&quot;</span>&amp;gt;</span>
+        <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>span</span> <span class=&quot;hljs-attr&quot;>id</span>=<span class=&quot;hljs-string&quot;>&quot;minutes&quot;</span> <span class=&quot;hljs-attr&quot;>class</span>=<span class=&quot;hljs-string&quot;>&quot;counter&quot;</span>&amp;gt;</span>0<span class=&quot;hljs-tag&quot;>&amp;lt;/<span class=&quot;hljs-name&quot;>span</span>&amp;gt;</span>
+        <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>span</span>&amp;gt;</span>Minutes<span class=&quot;hljs-tag&quot;>&amp;lt;/<span class=&quot;hljs-name&quot;>span</span>&amp;gt;</span>
+      <span class=&quot;hljs-tag&quot;>&amp;lt;/<span class=&quot;hljs-name&quot;>div</span>&amp;gt;</span>
+      <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>div</span> <span class=&quot;hljs-attr&quot;>class</span>=<span class=&quot;hljs-string&quot;>&quot;counter-container&quot;</span>&amp;gt;</span>
+        <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>span</span> <span class=&quot;hljs-attr&quot;>id</span>=<span class=&quot;hljs-string&quot;>&quot;seconds&quot;</span> <span class=&quot;hljs-attr&quot;>class</span>=<span class=&quot;hljs-string&quot;>&quot;counter&quot;</span>&amp;gt;</span>0<span class=&quot;hljs-tag&quot;>&amp;lt;/<span class=&quot;hljs-name&quot;>span</span>&amp;gt;</span>
+        <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>span</span>&amp;gt;</span>Seconds<span class=&quot;hljs-tag&quot;>&amp;lt;/<span class=&quot;hljs-name&quot;>span</span>&amp;gt;</span>
+      <span class=&quot;hljs-tag&quot;>&amp;lt;/<span class=&quot;hljs-name&quot;>div</span>&amp;gt;</span>
+    <span class=&quot;hljs-tag&quot;>&amp;lt;/<span class=&quot;hljs-name&quot;>div</span>&amp;gt;</span>
+  <span class=&quot;hljs-tag&quot;>&amp;lt;/<span class=&quot;hljs-name&quot;>main</span>&amp;gt;</span>
+  <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>script</span> <span class=&quot;hljs-attr&quot;>src</span>=<span class=&quot;hljs-string&quot;>&quot;./script.js&quot;</span>&amp;gt;</span><span class=&quot;hljs-tag&quot;>&amp;lt;/<span class=&quot;hljs-name&quot;>script</span>&amp;gt;</span>
+  <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>script</span> <span class=&quot;hljs-attr&quot;>src</span>=<span class=&quot;hljs-string&quot;>&quot;./snow.js&quot;</span>&amp;gt;</span><span class=&quot;hljs-tag&quot;>&amp;lt;/<span class=&quot;hljs-name&quot;>script</span>&amp;gt;</span>
+<span class=&quot;hljs-tag&quot;>&amp;lt;/<span class=&quot;hljs-name&quot;>body</span>&amp;gt;</span>
+<span class=&quot;hljs-tag&quot;>&amp;lt;/<span class=&quot;hljs-name&quot;>html</span>&amp;gt;</span>
 </code></pre>
 </li>
-<li><p>style.css</p>
-
-<pre><code class=&quot;language-css&quot;>*,
-*::before,
-*::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+<li>
+<p>style.css</p>
+<pre class=&quot;highlight&quot;><code class=&quot;hljs&quot;>*,
+*<span class=&quot;hljs-selector-pseudo&quot;>::before</span>,
+*<span class=&quot;hljs-selector-pseudo&quot;>::after</span> {
+  <span class=&quot;hljs-attribute&quot;>margin</span>: <span class=&quot;hljs-number&quot;>0</span>;
+  <span class=&quot;hljs-attribute&quot;>padding</span>: <span class=&quot;hljs-number&quot;>0</span>;
+  <span class=&quot;hljs-attribute&quot;>box-sizing</span>: border-box;
 }
 
-body {
-  font-family: &#39;Roboto&#39;, sans-serif;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: url(./background.png) no-repeat;
-  background-position: center;
-  background-size: cover;
+<span class=&quot;hljs-selector-tag&quot;>body</span> {
+  <span class=&quot;hljs-attribute&quot;>font-family</span>: <span class=&quot;hljs-string&quot;>&#x27;Roboto&#x27;</span>, sans-serif;
+  <span class=&quot;hljs-attribute&quot;>height</span>: <span class=&quot;hljs-number&quot;>100vh</span>;
+  <span class=&quot;hljs-attribute&quot;>display</span>: flex;
+  <span class=&quot;hljs-attribute&quot;>align-items</span>: center;
+  <span class=&quot;hljs-attribute&quot;>justify-content</span>: center;
+  <span class=&quot;hljs-attribute&quot;>background</span>: <span class=&quot;hljs-built_in&quot;>url</span>(<span class=&quot;hljs-string&quot;>./background.png</span>) no-repeat;
+  <span class=&quot;hljs-attribute&quot;>background-position</span>: center;
+  <span class=&quot;hljs-attribute&quot;>background-size</span>: cover;
 }
 
-h1 {
-  text-align: center;
-  color: #C75263;
-  font-size: 50px;
-  margin-bottom: 30px;
-  text-transform: uppercase;
+<span class=&quot;hljs-selector-tag&quot;>h1</span> {
+  <span class=&quot;hljs-attribute&quot;>text-align</span>: center;
+  <span class=&quot;hljs-attribute&quot;>color</span>: <span class=&quot;hljs-number&quot;>#C75263</span>;
+  <span class=&quot;hljs-attribute&quot;>font-size</span>: <span class=&quot;hljs-number&quot;>50px</span>;
+  <span class=&quot;hljs-attribute&quot;>margin-bottom</span>: <span class=&quot;hljs-number&quot;>30px</span>;
+  <span class=&quot;hljs-attribute&quot;>text-transform</span>: uppercase;
 }
 
-.container {
-  display: flex;
+<span class=&quot;hljs-selector-class&quot;>.container</span> {
+  <span class=&quot;hljs-attribute&quot;>display</span>: flex;
 }
 
-.counter-container {
-  width: 120px;
-  height: 120px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
-  background: transparent;
-  border: 2px solid #8c1c44;
-  border-radius: 10px;
-  backdrop-filter: blur(15px);
-  color: #8c1c44;
-  margin: 0 5px;
-  text-transform: uppercase;
+<span class=&quot;hljs-selector-class&quot;>.counter-container</span> {
+  <span class=&quot;hljs-attribute&quot;>width</span>: <span class=&quot;hljs-number&quot;>120px</span>;
+  <span class=&quot;hljs-attribute&quot;>height</span>: <span class=&quot;hljs-number&quot;>120px</span>;
+  <span class=&quot;hljs-attribute&quot;>display</span>: flex;
+  <span class=&quot;hljs-attribute&quot;>flex-direction</span>: column;
+  <span class=&quot;hljs-attribute&quot;>justify-content</span>: center;
+  <span class=&quot;hljs-attribute&quot;>text-align</span>: center;
+  <span class=&quot;hljs-attribute&quot;>background</span>: transparent;
+  <span class=&quot;hljs-attribute&quot;>border</span>: <span class=&quot;hljs-number&quot;>2px</span> solid <span class=&quot;hljs-number&quot;>#8c1c44</span>;
+  <span class=&quot;hljs-attribute&quot;>border-radius</span>: <span class=&quot;hljs-number&quot;>10px</span>;
+  backdrop-<span class=&quot;hljs-attribute&quot;>filter</span>: <span class=&quot;hljs-built_in&quot;>blur</span>(<span class=&quot;hljs-number&quot;>15px</span>);
+  <span class=&quot;hljs-attribute&quot;>color</span>: <span class=&quot;hljs-number&quot;>#8c1c44</span>;
+  <span class=&quot;hljs-attribute&quot;>margin</span>: <span class=&quot;hljs-number&quot;>0</span> <span class=&quot;hljs-number&quot;>5px</span>;
+  <span class=&quot;hljs-attribute&quot;>text-transform</span>: uppercase;
 }
 
-.counter {
-  display: block;
-  font-size: 35px;
-  font-weight: 600;
+<span class=&quot;hljs-selector-class&quot;>.counter</span> {
+  <span class=&quot;hljs-attribute&quot;>display</span>: block;
+  <span class=&quot;hljs-attribute&quot;>font-size</span>: <span class=&quot;hljs-number&quot;>35px</span>;
+  <span class=&quot;hljs-attribute&quot;>font-weight</span>: <span class=&quot;hljs-number&quot;>600</span>;
 }
 </code></pre>
 </li>
-<li><p>script.js</p>
+<li>
+<p>script.js</p>
+<pre class=&quot;highlight&quot;><code class=&quot;hljs&quot;><span class=&quot;hljs-keyword&quot;>const</span> countDownDate = <span class=&quot;hljs-keyword&quot;>new</span> <span class=&quot;hljs-title class_&quot;>Date</span>(<span class=&quot;hljs-string&quot;>&quot;Jan 1, 2024 00:00:00&quot;</span>).<span class=&quot;hljs-title function_&quot;>getTime</span>();
+<span class=&quot;hljs-keyword&quot;>const</span> days = <span class=&quot;hljs-variable language_&quot;>document</span>.<span class=&quot;hljs-title function_&quot;>getElementById</span>(<span class=&quot;hljs-string&quot;>&quot;days&quot;</span>);
+<span class=&quot;hljs-keyword&quot;>const</span> hours = <span class=&quot;hljs-variable language_&quot;>document</span>.<span class=&quot;hljs-title function_&quot;>getElementById</span>(<span class=&quot;hljs-string&quot;>&quot;hours&quot;</span>);
+<span class=&quot;hljs-keyword&quot;>const</span> minutes = <span class=&quot;hljs-variable language_&quot;>document</span>.<span class=&quot;hljs-title function_&quot;>getElementById</span>(<span class=&quot;hljs-string&quot;>&quot;minutes&quot;</span>);
+<span class=&quot;hljs-keyword&quot;>const</span> seconds = <span class=&quot;hljs-variable language_&quot;>document</span>.<span class=&quot;hljs-title function_&quot;>getElementById</span>(<span class=&quot;hljs-string&quot;>&quot;seconds&quot;</span>);
 
-<pre><code class=&quot;language-js&quot;>const countDownDate = new Date(&quot;Jan 1, 2024 00:00:00&quot;).getTime();
-const days = document.getElementById(&quot;days&quot;);
-const hours = document.getElementById(&quot;hours&quot;);
-const minutes = document.getElementById(&quot;minutes&quot;);
-const seconds = document.getElementById(&quot;seconds&quot;);
-
-const interval = setInterval(() =&amp;gt; {
-  const now = new Date().getTime();
-  const duration = countDownDate - now;
+<span class=&quot;hljs-keyword&quot;>const</span> interval = <span class=&quot;hljs-built_in&quot;>setInterval</span>(() =&amp;gt; {
+  <span class=&quot;hljs-keyword&quot;>const</span> now = <span class=&quot;hljs-keyword&quot;>new</span> <span class=&quot;hljs-title class_&quot;>Date</span>().<span class=&quot;hljs-title function_&quot;>getTime</span>();
+  <span class=&quot;hljs-keyword&quot;>const</span> duration = countDownDate - now;
   
-  if (duration &amp;lt; 0) {
-    clearInterval(interval);
-    updateDuration(0);
-    return;
+  <span class=&quot;hljs-keyword&quot;>if</span> (duration &amp;lt; <span class=&quot;hljs-number&quot;>0</span>) {
+    <span class=&quot;hljs-built_in&quot;>clearInterval</span>(interval);
+    <span class=&quot;hljs-title function_&quot;>updateDuration</span>(<span class=&quot;hljs-number&quot;>0</span>);
+    <span class=&quot;hljs-keyword&quot;>return</span>;
   }
   
-  updateDuration(duration);
-  }, 1000);
+  <span class=&quot;hljs-title function_&quot;>updateDuration</span>(duration);
+  }, <span class=&quot;hljs-number&quot;>1000</span>);
 
-function updateDuration(duration)  {
-  const days = Math.floor(duration / (1000 * 60 * 60 * 24));
-  const hours = Math.floor((duration % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  const minutes = Math.floor((duration % (1000 * 60 * 60)) / (1000 * 60));
-  const seconds = Math.floor((duration % (1000 * 60)) / 1000);
+<span class=&quot;hljs-keyword&quot;>function</span> <span class=&quot;hljs-title function_&quot;>updateDuration</span>(<span class=&quot;hljs-params&quot;>duration</span>)  {
+  <span class=&quot;hljs-keyword&quot;>const</span> days = <span class=&quot;hljs-title class_&quot;>Math</span>.<span class=&quot;hljs-title function_&quot;>floor</span>(duration / (<span class=&quot;hljs-number&quot;>1000</span> * <span class=&quot;hljs-number&quot;>60</span> * <span class=&quot;hljs-number&quot;>60</span> * <span class=&quot;hljs-number&quot;>24</span>));
+  <span class=&quot;hljs-keyword&quot;>const</span> hours = <span class=&quot;hljs-title class_&quot;>Math</span>.<span class=&quot;hljs-title function_&quot;>floor</span>((duration % (<span class=&quot;hljs-number&quot;>1000</span> * <span class=&quot;hljs-number&quot;>60</span> * <span class=&quot;hljs-number&quot;>60</span> * <span class=&quot;hljs-number&quot;>24</span>)) / (<span class=&quot;hljs-number&quot;>1000</span> * <span class=&quot;hljs-number&quot;>60</span> * <span class=&quot;hljs-number&quot;>60</span>));
+  <span class=&quot;hljs-keyword&quot;>const</span> minutes = <span class=&quot;hljs-title class_&quot;>Math</span>.<span class=&quot;hljs-title function_&quot;>floor</span>((duration % (<span class=&quot;hljs-number&quot;>1000</span> * <span class=&quot;hljs-number&quot;>60</span> * <span class=&quot;hljs-number&quot;>60</span>)) / (<span class=&quot;hljs-number&quot;>1000</span> * <span class=&quot;hljs-number&quot;>60</span>));
+  <span class=&quot;hljs-keyword&quot;>const</span> seconds = <span class=&quot;hljs-title class_&quot;>Math</span>.<span class=&quot;hljs-title function_&quot;>floor</span>((duration % (<span class=&quot;hljs-number&quot;>1000</span> * <span class=&quot;hljs-number&quot;>60</span>)) / <span class=&quot;hljs-number&quot;>1000</span>);
   
-  days.innerHTML = days;
-  hours.innerHTML = hours;
-  minutes.innerHTML = minutes;
-  seconds.innerHTML = seconds;
+  days.<span class=&quot;hljs-property&quot;>innerHTML</span> = days;
+  hours.<span class=&quot;hljs-property&quot;>innerHTML</span> = hours;
+  minutes.<span class=&quot;hljs-property&quot;>innerHTML</span> = minutes;
+  seconds.<span class=&quot;hljs-property&quot;>innerHTML</span> = seconds;
 }
 </code></pre>
 </li>
 </ul>
-<h2 id=&quot;conclusion&quot;>Conclusion</h2>
+<h2>Conclusion</h2>
 <p>Thank you for reading. We hope you found it useful!</p>
-" blogs="[{&quot;title&quot;:&quot;Todo App using HTML CSS & JS&quot;,&quot;description&quot;:&quot;In this article, we will learn how to create Todo App using HTML, CSS and Javascript. With easy-to-understand source code, you'll be able to follow along and create your own version&quot;,&quot;tags&quot;:[&quot;html&quot;,&quot;css&quot;,&quot;javascript&quot;],&quot;image&quot;:&quot;http://img.youtube.com/vi/T1lBgZVgryw/maxresdefault.jpg&quot;,&quot;date&quot;:&quot;20230529&quot;,&quot;category&quot;:&quot;apps&quot;,&quot;slug&quot;:&quot;apps/todo-list&quot;},{&quot;title&quot;:&quot;Countdown Timer using HTML CSS & JS&quot;,&quot;description&quot;:&quot;In this article, we will learn how to create a Countdown Timer using HTML, CSS and JavaScript. With easy-to-understand source code, you'll be able to follow along and create your own version&quot;,&quot;tags&quot;:[&quot;html&quot;,&quot;css&quot;,&quot;javascript&quot;],&quot;image&quot;:&quot;http://img.youtube.com/vi/q6fFsOX2ihE/maxresdefault.jpg&quot;,&quot;date&quot;:&quot;20230605&quot;,&quot;category&quot;:&quot;apps&quot;,&quot;slug&quot;:&quot;apps/count-down&quot;},{&quot;title&quot;:&quot;Microsoft logo using HTML & CSS&quot;,&quot;description&quot;:&quot;In this article, we will learn how to draw Microsoft logo using HTML and CSS. With easy-to-understand source code, you'll be able to follow along and create your own version&quot;,&quot;tags&quot;:[&quot;html&quot;,&quot;css&quot;],&quot;image&quot;:&quot;http://img.youtube.com/vi/kBneWj-kPqQ/maxresdefault.jpg&quot;,&quot;date&quot;:&quot;20230429&quot;,&quot;category&quot;:&quot;csstips&quot;,&quot;slug&quot;:&quot;csstips/microsoft-logo&quot;},{&quot;title&quot;:&quot;Toggle Switch using HTML & CSS&quot;,&quot;description&quot;:&quot;In this article, we will learn how to create a Toggle Switch using HTML and CSS. With easy-to-understand source code, you'll be able to follow along and create your own version&quot;,&quot;tags&quot;:[&quot;html&quot;,&quot;css&quot;],&quot;image&quot;:&quot;http://img.youtube.com/vi/HN3wu8QKtUA/maxresdefault.jpg&quot;,&quot;date&quot;:&quot;20230430&quot;,&quot;category&quot;:&quot;csstips&quot;,&quot;slug&quot;:&quot;csstips/toggle-switch&quot;},{&quot;title&quot;:&quot;Scroll to the Top Button&quot;,&quot;description&quot;:&quot;In this article, we will learn how to create a Scroll to the Top Button using HTML, CSS and Javascript. With easy-to-understand source code, you'll be able to follow along and create your own version&quot;,&quot;tags&quot;:[&quot;html&quot;,&quot;css&quot;],&quot;image&quot;:&quot;http://img.youtube.com/vi/7Vc_Di-qYEk/maxresdefault.jpg&quot;,&quot;date&quot;:&quot;20230503&quot;,&quot;category&quot;:&quot;csstips&quot;,&quot;slug&quot;:&quot;csstips/scroll-top-button&quot;},{&quot;title&quot;:&quot;Darken Background Image&quot;,&quot;description&quot;:&quot;In this article, we will learn how to darken background image using HTML and CSS. With easy-to-understand source code, you'll be able to follow along and create your own version&quot;,&quot;tags&quot;:[&quot;html&quot;,&quot;css&quot;],&quot;image&quot;:&quot;http://img.youtube.com/vi/IXJA-N26LDg/maxresdefault.jpg&quot;,&quot;date&quot;:&quot;20230506&quot;,&quot;category&quot;:&quot;csstips&quot;,&quot;slug&quot;:&quot;csstips/darken-background-image&quot;},{&quot;title&quot;:&quot;Netflix Logo using HTML and CSS&quot;,&quot;description&quot;:&quot;In this article, we will learn how to create Netflix Logo using HTML and CSS. With easy-to-understand source code, you'll be able to follow along and create your own version&quot;,&quot;tags&quot;:[&quot;html&quot;,&quot;css&quot;],&quot;image&quot;:&quot;http://img.youtube.com/vi/0oNqgcZ8YiA/maxresdefault.jpg&quot;,&quot;date&quot;:&quot;20230508&quot;,&quot;category&quot;:&quot;csstips&quot;,&quot;slug&quot;:&quot;csstips/netflix-logo&quot;},{&quot;title&quot;:&quot;CSS Navigation Bar&quot;,&quot;description&quot;:&quot;In this article, we will learn how to create a simple Navigation Bar using HTML and CSS. With easy-to-understand source code, you'll be able to follow along and create your own version&quot;,&quot;tags&quot;:[&quot;html&quot;,&quot;css&quot;],&quot;image&quot;:&quot;/assets/thumbnail/blog-thumbnail-9.jpg&quot;,&quot;date&quot;:&quot;20230622&quot;,&quot;category&quot;:&quot;csstips&quot;,&quot;slug&quot;:&quot;csstips/navigation-bar&quot;},{&quot;title&quot;:&quot;Adding Number and String in JavaScript&quot;,&quot;description&quot;:&quot;In this article, we will learn how the JavaScript runtime add Nummber and String with easy-to-understand examples&quot;,&quot;tags&quot;:[&quot;html&quot;,&quot;css&quot;],&quot;image&quot;:&quot;http://img.youtube.com/vi/vBwxgSiqmF4/maxresdefault.jpg&quot;,&quot;date&quot;:&quot;20230513&quot;,&quot;category&quot;:&quot;javascript&quot;,&quot;slug&quot;:&quot;javascript/add-number-and-string&quot;},{&quot;title&quot;:&quot;JavaScript Array Methods&quot;,&quot;description&quot;:&quot;In this article, we will learn the JavaScript Array Methods with easy-to-understand examples&quot;,&quot;tags&quot;:[&quot;javascript&quot;],&quot;image&quot;:&quot;/assets/thumbnail/blog-thumbnail-7.jpg&quot;,&quot;date&quot;:&quot;20230624&quot;,&quot;category&quot;:&quot;javascript&quot;,&quot;slug&quot;:&quot;javascript/array-methods&quot;},{&quot;title&quot;:&quot;JavaScript Quizzes&quot;,&quot;description&quot;:&quot;In this article, we will find useful JavaScript quizzes that will help improve your JavaScript skills&quot;,&quot;tags&quot;:[&quot;javascript&quot;,&quot;quizzes&quot;],&quot;image&quot;:&quot;/assets/thumbnail/blog-thumbnail-8.jpg&quot;,&quot;date&quot;:&quot;20230624&quot;,&quot;category&quot;:&quot;javascript&quot;,&quot;slug&quot;:&quot;javascript/quizzes&quot;},{&quot;title&quot;:&quot;Toggle Password Visibility&quot;,&quot;description&quot;:&quot;In this article, we will learn how to create a Toggle Password Visibility button with easy-to-understand examples&quot;,&quot;tags&quot;:[&quot;javascript&quot;],&quot;image&quot;:&quot;/assets/thumbnail/blog-thumbnail-4.jpg&quot;,&quot;date&quot;:&quot;20230624&quot;,&quot;category&quot;:&quot;javascript&quot;,&quot;slug&quot;:&quot;javascript/toggle-password-visibility&quot;},{&quot;title&quot;:&quot;SQL Joins Types&quot;,&quot;description&quot;:&quot;In this article, we will learn SQL Joins Types including inner join, left join, right join and full outer join. It covers their syntax, differences, and practical examples for better understanding&quot;,&quot;tags&quot;:[&quot;sql&quot;],&quot;image&quot;:&quot;/assets/thumbnail/blog-thumbnail-2.jpg&quot;,&quot;date&quot;:&quot;20230618&quot;,&quot;category&quot;:&quot;sql&quot;,&quot;slug&quot;:&quot;sql/joins-types&quot;}]"></app-main>
+" blogs="[{&quot;title&quot;:&quot;Java ThreadLocal Guide&quot;,&quot;description&quot;:&quot;In this article, we will learn SQL Joins Types including inner join, left join, right join and full outer join. It covers their syntax, differences, and practical examples for better understanding&quot;,&quot;tags&quot;:[&quot;java&quot;,&quot;concurrency&quot;],&quot;image&quot;:&quot;/assets/thumbnail/blog-thumbnail-7.jpg&quot;,&quot;date&quot;:&quot;20231116&quot;,&quot;category&quot;:&quot;java&quot;,&quot;slug&quot;:&quot;java/thread-local&quot;},{&quot;title&quot;:&quot;JavaScript Array Methods&quot;,&quot;description&quot;:&quot;In this article, we will learn the JavaScript Array Methods with easy-to-understand examples&quot;,&quot;tags&quot;:[&quot;javascript&quot;],&quot;image&quot;:&quot;/assets/thumbnail/blog-thumbnail-7.jpg&quot;,&quot;date&quot;:&quot;20230624&quot;,&quot;category&quot;:&quot;javascript&quot;,&quot;slug&quot;:&quot;javascript/array-methods&quot;},{&quot;title&quot;:&quot;JavaScript Quizzes&quot;,&quot;description&quot;:&quot;In this article, we will find useful JavaScript quizzes that will help improve your JavaScript skills&quot;,&quot;tags&quot;:[&quot;javascript&quot;,&quot;quizzes&quot;],&quot;image&quot;:&quot;/assets/thumbnail/blog-thumbnail-6.jpg&quot;,&quot;date&quot;:&quot;20230624&quot;,&quot;category&quot;:&quot;javascript&quot;,&quot;slug&quot;:&quot;javascript/quizzes&quot;},{&quot;title&quot;:&quot;Toggle Password Visibility&quot;,&quot;description&quot;:&quot;In this article, we will learn how to create a Toggle Password Visibility button with easy-to-understand examples&quot;,&quot;tags&quot;:[&quot;javascript&quot;],&quot;image&quot;:&quot;/assets/thumbnail/blog-thumbnail-7.jpg&quot;,&quot;date&quot;:&quot;20230624&quot;,&quot;category&quot;:&quot;javascript&quot;,&quot;slug&quot;:&quot;javascript/toggle-password-visibility&quot;},{&quot;title&quot;:&quot;CSS Navigation Bar&quot;,&quot;description&quot;:&quot;In this article, we will learn how to create a simple Navigation Bar using HTML and CSS. With easy-to-understand source code, you'll be able to follow along and create your own version&quot;,&quot;tags&quot;:[&quot;html&quot;,&quot;css&quot;],&quot;image&quot;:&quot;/assets/thumbnail/blog-thumbnail-9.jpg&quot;,&quot;date&quot;:&quot;20230622&quot;,&quot;category&quot;:&quot;csstips&quot;,&quot;slug&quot;:&quot;csstips/navigation-bar&quot;},{&quot;title&quot;:&quot;SQL Joins Types&quot;,&quot;description&quot;:&quot;In this article, we will learn SQL Joins Types including inner join, left join, right join and full outer join. It covers their syntax, differences, and practical examples for better understanding&quot;,&quot;tags&quot;:[&quot;sql&quot;],&quot;image&quot;:&quot;/assets/thumbnail/blog-thumbnail-5.jpg&quot;,&quot;date&quot;:&quot;20230618&quot;,&quot;category&quot;:&quot;sql&quot;,&quot;slug&quot;:&quot;sql/joins-types&quot;},{&quot;title&quot;:&quot;Countdown Timer using HTML CSS & JS&quot;,&quot;description&quot;:&quot;In this article, we will learn how to create a Countdown Timer using HTML, CSS and JavaScript. With easy-to-understand source code, you'll be able to follow along and create your own version&quot;,&quot;tags&quot;:[&quot;html&quot;,&quot;css&quot;,&quot;javascript&quot;],&quot;image&quot;:&quot;http://img.youtube.com/vi/q6fFsOX2ihE/maxresdefault.jpg&quot;,&quot;date&quot;:&quot;20230605&quot;,&quot;category&quot;:&quot;apps&quot;,&quot;slug&quot;:&quot;apps/count-down&quot;},{&quot;title&quot;:&quot;Todo App using HTML CSS & JS&quot;,&quot;description&quot;:&quot;In this article, we will learn how to create Todo App using HTML, CSS and Javascript. With easy-to-understand source code, you'll be able to follow along and create your own version&quot;,&quot;tags&quot;:[&quot;html&quot;,&quot;css&quot;,&quot;javascript&quot;],&quot;image&quot;:&quot;http://img.youtube.com/vi/T1lBgZVgryw/maxresdefault.jpg&quot;,&quot;date&quot;:&quot;20230529&quot;,&quot;category&quot;:&quot;apps&quot;,&quot;slug&quot;:&quot;apps/todo-list&quot;},{&quot;title&quot;:&quot;Adding Number and String in JavaScript&quot;,&quot;description&quot;:&quot;In this article, we will learn how the JavaScript runtime add Nummber and String with easy-to-understand examples&quot;,&quot;tags&quot;:[&quot;html&quot;,&quot;css&quot;],&quot;image&quot;:&quot;http://img.youtube.com/vi/vBwxgSiqmF4/maxresdefault.jpg&quot;,&quot;date&quot;:&quot;20230513&quot;,&quot;category&quot;:&quot;javascript&quot;,&quot;slug&quot;:&quot;javascript/add-number-and-string&quot;},{&quot;title&quot;:&quot;Netflix Logo using HTML and CSS&quot;,&quot;description&quot;:&quot;In this article, we will learn how to create Netflix Logo using HTML and CSS. With easy-to-understand source code, you'll be able to follow along and create your own version&quot;,&quot;tags&quot;:[&quot;html&quot;,&quot;css&quot;],&quot;image&quot;:&quot;http://img.youtube.com/vi/0oNqgcZ8YiA/maxresdefault.jpg&quot;,&quot;date&quot;:&quot;20230508&quot;,&quot;category&quot;:&quot;csstips&quot;,&quot;slug&quot;:&quot;csstips/netflix-logo&quot;},{&quot;title&quot;:&quot;Darken Background Image&quot;,&quot;description&quot;:&quot;In this article, we will learn how to darken background image using HTML and CSS. With easy-to-understand source code, you'll be able to follow along and create your own version&quot;,&quot;tags&quot;:[&quot;html&quot;,&quot;css&quot;],&quot;image&quot;:&quot;http://img.youtube.com/vi/IXJA-N26LDg/maxresdefault.jpg&quot;,&quot;date&quot;:&quot;20230506&quot;,&quot;category&quot;:&quot;csstips&quot;,&quot;slug&quot;:&quot;csstips/darken-background-image&quot;},{&quot;title&quot;:&quot;Scroll to the Top Button&quot;,&quot;description&quot;:&quot;In this article, we will learn how to create a Scroll to the Top Button using HTML, CSS and Javascript. With easy-to-understand source code, you'll be able to follow along and create your own version&quot;,&quot;tags&quot;:[&quot;html&quot;,&quot;css&quot;],&quot;image&quot;:&quot;http://img.youtube.com/vi/7Vc_Di-qYEk/maxresdefault.jpg&quot;,&quot;date&quot;:&quot;20230503&quot;,&quot;category&quot;:&quot;csstips&quot;,&quot;slug&quot;:&quot;csstips/scroll-top-button&quot;},{&quot;title&quot;:&quot;Toggle Switch using HTML & CSS&quot;,&quot;description&quot;:&quot;In this article, we will learn how to create a Toggle Switch using HTML and CSS. With easy-to-understand source code, you'll be able to follow along and create your own version&quot;,&quot;tags&quot;:[&quot;html&quot;,&quot;css&quot;],&quot;image&quot;:&quot;http://img.youtube.com/vi/HN3wu8QKtUA/maxresdefault.jpg&quot;,&quot;date&quot;:&quot;20230430&quot;,&quot;category&quot;:&quot;csstips&quot;,&quot;slug&quot;:&quot;csstips/toggle-switch&quot;},{&quot;title&quot;:&quot;Microsoft logo using HTML & CSS&quot;,&quot;description&quot;:&quot;In this article, we will learn how to draw Microsoft logo using HTML and CSS. With easy-to-understand source code, you'll be able to follow along and create your own version&quot;,&quot;tags&quot;:[&quot;html&quot;,&quot;css&quot;],&quot;image&quot;:&quot;http://img.youtube.com/vi/kBneWj-kPqQ/maxresdefault.jpg&quot;,&quot;date&quot;:&quot;20230429&quot;,&quot;category&quot;:&quot;csstips&quot;,&quot;slug&quot;:&quot;csstips/microsoft-logo&quot;}]"></app-main>
 
         </main>
         <app-scroll-top-button></app-scroll-top-button>
@@ -253,7 +251,4 @@ function updateDuration(duration)  {
 
                 gtag('config', 'G-S6JEVF53JZ');
                 </script>
-            
-            <script src="/assets/scripts/highlight.js"></script>
-            <script src="/assets/scripts/markdown.js"></script>
-        <script src="/assets/scripts/apps/count-down.js"></script></body></html>
+            <script src="/assets/scripts/markdown.js"></script><script src="/assets/scripts/apps/count-down.js"></script></body></html>

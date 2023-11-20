@@ -2,8 +2,6 @@ setTimeout(() => {
   const input = document.querySelector('.input-container input');
   const showIcon = document.querySelector('.show-icon');
   const hideIcon = document.querySelector('.hide-icon');
-  console.log(showIcon);
-  console.log("==============");
   const toggleInput = () => {
     if (input.type === "password") {
       input.type = "text";

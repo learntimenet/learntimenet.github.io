@@ -1,28 +1,42 @@
-function highlight() {
-  document.querySelectorAll('pre code').forEach((el) => {
-    hljs.highlightElement(el);
-    const parent = el.parentElement;
-    parent.classList.add('highlight');
+function formatCode() {
+  document.querySelectorAll('pre.highlight').forEach((el) => {
     const wrapper = document.createElement('div');
     wrapper.classList.add('highlight');
-    wrapper.appendChild(parent.cloneNode(true));
-    parent.parentNode.replaceChild(wrapper, parent);
+    wrapper.appendChild(el.cloneNode(true));
+    el.parentNode.replaceChild(wrapper, el);
+  });
+  document.querySelectorAll('p').forEach((p) => {
+    if (p.innerHTML === '<strong>method-signature</strong>') {
+      p.innerHTML = '';
+      p.nextElementSibling.classList.add('method-signature');
+      return;
+    };
+    if (p.innerHTML === '<strong>without-line-numbers</strong>') {
+      p.innerHTML = '';
+      p.nextElementSibling.classList.add('without-line-numbers');
+      return;
+    }
+    if (p.innerHTML === '<strong>code-tabs</strong>') {
+      p.innerHTML = '';
+      p.nextElementSibling.classList.add('code-tabs');
+      return;
+    }
   });
 }
 
 function formatCodeTabs() {
-  document.querySelectorAll('.code-tabs + ul').forEach((codeTabs) => {
+  document.querySelectorAll('.code-tabs').forEach((codeTabs) => {
     try {
       const tabsContentsId = 'tas-contents-id-' + Date.now() + Math.floor(Math.random() * 100);
       let tabsLinks = '<div class="tab-links">';
       let tabsContents = `<div class="tab-content-wrapper">`;
       codeTabs.querySelectorAll('li').forEach((codeTab) => {
         const tabName = codeTab.querySelector('p').textContent;
+        console.log(codeTab.querySelector('p'));
         const tabId = tabName + '-' + tabsContentsId;
         let tabContent = codeTab.innerHTML;
         if (codeTab.querySelector('div')) tabContent = codeTab.querySelector('div').innerHTML;
         if (codeTab.querySelector('img')) tabContent = codeTab.querySelector('img').outerHTML;
-        console.log(codeTab.querySelector('img'));
         tabsLinks += `<button class="tab-link" onclick="openCode(event, '${tabId}', '${tabsContentsId}')">${tabName}</button>`;
         tabsContents += `<div id="${tabId}" class="tab-content">${tabContent}</div>`;
       });
@@ -71,6 +85,11 @@ function addCodeLineNumbers() {
 function addCodeCopyIcon() {
   try {
     document.querySelectorAll('pre.highlight code').forEach((code) => {
+      code.addEventListener("mouseleave", () => {
+        copiedLabel = code.querySelector('.copy-code-icon-copied-label')
+        if (!copiedLabel) return;
+        copiedLabel.style.opacity = '0';
+      });
       const codeId = 'code-id-' + Date.now() + Math.floor(Math.random() * 100);
       code.id = codeId;
       const copyCodeIconHtml = /* html */ `
@@ -83,7 +102,6 @@ function addCodeCopyIcon() {
         ></span>
       `;
       code.insertAdjacentHTML('beforebegin', copyCodeIconHtml);
-
       code.style.position = 'relative';
     });
   } catch (error) {
@@ -100,22 +118,9 @@ function onCodeCopyIconClick(event, codeId) {
   document.body.appendChild(textarea);
   textarea.select();
   const span = document.createElement('span');
+  span.classList.add('copy-code-icon-copied-label');
   span.innerText = 'Copied';
-  span.style.fontSize = '13px';
-  span.style.fontFamily = 'Roboto';
-  span.style.fontWeight = '500';
-  span.style.position = 'absolute';
-  span.style.top = '13px';
-  span.style.right = '43px';
-  span.style.padding = '2px 14px';
-  span.style.borderRadius = '3px';
-  span.style.backgroundColor = '#F0B23A';
-  span.style.color = 'white';
-  span.classList.add('copied');
-  span.style.opacity = '0';
   code.appendChild(span);
-  span.style.opacity = '1';
-  span.style.transition = 'opacity .2s ease-in-out';
   setTimeout(() => (span.style.opacity = '0'), 1250);
   setTimeout(() => code.removeChild(span), 2000);
   try {
@@ -149,32 +154,6 @@ function delay(fn, ms) {
     clearTimeout(timer);
     timer = setTimeout(fn.bind(null, ...args), ms || 0);
   };
-}
-
-function addPreviousArticleLinkArrowIcon() {
-  const link = document.querySelector('.previous-article');
-  if (!link) return;
-  const label = link.innerHTML;
-  link.innerHTML = /*html*/ `
-    <span class="iconify" data-icon="akar-icons:arrow-left"></span>
-    <div class="previous-article-label-container">
-      <p class="previous-article-label-prefix">Previous</p>
-      <p class="previous-article-label">${label}</p>
-    </div>
-  `;
-}
-
-function addNextArticleLinkArrowIcon() {
-  const link = document.querySelector('.next-article');
-  if (!link) return;
-  const label = link.innerHTML;
-  link.innerHTML = /*html*/ `
-    <div class="next-article-label-container">
-      <p class="next-article-label-prefix">Next</p>
-      <p class="next-article-label">${label}</p>
-    </div>
-    <span class="iconify" data-icon="akar-icons:arrow-right"></span>
-  `;
 }
 
 function formatShellCommands() {
@@ -211,14 +190,12 @@ function resizeIFrame() {
   });
 }
 
-document.addEventListener('DOMContentLoaded', (event) => {
-  highlight();
+document.addEventListener('DOMContentLoaded', () => {
+  formatCode();
   formatCodeTabs();
   addCodeLineNumbers();
   addCodeCopyIcon();
   addCodeShadowOnLeftScroll();
-  addPreviousArticleLinkArrowIcon();
-  addNextArticleLinkArrowIcon();
   formatShellCommands();
   highlightCodeLines();
   resizeIFrame();

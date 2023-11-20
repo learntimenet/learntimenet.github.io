@@ -49,7 +49,7 @@
                         this.page.identifier = window.location.pathname.replace('/fr', '');
                     };
                 </script>
-            <script defer src="/sql/joins-types/joins-types.cbbaad1930a478f78aba.js"></script></head>
+            <script defer src="/sql/joins-types/joins-types.ca468a5f04d4d97578fe.js"></script></head>
             <body>
                 <div class="loader">
                     <svg class="loader-logo" width="1000" height="1000" viewBox="0 0 1000 1000" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -138,13 +138,10 @@
   left: -123px;
 }
 </style>
-
-<h1 id=&quot;video-tutorial&quot;>Video Tutorial</h1>
+<h1>Video Tutorial</h1>
 <div class=&quot;coming-soon&quot;>Coming Soon</div>
-
 <!-- <iframe width=&quot;357&quot; height=&quot;635&quot; src=&quot;https://www.youtube.com/embed/vBwxgSiqmF4&quot; title=&quot;Can you find the correct answer of the following JavaScript code 🤔 #shorts&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&quot; allowfullscreen></iframe> -->
-
-<h2 id=&quot;inner-join&quot;>INNER JOIN</h2>
+<h2>INNER JOIN</h2>
 <p>Combines rows from two tables based on a related column between them</p>
 <style>
   .inner-join .circle-A  {background-color: transparent;}
@@ -162,12 +159,11 @@
     <div class=&quot;circle circle-IB&quot;></div>
   </div>
 </div>
-
-<pre><code class=&quot;language-sql&quot;>SELECT *
-FROM A
-INNER JOIN B ON A.key = B.key
+<pre class=&quot;highlight&quot;><code class=&quot;hljs&quot;><span class=&quot;hljs-keyword&quot;>SELECT</span> <span class=&quot;hljs-operator&quot;>*</span>
+<span class=&quot;hljs-keyword&quot;>FROM</span> A
+<span class=&quot;hljs-keyword&quot;>INNER</span> <span class=&quot;hljs-keyword&quot;>JOIN</span> B <span class=&quot;hljs-keyword&quot;>ON</span> A.key <span class=&quot;hljs-operator&quot;>=</span> B.key
 </code></pre>
-<h2 id=&quot;left-join&quot;>LEFT JOIN</h2>
+<h2>LEFT JOIN</h2>
 <p>Returns all the rows from the left table and the matching rows from the right table based on a specified condition. If there are no matches in the right table, NULL values are returned for the columns of the right table</p>
 <style>
   .left-join .circle-A  {background-color: #ffbe2f;}
@@ -185,12 +181,11 @@ INNER JOIN B ON A.key = B.key
     <div class=&quot;circle circle-IB&quot;></div>
   </div>
 </div>
-
-<pre><code class=&quot;language-sql&quot;>SELECT *
-FROM A
-LEFT JOIN B ON A.key = B.key
+<pre class=&quot;highlight&quot;><code class=&quot;hljs&quot;><span class=&quot;hljs-keyword&quot;>SELECT</span> <span class=&quot;hljs-operator&quot;>*</span>
+<span class=&quot;hljs-keyword&quot;>FROM</span> A
+<span class=&quot;hljs-keyword&quot;>LEFT</span> <span class=&quot;hljs-keyword&quot;>JOIN</span> B <span class=&quot;hljs-keyword&quot;>ON</span> A.key <span class=&quot;hljs-operator&quot;>=</span> B.key
 </code></pre>
-<h2 id=&quot;left-excluding-join&quot;>LEFT EXCLUDING JOIN</h2>
+<h2>LEFT EXCLUDING JOIN</h2>
 <p>Returns all of the rows in the left table that do not match any rows in the right table</p>
 <style>
   .left-excluding-join .circle-A  {background-color: #ffbe2f;}
@@ -208,13 +203,12 @@ LEFT JOIN B ON A.key = B.key
     <div class=&quot;circle circle-IB&quot;></div>
   </div>
 </div>
-
-<pre><code class=&quot;language-sql&quot;>SELECT *
-FROM A
-LEFT JOIN B ON A.key = B.key
-WHERE B.key IS NULL
+<pre class=&quot;highlight&quot;><code class=&quot;hljs&quot;><span class=&quot;hljs-keyword&quot;>SELECT</span> <span class=&quot;hljs-operator&quot;>*</span>
+<span class=&quot;hljs-keyword&quot;>FROM</span> A
+<span class=&quot;hljs-keyword&quot;>LEFT</span> <span class=&quot;hljs-keyword&quot;>JOIN</span> B <span class=&quot;hljs-keyword&quot;>ON</span> A.key <span class=&quot;hljs-operator&quot;>=</span> B.key
+<span class=&quot;hljs-keyword&quot;>WHERE</span> B.key <span class=&quot;hljs-keyword&quot;>IS</span> <span class=&quot;hljs-keyword&quot;>NULL</span>
 </code></pre>
-<h2 id=&quot;right-join&quot;>RIGHT JOIN</h2>
+<h2>RIGHT JOIN</h2>
 <p>Rturns all the rows from the right table and the matching rows from the left table based on a specified condition. If there are no matches in the left table, NULL values are returned for the columns of the left table</p>
 <style>
   .right-join .circle-A  {background-color: var(--white-color);}
@@ -232,12 +226,11 @@ WHERE B.key IS NULL
     <div class=&quot;circle circle-IB&quot;></div>
   </div>
 </div>
-
-<pre><code class=&quot;language-sql&quot;>SELECT *
-FROM A
-RIGHT JOIN B ON A.key = B.key
+<pre class=&quot;highlight&quot;><code class=&quot;hljs&quot;><span class=&quot;hljs-keyword&quot;>SELECT</span> <span class=&quot;hljs-operator&quot;>*</span>
+<span class=&quot;hljs-keyword&quot;>FROM</span> A
+<span class=&quot;hljs-keyword&quot;>RIGHT</span> <span class=&quot;hljs-keyword&quot;>JOIN</span> B <span class=&quot;hljs-keyword&quot;>ON</span> A.key <span class=&quot;hljs-operator&quot;>=</span> B.key
 </code></pre>
-<h2 id=&quot;right-excluding-join&quot;>RIGHT EXCLUDING JOIN</h2>
+<h2>RIGHT EXCLUDING JOIN</h2>
 <p>Returns all of the rows in the right table that do not match any rows in the left table</p>
 <style>
   .right-excluding-join .circle-A  {background-color: var(--white-color);}
@@ -255,13 +248,12 @@ RIGHT JOIN B ON A.key = B.key
     <div class=&quot;circle circle-IB&quot;></div>
   </div>
 </div>
-
-<pre><code class=&quot;language-sql&quot;>SELECT *
-FROM A
-RIGHT JOIN B ON A.key = B.key
-WHERE A.key IS NULL
+<pre class=&quot;highlight&quot;><code class=&quot;hljs&quot;><span class=&quot;hljs-keyword&quot;>SELECT</span> <span class=&quot;hljs-operator&quot;>*</span>
+<span class=&quot;hljs-keyword&quot;>FROM</span> A
+<span class=&quot;hljs-keyword&quot;>RIGHT</span> <span class=&quot;hljs-keyword&quot;>JOIN</span> B <span class=&quot;hljs-keyword&quot;>ON</span> A.key <span class=&quot;hljs-operator&quot;>=</span> B.key
+<span class=&quot;hljs-keyword&quot;>WHERE</span> A.key <span class=&quot;hljs-keyword&quot;>IS</span> <span class=&quot;hljs-keyword&quot;>NULL</span>
 </code></pre>
-<h2 id=&quot;outer-join&quot;>OUTER JOIN</h2>
+<h2>OUTER JOIN</h2>
 <p>Combines the rows from two or more tables based on a specified condition, and includes unmatched rows from one or both tables</p>
 <style>
   .outer-join .circle-A  {background-color: #ffbe2f;}
@@ -279,12 +271,11 @@ WHERE A.key IS NULL
     <div class=&quot;circle circle-IB&quot;></div>
   </div>
 </div>
-
-<pre><code class=&quot;language-sql&quot;>SELECT *
-FROM A
-FULL OUTER JOIN B ON A.key = B.key
+<pre class=&quot;highlight&quot;><code class=&quot;hljs&quot;><span class=&quot;hljs-keyword&quot;>SELECT</span> <span class=&quot;hljs-operator&quot;>*</span>
+<span class=&quot;hljs-keyword&quot;>FROM</span> A
+<span class=&quot;hljs-keyword&quot;>FULL</span> <span class=&quot;hljs-keyword&quot;>OUTER</span> <span class=&quot;hljs-keyword&quot;>JOIN</span> B <span class=&quot;hljs-keyword&quot;>ON</span> A.key <span class=&quot;hljs-operator&quot;>=</span> B.key
 </code></pre>
-<h2 id=&quot;outer-excluding-join&quot;>OUTER EXCLUDING JOIN</h2>
+<h2>OUTER EXCLUDING JOIN</h2>
 <p>Return all of the rows in the left table and all of the records in the right table that do not match</p>
 <style>
   .outer-excluding-join .circle-A  {background-color: #ffbe2f;}
@@ -302,15 +293,14 @@ FULL OUTER JOIN B ON A.key = B.key
     <div class=&quot;circle circle-IB&quot;></div>
   </div>
 </div>
-
-<pre><code class=&quot;language-sql&quot;>SELECT *
-FROM A
-FULL OUTER JOIN B ON A.key = B.key
-WHERE A.key IS NULL OR B.key IS NULL
+<pre class=&quot;highlight&quot;><code class=&quot;hljs&quot;><span class=&quot;hljs-keyword&quot;>SELECT</span> <span class=&quot;hljs-operator&quot;>*</span>
+<span class=&quot;hljs-keyword&quot;>FROM</span> A
+<span class=&quot;hljs-keyword&quot;>FULL</span> <span class=&quot;hljs-keyword&quot;>OUTER</span> <span class=&quot;hljs-keyword&quot;>JOIN</span> B <span class=&quot;hljs-keyword&quot;>ON</span> A.key <span class=&quot;hljs-operator&quot;>=</span> B.key
+<span class=&quot;hljs-keyword&quot;>WHERE</span> A.key <span class=&quot;hljs-keyword&quot;>IS</span> <span class=&quot;hljs-keyword&quot;>NULL</span> <span class=&quot;hljs-keyword&quot;>OR</span> B.key <span class=&quot;hljs-keyword&quot;>IS</span> <span class=&quot;hljs-keyword&quot;>NULL</span>
 </code></pre>
-<h1 id=&quot;conclusion&quot;>Conclusion</h1>
+<h1>Conclusion</h1>
 <p>Thank you for reading. We hope you found it useful!</p>
-" blogs="[{&quot;title&quot;:&quot;Todo App using HTML CSS & JS&quot;,&quot;description&quot;:&quot;In this article, we will learn how to create Todo App using HTML, CSS and Javascript. With easy-to-understand source code, you'll be able to follow along and create your own version&quot;,&quot;tags&quot;:[&quot;html&quot;,&quot;css&quot;,&quot;javascript&quot;],&quot;image&quot;:&quot;http://img.youtube.com/vi/T1lBgZVgryw/maxresdefault.jpg&quot;,&quot;date&quot;:&quot;20230529&quot;,&quot;category&quot;:&quot;apps&quot;,&quot;slug&quot;:&quot;apps/todo-list&quot;},{&quot;title&quot;:&quot;Countdown Timer using HTML CSS & JS&quot;,&quot;description&quot;:&quot;In this article, we will learn how to create a Countdown Timer using HTML, CSS and JavaScript. With easy-to-understand source code, you'll be able to follow along and create your own version&quot;,&quot;tags&quot;:[&quot;html&quot;,&quot;css&quot;,&quot;javascript&quot;],&quot;image&quot;:&quot;http://img.youtube.com/vi/q6fFsOX2ihE/maxresdefault.jpg&quot;,&quot;date&quot;:&quot;20230605&quot;,&quot;category&quot;:&quot;apps&quot;,&quot;slug&quot;:&quot;apps/count-down&quot;},{&quot;title&quot;:&quot;Microsoft logo using HTML & CSS&quot;,&quot;description&quot;:&quot;In this article, we will learn how to draw Microsoft logo using HTML and CSS. With easy-to-understand source code, you'll be able to follow along and create your own version&quot;,&quot;tags&quot;:[&quot;html&quot;,&quot;css&quot;],&quot;image&quot;:&quot;http://img.youtube.com/vi/kBneWj-kPqQ/maxresdefault.jpg&quot;,&quot;date&quot;:&quot;20230429&quot;,&quot;category&quot;:&quot;csstips&quot;,&quot;slug&quot;:&quot;csstips/microsoft-logo&quot;},{&quot;title&quot;:&quot;Toggle Switch using HTML & CSS&quot;,&quot;description&quot;:&quot;In this article, we will learn how to create a Toggle Switch using HTML and CSS. With easy-to-understand source code, you'll be able to follow along and create your own version&quot;,&quot;tags&quot;:[&quot;html&quot;,&quot;css&quot;],&quot;image&quot;:&quot;http://img.youtube.com/vi/HN3wu8QKtUA/maxresdefault.jpg&quot;,&quot;date&quot;:&quot;20230430&quot;,&quot;category&quot;:&quot;csstips&quot;,&quot;slug&quot;:&quot;csstips/toggle-switch&quot;},{&quot;title&quot;:&quot;Scroll to the Top Button&quot;,&quot;description&quot;:&quot;In this article, we will learn how to create a Scroll to the Top Button using HTML, CSS and Javascript. With easy-to-understand source code, you'll be able to follow along and create your own version&quot;,&quot;tags&quot;:[&quot;html&quot;,&quot;css&quot;],&quot;image&quot;:&quot;http://img.youtube.com/vi/7Vc_Di-qYEk/maxresdefault.jpg&quot;,&quot;date&quot;:&quot;20230503&quot;,&quot;category&quot;:&quot;csstips&quot;,&quot;slug&quot;:&quot;csstips/scroll-top-button&quot;},{&quot;title&quot;:&quot;Darken Background Image&quot;,&quot;description&quot;:&quot;In this article, we will learn how to darken background image using HTML and CSS. With easy-to-understand source code, you'll be able to follow along and create your own version&quot;,&quot;tags&quot;:[&quot;html&quot;,&quot;css&quot;],&quot;image&quot;:&quot;http://img.youtube.com/vi/IXJA-N26LDg/maxresdefault.jpg&quot;,&quot;date&quot;:&quot;20230506&quot;,&quot;category&quot;:&quot;csstips&quot;,&quot;slug&quot;:&quot;csstips/darken-background-image&quot;},{&quot;title&quot;:&quot;Netflix Logo using HTML and CSS&quot;,&quot;description&quot;:&quot;In this article, we will learn how to create Netflix Logo using HTML and CSS. With easy-to-understand source code, you'll be able to follow along and create your own version&quot;,&quot;tags&quot;:[&quot;html&quot;,&quot;css&quot;],&quot;image&quot;:&quot;http://img.youtube.com/vi/0oNqgcZ8YiA/maxresdefault.jpg&quot;,&quot;date&quot;:&quot;20230508&quot;,&quot;category&quot;:&quot;csstips&quot;,&quot;slug&quot;:&quot;csstips/netflix-logo&quot;},{&quot;title&quot;:&quot;CSS Navigation Bar&quot;,&quot;description&quot;:&quot;In this article, we will learn how to create a simple Navigation Bar using HTML and CSS. With easy-to-understand source code, you'll be able to follow along and create your own version&quot;,&quot;tags&quot;:[&quot;html&quot;,&quot;css&quot;],&quot;image&quot;:&quot;/assets/thumbnail/blog-thumbnail-9.jpg&quot;,&quot;date&quot;:&quot;20230622&quot;,&quot;category&quot;:&quot;csstips&quot;,&quot;slug&quot;:&quot;csstips/navigation-bar&quot;},{&quot;title&quot;:&quot;Adding Number and String in JavaScript&quot;,&quot;description&quot;:&quot;In this article, we will learn how the JavaScript runtime add Nummber and String with easy-to-understand examples&quot;,&quot;tags&quot;:[&quot;html&quot;,&quot;css&quot;],&quot;image&quot;:&quot;http://img.youtube.com/vi/vBwxgSiqmF4/maxresdefault.jpg&quot;,&quot;date&quot;:&quot;20230513&quot;,&quot;category&quot;:&quot;javascript&quot;,&quot;slug&quot;:&quot;javascript/add-number-and-string&quot;},{&quot;title&quot;:&quot;JavaScript Array Methods&quot;,&quot;description&quot;:&quot;In this article, we will learn the JavaScript Array Methods with easy-to-understand examples&quot;,&quot;tags&quot;:[&quot;javascript&quot;],&quot;image&quot;:&quot;/assets/thumbnail/blog-thumbnail-7.jpg&quot;,&quot;date&quot;:&quot;20230624&quot;,&quot;category&quot;:&quot;javascript&quot;,&quot;slug&quot;:&quot;javascript/array-methods&quot;},{&quot;title&quot;:&quot;JavaScript Quizzes&quot;,&quot;description&quot;:&quot;In this article, we will find useful JavaScript quizzes that will help improve your JavaScript skills&quot;,&quot;tags&quot;:[&quot;javascript&quot;,&quot;quizzes&quot;],&quot;image&quot;:&quot;/assets/thumbnail/blog-thumbnail-8.jpg&quot;,&quot;date&quot;:&quot;20230624&quot;,&quot;category&quot;:&quot;javascript&quot;,&quot;slug&quot;:&quot;javascript/quizzes&quot;},{&quot;title&quot;:&quot;Toggle Password Visibility&quot;,&quot;description&quot;:&quot;In this article, we will learn how to create a Toggle Password Visibility button with easy-to-understand examples&quot;,&quot;tags&quot;:[&quot;javascript&quot;],&quot;image&quot;:&quot;/assets/thumbnail/blog-thumbnail-4.jpg&quot;,&quot;date&quot;:&quot;20230624&quot;,&quot;category&quot;:&quot;javascript&quot;,&quot;slug&quot;:&quot;javascript/toggle-password-visibility&quot;},{&quot;title&quot;:&quot;SQL Joins Types&quot;,&quot;description&quot;:&quot;In this article, we will learn SQL Joins Types including inner join, left join, right join and full outer join. It covers their syntax, differences, and practical examples for better understanding&quot;,&quot;tags&quot;:[&quot;sql&quot;],&quot;image&quot;:&quot;/assets/thumbnail/blog-thumbnail-2.jpg&quot;,&quot;date&quot;:&quot;20230618&quot;,&quot;category&quot;:&quot;sql&quot;,&quot;slug&quot;:&quot;sql/joins-types&quot;}]"></app-main>
+" blogs="[{&quot;title&quot;:&quot;Java ThreadLocal Guide&quot;,&quot;description&quot;:&quot;In this article, we will learn SQL Joins Types including inner join, left join, right join and full outer join. It covers their syntax, differences, and practical examples for better understanding&quot;,&quot;tags&quot;:[&quot;java&quot;,&quot;concurrency&quot;],&quot;image&quot;:&quot;/assets/thumbnail/blog-thumbnail-7.jpg&quot;,&quot;date&quot;:&quot;20231116&quot;,&quot;category&quot;:&quot;java&quot;,&quot;slug&quot;:&quot;java/thread-local&quot;},{&quot;title&quot;:&quot;JavaScript Array Methods&quot;,&quot;description&quot;:&quot;In this article, we will learn the JavaScript Array Methods with easy-to-understand examples&quot;,&quot;tags&quot;:[&quot;javascript&quot;],&quot;image&quot;:&quot;/assets/thumbnail/blog-thumbnail-7.jpg&quot;,&quot;date&quot;:&quot;20230624&quot;,&quot;category&quot;:&quot;javascript&quot;,&quot;slug&quot;:&quot;javascript/array-methods&quot;},{&quot;title&quot;:&quot;JavaScript Quizzes&quot;,&quot;description&quot;:&quot;In this article, we will find useful JavaScript quizzes that will help improve your JavaScript skills&quot;,&quot;tags&quot;:[&quot;javascript&quot;,&quot;quizzes&quot;],&quot;image&quot;:&quot;/assets/thumbnail/blog-thumbnail-6.jpg&quot;,&quot;date&quot;:&quot;20230624&quot;,&quot;category&quot;:&quot;javascript&quot;,&quot;slug&quot;:&quot;javascript/quizzes&quot;},{&quot;title&quot;:&quot;Toggle Password Visibility&quot;,&quot;description&quot;:&quot;In this article, we will learn how to create a Toggle Password Visibility button with easy-to-understand examples&quot;,&quot;tags&quot;:[&quot;javascript&quot;],&quot;image&quot;:&quot;/assets/thumbnail/blog-thumbnail-7.jpg&quot;,&quot;date&quot;:&quot;20230624&quot;,&quot;category&quot;:&quot;javascript&quot;,&quot;slug&quot;:&quot;javascript/toggle-password-visibility&quot;},{&quot;title&quot;:&quot;CSS Navigation Bar&quot;,&quot;description&quot;:&quot;In this article, we will learn how to create a simple Navigation Bar using HTML and CSS. With easy-to-understand source code, you'll be able to follow along and create your own version&quot;,&quot;tags&quot;:[&quot;html&quot;,&quot;css&quot;],&quot;image&quot;:&quot;/assets/thumbnail/blog-thumbnail-9.jpg&quot;,&quot;date&quot;:&quot;20230622&quot;,&quot;category&quot;:&quot;csstips&quot;,&quot;slug&quot;:&quot;csstips/navigation-bar&quot;},{&quot;title&quot;:&quot;SQL Joins Types&quot;,&quot;description&quot;:&quot;In this article, we will learn SQL Joins Types including inner join, left join, right join and full outer join. It covers their syntax, differences, and practical examples for better understanding&quot;,&quot;tags&quot;:[&quot;sql&quot;],&quot;image&quot;:&quot;/assets/thumbnail/blog-thumbnail-5.jpg&quot;,&quot;date&quot;:&quot;20230618&quot;,&quot;category&quot;:&quot;sql&quot;,&quot;slug&quot;:&quot;sql/joins-types&quot;},{&quot;title&quot;:&quot;Countdown Timer using HTML CSS & JS&quot;,&quot;description&quot;:&quot;In this article, we will learn how to create a Countdown Timer using HTML, CSS and JavaScript. With easy-to-understand source code, you'll be able to follow along and create your own version&quot;,&quot;tags&quot;:[&quot;html&quot;,&quot;css&quot;,&quot;javascript&quot;],&quot;image&quot;:&quot;http://img.youtube.com/vi/q6fFsOX2ihE/maxresdefault.jpg&quot;,&quot;date&quot;:&quot;20230605&quot;,&quot;category&quot;:&quot;apps&quot;,&quot;slug&quot;:&quot;apps/count-down&quot;},{&quot;title&quot;:&quot;Todo App using HTML CSS & JS&quot;,&quot;description&quot;:&quot;In this article, we will learn how to create Todo App using HTML, CSS and Javascript. With easy-to-understand source code, you'll be able to follow along and create your own version&quot;,&quot;tags&quot;:[&quot;html&quot;,&quot;css&quot;,&quot;javascript&quot;],&quot;image&quot;:&quot;http://img.youtube.com/vi/T1lBgZVgryw/maxresdefault.jpg&quot;,&quot;date&quot;:&quot;20230529&quot;,&quot;category&quot;:&quot;apps&quot;,&quot;slug&quot;:&quot;apps/todo-list&quot;},{&quot;title&quot;:&quot;Adding Number and String in JavaScript&quot;,&quot;description&quot;:&quot;In this article, we will learn how the JavaScript runtime add Nummber and String with easy-to-understand examples&quot;,&quot;tags&quot;:[&quot;html&quot;,&quot;css&quot;],&quot;image&quot;:&quot;http://img.youtube.com/vi/vBwxgSiqmF4/maxresdefault.jpg&quot;,&quot;date&quot;:&quot;20230513&quot;,&quot;category&quot;:&quot;javascript&quot;,&quot;slug&quot;:&quot;javascript/add-number-and-string&quot;},{&quot;title&quot;:&quot;Netflix Logo using HTML and CSS&quot;,&quot;description&quot;:&quot;In this article, we will learn how to create Netflix Logo using HTML and CSS. With easy-to-understand source code, you'll be able to follow along and create your own version&quot;,&quot;tags&quot;:[&quot;html&quot;,&quot;css&quot;],&quot;image&quot;:&quot;http://img.youtube.com/vi/0oNqgcZ8YiA/maxresdefault.jpg&quot;,&quot;date&quot;:&quot;20230508&quot;,&quot;category&quot;:&quot;csstips&quot;,&quot;slug&quot;:&quot;csstips/netflix-logo&quot;},{&quot;title&quot;:&quot;Darken Background Image&quot;,&quot;description&quot;:&quot;In this article, we will learn how to darken background image using HTML and CSS. With easy-to-understand source code, you'll be able to follow along and create your own version&quot;,&quot;tags&quot;:[&quot;html&quot;,&quot;css&quot;],&quot;image&quot;:&quot;http://img.youtube.com/vi/IXJA-N26LDg/maxresdefault.jpg&quot;,&quot;date&quot;:&quot;20230506&quot;,&quot;category&quot;:&quot;csstips&quot;,&quot;slug&quot;:&quot;csstips/darken-background-image&quot;},{&quot;title&quot;:&quot;Scroll to the Top Button&quot;,&quot;description&quot;:&quot;In this article, we will learn how to create a Scroll to the Top Button using HTML, CSS and Javascript. With easy-to-understand source code, you'll be able to follow along and create your own version&quot;,&quot;tags&quot;:[&quot;html&quot;,&quot;css&quot;],&quot;image&quot;:&quot;http://img.youtube.com/vi/7Vc_Di-qYEk/maxresdefault.jpg&quot;,&quot;date&quot;:&quot;20230503&quot;,&quot;category&quot;:&quot;csstips&quot;,&quot;slug&quot;:&quot;csstips/scroll-top-button&quot;},{&quot;title&quot;:&quot;Toggle Switch using HTML & CSS&quot;,&quot;description&quot;:&quot;In this article, we will learn how to create a Toggle Switch using HTML and CSS. With easy-to-understand source code, you'll be able to follow along and create your own version&quot;,&quot;tags&quot;:[&quot;html&quot;,&quot;css&quot;],&quot;image&quot;:&quot;http://img.youtube.com/vi/HN3wu8QKtUA/maxresdefault.jpg&quot;,&quot;date&quot;:&quot;20230430&quot;,&quot;category&quot;:&quot;csstips&quot;,&quot;slug&quot;:&quot;csstips/toggle-switch&quot;},{&quot;title&quot;:&quot;Microsoft logo using HTML & CSS&quot;,&quot;description&quot;:&quot;In this article, we will learn how to draw Microsoft logo using HTML and CSS. With easy-to-understand source code, you'll be able to follow along and create your own version&quot;,&quot;tags&quot;:[&quot;html&quot;,&quot;css&quot;],&quot;image&quot;:&quot;http://img.youtube.com/vi/kBneWj-kPqQ/maxresdefault.jpg&quot;,&quot;date&quot;:&quot;20230429&quot;,&quot;category&quot;:&quot;csstips&quot;,&quot;slug&quot;:&quot;csstips/microsoft-logo&quot;}]"></app-main>
 
         </main>
         <app-scroll-top-button></app-scroll-top-button>
@@ -345,7 +335,4 @@ WHERE A.key IS NULL OR B.key IS NULL
 
                 gtag('config', 'G-S6JEVF53JZ');
                 </script>
-            
-            <script src="/assets/scripts/highlight.js"></script>
-            <script src="/assets/scripts/markdown.js"></script>
-        <script src="/assets/scripts/sql/joins-types.js"></script></body></html>
+            <script src="/assets/scripts/markdown.js"></script><script src="/assets/scripts/sql/joins-types.js"></script></body></html>
