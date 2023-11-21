@@ -7404,7 +7404,7 @@ hue-6-2: #c18401
 .hljs-meta,
 .hljs-selector-id,
 .hljs-title {
-  color: #4078f2; }
+  color: #1c3f85; }
 
 .hljs-built_in,
 .hljs-title.class_,
@@ -8580,6 +8580,17 @@ iframe {
   font-size: 2.2rem;
   border-radius: 0.3rem; }
 
+code {
+  font-family: 'Roboto Mono';
+  color: #E74C3C;
+  padding: 2px 5px;
+  white-space: nowrap;
+  max-width: 100%;
+  background: #fff;
+  border: solid 1px #e1e4e5;
+  font-size: 75%;
+  border-radius: 2px; }
+
 div[class^='language-'] {
   margin-bottom: 1.45rem; }
 
@@ -8605,6 +8616,8 @@ pre.highlight .code-line-number span {
   font-size: var(--code-font-size); }
 
 pre.highlight code {
+  white-space: inherit;
+  border: none;
   color: var(--text-color-02);
   font-weight: 500;
   font-family: 'Roboto Mono', monospace;
