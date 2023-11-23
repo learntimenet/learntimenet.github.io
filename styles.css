@@ -8600,7 +8600,7 @@ div.highlight {
   border-bottom-left-radius: var(--code-border-bottom-left-radius, var(--border-radius));
   border-bottom-right-radius: var(--code-border-bottom-right-radius, var(--border-radius));
   overflow: hidden;
-  margin-bottom: 1rem; }
+  margin-bottom: 2rem; }
 
 pre.highlight {
   display: flex;
