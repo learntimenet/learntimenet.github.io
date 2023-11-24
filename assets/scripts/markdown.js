@@ -21,6 +21,11 @@ function formatCode() {
       p.nextElementSibling.classList.add('code-tabs');
       return;
     }
+    if (p.innerHTML === '<strong>note-info</strong>') {
+      p.innerHTML = '';
+      p.nextElementSibling.classList.add('note-info');
+      return;
+    }
   });
 }
 
