@@ -8589,7 +8589,7 @@ code {
   background: #fff;
   border: solid 1px #e1e4e5;
   font-size: 75%;
-  border-radius: 2px; }
+  border-radius: 3px; }
 
 div[class^='language-'] {
   margin-bottom: 1.45rem; }
@@ -8820,3 +8820,25 @@ pre.highlight .copy-code-icon-copied-label {
 .tab-content-wrapper img {
   margin-top: 0;
   max-height: 45rem; }
+
+.alert-info,
+.alert-warn,
+.alert-error {
+  border-left: 5px solid;
+  border-radius: 3px;
+  padding: 1.5rem 2.5rem; }
+
+.alert-info {
+  background-color: #d9edf7;
+  color: #31708f;
+  border-color: #7eb6c1; }
+
+.alert-warn {
+  background-color: #fcf8e3;
+  border-color: #b1a181;
+  color: #8a6d3b; }
+
+.alert-error {
+  background-color: #f8d7da;
+  border-color: #dc3545;
+  color: #721c24; }

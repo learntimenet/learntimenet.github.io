@@ -21,9 +21,19 @@ function formatCode() {
       p.nextElementSibling.classList.add('code-tabs');
       return;
     }
-    if (p.innerHTML === '<strong>note-info</strong>') {
+    if (p.innerHTML === '<strong>alert-info</strong>') {
       p.innerHTML = '';
-      p.nextElementSibling.classList.add('note-info');
+      p.nextElementSibling.classList.add('alert-info');
+      return;
+    }
+    if (p.innerHTML === '<strong>alert-warn</strong>') {
+      p.innerHTML = '';
+      p.nextElementSibling.classList.add('alert-warn');
+      return;
+    }
+    if (p.innerHTML === '<strong>alert-error</strong>') {
+      p.innerHTML = '';
+      p.nextElementSibling.classList.add('alert-error');
       return;
     }
   });
