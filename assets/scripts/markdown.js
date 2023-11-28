@@ -47,7 +47,6 @@ function formatCodeTabs() {
       let tabsContents = `<div class="tab-content-wrapper">`;
       codeTabs.querySelectorAll('li').forEach((codeTab) => {
         const tabName = codeTab.querySelector('p').textContent;
-        console.log(codeTab.querySelector('p'));
         const tabId = tabName + '-' + tabsContentsId;
         let tabContent = codeTab.innerHTML;
         if (codeTab.querySelector('div')) tabContent = codeTab.querySelector('div').innerHTML;
