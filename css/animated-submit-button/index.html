@@ -106,66 +106,60 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     transition: all linear 0.15s;
   }
+<p>.output button.animate {
+width: 60px;
+color: transparent;
+}</p>
+<p>.output button.animate::after {
+transition: all .3s ease-in;
+content: '';
+width: 30px;
+height: 30px;
+border: 4px solid #fefefe;
+border-radius: 50%;
+border-left-color: transparent;
+position: absolute;
+left: 50%;
+top: 50%;
+transform: translate(-50%, -50%);
+animation: spin ease-in 2.5s forwards;
+}</p>
+<p>.output button.animate::before {
+transition: all .3s ease-in;
+content: '';
+width: 30px;
+height: 15px;
+border: 4px solid #fefefe;
+border-right: 0;
+border-top: 0;
+position: absolute;
+left: 50%;
+top: 50%;
+transform: translate(-50%, -50%) rotate(0deg) scale(0);
+animation: checkmark ease-in 0.15s forwards 2.5s;
+}</p>
+<p>@keyframes spin {
+0% {
+transform: translate(-50%, -50%) rotate(0deg) scale(1);
+}</p>
+<pre><code>90% {
+  transform: translate(-50%, -50%) rotate(1080deg) scale(1);
+}
 
-
-  .output button.animate {
-    width: 60px;
-    color: transparent;
-  }
-
-  .output button.animate::after {
-    transition: all .3s ease-in;
-    content: '';
-    width: 30px;
-    height: 30px;
-    border: 4px solid #fefefe;
-    border-radius: 50%;
-    border-left-color: transparent;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    animation: spin ease-in 2.5s forwards;
-  }
-
-  .output button.animate::before {
-    transition: all .3s ease-in;
-    content: '';
-    width: 30px;
-    height: 15px;
-    border: 4px solid #fefefe;
-    border-right: 0;
-    border-top: 0;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%) rotate(0deg) scale(0);
-    animation: checkmark ease-in 0.15s forwards 2.5s;
-  }
-
-  @keyframes spin {
-    0% {
-      transform: translate(-50%, -50%) rotate(0deg) scale(1);
-    }
-
-    90% {
-      transform: translate(-50%, -50%) rotate(1080deg) scale(1);
-    }
-
-    100% {
-      transform: scale(0);
-    }
-  }
-
-  @keyframes checkmark {
-    0% {
-      transform: translate(-50%, -50%) rotate(0) scale(0);
-    }
-
-    100% {
-      transform: translate(-50%, -50%) rotate(-45deg) scale(1);
-    }
-  }
+100% {
+  transform: scale(0);
+}
+</code></pre>
+<p>}</p>
+<p>@keyframes checkmark {
+0% {
+transform: translate(-50%, -50%) rotate(0) scale(0);
+}</p>
+<pre><code>100% {
+  transform: translate(-50%, -50%) rotate(-45deg) scale(1);
+}
+</code></pre>
+<p>}</p>
 </style>
 <div class=&quot;output&quot;>
   <button>Submit</button>
@@ -173,9 +167,8 @@
 <h2>Source code</h2>
 <p><strong>code-tabs</strong></p>
 <ul>
-<li>
-<p>index.html</p>
-<pre class=&quot;highlight&quot;><code class=&quot;hljs&quot;><span class=&quot;hljs-meta&quot;>&amp;lt;!DOCTYPE <span class=&quot;hljs-keyword&quot;>html</span>&amp;gt;</span>
+<li><p>index.html</p>
+<pre><code class=&quot;language-html&quot;><pre class=&quot;highlight&quot;><code class=&quot;hljs&quot;><span class=&quot;hljs-meta&quot;>&amp;lt;!DOCTYPE <span class=&quot;hljs-keyword&quot;>html</span>&amp;gt;</span>
 <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>html</span>&amp;gt;</span>
 <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>head</span>&amp;gt;</span>
   <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>link</span> <span class=&quot;hljs-attr&quot;>href</span>=<span class=&quot;hljs-string&quot;>&quot;./style.css&quot;</span> <span class=&quot;hljs-attr&quot;>rel</span>=<span class=&quot;hljs-string&quot;>&quot;stylesheet&quot;</span>&amp;gt;</span>
@@ -184,11 +177,9 @@
   <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>button</span>&amp;gt;</span>Submit<span class=&quot;hljs-tag&quot;>&amp;lt;/<span class=&quot;hljs-name&quot;>button</span>&amp;gt;</span>
   <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>script</span> <span class=&quot;hljs-attr&quot;>src</span>=<span class=&quot;hljs-string&quot;>&quot;./script.js&quot;</span>&amp;gt;</span><span class=&quot;hljs-tag&quot;>&amp;lt;/<span class=&quot;hljs-name&quot;>script</span>&amp;gt;</span>
 <span class=&quot;hljs-tag&quot;>&amp;lt;/<span class=&quot;hljs-name&quot;>body</span>&amp;gt;</span>
-</code></pre>
-</li>
-<li>
-<p>style.css</p>
-<pre class=&quot;highlight&quot;><code class=&quot;hljs&quot;><span class=&quot;hljs-selector-tag&quot;>button</span> {
+</code></pre></code></pre></li>
+<li><p>style.css</p>
+<pre><code class=&quot;language-css&quot;><pre class=&quot;highlight&quot;><code class=&quot;hljs&quot;><span class=&quot;hljs-selector-tag&quot;>button</span> {
   <span class=&quot;hljs-attribute&quot;>position</span>: relative;
   <span class=&quot;hljs-attribute&quot;>font-size</span>: <span class=&quot;hljs-number&quot;>20px</span>;
   <span class=&quot;hljs-attribute&quot;>font-weight</span>: <span class=&quot;hljs-number&quot;>500</span>;
@@ -261,19 +252,16 @@
     <span class=&quot;hljs-attribute&quot;>transform</span>: <span class=&quot;hljs-built_in&quot;>translate</span>(-<span class=&quot;hljs-number&quot;>50%</span>, -<span class=&quot;hljs-number&quot;>50%</span>) <span class=&quot;hljs-built_in&quot;>rotate</span>(-<span class=&quot;hljs-number&quot;>45deg</span>) <span class=&quot;hljs-built_in&quot;>scale</span>(<span class=&quot;hljs-number&quot;>1</span>);
   }
 }
-</code></pre>
-</li>
-<li>
-<p>script.js</p>
-<pre class=&quot;highlight&quot;><code class=&quot;hljs&quot;><span class=&quot;hljs-keyword&quot;>const</span> button = <span class=&quot;hljs-variable language_&quot;>document</span>.<span class=&quot;hljs-title function_&quot;>querySelector</span>(<span class=&quot;hljs-string&quot;>&quot;button&quot;</span>);
+</code></pre></code></pre></li>
+<li><p>script.js</p>
+<pre><code class=&quot;language-js&quot;><pre class=&quot;highlight&quot;><code class=&quot;hljs&quot;><span class=&quot;hljs-keyword&quot;>const</span> button = <span class=&quot;hljs-variable language_&quot;>document</span>.<span class=&quot;hljs-title function_&quot;>querySelector</span>(<span class=&quot;hljs-string&quot;>&quot;button&quot;</span>);
 button.<span class=&quot;hljs-title function_&quot;>addEventListener</span>(<span class=&quot;hljs-string&quot;>&#x27;click&#x27;</span>, (e) =&amp;gt; {
   e.<span class=&quot;hljs-property&quot;>target</span>.<span class=&quot;hljs-property&quot;>classList</span>.<span class=&quot;hljs-title function_&quot;>add</span>(<span class=&quot;hljs-string&quot;>&#x27;animate&#x27;</span>);
   <span class=&quot;hljs-built_in&quot;>setTimeout</span>(() =&amp;gt; {
     e.<span class=&quot;hljs-property&quot;>target</span>.<span class=&quot;hljs-property&quot;>classList</span>.<span class=&quot;hljs-title function_&quot;>remove</span>(<span class=&quot;hljs-string&quot;>&#x27;animate&#x27;</span>);
   }, <span class=&quot;hljs-number&quot;>4500</span>);
 });
-</code></pre>
-</li>
+</code></pre></code></pre></li>
 </ul>
 <h2>Conclusion</h2>
 <p>By following this tutorial, you've learned how to create a simple yet stylish animated submit button using HTML and CSS. Feel free to customize the styles and add additional features to match the design of your website. This animation can significantly improve the user experience and make your site more visually appealing.</p>

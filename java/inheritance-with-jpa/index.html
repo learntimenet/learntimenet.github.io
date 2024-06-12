@@ -82,7 +82,7 @@
 <h2>Understanding Inheritance in Java</h2>
 <p>Java supports two types of inheritance: single inheritance, where a class can extend only one superclass, and multiple inheritance, achieved through interfaces. In the context of JPA, we are primarily concerned with single inheritance, which is the ability of a class to inherit attributes and methods from a single parent class.</p>
 <p>Consider a scenario where you have a class hierarchy representing different types of employees: <code>Employee</code>, <code>Manager</code>, and <code>Engineer</code>. The <code>Manager</code> and <code>Engineer</code> classes extend the <code>Employee</code> class, forming an inheritance hierarchy.</p>
-<pre class=&quot;highlight&quot;><code class=&quot;hljs&quot;><span class=&quot;hljs-keyword&quot;>public</span> <span class=&quot;hljs-keyword&quot;>abstract</span> <span class=&quot;hljs-keyword&quot;>class</span> <span class=&quot;hljs-title class_&quot;>Employee</span> {
+<pre><code class=&quot;language-java&quot;><pre class=&quot;highlight&quot;><code class=&quot;hljs&quot;><span class=&quot;hljs-keyword&quot;>public</span> <span class=&quot;hljs-keyword&quot;>abstract</span> <span class=&quot;hljs-keyword&quot;>class</span> <span class=&quot;hljs-title class_&quot;>Employee</span> {
     <span class=&quot;hljs-keyword&quot;>private</span> Long id;
     <span class=&quot;hljs-keyword&quot;>private</span> String name;
     <span class=&quot;hljs-keyword&quot;>private</span> <span class=&quot;hljs-type&quot;>double</span> salary;
@@ -97,10 +97,10 @@
 <span class=&quot;hljs-keyword&quot;>public</span> <span class=&quot;hljs-keyword&quot;>class</span> <span class=&quot;hljs-title class_&quot;>Engineer</span> <span class=&quot;hljs-keyword&quot;>extends</span> <span class=&quot;hljs-title class_&quot;>Employee</span> {
     <span class=&quot;hljs-keyword&quot;>private</span> String project;
 }
-</code></pre>
+</code></pre></code></pre>
 <h2>1. Single Table Strategy</h2>
 <p>In the single table strategy, all classes in the hierarchy share a single database table, which must contain all the columns required to store the fields of the superclass and all its child classes. A discriminator column is used to distinguish between different object types.</p>
-<pre class=&quot;highlight&quot;><code class=&quot;hljs&quot;><span class=&quot;hljs-keyword&quot;>import</span> javax.persistence.DiscriminatorColumn;
+<pre><code class=&quot;language-java&quot;><pre class=&quot;highlight&quot;><code class=&quot;hljs&quot;><span class=&quot;hljs-keyword&quot;>import</span> javax.persistence.DiscriminatorColumn;
 <span class=&quot;hljs-keyword&quot;>import</span> javax.persistence.Entity;
 <span class=&quot;hljs-keyword&quot;>import</span> javax.persistence.GeneratedValue;
 <span class=&quot;hljs-keyword&quot;>import</span> javax.persistence.GenerationType;
@@ -130,9 +130,9 @@
 <span class=&quot;hljs-keyword&quot;>public</span> <span class=&quot;hljs-keyword&quot;>class</span> <span class=&quot;hljs-title class_&quot;>Engineer</span> <span class=&quot;hljs-keyword&quot;>extends</span> <span class=&quot;hljs-title class_&quot;>Employee</span> {
     <span class=&quot;hljs-comment&quot;>// ...</span>
 }
-</code></pre>
+</code></pre></code></pre>
 <p>The <code>@DiscriminatorValue</code> annotation is used to specify the value in the discriminator column that identifies the object type. This value must be unique for all inherited classes. For the previous example, the database schema will contain the <code>employee</code> table, which can be created as follows:</p>
-<pre class=&quot;highlight&quot;><code class=&quot;hljs&quot;><span class=&quot;hljs-keyword&quot;>create</span> <span class=&quot;hljs-keyword&quot;>table</span> employee (
+<pre><code class=&quot;language-sql&quot;><pre class=&quot;highlight&quot;><code class=&quot;hljs&quot;><span class=&quot;hljs-keyword&quot;>create</span> <span class=&quot;hljs-keyword&quot;>table</span> employee (
     id <span class=&quot;hljs-type&quot;>int</span>(<span class=&quot;hljs-number&quot;>11</span>) AUTO_INCREMENT,
     employee_type <span class=&quot;hljs-type&quot;>varchar</span>(<span class=&quot;hljs-number&quot;>1</span>) <span class=&quot;hljs-keyword&quot;>NOT</span> <span class=&quot;hljs-keyword&quot;>NULL</span>,
     name <span class=&quot;hljs-type&quot;>varchar</span>(<span class=&quot;hljs-number&quot;>255</span>),
@@ -141,10 +141,10 @@
     project <span class=&quot;hljs-type&quot;>varchar</span>(<span class=&quot;hljs-number&quot;>255</span>),
     <span class=&quot;hljs-keyword&quot;>primary</span> key (id)
 );
-</code></pre>
+</code></pre></code></pre>
 <h2>2. Joined Strategy</h2>
 <p>In the joined strategy, each class in the hierarchy is mapped to a separate table. The implementation is very similar to the single table strategy, but the database schema is very different.</p>
-<pre class=&quot;highlight&quot;><code class=&quot;hljs&quot;><span class=&quot;hljs-keyword&quot;>import</span> javax.persistence.DiscriminatorColumn;
+<pre><code class=&quot;language-java&quot;><pre class=&quot;highlight&quot;><code class=&quot;hljs&quot;><span class=&quot;hljs-keyword&quot;>import</span> javax.persistence.DiscriminatorColumn;
 <span class=&quot;hljs-keyword&quot;>import</span> javax.persistence.Entity;
 <span class=&quot;hljs-keyword&quot;>import</span> javax.persistence.GeneratedValue;
 <span class=&quot;hljs-keyword&quot;>import</span> javax.persistence.GenerationType;
@@ -170,9 +170,9 @@
 <span class=&quot;hljs-keyword&quot;>public</span> <span class=&quot;hljs-keyword&quot;>class</span> <span class=&quot;hljs-title class_&quot;>Engineer</span> <span class=&quot;hljs-keyword&quot;>extends</span> <span class=&quot;hljs-title class_&quot;>Employee</span> {
     <span class=&quot;hljs-comment&quot;>// ...</span>
 }
-</code></pre>
+</code></pre></code></pre>
 <p>In this strategy, JPA expects 3 tables in the database schema, which can be created using the following instructions:</p>
-<pre class=&quot;highlight&quot;><code class=&quot;hljs&quot;><span class=&quot;hljs-keyword&quot;>create</span> <span class=&quot;hljs-keyword&quot;>table</span> employee (
+<pre><code class=&quot;language-sql&quot;><pre class=&quot;highlight&quot;><code class=&quot;hljs&quot;><span class=&quot;hljs-keyword&quot;>create</span> <span class=&quot;hljs-keyword&quot;>table</span> employee (
     id <span class=&quot;hljs-type&quot;>int</span>(<span class=&quot;hljs-number&quot;>11</span>) AUTO_INCREMENT,
     employee_type <span class=&quot;hljs-type&quot;>varchar</span>(<span class=&quot;hljs-number&quot;>1</span>) <span class=&quot;hljs-keyword&quot;>NOT</span> <span class=&quot;hljs-keyword&quot;>NULL</span>,
     name <span class=&quot;hljs-type&quot;>varchar</span>(<span class=&quot;hljs-number&quot;>255</span>),
@@ -193,10 +193,10 @@
     <span class=&quot;hljs-keyword&quot;>primary</span> key (id),
     <span class=&quot;hljs-keyword&quot;>foreign</span> key (id) <span class=&quot;hljs-keyword&quot;>references</span> employee(id)
 );
-</code></pre>
+</code></pre></code></pre>
 <h2>3. Table-per-Class Strategy</h2>
 <p>In the table-per-class strategy, each class in the hierarchy is mapped to its own table, including both its attributes and those inherited from the superclass.</p>
-<pre class=&quot;highlight&quot;><code class=&quot;hljs&quot;><span class=&quot;hljs-keyword&quot;>import</span> javax.persistence.Entity;
+<pre><code class=&quot;language-java&quot;><pre class=&quot;highlight&quot;><code class=&quot;hljs&quot;><span class=&quot;hljs-keyword&quot;>import</span> javax.persistence.Entity;
 <span class=&quot;hljs-keyword&quot;>import</span> javax.persistence.GeneratedValue;
 <span class=&quot;hljs-keyword&quot;>import</span> javax.persistence.GenerationType;
 <span class=&quot;hljs-keyword&quot;>import</span> javax.persistence.Id;
@@ -218,9 +218,9 @@
 <span class=&quot;hljs-keyword&quot;>public</span> <span class=&quot;hljs-keyword&quot;>class</span> <span class=&quot;hljs-title class_&quot;>Engineer</span> <span class=&quot;hljs-keyword&quot;>extends</span> <span class=&quot;hljs-title class_&quot;>Employee</span> {
     <span class=&quot;hljs-comment&quot;>// ...</span>
 }
-</code></pre>
+</code></pre></code></pre>
 <p>In this configuration, JPA expects 2 tables in the database schema, which can be created using the following instructions:</p>
-<pre class=&quot;highlight&quot;><code class=&quot;hljs&quot;><span class=&quot;hljs-keyword&quot;>create</span> <span class=&quot;hljs-keyword&quot;>table</span> manager (
+<pre><code class=&quot;language-sql&quot;><pre class=&quot;highlight&quot;><code class=&quot;hljs&quot;><span class=&quot;hljs-keyword&quot;>create</span> <span class=&quot;hljs-keyword&quot;>table</span> manager (
     id <span class=&quot;hljs-type&quot;>int</span>(<span class=&quot;hljs-number&quot;>11</span>) AUTO_INCREMENT,
     name <span class=&quot;hljs-type&quot;>varchar</span>(<span class=&quot;hljs-number&quot;>255</span>),
     salary <span class=&quot;hljs-keyword&quot;>double</span>,
@@ -237,7 +237,7 @@
     <span class=&quot;hljs-keyword&quot;>primary</span> key (id),
     <span class=&quot;hljs-keyword&quot;>foreign</span> key (id) <span class=&quot;hljs-keyword&quot;>references</span> employee(id)
 );
-</code></pre>
+</code></pre></code></pre>
 <p><strong>alert-info</strong></p>
 <p>The <code>employee</code> table is not required, as the <code>Employee</code> class is an abstract class and can't be instanciated.</p>
 <h2>Conclusion</h2>

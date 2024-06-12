@@ -92,52 +92,46 @@
     align-items: center;
     justify-content: center;
   }
-
-  .output .container {
-    display: flex;
-    transition: 0.2s ease-in;
-    box-sizing: content-box;
-    background: #2f3640;
-    height: 40px;
-    border-radius: 40px;
-    padding: 10px;
-
-  }
-
-  .output input:not(:placeholder-shown),
-  .container:hover > input {
-    width: 240px;
-    padding: 0 6px;
-  }
-
-  input:not(:placeholder-shown) + button,
-  .container:hover > button {
-    background: #f0b23a;
-  }
-
-  .output button {
-    font-size: 20px;
-    border: none;
-    color: white;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background: #2f3640;
-    transition: 0.4s;
-  }
-
-  .output input {
-    font-size: 20px;
-    outline:none;
-    color: white;
-    border:none;
-    background: none;
-    padding: 0;
-    font-size: 16px;
-    transition: 0.4s;
-    line-height: 40px;
-    width: 0px;
-  }
+<p>.output .container {
+display: flex;
+transition: 0.2s ease-in;
+box-sizing: content-box;
+background: #2f3640;
+height: 40px;
+border-radius: 40px;
+padding: 10px;</p>
+<p>}</p>
+<p>.output input:not(:placeholder-shown),
+.container:hover &gt; input {
+width: 240px;
+padding: 0 6px;
+}</p>
+<p>input:not(:placeholder-shown) + button,
+.container:hover &gt; button {
+background: #f0b23a;
+}</p>
+<p>.output button {
+font-size: 20px;
+border: none;
+color: white;
+width: 40px;
+height: 40px;
+border-radius: 50%;
+background: #2f3640;
+transition: 0.4s;
+}</p>
+<p>.output input {
+font-size: 20px;
+outline:none;
+color: white;
+border:none;
+background: none;
+padding: 0;
+font-size: 16px;
+transition: 0.4s;
+line-height: 40px;
+width: 0px;
+}</p>
 </style>
 <div class=&quot;output&quot;>
   <div class=&quot;container&quot;>
@@ -150,9 +144,8 @@
 <h2>Source code</h2>
 <p><strong>code-tabs</strong></p>
 <ul>
-<li>
-<p>index.html</p>
-<pre class=&quot;highlight&quot;><code class=&quot;hljs&quot;><span class=&quot;hljs-meta&quot;>&amp;lt;!DOCTYPE <span class=&quot;hljs-keyword&quot;>html</span>&amp;gt;</span>
+<li><p>index.html</p>
+<pre><code class=&quot;language-html&quot;><pre class=&quot;highlight&quot;><code class=&quot;hljs&quot;><span class=&quot;hljs-meta&quot;>&amp;lt;!DOCTYPE <span class=&quot;hljs-keyword&quot;>html</span>&amp;gt;</span>
 <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>html</span>&amp;gt;</span>
 <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>head</span>&amp;gt;</span>
   <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>link</span> <span class=&quot;hljs-attr&quot;>href</span>=<span class=&quot;hljs-string&quot;>&quot;./style.css&quot;</span> <span class=&quot;hljs-attr&quot;>rel</span>=<span class=&quot;hljs-string&quot;>&quot;stylesheet&quot;</span>&amp;gt;</span>
@@ -166,11 +159,9 @@
     <span class=&quot;hljs-tag&quot;>&amp;lt;/<span class=&quot;hljs-name&quot;>button</span>&amp;gt;</span>
   <span class=&quot;hljs-tag&quot;>&amp;lt;/<span class=&quot;hljs-name&quot;>form</span>&amp;gt;</span>
 <span class=&quot;hljs-tag&quot;>&amp;lt;/<span class=&quot;hljs-name&quot;>body</span>&amp;gt;</span>
-</code></pre>
-</li>
-<li>
-<p>style.css</p>
-<pre class=&quot;highlight&quot;><code class=&quot;hljs&quot;><span class=&quot;hljs-selector-tag&quot;>form</span> {
+</code></pre></code></pre></li>
+<li><p>style.css</p>
+<pre><code class=&quot;language-css&quot;><pre class=&quot;highlight&quot;><code class=&quot;hljs&quot;><span class=&quot;hljs-selector-tag&quot;>form</span> {
   <span class=&quot;hljs-attribute&quot;>display</span>: flex;
   <span class=&quot;hljs-attribute&quot;>transition</span>: <span class=&quot;hljs-number&quot;>0.2s</span> ease-in;
   <span class=&quot;hljs-attribute&quot;>box-sizing</span>: content-box;
@@ -215,8 +206,7 @@
 <span class=&quot;hljs-selector-tag&quot;>form</span><span class=&quot;hljs-selector-pseudo&quot;>:hover</span> &amp;gt; <span class=&quot;hljs-selector-tag&quot;>button</span> {
   <span class=&quot;hljs-attribute&quot;>background</span>: <span class=&quot;hljs-number&quot;>#f0b23a</span>;
 }
-</code></pre>
-</li>
+</code></pre></code></pre></li>
 </ul>
 <h2>Conclusion</h2>
 <p>By following this tutorial, you've learned how to create a simple yet stylish animated search bar using HTML and CSS. Feel free to customize the styles and add additional features to match the design of your website. This animation can significantly improve the user experience and make your site more visually appealing.</p>
