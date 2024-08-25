@@ -92,93 +92,89 @@
     align-items: center;
     justify-content: center;
   }
-<p>.output p {
-margin-bottom: 0;
-}</p>
-<p>.border-animation {
-position: relative;
-padding: 20px 30px;
-overflow: hidden;
-height: 100px;
-width: 300px;
-display: flex;
-align-items: center;
-justify-content: center;
-}</p>
-<p>.border-animation .border-top {
-position: absolute;
-top: 0;
-right: 0;
-width: 100%;
-height: 3px;
-background: linear-gradient(to right, #c72b79, #de6d08, #fcc23f);
-animation: animate-border-top 2s linear infinite;
-}</p>
-<p>@keyframes animate-border-top {
-0% {
-transform: translateX(-100%);
-}</p>
-<pre><code>100% {
-  transform: translateX(100%);
-}
-</code></pre>
-<p>}</p>
-<p>.border-animation .border-right {
-position: absolute;
-top: 0;
-right: 0;
-height: 100%;
-width: 3px;
-background: linear-gradient(to bottom, #c72b79, #de6d08, #fcc23f);
-animation: animate-border-right 2s linear infinite;
-animation-delay: 1s;
-}</p>
-<p>@keyframes animate-border-right {
-0% {
-transform: translateY(-100%);
-}</p>
-<pre><code>100% {
-  transform: translateY(100%);
-}
-</code></pre>
-<p>}</p>
-<p>.border-animation .border-bottom {
-position: absolute;
-bottom: 0;
-right: 0;
-width: 100%;
-height: 3px;
-background: linear-gradient(to left, #c72b79, #de6d08, #fcc23f);
-animation: animate-border-bottom 2s linear infinite;
-}</p>
-<p>@keyframes animate-border-bottom {
-0% {
-transform: translateX(100%);
-}</p>
-<pre><code>100% {
-  transform: translateX(-100%);
-}
-</code></pre>
-<p>}</p>
-<p>.border-animation .border-left {
-position: absolute;
-top: 0;
-left: 0;
-height: 100%;
-width: 3px;
-background: linear-gradient(to top, #c72b79, #de6d08, #fcc23f);
-animation: animate-border-left 2s linear infinite;
-animation-delay: 1s;
-}</p>
-<p>@keyframes animate-border-left {
-0% {
-transform: translateY(100%);
-}</p>
-<pre><code>100% {
-  transform: translateY(-100%);
-}
-</code></pre>
-<p>}</p>
+  .output p {
+    margin-bottom: 0;
+  }
+  .border-animation {
+    position: relative;
+    padding: 20px 30px;
+    overflow: hidden;
+    height: 100px;
+    width: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .border-animation .border-top {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(to right, #c72b79, #de6d08, #fcc23f);
+    animation: animate-border-top 2s linear infinite;
+  }
+  @keyframes animate-border-top {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(100%);
+    }
+  }
+  .border-animation .border-right {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 3px;
+    background: linear-gradient(to bottom, #c72b79, #de6d08, #fcc23f);
+    animation: animate-border-right 2s linear infinite;
+    animation-delay: 1s;
+  }
+  @keyframes animate-border-right {
+    0% {
+      transform: translateY(-100%);
+    }
+    100% {
+      transform: translateY(100%);
+    }
+  }
+  .border-animation .border-bottom {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(to left, #c72b79, #de6d08, #fcc23f);
+    animation: animate-border-bottom 2s linear infinite;
+  }
+  @keyframes animate-border-bottom {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+  .border-animation .border-left {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 3px;
+    background: linear-gradient(to top, #c72b79, #de6d08, #fcc23f);
+    animation: animate-border-left 2s linear infinite;
+    animation-delay: 1s;
+  }
+  @keyframes animate-border-left {
+    0% {
+      transform: translateY(100%);
+    }
+    100% {
+      transform: translateY(-100%);
+    }
+  }
 </style>
 <div class=&quot;output&quot;>
   <div class=&quot;border-animation&quot;>
