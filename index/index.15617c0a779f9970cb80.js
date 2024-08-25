@@ -1586,7 +1586,7 @@ eval("var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;\nvar __
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
-eval("module.exports = __webpack_require__.p + \"assets/banner-5e835c216907daf0e8f2.svg\";\n\n//# sourceURL=webpack://learntime.github.io/./src/app/assets/banner.svg?");
+eval("module.exports = __webpack_require__.p + \"assets/banner-1202d24818083ab677b0.svg\";\n\n//# sourceURL=webpack://learntime.github.io/./src/app/assets/banner.svg?");
 
 /***/ }),
 
