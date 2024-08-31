@@ -7341,7 +7341,7 @@ p-radiobutton {
   --code-padding-top: 1.5rem;
   --code-padding-bottom: 1.5rem;
   --code-line-height: 1.45;
-  --code-font-size: 1.8rem;
+  --code-font-size: 1.6rem;
   --max-width: 120rem; }
 
 /*
@@ -8607,11 +8607,9 @@ iframe {
 code {
   font-family: 'Roboto Mono';
   color: #E74C3C;
-  padding: 2px 5px;
   white-space: nowrap;
   max-width: 100%;
   background: #fff;
-  border: solid 1px #e1e4e5;
   font-size: 75%;
   border-radius: 3px; }
 
@@ -8727,11 +8725,13 @@ pre.highlight .copy-code-icon-copied-label {
   .ms div.highlight,
   .method-signature div.highlight {
     border-bottom-left-radius: 0 !important;
-    border-bottom-right-radius: 0 !important; }
+    border-bottom-right-radius: 0 !important;
+    margin-bottom: 0; }
   .ms code,
   .method-signature code {
-    padding: 0.8rem 1.8rem !important;
-    background-color: #f4f4f4 !important; }
+    background-color: #f4f4f4 !important;
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important; }
   .ms + p,
   .method-signature + p {
     padding: 1rem 1.8rem;
