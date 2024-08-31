@@ -75,7 +75,7 @@ eval("// Module\nvar code = \"<div class=\\\"container\\\">\\r\\n    <span class
   \*************************************************************/
 /***/ ((module) => {
 
-eval("// Module\nvar code = \"<app-section-title value=\\\"Comments\\\"></app-section-title>\\r\\n<div class=\\\"section-container\\\">\\r\\n    <div id=\\\"disqus_thread\\\"></div>\\r\\n</div>\";\n// Exports\nmodule.exports = code;\n\n//# sourceURL=webpack://learntime.github.io/./src/app/components/comments/comments.component.html?");
+eval("// Module\nvar code = \"<app-section-title value=\\\"Commentaires\\\"></app-section-title>\\r\\n<div class=\\\"section-container\\\">\\r\\n    <div id=\\\"disqus_thread\\\"></div>\\r\\n</div>\";\n// Exports\nmodule.exports = code;\n\n//# sourceURL=webpack://learntime.github.io/./src/app/components/comments/comments.component.html?");
 
 /***/ }),
 
@@ -95,7 +95,7 @@ eval("// Module\nvar code = \"{{currentValue}}\\r\\n\";\n// Exports\nmodule.expo
   \*********************************************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-eval("// Imports\nvar ___HTML_LOADER_GET_SOURCE_FROM_IMPORT___ = __webpack_require__(/*! ../../../../node_modules/html-loader/dist/runtime/getUrl.js */ \"./node_modules/html-loader/dist/runtime/getUrl.js\");\nvar ___HTML_LOADER_IMPORT_0___ = __webpack_require__(/*! ../../assets/logo.svg */ \"./src/app/assets/logo.svg\");\n// Module\nvar ___HTML_LOADER_REPLACEMENT_0___ = ___HTML_LOADER_GET_SOURCE_FROM_IMPORT___(___HTML_LOADER_IMPORT_0___);\nvar code = \"<footer>\\r\\n    <a class=\\\"logo\\\" href='/' target=\\\"_blank\\\">\\r\\n        <img src='\" + ___HTML_LOADER_REPLACEMENT_0___ + \"' alt='logo' />\\r\\n    </a>\\r\\n    <div class=\\\"links\\\">\\r\\n        <a href=\\\"/about\\\">About</a>\\r\\n        <span>|</span>\\r\\n        <a href=\\\"/privacy\\\">Privacy</a>\\r\\n        <span>|</span>\\r\\n        <a href=\\\"/contact\\\">Contact</a>\\r\\n    </div>\\r\\n    <p class=\\\"all-right-reserved\\\">© 2023 Learn Time. All rights reserved</p>\\r\\n    <ng-content></ng-content>\\r\\n</footer>\";\n// Exports\nmodule.exports = code;\n\n//# sourceURL=webpack://learntime.github.io/./src/app/components/footer/footer.component.html?");
+eval("// Imports\nvar ___HTML_LOADER_GET_SOURCE_FROM_IMPORT___ = __webpack_require__(/*! ../../../../node_modules/html-loader/dist/runtime/getUrl.js */ \"./node_modules/html-loader/dist/runtime/getUrl.js\");\nvar ___HTML_LOADER_IMPORT_0___ = __webpack_require__(/*! ../../assets/logo.svg */ \"./src/app/assets/logo.svg\");\n// Module\nvar ___HTML_LOADER_REPLACEMENT_0___ = ___HTML_LOADER_GET_SOURCE_FROM_IMPORT___(___HTML_LOADER_IMPORT_0___);\nvar code = \"<footer>\\r\\n    <a class=\\\"logo\\\" href='/' target=\\\"_blank\\\">\\r\\n        <img src='\" + ___HTML_LOADER_REPLACEMENT_0___ + \"' alt='logo' />\\r\\n    </a>\\r\\n    <div class=\\\"links\\\">\\r\\n        <a href=\\\"/about\\\">Info</a>\\r\\n        <span>|</span>\\r\\n        <a href=\\\"/privacy\\\">Confidentialité</a>\\r\\n        <span>|</span>\\r\\n        <a href=\\\"/contact\\\">Contact</a>\\r\\n    </div>\\r\\n    <p class=\\\"all-right-reserved\\\">© 2023 Learn Time. Tous les droits réservés</p>\\r\\n    <ng-content></ng-content>\\r\\n</footer>\";\n// Exports\nmodule.exports = code;\n\n//# sourceURL=webpack://learntime.github.io/./src/app/components/footer/footer.component.html?");
 
 /***/ }),
 
@@ -145,7 +145,7 @@ eval("// Imports\nvar ___HTML_LOADER_GET_SOURCE_FROM_IMPORT___ = __webpack_requi
   \********************************************************************************/
 /***/ ((module) => {
 
-eval("// Module\nvar code = \"<nav #nav class=\\\"roof\\\">\\r\\n    <div class=\\\"nav-container max-width\\\">\\r\\n        <div class='left'>\\r\\n            <app-navbar-logo></app-navbar-logo>\\r\\n        </div>\\r\\n        <div class='right'>\\r\\n            <app-icon-link pTooltip=\\\"Search\\\" tooltipPosition=\\\"bottom\\\" class=\\\"navbar-icon\\\" link=\\\"/search\\\" icon='ic:round-search'></app-icon-link>\\r\\n            <app-icon-link pTooltip=\\\"Youtube\\\" tooltipPosition=\\\"bottom\\\" class=\\\"navbar-icon\\\" link=\\\"https://www.youtube.com/@learntimenet\\\" icon='bi:youtube'></app-icon-link>\\r\\n            <app-icon-link pTooltip=\\\"Tiktok\\\" tooltipPosition=\\\"bottom\\\" class=\\\"navbar-icon\\\" link=\\\"https://www.tiktok.com/@learntimenet\\\" icon='ph:tiktok-logo-fill'></app-icon-link>\\r\\n        </div>\\r\\n    </div>\\r\\n</nav>\";\n// Exports\nmodule.exports = code;\n\n//# sourceURL=webpack://learntime.github.io/./src/app/components/navbar/desktop-navbar/desktop-navbar.component.html?");
+eval("// Module\nvar code = \"<nav #nav class=\\\"roof\\\">\\r\\n    <div class=\\\"nav-container max-width\\\">\\r\\n        <div class='left'>\\r\\n            <app-navbar-logo></app-navbar-logo>\\r\\n        </div>\\r\\n        <div class='right'>\\r\\n            <app-icon-link pTooltip=\\\"Recherche\\\" tooltipPosition=\\\"bottom\\\" class=\\\"navbar-icon\\\" link=\\\"/search\\\" icon='ic:round-search'></app-icon-link>\\r\\n            <app-icon-link pTooltip=\\\"Youtube\\\" tooltipPosition=\\\"bottom\\\" class=\\\"navbar-icon\\\" link=\\\"https://www.youtube.com/@learntimenet\\\" icon='bi:youtube'></app-icon-link>\\r\\n            <app-icon-link pTooltip=\\\"Tiktok\\\" tooltipPosition=\\\"bottom\\\" class=\\\"navbar-icon\\\" link=\\\"https://www.tiktok.com/@learntimenet\\\" icon='ph:tiktok-logo-fill'></app-icon-link>\\r\\n        </div>\\r\\n    </div>\\r\\n</nav>\";\n// Exports\nmodule.exports = code;\n\n//# sourceURL=webpack://learntime.github.io/./src/app/components/navbar/desktop-navbar/desktop-navbar.component.html?");
 
 /***/ }),
 
@@ -155,7 +155,7 @@ eval("// Module\nvar code = \"<nav #nav class=\\\"roof\\\">\\r\\n    <div class=
   \******************************************************************************/
 /***/ ((module) => {
 
-eval("// Module\nvar code = \"<nav #navbar class=\\\"nav-container\\\">\\r\\n    <div class=\\\"nav-top\\\">\\r\\n        <app-navbar-logo></app-navbar-logo>\\r\\n        <div class=\\\"menu-button-container\\\">\\r\\n            <app-icon-link pTooltip=\\\"Search\\\" tooltipPosition=\\\"bottom\\\" class=\\\"navbar-icon\\\" link=\\\"/search\\\" icon='ic:round-search'></app-icon-link>\\r\\n            <app-icon-button class=\\\"navbar-icon menu-icon\\\" #openButton (action)=\\\"onOpen()\\\" icon='icon-park-outline:hamburger-button'></app-icon-button>\\r\\n            <app-icon-button class=\\\"navbar-icon close-icon\\\" #closeButton (action)=\\\"onClose()\\\" icon='material-symbols:close-rounded'></app-icon-button>\\r\\n        </div>\\r\\n    </div>\\r\\n\\r\\n    <div class=\\\"menu-container\\\" #navigation>\\r\\n        <a href=\\\"/favourites\\\">Favourites</a>\\r\\n        <a href=\\\"/about\\\">About</a>\\r\\n        <a href=\\\"/contact\\\">Contact</a>\\r\\n    </div>\\r\\n</nav>\";\n// Exports\nmodule.exports = code;\n\n//# sourceURL=webpack://learntime.github.io/./src/app/components/navbar/mobile-navbar/mobile-navbar.component.html?");
+eval("// Module\nvar code = \"<nav #navbar class=\\\"nav-container\\\">\\r\\n    <div class=\\\"nav-top\\\">\\r\\n        <app-navbar-logo></app-navbar-logo>\\r\\n        <div class=\\\"menu-button-container\\\">\\r\\n            <app-icon-link pTooltip=\\\"Recherche\\\" tooltipPosition=\\\"bottom\\\" class=\\\"navbar-icon\\\" link=\\\"/search\\\" icon='ic:round-search'></app-icon-link>\\r\\n            <app-icon-button class=\\\"navbar-icon menu-icon\\\" #openButton (action)=\\\"onOpen()\\\" icon='icon-park-outline:hamburger-button'></app-icon-button>\\r\\n            <app-icon-button class=\\\"navbar-icon close-icon\\\" #closeButton (action)=\\\"onClose()\\\" icon='material-symbols:close-rounded'></app-icon-button>\\r\\n        </div>\\r\\n    </div>\\r\\n\\r\\n    <div class=\\\"menu-container\\\" #navigation>\\r\\n        <a href=\\\"/favourites\\\">Favoris</a>\\r\\n        <a href=\\\"/about\\\">Info</a>\\r\\n        <a href=\\\"/contact\\\">Contact</a>\\r\\n    </div>\\r\\n</nav>\";\n// Exports\nmodule.exports = code;\n\n//# sourceURL=webpack://learntime.github.io/./src/app/components/navbar/mobile-navbar/mobile-navbar.component.html?");
 
 /***/ }),
 
@@ -195,7 +195,7 @@ eval("// Module\nvar code = \"<div class=\\\"cookies-consentement-msg\\\">\\r\\n
   \*******************************************************************************/
 /***/ ((module) => {
 
-eval("// Module\nvar code = \"<div pTooltip=\\\"Scroll to the top\\\" tooltipPosition=\\\"left\\\" #scrollTopButton class=\\\"scroll-top-button\\\" (click)=\\\"onScrollTop()\\\">\\r\\n    <app-icon iconName='ion:chevron-up-outline'></app-icon>\\r\\n</div>\\r\\n\";\n// Exports\nmodule.exports = code;\n\n//# sourceURL=webpack://learntime.github.io/./src/app/components/scroll-top-button/scroll-top-button.component.html?");
+eval("// Module\nvar code = \"<div pTooltip=\\\"Remonter en haut de la page\\\" tooltipPosition=\\\"left\\\" #scrollTopButton class=\\\"scroll-top-button\\\" (click)=\\\"onScrollTop()\\\">\\r\\n    <app-icon iconName='ion:chevron-up-outline'></app-icon>\\r\\n</div>\\r\\n\";\n// Exports\nmodule.exports = code;\n\n//# sourceURL=webpack://learntime.github.io/./src/app/components/scroll-top-button/scroll-top-button.component.html?");
 
 /***/ }),
 
@@ -215,7 +215,7 @@ eval("// Module\nvar code = \"<div class=\\\"section-title\\\">{{value}}</div>\"
   \*********************************************************/
 /***/ ((module) => {
 
-eval("// Module\nvar code = \"<div class=\\\"header\\\">\\r\\n    <app-section-title [value]=\\\"value\\\"></app-section-title>\\r\\n    <a #showallVC class=\\\"showall-link showall-desktop\\\" href=\\\"/{{showall}}\\\">Show All</a>\\r\\n</div>\\r\\n<div class=\\\"slider-container\\\">\\r\\n    <div class=\\\"slider-container-2\\\">\\r\\n        <app-icon #next class=\\\"next-button\\\" iconName='ic:round-arrow-forward-ios' (click)=\\\"toRight()\\\"></app-icon>\\r\\n        <app-icon #prev class=\\\"prev-button\\\" iconName='ic:round-arrow-back-ios' (click)=\\\"toLeft()\\\"></app-icon>\\r\\n        <div #slider class=\\\"slider\\\">\\r\\n            <ng-content></ng-content>\\r\\n        </div>\\r\\n    </div>\\r\\n    <a #showallVC class=\\\"showall-link showall-mobile\\\" href=\\\"/{{showall}}\\\">Show All</a>\\r\\n</div>\";\n// Exports\nmodule.exports = code;\n\n//# sourceURL=webpack://learntime.github.io/./src/app/components/slider/slider.component.html?");
+eval("// Module\nvar code = \"<div class=\\\"header\\\">\\r\\n    <app-section-title [value]=\\\"value\\\"></app-section-title>\\r\\n    <a #showallVC class=\\\"showall-link showall-desktop\\\" href=\\\"/{{showall}}\\\">Afficher Tous</a>\\r\\n</div>\\r\\n<div class=\\\"slider-container\\\">\\r\\n    <div class=\\\"slider-container-2\\\">\\r\\n        <app-icon #next class=\\\"next-button\\\" iconName='ic:round-arrow-forward-ios' (click)=\\\"toRight()\\\"></app-icon>\\r\\n        <app-icon #prev class=\\\"prev-button\\\" iconName='ic:round-arrow-back-ios' (click)=\\\"toLeft()\\\"></app-icon>\\r\\n        <div #slider class=\\\"slider\\\">\\r\\n            <ng-content></ng-content>\\r\\n        </div>\\r\\n    </div>\\r\\n    <a #showallVC class=\\\"showall-link showall-mobile\\\" href=\\\"/{{showall}}\\\">Afficher Tous</a>\\r\\n</div>\";\n// Exports\nmodule.exports = code;\n\n//# sourceURL=webpack://learntime.github.io/./src/app/components/slider/slider.component.html?");
 
 /***/ }),
 
@@ -235,7 +235,7 @@ eval("// Module\nvar code = \"<div pTooltip=\\\"Changer en Anglais\\\" tooltipPo
   \********************************************************************************/
 /***/ ((module) => {
 
-eval("// Module\nvar code = \"<app-icon-button pTooltip=\\\"Like\\\" tooltipPosition=\\\"bottom\\\" #likeButton (action)=\\\"onLike()\\\" icon='mdi:heart-outline'></app-icon-button>\\r\\n<app-icon-button pTooltip=\\\"Unlike\\\" tooltipPosition=\\\"bottom\\\" #dislikeButton (action)=\\\"onDislike()\\\" icon='mdi:heart'></app-icon-button>\";\n// Exports\nmodule.exports = code;\n\n//# sourceURL=webpack://learntime.github.io/./src/app/components/switcher/like-switcher/like-switcher.component.html?");
+eval("// Module\nvar code = \"<app-icon-button pTooltip=\\\"J’aime\\\" tooltipPosition=\\\"bottom\\\" #likeButton (action)=\\\"onLike()\\\" icon='mdi:heart-outline'></app-icon-button>\\r\\n<app-icon-button pTooltip=\\\"Je n’aime plus\\\" tooltipPosition=\\\"bottom\\\" #dislikeButton (action)=\\\"onDislike()\\\" icon='mdi:heart'></app-icon-button>\";\n// Exports\nmodule.exports = code;\n\n//# sourceURL=webpack://learntime.github.io/./src/app/components/switcher/like-switcher/like-switcher.component.html?");
 
 /***/ }),
 
@@ -249,13 +249,23 @@ eval("// Module\nvar code = \"<app-icon-button #disableSoundButton (action)=\\\"
 
 /***/ }),
 
+/***/ "./src/app/pages/404/components/main/main.component.html":
+/*!***************************************************************!*\
+  !*** ./src/app/pages/404/components/main/main.component.html ***!
+  \***************************************************************/
+/***/ ((module) => {
+
+eval("// Module\nvar code = \"<div class=\\\"layout-error-404\\\">\\r\\n  <app-stage-background></app-stage-background>\\r\\n  <h1>404</h1>\\r\\n  <span>Oopss... Page Introuvable</span>\\r\\n  <a href=\\\"/\\\" class=\\\"btn\\\">Retourner à l'accueil</a>\\r\\n</div>\";\n// Exports\nmodule.exports = code;\n\n//# sourceURL=webpack://learntime.github.io/./src/app/pages/404/components/main/main.component.html?");
+
+/***/ }),
+
 /***/ "./src/app/pages/search/components/search-form/search-form.component.html":
 /*!********************************************************************************!*\
   !*** ./src/app/pages/search/components/search-form/search-form.component.html ***!
   \********************************************************************************/
 /***/ ((module) => {
 
-eval("// Module\nvar code = \"<form class=\\\"search-form\\\" [formGroup]=\\\"searchForm\\\" (ngSubmit)=\\\"onSubmit()\\\">\\r\\n        <input type=\\\"text\\\" formControlName=\\\"keyWord\\\" placeholder=\\\"Search\\\">\\r\\n        <input type=\\\"submit\\\" value=\\\"Search\\\">\\r\\n</form>\";\n// Exports\nmodule.exports = code;\n\n//# sourceURL=webpack://learntime.github.io/./src/app/pages/search/components/search-form/search-form.component.html?");
+eval("// Module\nvar code = \"<form class=\\\"search-form\\\" [formGroup]=\\\"searchForm\\\" (ngSubmit)=\\\"onSubmit()\\\">\\r\\n        <input type=\\\"text\\\" formControlName=\\\"keyWord\\\" placeholder=\\\"Rechercher\\\">\\r\\n        <input type=\\\"submit\\\" value=\\\"Rechercher\\\">\\r\\n</form>\";\n// Exports\nmodule.exports = code;\n\n//# sourceURL=webpack://learntime.github.io/./src/app/pages/search/components/search-form/search-form.component.html?");
 
 /***/ }),
 
@@ -517,6 +527,16 @@ eval("module.exports = \"\";\n\n//# sourceURL=webpack://learntime.github.io/./sr
 /***/ ((module) => {
 
 eval("module.exports = \":host {\\n  position: absolute;\\n  top: 2rem;\\n  right: 4rem;\\n  color: #ed673e;\\n  opacity: 0.8;\\n}\\n:host:hover {\\n  opacity: 1;\\n}\";\n\n//# sourceURL=webpack://learntime.github.io/./src/app/components/switcher/sound-switcher/sound-switcher.component.scss?");
+
+/***/ }),
+
+/***/ "./src/app/pages/404/components/main/main.component.scss":
+/*!***************************************************************!*\
+  !*** ./src/app/pages/404/components/main/main.component.scss ***!
+  \***************************************************************/
+/***/ ((module) => {
+
+eval("module.exports = \".layout-error-404 {\\n  height: 100vh;\\n  min-height: 75rem;\\n  display: flex;\\n  flex-direction: column;\\n  justify-content: center;\\n  align-items: center;\\n  color: var(--white-color);\\n}\\n.layout-error-404 h1 {\\n  font-size: 20rem;\\n  line-height: 1;\\n}\\n.layout-error-404 span {\\n  font-size: 3.2rem;\\n}\\n.layout-error-404 .btn {\\n  background-color: var(--primary-color);\\n  color: var(--white-color);\\n  font-size: 2.4rem;\\n  border-radius: 0.6rem;\\n  padding: 1rem 6rem;\\n  margin-top: 4rem;\\n  transition: transform 0.3s cubic-bezier(0.25, 0, 0.2, 1);\\n}\\n.layout-error-404 .btn:hover {\\n  color: var(--white-color) !important;\\n  transform: scale(1.1);\\n}\";\n\n//# sourceURL=webpack://learntime.github.io/./src/app/pages/404/components/main/main.component.scss?");
 
 /***/ }),
 
@@ -1420,25 +1440,36 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 /***/ }),
 
-/***/ "./src/app/pages/contact/contact.main.ts":
-/*!***********************************************!*\
-  !*** ./src/app/pages/contact/contact.main.ts ***!
-  \***********************************************/
+/***/ "./src/app/pages/404/404.main.ts":
+/*!***************************************!*\
+  !*** ./src/app/pages/404/404.main.ts ***!
+  \***************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/platform-browser-dynamic */ \"./node_modules/@angular/platform-browser-dynamic/fesm2020/platform-browser-dynamic.mjs\");\n/* harmony import */ var _contact_module__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./contact.module */ \"./src/app/pages/contact/contact.module.ts\");\n/* harmony import */ var zone_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! zone.js */ \"./node_modules/zone.js/fesm2015/zone.js\");\n/* harmony import */ var zone_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(zone_js__WEBPACK_IMPORTED_MODULE_1__);\n\r\n\r\n\r\n(0,_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_2__.platformBrowserDynamic)().bootstrapModule(_contact_module__WEBPACK_IMPORTED_MODULE_0__.ContactModule);\r\n\n\n//# sourceURL=webpack://learntime.github.io/./src/app/pages/contact/contact.main.ts?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/platform-browser-dynamic */ \"./node_modules/@angular/platform-browser-dynamic/fesm2020/platform-browser-dynamic.mjs\");\n/* harmony import */ var _404_module__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./404.module */ \"./src/app/pages/404/404.module.ts\");\n/* harmony import */ var zone_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! zone.js */ \"./node_modules/zone.js/fesm2015/zone.js\");\n/* harmony import */ var zone_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(zone_js__WEBPACK_IMPORTED_MODULE_1__);\n\r\n\r\n\r\n(0,_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_2__.platformBrowserDynamic)().bootstrapModule(_404_module__WEBPACK_IMPORTED_MODULE_0__.Error404Module);\r\n\n\n//# sourceURL=webpack://learntime.github.io/./src/app/pages/404/404.main.ts?");
 
 /***/ }),
 
-/***/ "./src/app/pages/contact/contact.module.ts":
-/*!*************************************************!*\
-  !*** ./src/app/pages/contact/contact.module.ts ***!
-  \*************************************************/
+/***/ "./src/app/pages/404/404.module.ts":
+/*!*****************************************!*\
+  !*** ./src/app/pages/404/404.module.ts ***!
+  \*****************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"ContactModule\": () => (/* binding */ ContactModule)\n/* harmony export */ });\n/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/core */ \"./node_modules/@angular/core/fesm2020/core.mjs\");\n/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/platform-browser */ \"./node_modules/@angular/platform-browser/fesm2020/platform-browser.mjs\");\n/* harmony import */ var _components_footer_footer_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../components/footer/footer.component */ \"./src/app/components/footer/footer.component.ts\");\n/* harmony import */ var _components_page_title_page_title_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../components/page-title/page-title.component */ \"./src/app/components/page-title/page-title.component.ts\");\n/* harmony import */ var _components_navbar_mobile_navbar_mobile_navbar_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../components/navbar/mobile-navbar/mobile-navbar.component */ \"./src/app/components/navbar/mobile-navbar/mobile-navbar.component.ts\");\n/* harmony import */ var _components_navbar_desktop_navbar_desktop_navbar_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../components/navbar/desktop-navbar/desktop-navbar.component */ \"./src/app/components/navbar/desktop-navbar/desktop-navbar.component.ts\");\n/* harmony import */ var _components_privacy_consentement_privacy_consentement_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../components/privacy-consentement/privacy-consentement.component */ \"./src/app/components/privacy-consentement/privacy-consentement.component.ts\");\n/* harmony import */ var _components_comments_comments_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../components/comments/comments.component */ \"./src/app/components/comments/comments.component.ts\");\n/* harmony import */ var _components_shared_module__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../components/shared-module */ \"./src/app/components/shared-module.ts\");\n/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/common */ \"./node_modules/@angular/common/fesm2020/common.mjs\");\nvar __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {\r\n    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;\r\n    if (typeof Reflect === \"object\" && typeof Reflect.decorate === \"function\") r = Reflect.decorate(decorators, target, key, desc);\r\n    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;\r\n    return c > 3 && r && Object.defineProperty(target, key, r), r;\r\n};\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\nvar ContactModule = /** @class */ (function () {\r\n    function ContactModule() {\r\n    }\r\n    ContactModule = __decorate([\r\n        (0,_angular_core__WEBPACK_IMPORTED_MODULE_7__.NgModule)({\r\n            declarations: [],\r\n            imports: [\r\n                _angular_common__WEBPACK_IMPORTED_MODULE_8__.CommonModule,\r\n                _angular_platform_browser__WEBPACK_IMPORTED_MODULE_9__.BrowserModule,\r\n                _components_shared_module__WEBPACK_IMPORTED_MODULE_6__.SharedModule\r\n            ],\r\n            providers: [],\r\n            bootstrap: [\r\n                _components_navbar_mobile_navbar_mobile_navbar_component__WEBPACK_IMPORTED_MODULE_2__.MobileNavbarComponent,\r\n                _components_navbar_desktop_navbar_desktop_navbar_component__WEBPACK_IMPORTED_MODULE_3__.DesktopNavbarComponent,\r\n                _components_page_title_page_title_component__WEBPACK_IMPORTED_MODULE_1__.PageTitleComponent,\r\n                _components_footer_footer_component__WEBPACK_IMPORTED_MODULE_0__.FooterComponent,\r\n                _components_privacy_consentement_privacy_consentement_component__WEBPACK_IMPORTED_MODULE_4__.PrivacyConsentementComponent,\r\n                _components_comments_comments_component__WEBPACK_IMPORTED_MODULE_5__.CommentsComponent,\r\n            ],\r\n            schemas: [_angular_core__WEBPACK_IMPORTED_MODULE_7__.CUSTOM_ELEMENTS_SCHEMA, _angular_core__WEBPACK_IMPORTED_MODULE_7__.NO_ERRORS_SCHEMA]\r\n        })\r\n    ], ContactModule);\r\n    return ContactModule;\r\n}());\r\n\r\n\n\n//# sourceURL=webpack://learntime.github.io/./src/app/pages/contact/contact.module.ts?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"Error404Module\": () => (/* binding */ Error404Module)\n/* harmony export */ });\n/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/core */ \"./node_modules/@angular/core/fesm2020/core.mjs\");\n/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/platform-browser */ \"./node_modules/@angular/platform-browser/fesm2020/platform-browser.mjs\");\n/* harmony import */ var _components_navbar_desktop_navbar_desktop_navbar_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../components/navbar/desktop-navbar/desktop-navbar.component */ \"./src/app/components/navbar/desktop-navbar/desktop-navbar.component.ts\");\n/* harmony import */ var _components_navbar_mobile_navbar_mobile_navbar_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../components/navbar/mobile-navbar/mobile-navbar.component */ \"./src/app/components/navbar/mobile-navbar/mobile-navbar.component.ts\");\n/* harmony import */ var _components_privacy_consentement_privacy_consentement_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../components/privacy-consentement/privacy-consentement.component */ \"./src/app/components/privacy-consentement/privacy-consentement.component.ts\");\n/* harmony import */ var _components_main_main_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/main/main.component */ \"./src/app/pages/404/components/main/main.component.ts\");\n/* harmony import */ var _components_shared_module__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../components/shared-module */ \"./src/app/components/shared-module.ts\");\n/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/common */ \"./node_modules/@angular/common/fesm2020/common.mjs\");\nvar __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {\r\n    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;\r\n    if (typeof Reflect === \"object\" && typeof Reflect.decorate === \"function\") r = Reflect.decorate(decorators, target, key, desc);\r\n    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;\r\n    return c > 3 && r && Object.defineProperty(target, key, r), r;\r\n};\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\nvar Error404Module = /** @class */ (function () {\r\n    function Error404Module() {\r\n    }\r\n    Error404Module = __decorate([\r\n        (0,_angular_core__WEBPACK_IMPORTED_MODULE_5__.NgModule)({\r\n            declarations: [\r\n                _components_main_main_component__WEBPACK_IMPORTED_MODULE_3__.MainComponent,\r\n            ],\r\n            imports: [\r\n                _angular_common__WEBPACK_IMPORTED_MODULE_6__.CommonModule,\r\n                _angular_platform_browser__WEBPACK_IMPORTED_MODULE_7__.BrowserModule,\r\n                _components_shared_module__WEBPACK_IMPORTED_MODULE_4__.SharedModule\r\n            ],\r\n            providers: [],\r\n            bootstrap: [\r\n                _components_navbar_mobile_navbar_mobile_navbar_component__WEBPACK_IMPORTED_MODULE_1__.MobileNavbarComponent,\r\n                _components_navbar_desktop_navbar_desktop_navbar_component__WEBPACK_IMPORTED_MODULE_0__.DesktopNavbarComponent,\r\n                _components_main_main_component__WEBPACK_IMPORTED_MODULE_3__.MainComponent,\r\n                _components_privacy_consentement_privacy_consentement_component__WEBPACK_IMPORTED_MODULE_2__.PrivacyConsentementComponent\r\n            ],\r\n            schemas: [_angular_core__WEBPACK_IMPORTED_MODULE_5__.CUSTOM_ELEMENTS_SCHEMA, _angular_core__WEBPACK_IMPORTED_MODULE_5__.NO_ERRORS_SCHEMA]\r\n        })\r\n    ], Error404Module);\r\n    return Error404Module;\r\n}());\r\n\r\n\n\n//# sourceURL=webpack://learntime.github.io/./src/app/pages/404/404.module.ts?");
+
+/***/ }),
+
+/***/ "./src/app/pages/404/components/main/main.component.ts":
+/*!*************************************************************!*\
+  !*** ./src/app/pages/404/components/main/main.component.ts ***!
+  \*************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"MainComponent\": () => (/* binding */ MainComponent)\n/* harmony export */ });\n/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ \"./node_modules/@angular/core/fesm2020/core.mjs\");\n/* harmony import */ var _utils_language_utils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../utils/language-utils */ \"./src/app/utils/language-utils.js\");\nvar __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {\r\n    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;\r\n    if (typeof Reflect === \"object\" && typeof Reflect.decorate === \"function\") r = Reflect.decorate(decorators, target, key, desc);\r\n    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;\r\n    return c > 3 && r && Object.defineProperty(target, key, r), r;\r\n};\r\n\r\n\r\nvar MainComponent = /** @class */ (function () {\r\n    function MainComponent() {\r\n    }\r\n    MainComponent.prototype.ngOnInit = function () {\r\n        var pathname = this.getLocationPathName();\r\n        if (_utils_language_utils__WEBPACK_IMPORTED_MODULE_0__.get() == 'fr' && !pathname.startsWith('/fr/404')) {\r\n            this.setLocationPathName('/fr/404');\r\n        }\r\n    };\r\n    MainComponent.prototype.getLocationPathName = function () {\r\n        return window.location.pathname;\r\n    };\r\n    MainComponent.prototype.setLocationPathName = function (pathname) {\r\n        window.location.pathname = pathname;\r\n    };\r\n    MainComponent = __decorate([\r\n        (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.Component)({\r\n            selector: 'app-main',\r\n            template: __webpack_require__(/*! ./main.component.html */ \"./src/app/pages/404/components/main/main.component.html\"),\r\n            styles: [__webpack_require__(/*! .//main.component.scss */ \"./src/app/pages/404/components/main/main.component.scss\")],\r\n        })\r\n    ], MainComponent);\r\n    return MainComponent;\r\n}());\r\n\r\n\n\n//# sourceURL=webpack://learntime.github.io/./src/app/pages/404/components/main/main.component.ts?");
 
 /***/ }),
 
@@ -1762,7 +1793,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module can't be inlined because the eval devtool is used.
-/******/ 	var __webpack_exports__ = __webpack_require__("./src/app/pages/contact/contact.main.ts");
+/******/ 	var __webpack_exports__ = __webpack_require__("./src/app/pages/404/404.main.ts");
 /******/ 	
 /******/ })()
 ;

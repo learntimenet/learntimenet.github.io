@@ -7467,7 +7467,9 @@ body {
   --tab-links-background-color: #fafafa;
   --tab-link-background-color-on-hover: #eeeeee;
   --active-tab-link-color: var(--secondary-color);
-  --active-tab-link-background-color: #eeeeee; }
+  --active-tab-link-background-color: #eeeeee;
+  --contact-background: #FAFAFA
+; }
 
 *,
 *::after,
@@ -7588,6 +7590,11 @@ button {
 
 iframe {
   border-radius: 3px; }
+
+.contact {
+  padding: 2rem;
+  background-color: var(--contact-background);
+  border-radius: 2px; }
 
 /* cyrillic-ext */
 @font-face {
