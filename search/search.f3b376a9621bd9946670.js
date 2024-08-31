@@ -255,7 +255,7 @@ eval("// Module\nvar code = \"<app-icon-button #disableSoundButton (action)=\\\"
   \******************************************************************/
 /***/ ((module) => {
 
-eval("// Module\nvar code = \"<app-page-title></app-page-title>\\r\\n<app-search-form [blogs]=\\\"blogs\\\" (search)=\\\"onSearch($event)\\\"></app-search-form>\\r\\n<app-search-result [blogs]=\\\"displayedBlogs\\\"></app-search-result>\\r\\n<app-no-items *ngIf=\\\"displayedBlogs.length == 0\\\" description=\\\"Aucun blog ne correspond à votre recherche\\\"></app-no-items>\\r\\n<app-comments></app-comments> \\r\\n \";\n// Exports\nmodule.exports = code;\n\n//# sourceURL=webpack://learntime.github.io/./src/app/pages/search/components/main/main.component.html?");
+eval("// Module\nvar code = \"<app-page-title></app-page-title>\\r\\n<app-search-form [blogs]=\\\"blogs\\\" (search)=\\\"onSearch($event)\\\"></app-search-form>\\r\\n<app-search-result [blogs]=\\\"displayedBlogs\\\"></app-search-result>\\r\\n<app-no-items *ngIf=\\\"displayedBlogs.length == 0\\\" description=\\\"Aucun blog ne correspond à votre recherche\\\"></app-no-items>\\r\\n \";\n// Exports\nmodule.exports = code;\n\n//# sourceURL=webpack://learntime.github.io/./src/app/pages/search/components/main/main.component.html?");
 
 /***/ }),
 

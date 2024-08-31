@@ -255,7 +255,7 @@ eval("// Module\nvar code = \"<app-icon-button #disableSoundButton (action)=\\\"
   \**********************************************************************/
 /***/ ((module) => {
 
-eval("// Module\nvar code = \"<app-page-title title=\\\"Mes Favoris\\\"></app-page-title>\\r\\n<app-blog-list *ngIf=\\\"quizzes.length > 0\\\" [quizzes]=\\\"quizzes\\\"></app-blog-list>\\r\\n<app-no-items *ngIf=\\\"quizzes.length == 0\\\" description=\\\"Vous n’avez encore aimé aucun quiz\\\"></app-no-items>\\r\\n<app-comments></app-comments>\";\n// Exports\nmodule.exports = code;\n\n//# sourceURL=webpack://learntime.github.io/./src/app/pages/favourites/components/main/main.component.html?");
+eval("// Module\nvar code = \"<app-page-title title=\\\"Mes Favoris\\\"></app-page-title>\\r\\n<app-blog-list *ngIf=\\\"quizzes.length > 0\\\" [quizzes]=\\\"quizzes\\\"></app-blog-list>\\r\\n<app-no-items *ngIf=\\\"quizzes.length == 0\\\" description=\\\"Vous n’avez encore aimé aucun quiz\\\"></app-no-items>\";\n// Exports\nmodule.exports = code;\n\n//# sourceURL=webpack://learntime.github.io/./src/app/pages/favourites/components/main/main.component.html?");
 
 /***/ }),
 
