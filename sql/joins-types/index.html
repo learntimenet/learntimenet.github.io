@@ -3,8 +3,8 @@
             <html lang="fr">
             <head>
                 <meta charset="utf-8" />
-                <title>Learn Time | SQL Joins Types</title>
-                <meta name="description" content="In this article, we will learn SQL Joins Types including inner join, left join, right join and full outer join. It covers their syntax, differences, and practical examples for better understanding">
+                <title>Learn Time | Types de jointures en SQL</title>
+                <meta name="description" content="Dans cet article, nous allons apprendre les types de jointures SQL, y compris inner join, left join, right join et full outer join. Nous couvrirons leur syntaxe, leurs différences et des exemples pratiques pour une meilleure compréhension">
                 <meta name="viewport" content="width=device-width,initial-scale=1" />
                 <!--
                 <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
@@ -34,13 +34,13 @@
                     .loader.hide {opacity: 0;}
                 </style>
                 
-            <meta property="og:title" content="SQL Joins Types" />
-            <meta property="og:description" content="In this article, we will learn SQL Joins Types including inner join, left join, right join and full outer join. It covers their syntax, differences, and practical examples for better understanding" />
+            <meta property="og:title" content="Types de jointures en SQL" />
+            <meta property="og:description" content="Dans cet article, nous allons apprendre les types de jointures SQL, y compris inner join, left join, right join et full outer join. Nous couvrirons leur syntaxe, leurs différences et des exemples pratiques pour une meilleure compréhension" />
             <meta property="og:image" content="https://learntime.net/assets/images/sql/joins-types.png" />
             <meta name="twitter:card" content="summary_large_image">
             <meta name="twitter:creator" content="@learntimenet">
-            <meta name="twitter:title" content="SQL Joins Types">
-            <meta name="twitter:description" content="In this article, we will learn SQL Joins Types including inner join, left join, right join and full outer join. It covers their syntax, differences, and practical examples for better understanding">
+            <meta name="twitter:title" content="Types de jointures en SQL">
+            <meta name="twitter:description" content="Dans cet article, nous allons apprendre les types de jointures SQL, y compris inner join, left join, right join et full outer join. Nous couvrirons leur syntaxe, leurs différences et des exemples pratiques pour une meilleure compréhension">
             <meta name="twitter:image" content="https://learntime.net/assets/images/sql/joins-types.png">
         
                 <script>
@@ -49,7 +49,7 @@
                         this.page.identifier = window.location.pathname.replace('/en', '');
                     };
                 </script>
-            <script defer src="/sql/joins-types/joins-types.fcc8c31c4287bd99ab26.js"></script></head>
+            <script defer src="/sql/joins-types/joins-types.b4cda80c1c0e167f3969.js"></script></head>
             <body>
                 <div class="loader">
                     <svg class="loader-logo" width="1000" height="1000" viewBox="0 0 1000 1000" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -77,67 +77,66 @@
                     <app-desktop-navbar></app-desktop-navbar>
                     <main class="max-width">
         
-<app-main metadata="{&quot;title&quot;:&quot;SQL Joins Types&quot;,&quot;description&quot;:&quot;In this article, we will learn SQL Joins Types including inner join, left join, right join and full outer join. It covers their syntax, differences, and practical examples for better understanding&quot;,&quot;tags&quot;:[&quot;sql&quot;],&quot;image&quot;:&quot;/assets/thumbnail/blog-thumbnail-5.jpg&quot;,&quot;date&quot;:&quot;20230618&quot;,&quot;category&quot;:&quot;sql&quot;,&quot;slug&quot;:&quot;sql/joins-types&quot;}" html="<style>
+<app-main metadata="{&quot;title&quot;:&quot;Types de jointures en SQL&quot;,&quot;description&quot;:&quot;Dans cet article, nous allons apprendre les types de jointures SQL, y compris inner join, left join, right join et full outer join. Nous couvrirons leur syntaxe, leurs différences et des exemples pratiques pour une meilleure compréhension&quot;,&quot;tags&quot;:[&quot;sql&quot;],&quot;image&quot;:&quot;/assets/thumbnail/blog-thumbnail-2.jpg&quot;,&quot;date&quot;:&quot;20230618&quot;,&quot;category&quot;:&quot;sql&quot;,&quot;slug&quot;:&quot;sql/joins-types&quot;}" html="<style>
   .sql-join-type {
-  /* all: initial; */
-  margin-top: 0px;
-  height: 220px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  position: relative;
-  padding-bottom: 20px;
-}
-.circle {
-  --size: 180px;
-  width: var(--size);
-  height: var(--size);
-  border-radius: 50%;
-  border: 3px solid #1f222b;
-  position: relative;
-  background-color: transparent;
-  transition: all .3s ease-in;
-  overflow: hidden;
-}
-<p>.circle .label {
-position: absolute;
-top: 50%;
-left: 50%;
-transform: translate(-50%, -50%);
-color: #222;
-font-size: 75px;
-font-family: 'ui-serif';
-font-weight: 200;
-transition: all .3s ease-in;
-}</p>
-<p>.circle .label-B {
-padding-left: 25px;
-}</p>
-<p>.circle .label-A {
-padding-right: 25px;
-}</p>
-<p>.circle-IA {
-position: absolute;
-background-color: #ffbe2f;
-right: -123px;
-}</p>
-<p>.circle-B {
-margin-left: -60px;
-margin-top: 6px;
-}
-.circle-IB {
-margin-top: -6px;
-position: absolute;
-background-color: #ffbe2f;
-left: -123px;
-}</p>
+    /* all: initial; */
+    margin-top: 0px;
+    height: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+    padding-bottom: 20px;
+  }
+  .circle {
+    --size: 180px;
+    width: var(--size);
+    height: var(--size);
+    border-radius: 50%;
+    border: 3px solid #1f222b;
+    position: relative;
+    background-color: transparent;
+    transition: all .3s ease-in;
+    overflow: hidden;
+  }
+  .circle .label {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #222;
+    font-size: 75px;
+    font-family: 'ui-serif';
+    font-weight: 200;
+    transition: all .3s ease-in;
+  }
+  .circle .label-B {
+    padding-left: 25px;
+  }
+  .circle .label-A {
+    padding-right: 25px;
+  }
+  .circle-IA {
+    position: absolute;
+    background-color: #ffbe2f;
+    right: -123px;
+  }
+  .circle-B {
+    margin-left: -60px;
+    margin-top: 6px;
+  }
+  .circle-IB {
+    margin-top: -6px;
+    position: absolute;
+    background-color: #ffbe2f;
+    left: -123px;
+  }
 </style>
-<h1>Video Tutorial</h1>
-<div class=&quot;coming-soon&quot;>Coming Soon</div>
-<!-- <iframe width=&quot;357&quot; height=&quot;635&quot; src=&quot;https://www.youtube.com/embed/vBwxgSiqmF4&quot; title=&quot;Can you find the correct answer of the following JavaScript code 🤔 #shorts&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&quot; allowfullscreen></iframe> -->
+<h1>Introduction</h1>
+<p>Dans cet article, nous allons apprendre les types de jointures SQL, y compris inner join, left join, right join et full outer join. Nous couvrirons leur syntaxe, leurs différences et des exemples pratiques pour une meilleure compréhension.</p>
 <h2>INNER JOIN</h2>
-<p>Combines rows from two tables based on a related column between them</p>
+<p>Combine les lignes de deux tables en fonction d'une colonne commune entre elles</p>
 <style>
   .inner-join .circle-A  {background-color: transparent;}
   .inner-join .circle-IA {background-color: #ffbe2f;}
@@ -159,7 +158,7 @@ left: -123px;
 <span class=&quot;hljs-keyword&quot;>INNER</span> <span class=&quot;hljs-keyword&quot;>JOIN</span> B <span class=&quot;hljs-keyword&quot;>ON</span> A.key <span class=&quot;hljs-operator&quot;>=</span> B.key
 </code></pre></code></pre>
 <h2>LEFT JOIN</h2>
-<p>Returns all the rows from the left table and the matching rows from the right table based on a specified condition. If there are no matches in the right table, NULL values are returned for the columns of the right table</p>
+<p>Renvoie toutes les lignes de la table de gauche et les lignes correspondantes de la table de droite en fonction d'une condition spécifiée. S'il n'y a pas de correspondance dans la table de droite, des valeurs NULL sont retournées pour les colonnes de la table de droite</p>
 <style>
   .left-join .circle-A  {background-color: #ffbe2f;}
   .left-join .circle-IA {background-color: #ffbe2f;}
@@ -181,7 +180,7 @@ left: -123px;
 <span class=&quot;hljs-keyword&quot;>LEFT</span> <span class=&quot;hljs-keyword&quot;>JOIN</span> B <span class=&quot;hljs-keyword&quot;>ON</span> A.key <span class=&quot;hljs-operator&quot;>=</span> B.key
 </code></pre></code></pre>
 <h2>LEFT EXCLUDING JOIN</h2>
-<p>Returns all of the rows in the left table that do not match any rows in the right table</p>
+<p>Renvoie toutes les lignes de la table de gauche qui ne correspondent à aucune ligne de la table de droite</p>
 <style>
   .left-excluding-join .circle-A  {background-color: #ffbe2f;}
   .left-excluding-join .circle-IA {background-color: var(--white-color);}
@@ -204,7 +203,7 @@ left: -123px;
 <span class=&quot;hljs-keyword&quot;>WHERE</span> B.key <span class=&quot;hljs-keyword&quot;>IS</span> <span class=&quot;hljs-keyword&quot;>NULL</span>
 </code></pre></code></pre>
 <h2>RIGHT JOIN</h2>
-<p>Rturns all the rows from the right table and the matching rows from the left table based on a specified condition. If there are no matches in the left table, NULL values are returned for the columns of the left table</p>
+<p>Renvoie toutes les lignes de la table de droite et les lignes correspondantes de la table de gauche en fonction d'une condition spécifiée. S'il n'y a pas de correspondance dans la table de gauche, des valeurs NULL sont retournées pour les colonnes de la table de gauche</p>
 <style>
   .right-join .circle-A  {background-color: var(--white-color);}
   .right-join .circle-IA {background-color: #ffbe2f;}
@@ -226,7 +225,7 @@ left: -123px;
 <span class=&quot;hljs-keyword&quot;>RIGHT</span> <span class=&quot;hljs-keyword&quot;>JOIN</span> B <span class=&quot;hljs-keyword&quot;>ON</span> A.key <span class=&quot;hljs-operator&quot;>=</span> B.key
 </code></pre></code></pre>
 <h2>RIGHT EXCLUDING JOIN</h2>
-<p>Returns all of the rows in the right table that do not match any rows in the left table</p>
+<p>Renvoie toutes les lignes de la table de droite qui ne correspondent à aucune ligne de la table de gauche.</p>
 <style>
   .right-excluding-join .circle-A  {background-color: var(--white-color);}
   .right-excluding-join .circle-IA {background-color: var(--white-color);}
@@ -249,7 +248,7 @@ left: -123px;
 <span class=&quot;hljs-keyword&quot;>WHERE</span> A.key <span class=&quot;hljs-keyword&quot;>IS</span> <span class=&quot;hljs-keyword&quot;>NULL</span>
 </code></pre></code></pre>
 <h2>OUTER JOIN</h2>
-<p>Combines the rows from two or more tables based on a specified condition, and includes unmatched rows from one or both tables</p>
+<p>Combine les lignes de deux ou plusieurs tables en fonction d'une condition spécifiée, et inclut les lignes non correspondantes d'une ou des deux tables</p>
 <style>
   .outer-join .circle-A  {background-color: #ffbe2f;}
   .outer-join .circle-IA {background-color: #ffbe2f;}
@@ -271,7 +270,7 @@ left: -123px;
 <span class=&quot;hljs-keyword&quot;>FULL</span> <span class=&quot;hljs-keyword&quot;>OUTER</span> <span class=&quot;hljs-keyword&quot;>JOIN</span> B <span class=&quot;hljs-keyword&quot;>ON</span> A.key <span class=&quot;hljs-operator&quot;>=</span> B.key
 </code></pre></code></pre>
 <h2>OUTER EXCLUDING JOIN</h2>
-<p>Return all of the rows in the left table and all of the records in the right table that do not match</p>
+<p>Renvoie toutes les lignes de la table de gauche et tous les enregistrements de la table de droite qui ne correspondent pas</p>
 <style>
   .outer-excluding-join .circle-A  {background-color: #ffbe2f;}
   .outer-excluding-join .circle-IA {background-color: var(--white-color);}
@@ -293,9 +292,9 @@ left: -123px;
 <span class=&quot;hljs-keyword&quot;>FULL</span> <span class=&quot;hljs-keyword&quot;>OUTER</span> <span class=&quot;hljs-keyword&quot;>JOIN</span> B <span class=&quot;hljs-keyword&quot;>ON</span> A.key <span class=&quot;hljs-operator&quot;>=</span> B.key
 <span class=&quot;hljs-keyword&quot;>WHERE</span> A.key <span class=&quot;hljs-keyword&quot;>IS</span> <span class=&quot;hljs-keyword&quot;>NULL</span> <span class=&quot;hljs-keyword&quot;>OR</span> B.key <span class=&quot;hljs-keyword&quot;>IS</span> <span class=&quot;hljs-keyword&quot;>NULL</span>
 </code></pre></code></pre>
-<h1>Conclusion</h1>
-<p>Thank you for reading. We hope you found it useful!</p>
-" blogs="[{&quot;title&quot;:&quot;Animated Border&quot;,&quot;description&quot;:&quot;Dans cet article, nous allons apprendre à créer une bordure animée en utilisant HTML et CSS. Grâce à un code source facile à comprendre, vous pourrez suivre les étapes et créer votre propre version&quot;,&quot;tags&quot;:[&quot;html&quot;,&quot;css&quot;],&quot;image&quot;:&quot;/assets/thumbnail/animated-border.png&quot;,&quot;date&quot;:&quot;20231128&quot;,&quot;category&quot;:&quot;css&quot;,&quot;slug&quot;:&quot;css/animated-border&quot;},{&quot;title&quot;:&quot;Animated Submit Button&quot;,&quot;description&quot;:&quot;Dans cet article, nous allons apprendre à créer un bouton de soumission animé en utilisant HTML, CSS et JavaScript. Avec un code source facile à comprendre, vous pourrez suivre les étapes et créer votre propre version&quot;,&quot;tags&quot;:[&quot;html&quot;,&quot;css&quot;,&quot;javascript&quot;],&quot;image&quot;:&quot;/assets/thumbnail/animated-submit-button.png&quot;,&quot;date&quot;:&quot;20231128&quot;,&quot;category&quot;:&quot;css&quot;,&quot;slug&quot;:&quot;css/animated-submit-button&quot;},{&quot;title&quot;:&quot;Animated Search Bar&quot;,&quot;description&quot;:&quot;Dans cet article, nous allons apprendre à créer une une barre de recherche animée en utilisant HTML et CSS. Grâce à un code source facile à comprendre, vous pourrez suivre les étapes et créer votre propre version&quot;,&quot;tags&quot;:[&quot;html&quot;,&quot;css&quot;],&quot;image&quot;:&quot;/assets/thumbnail/animated-search-bar.png&quot;,&quot;date&quot;:&quot;20231124&quot;,&quot;category&quot;:&quot;css&quot;,&quot;slug&quot;:&quot;css/animated-search-bar&quot;},{&quot;title&quot;:&quot;Héritage avec JPA&quot;,&quot;description&quot;:&quot;Un guide pratique pour comprendre les différentes stratégies de l'héritage avec l'API de Persistance Java (JPA)&quot;,&quot;tags&quot;:[&quot;Java&quot;,&quot;JPA&quot;],&quot;image&quot;:&quot;/assets/thumbnail/blog-thumbnail-6.jpg&quot;,&quot;date&quot;:&quot;20231121&quot;,&quot;category&quot;:&quot;java&quot;,&quot;slug&quot;:&quot;java/inheritance-with-jpa&quot;},{&quot;title&quot;:&quot;Java ThreadLocal Guide&quot;,&quot;description&quot;:&quot;A quick and practical guide to using ThreadLocal for storing thread-specific data in Java.&quot;,&quot;tags&quot;:[&quot;java&quot;,&quot;concurrency&quot;],&quot;image&quot;:&quot;/assets/thumbnail/blog-thumbnail-7.jpg&quot;,&quot;date&quot;:&quot;20231116&quot;,&quot;category&quot;:&quot;java&quot;,&quot;slug&quot;:&quot;java/thread-local&quot;},{&quot;title&quot;:&quot;JavaScript Array Methods&quot;,&quot;description&quot;:&quot;In this article, we will learn the JavaScript Array Methods with easy-to-understand examples&quot;,&quot;tags&quot;:[&quot;javascript&quot;],&quot;image&quot;:&quot;/assets/thumbnail/blog-thumbnail-8.jpg&quot;,&quot;date&quot;:&quot;20230624&quot;,&quot;category&quot;:&quot;javascript&quot;,&quot;slug&quot;:&quot;javascript/array-methods&quot;},{&quot;title&quot;:&quot;Toggle Input Password Visibility&quot;,&quot;description&quot;:&quot;Dans cet article, nous allons apprendre comment afficher/masquer le mot de passe dans un formulaire en utilisant HTML, CSS et JavaScript. Avec un code source facile à comprendre, vous pourrez suivre les étapes et créer votre propre version&quot;,&quot;tags&quot;:[&quot;html&quot;,&quot;css&quot;,&quot;javascript&quot;,&quot;&quot;],&quot;image&quot;:&quot;/assets/thumbnail/blog-thumbnail-9.jpg&quot;,&quot;date&quot;:&quot;20230624&quot;,&quot;category&quot;:&quot;javascript&quot;,&quot;slug&quot;:&quot;javascript/toggle-password-visibility&quot;},{&quot;title&quot;:&quot;SQL Joins Types&quot;,&quot;description&quot;:&quot;In this article, we will learn SQL Joins Types including inner join, left join, right join and full outer join. It covers their syntax, differences, and practical examples for better understanding&quot;,&quot;tags&quot;:[&quot;sql&quot;],&quot;image&quot;:&quot;/assets/thumbnail/blog-thumbnail-0.jpg&quot;,&quot;date&quot;:&quot;20230618&quot;,&quot;category&quot;:&quot;sql&quot;,&quot;slug&quot;:&quot;sql/joins-types&quot;},{&quot;title&quot;:&quot;Countdown Timer&quot;,&quot;description&quot;:&quot;Dans cet article, nous allons apprendre à créer un minuteur de compte à rebours en utilisant HTML, CSS et JavaScript. Avec un code source facile à comprendre, vous pourrez suivre les étapes et créer votre propre version&quot;,&quot;tags&quot;:[&quot;html&quot;,&quot;css&quot;,&quot;javascript&quot;],&quot;image&quot;:&quot;http://img.youtube.com/vi/q6fFsOX2ihE/maxresdefault.jpg&quot;,&quot;date&quot;:&quot;20230605&quot;,&quot;category&quot;:&quot;apps&quot;,&quot;slug&quot;:&quot;apps/count-down&quot;},{&quot;title&quot;:&quot;Todo List App&quot;,&quot;description&quot;:&quot;Dans cet article, nous allons apprendre à créer une application Todo App en utilisant HTML, CSS et JavaScript. Grâce à un code source facile à comprendre, vous pourrez suivre les étapes et créer votre propre version&quot;,&quot;tags&quot;:[&quot;html&quot;,&quot;css&quot;,&quot;javascript&quot;],&quot;image&quot;:&quot;http://img.youtube.com/vi/T1lBgZVgryw/maxresdefault.jpg&quot;,&quot;date&quot;:&quot;20230529&quot;,&quot;category&quot;:&quot;apps&quot;,&quot;slug&quot;:&quot;apps/todo-list&quot;},{&quot;title&quot;:&quot;Scroll to the Top Button&quot;,&quot;description&quot;:&quot;Dans cet article, nous allons apprendre à créer un bouton pour remonter en haut de la page en utilisant HTML, CSS et JavaScript. Grâce à un code source facile à comprendre, vous pourrez suivre les étapes et créer votre propre version&quot;,&quot;tags&quot;:[&quot;html&quot;,&quot;css&quot;],&quot;image&quot;:&quot;http://img.youtube.com/vi/7Vc_Di-qYEk/maxresdefault.jpg&quot;,&quot;date&quot;:&quot;20230503&quot;,&quot;category&quot;:&quot;css&quot;,&quot;slug&quot;:&quot;css/scroll-top-button&quot;}]"></app-main>
+<h2>Conclusion</h2>
+<p>Merci de votre lecture. Nous espérons que cet article vous a été utile !</p>
+" blogs="[{&quot;title&quot;:&quot;Animated Border&quot;,&quot;description&quot;:&quot;Dans cet article, nous allons apprendre à créer une bordure animée en utilisant HTML et CSS. Grâce à un code source facile à comprendre, vous pourrez suivre les étapes et créer votre propre version&quot;,&quot;tags&quot;:[&quot;html&quot;,&quot;css&quot;],&quot;image&quot;:&quot;/assets/thumbnail/animated-border.png&quot;,&quot;date&quot;:&quot;20231128&quot;,&quot;category&quot;:&quot;css&quot;,&quot;slug&quot;:&quot;css/animated-border&quot;},{&quot;title&quot;:&quot;Animated Submit Button&quot;,&quot;description&quot;:&quot;Dans cet article, nous allons apprendre à créer un bouton de soumission animé en utilisant HTML, CSS et JavaScript. Avec un code source facile à comprendre, vous pourrez suivre les étapes et créer votre propre version&quot;,&quot;tags&quot;:[&quot;html&quot;,&quot;css&quot;,&quot;javascript&quot;],&quot;image&quot;:&quot;/assets/thumbnail/animated-submit-button.png&quot;,&quot;date&quot;:&quot;20231128&quot;,&quot;category&quot;:&quot;css&quot;,&quot;slug&quot;:&quot;css/animated-submit-button&quot;},{&quot;title&quot;:&quot;Animated Search Bar&quot;,&quot;description&quot;:&quot;Dans cet article, nous allons apprendre à créer une une barre de recherche animée en utilisant HTML et CSS. Grâce à un code source facile à comprendre, vous pourrez suivre les étapes et créer votre propre version&quot;,&quot;tags&quot;:[&quot;html&quot;,&quot;css&quot;],&quot;image&quot;:&quot;/assets/thumbnail/animated-search-bar.png&quot;,&quot;date&quot;:&quot;20231124&quot;,&quot;category&quot;:&quot;css&quot;,&quot;slug&quot;:&quot;css/animated-search-bar&quot;},{&quot;title&quot;:&quot;Héritage avec JPA&quot;,&quot;description&quot;:&quot;Un guide pratique pour comprendre les différentes stratégies d'héritage avec l'API de persistance Java (JPA). Ce guide vous aidera à maîtriser les concepts essentiels pour modéliser efficacement vos entités dans une base de données relationnelle&quot;,&quot;tags&quot;:[&quot;Java&quot;,&quot;JPA&quot;],&quot;image&quot;:&quot;/assets/thumbnail/blog-thumbnail-5.jpg&quot;,&quot;date&quot;:&quot;20231121&quot;,&quot;category&quot;:&quot;java&quot;,&quot;slug&quot;:&quot;java/inheritance-with-jpa&quot;},{&quot;title&quot;:&quot;Java ThreadLocal Guide&quot;,&quot;description&quot;:&quot;A quick and practical guide to using ThreadLocal for storing thread-specific data in Java.&quot;,&quot;tags&quot;:[&quot;java&quot;,&quot;concurrency&quot;],&quot;image&quot;:&quot;/assets/thumbnail/blog-thumbnail-6.jpg&quot;,&quot;date&quot;:&quot;20231116&quot;,&quot;category&quot;:&quot;java&quot;,&quot;slug&quot;:&quot;java/thread-local&quot;},{&quot;title&quot;:&quot;Toggle Input Password Visibility&quot;,&quot;description&quot;:&quot;Dans cet article, nous allons apprendre comment afficher/masquer le mot de passe dans un formulaire en utilisant HTML, CSS et JavaScript. Avec un code source facile à comprendre, vous pourrez suivre les étapes et créer votre propre version&quot;,&quot;tags&quot;:[&quot;html&quot;,&quot;css&quot;,&quot;javascript&quot;,&quot;&quot;],&quot;image&quot;:&quot;/assets/thumbnail/blog-thumbnail-7.jpg&quot;,&quot;date&quot;:&quot;20230624&quot;,&quot;category&quot;:&quot;javascript&quot;,&quot;slug&quot;:&quot;javascript/toggle-password-visibility&quot;},{&quot;title&quot;:&quot;Types de jointures en SQL&quot;,&quot;description&quot;:&quot;Dans cet article, nous allons apprendre les types de jointures SQL, y compris inner join, left join, right join et full outer join. Nous couvrirons leur syntaxe, leurs différences et des exemples pratiques pour une meilleure compréhension&quot;,&quot;tags&quot;:[&quot;sql&quot;],&quot;image&quot;:&quot;/assets/thumbnail/blog-thumbnail-8.jpg&quot;,&quot;date&quot;:&quot;20230618&quot;,&quot;category&quot;:&quot;sql&quot;,&quot;slug&quot;:&quot;sql/joins-types&quot;},{&quot;title&quot;:&quot;Countdown Timer&quot;,&quot;description&quot;:&quot;Dans cet article, nous allons apprendre à créer un minuteur de compte à rebours en utilisant HTML, CSS et JavaScript. Avec un code source facile à comprendre, vous pourrez suivre les étapes et créer votre propre version&quot;,&quot;tags&quot;:[&quot;html&quot;,&quot;css&quot;,&quot;javascript&quot;],&quot;image&quot;:&quot;http://img.youtube.com/vi/q6fFsOX2ihE/maxresdefault.jpg&quot;,&quot;date&quot;:&quot;20230605&quot;,&quot;category&quot;:&quot;apps&quot;,&quot;slug&quot;:&quot;apps/count-down&quot;},{&quot;title&quot;:&quot;Todo List App&quot;,&quot;description&quot;:&quot;Dans cet article, nous allons apprendre à créer une application Todo App en utilisant HTML, CSS et JavaScript. Grâce à un code source facile à comprendre, vous pourrez suivre les étapes et créer votre propre version&quot;,&quot;tags&quot;:[&quot;html&quot;,&quot;css&quot;,&quot;javascript&quot;],&quot;image&quot;:&quot;http://img.youtube.com/vi/T1lBgZVgryw/maxresdefault.jpg&quot;,&quot;date&quot;:&quot;20230529&quot;,&quot;category&quot;:&quot;apps&quot;,&quot;slug&quot;:&quot;apps/todo-list&quot;},{&quot;title&quot;:&quot;ScrollToTheTop Button&quot;,&quot;description&quot;:&quot;Dans cet article, nous allons apprendre à créer un bouton pour remonter en haut de la page en utilisant HTML, CSS et JavaScript. Grâce à un code source facile à comprendre, vous pourrez suivre les étapes et créer votre propre version&quot;,&quot;tags&quot;:[&quot;html&quot;,&quot;css&quot;],&quot;image&quot;:&quot;http://img.youtube.com/vi/7Vc_Di-qYEk/maxresdefault.jpg&quot;,&quot;date&quot;:&quot;20230503&quot;,&quot;category&quot;:&quot;css&quot;,&quot;slug&quot;:&quot;css/scroll-top-button&quot;}]"></app-main>
 
         </main>
         <app-scroll-top-button></app-scroll-top-button>
