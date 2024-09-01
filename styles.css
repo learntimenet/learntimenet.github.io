@@ -7597,6 +7597,9 @@ iframe {
   background-color: var(--contact-background);
   border-radius: 2px; }
 
+main {
+  margin-bottom: 5rem !important; }
+
 /* cyrillic-ext */
 @font-face {
   font-family: 'Roboto Mono';
