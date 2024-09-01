@@ -3,8 +3,8 @@
             <html lang="fr">
             <head>
                 <meta charset="utf-8" />
-                <title>Learn Time | Java ThreadLocal Guide</title>
-                <meta name="description" content="A quick and practical guide to using ThreadLocal for storing thread-specific data in Java.">
+                <title>Learn Time | ThreadLocal en Java</title>
+                <meta name="description" content="Un guide pratique sur la classe ThreadLocal permettant de stocker des données spécifiques aux threads en Java, et d'assurer que chaque thread possède ses propres valeurs isolées, garantissant ainsi la sécurité et l'intégrité des données dans les environnements multithreadés">
                 <meta name="viewport" content="width=device-width,initial-scale=1" />
                 <!--
                 <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
@@ -34,13 +34,13 @@
                     .loader.hide {opacity: 0;}
                 </style>
                 
-            <meta property="og:title" content="Java ThreadLocal Guide" />
-            <meta property="og:description" content="A quick and practical guide to using ThreadLocal for storing thread-specific data in Java." />
+            <meta property="og:title" content="ThreadLocal en Java" />
+            <meta property="og:description" content="Un guide pratique sur la classe ThreadLocal permettant de stocker des données spécifiques aux threads en Java, et d'assurer que chaque thread possède ses propres valeurs isolées, garantissant ainsi la sécurité et l'intégrité des données dans les environnements multithreadés" />
             <meta property="og:image" content="https://learntime.net/assets/images/java/thread-local.png" />
             <meta name="twitter:card" content="summary_large_image">
             <meta name="twitter:creator" content="@learntimenet">
-            <meta name="twitter:title" content="Java ThreadLocal Guide">
-            <meta name="twitter:description" content="A quick and practical guide to using ThreadLocal for storing thread-specific data in Java.">
+            <meta name="twitter:title" content="ThreadLocal en Java">
+            <meta name="twitter:description" content="Un guide pratique sur la classe ThreadLocal permettant de stocker des données spécifiques aux threads en Java, et d'assurer que chaque thread possède ses propres valeurs isolées, garantissant ainsi la sécurité et l'intégrité des données dans les environnements multithreadés">
             <meta name="twitter:image" content="https://learntime.net/assets/images/java/thread-local.png">
         
                 <script>
@@ -77,39 +77,39 @@
                     <app-desktop-navbar></app-desktop-navbar>
                     <main class="max-width">
         
-<app-main metadata="{&quot;title&quot;:&quot;Java ThreadLocal Guide&quot;,&quot;description&quot;:&quot;A quick and practical guide to using ThreadLocal for storing thread-specific data in Java.&quot;,&quot;tags&quot;:[&quot;java&quot;,&quot;concurrency&quot;],&quot;image&quot;:&quot;/assets/thumbnail/blog-thumbnail-0.jpg&quot;,&quot;date&quot;:&quot;20231116&quot;,&quot;category&quot;:&quot;java&quot;,&quot;slug&quot;:&quot;java/thread-local&quot;}" html="<h1>Introduction</h1>
-<p>The Java ThreadLocal class gives us the ability to create variables that can only be read and written by the same Thread. So, even if two threads are executing the same code, and the code has a reference to the same ThreadLocal variable, the two threads cannot see each other’s ThreadLocal variables which is a simple way to make code thread-safe. ThreadLocal instances are typically private static fields in classes that wish to associate state with a thread (e.g., User ID, Transaction ID, …)</p>
+<app-main metadata="{&quot;title&quot;:&quot;ThreadLocal en Java&quot;,&quot;description&quot;:&quot;Un guide pratique sur la classe ThreadLocal permettant de stocker des données spécifiques aux threads en Java, et d'assurer que chaque thread possède ses propres valeurs isolées, garantissant ainsi la sécurité et l'intégrité des données dans les environnements multithreadés&quot;,&quot;tags&quot;:[&quot;java&quot;,&quot;multithread&quot;],&quot;image&quot;:&quot;/assets/thumbnail/blog-thumbnail-0.jpg&quot;,&quot;date&quot;:&quot;20231116&quot;,&quot;category&quot;:&quot;java&quot;,&quot;slug&quot;:&quot;java/thread-local&quot;}" html="<h1>Introduction</h1>
+<p>La classe Java <code>ThreadLocal</code> nous permet de créer des variables qui ne peuvent être lues et écrites que par le même thread. Ainsi, même si deux threads exécutent le même code et que ce code fait référence à la même variable <code>ThreadLocal</code>, les deux threads ne peuvent pas voir les variables <code>ThreadLocal</code> de l'autre, ce qui est un moyen simple de rendre le code sûr pour les threads. Les instances <code>ThreadLocal</code> sont généralement des champs privés statiques dans les classes qui souhaitent associer un état à un thread (par exemple, ID utilisateur, ID de transaction, ...)</p>
 <pre><code class=&quot;language-java&quot;><pre class=&quot;highlight&quot;><code class=&quot;hljs&quot;><span class=&quot;hljs-keyword&quot;>private</span> <span class=&quot;hljs-keyword&quot;>static</span> ThreadLocal&amp;lt;Integer&amp;gt; userIdThreadLocal = <span class=&quot;hljs-keyword&quot;>new</span> <span class=&quot;hljs-title class_&quot;>ThreadLocal</span>&amp;lt;&amp;gt;();
 </code></pre></code></pre>
-<p>Next, when we want to use this value from a thread, we only need to call the ThreadLocal get() or set() method. We can imagine that ThreadLocal stores data inside of a map with the thread as the key. As a result, when we call a get() method on the userIdThreadLocal, we will get the value for the requesting thread:</p>
+<p>Ensuite, lorsque nous voulons utiliser cette valeur depuis un thread, il nous suffit d'appeler la méthode <code>get()</code> ou <code>set()</code> de <code>ThreadLocal</code>. On peut imaginer que <code>ThreadLocal</code> stocke les données dans une carte avec le thread comme clé. En conséquence, lorsque nous appelons une méthode <code>get()</code> sur <code>userIdThreadLocal</code>, nous obtenons la valeur pour le thread demandeur :</p>
 <pre><code class=&quot;language-java&quot;><pre class=&quot;highlight&quot;><code class=&quot;hljs&quot;>userIdThreadLocal.set(<span class=&quot;hljs-number&quot;>1</span>);
 <span class=&quot;hljs-type&quot;>Integer</span> <span class=&quot;hljs-variable&quot;>user</span> <span class=&quot;hljs-operator&quot;>=</span> userIdThreadLocal.get();
 </code></pre></code></pre>
-<h2>ThreadLocal Methods</h2>
+<h2>Méthodes de ThreadLocal</h2>
 <p><strong>method-signature</strong></p>
 <pre><code class=&quot;language-java&quot;><pre class=&quot;highlight&quot;><code class=&quot;hljs&quot;><span class=&quot;hljs-keyword&quot;>static</span> &amp;lt;S&amp;gt; ThreadLocal&amp;lt;S&amp;gt; withInitial(Supplier&amp;lt;? <span class=&quot;hljs-keyword&quot;>extends</span> <span class=&quot;hljs-title class_&quot;>S</span>&amp;gt; supplier)
 </code></pre></code></pre>
-<p>Creates a thread local variable.</p>
+<p>Crée une variable locale au thread.</p>
 <p><strong>method-signature</strong></p>
 <pre><code class=&quot;language-java&quot;><pre class=&quot;highlight&quot;><code class=&quot;hljs&quot;><span class=&quot;hljs-keyword&quot;>protected</span> T <span class=&quot;hljs-title function_&quot;>initialValue</span><span class=&quot;hljs-params&quot;>()</span>
 </code></pre></code></pre>
-<p>Returns the current thread's &quot;initial value&quot; for this thread-local variable.</p>
+<p>Renvoie la &quot;valeur initiale&quot; du thread actuel pour cette variable locale au thread.</p>
 <p><strong>method-signature</strong></p>
 <pre><code class=&quot;language-java&quot;><pre class=&quot;highlight&quot;><code class=&quot;hljs&quot;>T <span class=&quot;hljs-title function_&quot;>get</span><span class=&quot;hljs-params&quot;>()</span>
 </code></pre></code></pre>
-<p>Returns the value in the current thread's copy of this thread-local variable.</p>
+<p>Renvoie la valeur dans la copie de cette variable locale au thread pour le thread actuel.</p>
 <p><strong>method-signature</strong></p>
 <pre><code class=&quot;language-java&quot;><pre class=&quot;highlight&quot;><code class=&quot;hljs&quot;><span class=&quot;hljs-keyword&quot;>void</span> <span class=&quot;hljs-title function_&quot;>remove</span><span class=&quot;hljs-params&quot;>()</span>
 </code></pre></code></pre>
-<p>Removes the current thread's value for this thread-local variable.</p>
+<p>Supprime la valeur du thread actuel pour cette variable locale au thread.</p>
 <p><strong>method-signature</strong></p>
 <pre><code class=&quot;language-java&quot;><pre class=&quot;highlight&quot;><code class=&quot;hljs&quot;><span class=&quot;hljs-keyword&quot;>void</span> <span class=&quot;hljs-title function_&quot;>set</span><span class=&quot;hljs-params&quot;>(T value)</span>
 </code></pre></code></pre>
-<p>Sets the current thread's copy of this thread-local variable to the specified value.</p>
-<h2>Initial ThreadLocal Value</h2>
-<p>It is possible to set an initial value for a ThreadLocal which will be returned the first time the get() method is called even before the set() method is called. We have two options for specifying an initial value for a ThreadLocal:</p>
-<h3>Overriding initialValue()</h3>
-<p>The first way to specify an initial value for a Java ThreadLocal variable is to create a subclass of ThreadLocal which overrides its initialValue() method and here is an example that creates an anonymous subclass of ThreadLocal which overrides the initialValue() method:</p>
+<p>Définit la copie de cette variable locale au thread pour le thread actuel à la valeur spécifiée.</p>
+<h2>Valeur Initiale de ThreadLocal</h2>
+<p>Il est possible de définir une valeur initiale pour un <code>ThreadLocal</code> qui sera renvoyée la première fois que la méthode <code>get()</code> est appelée, même avant que la méthode <code>set()</code> ne soit appelée. Nous avons deux options pour spécifier une valeur initiale pour un <code>ThreadLocal</code> :</p>
+<p><strong>Surcharger la méthode <code>initialValue()</code></strong></p>
+<p>La première façon de spécifier une valeur initiale pour une variable <code>ThreadLocal</code> en Java est de créer une sous-classe de <code>ThreadLocal</code> qui surcharge sa méthode <code>initialValue()</code>. Voici un exemple qui crée une sous-classe anonyme de <code>ThreadLocal</code> qui surcharge la méthode <code>initialValue()</code> :</p>
 <pre><code class=&quot;language-java&quot;><pre class=&quot;highlight&quot;><code class=&quot;hljs&quot;><span class=&quot;hljs-keyword&quot;>private</span> ThreadLocal&amp;lt;String&amp;gt; threadLocal = <span class=&quot;hljs-keyword&quot;>new</span> <span class=&quot;hljs-title class_&quot;>ThreadLocal</span>&amp;lt;String&amp;gt;() {
     <span class=&quot;hljs-meta&quot;>@Override</span>
     <span class=&quot;hljs-keyword&quot;>protected</span> String <span class=&quot;hljs-title function_&quot;>initialValue</span><span class=&quot;hljs-params&quot;>()</span> {
@@ -117,8 +117,8 @@
     }
 };
 </code></pre></code></pre>
-<h3>Providing a Supplier implementation</h3>
-<p>The second method is to use the ThreadLocal static factory method withInitial(Supplier) by passing a Supplier interface implementation as parameter. This Supplier implementation supplies the initial value for the ThreadLocal. Here is an example of creating a ThreadLocal using its withInitial() static factory method :</p>
+<p><strong>Fournir une implémentation du <code>Supplier</code></strong></p>
+<p>La deuxième méthode est d'utiliser la méthode de fabrique statique <code>withInitial(Supplier)</code> de <code>ThreadLocal</code> en passant une implémentation de l'interface <code>Supplier</code> en paramètre. Cette implémentation de <code>Supplier</code> fournit la valeur initiale pour le <code>ThreadLocal</code>. Voici un exemple de création d'un <code>ThreadLocal</code> en utilisant sa méthode de fabrique statique <code>withInitial()</code> :</p>
 <pre><code class=&quot;language-java&quot;><pre class=&quot;highlight&quot;><code class=&quot;hljs&quot;>ThreadLocal&amp;lt;String&amp;gt; threadLocal = ThreadLocal.withInitial(<span class=&quot;hljs-keyword&quot;>new</span> <span class=&quot;hljs-title class_&quot;>Supplier</span>&amp;lt;String&amp;gt;() {
     <span class=&quot;hljs-meta&quot;>@Override</span>
     <span class=&quot;hljs-keyword&quot;>public</span> String <span class=&quot;hljs-title function_&quot;>get</span><span class=&quot;hljs-params&quot;>()</span> {
@@ -126,33 +126,33 @@
     }
 });
 </code></pre></code></pre>
-<h2>ThreadLocals and Thread Pools</h2>
-<p>We should be extra careful when we are using ThreadLocals and thread pools together. The technique of thread pooling allows threads to be reused to reduce thread creation overhead. Each task that enters the pool expects to see ThreadLocal objects in their initial, default state. However, when ThreadLocal objects are modified on a thread that is subsequently made available for reuse, the next task executing on the reused thread sees the state of the ThreadLocal objects as modified by the previous task that executed on that thread.</p>
-<p>Programs must ensure that each task that executes on a thread from a thread pool sees only correctly initialized instances of ThreadLocal objects. The good news is that it's possible to extend the ThreadPoolExecutor class and provide a custom hook implementation for the beforeExecute() and afterExecute() methods. Therefore, we can extend the ThreadPoolExecutor class and remove the ThreadLocal variable in the afterExecute() method:</p>
+<h2>ThreadLocals et Pools de Threads</h2>
+<p>Nous devons être particulièrement prudents lorsque nous utilisons <code>ThreadLocals</code> et pools de threads ensemble. La technique de pool de threads permet de réutiliser les threads pour réduire les frais de création de threads. Chaque tâche qui entre dans le pool s'attend à voir les objets <code>ThreadLocal</code> dans leur état initial, par défaut. Cependant, lorsque les objets <code>ThreadLocal</code> sont modifiés sur un thread qui est ensuite rendu disponible pour réutilisation, la prochaine tâche exécutée sur le thread réutilisé voit l'état des objets <code>ThreadLocal</code> comme modifié par la tâche précédente qui a été exécutée sur ce thread.</p>
+<p>Les programmes doivent s'assurer que chaque tâche exécutée sur un thread d'un pool de threads ne voit que des instances correctement initialisées des objets <code>ThreadLocal</code>. La bonne nouvelle est qu'il est possible d'étendre la classe <code>ThreadPoolExecutor</code> et de fournir une implémentation personnalisée pour les méthodes <code>beforeExecute()</code> et <code>afterExecute()</code>. Nous pouvons donc étendre la classe <code>ThreadPoolExecutor</code> et supprimer la variable <code>ThreadLocal</code> dans la méthode <code>afterExecute()</code> :</p>
 <pre><code class=&quot;language-java&quot;><pre class=&quot;highlight&quot;><code class=&quot;hljs&quot;><span class=&quot;hljs-keyword&quot;>public</span> <span class=&quot;hljs-keyword&quot;>class</span> <span class=&quot;hljs-title class_&quot;>ThreadLocalAwareThreadPoolExecutor</span> <span class=&quot;hljs-keyword&quot;>extends</span> <span class=&quot;hljs-title class_&quot;>ThreadPoolExecutor</span> {
     <span class=&quot;hljs-meta&quot;>@Override</span>
     <span class=&quot;hljs-keyword&quot;>protected</span> <span class=&quot;hljs-keyword&quot;>void</span> <span class=&quot;hljs-title function_&quot;>afterExecute</span><span class=&quot;hljs-params&quot;>(Runnable r, Throwable t)</span> {
-        <span class=&quot;hljs-comment&quot;>// removing the current thread&#x27;s variable</span>
+        <span class=&quot;hljs-comment&quot;>// suppression de la variable du thread actuel</span>
     }
 }
 </code></pre></code></pre>
 <h2>InheritableThreadLocal</h2>
-<p>The InheritableThreadLocal class extends ThreadLocal to provide inheritance of values from parent thread to child thread: when a child thread is created, the child receives initial values for all inheritable thread-local variables for which the parent has values. Normally the child's values will be identical to the parent's.</p>
-<p>Inheritable thread-local variables are used in preference to ordinary thread-local variables when the per-thread-attribute being maintained in the variable (e.g., User ID, Transaction ID, ...) must be automatically transmitted to any child threads that are created. Here is an example to illustrate the benefits of using InheritableThreadLocal class :</p>
-<h2>Using ThreadLocal</h2>
+<p>La classe <code>InheritableThreadLocal</code> étend <code>ThreadLocal</code> pour fournir l'héritage des valeurs du thread parent au thread enfant : lorsqu'un thread enfant est créé, il reçoit les valeurs initiales pour toutes les variables locales au thread héritables pour lesquelles le parent a des valeurs. Normalement, les valeurs de l'enfant seront identiques à celles du parent.</p>
+<p>Les variables locales au thread héritables sont utilisées de préférence aux variables locales au thread ordinaires lorsque l'attribut par thread maintenu dans la variable (par exemple, ID utilisateur, ID de transaction, ...) doit être automatiquement transmis à tous les threads enfants qui sont créés. Voici un exemple pour illustrer les avantages de l'utilisation de la classe <code>InheritableThreadLocal</code> :</p>
+<h2>Utilisation de ThreadLocal</h2>
 <pre><code class=&quot;language-java&quot;><pre class=&quot;highlight&quot;><code class=&quot;hljs&quot;><span class=&quot;hljs-keyword&quot;>class</span> <span class=&quot;hljs-title class_&quot;>ParentThread</span> <span class=&quot;hljs-keyword&quot;>extends</span> <span class=&quot;hljs-title class_&quot;>Thread</span> {
     <span class=&quot;hljs-keyword&quot;>public</span> <span class=&quot;hljs-keyword&quot;>static</span> ThreadLocal&amp;lt;String&amp;gt; parentThreadLocal = <span class=&quot;hljs-keyword&quot;>new</span> <span class=&quot;hljs-title class_&quot;>ThreadLocal</span>&amp;lt;&amp;gt;();
 
     <span class=&quot;hljs-keyword&quot;>public</span> <span class=&quot;hljs-keyword&quot;>void</span> <span class=&quot;hljs-title function_&quot;>run</span><span class=&quot;hljs-params&quot;>()</span> {
-        parentThreadLocal.set(<span class=&quot;hljs-string&quot;>&quot;parent data&quot;</span>);
-        System.out.println(<span class=&quot;hljs-string&quot;>&quot;Parent ThreadLocal Value: &quot;</span> + parentThreadLocal.get());
+        parentThreadLocal.set(<span class=&quot;hljs-string&quot;>&quot;données parent&quot;</span>);
+        System.out.println(<span class=&quot;hljs-string&quot;>&quot;Valeur Parent ThreadLocal: &quot;</span> + parentThreadLocal.get());
         <span class=&quot;hljs-keyword&quot;>new</span> <span class=&quot;hljs-title class_&quot;>ChildThread</span>().start();
     }
 }
 
 <span class=&quot;hljs-keyword&quot;>class</span> <span class=&quot;hljs-title class_&quot;>ChildThread</span> <span class=&quot;hljs-keyword&quot;>extends</span> <span class=&quot;hljs-title class_&quot;>Thread</span> {
     <span class=&quot;hljs-keyword&quot;>public</span> <span class=&quot;hljs-keyword&quot;>void</span> <span class=&quot;hljs-title function_&quot;>run</span><span class=&quot;hljs-params&quot;>()</span> {
-        System.out.println(<span class=&quot;hljs-string&quot;>&quot;Child ThreadLocal Value: &quot;</span> + ParentThread.parentThreadLocal.get());
+        System.out.println(<span class=&quot;hljs-string&quot;>&quot;Valeur Child ThreadLocal: &quot;</span> + ParentThread.parentThreadLocal.get());
     }
 }
 
@@ -162,25 +162,25 @@
     }
 }
 </code></pre></code></pre>
-<p>Run the example above and you will get the following result :</p>
+<p>Exécutez l'exemple ci-dessus et vous obtiendrez le résultat suivant :</p>
 <p><strong>without-line-numbers</strong></p>
-<pre><code class=&quot;language-sh&quot;><pre class=&quot;highlight&quot;><code class=&quot;hljs&quot;>Parent ThreadLocal Value: parent data
-Child ThreadLocal Value: null
+<pre><code class=&quot;language-sh&quot;><pre class=&quot;highlight&quot;><code class=&quot;hljs&quot;>Valeur Parent ThreadLocal: données parent
+Valeur Child ThreadLocal: null
 </code></pre></code></pre>
-<h2>Using InheritableThreadLocal</h2>
+<h2>Utilisation de InheritableThreadLocal</h2>
 <pre><code class=&quot;language-java&quot;><pre class=&quot;highlight&quot;><code class=&quot;hljs&quot;><span class=&quot;hljs-keyword&quot;>class</span> <span class=&quot;hljs-title class_&quot;>ParentThread</span> <span class=&quot;hljs-keyword&quot;>extends</span> <span class=&quot;hljs-title class_&quot;>Thread</span> {
     <span class=&quot;hljs-keyword&quot;>public</span> <span class=&quot;hljs-keyword&quot;>static</span> InheritableThreadLocal&amp;lt;String&amp;gt; parentThreadLocal = <span class=&quot;hljs-keyword&quot;>new</span> <span class=&quot;hljs-title class_&quot;>InheritableThreadLocal</span>&amp;lt;&amp;gt;();
 
     <span class=&quot;hljs-keyword&quot;>public</span> <span class=&quot;hljs-keyword&quot;>void</span> <span class=&quot;hljs-title function_&quot;>run</span><span class=&quot;hljs-params&quot;>()</span> {
-        parentThreadLocal.set(<span class=&quot;hljs-string&quot;>&quot;parent data&quot;</span>);
-        System.out.println(<span class=&quot;hljs-string&quot;>&quot;Parent InheritableThreadLocal Value: &quot;</span> + parentThreadLocal.get());
+        parentThreadLocal.set(<span class=&quot;hljs-string&quot;>&quot;données parent&quot;</span>);
+        System.out.println(<span class=&quot;hljs-string&quot;>&quot;Valeur Parent InheritableThreadLocal: &quot;</span> + parentThreadLocal.get());
         <span class=&quot;hljs-keyword&quot;>new</span> <span class=&quot;hljs-title class_&quot;>ChildThread</span>().start();
     }
 }
 
 <span class=&quot;hljs-keyword&quot;>class</span> <span class=&quot;hljs-title class_&quot;>ChildThread</span> <span class=&quot;hljs-keyword&quot;>extends</span> <span class=&quot;hljs-title class_&quot;>Thread</span> {
     <span class=&quot;hljs-keyword&quot;>public</span> <span class=&quot;hljs-keyword&quot;>void</span> <span class=&quot;hljs-title function_&quot;>run</span><span class=&quot;hljs-params&quot;>()</span> {
-        System.out.println(<span class=&quot;hljs-string&quot;>&quot;Child InheritableThreadLocal Value: &quot;</span> + ParentThread.parentThreadLocal.get());
+        System.out.println(<span class=&quot;hljs-string&quot;>&quot;Valeur Child InheritableThreadLocal: &quot;</span> + ParentThread.parentThreadLocal.get());
     }
 }
 
@@ -190,14 +190,14 @@ Child ThreadLocal Value: null
     }
 }
 </code></pre></code></pre>
-<p>Run the example above and you will get the following result :</p>
+<p>Exécutez l'exemple ci-dessus et vous obtiendrez le résultat suivant :</p>
 <p><strong>without-line-numbers</strong></p>
-<pre><code class=&quot;language-sh&quot;><pre class=&quot;highlight&quot;><code class=&quot;hljs&quot;>Parent InheritableThreadLocal Value: parent data
-Child InheritableThreadLocal Value: parent data
+<pre><code class=&quot;language-sh&quot;><pre class=&quot;highlight&quot;><code class=&quot;hljs&quot;>Valeur Parent InheritableThreadLocal: données parent
+Valeur Child InheritableThreadLocal: données parent
 </code></pre></code></pre>
 <h2>Conclusion</h2>
-<p>In this article, we have discovered the Java ThreadLocal class and we hope you find it useful :)</p>
-" blogs="[{&quot;title&quot;:&quot;Animated Border&quot;,&quot;description&quot;:&quot;Dans cet article, nous allons apprendre à créer une bordure animée en utilisant HTML et CSS. Grâce à un code source facile à comprendre, vous pourrez suivre les étapes et créer votre propre version&quot;,&quot;tags&quot;:[&quot;html&quot;,&quot;css&quot;],&quot;image&quot;:&quot;/assets/thumbnail/animated-border.png&quot;,&quot;date&quot;:&quot;20231128&quot;,&quot;category&quot;:&quot;css&quot;,&quot;slug&quot;:&quot;css/animated-border&quot;},{&quot;title&quot;:&quot;Animated Submit Button&quot;,&quot;description&quot;:&quot;Dans cet article, nous allons apprendre à créer un bouton de soumission animé en utilisant HTML, CSS et JavaScript. Avec un code source facile à comprendre, vous pourrez suivre les étapes et créer votre propre version&quot;,&quot;tags&quot;:[&quot;html&quot;,&quot;css&quot;,&quot;javascript&quot;],&quot;image&quot;:&quot;/assets/thumbnail/animated-submit-button.png&quot;,&quot;date&quot;:&quot;20231128&quot;,&quot;category&quot;:&quot;css&quot;,&quot;slug&quot;:&quot;css/animated-submit-button&quot;},{&quot;title&quot;:&quot;Animated Search Bar&quot;,&quot;description&quot;:&quot;Dans cet article, nous allons apprendre à créer une une barre de recherche animée en utilisant HTML et CSS. Grâce à un code source facile à comprendre, vous pourrez suivre les étapes et créer votre propre version&quot;,&quot;tags&quot;:[&quot;html&quot;,&quot;css&quot;],&quot;image&quot;:&quot;/assets/thumbnail/animated-search-bar.png&quot;,&quot;date&quot;:&quot;20231124&quot;,&quot;category&quot;:&quot;css&quot;,&quot;slug&quot;:&quot;css/animated-search-bar&quot;},{&quot;title&quot;:&quot;Héritage avec JPA&quot;,&quot;description&quot;:&quot;Un guide pratique pour comprendre les différentes stratégies d'héritage avec l'API de persistance Java (JPA). Ce guide vous aidera à maîtriser les concepts essentiels pour modéliser efficacement vos entités dans une base de données relationnelle&quot;,&quot;tags&quot;:[&quot;Java&quot;,&quot;JPA&quot;],&quot;image&quot;:&quot;/assets/thumbnail/blog-thumbnail-5.jpg&quot;,&quot;date&quot;:&quot;20231121&quot;,&quot;category&quot;:&quot;java&quot;,&quot;slug&quot;:&quot;java/inheritance-with-jpa&quot;},{&quot;title&quot;:&quot;Java ThreadLocal Guide&quot;,&quot;description&quot;:&quot;A quick and practical guide to using ThreadLocal for storing thread-specific data in Java.&quot;,&quot;tags&quot;:[&quot;java&quot;,&quot;concurrency&quot;],&quot;image&quot;:&quot;/assets/thumbnail/blog-thumbnail-6.jpg&quot;,&quot;date&quot;:&quot;20231116&quot;,&quot;category&quot;:&quot;java&quot;,&quot;slug&quot;:&quot;java/thread-local&quot;},{&quot;title&quot;:&quot;Toggle Input Password Visibility&quot;,&quot;description&quot;:&quot;Dans cet article, nous allons apprendre comment afficher/masquer le mot de passe dans un formulaire en utilisant HTML, CSS et JavaScript. Avec un code source facile à comprendre, vous pourrez suivre les étapes et créer votre propre version&quot;,&quot;tags&quot;:[&quot;html&quot;,&quot;css&quot;,&quot;javascript&quot;],&quot;image&quot;:&quot;/assets/thumbnail/blog-thumbnail-7.jpg&quot;,&quot;date&quot;:&quot;20230624&quot;,&quot;category&quot;:&quot;javascript&quot;,&quot;slug&quot;:&quot;javascript/toggle-password-visibility&quot;},{&quot;title&quot;:&quot;Types de jointures en SQL&quot;,&quot;description&quot;:&quot;Dans cet article, nous allons apprendre les types de jointures SQL, y compris inner join, left join, right join et full outer join. Nous couvrirons leur syntaxe, leurs différences et des exemples pratiques pour une meilleure compréhension&quot;,&quot;tags&quot;:[&quot;sql&quot;,&quot;jointure&quot;],&quot;image&quot;:&quot;/assets/thumbnail/blog-thumbnail-8.jpg&quot;,&quot;date&quot;:&quot;20230618&quot;,&quot;category&quot;:&quot;sql&quot;,&quot;slug&quot;:&quot;sql/joins-types&quot;},{&quot;title&quot;:&quot;Countdown Timer&quot;,&quot;description&quot;:&quot;Dans cet article, nous allons apprendre à créer un minuteur de compte à rebours en utilisant HTML, CSS et JavaScript. Avec un code source facile à comprendre, vous pourrez suivre les étapes et créer votre propre version&quot;,&quot;tags&quot;:[&quot;html&quot;,&quot;css&quot;,&quot;javascript&quot;],&quot;image&quot;:&quot;http://img.youtube.com/vi/q6fFsOX2ihE/maxresdefault.jpg&quot;,&quot;date&quot;:&quot;20230605&quot;,&quot;category&quot;:&quot;apps&quot;,&quot;slug&quot;:&quot;apps/count-down&quot;},{&quot;title&quot;:&quot;Todo List App&quot;,&quot;description&quot;:&quot;Dans cet article, nous allons apprendre à créer une application Todo App en utilisant HTML, CSS et JavaScript. Grâce à un code source facile à comprendre, vous pourrez suivre les étapes et créer votre propre version&quot;,&quot;tags&quot;:[&quot;html&quot;,&quot;css&quot;,&quot;javascript&quot;],&quot;image&quot;:&quot;http://img.youtube.com/vi/T1lBgZVgryw/maxresdefault.jpg&quot;,&quot;date&quot;:&quot;20230529&quot;,&quot;category&quot;:&quot;apps&quot;,&quot;slug&quot;:&quot;apps/todo-list&quot;},{&quot;title&quot;:&quot;ScrollToTheTop Button&quot;,&quot;description&quot;:&quot;Dans cet article, nous allons apprendre à créer un bouton pour remonter en haut de la page en utilisant HTML, CSS et JavaScript. Grâce à un code source facile à comprendre, vous pourrez suivre les étapes et créer votre propre version&quot;,&quot;tags&quot;:[&quot;html&quot;,&quot;css&quot;],&quot;image&quot;:&quot;http://img.youtube.com/vi/7Vc_Di-qYEk/maxresdefault.jpg&quot;,&quot;date&quot;:&quot;20230503&quot;,&quot;category&quot;:&quot;css&quot;,&quot;slug&quot;:&quot;css/scroll-top-button&quot;}]"></app-main>
+<p>Merci de votre lecture. Nous espérons que cet article vous a été utile !</p>
+" blogs="[{&quot;title&quot;:&quot;Animated Border&quot;,&quot;description&quot;:&quot;Dans cet article, nous allons apprendre à créer une bordure animée en utilisant HTML et CSS. Grâce à un code source facile à comprendre, vous pourrez suivre les étapes et créer votre propre version&quot;,&quot;tags&quot;:[&quot;html&quot;,&quot;css&quot;],&quot;image&quot;:&quot;/assets/thumbnail/animated-border.png&quot;,&quot;date&quot;:&quot;20231128&quot;,&quot;category&quot;:&quot;css&quot;,&quot;slug&quot;:&quot;css/animated-border&quot;},{&quot;title&quot;:&quot;Animated Submit Button&quot;,&quot;description&quot;:&quot;Dans cet article, nous allons apprendre à créer un bouton de soumission animé en utilisant HTML, CSS et JavaScript. Avec un code source facile à comprendre, vous pourrez suivre les étapes et créer votre propre version&quot;,&quot;tags&quot;:[&quot;html&quot;,&quot;css&quot;,&quot;javascript&quot;],&quot;image&quot;:&quot;/assets/thumbnail/animated-submit-button.png&quot;,&quot;date&quot;:&quot;20231128&quot;,&quot;category&quot;:&quot;css&quot;,&quot;slug&quot;:&quot;css/animated-submit-button&quot;},{&quot;title&quot;:&quot;Animated Search Bar&quot;,&quot;description&quot;:&quot;Dans cet article, nous allons apprendre à créer une une barre de recherche animée en utilisant HTML et CSS. Grâce à un code source facile à comprendre, vous pourrez suivre les étapes et créer votre propre version&quot;,&quot;tags&quot;:[&quot;html&quot;,&quot;css&quot;],&quot;image&quot;:&quot;/assets/thumbnail/animated-search-bar.png&quot;,&quot;date&quot;:&quot;20231124&quot;,&quot;category&quot;:&quot;css&quot;,&quot;slug&quot;:&quot;css/animated-search-bar&quot;},{&quot;title&quot;:&quot;Héritage avec JPA&quot;,&quot;description&quot;:&quot;Un guide pratique pour comprendre les différentes stratégies d'héritage avec l'API de persistance Java (JPA). Ce guide vous aidera à maîtriser les concepts essentiels pour modéliser efficacement vos entités dans une base de données relationnelle&quot;,&quot;tags&quot;:[&quot;Java&quot;,&quot;JPA&quot;],&quot;image&quot;:&quot;/assets/thumbnail/blog-thumbnail-5.jpg&quot;,&quot;date&quot;:&quot;20231121&quot;,&quot;category&quot;:&quot;java&quot;,&quot;slug&quot;:&quot;java/inheritance-with-jpa&quot;},{&quot;title&quot;:&quot;ThreadLocal en Java&quot;,&quot;description&quot;:&quot;Un guide pratique sur la classe ThreadLocal permettant de stocker des données spécifiques aux threads en Java, et d'assurer que chaque thread possède ses propres valeurs isolées, garantissant ainsi la sécurité et l'intégrité des données dans les environnements multithreadés&quot;,&quot;tags&quot;:[&quot;java&quot;,&quot;multithread&quot;],&quot;image&quot;:&quot;/assets/thumbnail/blog-thumbnail-6.jpg&quot;,&quot;date&quot;:&quot;20231116&quot;,&quot;category&quot;:&quot;java&quot;,&quot;slug&quot;:&quot;java/thread-local&quot;},{&quot;title&quot;:&quot;Toggle Input Password Visibility&quot;,&quot;description&quot;:&quot;Dans cet article, nous allons apprendre comment afficher/masquer le mot de passe dans un formulaire en utilisant HTML, CSS et JavaScript. Avec un code source facile à comprendre, vous pourrez suivre les étapes et créer votre propre version&quot;,&quot;tags&quot;:[&quot;html&quot;,&quot;css&quot;,&quot;javascript&quot;],&quot;image&quot;:&quot;/assets/thumbnail/blog-thumbnail-7.jpg&quot;,&quot;date&quot;:&quot;20230624&quot;,&quot;category&quot;:&quot;javascript&quot;,&quot;slug&quot;:&quot;javascript/toggle-password-visibility&quot;},{&quot;title&quot;:&quot;Les jointures en SQL&quot;,&quot;description&quot;:&quot;Dans cet article, nous allons apprendre les types de jointures SQL, y compris inner join, left join, right join et full outer join. Nous couvrirons leur syntaxe, leurs différences et des exemples pratiques pour une meilleure compréhension&quot;,&quot;tags&quot;:[&quot;sql&quot;,&quot;jointure&quot;],&quot;image&quot;:&quot;/assets/thumbnail/blog-thumbnail-8.jpg&quot;,&quot;date&quot;:&quot;20230618&quot;,&quot;category&quot;:&quot;sql&quot;,&quot;slug&quot;:&quot;sql/joins-types&quot;},{&quot;title&quot;:&quot;Countdown Timer&quot;,&quot;description&quot;:&quot;Dans cet article, nous allons apprendre à créer un minuteur de compte à rebours en utilisant HTML, CSS et JavaScript. Avec un code source facile à comprendre, vous pourrez suivre les étapes et créer votre propre version&quot;,&quot;tags&quot;:[&quot;html&quot;,&quot;css&quot;,&quot;javascript&quot;],&quot;image&quot;:&quot;http://img.youtube.com/vi/q6fFsOX2ihE/maxresdefault.jpg&quot;,&quot;date&quot;:&quot;20230605&quot;,&quot;category&quot;:&quot;apps&quot;,&quot;slug&quot;:&quot;apps/count-down&quot;},{&quot;title&quot;:&quot;Todo List App&quot;,&quot;description&quot;:&quot;Dans cet article, nous allons apprendre à créer une application Todo App en utilisant HTML, CSS et JavaScript. Grâce à un code source facile à comprendre, vous pourrez suivre les étapes et créer votre propre version&quot;,&quot;tags&quot;:[&quot;html&quot;,&quot;css&quot;,&quot;javascript&quot;],&quot;image&quot;:&quot;http://img.youtube.com/vi/T1lBgZVgryw/maxresdefault.jpg&quot;,&quot;date&quot;:&quot;20230529&quot;,&quot;category&quot;:&quot;apps&quot;,&quot;slug&quot;:&quot;apps/todo-list&quot;},{&quot;title&quot;:&quot;ScrollToTheTop Button&quot;,&quot;description&quot;:&quot;Dans cet article, nous allons apprendre à créer un bouton pour remonter en haut de la page en utilisant HTML, CSS et JavaScript. Grâce à un code source facile à comprendre, vous pourrez suivre les étapes et créer votre propre version&quot;,&quot;tags&quot;:[&quot;html&quot;,&quot;css&quot;],&quot;image&quot;:&quot;http://img.youtube.com/vi/7Vc_Di-qYEk/maxresdefault.jpg&quot;,&quot;date&quot;:&quot;20230503&quot;,&quot;category&quot;:&quot;css&quot;,&quot;slug&quot;:&quot;css/scroll-top-button&quot;}]"></app-main>
 
         </main>
         <app-scroll-top-button></app-scroll-top-button>
