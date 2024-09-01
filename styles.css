@@ -7344,18 +7344,15 @@ p-radiobutton {
   --code-font-size: 1.6rem;
   --max-width: 120rem;
   --promotion-height: 4rem; }
-
-@media screen and (max-width: 750px) {
-  :root {
-    --promotion-height: 6rem; } }
-
-@media screen and (max-width: 450px) {
-  :root {
-    --promotion-height: 7.5rem; } }
-
-@media screen and (max-width: 320px) {
-  :root {
-    --promotion-height: 9rem; } }
+  @media screen and (max-width: 750px) {
+    :root {
+      --promotion-height: 6rem; } }
+  @media screen and (max-width: 450px) {
+    :root {
+      --promotion-height: 7rem; } }
+  @media screen and (max-width: 320px) {
+    :root {
+      --promotion-height: 8rem; } }
 
 /*
 
