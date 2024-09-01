@@ -7342,7 +7342,20 @@ p-radiobutton {
   --code-padding-bottom: 1.5rem;
   --code-line-height: 1.45;
   --code-font-size: 1.6rem;
-  --max-width: 120rem; }
+  --max-width: 120rem;
+  --promotion-height: 4rem; }
+
+@media screen and (max-width: 750px) {
+  :root {
+    --promotion-height: 6rem; } }
+
+@media screen and (max-width: 450px) {
+  :root {
+    --promotion-height: 7.5rem; } }
+
+@media screen and (max-width: 320px) {
+  :root {
+    --promotion-height: 9rem; } }
 
 /*
 
@@ -7441,6 +7454,7 @@ hue-6-2: #c18401
 
 body {
   --white-color: #fff;
+  --black-color: #000;
   --dark-primary-color: #092258;
   --primary-color: #F0B23A;
   --secondary-color: #0A5FC5;
@@ -7470,8 +7484,7 @@ body {
   --tab-link-background-color-on-hover: #eeeeee;
   --active-tab-link-color: var(--secondary-color);
   --active-tab-link-background-color: #eeeeee;
-  --contact-background: #FAFAFA
-; }
+  --contact-background: #FAFAFA; }
 
 *,
 *::after,
