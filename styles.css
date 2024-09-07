@@ -7610,6 +7610,10 @@ iframe {
 main {
   margin-bottom: 5rem !important; }
 
+video {
+  width: 100%;
+  border-radius: 3px; }
+
 /* cyrillic-ext */
 @font-face {
   font-family: 'Roboto Mono';
