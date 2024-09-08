@@ -75,7 +75,7 @@ eval("// Module\nvar code = \"<div class=\\\"container\\\">\\r\\n    <span class
   \*************************************************************/
 /***/ ((module) => {
 
-eval("// Module\nvar code = \"<app-section-title value=\\\"Commentaires\\\"></app-section-title>\\r\\n<div class=\\\"section-container\\\">\\r\\n    <div id=\\\"disqus_thread\\\"></div>\\r\\n</div>\";\n// Exports\nmodule.exports = code;\n\n//# sourceURL=webpack://learntime.github.io/./src/app/components/comments/comments.component.html?");
+eval("// Module\nvar code = \"<div class=\\\"comments-container\\\">\\r\\n    <div id=\\\"disqus_thread\\\"></div>\\r\\n</div>\\r\\n\";\n// Exports\nmodule.exports = code;\n\n//# sourceURL=webpack://learntime.github.io/./src/app/components/comments/comments.component.html?");
 
 /***/ }),
 
@@ -265,7 +265,7 @@ eval("// Module\nvar code = \"<app-icon-button #disableSoundButton (action)=\\\"
   \****************************************************************/
 /***/ ((module) => {
 
-eval("// Module\nvar code = \"<app-page-title [title]=\\\"metadata.title\\\"></app-page-title>\\r\\n<div class=\\\"markdown section-container\\\">\\r\\n  <div [innerHTML]=\\\"html\\\"></div>\\r\\n</div>\\r\\n<app-comments></app-comments>\";\n// Exports\nmodule.exports = code;\n\n//# sourceURL=webpack://learntime.github.io/./src/app/pages/blog/components/main/main.component.html?");
+eval("// Module\nvar code = \"<app-page-title [title]=\\\"metadata.title\\\"></app-page-title>\\r\\n<div class=\\\"markdown section-container\\\">\\r\\n  <div [innerHTML]=\\\"html\\\"></div>\\r\\n  <app-comments></app-comments>\\r\\n</div>\";\n// Exports\nmodule.exports = code;\n\n//# sourceURL=webpack://learntime.github.io/./src/app/pages/blog/components/main/main.component.html?");
 
 /***/ }),
 
@@ -366,7 +366,7 @@ eval("module.exports = \":host {\\n  display: flex;\\n  justify-content: center;
   \*************************************************************/
 /***/ ((module) => {
 
-eval("module.exports = \"\";\n\n//# sourceURL=webpack://learntime.github.io/./src/app/components/comments/comments.component.scss?");
+eval("module.exports = \".comments-container {\\n  margin-top: 4rem;\\n  padding-top: 4rem;\\n  border-top: 2px solid #eee;\\n}\";\n\n//# sourceURL=webpack://learntime.github.io/./src/app/components/comments/comments.component.scss?");
 
 /***/ }),
 
