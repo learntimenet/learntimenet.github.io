@@ -7608,7 +7608,10 @@ iframe {
   border-radius: 2px; }
 
 main {
-  margin-bottom: 5rem !important; }
+  margin-bottom: 0 !important; }
+  @media screen and (min-width: 1024px) {
+    main {
+      margin-bottom: 5rem !important; } }
 
 video {
   width: 100%;
