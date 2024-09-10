@@ -506,7 +506,7 @@ eval("module.exports = \".promotion-container {\\n  --promotion-font-size: 1.4re
   \***************************************************************/
 /***/ ((module) => {
 
-eval("module.exports = \".publicity {\\n  width: 32rem;\\n  border-radius: 1rem;\\n  background-color: #FFF;\\n  box-shadow: 0px 0px 20px 0 rgba(0, 0, 0, 0.05);\\n}\";\n\n//# sourceURL=webpack://learntime.github.io/./src/app/components/publicity/publicity.component.scss?");
+eval("module.exports = \".publicity {\\n  width: 35rem;\\n  border-radius: 1rem;\\n  background-color: #FFF;\\n  box-shadow: 0px 0px 20px 0 rgba(0, 0, 0, 0.05);\\n}\";\n\n//# sourceURL=webpack://learntime.github.io/./src/app/components/publicity/publicity.component.scss?");
 
 /***/ }),
 
