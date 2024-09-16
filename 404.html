@@ -40,7 +40,7 @@
                         this.page.identifier = window.location.pathname.replace('/en', '');
                     };
                 </script>
-            <script defer src="/404/404.776dce12b8e91a01dc89.js"></script></head>
+            <script defer src="/404/404.92c5299616c953d6908d.js"></script></head>
             <body>
                 <div class="loader">
                     <svg class="loader-logo" width="1000" height="1000" viewBox="0 0 1000 1000" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -69,9 +69,22 @@
                     <app-desktop-navbar></app-desktop-navbar>
                     <main class="max-width">
         
+<style>
+    :root {
+        --promotion-height: 0 !important;
+    }
+    nav.roof {
+        padding-top: 0 !important;
+    }
+    .body-container {
+        background-color: #FAFAFA;
+    }
+</style>
 <app-main></app-main>
 
         </main>
+        <app-scroll-top-button></app-scroll-top-button>
+        <app-footer></app-footer>
         <app-privacy-consentement></app-privacy-consentement>
         </div>
             <script>
@@ -90,6 +103,18 @@
                 }, 2000);
                 localStorage.setItem('LAST_VISIT_TIME', new Date().valueOf());
             </script>
-        </body></html>
+        
+                <!-- Google tag (gtag.js) -->
+                <script async src="https://www.googletagmanager.com/gtag/js?id=G-S6JEVF53JZ"></script>
+                <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag() {
+                    dataLayer.push(arguments);
+                }
+                gtag('js', new Date());
+
+                gtag('config', 'G-S6JEVF53JZ');
+                </script>
+            <script src="/assets/scripts/404.js"></script></body></html>
 
 
