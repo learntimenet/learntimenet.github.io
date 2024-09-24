@@ -1,3 +1,45 @@
+function toPreviousSectionLink(a) {
+  const res = document.createElement("a");
+  res.href = a.getAttribute("href");
+  res.classList.add('previous-section');
+  const right = document.createElement("div");
+  right.classList.add('right');
+  const leftLabel = document.createElement("span");
+  leftLabel.classList.add('label');
+  leftLabel.innerHTML = 'Précédant'
+  right.appendChild(leftLabel);
+  const leftTitle = document.createElement("span");
+  leftTitle.innerHTML = a.innerHTML;
+  right.appendChild(leftTitle);
+  const left = document.createElement("div");
+  left.classList.add('left');
+  left.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12l4-4m-4 4l4 4"/></svg>';
+  res.appendChild(left);
+  res.appendChild(right);
+  return res;
+}
+
+function toNextSectionLink(a) {
+  const res = document.createElement("a");
+  res.href = a.getAttribute("href");
+  res.classList.add('next-section');
+  const left = document.createElement("div");
+  left.classList.add('left');
+  const leftLabel = document.createElement("span");
+  leftLabel.classList.add('label');
+  leftLabel.innerHTML = 'Suivant'
+  left.appendChild(leftLabel);
+  const leftTitle = document.createElement("span");
+  leftTitle.innerHTML = a.innerHTML;
+  left.appendChild(leftTitle);
+  const right = document.createElement("div");
+  right.classList.add('right');
+  right.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 12H5m14 0l-4 4m4-4l-4-4"/></svg>';
+  res.appendChild(left);
+  res.appendChild(right);
+  return res;
+}
+
 function formatCode() {
   document.querySelectorAll('pre.highlight').forEach((el) => {
     const wrapper = document.createElement('div');
@@ -6,34 +48,96 @@ function formatCode() {
     el.parentNode.replaceChild(wrapper, el);
   });
   document.querySelectorAll('p').forEach((p) => {
+    if (p.innerHTML === '<strong>next-section</strong>') {
+      const a = p.nextElementSibling.querySelector('a');
+      p.nextElementSibling.remove();
+      p.insertAdjacentElement("afterend", toNextSectionLink(a));
+      p.remove();
+      return;
+    };
+    if (p.innerHTML === '<strong>previous-section</strong>') {
+      const a = p.nextElementSibling.querySelector('a');
+      p.nextElementSibling.remove();
+      p.insertAdjacentElement("afterend", toPreviousSectionLink(a));
+      p.remove();
+      return;
+    };
+    if (p.innerHTML === '<strong>next-previous-sections</strong>') {
+      const links = p.nextElementSibling.querySelectorAll('a')
+      const aPrevious = links[0];
+      const aNext = links[1];
+      p.nextElementSibling.remove();
+      const div = document.createElement('div');
+      div.classList.add('next-previous-sections');
+      div.appendChild(toPreviousSectionLink(aPrevious));
+      div.appendChild(toNextSectionLink(aNext));
+      p.insertAdjacentElement("afterend", div);
+      p.remove();
+      return;
+    };
+    if (/<strong>code-explication-(\d+)<\/strong>/.test(p.innerHTML)) {
+      const nbElements = p.innerHTML.match(/<strong>code-explication-(\d+)<\/strong>/)[1];
+      let index = 0;
+      let html = '<summary>Explications</summary>';
+      let nextElementSibling = p.nextElementSibling;
+      while (index < nbElements) {
+        html += nextElementSibling.outerHTML;
+        nextElementSibling.innerHTML = '';
+        nextElementSibling = nextElementSibling.nextElementSibling;
+        index++;
+      }
+      div = document.createElement("details");
+      div.innerHTML = html;
+      p.insertAdjacentElement("afterend", div);
+      p.remove();
+      return;
+    };
     if (p.innerHTML === '<strong>method-signature</strong>') {
-      p.innerHTML = '';
       p.nextElementSibling.classList.add('method-signature');
+      p.remove();
       return;
     };
     if (p.innerHTML === '<strong>without-line-numbers</strong>') {
-      p.innerHTML = '';
       p.nextElementSibling.classList.add('without-line-numbers');
+      p.remove();
       return;
     }
     if (p.innerHTML === '<strong>code-tabs</strong>') {
-      p.innerHTML = '';
       p.nextElementSibling.classList.add('code-tabs');
+      p.remove();
       return;
     }
     if (p.innerHTML === '<strong>alert-info</strong>') {
-      p.innerHTML = '';
       p.nextElementSibling.classList.add('alert-info');
+      p.remove();
+      return;
+    }
+    if (/<strong>alert-info-(\d+)<\/strong>/.test(p.innerHTML)) {
+      const nbElements = p.innerHTML.match(/<strong>alert-info-(\d+)<\/strong>/)[1];
+      let index = 0;
+      let html = '';
+      let nextElementSibling = p.nextElementSibling;
+      while (index < nbElements) {
+        html += nextElementSibling.outerHTML;
+        nextElementSibling.innerHTML = '';
+        nextElementSibling = nextElementSibling.nextElementSibling;
+        index++;
+      }
+      div = document.createElement("div");
+      div.classList.add('alert-info');
+      div.innerHTML = html;
+      p.insertAdjacentElement("afterend", div);
+      p.remove();
       return;
     }
     if (p.innerHTML === '<strong>alert-warn</strong>') {
-      p.innerHTML = '';
       p.nextElementSibling.classList.add('alert-warn');
+      p.remove();
       return;
     }
     if (p.innerHTML === '<strong>alert-error</strong>') {
-      p.innerHTML = '';
       p.nextElementSibling.classList.add('alert-error');
+      p.remove();
       return;
     }
   });
