@@ -7643,6 +7643,9 @@ video {
   width: 100%;
   border-radius: 3px; }
 
+.nowrap {
+  white-space: nowrap; }
+
 /* cyrillic-ext */
 @font-face {
   font-family: 'Roboto Mono';
