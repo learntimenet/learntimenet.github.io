@@ -1,6 +1,5 @@
 setTimeout(() => {
   const button = document.querySelector(".output button");
-  console.log(button);
   button.addEventListener('click', (e) => {
     e.target.classList.add('animate');
     setTimeout(() => {
