@@ -8472,9 +8472,12 @@ video {
 .markdown table th {
   font-weight: 600; }
 
+.markdown table tbody {
+  font-size: 88%; }
+
 .markdown table td,
 .markdown table th {
-  padding: 10px 13px; }
+  padding: 7px 10px; }
 
 .markdown table.nowrap td,
 .markdown table.nowrap th {
@@ -8668,9 +8671,13 @@ video {
   .markdown details *:last-child {
     margin-bottom: 1rem; }
 
-.next-previous-sections {
+.previous-next-sections {
   display: flex;
-  column-gap: 2rem; }
+  column-gap: 2rem;
+  flex-direction: column; }
+  @media screen and (min-width: 768px) {
+    .previous-next-sections {
+      flex-direction: row; } }
 
 .previous-section .right {
   align-items: flex-end; }
@@ -8692,7 +8699,7 @@ video {
   .next-section .label,
   .previous-section .label {
     font-size: 1.3rem;
-    font-weight: 600;
+    font-weight: 900;
     margin-bottom: .7rem;
     color: #999; }
   .next-section svg,
@@ -8876,7 +8883,7 @@ pre.highlight .copy-code-icon-copied-label {
   margin: 0;
   display: inline-block;
   width: 100%;
-  background: yellow;
+  background: #fdfd8d;
   margin-left: -2rem;
   padding-left: 2rem;
   width: calc(100% + 4rem); }
@@ -8936,7 +8943,6 @@ pre.highlight .copy-code-icon-copied-label {
 
 .tab-content-wrapper {
   overflow: auto;
-  max-height: 50rem;
   margin-bottom: 1.6rem;
   /* Hide scrollbar for IE, Edge and Firefox */
   -ms-overflow-style: none;
@@ -8948,6 +8954,9 @@ pre.highlight .copy-code-icon-copied-label {
     display: none; }
   .tab-content-wrapper:hover::-webkit-scrollbar {
     display: initial; }
+
+.tab-content-wrapper.max-height {
+  max-height: 50rem; }
 
 /* Style the tab content */
 .tab-content {

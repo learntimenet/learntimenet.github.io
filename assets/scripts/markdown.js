@@ -62,13 +62,13 @@ function formatCode() {
       p.remove();
       return;
     };
-    if (p.innerHTML === '<strong>next-previous-sections</strong>') {
+    if (p.innerHTML === '<strong>previous-next-sections</strong>') {
       const links = p.nextElementSibling.querySelectorAll('a')
       const aPrevious = links[0];
       const aNext = links[1];
       p.nextElementSibling.remove();
       const div = document.createElement('div');
-      div.classList.add('next-previous-sections');
+      div.classList.add('previous-next-sections');
       div.appendChild(toPreviousSectionLink(aPrevious));
       div.appendChild(toNextSectionLink(aNext));
       p.insertAdjacentElement("afterend", div);
@@ -104,6 +104,11 @@ function formatCode() {
     }
     if (p.innerHTML === '<strong>code-tabs</strong>') {
       p.nextElementSibling.classList.add('code-tabs');
+      p.remove();
+      return;
+    }
+    if (p.innerHTML === '<strong>code-tabs-with-max-height</strong>') {
+      p.nextElementSibling.classList.add('code-tabs', 'max-height');
       p.remove();
       return;
     }
@@ -146,9 +151,10 @@ function formatCode() {
 function formatCodeTabs() {
   document.querySelectorAll('.code-tabs').forEach((codeTabs) => {
     try {
+      const isMaxHeight = codeTabs.classList.contains('max-height');
       const tabsContentsId = 'tas-contents-id-' + Date.now() + Math.floor(Math.random() * 100);
       let tabsLinks = '<div class="tab-links">';
-      let tabsContents = `<div class="tab-content-wrapper">`;
+      let tabsContents = `<div class="tab-content-wrapper ${isMaxHeight ? 'max-height' : ''}">`;
       codeTabs.querySelectorAll('li').forEach((codeTab) => {
         const tabName = codeTab.querySelector('p').textContent;
         const tabId = tabName + '-' + tabsContentsId;

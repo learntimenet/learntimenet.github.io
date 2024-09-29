@@ -3,8 +3,8 @@
             <html lang="fr">
             <head>
                 <meta charset="utf-8" />
-                <title>Learn Time | Toggle Password Input</title>
-                <meta name="description" content="Dans cet article, nous allons apprendre comment afficher/masquer le mot de passe dans un formulaire en utilisant HTML, CSS et JavaScript. Avec un code source facile à comprendre, vous pourrez suivre les étapes et créer votre propre version">
+                <title>Learn Time | API REST avec Spring</title>
+                <meta name="description" content="Dans cet article, nous allons créer une API REST en utilisant le framework Spring avec en utilisant une base de données H2 puis PostgreSQL et en bonus ajouter sa documentation Swagger 😊">
                 <meta name="viewport" content="width=device-width,initial-scale=1" />
                 <!--
                 <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
@@ -34,14 +34,14 @@
                     .loader.hide {opacity: 0;}
                 </style>
                 
-            <meta property="og:title" content="Toggle Password Input" />
-            <meta property="og:description" content="Dans cet article, nous allons apprendre comment afficher/masquer le mot de passe dans un formulaire en utilisant HTML, CSS et JavaScript. Avec un code source facile à comprendre, vous pourrez suivre les étapes et créer votre propre version" />
-            <meta property="og:image" content="https://learntime.net/assets/thumbnail/blog-thumbnail-3.jpg" />
+            <meta property="og:title" content="API REST avec Spring" />
+            <meta property="og:description" content="Dans cet article, nous allons créer une API REST en utilisant le framework Spring avec en utilisant une base de données H2 puis PostgreSQL et en bonus ajouter sa documentation Swagger 😊" />
+            <meta property="og:image" content="https://learntime.net/assets/thumbnail/api-rest-with-spring-boot.png" />
             <meta name="twitter:card" content="summary_large_image">
             <meta name="twitter:creator" content="@learntimenet">
-            <meta name="twitter:title" content="Toggle Password Input">
-            <meta name="twitter:description" content="Dans cet article, nous allons apprendre comment afficher/masquer le mot de passe dans un formulaire en utilisant HTML, CSS et JavaScript. Avec un code source facile à comprendre, vous pourrez suivre les étapes et créer votre propre version">
-            <meta name="twitter:image" content="https://learntime.net/assets/thumbnail/blog-thumbnail-3.jpg">
+            <meta name="twitter:title" content="API REST avec Spring">
+            <meta name="twitter:description" content="Dans cet article, nous allons créer une API REST en utilisant le framework Spring avec en utilisant une base de données H2 puis PostgreSQL et en bonus ajouter sa documentation Swagger 😊">
+            <meta name="twitter:image" content="https://learntime.net/assets/thumbnail/api-rest-with-spring-boot.png">
         
                 <script>
                     var disqus_config = function () {
@@ -49,7 +49,7 @@
                         this.page.identifier = window.location.pathname.replace('/en', '');
                     };
                 </script>
-            <script defer src="/javascript/toggle-password-visibility/toggle-password-visibility.16e31b27ed10f18de5fe.js"></script></head>
+            <script defer src="/spring/api-rest-with-spring-boot/add-swagger/add-swagger.680976c478922ef6f10d.js"></script></head>
             <body>
                 <div class="loader">
                     <svg class="loader-logo" width="1000" height="1000" viewBox="0 0 1000 1000" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -86,161 +86,24 @@
         }
     }
 </style>
-<app-main metadata="{&quot;isBlogSection&quot;:false,&quot;date&quot;:&quot;20230624&quot;,&quot;title&quot;:&quot;Toggle Password Input&quot;,&quot;withScript&quot;:true,&quot;description&quot;:&quot;Dans cet article, nous allons apprendre comment afficher/masquer le mot de passe dans un formulaire en utilisant HTML, CSS et JavaScript. Avec un code source facile à comprendre, vous pourrez suivre les étapes et créer votre propre version&quot;,&quot;tags&quot;:[&quot;html&quot;,&quot;css&quot;,&quot;javascript&quot;],&quot;image&quot;:&quot;/assets/thumbnail/blog-thumbnail-1.jpg&quot;,&quot;category&quot;:&quot;javascript&quot;,&quot;slug&quot;:&quot;javascript/toggle-password-visibility&quot;}" html="<h1>Introduction</h1>
-<p>Dans cet article, nous allons apprendre comment afficher/masquer le mot de passe dans un formulaire en utilisant HTML, CSS et JavaScript. Avec un code source facile à comprendre, vous pourrez suivre les étapes et créer votre propre version</p>
-<h2>Démo</h2>
-<style>
-  .output {
-    height: 190px;
-    display: block;
-    overflow: auto;
-    position: relative;
-    background: #fafafa;
-    border-radius: 4px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .input-container {
-    position: relative;
-    background-color: #eee;
-    border-radius: 4px;
-  }
-  .input-container input {
-    font-family: 'Circular';
-    font-size: 20px;
-    font-weight: 600;
-    padding: 12px ;
-    border: none;
-    outline: none;
-    background-color: transparent;
-    color: #777;
-    width: 100%;
-  }
-  .input-container input:focus {
-    border: none;
-    outline: none;
-  }
-  .input-container input::placeholder {
-    color: #ABABAB;
-    font-size: 20px;
-    font-weight: 600;
-  }
-  .input-container .icon {
-    position: absolute;
-    top: 12px;
-    right: 15px;
-    color: #777;
-    font-size: 27px;
-    cursor: pointer;
-  }
-</style>
-<div class=&quot;output&quot;>
-  <div class=&quot;input-container&quot;>
-    <input type=&quot;password&quot; placeholder=&quot;Password&quot;>
-    <iconify-icon class=&quot;icon show-icon&quot; icon=&quot;zondicons:view-show&quot;></iconify-icon>
-    <iconify-icon class=&quot;icon hide-icon&quot; style=&quot;display: none&quot; icon=&quot;mdi:hide&quot;></iconify-icon>
-  </div>
-</div>
-<script>
-  const input = document.querySelector('.input-container input');
-  const showIcon = document.querySelector('.show-icon');
-  const hideIcon = document.querySelector('.hide-icon');
-  const toggleInput = () => {
-    if (input.type === &quot;password&quot;) {
-      input.type = &quot;text&quot;;
-    } else {
-      input.type = &quot;password&quot;;
-    }
-  }
-  showIcon.addEventListener('click', () => {
-    toggleInput();
-    showIcon.style.display = 'none';
-    hideIcon.style.display = 'initial';
-  });
-  hideIcon.addEventListener('click', () => {
-    toggleInput();
-    hideIcon.style.display = 'none';
-    showIcon.style.display = 'initial';
-  });
-</script>
-<h2>Code source</h2>
-<p><strong>code-tabs</strong></p>
-<ul>
-<li><p>index.html</p>
-<pre><code class=&quot;language-html&quot;><pre class=&quot;highlight&quot;><code class=&quot;hljs&quot;><span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>div</span> <span class=&quot;hljs-attr&quot;>class</span>=<span class=&quot;hljs-string&quot;>&quot;input-container&quot;</span>&amp;gt;</span>
-  <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>input</span> <span class=&quot;hljs-attr&quot;>type</span>=<span class=&quot;hljs-string&quot;>&quot;password&quot;</span> <span class=&quot;hljs-attr&quot;>placeholder</span>=<span class=&quot;hljs-string&quot;>&quot;Password&quot;</span>&amp;gt;</span>
-  <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>iconify-icon</span> <span class=&quot;hljs-attr&quot;>class</span>=<span class=&quot;hljs-string&quot;>&quot;icon show-icon&quot;</span> <span class=&quot;hljs-attr&quot;>icon</span>=<span class=&quot;hljs-string&quot;>&quot;zondicons:view-show&quot;</span>&amp;gt;</span><span class=&quot;hljs-tag&quot;>&amp;lt;/<span class=&quot;hljs-name&quot;>iconify-icon</span>&amp;gt;</span>
-  <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>iconify-icon</span> <span class=&quot;hljs-attr&quot;>class</span>=<span class=&quot;hljs-string&quot;>&quot;icon hide-icon&quot;</span> <span class=&quot;hljs-attr&quot;>icon</span>=<span class=&quot;hljs-string&quot;>&quot;mdi:hide&quot;</span>&amp;gt;</span><span class=&quot;hljs-tag&quot;>&amp;lt;/<span class=&quot;hljs-name&quot;>iconify-icon</span>&amp;gt;</span>
-<span class=&quot;hljs-tag&quot;>&amp;lt;/<span class=&quot;hljs-name&quot;>div</span>&amp;gt;</span>
-</code></pre></code></pre></li>
-<li><p>style.css</p>
-<pre><code class=&quot;language-css&quot;><pre class=&quot;highlight&quot;><code class=&quot;hljs&quot;><span class=&quot;hljs-selector-class&quot;>.input-container</span> {
-  <span class=&quot;hljs-attribute&quot;>position</span>: relative;
-  <span class=&quot;hljs-attribute&quot;>background-color</span>: <span class=&quot;hljs-number&quot;>#1f222b</span>;
-  <span class=&quot;hljs-attribute&quot;>border-radius</span>: <span class=&quot;hljs-number&quot;>4px</span>;
-  <span class=&quot;hljs-attribute&quot;>margin-bottom</span>: <span class=&quot;hljs-number&quot;>25px</span>;
-}
-<span class=&quot;hljs-selector-tag&quot;>input</span> {
-  <span class=&quot;hljs-attribute&quot;>font-family</span>: <span class=&quot;hljs-string&quot;>&#x27;Poppins&#x27;</span>;
-  <span class=&quot;hljs-attribute&quot;>padding</span>: <span class=&quot;hljs-number&quot;>12px</span> <span class=&quot;hljs-number&quot;>13px</span>;
-  <span class=&quot;hljs-attribute&quot;>border</span>: none;
-  <span class=&quot;hljs-attribute&quot;>outline</span>: none;
-  <span class=&quot;hljs-attribute&quot;>color</span>: <span class=&quot;hljs-number&quot;>#ffbe2f</span>;
-  <span class=&quot;hljs-attribute&quot;>background-color</span>: transparent;
-  <span class=&quot;hljs-attribute&quot;>transition</span>: all <span class=&quot;hljs-number&quot;>0.2s</span> ease;
-  <span class=&quot;hljs-attribute&quot;>font-size</span>: <span class=&quot;hljs-number&quot;>20px</span>;
-  <span class=&quot;hljs-attribute&quot;>width</span>: <span class=&quot;hljs-number&quot;>300px</span>;
-  <span class=&quot;hljs-attribute&quot;>font-weight</span>: <span class=&quot;hljs-number&quot;>600</span>;
-}
-<span class=&quot;hljs-selector-tag&quot;>input</span><span class=&quot;hljs-selector-pseudo&quot;>:focus</span> {
-  <span class=&quot;hljs-attribute&quot;>border</span>: none;
-  <span class=&quot;hljs-attribute&quot;>outline</span>: none;
-}
-<span class=&quot;hljs-selector-tag&quot;>input</span><span class=&quot;hljs-selector-pseudo&quot;>::placeholder</span> {
-  <span class=&quot;hljs-attribute&quot;>color</span>: <span class=&quot;hljs-number&quot;>#777</span>;
-  <span class=&quot;hljs-attribute&quot;>font-weight</span>: <span class=&quot;hljs-number&quot;>600</span>;
-  <span class=&quot;hljs-attribute&quot;>font-size</span>: <span class=&quot;hljs-number&quot;>20px</span>;
-}
-<span class=&quot;hljs-selector-class&quot;>.icon</span> {
-  <span class=&quot;hljs-attribute&quot;>position</span>: absolute;
-  <span class=&quot;hljs-attribute&quot;>top</span>: <span class=&quot;hljs-number&quot;>14px</span>;
-  <span class=&quot;hljs-attribute&quot;>right</span>: <span class=&quot;hljs-number&quot;>15px</span>;
-  <span class=&quot;hljs-attribute&quot;>color</span>: <span class=&quot;hljs-number&quot;>#777</span>;
-  <span class=&quot;hljs-attribute&quot;>font-size</span>: <span class=&quot;hljs-number&quot;>27px</span>;
-  <span class=&quot;hljs-attribute&quot;>cursor</span>: pointer;
-}
-<span class=&quot;hljs-selector-class&quot;>.hide-icon</span> {
-  <span class=&quot;hljs-attribute&quot;>display</span>: none;
-}
-
-</code></pre></code></pre></li>
-<li><p>script.js</p>
-<pre><code class=&quot;language-js&quot;><pre class=&quot;highlight&quot;><code class=&quot;hljs&quot;><span class=&quot;hljs-keyword&quot;>const</span> input = <span class=&quot;hljs-variable language_&quot;>document</span>.<span class=&quot;hljs-title function_&quot;>querySelector</span>(<span class=&quot;hljs-string&quot;>&#x27;input&#x27;</span>);
-<span class=&quot;hljs-keyword&quot;>const</span> showIcon = <span class=&quot;hljs-variable language_&quot;>document</span>.<span class=&quot;hljs-title function_&quot;>querySelector</span>(<span class=&quot;hljs-string&quot;>&#x27;.show-icon&#x27;</span>);
-<span class=&quot;hljs-keyword&quot;>const</span> hideIcon = <span class=&quot;hljs-variable language_&quot;>document</span>.<span class=&quot;hljs-title function_&quot;>querySelector</span>(<span class=&quot;hljs-string&quot;>&#x27;.hide-icon&#x27;</span>);
-<span class=&quot;hljs-keyword&quot;>const</span> toggleInput = () =&amp;gt; {
-  <span class=&quot;hljs-keyword&quot;>if</span> (input.<span class=&quot;hljs-property&quot;>type</span> === <span class=&quot;hljs-string&quot;>&quot;password&quot;</span>) {
-    input.<span class=&quot;hljs-property&quot;>type</span> = <span class=&quot;hljs-string&quot;>&quot;text&quot;</span>;
-  } <span class=&quot;hljs-keyword&quot;>else</span> {
-    input.<span class=&quot;hljs-property&quot;>type</span> = <span class=&quot;hljs-string&quot;>&quot;password&quot;</span>;
-  }
-}
-showIcon.<span class=&quot;hljs-title function_&quot;>addEventListener</span>(<span class=&quot;hljs-string&quot;>&#x27;click&#x27;</span>, () =&amp;gt; {
-  <span class=&quot;hljs-title function_&quot;>toggleInput</span>();
-  showIcon.<span class=&quot;hljs-property&quot;>style</span>.<span class=&quot;hljs-property&quot;>display</span> = <span class=&quot;hljs-string&quot;>&#x27;none&#x27;</span>;
-  hideIcon.<span class=&quot;hljs-property&quot;>style</span>.<span class=&quot;hljs-property&quot;>display</span> = <span class=&quot;hljs-string&quot;>&#x27;initial&#x27;</span>;
-});
-hideIcon.<span class=&quot;hljs-title function_&quot;>addEventListener</span>(<span class=&quot;hljs-string&quot;>&#x27;click&#x27;</span>, () =&amp;gt; {
-  <span class=&quot;hljs-title function_&quot;>toggleInput</span>();
-  hideIcon.<span class=&quot;hljs-property&quot;>style</span>.<span class=&quot;hljs-property&quot;>display</span> = <span class=&quot;hljs-string&quot;>&#x27;none&#x27;</span>;
-  showIcon.<span class=&quot;hljs-property&quot;>style</span>.<span class=&quot;hljs-property&quot;>display</span> = <span class=&quot;hljs-string&quot;>&#x27;initial&#x27;</span>;
-});
-
-</code></pre></code></pre></li>
-</ul>
+<app-main metadata="{&quot;isBlogSection&quot;:true,&quot;date&quot;:&quot;20240919&quot;,&quot;title&quot;:&quot;API REST avec Spring&quot;,&quot;withScript&quot;:false,&quot;description&quot;:&quot;Dans cet article, nous allons créer une API REST en utilisant le framework Spring avec en utilisant une base de données H2 puis PostgreSQL et en bonus ajouter sa documentation Swagger 😊&quot;,&quot;tags&quot;:[&quot;spring boot&quot;,&quot;api rest&quot;],&quot;image&quot;:&quot;/assets/thumbnail/api-rest-with-spring-boot.png&quot;,&quot;category&quot;:&quot;spring&quot;,&quot;slug&quot;:&quot;spring/api-rest-with-spring-boot/add-swagger&quot;}" html="<h1>Ajouter Swagger</h1>
+<p>Dans cette section, nous allons intégrer Swagger à notre API REST pour faciliter la documentation et la découverte des endpoints. Swagger offre une interface interactive qui permet de visualiser et de tester notre API directement à partir d'un navigateur.</p>
+<h2>Étape 1 : Ajouter les dépendances Swagger</h2>
+<p>Pour commencer, nous devons ajouter les dépendances nécessaires à Swagger dans notre fichier <code>pom.xml</code>. Ajoutons la dépendance suivante :</p>
+<pre><code class=&quot;language-xml&quot;><pre class=&quot;highlight&quot;><code class=&quot;hljs&quot;><span class=&quot;hljs-symbol&quot;>&amp;lt;</span>dependency<span class=&quot;hljs-symbol&quot;>&amp;gt;</span>
+        <span class=&quot;hljs-symbol&quot;>&amp;lt;</span>groupId<span class=&quot;hljs-symbol&quot;>&amp;gt;</span>org.springdoc<span class=&quot;hljs-symbol&quot;>&amp;lt;</span>/groupId<span class=&quot;hljs-symbol&quot;>&amp;gt;</span>
+        <span class=&quot;hljs-symbol&quot;>&amp;lt;</span>artifactId<span class=&quot;hljs-symbol&quot;>&amp;gt;</span>springdoc-openapi-starter-webmvc-ui<span class=&quot;hljs-symbol&quot;>&amp;lt;</span>/artifactId<span class=&quot;hljs-symbol&quot;>&amp;gt;</span>
+        <span class=&quot;hljs-symbol&quot;>&amp;lt;</span>version<span class=&quot;hljs-symbol&quot;>&amp;gt;</span>2.0.2<span class=&quot;hljs-symbol&quot;>&amp;lt;</span>/version<span class=&quot;hljs-symbol&quot;>&amp;gt;</span>
+<span class=&quot;hljs-symbol&quot;>&amp;lt;</span>/dependency<span class=&quot;hljs-symbol&quot;>&amp;gt;</span>
+</code></pre></code></pre>
+<h2>Étape 2 : Accéder à l’interface Swagger</h2>
+<p>Une fois les dépendances ajoutées, nous pouvons démarrer notre application. Swagger sera disponible à l'URL suivante :</p>
+<pre><code class=&quot;language-sh&quot;><pre class=&quot;highlight&quot;><code class=&quot;hljs&quot;>http://localhost:8080/swagger-ui/index.html
+</code></pre></code></pre>
+<p>Sur cette interface, nous pourrons voir tous les endpoints de notre API ainsi que leurs descriptions. Nous pourrons également effectuer des tests directement depuis cette interface, ce qui est très pratique pour le développement et la documentation.</p>
+<p><img src=&quot;../../../../../assets/blog/api-rest-with-spring-boot/swagger.png&quot; alt=&quot;swagger&quot; title=&quot;swagger&quot;></p>
 <h2>Conclusion</h2>
-<p>Merci de votre lecture. Nous espérons que cet article vous a été utile !</p>
+<p>Avec l'intégration de Swagger, notre API REST est maintenant documentée de manière interactive, facilitant ainsi son utilisation par les développeurs et les utilisateurs finaux. Cette documentation nous permet de maintenir une bonne compréhension des fonctionnalités offertes par notre API, tout en offrant une plateforme de test intégrée.</p>
 " blogs="[{&quot;title&quot;:&quot;1 mois offert SkillShare&quot;,&quot;description&quot;:&quot;Learn Time vous offre 1 mois gratuit sur SkillShare. Découvrez son cours et des milliers d'autres cours pratiques donnés par des experts créatifs du monde entier 🚀&quot;,&quot;tags&quot;:[&quot;formation&quot;,&quot;web&quot;],&quot;image&quot;:&quot;/assets/thumbnail/skillshare.png&quot;,&quot;date&quot;:&quot;21241128&quot;,&quot;category&quot;:&quot;formation&quot;,&quot;slug&quot;:&quot;https://skl.sh/4e0KLkc&quot;},{&quot;title&quot;:&quot;Formation Udemy 🎓&quot;,&quot;description&quot;:&quot;Découvrez notre première formation sur Udemy, où nous vous présenterons un projet FullStack développé avec Spring et React. Ce projet intègre l'authentification OAuth2 via Google et Github, et est déployé avec Docker sur Amazon AWS&quot;,&quot;tags&quot;:[&quot;formation&quot;,&quot;web&quot;],&quot;image&quot;:&quot;/assets/thumbnail/formation-quizzapp-30-discount.png&quot;,&quot;date&quot;:&quot;21241128&quot;,&quot;category&quot;:&quot;formation&quot;,&quot;slug&quot;:&quot;https://www.udemy.com/course/projet-full-stack-spring-react-oauth2-et-deploiement-aws/?couponCode=LEARNTIME&quot;},{&quot;isBlogSection&quot;:true,&quot;date&quot;:&quot;20240919&quot;,&quot;title&quot;:&quot;API REST avec Spring&quot;,&quot;withScript&quot;:false,&quot;description&quot;:&quot;Dans cet article, nous allons créer une API REST en utilisant le framework Spring avec en utilisant une base de données H2 puis PostgreSQL et en bonus ajouter sa documentation Swagger 😊&quot;,&quot;tags&quot;:[&quot;spring boot&quot;,&quot;api rest&quot;],&quot;image&quot;:&quot;/assets/thumbnail/api-rest-with-spring-boot.png&quot;,&quot;category&quot;:&quot;spring&quot;,&quot;slug&quot;:&quot;spring/api-rest-with-spring-boot/first-version&quot;},{&quot;isBlogSection&quot;:true,&quot;date&quot;:&quot;20240919&quot;,&quot;title&quot;:&quot;API REST avec Spring&quot;,&quot;withScript&quot;:false,&quot;description&quot;:&quot;Dans cet article, nous allons créer une API REST en utilisant le framework Spring avec en utilisant une base de données H2 puis PostgreSQL et en bonus ajouter sa documentation Swagger 😊&quot;,&quot;tags&quot;:[&quot;spring boot&quot;,&quot;api rest&quot;],&quot;image&quot;:&quot;/assets/thumbnail/api-rest-with-spring-boot.png&quot;,&quot;category&quot;:&quot;spring&quot;,&quot;slug&quot;:&quot;spring/api-rest-with-spring-boot/test-our-api-rest&quot;},{&quot;isBlogSection&quot;:true,&quot;date&quot;:&quot;20240919&quot;,&quot;title&quot;:&quot;API REST avec Spring&quot;,&quot;withScript&quot;:false,&quot;description&quot;:&quot;Dans cet article, nous allons créer une API REST en utilisant le framework Spring avec en utilisant une base de données H2 puis PostgreSQL et en bonus ajouter sa documentation Swagger 😊&quot;,&quot;tags&quot;:[&quot;spring boot&quot;,&quot;api rest&quot;],&quot;image&quot;:&quot;/assets/thumbnail/api-rest-with-spring-boot.png&quot;,&quot;category&quot;:&quot;spring&quot;,&quot;slug&quot;:&quot;spring/api-rest-with-spring-boot/add-validation&quot;},{&quot;isBlogSection&quot;:true,&quot;date&quot;:&quot;20240919&quot;,&quot;title&quot;:&quot;API REST avec Spring&quot;,&quot;withScript&quot;:false,&quot;description&quot;:&quot;Dans cet article, nous allons créer une API REST en utilisant le framework Spring avec en utilisant une base de données H2 puis PostgreSQL et en bonus ajouter sa documentation Swagger 😊&quot;,&quot;tags&quot;:[&quot;spring boot&quot;,&quot;api rest&quot;],&quot;image&quot;:&quot;/assets/thumbnail/api-rest-with-spring-boot.png&quot;,&quot;category&quot;:&quot;spring&quot;,&quot;slug&quot;:&quot;spring/api-rest-with-spring-boot/add-exceptions-handlers&quot;},{&quot;isBlogSection&quot;:true,&quot;date&quot;:&quot;20240919&quot;,&quot;title&quot;:&quot;API REST avec Spring&quot;,&quot;withScript&quot;:false,&quot;description&quot;:&quot;Dans cet article, nous allons créer une API REST en utilisant le framework Spring avec en utilisant une base de données H2 puis PostgreSQL et en bonus ajouter sa documentation Swagger 😊&quot;,&quot;tags&quot;:[&quot;spring boot&quot;,&quot;api rest&quot;],&quot;image&quot;:&quot;/assets/thumbnail/api-rest-with-spring-boot.png&quot;,&quot;category&quot;:&quot;spring&quot;,&quot;slug&quot;:&quot;spring/api-rest-with-spring-boot/use-postgresql&quot;},{&quot;isBlogSection&quot;:true,&quot;date&quot;:&quot;20240919&quot;,&quot;title&quot;:&quot;API REST avec Spring&quot;,&quot;withScript&quot;:false,&quot;description&quot;:&quot;Dans cet article, nous allons créer une API REST en utilisant le framework Spring avec en utilisant une base de données H2 puis PostgreSQL et en bonus ajouter sa documentation Swagger 😊&quot;,&quot;tags&quot;:[&quot;spring boot&quot;,&quot;api rest&quot;],&quot;image&quot;:&quot;/assets/thumbnail/api-rest-with-spring-boot.png&quot;,&quot;category&quot;:&quot;spring&quot;,&quot;slug&quot;:&quot;spring/api-rest-with-spring-boot/add-swagger&quot;},{&quot;isBlogSection&quot;:false,&quot;date&quot;:&quot;20240919&quot;,&quot;title&quot;:&quot;API REST avec Spring&quot;,&quot;withScript&quot;:false,&quot;description&quot;:&quot;Dans cet article, nous allons créer une API REST en utilisant le framework Spring avec en utilisant une base de données H2 puis PostgreSQL et en bonus ajouter sa documentation Swagger 😊&quot;,&quot;tags&quot;:[&quot;spring boot&quot;,&quot;api rest&quot;],&quot;image&quot;:&quot;/assets/thumbnail/api-rest-with-spring-boot.png&quot;,&quot;category&quot;:&quot;spring&quot;,&quot;slug&quot;:&quot;spring/api-rest-with-spring-boot&quot;},{&quot;isBlogSection&quot;:false,&quot;date&quot;:&quot;20231128&quot;,&quot;title&quot;:&quot;Animated CSS Border&quot;,&quot;withScript&quot;:false,&quot;description&quot;:&quot;Dans cet article, nous allons apprendre à créer une bordure animée en utilisant HTML et CSS. Grâce à un code source facile à comprendre, vous pourrez suivre les étapes et créer votre propre version&quot;,&quot;tags&quot;:[&quot;html&quot;,&quot;css&quot;],&quot;image&quot;:&quot;/assets/thumbnail/animated-border.png&quot;,&quot;category&quot;:&quot;css&quot;,&quot;slug&quot;:&quot;css/animated-border&quot;},{&quot;isBlogSection&quot;:false,&quot;date&quot;:&quot;20231124&quot;,&quot;title&quot;:&quot;Animated Search Bar&quot;,&quot;withScript&quot;:false,&quot;description&quot;:&quot;Dans cet article, nous allons apprendre à créer une une barre de recherche animée en utilisant HTML et CSS. Grâce à un code source facile à comprendre, vous pourrez suivre les étapes et créer votre propre version&quot;,&quot;tags&quot;:[&quot;html&quot;,&quot;css&quot;],&quot;image&quot;:&quot;/assets/thumbnail/animated-search-bar.png&quot;,&quot;category&quot;:&quot;css&quot;,&quot;slug&quot;:&quot;css/animated-search-bar&quot;},{&quot;isBlogSection&quot;:false,&quot;date&quot;:&quot;20231121&quot;,&quot;title&quot;:&quot;Héritage avec JPA&quot;,&quot;withScript&quot;:false,&quot;description&quot;:&quot;Un guide pratique pour comprendre les différentes stratégies d'héritage avec l'API de persistance Java (JPA). Ce guide vous aidera à maîtriser les concepts essentiels pour modéliser efficacement vos entités dans une base de données relationnelle&quot;,&quot;tags&quot;:[&quot;Java&quot;,&quot;JPA&quot;],&quot;image&quot;:&quot;/assets/thumbnail/blog-thumbnail-5.jpg&quot;,&quot;category&quot;:&quot;java&quot;,&quot;slug&quot;:&quot;java/inheritance-with-jpa&quot;},{&quot;isBlogSection&quot;:false,&quot;date&quot;:&quot;20231116&quot;,&quot;title&quot;:&quot;ThreadLocal en Java&quot;,&quot;withScript&quot;:false,&quot;description&quot;:&quot;Un guide pratique sur la classe ThreadLocal permettant de stocker des données spécifiques aux threads en Java, et d'assurer que chaque thread possède ses propres valeurs isolées, garantissant ainsi la sécurité et l'intégrité des données dans les environnements multithreadés&quot;,&quot;tags&quot;:[&quot;java&quot;,&quot;multithread&quot;],&quot;image&quot;:&quot;/assets/thumbnail/blog-thumbnail-6.jpg&quot;,&quot;category&quot;:&quot;java&quot;,&quot;slug&quot;:&quot;java/thread-local&quot;},{&quot;isBlogSection&quot;:false,&quot;date&quot;:&quot;20230628&quot;,&quot;title&quot;:&quot;Animated Submit Button&quot;,&quot;withScript&quot;:true,&quot;description&quot;:&quot;Dans cet article, nous allons apprendre à créer un bouton de soumission animé en utilisant HTML, CSS et JavaScript. Avec un code source facile à comprendre, vous pourrez suivre les étapes et créer votre propre version&quot;,&quot;tags&quot;:[&quot;html&quot;,&quot;css&quot;,&quot;javascript&quot;],&quot;image&quot;:&quot;/assets/thumbnail/animated-submit-button.png&quot;,&quot;category&quot;:&quot;css&quot;,&quot;slug&quot;:&quot;css/animated-submit-button&quot;},{&quot;isBlogSection&quot;:false,&quot;date&quot;:&quot;20230624&quot;,&quot;title&quot;:&quot;Toggle Password Input&quot;,&quot;withScript&quot;:true,&quot;description&quot;:&quot;Dans cet article, nous allons apprendre comment afficher/masquer le mot de passe dans un formulaire en utilisant HTML, CSS et JavaScript. Avec un code source facile à comprendre, vous pourrez suivre les étapes et créer votre propre version&quot;,&quot;tags&quot;:[&quot;html&quot;,&quot;css&quot;,&quot;javascript&quot;],&quot;image&quot;:&quot;/assets/thumbnail/blog-thumbnail-7.jpg&quot;,&quot;category&quot;:&quot;javascript&quot;,&quot;slug&quot;:&quot;javascript/toggle-password-visibility&quot;},{&quot;isBlogSection&quot;:false,&quot;date&quot;:&quot;20230618&quot;,&quot;title&quot;:&quot;Les jointures en SQL&quot;,&quot;withScript&quot;:false,&quot;description&quot;:&quot;Dans cet article, nous allons apprendre les types de jointures SQL, y compris inner join, left join, right join et full outer join. Nous couvrirons leur syntaxe, leurs différences et des exemples pratiques pour une meilleure compréhension&quot;,&quot;tags&quot;:[&quot;sql&quot;,&quot;jointure&quot;],&quot;image&quot;:&quot;/assets/thumbnail/blog-thumbnail-8.jpg&quot;,&quot;category&quot;:&quot;sql&quot;,&quot;slug&quot;:&quot;sql/joins-types&quot;},{&quot;isBlogSection&quot;:false,&quot;date&quot;:&quot;20230605&quot;,&quot;title&quot;:&quot;Countdown Timer&quot;,&quot;withScript&quot;:false,&quot;description&quot;:&quot;Dans cet article, nous allons apprendre à créer un minuteur de compte à rebours en utilisant HTML, CSS et JavaScript. Avec un code source facile à comprendre, vous pourrez suivre les étapes et créer votre propre version&quot;,&quot;tags&quot;:[&quot;html&quot;,&quot;css&quot;,&quot;javascript&quot;],&quot;image&quot;:&quot;http://img.youtube.com/vi/q6fFsOX2ihE/maxresdefault.jpg&quot;,&quot;category&quot;:&quot;apps&quot;,&quot;slug&quot;:&quot;apps/count-down&quot;},{&quot;isBlogSection&quot;:false,&quot;date&quot;:&quot;20230529&quot;,&quot;title&quot;:&quot;Todo List App&quot;,&quot;withScript&quot;:false,&quot;description&quot;:&quot;Dans cet article, nous allons apprendre à créer une application Todo App en utilisant HTML, CSS et JavaScript. Grâce à un code source facile à comprendre, vous pourrez suivre les étapes et créer votre propre version&quot;,&quot;tags&quot;:[&quot;html&quot;,&quot;css&quot;,&quot;javascript&quot;],&quot;image&quot;:&quot;http://img.youtube.com/vi/T1lBgZVgryw/maxresdefault.jpg&quot;,&quot;category&quot;:&quot;apps&quot;,&quot;slug&quot;:&quot;apps/todo-list&quot;},{&quot;isBlogSection&quot;:false,&quot;date&quot;:&quot;20230503&quot;,&quot;title&quot;:&quot;ScrollToTheTop Button&quot;,&quot;withScript&quot;:false,&quot;description&quot;:&quot;Dans cet article, nous allons apprendre à créer un bouton pour remonter en haut de la page en utilisant HTML, CSS et JavaScript. Grâce à un code source facile à comprendre, vous pourrez suivre les étapes et créer votre propre version&quot;,&quot;tags&quot;:[&quot;html&quot;,&quot;css&quot;],&quot;image&quot;:&quot;http://img.youtube.com/vi/7Vc_Di-qYEk/maxresdefault.jpg&quot;,&quot;category&quot;:&quot;css&quot;,&quot;slug&quot;:&quot;css/scroll-top-button&quot;}]"></app-main>
 
         </main>
@@ -276,7 +139,4 @@ hideIcon.<span class=&quot;hljs-title function_&quot;>addEventListener</span>(<s
 
                 gtag('config', 'G-S6JEVF53JZ');
                 </script>
-            
-                <script src="/assets/scripts/markdown.js"></script>
-                <script src="/assets/scripts/javascript/toggle-password-visibility.js"></script>
-            </body></html>
+            <script src="/assets/scripts/markdown.js"></script></body></html>
