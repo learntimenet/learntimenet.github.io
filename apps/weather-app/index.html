@@ -3,8 +3,8 @@
             <html lang="fr">
             <head>
                 <meta charset="utf-8" />
-                <title>Learn Time | ThreadLocal en Java</title>
-                <meta name="description" content="Un guide pratique sur la classe ThreadLocal permettant de stocker des données spécifiques aux threads en Java, et d'assurer que chaque thread possède ses propres valeurs isolées, garantissant ainsi la sécurité et l'intégrité des données dans les environnements multithreadés">
+                <title>Learn Time | Weather App</title>
+                <meta name="description" content="Dans cet article, nous allons apprendre à créer une Weather App en utilisant HTML, CSS et JavaScript. Grâce à un code source facile à comprendre, vous pourrez suivre les étapes et créer votre propre version">
                 <meta name="viewport" content="width=device-width,initial-scale=1" />
                 <!--
                 <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
@@ -34,14 +34,14 @@
                     .loader.hide {opacity: 0;}
                 </style>
                 
-            <meta property="og:title" content="ThreadLocal en Java" />
-            <meta property="og:description" content="Un guide pratique sur la classe ThreadLocal permettant de stocker des données spécifiques aux threads en Java, et d'assurer que chaque thread possède ses propres valeurs isolées, garantissant ainsi la sécurité et l'intégrité des données dans les environnements multithreadés" />
-            <meta property="og:image" content="https://learntime.net/assets/thumbnail/blog-thumbnail-2.jpg" />
+            <meta property="og:title" content="Weather App" />
+            <meta property="og:description" content="Dans cet article, nous allons apprendre à créer une Weather App en utilisant HTML, CSS et JavaScript. Grâce à un code source facile à comprendre, vous pourrez suivre les étapes et créer votre propre version" />
+            <meta property="og:image" content="https://learntime.nethttp://img.youtube.com/vi/9T3afIMjsfE/maxresdefault.jpg" />
             <meta name="twitter:card" content="summary_large_image">
             <meta name="twitter:creator" content="@learntimenet">
-            <meta name="twitter:title" content="ThreadLocal en Java">
-            <meta name="twitter:description" content="Un guide pratique sur la classe ThreadLocal permettant de stocker des données spécifiques aux threads en Java, et d'assurer que chaque thread possède ses propres valeurs isolées, garantissant ainsi la sécurité et l'intégrité des données dans les environnements multithreadés">
-            <meta name="twitter:image" content="https://learntime.net/assets/thumbnail/blog-thumbnail-2.jpg">
+            <meta name="twitter:title" content="Weather App">
+            <meta name="twitter:description" content="Dans cet article, nous allons apprendre à créer une Weather App en utilisant HTML, CSS et JavaScript. Grâce à un code source facile à comprendre, vous pourrez suivre les étapes et créer votre propre version">
+            <meta name="twitter:image" content="https://learntime.nethttp://img.youtube.com/vi/9T3afIMjsfE/maxresdefault.jpg">
         
                 <script>
                     var disqus_config = function () {
@@ -49,7 +49,7 @@
                         this.page.identifier = window.location.pathname.replace('/en', '');
                     };
                 </script>
-            <script defer src="/java/thread-local/thread-local.e9c9d888eaae1db5d13b.js"></script></head>
+            <script defer src="/apps/weather-app/weather-app.74cf1e5213cf968fed0b.js"></script></head>
             <body>
                 <div class="loader">
                     <svg class="loader-logo" width="1000" height="1000" viewBox="0 0 1000 1000" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -86,124 +86,289 @@
         }
     }
 </style>
-<app-main metadata="{&quot;isArticleIndex&quot;:false,&quot;isArticleSection&quot;:false,&quot;isArticleWithSections&quot;:false,&quot;date&quot;:&quot;20231116&quot;,&quot;title&quot;:&quot;ThreadLocal en Java&quot;,&quot;withScript&quot;:false,&quot;description&quot;:&quot;Un guide pratique sur la classe ThreadLocal permettant de stocker des données spécifiques aux threads en Java, et d'assurer que chaque thread possède ses propres valeurs isolées, garantissant ainsi la sécurité et l'intégrité des données dans les environnements multithreadés&quot;,&quot;tags&quot;:[&quot;java&quot;,&quot;multithread&quot;],&quot;image&quot;:&quot;/assets/thumbnail/blog-thumbnail-0.jpg&quot;,&quot;slug&quot;:&quot;java/thread-local&quot;,&quot;summary&quot;:[]}" html="<h1>Introduction</h1>
-<p>La classe Java <code>ThreadLocal</code> nous permet de créer des variables qui ne peuvent être lues et écrites que par le même thread. Ainsi, même si deux threads exécutent le même code et que ce code fait référence à la même variable <code>ThreadLocal</code>, les deux threads ne peuvent pas voir les variables <code>ThreadLocal</code> de l'autre, ce qui est un moyen simple de rendre le code sûr pour les threads. Les instances <code>ThreadLocal</code> sont généralement des champs privés statiques dans les classes qui souhaitent associer un état à un thread (par exemple, ID utilisateur, ID de transaction, ...)</p>
-<pre><code class=&quot;language-java&quot;><pre class=&quot;highlight&quot;><code class=&quot;hljs&quot;><span class=&quot;hljs-keyword&quot;>private</span> <span class=&quot;hljs-keyword&quot;>static</span> ThreadLocal&amp;lt;Integer&amp;gt; userIdThreadLocal = <span class=&quot;hljs-keyword&quot;>new</span> <span class=&quot;hljs-title class_&quot;>ThreadLocal</span>&amp;lt;&amp;gt;();
-</code></pre></code></pre>
-<p>Ensuite, lorsque nous voulons utiliser cette valeur depuis un thread, il nous suffit d'appeler la méthode <code>get()</code> ou <code>set()</code> de <code>ThreadLocal</code>. On peut imaginer que <code>ThreadLocal</code> stocke les données dans une carte avec le thread comme clé. En conséquence, lorsque nous appelons une méthode <code>get()</code> sur <code>userIdThreadLocal</code>, nous obtenons la valeur pour le thread demandeur :</p>
-<pre><code class=&quot;language-java&quot;><pre class=&quot;highlight&quot;><code class=&quot;hljs&quot;>userIdThreadLocal.set(<span class=&quot;hljs-number&quot;>1</span>);
-<span class=&quot;hljs-type&quot;>Integer</span> <span class=&quot;hljs-variable&quot;>user</span> <span class=&quot;hljs-operator&quot;>=</span> userIdThreadLocal.get();
-</code></pre></code></pre>
-<h2>Méthodes de ThreadLocal</h2>
-<p><strong>method-signature</strong></p>
-<pre><code class=&quot;language-java&quot;><pre class=&quot;highlight&quot;><code class=&quot;hljs&quot;><span class=&quot;hljs-keyword&quot;>static</span> &amp;lt;S&amp;gt; ThreadLocal&amp;lt;S&amp;gt; withInitial(Supplier&amp;lt;? <span class=&quot;hljs-keyword&quot;>extends</span> <span class=&quot;hljs-title class_&quot;>S</span>&amp;gt; supplier)
-</code></pre></code></pre>
-<p>Crée une variable locale au thread.</p>
-<p><strong>method-signature</strong></p>
-<pre><code class=&quot;language-java&quot;><pre class=&quot;highlight&quot;><code class=&quot;hljs&quot;><span class=&quot;hljs-keyword&quot;>protected</span> T <span class=&quot;hljs-title function_&quot;>initialValue</span><span class=&quot;hljs-params&quot;>()</span>
-</code></pre></code></pre>
-<p>Renvoie la &quot;valeur initiale&quot; du thread actuel pour cette variable locale au thread.</p>
-<p><strong>method-signature</strong></p>
-<pre><code class=&quot;language-java&quot;><pre class=&quot;highlight&quot;><code class=&quot;hljs&quot;>T <span class=&quot;hljs-title function_&quot;>get</span><span class=&quot;hljs-params&quot;>()</span>
-</code></pre></code></pre>
-<p>Renvoie la valeur dans la copie de cette variable locale au thread pour le thread actuel.</p>
-<p><strong>method-signature</strong></p>
-<pre><code class=&quot;language-java&quot;><pre class=&quot;highlight&quot;><code class=&quot;hljs&quot;><span class=&quot;hljs-keyword&quot;>void</span> <span class=&quot;hljs-title function_&quot;>remove</span><span class=&quot;hljs-params&quot;>()</span>
-</code></pre></code></pre>
-<p>Supprime la valeur du thread actuel pour cette variable locale au thread.</p>
-<p><strong>method-signature</strong></p>
-<pre><code class=&quot;language-java&quot;><pre class=&quot;highlight&quot;><code class=&quot;hljs&quot;><span class=&quot;hljs-keyword&quot;>void</span> <span class=&quot;hljs-title function_&quot;>set</span><span class=&quot;hljs-params&quot;>(T value)</span>
-</code></pre></code></pre>
-<p>Définit la copie de cette variable locale au thread pour le thread actuel à la valeur spécifiée.</p>
-<h2>Valeur Initiale de ThreadLocal</h2>
-<p>Il est possible de définir une valeur initiale pour un <code>ThreadLocal</code> qui sera renvoyée la première fois que la méthode <code>get()</code> est appelée, même avant que la méthode <code>set()</code> ne soit appelée. Nous avons deux options pour spécifier une valeur initiale pour un <code>ThreadLocal</code> :</p>
-<p><strong>Surcharger la méthode <code>initialValue()</code></strong></p>
-<p>La première façon de spécifier une valeur initiale pour une variable <code>ThreadLocal</code> en Java est de créer une sous-classe de <code>ThreadLocal</code> qui surcharge sa méthode <code>initialValue()</code>. Voici un exemple qui crée une sous-classe anonyme de <code>ThreadLocal</code> qui surcharge la méthode <code>initialValue()</code> :</p>
-<pre><code class=&quot;language-java&quot;><pre class=&quot;highlight&quot;><code class=&quot;hljs&quot;><span class=&quot;hljs-keyword&quot;>private</span> ThreadLocal&amp;lt;String&amp;gt; threadLocal = <span class=&quot;hljs-keyword&quot;>new</span> <span class=&quot;hljs-title class_&quot;>ThreadLocal</span>&amp;lt;String&amp;gt;() {
-    <span class=&quot;hljs-meta&quot;>@Override</span>
-    <span class=&quot;hljs-keyword&quot;>protected</span> String <span class=&quot;hljs-title function_&quot;>initialValue</span><span class=&quot;hljs-params&quot;>()</span> {
-        <span class=&quot;hljs-keyword&quot;>return</span> UUID.randomUUID().toString();
-    }
-};
-</code></pre></code></pre>
-<p><strong>Fournir une implémentation du <code>Supplier</code></strong></p>
-<p>La deuxième méthode est d'utiliser la méthode de fabrique statique <code>withInitial(Supplier)</code> de <code>ThreadLocal</code> en passant une implémentation de l'interface <code>Supplier</code> en paramètre. Cette implémentation de <code>Supplier</code> fournit la valeur initiale pour le <code>ThreadLocal</code>. Voici un exemple de création d'un <code>ThreadLocal</code> en utilisant sa méthode de fabrique statique <code>withInitial()</code> :</p>
-<pre><code class=&quot;language-java&quot;><pre class=&quot;highlight&quot;><code class=&quot;hljs&quot;>ThreadLocal&amp;lt;String&amp;gt; threadLocal = ThreadLocal.withInitial(<span class=&quot;hljs-keyword&quot;>new</span> <span class=&quot;hljs-title class_&quot;>Supplier</span>&amp;lt;String&amp;gt;() {
-    <span class=&quot;hljs-meta&quot;>@Override</span>
-    <span class=&quot;hljs-keyword&quot;>public</span> String <span class=&quot;hljs-title function_&quot;>get</span><span class=&quot;hljs-params&quot;>()</span> {
-        <span class=&quot;hljs-keyword&quot;>return</span> UUID.randomUUID().toString();
-    }
-});
-</code></pre></code></pre>
-<h2>ThreadLocals et Pools de Threads</h2>
-<p>Nous devons être particulièrement prudents lorsque nous utilisons <code>ThreadLocals</code> et pools de threads ensemble. La technique de pool de threads permet de réutiliser les threads pour réduire les frais de création de threads. Chaque tâche qui entre dans le pool s'attend à voir les objets <code>ThreadLocal</code> dans leur état initial, par défaut. Cependant, lorsque les objets <code>ThreadLocal</code> sont modifiés sur un thread qui est ensuite rendu disponible pour réutilisation, la prochaine tâche exécutée sur le thread réutilisé voit l'état des objets <code>ThreadLocal</code> comme modifié par la tâche précédente qui a été exécutée sur ce thread.</p>
-<p>Les programmes doivent s'assurer que chaque tâche exécutée sur un thread d'un pool de threads ne voit que des instances correctement initialisées des objets <code>ThreadLocal</code>. La bonne nouvelle est qu'il est possible d'étendre la classe <code>ThreadPoolExecutor</code> et de fournir une implémentation personnalisée pour les méthodes <code>beforeExecute()</code> et <code>afterExecute()</code>. Nous pouvons donc étendre la classe <code>ThreadPoolExecutor</code> et supprimer la variable <code>ThreadLocal</code> dans la méthode <code>afterExecute()</code> :</p>
-<pre><code class=&quot;language-java&quot;><pre class=&quot;highlight&quot;><code class=&quot;hljs&quot;><span class=&quot;hljs-keyword&quot;>public</span> <span class=&quot;hljs-keyword&quot;>class</span> <span class=&quot;hljs-title class_&quot;>ThreadLocalAwareThreadPoolExecutor</span> <span class=&quot;hljs-keyword&quot;>extends</span> <span class=&quot;hljs-title class_&quot;>ThreadPoolExecutor</span> {
-    <span class=&quot;hljs-meta&quot;>@Override</span>
-    <span class=&quot;hljs-keyword&quot;>protected</span> <span class=&quot;hljs-keyword&quot;>void</span> <span class=&quot;hljs-title function_&quot;>afterExecute</span><span class=&quot;hljs-params&quot;>(Runnable r, Throwable t)</span> {
-        <span class=&quot;hljs-comment&quot;>// suppression de la variable du thread actuel</span>
-    }
-}
-</code></pre></code></pre>
-<h2>InheritableThreadLocal</h2>
-<p>La classe <code>InheritableThreadLocal</code> étend <code>ThreadLocal</code> pour fournir l'héritage des valeurs du thread parent au thread enfant : lorsqu'un thread enfant est créé, il reçoit les valeurs initiales pour toutes les variables locales au thread héritables pour lesquelles le parent a des valeurs. Normalement, les valeurs de l'enfant seront identiques à celles du parent.</p>
-<p>Les variables locales au thread héritables sont utilisées de préférence aux variables locales au thread ordinaires lorsque l'attribut par thread maintenu dans la variable (par exemple, ID utilisateur, ID de transaction, ...) doit être automatiquement transmis à tous les threads enfants qui sont créés. Voici un exemple pour illustrer les avantages de l'utilisation de la classe <code>InheritableThreadLocal</code> :</p>
-<h2>Utilisation de ThreadLocal</h2>
-<pre><code class=&quot;language-java&quot;><pre class=&quot;highlight&quot;><code class=&quot;hljs&quot;><span class=&quot;hljs-keyword&quot;>class</span> <span class=&quot;hljs-title class_&quot;>ParentThread</span> <span class=&quot;hljs-keyword&quot;>extends</span> <span class=&quot;hljs-title class_&quot;>Thread</span> {
-    <span class=&quot;hljs-keyword&quot;>public</span> <span class=&quot;hljs-keyword&quot;>static</span> ThreadLocal&amp;lt;String&amp;gt; parentThreadLocal = <span class=&quot;hljs-keyword&quot;>new</span> <span class=&quot;hljs-title class_&quot;>ThreadLocal</span>&amp;lt;&amp;gt;();
-
-    <span class=&quot;hljs-keyword&quot;>public</span> <span class=&quot;hljs-keyword&quot;>void</span> <span class=&quot;hljs-title function_&quot;>run</span><span class=&quot;hljs-params&quot;>()</span> {
-        parentThreadLocal.set(<span class=&quot;hljs-string&quot;>&quot;données parent&quot;</span>);
-        System.out.println(<span class=&quot;hljs-string&quot;>&quot;Valeur Parent ThreadLocal: &quot;</span> + parentThreadLocal.get());
-        <span class=&quot;hljs-keyword&quot;>new</span> <span class=&quot;hljs-title class_&quot;>ChildThread</span>().start();
-    }
+<app-main metadata="{&quot;isArticleIndex&quot;:false,&quot;isArticleSection&quot;:false,&quot;isArticleWithSections&quot;:false,&quot;date&quot;:&quot;20241103&quot;,&quot;title&quot;:&quot;Weather App&quot;,&quot;withScript&quot;:false,&quot;description&quot;:&quot;Dans cet article, nous allons apprendre à créer une Weather App en utilisant HTML, CSS et JavaScript. Grâce à un code source facile à comprendre, vous pourrez suivre les étapes et créer votre propre version&quot;,&quot;tags&quot;:[&quot;html&quot;,&quot;css&quot;,&quot;javascript&quot;],&quot;image&quot;:&quot;http://img.youtube.com/vi/9T3afIMjsfE/maxresdefault.jpg&quot;,&quot;slug&quot;:&quot;apps/weather-app&quot;,&quot;summary&quot;:[]}" html="<h1>Introduction</h1>
+<p>Dans cet article, nous allons apprendre à créer une Weather App en utilisant HTML, CSS et JavaScript. Grâce à un code source facile à comprendre, vous pourrez suivre les étapes et créer votre propre version</p>
+<iframe width=&quot;899&quot; height=&quot;506&quot; src=&quot;https://www.youtube.com/embed/9T3afIMjsfE&quot; title=&quot;Weather App&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&quot; allowfullscreen></iframe>
+<h2>Code source</h2>
+<p><strong>code-tabs</strong></p>
+<ul>
+<li><p>index.html</p>
+<pre><code class=&quot;language-html&quot;><pre class=&quot;highlight&quot;><code class=&quot;hljs&quot;><span class=&quot;hljs-meta&quot;>&amp;lt;!DOCTYPE <span class=&quot;hljs-keyword&quot;>html</span>&amp;gt;</span>
+<span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>html</span> <span class=&quot;hljs-attr&quot;>lang</span>=<span class=&quot;hljs-string&quot;>&quot;en&quot;</span>&amp;gt;</span>
+<span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>head</span>&amp;gt;</span>
+  <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>meta</span> <span class=&quot;hljs-attr&quot;>charset</span>=<span class=&quot;hljs-string&quot;>&quot;UTF-8&quot;</span>&amp;gt;</span>
+  <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>meta</span> <span class=&quot;hljs-attr&quot;>http-equiv</span>=<span class=&quot;hljs-string&quot;>&quot;X-UA-Compatible&quot;</span> <span class=&quot;hljs-attr&quot;>content</span>=<span class=&quot;hljs-string&quot;>&quot;IE=edge&quot;</span>&amp;gt;</span>
+  <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>meta</span> <span class=&quot;hljs-attr&quot;>name</span>=<span class=&quot;hljs-string&quot;>&quot;viewport&quot;</span> <span class=&quot;hljs-attr&quot;>content</span>=<span class=&quot;hljs-string&quot;>&quot;width=device-width, initial-scale=1.0&quot;</span>&amp;gt;</span>
+  <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>title</span>&amp;gt;</span>Weather App<span class=&quot;hljs-tag&quot;>&amp;lt;/<span class=&quot;hljs-name&quot;>title</span>&amp;gt;</span>
+  <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>link</span> <span class=&quot;hljs-attr&quot;>rel</span>=<span class=&quot;hljs-string&quot;>&quot;stylesheet&quot;</span> <span class=&quot;hljs-attr&quot;>href</span>=<span class=&quot;hljs-string&quot;>&quot;https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css&quot;</span>&amp;gt;</span>
+  <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>link</span> <span class=&quot;hljs-attr&quot;>rel</span>=<span class=&quot;hljs-string&quot;>&quot;stylesheet&quot;</span> <span class=&quot;hljs-attr&quot;>href</span>=<span class=&quot;hljs-string&quot;>&quot;./style.css&quot;</span>&amp;gt;</span>
+<span class=&quot;hljs-tag&quot;>&amp;lt;/<span class=&quot;hljs-name&quot;>head</span>&amp;gt;</span>
+<span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>body</span>&amp;gt;</span>
+  <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>div</span> <span class=&quot;hljs-attr&quot;>class</span>=<span class=&quot;hljs-string&quot;>&quot;container&quot;</span>&amp;gt;</span>
+    <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>div</span> <span class=&quot;hljs-attr&quot;>class</span>=<span class=&quot;hljs-string&quot;>&quot;input-container&quot;</span>&amp;gt;</span>
+      <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>input</span> <span class=&quot;hljs-attr&quot;>class</span>=<span class=&quot;hljs-string&quot;>&quot;search-input&quot;</span> <span class=&quot;hljs-attr&quot;>id</span>=<span class=&quot;hljs-string&quot;>&quot;searchInput&quot;</span> <span class=&quot;hljs-attr&quot;>placeholder</span>=<span class=&quot;hljs-string&quot;>&quot;Search...&quot;</span>&amp;gt;</span>
+      <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>button</span> <span class=&quot;hljs-attr&quot;>class</span>=<span class=&quot;hljs-string&quot;>&quot;search-button&quot;</span> <span class=&quot;hljs-attr&quot;>id</span>=<span class=&quot;hljs-string&quot;>&quot;searchButton&quot;</span>&amp;gt;</span>
+        <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>i</span> <span class=&quot;hljs-attr&quot;>class</span>=<span class=&quot;hljs-string&quot;>&quot;fa fa-search&quot;</span>&amp;gt;</span><span class=&quot;hljs-tag&quot;>&amp;lt;/<span class=&quot;hljs-name&quot;>i</span>&amp;gt;</span>
+      <span class=&quot;hljs-tag&quot;>&amp;lt;/<span class=&quot;hljs-name&quot;>button</span>&amp;gt;</span>
+    <span class=&quot;hljs-tag&quot;>&amp;lt;/<span class=&quot;hljs-name&quot;>div</span>&amp;gt;</span>
+    <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>div</span> <span class=&quot;hljs-attr&quot;>class</span>=<span class=&quot;hljs-string&quot;>&quot;weather-container&quot;</span>&amp;gt;</span>
+      <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>div</span> <span class=&quot;hljs-attr&quot;>id</span>=<span class=&quot;hljs-string&quot;>&quot;cityWeather&quot;</span> <span class=&quot;hljs-attr&quot;>class</span>=<span class=&quot;hljs-string&quot;>&quot;city-weather hidden&quot;</span>&amp;gt;</span>
+        <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>img</span> <span class=&quot;hljs-attr&quot;>class</span>=<span class=&quot;hljs-string&quot;>&quot;icon&quot;</span> <span class=&quot;hljs-attr&quot;>id</span>=<span class=&quot;hljs-string&quot;>&quot;icon&quot;</span> <span class=&quot;hljs-attr&quot;>alt</span>&amp;gt;</span>
+        <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>h1</span> <span class=&quot;hljs-attr&quot;>class</span>=<span class=&quot;hljs-string&quot;>&quot;temperature&quot;</span> <span class=&quot;hljs-attr&quot;>id</span>=<span class=&quot;hljs-string&quot;>&quot;temperature&quot;</span>&amp;gt;</span><span class=&quot;hljs-tag&quot;>&amp;lt;/<span class=&quot;hljs-name&quot;>h1</span>&amp;gt;</span>
+        <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>h2</span> <span class=&quot;hljs-attr&quot;>class</span>=<span class=&quot;hljs-string&quot;>&quot;city&quot;</span> <span class=&quot;hljs-attr&quot;>id</span>=<span class=&quot;hljs-string&quot;>&quot;city&quot;</span>&amp;gt;</span><span class=&quot;hljs-tag&quot;>&amp;lt;/<span class=&quot;hljs-name&quot;>h2</span>&amp;gt;</span>
+        <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>div</span> <span class=&quot;hljs-attr&quot;>class</span>=<span class=&quot;hljs-string&quot;>&quot;details&quot;</span>&amp;gt;</span>
+          <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>div</span> <span class=&quot;hljs-attr&quot;>class</span>=<span class=&quot;hljs-string&quot;>&quot;detail&quot;</span>&amp;gt;</span>
+            <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>img</span> <span class=&quot;hljs-attr&quot;>src</span>=<span class=&quot;hljs-string&quot;>&quot;./images/icons/humidity.png&quot;</span>&amp;gt;</span>
+            <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>div</span> <span class=&quot;hljs-attr&quot;>class</span>=<span class=&quot;hljs-string&quot;>&quot;description&quot;</span>&amp;gt;</span>
+              <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>p</span> <span class=&quot;hljs-attr&quot;>class</span>=<span class=&quot;hljs-string&quot;>&quot;value&quot;</span> <span class=&quot;hljs-attr&quot;>id</span>=<span class=&quot;hljs-string&quot;>&quot;humidity&quot;</span>&amp;gt;</span>%<span class=&quot;hljs-tag&quot;>&amp;lt;/<span class=&quot;hljs-name&quot;>p</span>&amp;gt;</span>
+              <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>p</span>&amp;gt;</span>Humidity<span class=&quot;hljs-tag&quot;>&amp;lt;/<span class=&quot;hljs-name&quot;>p</span>&amp;gt;</span>
+            <span class=&quot;hljs-tag&quot;>&amp;lt;/<span class=&quot;hljs-name&quot;>div</span>&amp;gt;</span>
+          <span class=&quot;hljs-tag&quot;>&amp;lt;/<span class=&quot;hljs-name&quot;>div</span>&amp;gt;</span>
+          <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>div</span> <span class=&quot;hljs-attr&quot;>class</span>=<span class=&quot;hljs-string&quot;>&quot;detail&quot;</span>&amp;gt;</span>
+            <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>img</span> <span class=&quot;hljs-attr&quot;>src</span>=<span class=&quot;hljs-string&quot;>&quot;./images/icons/wind.png&quot;</span>&amp;gt;</span>
+            <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>div</span> <span class=&quot;hljs-attr&quot;>class</span>=<span class=&quot;hljs-string&quot;>&quot;description&quot;</span>&amp;gt;</span>
+              <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>p</span> <span class=&quot;hljs-attr&quot;>class</span>=<span class=&quot;hljs-string&quot;>&quot;value&quot;</span> <span class=&quot;hljs-attr&quot;>id</span>=<span class=&quot;hljs-string&quot;>&quot;wind&quot;</span>&amp;gt;</span>km/h<span class=&quot;hljs-tag&quot;>&amp;lt;/<span class=&quot;hljs-name&quot;>p</span>&amp;gt;</span>
+              <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>p</span>&amp;gt;</span>Wind<span class=&quot;hljs-tag&quot;>&amp;lt;/<span class=&quot;hljs-name&quot;>p</span>&amp;gt;</span>
+            <span class=&quot;hljs-tag&quot;>&amp;lt;/<span class=&quot;hljs-name&quot;>div</span>&amp;gt;</span>
+          <span class=&quot;hljs-tag&quot;>&amp;lt;/<span class=&quot;hljs-name&quot;>div</span>&amp;gt;</span>
+        <span class=&quot;hljs-tag&quot;>&amp;lt;/<span class=&quot;hljs-name&quot;>div</span>&amp;gt;</span>
+      <span class=&quot;hljs-tag&quot;>&amp;lt;/<span class=&quot;hljs-name&quot;>div</span>&amp;gt;</span>
+      <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>div</span> <span class=&quot;hljs-attr&quot;>id</span>=<span class=&quot;hljs-string&quot;>&quot;noCityFound&quot;</span> <span class=&quot;hljs-attr&quot;>class</span>=<span class=&quot;hljs-string&quot;>&quot;no-city-found hidden&quot;</span>&amp;gt;</span>
+        <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>img</span> <span class=&quot;hljs-attr&quot;>src</span>=<span class=&quot;hljs-string&quot;>&quot;images/location-not-found.png&quot;</span> <span class=&quot;hljs-attr&quot;>alt</span>&amp;gt;</span>
+        <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>p</span>&amp;gt;</span>Oops! Location not found!<span class=&quot;hljs-tag&quot;>&amp;lt;/<span class=&quot;hljs-name&quot;>p</span>&amp;gt;</span>
+      <span class=&quot;hljs-tag&quot;>&amp;lt;/<span class=&quot;hljs-name&quot;>div</span>&amp;gt;</span>
+    <span class=&quot;hljs-tag&quot;>&amp;lt;/<span class=&quot;hljs-name&quot;>div</span>&amp;gt;</span>
+  <span class=&quot;hljs-tag&quot;>&amp;lt;/<span class=&quot;hljs-name&quot;>div</span>&amp;gt;</span>
+  <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>script</span> <span class=&quot;hljs-attr&quot;>src</span>=<span class=&quot;hljs-string&quot;>&quot;./script.js&quot;</span>&amp;gt;</span><span class=&quot;hljs-tag&quot;>&amp;lt;/<span class=&quot;hljs-name&quot;>script</span>&amp;gt;</span>
+<span class=&quot;hljs-tag&quot;>&amp;lt;/<span class=&quot;hljs-name&quot;>body</span>&amp;gt;</span>
+<span class=&quot;hljs-tag&quot;>&amp;lt;/<span class=&quot;hljs-name&quot;>html</span>&amp;gt;</span>
+</code></pre></code></pre></li>
+<li><p>style.css</p>
+<pre><code class=&quot;language-css&quot;><pre class=&quot;highlight&quot;><code class=&quot;hljs&quot;>*,
+*<span class=&quot;hljs-selector-pseudo&quot;>::before</span>,
+*<span class=&quot;hljs-selector-pseudo&quot;>::after</span> {
+  <span class=&quot;hljs-attribute&quot;>margin</span>: <span class=&quot;hljs-number&quot;>0</span>;
+  <span class=&quot;hljs-attribute&quot;>padding</span>: <span class=&quot;hljs-number&quot;>0</span>;
+  <span class=&quot;hljs-attribute&quot;>box-sizing</span>: border-box;
 }
 
-<span class=&quot;hljs-keyword&quot;>class</span> <span class=&quot;hljs-title class_&quot;>ChildThread</span> <span class=&quot;hljs-keyword&quot;>extends</span> <span class=&quot;hljs-title class_&quot;>Thread</span> {
-    <span class=&quot;hljs-keyword&quot;>public</span> <span class=&quot;hljs-keyword&quot;>void</span> <span class=&quot;hljs-title function_&quot;>run</span><span class=&quot;hljs-params&quot;>()</span> {
-        System.out.println(<span class=&quot;hljs-string&quot;>&quot;Valeur Child ThreadLocal: &quot;</span> + ParentThread.parentThreadLocal.get());
-    }
+<span class=&quot;hljs-selector-pseudo&quot;>:root</span> {
+  <span class=&quot;hljs-attr&quot;>--primary-color</span>: <span class=&quot;hljs-number&quot;>#4c77b6</span>;
+  <span class=&quot;hljs-attr&quot;>--white-color</span>: <span class=&quot;hljs-number&quot;>#fff</span>;
 }
 
-<span class=&quot;hljs-keyword&quot;>class</span> <span class=&quot;hljs-title class_&quot;>ThreadLocalDemo</span> {
-    <span class=&quot;hljs-keyword&quot;>public</span> <span class=&quot;hljs-keyword&quot;>static</span> <span class=&quot;hljs-keyword&quot;>void</span> <span class=&quot;hljs-title function_&quot;>main</span><span class=&quot;hljs-params&quot;>(String[] args)</span> {
-        <span class=&quot;hljs-keyword&quot;>new</span> <span class=&quot;hljs-title class_&quot;>ParentThread</span>().start();
-    }
-}
-</code></pre></code></pre>
-<p>Exécutez l'exemple ci-dessus et vous obtiendrez le résultat suivant :</p>
-<p><strong>without-line-numbers</strong></p>
-<pre><code class=&quot;language-sh&quot;><pre class=&quot;highlight&quot;><code class=&quot;hljs&quot;>Valeur Parent ThreadLocal: données parent
-Valeur Child ThreadLocal: null
-</code></pre></code></pre>
-<h2>Utilisation de InheritableThreadLocal</h2>
-<pre><code class=&quot;language-java&quot;><pre class=&quot;highlight&quot;><code class=&quot;hljs&quot;><span class=&quot;hljs-keyword&quot;>class</span> <span class=&quot;hljs-title class_&quot;>ParentThread</span> <span class=&quot;hljs-keyword&quot;>extends</span> <span class=&quot;hljs-title class_&quot;>Thread</span> {
-    <span class=&quot;hljs-keyword&quot;>public</span> <span class=&quot;hljs-keyword&quot;>static</span> InheritableThreadLocal&amp;lt;String&amp;gt; parentThreadLocal = <span class=&quot;hljs-keyword&quot;>new</span> <span class=&quot;hljs-title class_&quot;>InheritableThreadLocal</span>&amp;lt;&amp;gt;();
-
-    <span class=&quot;hljs-keyword&quot;>public</span> <span class=&quot;hljs-keyword&quot;>void</span> <span class=&quot;hljs-title function_&quot;>run</span><span class=&quot;hljs-params&quot;>()</span> {
-        parentThreadLocal.set(<span class=&quot;hljs-string&quot;>&quot;données parent&quot;</span>);
-        System.out.println(<span class=&quot;hljs-string&quot;>&quot;Valeur Parent InheritableThreadLocal: &quot;</span> + parentThreadLocal.get());
-        <span class=&quot;hljs-keyword&quot;>new</span> <span class=&quot;hljs-title class_&quot;>ChildThread</span>().start();
-    }
+<span class=&quot;hljs-selector-tag&quot;>body</span> {
+  <span class=&quot;hljs-attribute&quot;>font-family</span>: <span class=&quot;hljs-string&quot;>&quot;Roboto&quot;</span>, sans-serif;
+  <span class=&quot;hljs-attribute&quot;>min-height</span>: <span class=&quot;hljs-number&quot;>100vh</span>;
+  <span class=&quot;hljs-attribute&quot;>background</span>: <span class=&quot;hljs-built_in&quot;>url</span>(<span class=&quot;hljs-string&quot;>images/background.jpg</span>) no-repeat;
+  <span class=&quot;hljs-attribute&quot;>background-position</span>: center;
+  <span class=&quot;hljs-attribute&quot;>background-size</span>: cover;
+  <span class=&quot;hljs-attribute&quot;>color</span>: <span class=&quot;hljs-built_in&quot;>var</span>(--white-color);
+  <span class=&quot;hljs-attribute&quot;>display</span>: flex;
+  <span class=&quot;hljs-attribute&quot;>justify-content</span>: center;
+  <span class=&quot;hljs-attribute&quot;>align-items</span>: center;
 }
 
-<span class=&quot;hljs-keyword&quot;>class</span> <span class=&quot;hljs-title class_&quot;>ChildThread</span> <span class=&quot;hljs-keyword&quot;>extends</span> <span class=&quot;hljs-title class_&quot;>Thread</span> {
-    <span class=&quot;hljs-keyword&quot;>public</span> <span class=&quot;hljs-keyword&quot;>void</span> <span class=&quot;hljs-title function_&quot;>run</span><span class=&quot;hljs-params&quot;>()</span> {
-        System.out.println(<span class=&quot;hljs-string&quot;>&quot;Valeur Child InheritableThreadLocal: &quot;</span> + ParentThread.parentThreadLocal.get());
-    }
+<span class=&quot;hljs-selector-class&quot;>.container</span> {
+  <span class=&quot;hljs-attribute&quot;>width</span>: <span class=&quot;hljs-number&quot;>400px</span>;
+  <span class=&quot;hljs-attribute&quot;>border</span>: <span class=&quot;hljs-number&quot;>2px</span> solid <span class=&quot;hljs-built_in&quot;>var</span>(--white-color);
+  <span class=&quot;hljs-attribute&quot;>padding</span>: <span class=&quot;hljs-number&quot;>30px</span>;
+  <span class=&quot;hljs-attribute&quot;>border-radius</span>: <span class=&quot;hljs-number&quot;>10px</span>;
+  backdrop-<span class=&quot;hljs-attribute&quot;>filter</span>: <span class=&quot;hljs-built_in&quot;>blur</span>(<span class=&quot;hljs-number&quot;>40px</span>);
+  <span class=&quot;hljs-attribute&quot;>text-align</span>: center;
 }
 
-<span class=&quot;hljs-keyword&quot;>class</span> <span class=&quot;hljs-title class_&quot;>ThreadLocalDemo</span> {
-    <span class=&quot;hljs-keyword&quot;>public</span> <span class=&quot;hljs-keyword&quot;>static</span> <span class=&quot;hljs-keyword&quot;>void</span> <span class=&quot;hljs-title function_&quot;>main</span><span class=&quot;hljs-params&quot;>(String[] args)</span> {
-        <span class=&quot;hljs-keyword&quot;>new</span> <span class=&quot;hljs-title class_&quot;>ParentThread</span>().start();
-    }
+<span class=&quot;hljs-selector-class&quot;>.city-weather</span>,<span class=&quot;hljs-selector-class&quot;>.no-city-found</span> {
+  <span class=&quot;hljs-attribute&quot;>height</span>: <span class=&quot;hljs-number&quot;>0px</span>;
+  <span class=&quot;hljs-attribute&quot;>overflow</span>: hidden;
+  <span class=&quot;hljs-attribute&quot;>transition</span>: height <span class=&quot;hljs-number&quot;>0.7s</span> ease;
 }
-</code></pre></code></pre>
-<p>Exécutez l'exemple ci-dessus et vous obtiendrez le résultat suivant :</p>
-<p><strong>without-line-numbers</strong></p>
-<pre><code class=&quot;language-sh&quot;><pre class=&quot;highlight&quot;><code class=&quot;hljs&quot;>Valeur Parent InheritableThreadLocal: données parent
-Valeur Child InheritableThreadLocal: données parent
-</code></pre></code></pre>
+
+<span class=&quot;hljs-selector-class&quot;>.no-city-found</span> {
+  <span class=&quot;hljs-attribute&quot;>height</span>: <span class=&quot;hljs-number&quot;>300px</span>;
+}
+
+<span class=&quot;hljs-selector-class&quot;>.city-weather</span>  {
+  <span class=&quot;hljs-attribute&quot;>height</span>: <span class=&quot;hljs-number&quot;>410px</span>;
+}
+
+<span class=&quot;hljs-selector-class&quot;>.hidden</span> {
+  <span class=&quot;hljs-attribute&quot;>height</span>: <span class=&quot;hljs-number&quot;>0</span>;
+}
+
+<span class=&quot;hljs-selector-class&quot;>.input-container</span> {
+  <span class=&quot;hljs-attribute&quot;>display</span>: flex;
+  <span class=&quot;hljs-attribute&quot;>justify-content</span>: space-between;
+}
+
+<span class=&quot;hljs-selector-class&quot;>.search-input</span> {
+  <span class=&quot;hljs-attribute&quot;>flex</span>: <span class=&quot;hljs-number&quot;>1</span>;
+  <span class=&quot;hljs-attribute&quot;>padding</span>: <span class=&quot;hljs-number&quot;>10px</span> <span class=&quot;hljs-number&quot;>10px</span> <span class=&quot;hljs-number&quot;>10px</span> <span class=&quot;hljs-number&quot;>20px</span>;
+  <span class=&quot;hljs-attribute&quot;>border-radius</span>: <span class=&quot;hljs-number&quot;>30px</span>;
+  <span class=&quot;hljs-attribute&quot;>border</span>: <span class=&quot;hljs-number&quot;>2px</span> solid transparent;
+  <span class=&quot;hljs-attribute&quot;>font-size</span>: <span class=&quot;hljs-number&quot;>16px</span>;
+  <span class=&quot;hljs-attribute&quot;>margin-right</span>: <span class=&quot;hljs-number&quot;>10px</span>;
+  <span class=&quot;hljs-attribute&quot;>outline</span>: none;
+}
+
+<span class=&quot;hljs-selector-class&quot;>.search-button</span> {
+  <span class=&quot;hljs-attribute&quot;>width</span>: <span class=&quot;hljs-number&quot;>40px</span>;
+  <span class=&quot;hljs-attribute&quot;>height</span>: <span class=&quot;hljs-number&quot;>40px</span>;
+  <span class=&quot;hljs-attribute&quot;>background</span>: <span class=&quot;hljs-built_in&quot;>var</span>(--primary-color);
+  <span class=&quot;hljs-attribute&quot;>color</span>: <span class=&quot;hljs-built_in&quot;>var</span>(--white-color);
+  <span class=&quot;hljs-attribute&quot;>border</span>: none;
+  <span class=&quot;hljs-attribute&quot;>border-radius</span>: <span class=&quot;hljs-number&quot;>40px</span>;
+  <span class=&quot;hljs-attribute&quot;>font-size</span>: <span class=&quot;hljs-number&quot;>24px</span>;
+  <span class=&quot;hljs-attribute&quot;>cursor</span>: pointer;
+  <span class=&quot;hljs-attribute&quot;>outline</span>: none;
+}
+
+<span class=&quot;hljs-selector-class&quot;>.no-city-found</span> <span class=&quot;hljs-selector-tag&quot;>img</span> {
+  <span class=&quot;hljs-attribute&quot;>width</span>: <span class=&quot;hljs-number&quot;>100%</span>;
+  <span class=&quot;hljs-attribute&quot;>margin-top</span>: <span class=&quot;hljs-number&quot;>20px</span>;
+} 
+
+<span class=&quot;hljs-selector-class&quot;>.no-city-found</span> <span class=&quot;hljs-selector-tag&quot;>p</span> {
+  <span class=&quot;hljs-attribute&quot;>font-size</span>: <span class=&quot;hljs-number&quot;>24px</span>;
+}
+
+<span class=&quot;hljs-selector-class&quot;>.city-weather</span> <span class=&quot;hljs-selector-class&quot;>.icon</span> {
+  <span class=&quot;hljs-attribute&quot;>width</span>: <span class=&quot;hljs-number&quot;>170px</span>;
+}
+
+<span class=&quot;hljs-selector-class&quot;>.city-weather</span> <span class=&quot;hljs-selector-class&quot;>.temperature</span> {
+  <span class=&quot;hljs-attribute&quot;>font-size</span>: <span class=&quot;hljs-number&quot;>75px</span>;
+  <span class=&quot;hljs-attribute&quot;>font-weight</span>: <span class=&quot;hljs-number&quot;>500</span>;
+}
+
+<span class=&quot;hljs-selector-class&quot;>.city-weather</span> <span class=&quot;hljs-selector-class&quot;>.city</span> {
+  <span class=&quot;hljs-attribute&quot;>font-size</span>: <span class=&quot;hljs-number&quot;>40px</span>;
+  <span class=&quot;hljs-attribute&quot;>font-weight</span>: <span class=&quot;hljs-number&quot;>400</span>;
+}
+
+<span class=&quot;hljs-selector-class&quot;>.city-weather</span> <span class=&quot;hljs-selector-class&quot;>.details</span> {
+  <span class=&quot;hljs-attribute&quot;>display</span>: flex;
+  <span class=&quot;hljs-attribute&quot;>justify-content</span>: space-between;
+  <span class=&quot;hljs-attribute&quot;>align-items</span>: center;
+  <span class=&quot;hljs-attribute&quot;>margin-top</span>: <span class=&quot;hljs-number&quot;>48px</span>;
+}
+
+<span class=&quot;hljs-selector-class&quot;>.details</span> <span class=&quot;hljs-selector-class&quot;>.detail</span> {
+  <span class=&quot;hljs-attribute&quot;>display</span>: flex;
+  <span class=&quot;hljs-attribute&quot;>align-items</span>: center;
+  <span class=&quot;hljs-attribute&quot;>column-gap</span>: <span class=&quot;hljs-number&quot;>8px</span>;
+  <span class=&quot;hljs-attribute&quot;>text-align</span>: left;
+}
+
+<span class=&quot;hljs-selector-class&quot;>.detail</span> <span class=&quot;hljs-selector-tag&quot;>img</span> {
+  <span class=&quot;hljs-attribute&quot;>width</span>: <span class=&quot;hljs-number&quot;>40px</span>;
+}
+
+<span class=&quot;hljs-selector-class&quot;>.detail</span> <span class=&quot;hljs-selector-class&quot;>.value</span> {
+  <span class=&quot;hljs-attribute&quot;>font-size</span>: <span class=&quot;hljs-number&quot;>24px</span>;
+}
+</code></pre></code></pre></li>
+<li><p>script.js</p>
+<pre><code class=&quot;language-js&quot;><pre class=&quot;highlight&quot;><code class=&quot;hljs&quot;><span class=&quot;hljs-keyword&quot;>const</span> <span class=&quot;hljs-variable constant_&quot;>API_KEY</span> = <span class=&quot;hljs-string&quot;>&quot;REPLACE_IT_WITH_YOUR_API_KEY: https://api.openweathermap.org&quot;</span>;
+
+<span class=&quot;hljs-keyword&quot;>const</span> searchInput = <span class=&quot;hljs-variable language_&quot;>document</span>.<span class=&quot;hljs-title function_&quot;>getElementById</span>(<span class=&quot;hljs-string&quot;>&quot;searchInput&quot;</span>);
+<span class=&quot;hljs-keyword&quot;>const</span> searchButton = <span class=&quot;hljs-variable language_&quot;>document</span>.<span class=&quot;hljs-title function_&quot;>getElementById</span>(<span class=&quot;hljs-string&quot;>&quot;searchButton&quot;</span>);
+<span class=&quot;hljs-keyword&quot;>const</span> city = <span class=&quot;hljs-variable language_&quot;>document</span>.<span class=&quot;hljs-title function_&quot;>getElementById</span>(<span class=&quot;hljs-string&quot;>&quot;city&quot;</span>);
+<span class=&quot;hljs-keyword&quot;>const</span> temperature = <span class=&quot;hljs-variable language_&quot;>document</span>.<span class=&quot;hljs-title function_&quot;>getElementById</span>(<span class=&quot;hljs-string&quot;>&quot;temperature&quot;</span>);
+<span class=&quot;hljs-keyword&quot;>const</span> humidity = <span class=&quot;hljs-variable language_&quot;>document</span>.<span class=&quot;hljs-title function_&quot;>getElementById</span>(<span class=&quot;hljs-string&quot;>&quot;humidity&quot;</span>);
+<span class=&quot;hljs-keyword&quot;>const</span> wind = <span class=&quot;hljs-variable language_&quot;>document</span>.<span class=&quot;hljs-title function_&quot;>getElementById</span>(<span class=&quot;hljs-string&quot;>&quot;wind&quot;</span>);
+<span class=&quot;hljs-keyword&quot;>const</span> icon = <span class=&quot;hljs-variable language_&quot;>document</span>.<span class=&quot;hljs-title function_&quot;>getElementById</span>(<span class=&quot;hljs-string&quot;>&quot;icon&quot;</span>);
+<span class=&quot;hljs-keyword&quot;>const</span> cityWeather = <span class=&quot;hljs-variable language_&quot;>document</span>.<span class=&quot;hljs-title function_&quot;>getElementById</span>(<span class=&quot;hljs-string&quot;>&quot;cityWeather&quot;</span>);
+<span class=&quot;hljs-keyword&quot;>const</span> noCityFound = <span class=&quot;hljs-variable language_&quot;>document</span>.<span class=&quot;hljs-title function_&quot;>getElementById</span>(<span class=&quot;hljs-string&quot;>&quot;noCityFound&quot;</span>);
+
+searchButton.<span class=&quot;hljs-title function_&quot;>addEventListener</span>(<span class=&quot;hljs-string&quot;>&quot;click&quot;</span>, updateWeatherData);
+searchInput.<span class=&quot;hljs-title function_&quot;>addEventListener</span>(<span class=&quot;hljs-string&quot;>&quot;keydown&quot;</span>,(event) =&amp;gt; event.<span class=&quot;hljs-property&quot;>key</span> === <span class=&quot;hljs-string&quot;>&quot;Enter&quot;</span> &amp;&amp; <span class=&quot;hljs-title function_&quot;>updateWeatherData</span>());
+
+<span class=&quot;hljs-keyword&quot;>async</span> <span class=&quot;hljs-keyword&quot;>function</span> <span class=&quot;hljs-title function_&quot;>updateWeatherData</span>(<span class=&quot;hljs-params&quot;></span>) {
+  <span class=&quot;hljs-keyword&quot;>try</span> {
+    <span class=&quot;hljs-keyword&quot;>if</span> (!searchInput.<span class=&quot;hljs-property&quot;>value</span>.<span class=&quot;hljs-title function_&quot;>trim</span>()) {
+      <span class=&quot;hljs-title function_&quot;>alert</span>(<span class=&quot;hljs-string&quot;>&quot;Please enter the city&quot;</span>);
+      <span class=&quot;hljs-keyword&quot;>return</span>;
+    }
+    <span class=&quot;hljs-keyword&quot;>const</span> weatherData = <span class=&quot;hljs-keyword&quot;>await</span> <span class=&quot;hljs-title function_&quot;>getWeatherData</span>(searchInput.<span class=&quot;hljs-property&quot;>value</span>);
+    noCityFound.<span class=&quot;hljs-property&quot;>classList</span>.<span class=&quot;hljs-title function_&quot;>add</span>(<span class=&quot;hljs-string&quot;>&quot;hidden&quot;</span>);
+    cityWeather.<span class=&quot;hljs-property&quot;>classList</span>.<span class=&quot;hljs-title function_&quot;>remove</span>(<span class=&quot;hljs-string&quot;>&quot;hidden&quot;</span>);
+    city.<span class=&quot;hljs-property&quot;>textContent</span> = weatherData.<span class=&quot;hljs-property&quot;>city</span>;
+    temperature.<span class=&quot;hljs-property&quot;>textContent</span> = weatherData.<span class=&quot;hljs-property&quot;>temperature</span> + <span class=&quot;hljs-string&quot;>&quot;°C&quot;</span>;
+    humidity.<span class=&quot;hljs-property&quot;>textContent</span> = weatherData.<span class=&quot;hljs-property&quot;>humidity</span> + <span class=&quot;hljs-string&quot;>&quot;%&quot;</span>;
+    wind.<span class=&quot;hljs-property&quot;>textContent</span> = weatherData.<span class=&quot;hljs-property&quot;>wind</span> + <span class=&quot;hljs-string&quot;>&quot; km/h&quot;</span>;
+    icon.<span class=&quot;hljs-property&quot;>src</span> = weatherData.<span class=&quot;hljs-property&quot;>icon</span>;
+  } <span class=&quot;hljs-keyword&quot;>catch</span> (error) {
+    <span class=&quot;hljs-keyword&quot;>if</span> (error?.<span class=&quot;hljs-property&quot;>code</span> === <span class=&quot;hljs-string&quot;>&quot;404&quot;</span>) {
+      cityWeather.<span class=&quot;hljs-property&quot;>classList</span>.<span class=&quot;hljs-title function_&quot;>add</span>(<span class=&quot;hljs-string&quot;>&quot;hidden&quot;</span>);
+      noCityFound.<span class=&quot;hljs-property&quot;>classList</span>.<span class=&quot;hljs-title function_&quot;>remove</span>(<span class=&quot;hljs-string&quot;>&quot;hidden&quot;</span>);
+      <span class=&quot;hljs-variable language_&quot;>console</span>.<span class=&quot;hljs-title function_&quot;>error</span>(error.<span class=&quot;hljs-property&quot;>message</span>);
+    } <span class=&quot;hljs-keyword&quot;>else</span> {
+      <span class=&quot;hljs-title function_&quot;>alert</span>(<span class=&quot;hljs-string&quot;>&quot;Unknown error: &quot;</span> + error);
+    }
+  }
+}
+
+<span class=&quot;hljs-keyword&quot;>function</span> <span class=&quot;hljs-title function_&quot;>getIconUrl</span>(<span class=&quot;hljs-params&quot;>icon</span>) {
+  <span class=&quot;hljs-keyword&quot;>return</span> <span class=&quot;hljs-string&quot;>`./images/icons/<span class=&quot;hljs-subst&quot;>${icon.toLowerCase()}</span>.png`</span>;
+}
+
+<span class=&quot;hljs-keyword&quot;>async</span> <span class=&quot;hljs-keyword&quot;>function</span> <span class=&quot;hljs-title function_&quot;>getWeatherData</span>(<span class=&quot;hljs-params&quot;>city</span>) {
+  <span class=&quot;hljs-keyword&quot;>const</span> apiUrl = <span class=&quot;hljs-string&quot;>`https://api.openweathermap.org/data/2.5/weather?q=<span class=&quot;hljs-subst&quot;>${city}</span>&amp;units=metric&amp;appid=<span class=&quot;hljs-subst&quot;>${API_KEY}</span>`</span>;
+  <span class=&quot;hljs-keyword&quot;>const</span> apiResponse = <span class=&quot;hljs-keyword&quot;>await</span> <span class=&quot;hljs-title function_&quot;>fetch</span>(apiUrl);
+  <span class=&quot;hljs-keyword&quot;>const</span> apiResponseBody = <span class=&quot;hljs-keyword&quot;>await</span> apiResponse.<span class=&quot;hljs-title function_&quot;>json</span>();
+
+  <span class=&quot;hljs-keyword&quot;>if</span> (apiResponseBody.<span class=&quot;hljs-property&quot;>cod</span> == <span class=&quot;hljs-string&quot;>&quot;404&quot;</span> || apiResponseBody.<span class=&quot;hljs-property&quot;>cod</span> == <span class=&quot;hljs-string&quot;>&quot;400&quot;</span>) {
+    <span class=&quot;hljs-keyword&quot;>throw</span> { <span class=&quot;hljs-attr&quot;>code</span>: <span class=&quot;hljs-string&quot;>&quot;404&quot;</span>, <span class=&quot;hljs-attr&quot;>message</span>: <span class=&quot;hljs-string&quot;>&quot;City not found&quot;</span> };
+  }
+
+  <span class=&quot;hljs-keyword&quot;>return</span> {
+    <span class=&quot;hljs-attr&quot;>city</span>: apiResponseBody.<span class=&quot;hljs-property&quot;>name</span>,
+    <span class=&quot;hljs-attr&quot;>temperature</span>: <span class=&quot;hljs-title class_&quot;>Math</span>.<span class=&quot;hljs-title function_&quot;>round</span>(apiResponseBody?.<span class=&quot;hljs-property&quot;>main</span>?.<span class=&quot;hljs-property&quot;>temp</span>),
+    <span class=&quot;hljs-attr&quot;>humidity</span>: apiResponseBody.<span class=&quot;hljs-property&quot;>main</span>.<span class=&quot;hljs-property&quot;>humidity</span>,
+    <span class=&quot;hljs-attr&quot;>wind</span>: <span class=&quot;hljs-title class_&quot;>Math</span>.<span class=&quot;hljs-title function_&quot;>round</span>(apiResponseBody.<span class=&quot;hljs-property&quot;>wind</span>.<span class=&quot;hljs-property&quot;>speed</span>),
+    <span class=&quot;hljs-attr&quot;>icon</span>: <span class=&quot;hljs-title function_&quot;>getIconUrl</span>(apiResponseBody.<span class=&quot;hljs-property&quot;>weather</span>[<span class=&quot;hljs-number&quot;>0</span>].<span class=&quot;hljs-property&quot;>main</span>),
+  };
+}
+</code></pre></code></pre></li>
+</ul>
+<h2>Ressources</h2>
+<div class=&quot;asset&quot;>
+  <img src=&quot;../../../assets/blog/weather-app/background.jpg&quot; />
+<p><a href=&quot;../../../assets/blog/weather-app/background.jpg&quot; title=&quot;background.jpg&quot; download>background.jpg</a></p>
+</div>
+<div class=&quot;asset&quot;>
+  <img src=&quot;../../../assets/blog/weather-app/clear.png&quot; />
+<p><a href=&quot;../../../assets/blog/weather-app/clear.png&quot; title=&quot;clear.png&quot; download>clear.png</a></p>
+</div>
+<div class=&quot;asset&quot;>
+  <img src=&quot;../../../assets/blog/weather-app/clouds.png&quot; />
+<p><a href=&quot;../../../assets/blog/weather-app/clouds.png&quot; title=&quot;clouds.png&quot; download>clouds.png</a></p>
+</div>
+<div class=&quot;asset&quot;>
+  <img src=&quot;../../../assets/blog/weather-app/humidity.png&quot; />
+<p><a href=&quot;../../../assets/blog/weather-app/humidity.png&quot; title=&quot;humidity.png&quot; download>humidity.png</a></p>
+</div>
+<div class=&quot;asset&quot;>
+  <img src=&quot;../../../assets/blog/weather-app/location-not-found.png&quot; />
+<p><a href=&quot;../../../assets/blog/weather-app/location-not-found.png&quot; title=&quot;location-not-found.png&quot; download>location-not-found.png</a></p>
+</div>
+<div class=&quot;asset&quot;>
+  <img src=&quot;../../../assets/blog/weather-app/mist.png&quot; />
+<p><a href=&quot;../../../assets/blog/weather-app/mist.png&quot; title=&quot;mist.png&quot; download>mist.png</a></p>
+</div>
+<div class=&quot;asset&quot;>
+  <img src=&quot;../../../assets/blog/weather-app/rain.png&quot; />
+<p><a href=&quot;../../../assets/blog/weather-app/rain.png&quot; title=&quot;rain.png&quot; download>rain.png</a></p>
+</div>
+<div class=&quot;asset&quot;>
+  <img src=&quot;../../../assets/blog/weather-app/snow.png&quot; />
+<p><a href=&quot;../../../assets/blog/weather-app/snow.png&quot; title=&quot;snow.png&quot; download>snow.png</a></p>
+</div>
+<div class=&quot;asset&quot;>
+  <img src=&quot;../../../assets/blog/weather-app/wind.png&quot; />
+<p><a href=&quot;../../../assets/blog/weather-app/wind.png&quot; title=&quot;wind.png&quot; download>wind.png</a></p>
+</div>
 <h2>Conclusion</h2>
 <p>Merci de votre lecture. Nous espérons que cet article vous a été utile !</p>
 " blogs="[{&quot;title&quot;:&quot;Formation Udemy 🆓&quot;,&quot;description&quot;:&quot;Découvrez notre formation gratuite sur Udemy sur comment créer une API REST avec Spring Boot, utilisant une base de données H2 puis PostgreSQL et une documentation Swagger 🚀&quot;,&quot;tags&quot;:[&quot;formation&quot;,&quot;web&quot;],&quot;image&quot;:&quot;/assets/thumbnail/api-rest-with-spring-boot.png&quot;,&quot;date&quot;:&quot;21241128&quot;,&quot;category&quot;:&quot;formation&quot;,&quot;slug&quot;:&quot;https://www.udemy.com/course/creer-une-api-rest-en-utilisant-spring-boot/?referralCode=3420DF71B7FD2FDBC3B8&quot;},{&quot;isArticleIndex&quot;:false,&quot;isArticleSection&quot;:false,&quot;isArticleWithSections&quot;:false,&quot;date&quot;:&quot;20241103&quot;,&quot;title&quot;:&quot;Calculateur IMC&quot;,&quot;withScript&quot;:false,&quot;description&quot;:&quot;Dans cet article, nous allons apprendre à créer le calculateur IMC en utilisant HTML, CSS et JavaScript. Grâce à un code source facile à comprendre, vous pourrez suivre les étapes et créer votre propre version&quot;,&quot;tags&quot;:[&quot;html&quot;,&quot;css&quot;,&quot;javascript&quot;],&quot;image&quot;:&quot;http://img.youtube.com/vi/oURcl1nQGW4/maxresdefault.jpg&quot;,&quot;slug&quot;:&quot;apps/calculateur-imc&quot;,&quot;summary&quot;:[]},{&quot;isArticleIndex&quot;:false,&quot;isArticleSection&quot;:false,&quot;isArticleWithSections&quot;:false,&quot;date&quot;:&quot;20241103&quot;,&quot;title&quot;:&quot;Calculatrice&quot;,&quot;withScript&quot;:false,&quot;description&quot;:&quot;Dans cet article, nous allons apprendre à créer une Calculatrice en utilisant HTML, CSS et JavaScript. Grâce à un code source facile à comprendre, vous pourrez suivre les étapes et créer votre propre version&quot;,&quot;tags&quot;:[&quot;html&quot;,&quot;css&quot;,&quot;javascript&quot;],&quot;image&quot;:&quot;http://img.youtube.com/vi/-QhRoEX2ioc/maxresdefault.jpg&quot;,&quot;slug&quot;:&quot;apps/calculatrice&quot;,&quot;summary&quot;:[]},{&quot;isArticleIndex&quot;:false,&quot;isArticleSection&quot;:false,&quot;isArticleWithSections&quot;:false,&quot;date&quot;:&quot;20241103&quot;,&quot;title&quot;:&quot;Générateur de Password&quot;,&quot;withScript&quot;:false,&quot;description&quot;:&quot;Dans cet article, nous allons apprendre à créer le Générateur de Password en utilisant HTML, CSS et JavaScript. Grâce à un code source facile à comprendre, vous pourrez suivre les étapes et créer votre propre version&quot;,&quot;tags&quot;:[&quot;html&quot;,&quot;css&quot;,&quot;javascript&quot;],&quot;image&quot;:&quot;http://img.youtube.com/vi/lundFKVgWCA/maxresdefault.jpg&quot;,&quot;slug&quot;:&quot;apps/password-generator&quot;,&quot;summary&quot;:[]},{&quot;isArticleIndex&quot;:false,&quot;isArticleSection&quot;:false,&quot;isArticleWithSections&quot;:false,&quot;date&quot;:&quot;20241103&quot;,&quot;title&quot;:&quot;Weather App&quot;,&quot;withScript&quot;:false,&quot;description&quot;:&quot;Dans cet article, nous allons apprendre à créer une Weather App en utilisant HTML, CSS et JavaScript. Grâce à un code source facile à comprendre, vous pourrez suivre les étapes et créer votre propre version&quot;,&quot;tags&quot;:[&quot;html&quot;,&quot;css&quot;,&quot;javascript&quot;],&quot;image&quot;:&quot;http://img.youtube.com/vi/9T3afIMjsfE/maxresdefault.jpg&quot;,&quot;slug&quot;:&quot;apps/weather-app&quot;,&quot;summary&quot;:[]},{&quot;isArticleIndex&quot;:false,&quot;isArticleSection&quot;:false,&quot;isArticleWithSections&quot;:false,&quot;date&quot;:&quot;20231128&quot;,&quot;title&quot;:&quot;Animated CSS Border&quot;,&quot;withScript&quot;:false,&quot;description&quot;:&quot;Dans cet article, nous allons apprendre à créer une bordure animée en utilisant HTML et CSS. Grâce à un code source facile à comprendre, vous pourrez suivre les étapes et créer votre propre version&quot;,&quot;tags&quot;:[&quot;html&quot;,&quot;css&quot;],&quot;image&quot;:&quot;/assets/thumbnail/animated-border.png&quot;,&quot;slug&quot;:&quot;css/animated-border&quot;,&quot;summary&quot;:[]},{&quot;isArticleIndex&quot;:false,&quot;isArticleSection&quot;:false,&quot;isArticleWithSections&quot;:false,&quot;date&quot;:&quot;20231124&quot;,&quot;title&quot;:&quot;Animated Search Bar&quot;,&quot;withScript&quot;:false,&quot;description&quot;:&quot;Dans cet article, nous allons apprendre à créer une une barre de recherche animée en utilisant HTML et CSS. Grâce à un code source facile à comprendre, vous pourrez suivre les étapes et créer votre propre version&quot;,&quot;tags&quot;:[&quot;html&quot;,&quot;css&quot;],&quot;image&quot;:&quot;/assets/thumbnail/animated-search-bar.png&quot;,&quot;slug&quot;:&quot;css/animated-search-bar&quot;,&quot;summary&quot;:[]},{&quot;isArticleIndex&quot;:false,&quot;isArticleSection&quot;:false,&quot;isArticleWithSections&quot;:false,&quot;date&quot;:&quot;20231121&quot;,&quot;title&quot;:&quot;Héritage avec JPA&quot;,&quot;withScript&quot;:false,&quot;description&quot;:&quot;Un guide pratique pour comprendre les différentes stratégies d'héritage avec l'API de persistance Java (JPA). Ce guide vous aidera à maîtriser les concepts essentiels pour modéliser efficacement vos entités dans une base de données relationnelle&quot;,&quot;tags&quot;:[&quot;Java&quot;,&quot;JPA&quot;],&quot;image&quot;:&quot;/assets/thumbnail/blog-thumbnail-5.jpg&quot;,&quot;slug&quot;:&quot;java/inheritance-with-jpa&quot;,&quot;summary&quot;:[]},{&quot;isArticleIndex&quot;:false,&quot;isArticleSection&quot;:false,&quot;isArticleWithSections&quot;:false,&quot;date&quot;:&quot;20231116&quot;,&quot;title&quot;:&quot;ThreadLocal en Java&quot;,&quot;withScript&quot;:false,&quot;description&quot;:&quot;Un guide pratique sur la classe ThreadLocal permettant de stocker des données spécifiques aux threads en Java, et d'assurer que chaque thread possède ses propres valeurs isolées, garantissant ainsi la sécurité et l'intégrité des données dans les environnements multithreadés&quot;,&quot;tags&quot;:[&quot;java&quot;,&quot;multithread&quot;],&quot;image&quot;:&quot;/assets/thumbnail/blog-thumbnail-6.jpg&quot;,&quot;slug&quot;:&quot;java/thread-local&quot;,&quot;summary&quot;:[]},{&quot;isArticleIndex&quot;:true,&quot;isArticleSection&quot;:false,&quot;isArticleWithSections&quot;:true,&quot;date&quot;:&quot;20230919&quot;,&quot;title&quot;:&quot;API REST avec Spring&quot;,&quot;withScript&quot;:false,&quot;description&quot;:&quot;Dans cet article, nous allons créer une API REST en utilisant le framework Spring Boot en utilisant une base de données H2 puis PostgreSQL et en ajoutant sa documentation Swagger&quot;,&quot;tags&quot;:[&quot;spring boot&quot;,&quot;api rest&quot;],&quot;image&quot;:&quot;/assets/thumbnail/api-rest-with-spring-boot.png&quot;,&quot;slug&quot;:&quot;spring/api-rest-with-spring-boot&quot;,&quot;summary&quot;:[{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot&quot;,&quot;label&quot;:&quot;Introduction&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/first-version&quot;,&quot;label&quot;:&quot;Première version du projet&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/test-our-api-rest&quot;,&quot;label&quot;:&quot;Tester notre API REST&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/add-validation&quot;,&quot;label&quot;:&quot;Ajouter la couche validation&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/add-exceptions-handlers&quot;,&quot;label&quot;:&quot;Ajouter les exceptions handlers&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/use-postgresql&quot;,&quot;label&quot;:&quot;Utiliser une base PostgreSQL&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/add-swagger&quot;,&quot;label&quot;:&quot;Ajouter Swagger&quot;}]},{&quot;isArticleIndex&quot;:false,&quot;isArticleSection&quot;:true,&quot;isArticleWithSections&quot;:true,&quot;date&quot;:&quot;20230919&quot;,&quot;title&quot;:&quot;API REST avec Spring&quot;,&quot;withScript&quot;:false,&quot;description&quot;:&quot;Dans cet article, nous allons créer une API REST en utilisant le framework Spring Boot en utilisant une base de données H2 puis PostgreSQL et en ajoutant sa documentation Swagger&quot;,&quot;tags&quot;:[&quot;spring boot&quot;,&quot;api rest&quot;],&quot;image&quot;:&quot;/assets/thumbnail/api-rest-with-spring-boot.png&quot;,&quot;slug&quot;:&quot;spring/api-rest-with-spring-boot/first-version&quot;,&quot;summary&quot;:[{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot&quot;,&quot;label&quot;:&quot;Introduction&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/first-version&quot;,&quot;label&quot;:&quot;Première version du projet&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/test-our-api-rest&quot;,&quot;label&quot;:&quot;Tester notre API REST&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/add-validation&quot;,&quot;label&quot;:&quot;Ajouter la couche validation&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/add-exceptions-handlers&quot;,&quot;label&quot;:&quot;Ajouter les exceptions handlers&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/use-postgresql&quot;,&quot;label&quot;:&quot;Utiliser une base PostgreSQL&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/add-swagger&quot;,&quot;label&quot;:&quot;Ajouter Swagger&quot;}]},{&quot;isArticleIndex&quot;:false,&quot;isArticleSection&quot;:true,&quot;isArticleWithSections&quot;:true,&quot;date&quot;:&quot;20230919&quot;,&quot;title&quot;:&quot;API REST avec Spring&quot;,&quot;withScript&quot;:false,&quot;description&quot;:&quot;Dans cet article, nous allons créer une API REST en utilisant le framework Spring Boot en utilisant une base de données H2 puis PostgreSQL et en ajoutant sa documentation Swagger&quot;,&quot;tags&quot;:[&quot;spring boot&quot;,&quot;api rest&quot;],&quot;image&quot;:&quot;/assets/thumbnail/api-rest-with-spring-boot.png&quot;,&quot;slug&quot;:&quot;spring/api-rest-with-spring-boot/test-our-api-rest&quot;,&quot;summary&quot;:[{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot&quot;,&quot;label&quot;:&quot;Introduction&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/first-version&quot;,&quot;label&quot;:&quot;Première version du projet&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/test-our-api-rest&quot;,&quot;label&quot;:&quot;Tester notre API REST&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/add-validation&quot;,&quot;label&quot;:&quot;Ajouter la couche validation&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/add-exceptions-handlers&quot;,&quot;label&quot;:&quot;Ajouter les exceptions handlers&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/use-postgresql&quot;,&quot;label&quot;:&quot;Utiliser une base PostgreSQL&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/add-swagger&quot;,&quot;label&quot;:&quot;Ajouter Swagger&quot;}]},{&quot;isArticleIndex&quot;:false,&quot;isArticleSection&quot;:true,&quot;isArticleWithSections&quot;:true,&quot;date&quot;:&quot;20230919&quot;,&quot;title&quot;:&quot;API REST avec Spring&quot;,&quot;withScript&quot;:false,&quot;description&quot;:&quot;Dans cet article, nous allons créer une API REST en utilisant le framework Spring Boot en utilisant une base de données H2 puis PostgreSQL et en ajoutant sa documentation Swagger&quot;,&quot;tags&quot;:[&quot;spring boot&quot;,&quot;api rest&quot;],&quot;image&quot;:&quot;/assets/thumbnail/api-rest-with-spring-boot.png&quot;,&quot;slug&quot;:&quot;spring/api-rest-with-spring-boot/add-validation&quot;,&quot;summary&quot;:[{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot&quot;,&quot;label&quot;:&quot;Introduction&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/first-version&quot;,&quot;label&quot;:&quot;Première version du projet&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/test-our-api-rest&quot;,&quot;label&quot;:&quot;Tester notre API REST&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/add-validation&quot;,&quot;label&quot;:&quot;Ajouter la couche validation&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/add-exceptions-handlers&quot;,&quot;label&quot;:&quot;Ajouter les exceptions handlers&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/use-postgresql&quot;,&quot;label&quot;:&quot;Utiliser une base PostgreSQL&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/add-swagger&quot;,&quot;label&quot;:&quot;Ajouter Swagger&quot;}]},{&quot;isArticleIndex&quot;:false,&quot;isArticleSection&quot;:true,&quot;isArticleWithSections&quot;:true,&quot;date&quot;:&quot;20230919&quot;,&quot;title&quot;:&quot;API REST avec Spring&quot;,&quot;withScript&quot;:false,&quot;description&quot;:&quot;Dans cet article, nous allons créer une API REST en utilisant le framework Spring Boot en utilisant une base de données H2 puis PostgreSQL et en ajoutant sa documentation Swagger&quot;,&quot;tags&quot;:[&quot;spring boot&quot;,&quot;api rest&quot;],&quot;image&quot;:&quot;/assets/thumbnail/api-rest-with-spring-boot.png&quot;,&quot;slug&quot;:&quot;spring/api-rest-with-spring-boot/add-exceptions-handlers&quot;,&quot;summary&quot;:[{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot&quot;,&quot;label&quot;:&quot;Introduction&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/first-version&quot;,&quot;label&quot;:&quot;Première version du projet&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/test-our-api-rest&quot;,&quot;label&quot;:&quot;Tester notre API REST&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/add-validation&quot;,&quot;label&quot;:&quot;Ajouter la couche validation&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/add-exceptions-handlers&quot;,&quot;label&quot;:&quot;Ajouter les exceptions handlers&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/use-postgresql&quot;,&quot;label&quot;:&quot;Utiliser une base PostgreSQL&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/add-swagger&quot;,&quot;label&quot;:&quot;Ajouter Swagger&quot;}]},{&quot;isArticleIndex&quot;:false,&quot;isArticleSection&quot;:true,&quot;isArticleWithSections&quot;:true,&quot;date&quot;:&quot;20230919&quot;,&quot;title&quot;:&quot;API REST avec Spring&quot;,&quot;withScript&quot;:false,&quot;description&quot;:&quot;Dans cet article, nous allons créer une API REST en utilisant le framework Spring Boot en utilisant une base de données H2 puis PostgreSQL et en ajoutant sa documentation Swagger&quot;,&quot;tags&quot;:[&quot;spring boot&quot;,&quot;api rest&quot;],&quot;image&quot;:&quot;/assets/thumbnail/api-rest-with-spring-boot.png&quot;,&quot;slug&quot;:&quot;spring/api-rest-with-spring-boot/use-postgresql&quot;,&quot;summary&quot;:[{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot&quot;,&quot;label&quot;:&quot;Introduction&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/first-version&quot;,&quot;label&quot;:&quot;Première version du projet&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/test-our-api-rest&quot;,&quot;label&quot;:&quot;Tester notre API REST&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/add-validation&quot;,&quot;label&quot;:&quot;Ajouter la couche validation&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/add-exceptions-handlers&quot;,&quot;label&quot;:&quot;Ajouter les exceptions handlers&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/use-postgresql&quot;,&quot;label&quot;:&quot;Utiliser une base PostgreSQL&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/add-swagger&quot;,&quot;label&quot;:&quot;Ajouter Swagger&quot;}]},{&quot;isArticleIndex&quot;:false,&quot;isArticleSection&quot;:true,&quot;isArticleWithSections&quot;:true,&quot;date&quot;:&quot;20230919&quot;,&quot;title&quot;:&quot;API REST avec Spring&quot;,&quot;withScript&quot;:false,&quot;description&quot;:&quot;Dans cet article, nous allons créer une API REST en utilisant le framework Spring Boot en utilisant une base de données H2 puis PostgreSQL et en ajoutant sa documentation Swagger&quot;,&quot;tags&quot;:[&quot;spring boot&quot;,&quot;api rest&quot;],&quot;image&quot;:&quot;/assets/thumbnail/api-rest-with-spring-boot.png&quot;,&quot;slug&quot;:&quot;spring/api-rest-with-spring-boot/add-swagger&quot;,&quot;summary&quot;:[{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot&quot;,&quot;label&quot;:&quot;Introduction&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/first-version&quot;,&quot;label&quot;:&quot;Première version du projet&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/test-our-api-rest&quot;,&quot;label&quot;:&quot;Tester notre API REST&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/add-validation&quot;,&quot;label&quot;:&quot;Ajouter la couche validation&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/add-exceptions-handlers&quot;,&quot;label&quot;:&quot;Ajouter les exceptions handlers&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/use-postgresql&quot;,&quot;label&quot;:&quot;Utiliser une base PostgreSQL&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/add-swagger&quot;,&quot;label&quot;:&quot;Ajouter Swagger&quot;}]},{&quot;isArticleIndex&quot;:false,&quot;isArticleSection&quot;:false,&quot;isArticleWithSections&quot;:false,&quot;date&quot;:&quot;20230628&quot;,&quot;title&quot;:&quot;Animated Submit Button&quot;,&quot;withScript&quot;:true,&quot;description&quot;:&quot;Dans cet article, nous allons apprendre à créer un bouton de soumission animé en utilisant HTML, CSS et JavaScript. Avec un code source facile à comprendre, vous pourrez suivre les étapes et créer votre propre version&quot;,&quot;tags&quot;:[&quot;html&quot;,&quot;css&quot;,&quot;javascript&quot;],&quot;image&quot;:&quot;/assets/thumbnail/animated-submit-button.png&quot;,&quot;slug&quot;:&quot;css/animated-submit-button&quot;,&quot;summary&quot;:[]},{&quot;isArticleIndex&quot;:false,&quot;isArticleSection&quot;:false,&quot;isArticleWithSections&quot;:false,&quot;date&quot;:&quot;20230624&quot;,&quot;title&quot;:&quot;Toggle Password Input&quot;,&quot;withScript&quot;:true,&quot;description&quot;:&quot;Dans cet article, nous allons apprendre comment afficher/masquer le mot de passe dans un formulaire en utilisant HTML, CSS et JavaScript. Avec un code source facile à comprendre, vous pourrez suivre les étapes et créer votre propre version&quot;,&quot;tags&quot;:[&quot;html&quot;,&quot;css&quot;,&quot;javascript&quot;],&quot;image&quot;:&quot;/assets/thumbnail/blog-thumbnail-7.jpg&quot;,&quot;slug&quot;:&quot;javascript/toggle-password-visibility&quot;,&quot;summary&quot;:[]},{&quot;isArticleIndex&quot;:false,&quot;isArticleSection&quot;:false,&quot;isArticleWithSections&quot;:false,&quot;date&quot;:&quot;20230618&quot;,&quot;title&quot;:&quot;Les jointures en SQL&quot;,&quot;withScript&quot;:false,&quot;description&quot;:&quot;Dans cet article, nous allons apprendre les types de jointures SQL, y compris inner join, left join, right join et full outer join. Nous couvrirons leur syntaxe, leurs différences et des exemples pratiques pour une meilleure compréhension&quot;,&quot;tags&quot;:[&quot;sql&quot;,&quot;jointure&quot;],&quot;image&quot;:&quot;/assets/thumbnail/blog-thumbnail-8.jpg&quot;,&quot;slug&quot;:&quot;sql/joins-types&quot;,&quot;summary&quot;:[]},{&quot;isArticleIndex&quot;:false,&quot;isArticleSection&quot;:false,&quot;isArticleWithSections&quot;:false,&quot;date&quot;:&quot;20230605&quot;,&quot;title&quot;:&quot;Countdown Timer&quot;,&quot;withScript&quot;:false,&quot;description&quot;:&quot;Dans cet article, nous allons apprendre à créer un minuteur de compte à rebours en utilisant HTML, CSS et JavaScript. Avec un code source facile à comprendre, vous pourrez suivre les étapes et créer votre propre version&quot;,&quot;tags&quot;:[&quot;html&quot;,&quot;css&quot;,&quot;javascript&quot;],&quot;image&quot;:&quot;http://img.youtube.com/vi/q6fFsOX2ihE/maxresdefault.jpg&quot;,&quot;slug&quot;:&quot;apps/count-down&quot;,&quot;summary&quot;:[]},{&quot;isArticleIndex&quot;:false,&quot;isArticleSection&quot;:false,&quot;isArticleWithSections&quot;:false,&quot;date&quot;:&quot;20230529&quot;,&quot;title&quot;:&quot;Todo List App&quot;,&quot;withScript&quot;:false,&quot;description&quot;:&quot;Dans cet article, nous allons apprendre à créer une application Todo App en utilisant HTML, CSS et JavaScript. Grâce à un code source facile à comprendre, vous pourrez suivre les étapes et créer votre propre version&quot;,&quot;tags&quot;:[&quot;html&quot;,&quot;css&quot;,&quot;javascript&quot;],&quot;image&quot;:&quot;http://img.youtube.com/vi/T1lBgZVgryw/maxresdefault.jpg&quot;,&quot;slug&quot;:&quot;apps/todo-list&quot;,&quot;summary&quot;:[]},{&quot;isArticleIndex&quot;:false,&quot;isArticleSection&quot;:false,&quot;isArticleWithSections&quot;:false,&quot;date&quot;:&quot;20230503&quot;,&quot;title&quot;:&quot;ScrollToTheTop Button&quot;,&quot;withScript&quot;:false,&quot;description&quot;:&quot;Dans cet article, nous allons apprendre à créer un bouton pour remonter en haut de la page en utilisant HTML, CSS et JavaScript. Grâce à un code source facile à comprendre, vous pourrez suivre les étapes et créer votre propre version&quot;,&quot;tags&quot;:[&quot;html&quot;,&quot;css&quot;],&quot;image&quot;:&quot;http://img.youtube.com/vi/7Vc_Di-qYEk/maxresdefault.jpg&quot;,&quot;slug&quot;:&quot;css/scroll-top-button&quot;,&quot;summary&quot;:[]}]"></app-main>
