@@ -3,8 +3,8 @@
             <html lang="fr">
             <head>
                 <meta charset="utf-8" />
-                <title>Learn Time | Toggle Password Input</title>
-                <meta name="description" content="Dans cet article, nous allons apprendre comment afficher/masquer le mot de passe dans un formulaire en utilisant HTML, CSS et JavaScript. Avec un code source facile à comprendre, vous pourrez suivre les étapes et créer votre propre version">
+                <title>Learn Time | Tic Tac Toe Game</title>
+                <meta name="description" content="Dans cet article, nous allons apprendre à créer le jeu Tic Tac Toe en utilisant HTML, CSS et JavaScript. Grâce à un code source facile à comprendre, vous pourrez suivre les étapes et créer votre propre version">
                 <meta name="viewport" content="width=device-width,initial-scale=1" />
                 <!--
                 <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
@@ -34,14 +34,14 @@
                     .loader.hide {opacity: 0;}
                 </style>
                 
-            <meta property="og:title" content="Toggle Password Input" />
-            <meta property="og:description" content="Dans cet article, nous allons apprendre comment afficher/masquer le mot de passe dans un formulaire en utilisant HTML, CSS et JavaScript. Avec un code source facile à comprendre, vous pourrez suivre les étapes et créer votre propre version" />
-            <meta property="og:image" content="https://learntime.net/assets/thumbnail/blog-thumbnail-3.jpg" />
+            <meta property="og:title" content="Tic Tac Toe Game" />
+            <meta property="og:description" content="Dans cet article, nous allons apprendre à créer le jeu Tic Tac Toe en utilisant HTML, CSS et JavaScript. Grâce à un code source facile à comprendre, vous pourrez suivre les étapes et créer votre propre version" />
+            <meta property="og:image" content="https://learntime.nethttp://img.youtube.com/vi/ZsIemlz-q5U/maxresdefault.jpg" />
             <meta name="twitter:card" content="summary_large_image">
             <meta name="twitter:creator" content="@learntimenet">
-            <meta name="twitter:title" content="Toggle Password Input">
-            <meta name="twitter:description" content="Dans cet article, nous allons apprendre comment afficher/masquer le mot de passe dans un formulaire en utilisant HTML, CSS et JavaScript. Avec un code source facile à comprendre, vous pourrez suivre les étapes et créer votre propre version">
-            <meta name="twitter:image" content="https://learntime.net/assets/thumbnail/blog-thumbnail-3.jpg">
+            <meta name="twitter:title" content="Tic Tac Toe Game">
+            <meta name="twitter:description" content="Dans cet article, nous allons apprendre à créer le jeu Tic Tac Toe en utilisant HTML, CSS et JavaScript. Grâce à un code source facile à comprendre, vous pourrez suivre les étapes et créer votre propre version">
+            <meta name="twitter:image" content="https://learntime.nethttp://img.youtube.com/vi/ZsIemlz-q5U/maxresdefault.jpg">
         
                 <script>
                     var disqus_config = function () {
@@ -49,7 +49,7 @@
                         this.page.identifier = window.location.pathname.replace('/en', '');
                     };
                 </script>
-            <script defer src="/javascript/toggle-password-visibility/toggle-password-visibility.05d7a147369d2c02a26b.js"></script></head>
+            <script defer src="/apps/tic-tac-toe-game/tic-tac-toe-game.fb8cada1feab2eceaff7.js"></script></head>
             <body>
                 <div class="loader">
                     <svg class="loader-logo" width="1000" height="1000" viewBox="0 0 1000 1000" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -86,159 +86,300 @@
         }
     }
 </style>
-<app-main metadata="{&quot;isArticleIndex&quot;:false,&quot;isArticleSection&quot;:false,&quot;isArticleWithSections&quot;:false,&quot;date&quot;:&quot;20230624&quot;,&quot;title&quot;:&quot;Toggle Password Input&quot;,&quot;withScript&quot;:true,&quot;description&quot;:&quot;Dans cet article, nous allons apprendre comment afficher/masquer le mot de passe dans un formulaire en utilisant HTML, CSS et JavaScript. Avec un code source facile à comprendre, vous pourrez suivre les étapes et créer votre propre version&quot;,&quot;tags&quot;:[&quot;html&quot;,&quot;css&quot;,&quot;javascript&quot;],&quot;image&quot;:&quot;/assets/thumbnail/blog-thumbnail-1.jpg&quot;,&quot;slug&quot;:&quot;javascript/toggle-password-visibility&quot;,&quot;summary&quot;:[]}" html="<h1>Introduction</h1>
-<p>Dans cet article, nous allons apprendre comment afficher/masquer le mot de passe dans un formulaire en utilisant HTML, CSS et JavaScript. Avec un code source facile à comprendre, vous pourrez suivre les étapes et créer votre propre version</p>
-<h2>Démo</h2>
-<style>
-  .output {
-    height: 190px;
-    display: block;
-    overflow: auto;
-    position: relative;
-    background: #fafafa;
-    border-radius: 4px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .input-container {
-    position: relative;
-    background-color: #eee;
-    border-radius: 4px;
-  }
-  .input-container input {
-    font-family: 'Circular';
-    font-size: 20px;
-    font-weight: 600;
-    padding: 12px ;
-    border: none;
-    outline: none;
-    background-color: transparent;
-    color: #777;
-    width: 100%;
-  }
-  .input-container input:focus {
-    border: none;
-    outline: none;
-  }
-  .input-container input::placeholder {
-    color: #ABABAB;
-    font-size: 20px;
-    font-weight: 600;
-  }
-  .input-container .icon {
-    position: absolute;
-    top: 12px;
-    right: 15px;
-    color: #777;
-    font-size: 27px;
-    cursor: pointer;
-  }
-</style>
-<div class=&quot;output&quot;>
-  <div class=&quot;input-container&quot;>
-    <input type=&quot;password&quot; placeholder=&quot;Password&quot;>
-    <iconify-icon class=&quot;icon show-icon&quot; icon=&quot;zondicons:view-show&quot;></iconify-icon>
-    <iconify-icon class=&quot;icon hide-icon&quot; style=&quot;display: none&quot; icon=&quot;mdi:hide&quot;></iconify-icon>
-  </div>
-</div>
-<script>
-  const input = document.querySelector('.input-container input');
-  const showIcon = document.querySelector('.show-icon');
-  const hideIcon = document.querySelector('.hide-icon');
-  const toggleInput = () => {
-    if (input.type === &quot;password&quot;) {
-      input.type = &quot;text&quot;;
-    } else {
-      input.type = &quot;password&quot;;
-    }
-  }
-  showIcon.addEventListener('click', () => {
-    toggleInput();
-    showIcon.style.display = 'none';
-    hideIcon.style.display = 'initial';
-  });
-  hideIcon.addEventListener('click', () => {
-    toggleInput();
-    hideIcon.style.display = 'none';
-    showIcon.style.display = 'initial';
-  });
-</script>
+<app-main metadata="{&quot;isArticleIndex&quot;:false,&quot;isArticleSection&quot;:false,&quot;isArticleWithSections&quot;:false,&quot;date&quot;:&quot;20241103&quot;,&quot;title&quot;:&quot;Tic Tac Toe Game&quot;,&quot;withScript&quot;:false,&quot;description&quot;:&quot;Dans cet article, nous allons apprendre à créer le jeu Tic Tac Toe en utilisant HTML, CSS et JavaScript. Grâce à un code source facile à comprendre, vous pourrez suivre les étapes et créer votre propre version&quot;,&quot;tags&quot;:[&quot;html&quot;,&quot;css&quot;,&quot;javascript&quot;],&quot;image&quot;:&quot;http://img.youtube.com/vi/ZsIemlz-q5U/maxresdefault.jpg&quot;,&quot;slug&quot;:&quot;apps/tic-tac-toe-game&quot;,&quot;summary&quot;:[]}" html="<h1>Introduction</h1>
+<p>Dans cet article, nous allons apprendre à créer le jeu Tic Tac Toe en utilisant HTML, CSS et JavaScript. Grâce à un code source facile à comprendre, vous pourrez suivre les étapes et créer votre propre version</p>
+<iframe width=&quot;899&quot; height=&quot;506&quot; src=&quot;https://www.youtube.com/embed/ZsIemlz-q5U&quot; title=&quot;Tic Tac Toe Game&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&quot; allowfullscreen></iframe>
 <h2>Code source</h2>
 <p><strong>code-tabs</strong></p>
 <ul>
 <li><p>index.html</p>
-<pre><code class=&quot;language-html&quot;><pre class=&quot;highlight&quot;><code class=&quot;hljs&quot;><span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>div</span> <span class=&quot;hljs-attr&quot;>class</span>=<span class=&quot;hljs-string&quot;>&quot;input-container&quot;</span>&amp;gt;</span>
-  <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>input</span> <span class=&quot;hljs-attr&quot;>type</span>=<span class=&quot;hljs-string&quot;>&quot;password&quot;</span> <span class=&quot;hljs-attr&quot;>placeholder</span>=<span class=&quot;hljs-string&quot;>&quot;Password&quot;</span>&amp;gt;</span>
-  <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>iconify-icon</span> <span class=&quot;hljs-attr&quot;>class</span>=<span class=&quot;hljs-string&quot;>&quot;icon show-icon&quot;</span> <span class=&quot;hljs-attr&quot;>icon</span>=<span class=&quot;hljs-string&quot;>&quot;zondicons:view-show&quot;</span>&amp;gt;</span><span class=&quot;hljs-tag&quot;>&amp;lt;/<span class=&quot;hljs-name&quot;>iconify-icon</span>&amp;gt;</span>
-  <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>iconify-icon</span> <span class=&quot;hljs-attr&quot;>class</span>=<span class=&quot;hljs-string&quot;>&quot;icon hide-icon&quot;</span> <span class=&quot;hljs-attr&quot;>icon</span>=<span class=&quot;hljs-string&quot;>&quot;mdi:hide&quot;</span>&amp;gt;</span><span class=&quot;hljs-tag&quot;>&amp;lt;/<span class=&quot;hljs-name&quot;>iconify-icon</span>&amp;gt;</span>
-<span class=&quot;hljs-tag&quot;>&amp;lt;/<span class=&quot;hljs-name&quot;>div</span>&amp;gt;</span>
+<pre><code class=&quot;language-html&quot;><pre class=&quot;highlight&quot;><code class=&quot;hljs&quot;><span class=&quot;hljs-meta&quot;>&amp;lt;!DOCTYPE <span class=&quot;hljs-keyword&quot;>html</span>&amp;gt;</span>
+<span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>html</span> <span class=&quot;hljs-attr&quot;>lang</span>=<span class=&quot;hljs-string&quot;>&quot;en&quot;</span>&amp;gt;</span>
+    <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>head</span>&amp;gt;</span>
+        <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>meta</span> <span class=&quot;hljs-attr&quot;>charset</span>=<span class=&quot;hljs-string&quot;>&quot;UTF-8&quot;</span>&amp;gt;</span>
+        <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>meta</span> <span class=&quot;hljs-attr&quot;>http-equiv</span>=<span class=&quot;hljs-string&quot;>&quot;X-UA-Compatible&quot;</span> <span class=&quot;hljs-attr&quot;>content</span>=<span class=&quot;hljs-string&quot;>&quot;IE=edge&quot;</span>&amp;gt;</span>
+        <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>meta</span> <span class=&quot;hljs-attr&quot;>name</span>=<span class=&quot;hljs-string&quot;>&quot;viewport&quot;</span> <span class=&quot;hljs-attr&quot;>content</span>=<span class=&quot;hljs-string&quot;>&quot;width=device-width, initial-scale=1.0&quot;</span>&amp;gt;</span>
+        <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>title</span>&amp;gt;</span>tic tac toe<span class=&quot;hljs-tag&quot;>&amp;lt;/<span class=&quot;hljs-name&quot;>title</span>&amp;gt;</span>
+        <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>link</span> <span class=&quot;hljs-attr&quot;>rel</span>=<span class=&quot;hljs-string&quot;>&quot;stylesheet&quot;</span> <span class=&quot;hljs-attr&quot;>href</span>=<span class=&quot;hljs-string&quot;>&quot;./style.css&quot;</span>&amp;gt;</span>
+    <span class=&quot;hljs-tag&quot;>&amp;lt;/<span class=&quot;hljs-name&quot;>head</span>&amp;gt;</span>
+    <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>body</span>&amp;gt;</span>
+        <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>div</span> <span class=&quot;hljs-attr&quot;>class</span>=<span class=&quot;hljs-string&quot;>&quot;container&quot;</span>&amp;gt;</span>
+            <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>h1</span>&amp;gt;</span>Tic Tac Toe<span class=&quot;hljs-tag&quot;>&amp;lt;/<span class=&quot;hljs-name&quot;>h1</span>&amp;gt;</span>
+            <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>div</span> <span class=&quot;hljs-attr&quot;>class</span>=<span class=&quot;hljs-string&quot;>&quot;game-message current-player&quot;</span>&amp;gt;</span>Who&#x27;s Turn : 
+                <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>span</span>&amp;gt;</span>X<span class=&quot;hljs-tag&quot;>&amp;lt;/<span class=&quot;hljs-name&quot;>span</span>&amp;gt;</span>
+            <span class=&quot;hljs-tag&quot;>&amp;lt;/<span class=&quot;hljs-name&quot;>div</span>&amp;gt;</span>
+            <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>div</span> <span class=&quot;hljs-attr&quot;>class</span>=<span class=&quot;hljs-string&quot;>&quot;game-board&quot;</span>&amp;gt;</span>
+                <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>div</span> <span class=&quot;hljs-attr&quot;>class</span>=<span class=&quot;hljs-string&quot;>&quot;row&quot;</span>&amp;gt;</span>
+                    <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>div</span> <span class=&quot;hljs-attr&quot;>class</span>=<span class=&quot;hljs-string&quot;>&quot;cell&quot;</span> <span class=&quot;hljs-attr&quot;>id</span>=<span class=&quot;hljs-string&quot;>&quot;cell-1&quot;</span>&amp;gt;</span><span class=&quot;hljs-tag&quot;>&amp;lt;/<span class=&quot;hljs-name&quot;>div</span>&amp;gt;</span>
+                    <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>div</span> <span class=&quot;hljs-attr&quot;>class</span>=<span class=&quot;hljs-string&quot;>&quot;cell&quot;</span> <span class=&quot;hljs-attr&quot;>id</span>=<span class=&quot;hljs-string&quot;>&quot;cell-2&quot;</span>&amp;gt;</span><span class=&quot;hljs-tag&quot;>&amp;lt;/<span class=&quot;hljs-name&quot;>div</span>&amp;gt;</span>
+                    <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>div</span> <span class=&quot;hljs-attr&quot;>class</span>=<span class=&quot;hljs-string&quot;>&quot;cell&quot;</span> <span class=&quot;hljs-attr&quot;>id</span>=<span class=&quot;hljs-string&quot;>&quot;cell-3&quot;</span>&amp;gt;</span><span class=&quot;hljs-tag&quot;>&amp;lt;/<span class=&quot;hljs-name&quot;>div</span>&amp;gt;</span>
+                <span class=&quot;hljs-tag&quot;>&amp;lt;/<span class=&quot;hljs-name&quot;>div</span>&amp;gt;</span>
+                <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>div</span> <span class=&quot;hljs-attr&quot;>class</span>=<span class=&quot;hljs-string&quot;>&quot;row&quot;</span>&amp;gt;</span>
+                    <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>div</span> <span class=&quot;hljs-attr&quot;>class</span>=<span class=&quot;hljs-string&quot;>&quot;cell&quot;</span> <span class=&quot;hljs-attr&quot;>id</span>=<span class=&quot;hljs-string&quot;>&quot;cell-4&quot;</span>&amp;gt;</span><span class=&quot;hljs-tag&quot;>&amp;lt;/<span class=&quot;hljs-name&quot;>div</span>&amp;gt;</span>
+                    <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>div</span> <span class=&quot;hljs-attr&quot;>class</span>=<span class=&quot;hljs-string&quot;>&quot;cell&quot;</span> <span class=&quot;hljs-attr&quot;>id</span>=<span class=&quot;hljs-string&quot;>&quot;cell-5&quot;</span>&amp;gt;</span><span class=&quot;hljs-tag&quot;>&amp;lt;/<span class=&quot;hljs-name&quot;>div</span>&amp;gt;</span>
+                    <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>div</span> <span class=&quot;hljs-attr&quot;>class</span>=<span class=&quot;hljs-string&quot;>&quot;cell&quot;</span> <span class=&quot;hljs-attr&quot;>id</span>=<span class=&quot;hljs-string&quot;>&quot;cell-6&quot;</span>&amp;gt;</span><span class=&quot;hljs-tag&quot;>&amp;lt;/<span class=&quot;hljs-name&quot;>div</span>&amp;gt;</span>
+                <span class=&quot;hljs-tag&quot;>&amp;lt;/<span class=&quot;hljs-name&quot;>div</span>&amp;gt;</span>
+                <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>div</span> <span class=&quot;hljs-attr&quot;>class</span>=<span class=&quot;hljs-string&quot;>&quot;row&quot;</span>&amp;gt;</span>
+                    <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>div</span> <span class=&quot;hljs-attr&quot;>class</span>=<span class=&quot;hljs-string&quot;>&quot;cell&quot;</span> <span class=&quot;hljs-attr&quot;>id</span>=<span class=&quot;hljs-string&quot;>&quot;cell-7&quot;</span>&amp;gt;</span><span class=&quot;hljs-tag&quot;>&amp;lt;/<span class=&quot;hljs-name&quot;>div</span>&amp;gt;</span>
+                    <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>div</span> <span class=&quot;hljs-attr&quot;>class</span>=<span class=&quot;hljs-string&quot;>&quot;cell&quot;</span> <span class=&quot;hljs-attr&quot;>id</span>=<span class=&quot;hljs-string&quot;>&quot;cell-8&quot;</span>&amp;gt;</span><span class=&quot;hljs-tag&quot;>&amp;lt;/<span class=&quot;hljs-name&quot;>div</span>&amp;gt;</span>
+                    <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>div</span> <span class=&quot;hljs-attr&quot;>class</span>=<span class=&quot;hljs-string&quot;>&quot;cell&quot;</span> <span class=&quot;hljs-attr&quot;>id</span>=<span class=&quot;hljs-string&quot;>&quot;cell-9&quot;</span>&amp;gt;</span><span class=&quot;hljs-tag&quot;>&amp;lt;/<span class=&quot;hljs-name&quot;>div</span>&amp;gt;</span>
+                <span class=&quot;hljs-tag&quot;>&amp;lt;/<span class=&quot;hljs-name&quot;>div</span>&amp;gt;</span>
+            <span class=&quot;hljs-tag&quot;>&amp;lt;/<span class=&quot;hljs-name&quot;>div</span>&amp;gt;</span>
+            <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>button</span> <span class=&quot;hljs-attr&quot;>id</span>=<span class=&quot;hljs-string&quot;>&quot;resetButton&quot;</span>&amp;gt;</span>Reset Game<span class=&quot;hljs-tag&quot;>&amp;lt;/<span class=&quot;hljs-name&quot;>button</span>&amp;gt;</span>
+        <span class=&quot;hljs-tag&quot;>&amp;lt;/<span class=&quot;hljs-name&quot;>div</span>&amp;gt;</span>
+        <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>script</span> <span class=&quot;hljs-attr&quot;>src</span>=<span class=&quot;hljs-string&quot;>&quot;script.js&quot;</span>&amp;gt;</span><span class=&quot;hljs-tag&quot;>&amp;lt;/<span class=&quot;hljs-name&quot;>script</span>&amp;gt;</span>
+    <span class=&quot;hljs-tag&quot;>&amp;lt;/<span class=&quot;hljs-name&quot;>body</span>&amp;gt;</span>
+<span class=&quot;hljs-tag&quot;>&amp;lt;/<span class=&quot;hljs-name&quot;>html</span>&amp;gt;</span>
 </code></pre></code></pre></li>
 <li><p>style.css</p>
-<pre><code class=&quot;language-css&quot;><pre class=&quot;highlight&quot;><code class=&quot;hljs&quot;><span class=&quot;hljs-selector-class&quot;>.input-container</span> {
-  <span class=&quot;hljs-attribute&quot;>position</span>: relative;
-  <span class=&quot;hljs-attribute&quot;>background-color</span>: <span class=&quot;hljs-number&quot;>#1f222b</span>;
-  <span class=&quot;hljs-attribute&quot;>border-radius</span>: <span class=&quot;hljs-number&quot;>4px</span>;
-  <span class=&quot;hljs-attribute&quot;>margin-bottom</span>: <span class=&quot;hljs-number&quot;>25px</span>;
-}
-<span class=&quot;hljs-selector-tag&quot;>input</span> {
-  <span class=&quot;hljs-attribute&quot;>font-family</span>: <span class=&quot;hljs-string&quot;>&#x27;Poppins&#x27;</span>;
-  <span class=&quot;hljs-attribute&quot;>padding</span>: <span class=&quot;hljs-number&quot;>12px</span> <span class=&quot;hljs-number&quot;>13px</span>;
-  <span class=&quot;hljs-attribute&quot;>border</span>: none;
-  <span class=&quot;hljs-attribute&quot;>outline</span>: none;
-  <span class=&quot;hljs-attribute&quot;>color</span>: <span class=&quot;hljs-number&quot;>#ffbe2f</span>;
-  <span class=&quot;hljs-attribute&quot;>background-color</span>: transparent;
-  <span class=&quot;hljs-attribute&quot;>transition</span>: all <span class=&quot;hljs-number&quot;>0.2s</span> ease;
-  <span class=&quot;hljs-attribute&quot;>font-size</span>: <span class=&quot;hljs-number&quot;>20px</span>;
-  <span class=&quot;hljs-attribute&quot;>width</span>: <span class=&quot;hljs-number&quot;>300px</span>;
-  <span class=&quot;hljs-attribute&quot;>font-weight</span>: <span class=&quot;hljs-number&quot;>600</span>;
-}
-<span class=&quot;hljs-selector-tag&quot;>input</span><span class=&quot;hljs-selector-pseudo&quot;>:focus</span> {
-  <span class=&quot;hljs-attribute&quot;>border</span>: none;
-  <span class=&quot;hljs-attribute&quot;>outline</span>: none;
-}
-<span class=&quot;hljs-selector-tag&quot;>input</span><span class=&quot;hljs-selector-pseudo&quot;>::placeholder</span> {
-  <span class=&quot;hljs-attribute&quot;>color</span>: <span class=&quot;hljs-number&quot;>#777</span>;
-  <span class=&quot;hljs-attribute&quot;>font-weight</span>: <span class=&quot;hljs-number&quot;>600</span>;
-  <span class=&quot;hljs-attribute&quot;>font-size</span>: <span class=&quot;hljs-number&quot;>20px</span>;
-}
-<span class=&quot;hljs-selector-class&quot;>.icon</span> {
-  <span class=&quot;hljs-attribute&quot;>position</span>: absolute;
-  <span class=&quot;hljs-attribute&quot;>top</span>: <span class=&quot;hljs-number&quot;>14px</span>;
-  <span class=&quot;hljs-attribute&quot;>right</span>: <span class=&quot;hljs-number&quot;>15px</span>;
-  <span class=&quot;hljs-attribute&quot;>color</span>: <span class=&quot;hljs-number&quot;>#777</span>;
-  <span class=&quot;hljs-attribute&quot;>font-size</span>: <span class=&quot;hljs-number&quot;>27px</span>;
-  <span class=&quot;hljs-attribute&quot;>cursor</span>: pointer;
-}
-<span class=&quot;hljs-selector-class&quot;>.hide-icon</span> {
-  <span class=&quot;hljs-attribute&quot;>display</span>: none;
+<pre><code class=&quot;language-css&quot;><pre class=&quot;highlight&quot;><code class=&quot;hljs&quot;><span class=&quot;hljs-keyword&quot;>@import</span> url(<span class=&quot;hljs-string&quot;>&quot;https://fonts.googleapis.com/css2?family=Varela+Round&amp;display=swap&quot;</span>);
+
+*,
+*<span class=&quot;hljs-selector-pseudo&quot;>::before</span>,
+*<span class=&quot;hljs-selector-pseudo&quot;>::after</span> {
+  <span class=&quot;hljs-attribute&quot;>margin</span>: <span class=&quot;hljs-number&quot;>0</span>;
+  <span class=&quot;hljs-attribute&quot;>padding</span>: <span class=&quot;hljs-number&quot;>0</span>;
+  <span class=&quot;hljs-attribute&quot;>box-sizing</span>: border-box;
 }
 
-</code></pre></code></pre></li>
-<li><p>script.js</p>
-<pre><code class=&quot;language-js&quot;><pre class=&quot;highlight&quot;><code class=&quot;hljs&quot;><span class=&quot;hljs-keyword&quot;>const</span> input = <span class=&quot;hljs-variable language_&quot;>document</span>.<span class=&quot;hljs-title function_&quot;>querySelector</span>(<span class=&quot;hljs-string&quot;>&#x27;input&#x27;</span>);
-<span class=&quot;hljs-keyword&quot;>const</span> showIcon = <span class=&quot;hljs-variable language_&quot;>document</span>.<span class=&quot;hljs-title function_&quot;>querySelector</span>(<span class=&quot;hljs-string&quot;>&#x27;.show-icon&#x27;</span>);
-<span class=&quot;hljs-keyword&quot;>const</span> hideIcon = <span class=&quot;hljs-variable language_&quot;>document</span>.<span class=&quot;hljs-title function_&quot;>querySelector</span>(<span class=&quot;hljs-string&quot;>&#x27;.hide-icon&#x27;</span>);
-<span class=&quot;hljs-keyword&quot;>const</span> toggleInput = () =&amp;gt; {
-  <span class=&quot;hljs-keyword&quot;>if</span> (input.<span class=&quot;hljs-property&quot;>type</span> === <span class=&quot;hljs-string&quot;>&quot;password&quot;</span>) {
-    input.<span class=&quot;hljs-property&quot;>type</span> = <span class=&quot;hljs-string&quot;>&quot;text&quot;</span>;
-  } <span class=&quot;hljs-keyword&quot;>else</span> {
-    input.<span class=&quot;hljs-property&quot;>type</span> = <span class=&quot;hljs-string&quot;>&quot;password&quot;</span>;
+<span class=&quot;hljs-selector-pseudo&quot;>:root</span> {
+  <span class=&quot;hljs-attr&quot;>--primary-color</span>: <span class=&quot;hljs-number&quot;>#f8a126</span>;
+  <span class=&quot;hljs-attr&quot;>--secondary-color</span>: <span class=&quot;hljs-number&quot;>#8d185e</span>;
+  <span class=&quot;hljs-attr&quot;>--white-color</span>: <span class=&quot;hljs-number&quot;>#fff</span>;
+  <span class=&quot;hljs-attr&quot;>--hover-color</span>: <span class=&quot;hljs-number&quot;>#e07b23</span>;
+  <span class=&quot;hljs-attr&quot;>--border-color</span>: <span class=&quot;hljs-number&quot;>#f8a1267a</span>;
+  <span class=&quot;hljs-attr&quot;>--bright-blue</span>: <span class=&quot;hljs-number&quot;>#2f76ff</span>;
+  <span class=&quot;hljs-attr&quot;>--raspberry-red</span>: <span class=&quot;hljs-number&quot;>#e12472</span>;
+}
+
+<span class=&quot;hljs-selector-tag&quot;>body</span> {
+  <span class=&quot;hljs-attribute&quot;>font-family</span>: <span class=&quot;hljs-string&quot;>&quot;Varela Round&quot;</span>, sans-serif;
+  <span class=&quot;hljs-attribute&quot;>min-height</span>: <span class=&quot;hljs-number&quot;>100vh</span>;
+  <span class=&quot;hljs-attribute&quot;>background</span>: <span class=&quot;hljs-built_in&quot;>url</span>(<span class=&quot;hljs-string&quot;>background.jpg</span>) no-repeat;
+  <span class=&quot;hljs-attribute&quot;>background-position</span>: center;
+  <span class=&quot;hljs-attribute&quot;>background-size</span>: cover;
+  <span class=&quot;hljs-attribute&quot;>color</span>: <span class=&quot;hljs-built_in&quot;>var</span>(--white-color);
+  <span class=&quot;hljs-attribute&quot;>display</span>: flex;
+  <span class=&quot;hljs-attribute&quot;>justify-content</span>: center;
+  <span class=&quot;hljs-attribute&quot;>align-items</span>: center;
+}
+
+<span class=&quot;hljs-selector-class&quot;>.container</span> {
+  <span class=&quot;hljs-attribute&quot;>border</span>: <span class=&quot;hljs-number&quot;>2px</span> solid <span class=&quot;hljs-built_in&quot;>var</span>(--border-color);
+  <span class=&quot;hljs-attribute&quot;>padding</span>: <span class=&quot;hljs-number&quot;>40px</span>;
+  <span class=&quot;hljs-attribute&quot;>border-radius</span>: <span class=&quot;hljs-number&quot;>10px</span>;
+  backdrop-<span class=&quot;hljs-attribute&quot;>filter</span>: <span class=&quot;hljs-built_in&quot;>blur</span>(<span class=&quot;hljs-number&quot;>15px</span>);
+  <span class=&quot;hljs-attribute&quot;>display</span>: flex;
+  <span class=&quot;hljs-attribute&quot;>flex-direction</span>: column;
+}
+
+<span class=&quot;hljs-selector-tag&quot;>h1</span> {
+  <span class=&quot;hljs-attribute&quot;>text-align</span>: center;
+  <span class=&quot;hljs-attribute&quot;>margin-bottom</span>: <span class=&quot;hljs-number&quot;>20px</span>;
+}
+
+<span class=&quot;hljs-selector-class&quot;>.current-player</span> {
+  <span class=&quot;hljs-attribute&quot;>color</span>: <span class=&quot;hljs-built_in&quot;>var</span>(--primary-color);
+  <span class=&quot;hljs-attribute&quot;>font-size</span>: <span class=&quot;hljs-number&quot;>20px</span>;
+  <span class=&quot;hljs-attribute&quot;>font-weight</span>: <span class=&quot;hljs-number&quot;>600</span>;
+  <span class=&quot;hljs-attribute&quot;>height</span>: <span class=&quot;hljs-number&quot;>56px</span>;
+}
+
+<span class=&quot;hljs-selector-class&quot;>.current-player</span> <span class=&quot;hljs-selector-tag&quot;>span</span> {
+  <span class=&quot;hljs-attribute&quot;>color</span>: <span class=&quot;hljs-built_in&quot;>var</span>(--white-color);
+  <span class=&quot;hljs-attribute&quot;>background</span>: <span class=&quot;hljs-built_in&quot;>var</span>(--primary-color);
+  <span class=&quot;hljs-attribute&quot;>display</span>: inline-flex;
+  <span class=&quot;hljs-attribute&quot;>width</span>: <span class=&quot;hljs-number&quot;>30px</span>;
+  <span class=&quot;hljs-attribute&quot;>height</span>: <span class=&quot;hljs-number&quot;>30px</span>;
+  <span class=&quot;hljs-attribute&quot;>justify-content</span>: center;
+  <span class=&quot;hljs-attribute&quot;>align-items</span>: center;
+  <span class=&quot;hljs-attribute&quot;>border-radius</span>: <span class=&quot;hljs-number&quot;>3px</span>;
+}
+
+<span class=&quot;hljs-selector-class&quot;>.game-board</span> {
+  <span class=&quot;hljs-attribute&quot;>display</span>: grid;
+  <span class=&quot;hljs-attribute&quot;>grid-template-columns</span>: <span class=&quot;hljs-built_in&quot;>repeat</span>(<span class=&quot;hljs-number&quot;>3</span>, <span class=&quot;hljs-number&quot;>100px</span>);
+  <span class=&quot;hljs-attribute&quot;>grid-template-rows</span>: <span class=&quot;hljs-built_in&quot;>repeat</span>(<span class=&quot;hljs-number&quot;>3</span>, <span class=&quot;hljs-number&quot;>100px</span>);
+  <span class=&quot;hljs-attribute&quot;>gap</span>: <span class=&quot;hljs-number&quot;>10px</span>;
+}
+
+<span class=&quot;hljs-selector-class&quot;>.cell</span> {
+  <span class=&quot;hljs-attribute&quot;>font-size</span>: <span class=&quot;hljs-number&quot;>90px</span>;
+  <span class=&quot;hljs-attribute&quot;>background-color</span>: <span class=&quot;hljs-number&quot;>#00000045</span>;
+  <span class=&quot;hljs-attribute&quot;>height</span>: <span class=&quot;hljs-number&quot;>100px</span>;
+  <span class=&quot;hljs-attribute&quot;>margin-bottom</span>: <span class=&quot;hljs-number&quot;>10px</span>;
+  <span class=&quot;hljs-attribute&quot;>border-radius</span>: <span class=&quot;hljs-number&quot;>5px</span>;
+  <span class=&quot;hljs-attribute&quot;>display</span>: flex;
+  <span class=&quot;hljs-attribute&quot;>justify-content</span>: center;
+  <span class=&quot;hljs-attribute&quot;>align-items</span>: center;
+  <span class=&quot;hljs-attribute&quot;>cursor</span>: pointer;
+  <span class=&quot;hljs-attribute&quot;>transition</span>: background-color <span class=&quot;hljs-number&quot;>0.3s</span> ease;
+}
+
+<span class=&quot;hljs-selector-class&quot;>.cell</span><span class=&quot;hljs-selector-pseudo&quot;>:hover</span> {
+  <span class=&quot;hljs-attribute&quot;>background-color</span>: <span class=&quot;hljs-number&quot;>#00000060</span>;
+}
+
+<span class=&quot;hljs-selector-class&quot;>.cell-O</span> {
+  <span class=&quot;hljs-attribute&quot;>text-shadow</span>: <span class=&quot;hljs-number&quot;>0</span> <span class=&quot;hljs-number&quot;>0</span> <span class=&quot;hljs-number&quot;>10px</span> <span class=&quot;hljs-built_in&quot;>var</span>(--raspberry-red), <span class=&quot;hljs-number&quot;>0</span> <span class=&quot;hljs-number&quot;>0</span> <span class=&quot;hljs-number&quot;>20px</span> <span class=&quot;hljs-built_in&quot;>var</span>(--raspberry-red), <span class=&quot;hljs-number&quot;>0</span> <span class=&quot;hljs-number&quot;>0</span> <span class=&quot;hljs-number&quot;>30px</span> <span class=&quot;hljs-built_in&quot;>var</span>(--raspberry-red);
+}
+
+<span class=&quot;hljs-selector-class&quot;>.cell-X</span> {
+  <span class=&quot;hljs-attribute&quot;>text-shadow</span>: <span class=&quot;hljs-number&quot;>0</span> <span class=&quot;hljs-number&quot;>0</span> <span class=&quot;hljs-number&quot;>10px</span> <span class=&quot;hljs-built_in&quot;>var</span>(--bright-blue), <span class=&quot;hljs-number&quot;>0</span> <span class=&quot;hljs-number&quot;>0</span> <span class=&quot;hljs-number&quot;>20px</span> <span class=&quot;hljs-built_in&quot;>var</span>(--bright-blue), <span class=&quot;hljs-number&quot;>0</span> <span class=&quot;hljs-number&quot;>0</span> <span class=&quot;hljs-number&quot;>30px</span> <span class=&quot;hljs-built_in&quot;>var</span>(--bright-blue);
+}
+
+<span class=&quot;hljs-selector-pseudo&quot;>:is</span>(<span class=&quot;hljs-selector-class&quot;>.cell-O</span>, <span class=&quot;hljs-selector-class&quot;>.cell-X</span>)<span class=&quot;hljs-selector-pseudo&quot;>:hover</span> {
+  <span class=&quot;hljs-attribute&quot;>background-color</span>: <span class=&quot;hljs-number&quot;>#00000045</span>;
+}
+
+<span class=&quot;hljs-selector-class&quot;>.cell</span><span class=&quot;hljs-selector-class&quot;>.correct</span> {
+  <span class=&quot;hljs-attribute&quot;>background-color</span>: <span class=&quot;hljs-built_in&quot;>var</span>(--secondary-color);
+}
+
+<span class=&quot;hljs-selector-class&quot;>.cell</span><span class=&quot;hljs-selector-class&quot;>.correct</span><span class=&quot;hljs-selector-pseudo&quot;>:hover</span> {
+  <span class=&quot;hljs-attribute&quot;>background-color</span>: <span class=&quot;hljs-built_in&quot;>var</span>(--secondary-color);
+}
+
+<span class=&quot;hljs-selector-tag&quot;>button</span> {
+  <span class=&quot;hljs-attribute&quot;>background-color</span>: <span class=&quot;hljs-built_in&quot;>var</span>(--primary-color);
+  <span class=&quot;hljs-attribute&quot;>color</span>: <span class=&quot;hljs-built_in&quot;>var</span>(--white-color);
+  <span class=&quot;hljs-attribute&quot;>font-size</span>: <span class=&quot;hljs-number&quot;>20px</span>;
+  <span class=&quot;hljs-attribute&quot;>margin</span>: <span class=&quot;hljs-number&quot;>40px</span> auto <span class=&quot;hljs-number&quot;>0</span>;
+  <span class=&quot;hljs-attribute&quot;>padding</span>: <span class=&quot;hljs-number&quot;>10px</span> <span class=&quot;hljs-number&quot;>20px</span>;
+  <span class=&quot;hljs-attribute&quot;>border</span>: none;
+  <span class=&quot;hljs-attribute&quot;>border-radius</span>: <span class=&quot;hljs-number&quot;>5px</span>;
+  <span class=&quot;hljs-attribute&quot;>cursor</span>: pointer;
+  <span class=&quot;hljs-attribute&quot;>transition</span>: background-color <span class=&quot;hljs-number&quot;>0.3s</span> ease;
+}
+
+<span class=&quot;hljs-selector-tag&quot;>button</span><span class=&quot;hljs-selector-pseudo&quot;>:hover</span> {
+  <span class=&quot;hljs-attribute&quot;>background-color</span>: <span class=&quot;hljs-built_in&quot;>var</span>(--hover-color);
+}
+
+<span class=&quot;hljs-keyword&quot;>@media</span> (<span class=&quot;hljs-attribute&quot;>max-width</span>: <span class=&quot;hljs-number&quot;>600px</span>) {
+  <span class=&quot;hljs-selector-class&quot;>.game-board</span> {
+    <span class=&quot;hljs-attribute&quot;>grid-template-columns</span>: <span class=&quot;hljs-built_in&quot;>repeat</span>(<span class=&quot;hljs-number&quot;>3</span>, <span class=&quot;hljs-number&quot;>60px</span>);
+    <span class=&quot;hljs-attribute&quot;>grid-template-rows</span>: <span class=&quot;hljs-built_in&quot;>repeat</span>(<span class=&quot;hljs-number&quot;>3</span>, <span class=&quot;hljs-number&quot;>60px</span>);
+  }
+
+  <span class=&quot;hljs-selector-class&quot;>.cell</span> {
+    <span class=&quot;hljs-attribute&quot;>width</span>: <span class=&quot;hljs-number&quot;>60px</span>;
+    <span class=&quot;hljs-attribute&quot;>height</span>: <span class=&quot;hljs-number&quot;>60px</span>;
+    <span class=&quot;hljs-attribute&quot;>font-size</span>: <span class=&quot;hljs-number&quot;>60px</span>;
+  }
+
+  <span class=&quot;hljs-selector-tag&quot;>button</span> {
+    <span class=&quot;hljs-attribute&quot;>font-size</span>: <span class=&quot;hljs-number&quot;>16px</span>;
   }
 }
-showIcon.<span class=&quot;hljs-title function_&quot;>addEventListener</span>(<span class=&quot;hljs-string&quot;>&#x27;click&#x27;</span>, () =&amp;gt; {
-  <span class=&quot;hljs-title function_&quot;>toggleInput</span>();
-  showIcon.<span class=&quot;hljs-property&quot;>style</span>.<span class=&quot;hljs-property&quot;>display</span> = <span class=&quot;hljs-string&quot;>&#x27;none&#x27;</span>;
-  hideIcon.<span class=&quot;hljs-property&quot;>style</span>.<span class=&quot;hljs-property&quot;>display</span> = <span class=&quot;hljs-string&quot;>&#x27;initial&#x27;</span>;
-});
-hideIcon.<span class=&quot;hljs-title function_&quot;>addEventListener</span>(<span class=&quot;hljs-string&quot;>&#x27;click&#x27;</span>, () =&amp;gt; {
-  <span class=&quot;hljs-title function_&quot;>toggleInput</span>();
-  hideIcon.<span class=&quot;hljs-property&quot;>style</span>.<span class=&quot;hljs-property&quot;>display</span> = <span class=&quot;hljs-string&quot;>&#x27;none&#x27;</span>;
-  showIcon.<span class=&quot;hljs-property&quot;>style</span>.<span class=&quot;hljs-property&quot;>display</span> = <span class=&quot;hljs-string&quot;>&#x27;initial&#x27;</span>;
-});
+</code></pre></code></pre></li>
+<li><p>script.js</p>
+<pre><code class=&quot;language-js&quot;><pre class=&quot;highlight&quot;><code class=&quot;hljs&quot;><span class=&quot;hljs-keyword&quot;>const</span> <span class=&quot;hljs-title class_&quot;>EGameStatus</span> = {
+  <span class=&quot;hljs-attr&quot;>NOT_STARTED</span>: <span class=&quot;hljs-string&quot;>&quot;NOT_STARTED&quot;</span>,
+  <span class=&quot;hljs-attr&quot;>IN_PROGRESS</span>: <span class=&quot;hljs-string&quot;>&quot;IN_PROGRESS&quot;</span>,
+  <span class=&quot;hljs-attr&quot;>FINISHED_WITH_WINNER</span>: <span class=&quot;hljs-string&quot;>&quot;FINISHED_WITH_WINNER&quot;</span>,
+  <span class=&quot;hljs-attr&quot;>FINISHED_WITH_TIE</span>: <span class=&quot;hljs-string&quot;>&quot;FINISHED_WITH_TIE&quot;</span>,
+};
 
+<span class=&quot;hljs-keyword&quot;>let</span> gameStatus = <span class=&quot;hljs-title class_&quot;>EGameStatus</span>.<span class=&quot;hljs-property&quot;>NOT_STARTED</span>;
+<span class=&quot;hljs-keyword&quot;>let</span> currentPlayer = <span class=&quot;hljs-string&quot;>&quot;X&quot;</span>;
+<span class=&quot;hljs-keyword&quot;>const</span> cells = <span class=&quot;hljs-variable language_&quot;>document</span>.<span class=&quot;hljs-title function_&quot;>querySelectorAll</span>(<span class=&quot;hljs-string&quot;>&quot;.cell&quot;</span>);
+<span class=&quot;hljs-keyword&quot;>const</span> resetButton = <span class=&quot;hljs-variable language_&quot;>document</span>.<span class=&quot;hljs-title function_&quot;>getElementById</span>(<span class=&quot;hljs-string&quot;>&quot;resetButton&quot;</span>);
+<span class=&quot;hljs-keyword&quot;>const</span> gameMessage = <span class=&quot;hljs-variable language_&quot;>document</span>.<span class=&quot;hljs-title function_&quot;>querySelector</span>(<span class=&quot;hljs-string&quot;>&quot;.game-message&quot;</span>);
+
+<span class=&quot;hljs-title function_&quot;>updateGameMessage</span>();
+resetButton.<span class=&quot;hljs-title function_&quot;>addEventListener</span>(<span class=&quot;hljs-string&quot;>&quot;click&quot;</span>, reset);
+cells.<span class=&quot;hljs-title function_&quot;>forEach</span>((cell, index) =&amp;gt;
+  cell.<span class=&quot;hljs-title function_&quot;>addEventListener</span>(<span class=&quot;hljs-string&quot;>&quot;click&quot;</span>, () =&amp;gt; <span class=&quot;hljs-title function_&quot;>handleCellClick</span>(index))
+);
+
+<span class=&quot;hljs-keyword&quot;>function</span> <span class=&quot;hljs-title function_&quot;>handleCellClick</span>(<span class=&quot;hljs-params&quot;>index</span>) {
+  <span class=&quot;hljs-keyword&quot;>if</span> (<span class=&quot;hljs-title function_&quot;>isGameFinished</span>() || cells[index].<span class=&quot;hljs-property&quot;>innerHTML</span> !== <span class=&quot;hljs-string&quot;>&quot;&quot;</span>) {
+    <span class=&quot;hljs-keyword&quot;>return</span>;
+  }
+
+  gameStatus = <span class=&quot;hljs-title class_&quot;>EGameStatus</span>.<span class=&quot;hljs-property&quot;>IN_PROGRESS</span>;
+  cells[index].<span class=&quot;hljs-property&quot;>innerHTML</span> = currentPlayer;
+  cells[index].<span class=&quot;hljs-property&quot;>classList</span>.<span class=&quot;hljs-title function_&quot;>add</span>(<span class=&quot;hljs-string&quot;>&quot;cell-&quot;</span> + currentPlayer);
+
+  <span class=&quot;hljs-keyword&quot;>if</span> (<span class=&quot;hljs-title function_&quot;>checkWinner</span>()) {
+    gameStatus = <span class=&quot;hljs-title class_&quot;>EGameStatus</span>.<span class=&quot;hljs-property&quot;>FINISHED_WITH_WINNER</span>;
+    <span class=&quot;hljs-title function_&quot;>updateGameMessage</span>();
+    <span class=&quot;hljs-keyword&quot;>return</span>;
+  }
+
+  <span class=&quot;hljs-keyword&quot;>if</span> (<span class=&quot;hljs-title function_&quot;>checkTie</span>()) {
+    gameStatus = <span class=&quot;hljs-title class_&quot;>EGameStatus</span>.<span class=&quot;hljs-property&quot;>FINISHED_WITH_TIE</span>;
+    <span class=&quot;hljs-title function_&quot;>updateGameMessage</span>();
+    <span class=&quot;hljs-keyword&quot;>return</span>;
+  }
+
+  currentPlayer = currentPlayer === <span class=&quot;hljs-string&quot;>&quot;X&quot;</span> ? <span class=&quot;hljs-string&quot;>&quot;O&quot;</span> : <span class=&quot;hljs-string&quot;>&quot;X&quot;</span>;
+  <span class=&quot;hljs-title function_&quot;>updateGameMessage</span>();
+}
+
+<span class=&quot;hljs-keyword&quot;>function</span> <span class=&quot;hljs-title function_&quot;>checkWinner</span>(<span class=&quot;hljs-params&quot;></span>) {
+  <span class=&quot;hljs-keyword&quot;>const</span> winPatterns = [
+    [<span class=&quot;hljs-number&quot;>0</span>, <span class=&quot;hljs-number&quot;>1</span>, <span class=&quot;hljs-number&quot;>2</span>], [<span class=&quot;hljs-number&quot;>3</span>, <span class=&quot;hljs-number&quot;>4</span>, <span class=&quot;hljs-number&quot;>5</span>], [<span class=&quot;hljs-number&quot;>6</span>, <span class=&quot;hljs-number&quot;>7</span>, <span class=&quot;hljs-number&quot;>8</span>], <span class=&quot;hljs-comment&quot;>// Rows</span>
+    [<span class=&quot;hljs-number&quot;>0</span>, <span class=&quot;hljs-number&quot;>3</span>, <span class=&quot;hljs-number&quot;>6</span>], [<span class=&quot;hljs-number&quot;>1</span>, <span class=&quot;hljs-number&quot;>4</span>, <span class=&quot;hljs-number&quot;>7</span>], [<span class=&quot;hljs-number&quot;>2</span>, <span class=&quot;hljs-number&quot;>5</span>, <span class=&quot;hljs-number&quot;>8</span>], <span class=&quot;hljs-comment&quot;>// Columns</span>
+    [<span class=&quot;hljs-number&quot;>0</span>, <span class=&quot;hljs-number&quot;>4</span>, <span class=&quot;hljs-number&quot;>8</span>], [<span class=&quot;hljs-number&quot;>2</span>, <span class=&quot;hljs-number&quot;>4</span>, <span class=&quot;hljs-number&quot;>6</span>], <span class=&quot;hljs-comment&quot;>// Diagonals</span>
+  ];
+
+  <span class=&quot;hljs-keyword&quot;>for</span> (<span class=&quot;hljs-keyword&quot;>const</span> pattern <span class=&quot;hljs-keyword&quot;>of</span> winPatterns) {
+    <span class=&quot;hljs-keyword&quot;>const</span> [a, b, c] = pattern;
+    <span class=&quot;hljs-keyword&quot;>if</span> (
+      cells[a].<span class=&quot;hljs-property&quot;>innerHTML</span> !== <span class=&quot;hljs-string&quot;>&quot;&quot;</span> &amp;&amp;
+      cells[a].<span class=&quot;hljs-property&quot;>innerHTML</span> === cells[b].<span class=&quot;hljs-property&quot;>innerHTML</span> &amp;&amp;
+      cells[a].<span class=&quot;hljs-property&quot;>innerHTML</span> === cells[c].<span class=&quot;hljs-property&quot;>innerHTML</span>
+    ) {
+      <span class=&quot;hljs-title function_&quot;>updateCellsWinners</span>(cells[a], cells[b], cells[c]);
+      <span class=&quot;hljs-keyword&quot;>return</span> <span class=&quot;hljs-literal&quot;>true</span>;
+    }
+  }
+
+  <span class=&quot;hljs-keyword&quot;>return</span> <span class=&quot;hljs-literal&quot;>false</span>;
+}
+
+<span class=&quot;hljs-keyword&quot;>function</span> <span class=&quot;hljs-title function_&quot;>updateCellsWinners</span>(<span class=&quot;hljs-params&quot;>a, b, c</span>) {
+  a.<span class=&quot;hljs-property&quot;>classList</span>.<span class=&quot;hljs-title function_&quot;>add</span>(<span class=&quot;hljs-string&quot;>&quot;correct&quot;</span>);
+  b.<span class=&quot;hljs-property&quot;>classList</span>.<span class=&quot;hljs-title function_&quot;>add</span>(<span class=&quot;hljs-string&quot;>&quot;correct&quot;</span>);
+  c.<span class=&quot;hljs-property&quot;>classList</span>.<span class=&quot;hljs-title function_&quot;>add</span>(<span class=&quot;hljs-string&quot;>&quot;correct&quot;</span>);
+}
+
+<span class=&quot;hljs-keyword&quot;>function</span> <span class=&quot;hljs-title function_&quot;>checkTie</span>(<span class=&quot;hljs-params&quot;></span>) {
+  <span class=&quot;hljs-keyword&quot;>return</span> <span class=&quot;hljs-title class_&quot;>Array</span>.<span class=&quot;hljs-title function_&quot;>from</span>(cells).<span class=&quot;hljs-title function_&quot;>every</span>((cell) =&amp;gt; cell.<span class=&quot;hljs-property&quot;>innerHTML</span> !== <span class=&quot;hljs-string&quot;>&quot;&quot;</span>);
+}
+
+<span class=&quot;hljs-keyword&quot;>function</span> <span class=&quot;hljs-title function_&quot;>reset</span>(<span class=&quot;hljs-params&quot;></span>) {
+  gameStatus = <span class=&quot;hljs-title class_&quot;>EGameStatus</span>.<span class=&quot;hljs-property&quot;>NOT_STARTED</span>;
+  currentPlayer = <span class=&quot;hljs-string&quot;>&quot;X&quot;</span>;
+  <span class=&quot;hljs-title function_&quot;>updateGameMessage</span>();
+  cells.<span class=&quot;hljs-title function_&quot;>forEach</span>((cell) =&amp;gt; {
+    cell.<span class=&quot;hljs-property&quot;>innerText</span> = <span class=&quot;hljs-string&quot;>&quot;&quot;</span>;
+    cell.<span class=&quot;hljs-property&quot;>className</span> = <span class=&quot;hljs-string&quot;>&quot;cell&quot;</span>;
+  });
+}
+
+<span class=&quot;hljs-keyword&quot;>function</span> <span class=&quot;hljs-title function_&quot;>updateGameMessage</span>(<span class=&quot;hljs-params&quot;></span>) {
+  <span class=&quot;hljs-keyword&quot;>if</span> (gameStatus === <span class=&quot;hljs-title class_&quot;>EGameStatus</span>.<span class=&quot;hljs-property&quot;>FINISHED_WITH_TIE</span>) {
+    gameMessage.<span class=&quot;hljs-property&quot;>innerHTML</span> = <span class=&quot;hljs-string&quot;>&quot;It&#x27;s a tie!&quot;</span>;
+  } <span class=&quot;hljs-keyword&quot;>else</span> <span class=&quot;hljs-keyword&quot;>if</span> (gameStatus === <span class=&quot;hljs-title class_&quot;>EGameStatus</span>.<span class=&quot;hljs-property&quot;>FINISHED_WITH_WINNER</span>) {
+    gameMessage.<span class=&quot;hljs-property&quot;>innerHTML</span> = <span class=&quot;hljs-string&quot;>`Winner : &amp;lt;span&amp;gt;<span class=&quot;hljs-subst&quot;>${currentPlayer}</span>&amp;lt;/span&amp;gt;`</span>;
+  } <span class=&quot;hljs-keyword&quot;>else</span> {
+    gameMessage.<span class=&quot;hljs-property&quot;>innerHTML</span> = <span class=&quot;hljs-string&quot;>`Who&#x27;s Turn : &amp;lt;span&amp;gt;<span class=&quot;hljs-subst&quot;>${currentPlayer}</span>&amp;lt;/span&amp;gt;`</span>;
+  }
+}
+
+<span class=&quot;hljs-keyword&quot;>function</span> <span class=&quot;hljs-title function_&quot;>isGameFinished</span>(<span class=&quot;hljs-params&quot;></span>) {
+  <span class=&quot;hljs-keyword&quot;>return</span> gameStatus == <span class=&quot;hljs-title class_&quot;>EGameStatus</span>.<span class=&quot;hljs-property&quot;>FINISHED_WITH_TIE</span> || gameStatus == <span class=&quot;hljs-title class_&quot;>EGameStatus</span>.<span class=&quot;hljs-property&quot;>FINISHED_WITH_TIE</span>;
+}
 </code></pre></code></pre></li>
 </ul>
+<h2>Ressources</h2>
+<div class=&quot;asset&quot;>
+  <img src=&quot;../../../assets/blog/tic-tac-toe-game/background.jpg&quot; />
+<p><a href=&quot;../../../assets/blog/tic-tac-toe-game/background.jpg&quot; title=&quot;background.jpg&quot; download>background.jpg</a></p>
+</div>
 <h2>Conclusion</h2>
 <p>Merci de votre lecture. Nous espérons que cet article vous a été utile !</p>
 " blogs="[{&quot;title&quot;:&quot;Formation Udemy 🆓&quot;,&quot;description&quot;:&quot;Découvrez notre formation gratuite sur Udemy sur comment créer une API REST avec Spring Boot, utilisant une base de données H2 puis PostgreSQL et une documentation Swagger 🚀&quot;,&quot;tags&quot;:[&quot;formation&quot;,&quot;web&quot;],&quot;image&quot;:&quot;/assets/thumbnail/api-rest-with-spring-boot.png&quot;,&quot;date&quot;:&quot;21241128&quot;,&quot;category&quot;:&quot;formation&quot;,&quot;slug&quot;:&quot;https://www.udemy.com/course/creer-une-api-rest-en-utilisant-spring-boot/?referralCode=3420DF71B7FD2FDBC3B8&quot;},{&quot;isArticleIndex&quot;:false,&quot;isArticleSection&quot;:false,&quot;isArticleWithSections&quot;:false,&quot;date&quot;:&quot;20241103&quot;,&quot;title&quot;:&quot;Calculateur IMC&quot;,&quot;withScript&quot;:false,&quot;description&quot;:&quot;Dans cet article, nous allons apprendre à créer le calculateur IMC en utilisant HTML, CSS et JavaScript. Grâce à un code source facile à comprendre, vous pourrez suivre les étapes et créer votre propre version&quot;,&quot;tags&quot;:[&quot;html&quot;,&quot;css&quot;,&quot;javascript&quot;],&quot;image&quot;:&quot;http://img.youtube.com/vi/oURcl1nQGW4/maxresdefault.jpg&quot;,&quot;slug&quot;:&quot;apps/calculateur-imc&quot;,&quot;summary&quot;:[]},{&quot;isArticleIndex&quot;:false,&quot;isArticleSection&quot;:false,&quot;isArticleWithSections&quot;:false,&quot;date&quot;:&quot;20241103&quot;,&quot;title&quot;:&quot;Calculatrice&quot;,&quot;withScript&quot;:false,&quot;description&quot;:&quot;Dans cet article, nous allons apprendre à créer une Calculatrice en utilisant HTML, CSS et JavaScript. Grâce à un code source facile à comprendre, vous pourrez suivre les étapes et créer votre propre version&quot;,&quot;tags&quot;:[&quot;html&quot;,&quot;css&quot;,&quot;javascript&quot;],&quot;image&quot;:&quot;http://img.youtube.com/vi/-QhRoEX2ioc/maxresdefault.jpg&quot;,&quot;slug&quot;:&quot;apps/calculatrice&quot;,&quot;summary&quot;:[]},{&quot;isArticleIndex&quot;:false,&quot;isArticleSection&quot;:false,&quot;isArticleWithSections&quot;:false,&quot;date&quot;:&quot;20241103&quot;,&quot;title&quot;:&quot;Générateur de Password&quot;,&quot;withScript&quot;:false,&quot;description&quot;:&quot;Dans cet article, nous allons apprendre à créer le Générateur de Password en utilisant HTML, CSS et JavaScript. Grâce à un code source facile à comprendre, vous pourrez suivre les étapes et créer votre propre version&quot;,&quot;tags&quot;:[&quot;html&quot;,&quot;css&quot;,&quot;javascript&quot;],&quot;image&quot;:&quot;http://img.youtube.com/vi/lundFKVgWCA/maxresdefault.jpg&quot;,&quot;slug&quot;:&quot;apps/password-generator&quot;,&quot;summary&quot;:[]},{&quot;isArticleIndex&quot;:false,&quot;isArticleSection&quot;:false,&quot;isArticleWithSections&quot;:false,&quot;date&quot;:&quot;20241103&quot;,&quot;title&quot;:&quot;Tic Tac Toe Game&quot;,&quot;withScript&quot;:false,&quot;description&quot;:&quot;Dans cet article, nous allons apprendre à créer le jeu Tic Tac Toe en utilisant HTML, CSS et JavaScript. Grâce à un code source facile à comprendre, vous pourrez suivre les étapes et créer votre propre version&quot;,&quot;tags&quot;:[&quot;html&quot;,&quot;css&quot;,&quot;javascript&quot;],&quot;image&quot;:&quot;http://img.youtube.com/vi/ZsIemlz-q5U/maxresdefault.jpg&quot;,&quot;slug&quot;:&quot;apps/tic-tac-toe-game&quot;,&quot;summary&quot;:[]},{&quot;isArticleIndex&quot;:false,&quot;isArticleSection&quot;:false,&quot;isArticleWithSections&quot;:false,&quot;date&quot;:&quot;20241103&quot;,&quot;title&quot;:&quot;Weather App&quot;,&quot;withScript&quot;:false,&quot;description&quot;:&quot;Dans cet article, nous allons apprendre à créer une Weather App en utilisant HTML, CSS et JavaScript. Grâce à un code source facile à comprendre, vous pourrez suivre les étapes et créer votre propre version&quot;,&quot;tags&quot;:[&quot;html&quot;,&quot;css&quot;,&quot;javascript&quot;],&quot;image&quot;:&quot;http://img.youtube.com/vi/9T3afIMjsfE/maxresdefault.jpg&quot;,&quot;slug&quot;:&quot;apps/weather-app&quot;,&quot;summary&quot;:[]},{&quot;isArticleIndex&quot;:false,&quot;isArticleSection&quot;:false,&quot;isArticleWithSections&quot;:false,&quot;date&quot;:&quot;20231128&quot;,&quot;title&quot;:&quot;Animated CSS Border&quot;,&quot;withScript&quot;:false,&quot;description&quot;:&quot;Dans cet article, nous allons apprendre à créer une bordure animée en utilisant HTML et CSS. Grâce à un code source facile à comprendre, vous pourrez suivre les étapes et créer votre propre version&quot;,&quot;tags&quot;:[&quot;html&quot;,&quot;css&quot;],&quot;image&quot;:&quot;/assets/thumbnail/animated-border.png&quot;,&quot;slug&quot;:&quot;css/animated-border&quot;,&quot;summary&quot;:[]},{&quot;isArticleIndex&quot;:false,&quot;isArticleSection&quot;:false,&quot;isArticleWithSections&quot;:false,&quot;date&quot;:&quot;20231124&quot;,&quot;title&quot;:&quot;Animated Search Bar&quot;,&quot;withScript&quot;:false,&quot;description&quot;:&quot;Dans cet article, nous allons apprendre à créer une une barre de recherche animée en utilisant HTML et CSS. Grâce à un code source facile à comprendre, vous pourrez suivre les étapes et créer votre propre version&quot;,&quot;tags&quot;:[&quot;html&quot;,&quot;css&quot;],&quot;image&quot;:&quot;/assets/thumbnail/animated-search-bar.png&quot;,&quot;slug&quot;:&quot;css/animated-search-bar&quot;,&quot;summary&quot;:[]},{&quot;isArticleIndex&quot;:false,&quot;isArticleSection&quot;:false,&quot;isArticleWithSections&quot;:false,&quot;date&quot;:&quot;20231121&quot;,&quot;title&quot;:&quot;Héritage avec JPA&quot;,&quot;withScript&quot;:false,&quot;description&quot;:&quot;Un guide pratique pour comprendre les différentes stratégies d'héritage avec l'API de persistance Java (JPA). Ce guide vous aidera à maîtriser les concepts essentiels pour modéliser efficacement vos entités dans une base de données relationnelle&quot;,&quot;tags&quot;:[&quot;Java&quot;,&quot;JPA&quot;],&quot;image&quot;:&quot;/assets/thumbnail/blog-thumbnail-5.jpg&quot;,&quot;slug&quot;:&quot;java/inheritance-with-jpa&quot;,&quot;summary&quot;:[]},{&quot;isArticleIndex&quot;:false,&quot;isArticleSection&quot;:false,&quot;isArticleWithSections&quot;:false,&quot;date&quot;:&quot;20231116&quot;,&quot;title&quot;:&quot;ThreadLocal en Java&quot;,&quot;withScript&quot;:false,&quot;description&quot;:&quot;Un guide pratique sur la classe ThreadLocal permettant de stocker des données spécifiques aux threads en Java, et d'assurer que chaque thread possède ses propres valeurs isolées, garantissant ainsi la sécurité et l'intégrité des données dans les environnements multithreadés&quot;,&quot;tags&quot;:[&quot;java&quot;,&quot;multithread&quot;],&quot;image&quot;:&quot;/assets/thumbnail/blog-thumbnail-6.jpg&quot;,&quot;slug&quot;:&quot;java/thread-local&quot;,&quot;summary&quot;:[]},{&quot;isArticleIndex&quot;:true,&quot;isArticleSection&quot;:false,&quot;isArticleWithSections&quot;:true,&quot;date&quot;:&quot;20230919&quot;,&quot;title&quot;:&quot;API REST avec Spring&quot;,&quot;withScript&quot;:false,&quot;description&quot;:&quot;Dans cet article, nous allons créer une API REST en utilisant le framework Spring Boot en utilisant une base de données H2 puis PostgreSQL et en ajoutant sa documentation Swagger&quot;,&quot;tags&quot;:[&quot;spring boot&quot;,&quot;api rest&quot;],&quot;image&quot;:&quot;/assets/thumbnail/api-rest-with-spring-boot.png&quot;,&quot;slug&quot;:&quot;spring/api-rest-with-spring-boot&quot;,&quot;summary&quot;:[{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot&quot;,&quot;label&quot;:&quot;Introduction&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/first-version&quot;,&quot;label&quot;:&quot;Première version du projet&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/test-our-api-rest&quot;,&quot;label&quot;:&quot;Tester notre API REST&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/add-validation&quot;,&quot;label&quot;:&quot;Ajouter la couche validation&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/add-exceptions-handlers&quot;,&quot;label&quot;:&quot;Ajouter les exceptions handlers&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/use-postgresql&quot;,&quot;label&quot;:&quot;Utiliser une base PostgreSQL&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/add-swagger&quot;,&quot;label&quot;:&quot;Ajouter Swagger&quot;}]},{&quot;isArticleIndex&quot;:false,&quot;isArticleSection&quot;:true,&quot;isArticleWithSections&quot;:true,&quot;date&quot;:&quot;20230919&quot;,&quot;title&quot;:&quot;API REST avec Spring&quot;,&quot;withScript&quot;:false,&quot;description&quot;:&quot;Dans cet article, nous allons créer une API REST en utilisant le framework Spring Boot en utilisant une base de données H2 puis PostgreSQL et en ajoutant sa documentation Swagger&quot;,&quot;tags&quot;:[&quot;spring boot&quot;,&quot;api rest&quot;],&quot;image&quot;:&quot;/assets/thumbnail/api-rest-with-spring-boot.png&quot;,&quot;slug&quot;:&quot;spring/api-rest-with-spring-boot/first-version&quot;,&quot;summary&quot;:[{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot&quot;,&quot;label&quot;:&quot;Introduction&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/first-version&quot;,&quot;label&quot;:&quot;Première version du projet&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/test-our-api-rest&quot;,&quot;label&quot;:&quot;Tester notre API REST&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/add-validation&quot;,&quot;label&quot;:&quot;Ajouter la couche validation&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/add-exceptions-handlers&quot;,&quot;label&quot;:&quot;Ajouter les exceptions handlers&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/use-postgresql&quot;,&quot;label&quot;:&quot;Utiliser une base PostgreSQL&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/add-swagger&quot;,&quot;label&quot;:&quot;Ajouter Swagger&quot;}]},{&quot;isArticleIndex&quot;:false,&quot;isArticleSection&quot;:true,&quot;isArticleWithSections&quot;:true,&quot;date&quot;:&quot;20230919&quot;,&quot;title&quot;:&quot;API REST avec Spring&quot;,&quot;withScript&quot;:false,&quot;description&quot;:&quot;Dans cet article, nous allons créer une API REST en utilisant le framework Spring Boot en utilisant une base de données H2 puis PostgreSQL et en ajoutant sa documentation Swagger&quot;,&quot;tags&quot;:[&quot;spring boot&quot;,&quot;api rest&quot;],&quot;image&quot;:&quot;/assets/thumbnail/api-rest-with-spring-boot.png&quot;,&quot;slug&quot;:&quot;spring/api-rest-with-spring-boot/test-our-api-rest&quot;,&quot;summary&quot;:[{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot&quot;,&quot;label&quot;:&quot;Introduction&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/first-version&quot;,&quot;label&quot;:&quot;Première version du projet&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/test-our-api-rest&quot;,&quot;label&quot;:&quot;Tester notre API REST&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/add-validation&quot;,&quot;label&quot;:&quot;Ajouter la couche validation&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/add-exceptions-handlers&quot;,&quot;label&quot;:&quot;Ajouter les exceptions handlers&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/use-postgresql&quot;,&quot;label&quot;:&quot;Utiliser une base PostgreSQL&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/add-swagger&quot;,&quot;label&quot;:&quot;Ajouter Swagger&quot;}]},{&quot;isArticleIndex&quot;:false,&quot;isArticleSection&quot;:true,&quot;isArticleWithSections&quot;:true,&quot;date&quot;:&quot;20230919&quot;,&quot;title&quot;:&quot;API REST avec Spring&quot;,&quot;withScript&quot;:false,&quot;description&quot;:&quot;Dans cet article, nous allons créer une API REST en utilisant le framework Spring Boot en utilisant une base de données H2 puis PostgreSQL et en ajoutant sa documentation Swagger&quot;,&quot;tags&quot;:[&quot;spring boot&quot;,&quot;api rest&quot;],&quot;image&quot;:&quot;/assets/thumbnail/api-rest-with-spring-boot.png&quot;,&quot;slug&quot;:&quot;spring/api-rest-with-spring-boot/add-validation&quot;,&quot;summary&quot;:[{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot&quot;,&quot;label&quot;:&quot;Introduction&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/first-version&quot;,&quot;label&quot;:&quot;Première version du projet&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/test-our-api-rest&quot;,&quot;label&quot;:&quot;Tester notre API REST&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/add-validation&quot;,&quot;label&quot;:&quot;Ajouter la couche validation&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/add-exceptions-handlers&quot;,&quot;label&quot;:&quot;Ajouter les exceptions handlers&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/use-postgresql&quot;,&quot;label&quot;:&quot;Utiliser une base PostgreSQL&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/add-swagger&quot;,&quot;label&quot;:&quot;Ajouter Swagger&quot;}]},{&quot;isArticleIndex&quot;:false,&quot;isArticleSection&quot;:true,&quot;isArticleWithSections&quot;:true,&quot;date&quot;:&quot;20230919&quot;,&quot;title&quot;:&quot;API REST avec Spring&quot;,&quot;withScript&quot;:false,&quot;description&quot;:&quot;Dans cet article, nous allons créer une API REST en utilisant le framework Spring Boot en utilisant une base de données H2 puis PostgreSQL et en ajoutant sa documentation Swagger&quot;,&quot;tags&quot;:[&quot;spring boot&quot;,&quot;api rest&quot;],&quot;image&quot;:&quot;/assets/thumbnail/api-rest-with-spring-boot.png&quot;,&quot;slug&quot;:&quot;spring/api-rest-with-spring-boot/add-exceptions-handlers&quot;,&quot;summary&quot;:[{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot&quot;,&quot;label&quot;:&quot;Introduction&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/first-version&quot;,&quot;label&quot;:&quot;Première version du projet&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/test-our-api-rest&quot;,&quot;label&quot;:&quot;Tester notre API REST&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/add-validation&quot;,&quot;label&quot;:&quot;Ajouter la couche validation&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/add-exceptions-handlers&quot;,&quot;label&quot;:&quot;Ajouter les exceptions handlers&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/use-postgresql&quot;,&quot;label&quot;:&quot;Utiliser une base PostgreSQL&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/add-swagger&quot;,&quot;label&quot;:&quot;Ajouter Swagger&quot;}]},{&quot;isArticleIndex&quot;:false,&quot;isArticleSection&quot;:true,&quot;isArticleWithSections&quot;:true,&quot;date&quot;:&quot;20230919&quot;,&quot;title&quot;:&quot;API REST avec Spring&quot;,&quot;withScript&quot;:false,&quot;description&quot;:&quot;Dans cet article, nous allons créer une API REST en utilisant le framework Spring Boot en utilisant une base de données H2 puis PostgreSQL et en ajoutant sa documentation Swagger&quot;,&quot;tags&quot;:[&quot;spring boot&quot;,&quot;api rest&quot;],&quot;image&quot;:&quot;/assets/thumbnail/api-rest-with-spring-boot.png&quot;,&quot;slug&quot;:&quot;spring/api-rest-with-spring-boot/use-postgresql&quot;,&quot;summary&quot;:[{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot&quot;,&quot;label&quot;:&quot;Introduction&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/first-version&quot;,&quot;label&quot;:&quot;Première version du projet&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/test-our-api-rest&quot;,&quot;label&quot;:&quot;Tester notre API REST&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/add-validation&quot;,&quot;label&quot;:&quot;Ajouter la couche validation&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/add-exceptions-handlers&quot;,&quot;label&quot;:&quot;Ajouter les exceptions handlers&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/use-postgresql&quot;,&quot;label&quot;:&quot;Utiliser une base PostgreSQL&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/add-swagger&quot;,&quot;label&quot;:&quot;Ajouter Swagger&quot;}]},{&quot;isArticleIndex&quot;:false,&quot;isArticleSection&quot;:true,&quot;isArticleWithSections&quot;:true,&quot;date&quot;:&quot;20230919&quot;,&quot;title&quot;:&quot;API REST avec Spring&quot;,&quot;withScript&quot;:false,&quot;description&quot;:&quot;Dans cet article, nous allons créer une API REST en utilisant le framework Spring Boot en utilisant une base de données H2 puis PostgreSQL et en ajoutant sa documentation Swagger&quot;,&quot;tags&quot;:[&quot;spring boot&quot;,&quot;api rest&quot;],&quot;image&quot;:&quot;/assets/thumbnail/api-rest-with-spring-boot.png&quot;,&quot;slug&quot;:&quot;spring/api-rest-with-spring-boot/add-swagger&quot;,&quot;summary&quot;:[{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot&quot;,&quot;label&quot;:&quot;Introduction&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/first-version&quot;,&quot;label&quot;:&quot;Première version du projet&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/test-our-api-rest&quot;,&quot;label&quot;:&quot;Tester notre API REST&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/add-validation&quot;,&quot;label&quot;:&quot;Ajouter la couche validation&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/add-exceptions-handlers&quot;,&quot;label&quot;:&quot;Ajouter les exceptions handlers&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/use-postgresql&quot;,&quot;label&quot;:&quot;Utiliser une base PostgreSQL&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/add-swagger&quot;,&quot;label&quot;:&quot;Ajouter Swagger&quot;}]},{&quot;isArticleIndex&quot;:false,&quot;isArticleSection&quot;:false,&quot;isArticleWithSections&quot;:false,&quot;date&quot;:&quot;20230628&quot;,&quot;title&quot;:&quot;Animated Submit Button&quot;,&quot;withScript&quot;:true,&quot;description&quot;:&quot;Dans cet article, nous allons apprendre à créer un bouton de soumission animé en utilisant HTML, CSS et JavaScript. Avec un code source facile à comprendre, vous pourrez suivre les étapes et créer votre propre version&quot;,&quot;tags&quot;:[&quot;html&quot;,&quot;css&quot;,&quot;javascript&quot;],&quot;image&quot;:&quot;/assets/thumbnail/animated-submit-button.png&quot;,&quot;slug&quot;:&quot;css/animated-submit-button&quot;,&quot;summary&quot;:[]},{&quot;isArticleIndex&quot;:false,&quot;isArticleSection&quot;:false,&quot;isArticleWithSections&quot;:false,&quot;date&quot;:&quot;20230624&quot;,&quot;title&quot;:&quot;Toggle Password Input&quot;,&quot;withScript&quot;:true,&quot;description&quot;:&quot;Dans cet article, nous allons apprendre comment afficher/masquer le mot de passe dans un formulaire en utilisant HTML, CSS et JavaScript. Avec un code source facile à comprendre, vous pourrez suivre les étapes et créer votre propre version&quot;,&quot;tags&quot;:[&quot;html&quot;,&quot;css&quot;,&quot;javascript&quot;],&quot;image&quot;:&quot;/assets/thumbnail/blog-thumbnail-7.jpg&quot;,&quot;slug&quot;:&quot;javascript/toggle-password-visibility&quot;,&quot;summary&quot;:[]},{&quot;isArticleIndex&quot;:false,&quot;isArticleSection&quot;:false,&quot;isArticleWithSections&quot;:false,&quot;date&quot;:&quot;20230618&quot;,&quot;title&quot;:&quot;Les jointures en SQL&quot;,&quot;withScript&quot;:false,&quot;description&quot;:&quot;Dans cet article, nous allons apprendre les types de jointures SQL, y compris inner join, left join, right join et full outer join. Nous couvrirons leur syntaxe, leurs différences et des exemples pratiques pour une meilleure compréhension&quot;,&quot;tags&quot;:[&quot;sql&quot;,&quot;jointure&quot;],&quot;image&quot;:&quot;/assets/thumbnail/blog-thumbnail-8.jpg&quot;,&quot;slug&quot;:&quot;sql/joins-types&quot;,&quot;summary&quot;:[]},{&quot;isArticleIndex&quot;:false,&quot;isArticleSection&quot;:false,&quot;isArticleWithSections&quot;:false,&quot;date&quot;:&quot;20230605&quot;,&quot;title&quot;:&quot;Countdown Timer&quot;,&quot;withScript&quot;:false,&quot;description&quot;:&quot;Dans cet article, nous allons apprendre à créer un minuteur de compte à rebours en utilisant HTML, CSS et JavaScript. Avec un code source facile à comprendre, vous pourrez suivre les étapes et créer votre propre version&quot;,&quot;tags&quot;:[&quot;html&quot;,&quot;css&quot;,&quot;javascript&quot;],&quot;image&quot;:&quot;http://img.youtube.com/vi/q6fFsOX2ihE/maxresdefault.jpg&quot;,&quot;slug&quot;:&quot;apps/count-down&quot;,&quot;summary&quot;:[]},{&quot;isArticleIndex&quot;:false,&quot;isArticleSection&quot;:false,&quot;isArticleWithSections&quot;:false,&quot;date&quot;:&quot;20230529&quot;,&quot;title&quot;:&quot;Todo List App&quot;,&quot;withScript&quot;:false,&quot;description&quot;:&quot;Dans cet article, nous allons apprendre à créer une application Todo App en utilisant HTML, CSS et JavaScript. Grâce à un code source facile à comprendre, vous pourrez suivre les étapes et créer votre propre version&quot;,&quot;tags&quot;:[&quot;html&quot;,&quot;css&quot;,&quot;javascript&quot;],&quot;image&quot;:&quot;http://img.youtube.com/vi/T1lBgZVgryw/maxresdefault.jpg&quot;,&quot;slug&quot;:&quot;apps/todo-list&quot;,&quot;summary&quot;:[]},{&quot;isArticleIndex&quot;:false,&quot;isArticleSection&quot;:false,&quot;isArticleWithSections&quot;:false,&quot;date&quot;:&quot;20230503&quot;,&quot;title&quot;:&quot;ScrollToTheTop Button&quot;,&quot;withScript&quot;:false,&quot;description&quot;:&quot;Dans cet article, nous allons apprendre à créer un bouton pour remonter en haut de la page en utilisant HTML, CSS et JavaScript. Grâce à un code source facile à comprendre, vous pourrez suivre les étapes et créer votre propre version&quot;,&quot;tags&quot;:[&quot;html&quot;,&quot;css&quot;],&quot;image&quot;:&quot;http://img.youtube.com/vi/7Vc_Di-qYEk/maxresdefault.jpg&quot;,&quot;slug&quot;:&quot;css/scroll-top-button&quot;,&quot;summary&quot;:[]}]"></app-main>
@@ -276,7 +417,4 @@ hideIcon.<span class=&quot;hljs-title function_&quot;>addEventListener</span>(<s
 
                 gtag('config', 'G-S6JEVF53JZ');
                 </script>
-            
-                <script src="/assets/scripts/markdown.js"></script>
-                <script src="/assets/scripts/javascript/toggle-password-visibility.js"></script>
-            </body></html>
+            <script src="/assets/scripts/markdown.js"></script></body></html>
