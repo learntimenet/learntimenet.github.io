@@ -3,8 +3,8 @@
             <html lang="fr">
             <head>
                 <meta charset="utf-8" />
-                <title>Learn Time | Animated Submit Button</title>
-                <meta name="description" content="Dans cet article, nous allons apprendre à créer un bouton de soumission animé en utilisant HTML, CSS et JavaScript. Avec un code source facile à comprendre, vous pourrez suivre les étapes et créer votre propre version">
+                <title>Learn Time | Calculateur IMC</title>
+                <meta name="description" content="Dans cet article, nous allons apprendre à créer une application Todo App en utilisant HTML, CSS et JavaScript. Grâce à un code source facile à comprendre, vous pourrez suivre les étapes et créer votre propre version">
                 <meta name="viewport" content="width=device-width,initial-scale=1" />
                 <!--
                 <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
@@ -34,14 +34,14 @@
                     .loader.hide {opacity: 0;}
                 </style>
                 
-            <meta property="og:title" content="Animated Submit Button" />
-            <meta property="og:description" content="Dans cet article, nous allons apprendre à créer un bouton de soumission animé en utilisant HTML, CSS et JavaScript. Avec un code source facile à comprendre, vous pourrez suivre les étapes et créer votre propre version" />
-            <meta property="og:image" content="https://learntime.net/assets/thumbnail/animated-submit-button.png" />
+            <meta property="og:title" content="Calculateur IMC" />
+            <meta property="og:description" content="Dans cet article, nous allons apprendre à créer une application Todo App en utilisant HTML, CSS et JavaScript. Grâce à un code source facile à comprendre, vous pourrez suivre les étapes et créer votre propre version" />
+            <meta property="og:image" content="https://learntime.nethttp://img.youtube.com/vi/oURcl1nQGW4/maxresdefault.jpg" />
             <meta name="twitter:card" content="summary_large_image">
             <meta name="twitter:creator" content="@learntimenet">
-            <meta name="twitter:title" content="Animated Submit Button">
-            <meta name="twitter:description" content="Dans cet article, nous allons apprendre à créer un bouton de soumission animé en utilisant HTML, CSS et JavaScript. Avec un code source facile à comprendre, vous pourrez suivre les étapes et créer votre propre version">
-            <meta name="twitter:image" content="https://learntime.net/assets/thumbnail/animated-submit-button.png">
+            <meta name="twitter:title" content="Calculateur IMC">
+            <meta name="twitter:description" content="Dans cet article, nous allons apprendre à créer une application Todo App en utilisant HTML, CSS et JavaScript. Grâce à un code source facile à comprendre, vous pourrez suivre les étapes et créer votre propre version">
+            <meta name="twitter:image" content="https://learntime.nethttp://img.youtube.com/vi/oURcl1nQGW4/maxresdefault.jpg">
         
                 <script>
                     var disqus_config = function () {
@@ -49,7 +49,7 @@
                         this.page.identifier = window.location.pathname.replace('/en', '');
                     };
                 </script>
-            <script defer src="/css/animated-submit-button/animated-submit-button.857b2d2280c4fafa1ac1.js"></script></head>
+            <script defer src="/apps/calculateur-imc/calculateur-imc.97594093e15308b8ab70.js"></script></head>
             <body>
                 <div class="loader">
                     <svg class="loader-logo" width="1000" height="1000" viewBox="0 0 1000 1000" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -86,189 +86,416 @@
         }
     }
 </style>
-<app-main metadata="{&quot;isArticleIndex&quot;:false,&quot;isArticleSection&quot;:false,&quot;isArticleWithSections&quot;:false,&quot;date&quot;:&quot;20230628&quot;,&quot;title&quot;:&quot;Animated Submit Button&quot;,&quot;withScript&quot;:true,&quot;description&quot;:&quot;Dans cet article, nous allons apprendre à créer un bouton de soumission animé en utilisant HTML, CSS et JavaScript. Avec un code source facile à comprendre, vous pourrez suivre les étapes et créer votre propre version&quot;,&quot;tags&quot;:[&quot;html&quot;,&quot;css&quot;,&quot;javascript&quot;],&quot;image&quot;:&quot;/assets/thumbnail/animated-submit-button.png&quot;,&quot;slug&quot;:&quot;css/animated-submit-button&quot;,&quot;summary&quot;:[]}" html="<h1>Introduction</h1>
-<p>Dans cet article, nous allons apprendre à créer un bouton de soumission animé en utilisant HTML, CSS et JavaScript. Avec un code source facile à comprendre, vous pourrez suivre les étapes et créer votre propre version</p>
-<h2>Démo</h2>
-<style>
-  .output {
-    height: 190px;
-    display: block;
-    overflow: auto;
-    position: relative;
-    background: #fafafa;
-    border-radius: 4px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .output button {
-    position: relative;
-    font-size: 20px;
-    font-weight: 500;
-    color: #fefefe;
-    background: #ffbe2f;
-    width: 250px;
-    height: 60px;
-    padding: 1em;
-    border: 0;
-    border-radius: 100px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    transition: all linear 0.15s;
-  }
-  .output button.animate {
-    width: 60px;
-    color: transparent;
-  }
-  .output button.animate::after {
-    transition: all .3s ease-in;
-    content: '';
-    width: 30px;
-    height: 30px;
-    border: 4px solid #fefefe;
-    border-radius: 50%;
-    border-left-color: transparent;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    animation: spin ease-in 2.5s forwards;
-  }
-  .output button.animate::before {
-    transition: all .3s ease-in;
-    content: '';
-    width: 30px;
-    height: 15px;
-    border: 4px solid #fefefe;
-    border-right: 0;
-    border-top: 0;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%) rotate(0deg) scale(0);
-    animation: checkmark ease-in 0.15s forwards 2.5s;
-  }
-  @keyframes spin {
-    0% {
-      transform: translate(-50%, -50%) rotate(0deg) scale(1);
-    }
-    90% {
-      transform: translate(-50%, -50%) rotate(1080deg) scale(1);
-    }
-    100% {
-      transform: scale(0);
-    }
-  }
-  @keyframes checkmark {
-    0% {
-      transform: translate(-50%, -50%) rotate(0) scale(0);
-    }
-    100% {
-      transform: translate(-50%, -50%) rotate(-45deg) scale(1);
-    }
-  }
-</style>
-<div class=&quot;output&quot;>
-  <button>Submit</button>
-</div>
+<app-main metadata="{&quot;isArticleIndex&quot;:false,&quot;isArticleSection&quot;:false,&quot;isArticleWithSections&quot;:false,&quot;date&quot;:&quot;20241103&quot;,&quot;title&quot;:&quot;Calculateur IMC&quot;,&quot;withScript&quot;:false,&quot;description&quot;:&quot;Dans cet article, nous allons apprendre à créer une application Todo App en utilisant HTML, CSS et JavaScript. Grâce à un code source facile à comprendre, vous pourrez suivre les étapes et créer votre propre version&quot;,&quot;tags&quot;:[&quot;html&quot;,&quot;css&quot;,&quot;javascript&quot;],&quot;image&quot;:&quot;http://img.youtube.com/vi/oURcl1nQGW4/maxresdefault.jpg&quot;,&quot;slug&quot;:&quot;apps/calculateur-imc&quot;,&quot;summary&quot;:[]}" html="<h1>Introduction</h1>
+<p>Dans cet article, nous allons apprendre à créer le calculateur IMC en utilisant HTML, CSS et JavaScript. Grâce à un code source facile à comprendre, vous pourrez suivre les étapes et créer votre propre version</p>
+<iframe width=&quot;899&quot; height=&quot;506&quot; src=&quot;https://www.youtube.com/embed/oURcl1nQGW4&quot; title=&quot;Todo List App&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&quot; allowfullscreen></iframe>
 <h2>Code source</h2>
 <p><strong>code-tabs</strong></p>
 <ul>
 <li><p>index.html</p>
 <pre><code class=&quot;language-html&quot;><pre class=&quot;highlight&quot;><code class=&quot;hljs&quot;><span class=&quot;hljs-meta&quot;>&amp;lt;!DOCTYPE <span class=&quot;hljs-keyword&quot;>html</span>&amp;gt;</span>
-<span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>html</span>&amp;gt;</span>
+<span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>html</span> <span class=&quot;hljs-attr&quot;>lang</span>=<span class=&quot;hljs-string&quot;>&quot;en&quot;</span>&amp;gt;</span>
 <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>head</span>&amp;gt;</span>
-  <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>link</span> <span class=&quot;hljs-attr&quot;>href</span>=<span class=&quot;hljs-string&quot;>&quot;./style.css&quot;</span> <span class=&quot;hljs-attr&quot;>rel</span>=<span class=&quot;hljs-string&quot;>&quot;stylesheet&quot;</span>&amp;gt;</span>
+    <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>meta</span> <span class=&quot;hljs-attr&quot;>charset</span>=<span class=&quot;hljs-string&quot;>&quot;UTF-8&quot;</span>&amp;gt;</span>
+    <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>meta</span> <span class=&quot;hljs-attr&quot;>http-equiv</span>=<span class=&quot;hljs-string&quot;>&quot;X-UA-Compatible&quot;</span> <span class=&quot;hljs-attr&quot;>content</span>=<span class=&quot;hljs-string&quot;>&quot;IE=edge&quot;</span>&amp;gt;</span>
+    <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>meta</span> <span class=&quot;hljs-attr&quot;>name</span>=<span class=&quot;hljs-string&quot;>&quot;viewport&quot;</span> <span class=&quot;hljs-attr&quot;>content</span>=<span class=&quot;hljs-string&quot;>&quot;width=device-width, initial-scale=1.0&quot;</span>&amp;gt;</span>
+    <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>title</span>&amp;gt;</span>BMI Calculator<span class=&quot;hljs-tag&quot;>&amp;lt;/<span class=&quot;hljs-name&quot;>title</span>&amp;gt;</span>
+    <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>link</span> <span class=&quot;hljs-attr&quot;>rel</span>=<span class=&quot;hljs-string&quot;>&quot;stylesheet&quot;</span> <span class=&quot;hljs-attr&quot;>href</span>=<span class=&quot;hljs-string&quot;>&quot;./style.css&quot;</span> /&amp;gt;</span>
 <span class=&quot;hljs-tag&quot;>&amp;lt;/<span class=&quot;hljs-name&quot;>head</span>&amp;gt;</span>
 <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>body</span>&amp;gt;</span>
-  <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>button</span>&amp;gt;</span>Submit<span class=&quot;hljs-tag&quot;>&amp;lt;/<span class=&quot;hljs-name&quot;>button</span>&amp;gt;</span>
-  <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>script</span> <span class=&quot;hljs-attr&quot;>src</span>=<span class=&quot;hljs-string&quot;>&quot;./script.js&quot;</span>&amp;gt;</span><span class=&quot;hljs-tag&quot;>&amp;lt;/<span class=&quot;hljs-name&quot;>script</span>&amp;gt;</span>
+  <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>div</span> <span class=&quot;hljs-attr&quot;>class</span>=<span class=&quot;hljs-string&quot;>&quot;container&quot;</span>&amp;gt;</span>
+    <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>div</span> <span class=&quot;hljs-attr&quot;>class</span>=<span class=&quot;hljs-string&quot;>&quot;header-container&quot;</span>&amp;gt;</span>
+      <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>h1</span>&amp;gt;</span>BMI Calculator<span class=&quot;hljs-tag&quot;>&amp;lt;/<span class=&quot;hljs-name&quot;>h1</span>&amp;gt;</span>
+      <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>h2</span>&amp;gt;</span>
+        Calculate your Body Mass Index easily and accurately
+      <span class=&quot;hljs-tag&quot;>&amp;lt;/<span class=&quot;hljs-name&quot;>h2</span>&amp;gt;</span>
+    <span class=&quot;hljs-tag&quot;>&amp;lt;/<span class=&quot;hljs-name&quot;>div</span>&amp;gt;</span>
+    <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>form</span> <span class=&quot;hljs-attr&quot;>autocomplete</span>=<span class=&quot;hljs-string&quot;>&quot;off&quot;</span>&amp;gt;</span>
+      <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>div</span> <span class=&quot;hljs-attr&quot;>class</span>=<span class=&quot;hljs-string&quot;>&quot;inputs-container&quot;</span>&amp;gt;</span>
+        <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>div</span> <span class=&quot;hljs-attr&quot;>class</span>=<span class=&quot;hljs-string&quot;>&quot;input-container height-container&quot;</span>&amp;gt;</span>
+          <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>input</span> <span class=&quot;hljs-attr&quot;>id</span>=<span class=&quot;hljs-string&quot;>&quot;height&quot;</span> <span class=&quot;hljs-attr&quot;>placeholder</span>=<span class=&quot;hljs-string&quot;>&quot; &quot;</span>&amp;gt;</span>
+          <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>p</span> <span class=&quot;hljs-attr&quot;>class</span>=<span class=&quot;hljs-string&quot;>&quot;error&quot;</span>&amp;gt;</span><span class=&quot;hljs-tag&quot;>&amp;lt;/<span class=&quot;hljs-name&quot;>p</span>&amp;gt;</span>
+          <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>label</span> <span class=&quot;hljs-attr&quot;>for</span>=<span class=&quot;hljs-string&quot;>&quot;height&quot;</span>&amp;gt;</span>Your height in cm<span class=&quot;hljs-tag&quot;>&amp;lt;/<span class=&quot;hljs-name&quot;>label</span>&amp;gt;</span>
+        <span class=&quot;hljs-tag&quot;>&amp;lt;/<span class=&quot;hljs-name&quot;>div</span>&amp;gt;</span>
+        <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>div</span> <span class=&quot;hljs-attr&quot;>class</span>=<span class=&quot;hljs-string&quot;>&quot;input-container weight-container&quot;</span>&amp;gt;</span>
+          <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>input</span> <span class=&quot;hljs-attr&quot;>id</span>=<span class=&quot;hljs-string&quot;>&quot;weight&quot;</span> <span class=&quot;hljs-attr&quot;>placeholder</span>=<span class=&quot;hljs-string&quot;>&quot; &quot;</span>&amp;gt;</span>
+          <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>p</span> <span class=&quot;hljs-attr&quot;>class</span>=<span class=&quot;hljs-string&quot;>&quot;error&quot;</span>&amp;gt;</span><span class=&quot;hljs-tag&quot;>&amp;lt;/<span class=&quot;hljs-name&quot;>p</span>&amp;gt;</span>
+          <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>label</span> <span class=&quot;hljs-attr&quot;>for</span>=<span class=&quot;hljs-string&quot;>&quot;weight&quot;</span>&amp;gt;</span>Your weight in kg<span class=&quot;hljs-tag&quot;>&amp;lt;/<span class=&quot;hljs-name&quot;>label</span>&amp;gt;</span>
+        <span class=&quot;hljs-tag&quot;>&amp;lt;/<span class=&quot;hljs-name&quot;>div</span>&amp;gt;</span>
+      <span class=&quot;hljs-tag&quot;>&amp;lt;/<span class=&quot;hljs-name&quot;>div</span>&amp;gt;</span>
+      <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>button</span>&amp;gt;</span>Calculate your BMI<span class=&quot;hljs-tag&quot;>&amp;lt;/<span class=&quot;hljs-name&quot;>button</span>&amp;gt;</span>
+    <span class=&quot;hljs-tag&quot;>&amp;lt;/<span class=&quot;hljs-name&quot;>form</span>&amp;gt;</span>
+    <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>div</span> <span class=&quot;hljs-attr&quot;>class</span>=<span class=&quot;hljs-string&quot;>&quot;bmi-result&quot;</span>&amp;gt;</span>
+      <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>p</span> <span class=&quot;hljs-attr&quot;>class</span>=<span class=&quot;hljs-string&quot;>&quot;bmi-value&quot;</span>&amp;gt;</span><span class=&quot;hljs-tag&quot;>&amp;lt;/<span class=&quot;hljs-name&quot;>p</span>&amp;gt;</span>
+      <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>p</span> <span class=&quot;hljs-attr&quot;>class</span>=<span class=&quot;hljs-string&quot;>&quot;bmi-description&quot;</span>&amp;gt;</span><span class=&quot;hljs-tag&quot;>&amp;lt;/<span class=&quot;hljs-name&quot;>p</span>&amp;gt;</span>
+    <span class=&quot;hljs-tag&quot;>&amp;lt;/<span class=&quot;hljs-name&quot;>div</span>&amp;gt;</span>
+  <span class=&quot;hljs-tag&quot;>&amp;lt;/<span class=&quot;hljs-name&quot;>div</span>&amp;gt;</span>
+  <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>div</span> <span class=&quot;hljs-attr&quot;>class</span>=<span class=&quot;hljs-string&quot;>&quot;container description-container&quot;</span>&amp;gt;</span>
+    <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>h2</span>&amp;gt;</span>Description<span class=&quot;hljs-tag&quot;>&amp;lt;/<span class=&quot;hljs-name&quot;>h2</span>&amp;gt;</span>
+    <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>p</span> <span class=&quot;hljs-attr&quot;>class</span>=<span class=&quot;hljs-string&quot;>&quot;description&quot;</span>&amp;gt;</span>
+      Let&#x27;s calculate the Body Mass Index (BMI) to 
+      assess the risks associated with overweight based on the person&#x27;s height and weight. 
+      According to the World Health Organization (WHO), the formula is <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>b</span>&amp;gt;</span>BMI = W/H²<span class=&quot;hljs-tag&quot;>&amp;lt;/<span class=&quot;hljs-name&quot;>b</span>&amp;gt;</span>, 
+      where <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>b</span>&amp;gt;</span>W<span class=&quot;hljs-tag&quot;>&amp;lt;/<span class=&quot;hljs-name&quot;>b</span>&amp;gt;</span> is the person&#x27;s weight in kilograms and <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>b</span>&amp;gt;</span>H<span class=&quot;hljs-tag&quot;>&amp;lt;/<span class=&quot;hljs-name&quot;>b</span>&amp;gt;</span> is the height in meters
+    <span class=&quot;hljs-tag&quot;>&amp;lt;/<span class=&quot;hljs-name&quot;>p</span>&amp;gt;</span>
+    <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>div</span> <span class=&quot;hljs-attr&quot;>class</span>=<span class=&quot;hljs-string&quot;>&quot;bmi-ranges&quot;</span>&amp;gt;</span>
+      <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>div</span> <span class=&quot;hljs-attr&quot;>class</span>=<span class=&quot;hljs-string&quot;>&quot;bmi-range-container underweight&quot;</span>&amp;gt;</span>
+        <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>p</span> <span class=&quot;hljs-attr&quot;>class</span>=<span class=&quot;hljs-string&quot;>&quot;bmi-range&quot;</span>&amp;gt;</span>&amp;lt;18,5<span class=&quot;hljs-tag&quot;>&amp;lt;/<span class=&quot;hljs-name&quot;>p</span>&amp;gt;</span>
+        <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>p</span> <span class=&quot;hljs-attr&quot;>class</span>=<span class=&quot;hljs-string&quot;>&quot;bmi-range-label&quot;</span>&amp;gt;</span>Underweight<span class=&quot;hljs-tag&quot;>&amp;lt;/<span class=&quot;hljs-name&quot;>p</span>&amp;gt;</span>
+      <span class=&quot;hljs-tag&quot;>&amp;lt;/<span class=&quot;hljs-name&quot;>div</span>&amp;gt;</span>
+      <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>div</span> <span class=&quot;hljs-attr&quot;>class</span>=<span class=&quot;hljs-string&quot;>&quot;bmi-range-container normal&quot;</span>&amp;gt;</span>
+        <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>p</span> <span class=&quot;hljs-attr&quot;>class</span>=<span class=&quot;hljs-string&quot;>&quot;bmi-range&quot;</span>&amp;gt;</span>18,5-25<span class=&quot;hljs-tag&quot;>&amp;lt;/<span class=&quot;hljs-name&quot;>p</span>&amp;gt;</span>
+        <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>p</span> <span class=&quot;hljs-attr&quot;>class</span>=<span class=&quot;hljs-string&quot;>&quot;bmi-range-label&quot;</span>&amp;gt;</span>Normal<span class=&quot;hljs-tag&quot;>&amp;lt;/<span class=&quot;hljs-name&quot;>p</span>&amp;gt;</span>
+      <span class=&quot;hljs-tag&quot;>&amp;lt;/<span class=&quot;hljs-name&quot;>div</span>&amp;gt;</span>
+      <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>div</span> <span class=&quot;hljs-attr&quot;>class</span>=<span class=&quot;hljs-string&quot;>&quot;bmi-range-container overweight&quot;</span>&amp;gt;</span>
+        <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>p</span> <span class=&quot;hljs-attr&quot;>class</span>=<span class=&quot;hljs-string&quot;>&quot;bmi-range&quot;</span>&amp;gt;</span>25-30<span class=&quot;hljs-tag&quot;>&amp;lt;/<span class=&quot;hljs-name&quot;>p</span>&amp;gt;</span>
+        <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>p</span> <span class=&quot;hljs-attr&quot;>class</span>=<span class=&quot;hljs-string&quot;>&quot;bmi-range-label&quot;</span>&amp;gt;</span>Overweight<span class=&quot;hljs-tag&quot;>&amp;lt;/<span class=&quot;hljs-name&quot;>p</span>&amp;gt;</span>
+      <span class=&quot;hljs-tag&quot;>&amp;lt;/<span class=&quot;hljs-name&quot;>div</span>&amp;gt;</span>
+      <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>div</span> <span class=&quot;hljs-attr&quot;>class</span>=<span class=&quot;hljs-string&quot;>&quot;bmi-range-container obesity&quot;</span>&amp;gt;</span>
+        <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>p</span> <span class=&quot;hljs-attr&quot;>class</span>=<span class=&quot;hljs-string&quot;>&quot;bmi-range&quot;</span>&amp;gt;</span>30-40<span class=&quot;hljs-tag&quot;>&amp;lt;/<span class=&quot;hljs-name&quot;>p</span>&amp;gt;</span>
+        <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>p</span> <span class=&quot;hljs-attr&quot;>class</span>=<span class=&quot;hljs-string&quot;>&quot;bmi-range-label&quot;</span>&amp;gt;</span>Obese<span class=&quot;hljs-tag&quot;>&amp;lt;/<span class=&quot;hljs-name&quot;>p</span>&amp;gt;</span>
+      <span class=&quot;hljs-tag&quot;>&amp;lt;/<span class=&quot;hljs-name&quot;>div</span>&amp;gt;</span>
+      <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>div</span> <span class=&quot;hljs-attr&quot;>class</span>=<span class=&quot;hljs-string&quot;>&quot;bmi-range-container morbid-obesity&quot;</span>&amp;gt;</span>
+        <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>p</span> <span class=&quot;hljs-attr&quot;>class</span>=<span class=&quot;hljs-string&quot;>&quot;bmi-range&quot;</span>&amp;gt;</span>&amp;gt;40<span class=&quot;hljs-tag&quot;>&amp;lt;/<span class=&quot;hljs-name&quot;>p</span>&amp;gt;</span>
+        <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>p</span> <span class=&quot;hljs-attr&quot;>class</span>=<span class=&quot;hljs-string&quot;>&quot;bmi-range-label&quot;</span>&amp;gt;</span>Extremely obesity<span class=&quot;hljs-tag&quot;>&amp;lt;/<span class=&quot;hljs-name&quot;>p</span>&amp;gt;</span>
+      <span class=&quot;hljs-tag&quot;>&amp;lt;/<span class=&quot;hljs-name&quot;>div</span>&amp;gt;</span>
+    <span class=&quot;hljs-tag&quot;>&amp;lt;/<span class=&quot;hljs-name&quot;>div</span>&amp;gt;</span>
+  <span class=&quot;hljs-tag&quot;>&amp;lt;/<span class=&quot;hljs-name&quot;>div</span>&amp;gt;</span>
+  <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>script</span> <span class=&quot;hljs-attr&quot;>src</span>=<span class=&quot;hljs-string&quot;>&quot;script.js&quot;</span>&amp;gt;</span><span class=&quot;hljs-tag&quot;>&amp;lt;/<span class=&quot;hljs-name&quot;>script</span>&amp;gt;</span>
 <span class=&quot;hljs-tag&quot;>&amp;lt;/<span class=&quot;hljs-name&quot;>body</span>&amp;gt;</span>
+<span class=&quot;hljs-tag&quot;>&amp;lt;/<span class=&quot;hljs-name&quot;>html</span>&amp;gt;</span>
 </code></pre></code></pre></li>
 <li><p>style.css</p>
-<pre><code class=&quot;language-css&quot;><pre class=&quot;highlight&quot;><code class=&quot;hljs&quot;><span class=&quot;hljs-selector-tag&quot;>button</span> {
+<pre><code class=&quot;language-css&quot;><pre class=&quot;highlight&quot;><code class=&quot;hljs&quot;><span class=&quot;hljs-keyword&quot;>@import</span> url(<span class=&quot;hljs-string&quot;>&quot;https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap&quot;</span>);
+
+*,
+*<span class=&quot;hljs-selector-pseudo&quot;>::before</span>,
+*<span class=&quot;hljs-selector-pseudo&quot;>::after</span> {
+  <span class=&quot;hljs-attribute&quot;>box-sizing</span>: border-box;
+  <span class=&quot;hljs-attribute&quot;>margin</span>: <span class=&quot;hljs-number&quot;>0</span>;
+  <span class=&quot;hljs-attribute&quot;>padding</span>: <span class=&quot;hljs-number&quot;>0</span>;
+}
+
+<span class=&quot;hljs-selector-pseudo&quot;>:root</span> {
+  <span class=&quot;hljs-attr&quot;>--primary-color</span>: <span class=&quot;hljs-number&quot;>#b34083</span>;
+  <span class=&quot;hljs-attr&quot;>--primary-text-color</span>: <span class=&quot;hljs-number&quot;>#fff</span>;
+  <span class=&quot;hljs-attr&quot;>--secondary-color</span>: <span class=&quot;hljs-number&quot;>#f0b23a</span>; 
+  <span class=&quot;hljs-attr&quot;>--secondary-text-color</span>: <span class=&quot;hljs-number&quot;>#ea96c7</span>;
+  <span class=&quot;hljs-attr&quot;>--hover-color</span>: <span class=&quot;hljs-number&quot;>#983979</span>; 
+  <span class=&quot;hljs-attr&quot;>--border-color</span>: <span class=&quot;hljs-number&quot;>#d78fb980</span>;
+  <span class=&quot;hljs-attr&quot;>--error-color</span>: <span class=&quot;hljs-number&quot;>#f94a4a</span>;
+}
+
+<span class=&quot;hljs-selector-tag&quot;>body</span> {
+  <span class=&quot;hljs-attribute&quot;>font-family</span>: Poppins, sans-serif;
+  <span class=&quot;hljs-attribute&quot;>min-height</span>: <span class=&quot;hljs-number&quot;>100vh</span>;
+  <span class=&quot;hljs-attribute&quot;>background</span>: <span class=&quot;hljs-built_in&quot;>url</span>(<span class=&quot;hljs-string&quot;>background.jpg</span>) no-repeat;
+  <span class=&quot;hljs-attribute&quot;>background-position</span>: center;
+  <span class=&quot;hljs-attribute&quot;>background-size</span>: cover;
+  <span class=&quot;hljs-attribute&quot;>color</span>: <span class=&quot;hljs-built_in&quot;>var</span>(--primary-text-color);
+  <span class=&quot;hljs-attribute&quot;>display</span>: flex;
+  <span class=&quot;hljs-attribute&quot;>flex-direction</span>: column;
+  <span class=&quot;hljs-attribute&quot;>justify-content</span>: center;
+  <span class=&quot;hljs-attribute&quot;>align-items</span>: center;
+  <span class=&quot;hljs-attribute&quot;>padding</span>: <span class=&quot;hljs-number&quot;>100px</span> <span class=&quot;hljs-number&quot;>0</span>;
+}
+
+<span class=&quot;hljs-selector-class&quot;>.container</span> {
+  <span class=&quot;hljs-attribute&quot;>max-width</span>: <span class=&quot;hljs-number&quot;>700px</span>;
+  <span class=&quot;hljs-attribute&quot;>border</span>: <span class=&quot;hljs-number&quot;>2px</span> <span class=&quot;hljs-built_in&quot;>var</span>(--border-color) solid;
+  <span class=&quot;hljs-attribute&quot;>padding</span>: <span class=&quot;hljs-number&quot;>50px</span>;
+  <span class=&quot;hljs-attribute&quot;>border-radius</span>: <span class=&quot;hljs-number&quot;>10px</span>;
+  backdrop-<span class=&quot;hljs-attribute&quot;>filter</span>: <span class=&quot;hljs-built_in&quot;>blur</span>(<span class=&quot;hljs-number&quot;>10px</span>);
+}
+
+<span class=&quot;hljs-selector-class&quot;>.header-container</span> {
+  <span class=&quot;hljs-attribute&quot;>text-align</span>: center;
+  <span class=&quot;hljs-attribute&quot;>margin-bottom</span>: <span class=&quot;hljs-number&quot;>45px</span>;
+}
+
+<span class=&quot;hljs-selector-tag&quot;>h1</span> {
+  <span class=&quot;hljs-attribute&quot;>font-size</span>: <span class=&quot;hljs-number&quot;>30px</span>;
+  <span class=&quot;hljs-attribute&quot;>display</span>: inline-block;
+  <span class=&quot;hljs-attribute&quot;>background</span>: <span class=&quot;hljs-built_in&quot;>linear-gradient</span>(to right, <span class=&quot;hljs-built_in&quot;>var</span>(--secondary-color), <span class=&quot;hljs-built_in&quot;>var</span>(--primary-color));
+  -webkit-text-fill-<span class=&quot;hljs-attribute&quot;>color</span>: transparent;
+  <span class=&quot;hljs-attribute&quot;>background-clip</span>: text;
+  -webkit-<span class=&quot;hljs-attribute&quot;>background-clip</span>: text;
+  <span class=&quot;hljs-attribute&quot;>margin-bottom</span>: <span class=&quot;hljs-number&quot;>12px</span>;
+}
+
+<span class=&quot;hljs-keyword&quot;>@media</span> <span class=&quot;hljs-keyword&quot;>only</span> screen <span class=&quot;hljs-keyword&quot;>and</span> (<span class=&quot;hljs-attribute&quot;>min-width</span>: <span class=&quot;hljs-number&quot;>576px</span>) {
+  <span class=&quot;hljs-selector-tag&quot;>h1</span> {
+    <span class=&quot;hljs-attribute&quot;>font-size</span>: <span class=&quot;hljs-number&quot;>40px</span>;
+  }
+}
+
+<span class=&quot;hljs-selector-tag&quot;>h2</span> {
+  <span class=&quot;hljs-attribute&quot;>font-size</span>: <span class=&quot;hljs-number&quot;>18px</span>;
+  <span class=&quot;hljs-attribute&quot;>font-weight</span>: <span class=&quot;hljs-number&quot;>400</span>;
+  <span class=&quot;hljs-attribute&quot;>color</span>: <span class=&quot;hljs-built_in&quot;>var</span>(--secondary-text-color);
+}
+
+<span class=&quot;hljs-keyword&quot;>@media</span> <span class=&quot;hljs-keyword&quot;>only</span> screen <span class=&quot;hljs-keyword&quot;>and</span> (<span class=&quot;hljs-attribute&quot;>min-width</span>: <span class=&quot;hljs-number&quot;>576px</span>) {
+  <span class=&quot;hljs-selector-tag&quot;>h2</span> {
+    <span class=&quot;hljs-attribute&quot;>font-size</span>: <span class=&quot;hljs-number&quot;>22px</span>;
+  }
+}
+
+<span class=&quot;hljs-selector-tag&quot;>form</span> {
+  <span class=&quot;hljs-attribute&quot;>display</span>: flex;
+  <span class=&quot;hljs-attribute&quot;>flex-direction</span>: column;
+  <span class=&quot;hljs-attribute&quot;>row-gap</span>: <span class=&quot;hljs-number&quot;>20px</span>;
+}
+
+<span class=&quot;hljs-selector-class&quot;>.inputs-container</span> {
+  <span class=&quot;hljs-attribute&quot;>display</span>: flex;
+  <span class=&quot;hljs-attribute&quot;>flex-direction</span>: column;
+  <span class=&quot;hljs-attribute&quot;>row-gap</span>: <span class=&quot;hljs-number&quot;>20px</span>;
+}
+
+<span class=&quot;hljs-selector-class&quot;>.input-container</span> {
+  <span class=&quot;hljs-attribute&quot;>display</span>: flex;
+  <span class=&quot;hljs-attribute&quot;>flex-direction</span>: column;
+  <span class=&quot;hljs-attribute&quot;>flex</span>: <span class=&quot;hljs-number&quot;>1</span>;
   <span class=&quot;hljs-attribute&quot;>position</span>: relative;
+}
+
+<span class=&quot;hljs-selector-tag&quot;>label</span> {
+  <span class=&quot;hljs-attribute&quot;>font-size</span>: <span class=&quot;hljs-number&quot;>18px</span>;
+  <span class=&quot;hljs-attribute&quot;>font-weight</span>: <span class=&quot;hljs-number&quot;>500</span>;
+  <span class=&quot;hljs-attribute&quot;>position</span>: absolute;
+  <span class=&quot;hljs-attribute&quot;>left</span>: <span class=&quot;hljs-number&quot;>0px</span>;
+  <span class=&quot;hljs-attribute&quot;>top</span>: <span class=&quot;hljs-number&quot;>0px</span>;
+  <span class=&quot;hljs-attribute&quot;>transition</span>: all <span class=&quot;hljs-number&quot;>0.2s</span> ease;
+  <span class=&quot;hljs-attribute&quot;>pointer-events</span>: none;
+}
+
+<span class=&quot;hljs-selector-tag&quot;>input</span> {
+  <span class=&quot;hljs-attribute&quot;>background</span>: transparent;
+  <span class=&quot;hljs-attribute&quot;>padding</span>: <span class=&quot;hljs-number&quot;>8px</span> <span class=&quot;hljs-number&quot;>0</span>;
+  <span class=&quot;hljs-attribute&quot;>border</span>: none;
+  <span class=&quot;hljs-attribute&quot;>border-bottom</span>: <span class=&quot;hljs-number&quot;>2px</span> solid <span class=&quot;hljs-built_in&quot;>var</span>(--primary-text-color);
+  <span class=&quot;hljs-attribute&quot;>margin-top</span>: <span class=&quot;hljs-number&quot;>5px</span>;
+  <span class=&quot;hljs-attribute&quot;>font-size</span>: <span class=&quot;hljs-number&quot;>18px</span>;
+  <span class=&quot;hljs-attribute&quot;>outline</span>: none;
+  <span class=&quot;hljs-attribute&quot;>font-weight</span>: <span class=&quot;hljs-number&quot;>600</span>;
+  <span class=&quot;hljs-attribute&quot;>color</span>: <span class=&quot;hljs-built_in&quot;>var</span>(--secondary-color);
+}
+
+<span class=&quot;hljs-selector-tag&quot;>input</span><span class=&quot;hljs-selector-pseudo&quot;>:focus</span> ~ <span class=&quot;hljs-selector-tag&quot;>label</span>,
+<span class=&quot;hljs-selector-tag&quot;>input</span><span class=&quot;hljs-selector-pseudo&quot;>:not</span>(<span class=&quot;hljs-selector-pseudo&quot;>:placeholder-shown</span>) ~ <span class=&quot;hljs-selector-tag&quot;>label</span> {
+  <span class=&quot;hljs-attribute&quot;>top</span>: -<span class=&quot;hljs-number&quot;>16px</span>;
+  <span class=&quot;hljs-attribute&quot;>font-size</span>: <span class=&quot;hljs-number&quot;>13px</span>;
+}
+
+<span class=&quot;hljs-selector-class&quot;>.input-container</span><span class=&quot;hljs-selector-class&quot;>.error</span> <span class=&quot;hljs-selector-tag&quot;>input</span> {
+  <span class=&quot;hljs-attribute&quot;>color</span>: <span class=&quot;hljs-built_in&quot;>var</span>(--error-color);
+  <span class=&quot;hljs-attribute&quot;>border-color</span>: <span class=&quot;hljs-built_in&quot;>var</span>(--error-color);
+  <span class=&quot;hljs-attribute&quot;>outline-color</span>: transparent;
+}
+
+<span class=&quot;hljs-selector-class&quot;>.input-container</span> <span class=&quot;hljs-selector-class&quot;>.error</span> {
+  <span class=&quot;hljs-attribute&quot;>color</span>: <span class=&quot;hljs-built_in&quot;>var</span>(--error-color);
+  <span class=&quot;hljs-attribute&quot;>font-size</span>: <span class=&quot;hljs-number&quot;>12px</span>;
+  <span class=&quot;hljs-attribute&quot;>font-weight</span>: <span class=&quot;hljs-number&quot;>600</span>;
+  <span class=&quot;hljs-attribute&quot;>height</span>: <span class=&quot;hljs-number&quot;>20px</span>;
+}
+
+<span class=&quot;hljs-selector-tag&quot;>button</span> {
+  <span class=&quot;hljs-attribute&quot;>background-color</span>: <span class=&quot;hljs-built_in&quot;>var</span>(--primary-color);
+  <span class=&quot;hljs-attribute&quot;>color</span>: <span class=&quot;hljs-built_in&quot;>var</span>(--primary-text-color);
+  <span class=&quot;hljs-attribute&quot;>font-size</span>: <span class=&quot;hljs-number&quot;>20px</span>;
+  <span class=&quot;hljs-attribute&quot;>padding</span>: <span class=&quot;hljs-number&quot;>12px</span>;
+  <span class=&quot;hljs-attribute&quot;>border</span>: none;
+  <span class=&quot;hljs-attribute&quot;>border-radius</span>: <span class=&quot;hljs-number&quot;>3px</span>;
+  <span class=&quot;hljs-attribute&quot;>cursor</span>: pointer;
+  <span class=&quot;hljs-attribute&quot;>transition</span>: background-color <span class=&quot;hljs-number&quot;>0.2s</span> ease-in;
+}
+
+<span class=&quot;hljs-selector-tag&quot;>button</span><span class=&quot;hljs-selector-pseudo&quot;>:hover</span>, <span class=&quot;hljs-selector-tag&quot;>button</span><span class=&quot;hljs-selector-pseudo&quot;>:focus</span> {
+  <span class=&quot;hljs-attribute&quot;>background-color</span>: <span class=&quot;hljs-built_in&quot;>var</span>(--hover-color);
+}
+
+<span class=&quot;hljs-selector-class&quot;>.bmi-result</span> {
+  <span class=&quot;hljs-attribute&quot;>margin-top</span>: <span class=&quot;hljs-number&quot;>20px</span>;
+  <span class=&quot;hljs-attribute&quot;>height</span>: <span class=&quot;hljs-number&quot;>0</span>;
+  <span class=&quot;hljs-attribute&quot;>transition</span>: height <span class=&quot;hljs-number&quot;>0.2s</span> ease-in;
+}
+
+<span class=&quot;hljs-selector-class&quot;>.bmi-result</span> <span class=&quot;hljs-selector-class&quot;>.bmi-value</span>,
+<span class=&quot;hljs-selector-class&quot;>.bmi-result</span> <span class=&quot;hljs-selector-class&quot;>.bmi-description</span> {
+  <span class=&quot;hljs-attribute&quot;>text-align</span>: center;
+}
+
+<span class=&quot;hljs-selector-class&quot;>.bmi-result</span> <span class=&quot;hljs-selector-class&quot;>.bmi-value</span> {
+  <span class=&quot;hljs-attribute&quot;>font-size</span>: <span class=&quot;hljs-number&quot;>64px</span>;
+  <span class=&quot;hljs-attribute&quot;>font-weight</span>: <span class=&quot;hljs-number&quot;>600</span>;
+}
+
+<span class=&quot;hljs-selector-class&quot;>.bmi-result</span> <span class=&quot;hljs-selector-class&quot;>.bmi-description</span> {
   <span class=&quot;hljs-attribute&quot;>font-size</span>: <span class=&quot;hljs-number&quot;>20px</span>;
   <span class=&quot;hljs-attribute&quot;>font-weight</span>: <span class=&quot;hljs-number&quot;>500</span>;
-  <span class=&quot;hljs-attribute&quot;>color</span>: <span class=&quot;hljs-number&quot;>#fefefe</span>;
-  <span class=&quot;hljs-attribute&quot;>background</span>: <span class=&quot;hljs-number&quot;>#ffbe2f</span>;
-  <span class=&quot;hljs-attribute&quot;>width</span>: <span class=&quot;hljs-number&quot;>250px</span>;
+}
+
+<span class=&quot;hljs-selector-class&quot;>.container</span><span class=&quot;hljs-selector-class&quot;>.description-container</span> {
+  <span class=&quot;hljs-attribute&quot;>margin-top</span>: <span class=&quot;hljs-number&quot;>60px</span>;
+}
+
+<span class=&quot;hljs-selector-class&quot;>.description</span> {
+  <span class=&quot;hljs-attribute&quot;>margin-top</span>: <span class=&quot;hljs-number&quot;>20px</span>;
+  <span class=&quot;hljs-attribute&quot;>font-size</span>: <span class=&quot;hljs-number&quot;>15px</span>;
+  <span class=&quot;hljs-attribute&quot;>text-align</span>: justify;
+}
+
+<span class=&quot;hljs-selector-class&quot;>.bmi-ranges</span> {
+  <span class=&quot;hljs-attribute&quot;>margin-top</span>: <span class=&quot;hljs-number&quot;>30px</span>;
+  <span class=&quot;hljs-attribute&quot;>display</span>: flex;
+  <span class=&quot;hljs-attribute&quot;>column-gap</span>: <span class=&quot;hljs-number&quot;>5px</span>;
+  <span class=&quot;hljs-attribute&quot;>row-gap</span>: <span class=&quot;hljs-number&quot;>5px</span>;
+  <span class=&quot;hljs-attribute&quot;>flex-wrap</span>: wrap;
+}
+
+<span class=&quot;hljs-selector-class&quot;>.bmi-range-container</span> {
+  <span class=&quot;hljs-attr&quot;>--color</span>: <span class=&quot;hljs-number&quot;>#eee</span>;
+  <span class=&quot;hljs-attribute&quot;>flex</span>: <span class=&quot;hljs-number&quot;>1</span>;
+  <span class=&quot;hljs-attribute&quot;>border</span>: <span class=&quot;hljs-number&quot;>2px</span> solid <span class=&quot;hljs-built_in&quot;>var</span>(--color);
+  <span class=&quot;hljs-attribute&quot;>display</span>: flex;
+  <span class=&quot;hljs-attribute&quot;>flex-direction</span>: column;
+  <span class=&quot;hljs-attribute&quot;>border-radius</span>: <span class=&quot;hljs-number&quot;>3px</span>;
+  <span class=&quot;hljs-attribute&quot;>min-width</span>: <span class=&quot;hljs-number&quot;>82px</span>;
+}
+
+<span class=&quot;hljs-selector-class&quot;>.bmi-range</span> {
+  <span class=&quot;hljs-attribute&quot;>text-align</span>: center;
+  <span class=&quot;hljs-attribute&quot;>padding</span>: <span class=&quot;hljs-number&quot;>6px</span> <span class=&quot;hljs-number&quot;>10px</span>;
+  <span class=&quot;hljs-attribute&quot;>background-color</span>: <span class=&quot;hljs-built_in&quot;>var</span>(--color);
+  <span class=&quot;hljs-attribute&quot;>font-weight</span>: <span class=&quot;hljs-number&quot;>600</span>;
+}
+
+<span class=&quot;hljs-selector-class&quot;>.bmi-range-label</span> {
+  <span class=&quot;hljs-attribute&quot;>padding</span>: <span class=&quot;hljs-number&quot;>6px</span> <span class=&quot;hljs-number&quot;>10px</span>;
   <span class=&quot;hljs-attribute&quot;>height</span>: <span class=&quot;hljs-number&quot;>60px</span>;
-  <span class=&quot;hljs-attribute&quot;>padding</span>: <span class=&quot;hljs-number&quot;>1em</span>;
-  <span class=&quot;hljs-attribute&quot;>border</span>: <span class=&quot;hljs-number&quot;>0</span>;
-  <span class=&quot;hljs-attribute&quot;>border-radius</span>: <span class=&quot;hljs-number&quot;>100px</span>;
-  <span class=&quot;hljs-attribute&quot;>box-shadow</span>: <span class=&quot;hljs-number&quot;>0</span> <span class=&quot;hljs-number&quot;>2px</span> <span class=&quot;hljs-number&quot;>4px</span> <span class=&quot;hljs-built_in&quot;>rgba</span>(<span class=&quot;hljs-number&quot;>0</span>, <span class=&quot;hljs-number&quot;>0</span>, <span class=&quot;hljs-number&quot;>0</span>, <span class=&quot;hljs-number&quot;>0.2</span>);
-  <span class=&quot;hljs-attribute&quot;>transition</span>: all linear <span class=&quot;hljs-number&quot;>0.15s</span>;
+  <span class=&quot;hljs-attribute&quot;>display</span>: flex;
+  <span class=&quot;hljs-attribute&quot;>align-items</span>: center;
+  <span class=&quot;hljs-attribute&quot;>justify-content</span>: center;
+  <span class=&quot;hljs-attribute&quot;>text-align</span>: center;
+  <span class=&quot;hljs-attribute&quot;>font-weight</span>: <span class=&quot;hljs-number&quot;>600</span>;
+  <span class=&quot;hljs-attribute&quot;>font-size</span>: <span class=&quot;hljs-number&quot;>14px</span>;
 }
 
-<span class=&quot;hljs-selector-tag&quot;>button</span><span class=&quot;hljs-selector-class&quot;>.animate</span> {
-  <span class=&quot;hljs-attribute&quot;>width</span>: <span class=&quot;hljs-number&quot;>60px</span>;
-  <span class=&quot;hljs-attribute&quot;>color</span>: transparent;
+<span class=&quot;hljs-selector-class&quot;>.underweight</span> {
+  <span class=&quot;hljs-attr&quot;>--color</span>: <span class=&quot;hljs-number&quot;>#5BC8F3</span>;
 }
-
-<span class=&quot;hljs-selector-tag&quot;>button</span><span class=&quot;hljs-selector-class&quot;>.animate</span><span class=&quot;hljs-selector-pseudo&quot;>::after</span> {
-  <span class=&quot;hljs-attribute&quot;>transition</span>: all .<span class=&quot;hljs-number&quot;>3s</span> ease-in;
-  <span class=&quot;hljs-attribute&quot;>content</span>: <span class=&quot;hljs-string&quot;>&#x27;&#x27;</span>;
-  <span class=&quot;hljs-attribute&quot;>width</span>: <span class=&quot;hljs-number&quot;>30px</span>;
-  <span class=&quot;hljs-attribute&quot;>height</span>: <span class=&quot;hljs-number&quot;>30px</span>;
-  <span class=&quot;hljs-attribute&quot;>border</span>: <span class=&quot;hljs-number&quot;>4px</span> solid <span class=&quot;hljs-number&quot;>#fefefe</span>;
-  <span class=&quot;hljs-attribute&quot;>border-radius</span>: <span class=&quot;hljs-number&quot;>50%</span>;
-  <span class=&quot;hljs-attribute&quot;>border-left-color</span>: transparent;
-  <span class=&quot;hljs-attribute&quot;>position</span>: absolute;
-  <span class=&quot;hljs-attribute&quot;>left</span>: <span class=&quot;hljs-number&quot;>50%</span>;
-  <span class=&quot;hljs-attribute&quot;>top</span>: <span class=&quot;hljs-number&quot;>50%</span>;
-  <span class=&quot;hljs-attribute&quot;>transform</span>: <span class=&quot;hljs-built_in&quot;>translate</span>(-<span class=&quot;hljs-number&quot;>50%</span>, -<span class=&quot;hljs-number&quot;>50%</span>);
-  <span class=&quot;hljs-attribute&quot;>animation</span>: spin ease-in <span class=&quot;hljs-number&quot;>2.5s</span> forwards;
+<span class=&quot;hljs-selector-class&quot;>.normal</span> {
+  <span class=&quot;hljs-attr&quot;>--color</span>: <span class=&quot;hljs-number&quot;>#9DB63B</span>;
 }
-
-<span class=&quot;hljs-selector-tag&quot;>button</span><span class=&quot;hljs-selector-class&quot;>.animate</span><span class=&quot;hljs-selector-pseudo&quot;>::before</span> {
-  <span class=&quot;hljs-attribute&quot;>transition</span>: all .<span class=&quot;hljs-number&quot;>3s</span> ease-in;
-  <span class=&quot;hljs-attribute&quot;>content</span>: <span class=&quot;hljs-string&quot;>&#x27;&#x27;</span>;
-  <span class=&quot;hljs-attribute&quot;>width</span>: <span class=&quot;hljs-number&quot;>30px</span>;
-  <span class=&quot;hljs-attribute&quot;>height</span>: <span class=&quot;hljs-number&quot;>15px</span>;
-  <span class=&quot;hljs-attribute&quot;>border</span>: <span class=&quot;hljs-number&quot;>4px</span> solid <span class=&quot;hljs-number&quot;>#fefefe</span>;
-  <span class=&quot;hljs-attribute&quot;>border-right</span>: <span class=&quot;hljs-number&quot;>0</span>;
-  <span class=&quot;hljs-attribute&quot;>border-top</span>: <span class=&quot;hljs-number&quot;>0</span>;
-  <span class=&quot;hljs-attribute&quot;>position</span>: absolute;
-  <span class=&quot;hljs-attribute&quot;>left</span>: <span class=&quot;hljs-number&quot;>50%</span>;
-  <span class=&quot;hljs-attribute&quot;>top</span>: <span class=&quot;hljs-number&quot;>50%</span>;
-  <span class=&quot;hljs-attribute&quot;>transform</span>: <span class=&quot;hljs-built_in&quot;>translate</span>(-<span class=&quot;hljs-number&quot;>50%</span>, -<span class=&quot;hljs-number&quot;>50%</span>) <span class=&quot;hljs-built_in&quot;>rotate</span>(<span class=&quot;hljs-number&quot;>0deg</span>) <span class=&quot;hljs-built_in&quot;>scale</span>(<span class=&quot;hljs-number&quot;>0</span>);
-  <span class=&quot;hljs-attribute&quot;>animation</span>: checkmark ease-in <span class=&quot;hljs-number&quot;>0.15s</span> forwards <span class=&quot;hljs-number&quot;>2.5s</span>;
+<span class=&quot;hljs-selector-class&quot;>.overweight</span> {
+  <span class=&quot;hljs-attr&quot;>--color</span>: <span class=&quot;hljs-number&quot;>#FAC90E</span>;
 }
-
-<span class=&quot;hljs-keyword&quot;>@keyframes</span> spin {
-  <span class=&quot;hljs-number&quot;>0%</span> {
-    <span class=&quot;hljs-attribute&quot;>transform</span>: <span class=&quot;hljs-built_in&quot;>translate</span>(-<span class=&quot;hljs-number&quot;>50%</span>, -<span class=&quot;hljs-number&quot;>50%</span>) <span class=&quot;hljs-built_in&quot;>rotate</span>(<span class=&quot;hljs-number&quot;>0deg</span>) <span class=&quot;hljs-built_in&quot;>scale</span>(<span class=&quot;hljs-number&quot;>1</span>);
-  }
-
-  <span class=&quot;hljs-number&quot;>90%</span> {
-    <span class=&quot;hljs-attribute&quot;>transform</span>: <span class=&quot;hljs-built_in&quot;>translate</span>(-<span class=&quot;hljs-number&quot;>50%</span>, -<span class=&quot;hljs-number&quot;>50%</span>) <span class=&quot;hljs-built_in&quot;>rotate</span>(<span class=&quot;hljs-number&quot;>1080deg</span>) <span class=&quot;hljs-built_in&quot;>scale</span>(<span class=&quot;hljs-number&quot;>1</span>);
-  }
-
-  <span class=&quot;hljs-number&quot;>100%</span> {
-    <span class=&quot;hljs-attribute&quot;>transform</span>: <span class=&quot;hljs-built_in&quot;>scale</span>(<span class=&quot;hljs-number&quot;>0</span>);
-  }
+<span class=&quot;hljs-selector-class&quot;>.obesity</span> {
+  <span class=&quot;hljs-attr&quot;>--color</span>: <span class=&quot;hljs-number&quot;>#F48A20</span>;
 }
-
-<span class=&quot;hljs-keyword&quot;>@keyframes</span> checkmark {
-  <span class=&quot;hljs-number&quot;>0%</span> {
-    <span class=&quot;hljs-attribute&quot;>transform</span>: <span class=&quot;hljs-built_in&quot;>translate</span>(-<span class=&quot;hljs-number&quot;>50%</span>, -<span class=&quot;hljs-number&quot;>50%</span>) <span class=&quot;hljs-built_in&quot;>rotate</span>(<span class=&quot;hljs-number&quot;>0</span>) <span class=&quot;hljs-built_in&quot;>scale</span>(<span class=&quot;hljs-number&quot;>0</span>);
-  }
-
-  <span class=&quot;hljs-number&quot;>100%</span> {
-    <span class=&quot;hljs-attribute&quot;>transform</span>: <span class=&quot;hljs-built_in&quot;>translate</span>(-<span class=&quot;hljs-number&quot;>50%</span>, -<span class=&quot;hljs-number&quot;>50%</span>) <span class=&quot;hljs-built_in&quot;>rotate</span>(-<span class=&quot;hljs-number&quot;>45deg</span>) <span class=&quot;hljs-built_in&quot;>scale</span>(<span class=&quot;hljs-number&quot;>1</span>);
-  }
+<span class=&quot;hljs-selector-class&quot;>.morbid-obesity</span> {
+  <span class=&quot;hljs-attr&quot;>--color</span>: <span class=&quot;hljs-number&quot;>#FF0000</span>;
 }
 </code></pre></code></pre></li>
 <li><p>script.js</p>
-<pre><code class=&quot;language-js&quot;><pre class=&quot;highlight&quot;><code class=&quot;hljs&quot;><span class=&quot;hljs-keyword&quot;>const</span> button = <span class=&quot;hljs-variable language_&quot;>document</span>.<span class=&quot;hljs-title function_&quot;>querySelector</span>(<span class=&quot;hljs-string&quot;>&quot;button&quot;</span>);
-button.<span class=&quot;hljs-title function_&quot;>addEventListener</span>(<span class=&quot;hljs-string&quot;>&#x27;click&#x27;</span>, (e) =&amp;gt; {
-  e.<span class=&quot;hljs-property&quot;>target</span>.<span class=&quot;hljs-property&quot;>classList</span>.<span class=&quot;hljs-title function_&quot;>add</span>(<span class=&quot;hljs-string&quot;>&#x27;animate&#x27;</span>);
-  <span class=&quot;hljs-built_in&quot;>setTimeout</span>(() =&amp;gt; {
-    e.<span class=&quot;hljs-property&quot;>target</span>.<span class=&quot;hljs-property&quot;>classList</span>.<span class=&quot;hljs-title function_&quot;>remove</span>(<span class=&quot;hljs-string&quot;>&#x27;animate&#x27;</span>);
-  }, <span class=&quot;hljs-number&quot;>4500</span>);
-});
+<pre><code class=&quot;language-js&quot;><pre class=&quot;highlight&quot;><code class=&quot;hljs&quot;><span class=&quot;hljs-keyword&quot;>const</span> <span class=&quot;hljs-title class_&quot;>BMIRanges</span> = [
+  { <span class=&quot;hljs-attr&quot;>description</span>: <span class=&quot;hljs-string&quot;>&quot;Underweight&quot;</span>, <span class=&quot;hljs-attr&quot;>color</span>: <span class=&quot;hljs-string&quot;>&quot;#5BC8F3&quot;</span>, <span class=&quot;hljs-attr&quot;>range</span>: [<span class=&quot;hljs-number&quot;>0</span>, <span class=&quot;hljs-number&quot;>18.5</span>] },
+  { <span class=&quot;hljs-attr&quot;>description</span>: <span class=&quot;hljs-string&quot;>&quot;Normal&quot;</span>, <span class=&quot;hljs-attr&quot;>color</span>: <span class=&quot;hljs-string&quot;>&quot;#9DB63B&quot;</span>, <span class=&quot;hljs-attr&quot;>range</span>: [<span class=&quot;hljs-number&quot;>18.5</span>, <span class=&quot;hljs-number&quot;>25</span>] },
+  { <span class=&quot;hljs-attr&quot;>description</span>: <span class=&quot;hljs-string&quot;>&quot;Overweight&quot;</span>, <span class=&quot;hljs-attr&quot;>color</span>: <span class=&quot;hljs-string&quot;>&quot;#FAC90E&quot;</span>, <span class=&quot;hljs-attr&quot;>range</span>: [<span class=&quot;hljs-number&quot;>25</span>, <span class=&quot;hljs-number&quot;>30</span>] },
+  { <span class=&quot;hljs-attr&quot;>description</span>: <span class=&quot;hljs-string&quot;>&quot;Obese&quot;</span>, <span class=&quot;hljs-attr&quot;>color</span>: <span class=&quot;hljs-string&quot;>&quot;#F48A20&quot;</span>, <span class=&quot;hljs-attr&quot;>range</span>: [<span class=&quot;hljs-number&quot;>30</span>, <span class=&quot;hljs-number&quot;>40</span>] },
+  { <span class=&quot;hljs-attr&quot;>description</span>: <span class=&quot;hljs-string&quot;>&quot;Extremely obesity&quot;</span>, <span class=&quot;hljs-attr&quot;>color</span>: <span class=&quot;hljs-string&quot;>&quot;#FF0000&quot;</span>,<span class=&quot;hljs-attr&quot;>range</span>: [<span class=&quot;hljs-number&quot;>40</span>, <span class=&quot;hljs-title class_&quot;>Number</span>.<span class=&quot;hljs-property&quot;>MAX_VALUE</span>]}
+];
+
+<span class=&quot;hljs-keyword&quot;>const</span> form = <span class=&quot;hljs-variable language_&quot;>document</span>.<span class=&quot;hljs-title function_&quot;>querySelector</span>(<span class=&quot;hljs-string&quot;>&quot;form&quot;</span>);
+<span class=&quot;hljs-keyword&quot;>const</span> heightInput = <span class=&quot;hljs-variable language_&quot;>document</span>.<span class=&quot;hljs-title function_&quot;>querySelector</span>(<span class=&quot;hljs-string&quot;>&quot;#height&quot;</span>);
+<span class=&quot;hljs-keyword&quot;>const</span> heightInputError = <span class=&quot;hljs-variable language_&quot;>document</span>.<span class=&quot;hljs-title function_&quot;>querySelector</span>(<span class=&quot;hljs-string&quot;>&quot;#height + .error&quot;</span>);
+<span class=&quot;hljs-keyword&quot;>const</span> weightInput = <span class=&quot;hljs-variable language_&quot;>document</span>.<span class=&quot;hljs-title function_&quot;>querySelector</span>(<span class=&quot;hljs-string&quot;>&quot;#weight&quot;</span>);
+<span class=&quot;hljs-keyword&quot;>const</span> weightInputError = <span class=&quot;hljs-variable language_&quot;>document</span>.<span class=&quot;hljs-title function_&quot;>querySelector</span>(<span class=&quot;hljs-string&quot;>&quot;#weight + .error&quot;</span>);
+<span class=&quot;hljs-keyword&quot;>const</span> bmiValue = <span class=&quot;hljs-variable language_&quot;>document</span>.<span class=&quot;hljs-title function_&quot;>querySelector</span>(<span class=&quot;hljs-string&quot;>&quot;.bmi-value&quot;</span>);
+<span class=&quot;hljs-keyword&quot;>const</span> bmiDescription = <span class=&quot;hljs-variable language_&quot;>document</span>.<span class=&quot;hljs-title function_&quot;>querySelector</span>(<span class=&quot;hljs-string&quot;>&quot;.bmi-description&quot;</span>);
+<span class=&quot;hljs-keyword&quot;>const</span> bmiResult = <span class=&quot;hljs-variable language_&quot;>document</span>.<span class=&quot;hljs-title function_&quot;>querySelector</span>(<span class=&quot;hljs-string&quot;>&quot;.bmi-result&quot;</span>);
+
+form.<span class=&quot;hljs-title function_&quot;>addEventListener</span>(<span class=&quot;hljs-string&quot;>&quot;submit&quot;</span>, handleForm);
+heightInput.<span class=&quot;hljs-title function_&quot;>addEventListener</span>(<span class=&quot;hljs-string&quot;>&quot;keyup&quot;</span>, validateInput);
+weightInput.<span class=&quot;hljs-title function_&quot;>addEventListener</span>(<span class=&quot;hljs-string&quot;>&quot;keyup&quot;</span>, validateInput);
+
+<span class=&quot;hljs-keyword&quot;>function</span> <span class=&quot;hljs-title function_&quot;>handleForm</span>(<span class=&quot;hljs-params&quot;>event</span>) {
+  event.<span class=&quot;hljs-title function_&quot;>preventDefault</span>();
+
+  <span class=&quot;hljs-title function_&quot;>resetErrors</span>();
+  <span class=&quot;hljs-keyword&quot;>let</span> containsErrors = <span class=&quot;hljs-literal&quot;>false</span>;
+  <span class=&quot;hljs-keyword&quot;>if</span> (<span class=&quot;hljs-title function_&quot;>isNotNumber</span>(heightInput)) {
+    containsErrors = <span class=&quot;hljs-literal&quot;>true</span>;
+    <span class=&quot;hljs-title function_&quot;>showError</span>(heightInput);
+  }
+  <span class=&quot;hljs-keyword&quot;>if</span> (<span class=&quot;hljs-title function_&quot;>isNotNumber</span>(weightInput)) {
+    containsErrors = <span class=&quot;hljs-literal&quot;>true</span>;
+    <span class=&quot;hljs-title function_&quot;>showError</span>(weightInput);
+  }
+  <span class=&quot;hljs-keyword&quot;>if</span> (containsErrors) {
+    <span class=&quot;hljs-keyword&quot;>return</span>;
+  }
+
+  <span class=&quot;hljs-keyword&quot;>const</span> height = <span class=&quot;hljs-built_in&quot;>parseInt</span>(heightInput.<span class=&quot;hljs-property&quot;>value</span>);
+  <span class=&quot;hljs-keyword&quot;>const</span> weight = <span class=&quot;hljs-built_in&quot;>parseInt</span>(weightInput.<span class=&quot;hljs-property&quot;>value</span>);
+  <span class=&quot;hljs-title function_&quot;>showBmi</span>(<span class=&quot;hljs-title function_&quot;>calculateBmi</span>(weight, height));
+}
+
+<span class=&quot;hljs-keyword&quot;>function</span> <span class=&quot;hljs-title function_&quot;>validateInput</span>(<span class=&quot;hljs-params&quot;>event</span>) {
+  <span class=&quot;hljs-keyword&quot;>if</span> (event.<span class=&quot;hljs-property&quot;>key</span> == <span class=&quot;hljs-string&quot;>&quot;Tab&quot;</span>) <span class=&quot;hljs-keyword&quot;>return</span>;
+  <span class=&quot;hljs-keyword&quot;>const</span> input = event.<span class=&quot;hljs-property&quot;>target</span>;
+  <span class=&quot;hljs-title function_&quot;>isNotNumber</span>(input) ? <span class=&quot;hljs-title function_&quot;>showError</span>(input) : <span class=&quot;hljs-title function_&quot;>resetError</span>(input);
+}
+
+<span class=&quot;hljs-keyword&quot;>const</span> isNumber = (input) =&amp;gt; <span class=&quot;hljs-regexp&quot;>/^[0-9]+$/</span>.<span class=&quot;hljs-title function_&quot;>test</span>(input.<span class=&quot;hljs-property&quot;>value</span>);
+
+<span class=&quot;hljs-keyword&quot;>const</span> isNotNumber = (input) =&amp;gt; !<span class=&quot;hljs-title function_&quot;>isNumber</span>(input);
+
+<span class=&quot;hljs-keyword&quot;>function</span> <span class=&quot;hljs-title function_&quot;>showBmi</span>(<span class=&quot;hljs-params&quot;>BMI</span>) {
+  <span class=&quot;hljs-keyword&quot;>const</span> bmiRange = <span class=&quot;hljs-title function_&quot;>getBmiRange</span>(<span class=&quot;hljs-variable constant_&quot;>BMI</span>);
+  bmiValue.<span class=&quot;hljs-property&quot;>innerHTML</span> = <span class=&quot;hljs-variable constant_&quot;>BMI</span>;
+  bmiValue.<span class=&quot;hljs-property&quot;>style</span>.<span class=&quot;hljs-property&quot;>color</span> = bmiRange.<span class=&quot;hljs-property&quot;>color</span>;
+  bmiDescription.<span class=&quot;hljs-property&quot;>innerHTML</span> = bmiRange.<span class=&quot;hljs-property&quot;>description</span>;
+  bmiDescription.<span class=&quot;hljs-property&quot;>style</span>.<span class=&quot;hljs-property&quot;>color</span> = bmiRange.<span class=&quot;hljs-property&quot;>color</span>;
+  bmiResult.<span class=&quot;hljs-property&quot;>style</span>.<span class=&quot;hljs-property&quot;>height</span> = <span class=&quot;hljs-string&quot;>&quot;115px&quot;</span>;
+}
+
+<span class=&quot;hljs-keyword&quot;>function</span> <span class=&quot;hljs-title function_&quot;>calculateBmi</span>(<span class=&quot;hljs-params&quot;>weight, height</span>) {
+  <span class=&quot;hljs-keyword&quot;>return</span> (weight / <span class=&quot;hljs-title class_&quot;>Math</span>.<span class=&quot;hljs-title function_&quot;>pow</span>(height / <span class=&quot;hljs-number&quot;>100</span>, <span class=&quot;hljs-number&quot;>2</span>)).<span class=&quot;hljs-title function_&quot;>toFixed</span>(<span class=&quot;hljs-number&quot;>1</span>);
+}
+
+<span class=&quot;hljs-keyword&quot;>function</span> <span class=&quot;hljs-title function_&quot;>resetError</span>(<span class=&quot;hljs-params&quot;>input</span>) {
+  input.<span class=&quot;hljs-property&quot;>parentElement</span>.<span class=&quot;hljs-property&quot;>classList</span>.<span class=&quot;hljs-title function_&quot;>remove</span>(<span class=&quot;hljs-string&quot;>&quot;error&quot;</span>);
+  input.<span class=&quot;hljs-property&quot;>nextElementSibling</span>.<span class=&quot;hljs-property&quot;>innerHTML</span> = <span class=&quot;hljs-string&quot;>&quot;&quot;</span>;
+}
+
+<span class=&quot;hljs-keyword&quot;>function</span> <span class=&quot;hljs-title function_&quot;>showError</span>(<span class=&quot;hljs-params&quot;>input</span>) {
+  bmiValue.<span class=&quot;hljs-property&quot;>innerHTML</span> = <span class=&quot;hljs-string&quot;>&quot;&quot;</span>;
+  bmiDescription.<span class=&quot;hljs-property&quot;>innerHTML</span> = <span class=&quot;hljs-string&quot;>&quot;&quot;</span>;
+  bmiResult.<span class=&quot;hljs-property&quot;>style</span>.<span class=&quot;hljs-property&quot;>height</span> = <span class=&quot;hljs-string&quot;>&quot;0&quot;</span>;
+  input.<span class=&quot;hljs-property&quot;>parentElement</span>.<span class=&quot;hljs-property&quot;>classList</span>.<span class=&quot;hljs-title function_&quot;>add</span>(<span class=&quot;hljs-string&quot;>&quot;error&quot;</span>);
+  input.<span class=&quot;hljs-property&quot;>nextElementSibling</span>.<span class=&quot;hljs-property&quot;>innerHTML</span> = <span class=&quot;hljs-string&quot;>&quot;Value invalide&quot;</span>;
+}
+
+<span class=&quot;hljs-keyword&quot;>function</span> <span class=&quot;hljs-title function_&quot;>resetErrors</span>(<span class=&quot;hljs-params&quot;></span>) {
+  heightInput.<span class=&quot;hljs-property&quot;>parentElement</span>.<span class=&quot;hljs-property&quot;>classList</span>.<span class=&quot;hljs-title function_&quot;>remove</span>(<span class=&quot;hljs-string&quot;>&quot;error&quot;</span>);
+  weightInput.<span class=&quot;hljs-property&quot;>parentElement</span>.<span class=&quot;hljs-property&quot;>classList</span>.<span class=&quot;hljs-title function_&quot;>remove</span>(<span class=&quot;hljs-string&quot;>&quot;error&quot;</span>);
+  heightInputError.<span class=&quot;hljs-property&quot;>innerHTML</span> = <span class=&quot;hljs-string&quot;>&quot;&quot;</span>;
+  weightInputError.<span class=&quot;hljs-property&quot;>innerHTML</span> = <span class=&quot;hljs-string&quot;>&quot;&quot;</span>;
+}
+
+<span class=&quot;hljs-keyword&quot;>function</span> <span class=&quot;hljs-title function_&quot;>getBmiRange</span>(<span class=&quot;hljs-params&quot;>BMI</span>) {
+  <span class=&quot;hljs-keyword&quot;>return</span> <span class=&quot;hljs-title class_&quot;>BMIRanges</span>.<span class=&quot;hljs-title function_&quot;>find</span>((data) =&amp;gt; <span class=&quot;hljs-variable constant_&quot;>BMI</span> &amp;gt;= data.<span class=&quot;hljs-property&quot;>range</span>[<span class=&quot;hljs-number&quot;>0</span>] &amp;&amp; <span class=&quot;hljs-variable constant_&quot;>BMI</span> &amp;lt; data.<span class=&quot;hljs-property&quot;>range</span>[<span class=&quot;hljs-number&quot;>1</span>]);
+}
 </code></pre></code></pre></li>
 </ul>
+<h2>Ressources</h2>
+<div class=&quot;asset&quot;>
+  <img src=&quot;../../../assets/calculateur-imc/background.jpg&quot; />
+<p><a href=&quot;../../../assets/calculateur-imc/background.jpg&quot; title=&quot;background.jpg&quot; download>background.jpg</a></p>
+</div>
 <h2>Conclusion</h2>
 <p>Merci de votre lecture. Nous espérons que cet article vous a été utile !</p>
 " blogs="[{&quot;title&quot;:&quot;Formation Udemy 🎓&quot;,&quot;description&quot;:&quot;Découvrez notre formation gratuite sur Udemy sur comment créer une API REST avec Spring Boot, utilisant une base de données H2 puis PostgreSQL et une documentation Swagger 🚀&quot;,&quot;tags&quot;:[&quot;formation&quot;,&quot;web&quot;],&quot;image&quot;:&quot;/assets/thumbnail/api-rest-with-spring-boot.png&quot;,&quot;date&quot;:&quot;21241128&quot;,&quot;category&quot;:&quot;formation&quot;,&quot;slug&quot;:&quot;https://www.udemy.com/course/creer-une-api-rest-en-utilisant-spring-boot/?referralCode=3420DF71B7FD2FDBC3B8&quot;},{&quot;isArticleIndex&quot;:false,&quot;isArticleSection&quot;:false,&quot;isArticleWithSections&quot;:false,&quot;date&quot;:&quot;20241103&quot;,&quot;title&quot;:&quot;Calculateur IMC&quot;,&quot;withScript&quot;:false,&quot;description&quot;:&quot;Dans cet article, nous allons apprendre à créer une application Todo App en utilisant HTML, CSS et JavaScript. Grâce à un code source facile à comprendre, vous pourrez suivre les étapes et créer votre propre version&quot;,&quot;tags&quot;:[&quot;html&quot;,&quot;css&quot;,&quot;javascript&quot;],&quot;image&quot;:&quot;http://img.youtube.com/vi/oURcl1nQGW4/maxresdefault.jpg&quot;,&quot;slug&quot;:&quot;apps/calculateur-imc&quot;,&quot;summary&quot;:[]},{&quot;isArticleIndex&quot;:false,&quot;isArticleSection&quot;:false,&quot;isArticleWithSections&quot;:false,&quot;date&quot;:&quot;20231128&quot;,&quot;title&quot;:&quot;Animated CSS Border&quot;,&quot;withScript&quot;:false,&quot;description&quot;:&quot;Dans cet article, nous allons apprendre à créer une bordure animée en utilisant HTML et CSS. Grâce à un code source facile à comprendre, vous pourrez suivre les étapes et créer votre propre version&quot;,&quot;tags&quot;:[&quot;html&quot;,&quot;css&quot;],&quot;image&quot;:&quot;/assets/thumbnail/animated-border.png&quot;,&quot;slug&quot;:&quot;css/animated-border&quot;,&quot;summary&quot;:[]},{&quot;isArticleIndex&quot;:false,&quot;isArticleSection&quot;:false,&quot;isArticleWithSections&quot;:false,&quot;date&quot;:&quot;20231124&quot;,&quot;title&quot;:&quot;Animated Search Bar&quot;,&quot;withScript&quot;:false,&quot;description&quot;:&quot;Dans cet article, nous allons apprendre à créer une une barre de recherche animée en utilisant HTML et CSS. Grâce à un code source facile à comprendre, vous pourrez suivre les étapes et créer votre propre version&quot;,&quot;tags&quot;:[&quot;html&quot;,&quot;css&quot;],&quot;image&quot;:&quot;/assets/thumbnail/animated-search-bar.png&quot;,&quot;slug&quot;:&quot;css/animated-search-bar&quot;,&quot;summary&quot;:[]},{&quot;isArticleIndex&quot;:false,&quot;isArticleSection&quot;:false,&quot;isArticleWithSections&quot;:false,&quot;date&quot;:&quot;20231121&quot;,&quot;title&quot;:&quot;Héritage avec JPA&quot;,&quot;withScript&quot;:false,&quot;description&quot;:&quot;Un guide pratique pour comprendre les différentes stratégies d'héritage avec l'API de persistance Java (JPA). Ce guide vous aidera à maîtriser les concepts essentiels pour modéliser efficacement vos entités dans une base de données relationnelle&quot;,&quot;tags&quot;:[&quot;Java&quot;,&quot;JPA&quot;],&quot;image&quot;:&quot;/assets/thumbnail/blog-thumbnail-5.jpg&quot;,&quot;slug&quot;:&quot;java/inheritance-with-jpa&quot;,&quot;summary&quot;:[]},{&quot;isArticleIndex&quot;:false,&quot;isArticleSection&quot;:false,&quot;isArticleWithSections&quot;:false,&quot;date&quot;:&quot;20231116&quot;,&quot;title&quot;:&quot;ThreadLocal en Java&quot;,&quot;withScript&quot;:false,&quot;description&quot;:&quot;Un guide pratique sur la classe ThreadLocal permettant de stocker des données spécifiques aux threads en Java, et d'assurer que chaque thread possède ses propres valeurs isolées, garantissant ainsi la sécurité et l'intégrité des données dans les environnements multithreadés&quot;,&quot;tags&quot;:[&quot;java&quot;,&quot;multithread&quot;],&quot;image&quot;:&quot;/assets/thumbnail/blog-thumbnail-6.jpg&quot;,&quot;slug&quot;:&quot;java/thread-local&quot;,&quot;summary&quot;:[]},{&quot;isArticleIndex&quot;:true,&quot;isArticleSection&quot;:false,&quot;isArticleWithSections&quot;:true,&quot;date&quot;:&quot;20230919&quot;,&quot;title&quot;:&quot;API REST avec Spring&quot;,&quot;withScript&quot;:false,&quot;description&quot;:&quot;Dans cet article, nous allons créer une API REST en utilisant le framework Spring Boot en utilisant une base de données H2 puis PostgreSQL et en ajoutant sa documentation Swagger&quot;,&quot;tags&quot;:[&quot;spring boot&quot;,&quot;api rest&quot;],&quot;image&quot;:&quot;/assets/thumbnail/api-rest-with-spring-boot.png&quot;,&quot;slug&quot;:&quot;spring/api-rest-with-spring-boot&quot;,&quot;summary&quot;:[{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot&quot;,&quot;label&quot;:&quot;Introduction&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/first-version&quot;,&quot;label&quot;:&quot;Première version du projet&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/test-our-api-rest&quot;,&quot;label&quot;:&quot;Tester notre API REST&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/add-validation&quot;,&quot;label&quot;:&quot;Ajouter la couche validation&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/add-exceptions-handlers&quot;,&quot;label&quot;:&quot;Ajouter les exceptions handlers&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/use-postgresql&quot;,&quot;label&quot;:&quot;Utiliser une base PostgreSQL&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/add-swagger&quot;,&quot;label&quot;:&quot;Ajouter Swagger&quot;}]},{&quot;isArticleIndex&quot;:false,&quot;isArticleSection&quot;:true,&quot;isArticleWithSections&quot;:true,&quot;date&quot;:&quot;20230919&quot;,&quot;title&quot;:&quot;API REST avec Spring&quot;,&quot;withScript&quot;:false,&quot;description&quot;:&quot;Dans cet article, nous allons créer une API REST en utilisant le framework Spring Boot en utilisant une base de données H2 puis PostgreSQL et en ajoutant sa documentation Swagger&quot;,&quot;tags&quot;:[&quot;spring boot&quot;,&quot;api rest&quot;],&quot;image&quot;:&quot;/assets/thumbnail/api-rest-with-spring-boot.png&quot;,&quot;slug&quot;:&quot;spring/api-rest-with-spring-boot/first-version&quot;,&quot;summary&quot;:[{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot&quot;,&quot;label&quot;:&quot;Introduction&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/first-version&quot;,&quot;label&quot;:&quot;Première version du projet&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/test-our-api-rest&quot;,&quot;label&quot;:&quot;Tester notre API REST&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/add-validation&quot;,&quot;label&quot;:&quot;Ajouter la couche validation&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/add-exceptions-handlers&quot;,&quot;label&quot;:&quot;Ajouter les exceptions handlers&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/use-postgresql&quot;,&quot;label&quot;:&quot;Utiliser une base PostgreSQL&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/add-swagger&quot;,&quot;label&quot;:&quot;Ajouter Swagger&quot;}]},{&quot;isArticleIndex&quot;:false,&quot;isArticleSection&quot;:true,&quot;isArticleWithSections&quot;:true,&quot;date&quot;:&quot;20230919&quot;,&quot;title&quot;:&quot;API REST avec Spring&quot;,&quot;withScript&quot;:false,&quot;description&quot;:&quot;Dans cet article, nous allons créer une API REST en utilisant le framework Spring Boot en utilisant une base de données H2 puis PostgreSQL et en ajoutant sa documentation Swagger&quot;,&quot;tags&quot;:[&quot;spring boot&quot;,&quot;api rest&quot;],&quot;image&quot;:&quot;/assets/thumbnail/api-rest-with-spring-boot.png&quot;,&quot;slug&quot;:&quot;spring/api-rest-with-spring-boot/test-our-api-rest&quot;,&quot;summary&quot;:[{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot&quot;,&quot;label&quot;:&quot;Introduction&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/first-version&quot;,&quot;label&quot;:&quot;Première version du projet&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/test-our-api-rest&quot;,&quot;label&quot;:&quot;Tester notre API REST&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/add-validation&quot;,&quot;label&quot;:&quot;Ajouter la couche validation&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/add-exceptions-handlers&quot;,&quot;label&quot;:&quot;Ajouter les exceptions handlers&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/use-postgresql&quot;,&quot;label&quot;:&quot;Utiliser une base PostgreSQL&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/add-swagger&quot;,&quot;label&quot;:&quot;Ajouter Swagger&quot;}]},{&quot;isArticleIndex&quot;:false,&quot;isArticleSection&quot;:true,&quot;isArticleWithSections&quot;:true,&quot;date&quot;:&quot;20230919&quot;,&quot;title&quot;:&quot;API REST avec Spring&quot;,&quot;withScript&quot;:false,&quot;description&quot;:&quot;Dans cet article, nous allons créer une API REST en utilisant le framework Spring Boot en utilisant une base de données H2 puis PostgreSQL et en ajoutant sa documentation Swagger&quot;,&quot;tags&quot;:[&quot;spring boot&quot;,&quot;api rest&quot;],&quot;image&quot;:&quot;/assets/thumbnail/api-rest-with-spring-boot.png&quot;,&quot;slug&quot;:&quot;spring/api-rest-with-spring-boot/add-validation&quot;,&quot;summary&quot;:[{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot&quot;,&quot;label&quot;:&quot;Introduction&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/first-version&quot;,&quot;label&quot;:&quot;Première version du projet&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/test-our-api-rest&quot;,&quot;label&quot;:&quot;Tester notre API REST&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/add-validation&quot;,&quot;label&quot;:&quot;Ajouter la couche validation&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/add-exceptions-handlers&quot;,&quot;label&quot;:&quot;Ajouter les exceptions handlers&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/use-postgresql&quot;,&quot;label&quot;:&quot;Utiliser une base PostgreSQL&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/add-swagger&quot;,&quot;label&quot;:&quot;Ajouter Swagger&quot;}]},{&quot;isArticleIndex&quot;:false,&quot;isArticleSection&quot;:true,&quot;isArticleWithSections&quot;:true,&quot;date&quot;:&quot;20230919&quot;,&quot;title&quot;:&quot;API REST avec Spring&quot;,&quot;withScript&quot;:false,&quot;description&quot;:&quot;Dans cet article, nous allons créer une API REST en utilisant le framework Spring Boot en utilisant une base de données H2 puis PostgreSQL et en ajoutant sa documentation Swagger&quot;,&quot;tags&quot;:[&quot;spring boot&quot;,&quot;api rest&quot;],&quot;image&quot;:&quot;/assets/thumbnail/api-rest-with-spring-boot.png&quot;,&quot;slug&quot;:&quot;spring/api-rest-with-spring-boot/add-exceptions-handlers&quot;,&quot;summary&quot;:[{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot&quot;,&quot;label&quot;:&quot;Introduction&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/first-version&quot;,&quot;label&quot;:&quot;Première version du projet&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/test-our-api-rest&quot;,&quot;label&quot;:&quot;Tester notre API REST&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/add-validation&quot;,&quot;label&quot;:&quot;Ajouter la couche validation&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/add-exceptions-handlers&quot;,&quot;label&quot;:&quot;Ajouter les exceptions handlers&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/use-postgresql&quot;,&quot;label&quot;:&quot;Utiliser une base PostgreSQL&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/add-swagger&quot;,&quot;label&quot;:&quot;Ajouter Swagger&quot;}]},{&quot;isArticleIndex&quot;:false,&quot;isArticleSection&quot;:true,&quot;isArticleWithSections&quot;:true,&quot;date&quot;:&quot;20230919&quot;,&quot;title&quot;:&quot;API REST avec Spring&quot;,&quot;withScript&quot;:false,&quot;description&quot;:&quot;Dans cet article, nous allons créer une API REST en utilisant le framework Spring Boot en utilisant une base de données H2 puis PostgreSQL et en ajoutant sa documentation Swagger&quot;,&quot;tags&quot;:[&quot;spring boot&quot;,&quot;api rest&quot;],&quot;image&quot;:&quot;/assets/thumbnail/api-rest-with-spring-boot.png&quot;,&quot;slug&quot;:&quot;spring/api-rest-with-spring-boot/use-postgresql&quot;,&quot;summary&quot;:[{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot&quot;,&quot;label&quot;:&quot;Introduction&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/first-version&quot;,&quot;label&quot;:&quot;Première version du projet&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/test-our-api-rest&quot;,&quot;label&quot;:&quot;Tester notre API REST&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/add-validation&quot;,&quot;label&quot;:&quot;Ajouter la couche validation&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/add-exceptions-handlers&quot;,&quot;label&quot;:&quot;Ajouter les exceptions handlers&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/use-postgresql&quot;,&quot;label&quot;:&quot;Utiliser une base PostgreSQL&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/add-swagger&quot;,&quot;label&quot;:&quot;Ajouter Swagger&quot;}]},{&quot;isArticleIndex&quot;:false,&quot;isArticleSection&quot;:true,&quot;isArticleWithSections&quot;:true,&quot;date&quot;:&quot;20230919&quot;,&quot;title&quot;:&quot;API REST avec Spring&quot;,&quot;withScript&quot;:false,&quot;description&quot;:&quot;Dans cet article, nous allons créer une API REST en utilisant le framework Spring Boot en utilisant une base de données H2 puis PostgreSQL et en ajoutant sa documentation Swagger&quot;,&quot;tags&quot;:[&quot;spring boot&quot;,&quot;api rest&quot;],&quot;image&quot;:&quot;/assets/thumbnail/api-rest-with-spring-boot.png&quot;,&quot;slug&quot;:&quot;spring/api-rest-with-spring-boot/add-swagger&quot;,&quot;summary&quot;:[{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot&quot;,&quot;label&quot;:&quot;Introduction&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/first-version&quot;,&quot;label&quot;:&quot;Première version du projet&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/test-our-api-rest&quot;,&quot;label&quot;:&quot;Tester notre API REST&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/add-validation&quot;,&quot;label&quot;:&quot;Ajouter la couche validation&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/add-exceptions-handlers&quot;,&quot;label&quot;:&quot;Ajouter les exceptions handlers&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/use-postgresql&quot;,&quot;label&quot;:&quot;Utiliser une base PostgreSQL&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/add-swagger&quot;,&quot;label&quot;:&quot;Ajouter Swagger&quot;}]},{&quot;isArticleIndex&quot;:false,&quot;isArticleSection&quot;:false,&quot;isArticleWithSections&quot;:false,&quot;date&quot;:&quot;20230628&quot;,&quot;title&quot;:&quot;Animated Submit Button&quot;,&quot;withScript&quot;:true,&quot;description&quot;:&quot;Dans cet article, nous allons apprendre à créer un bouton de soumission animé en utilisant HTML, CSS et JavaScript. Avec un code source facile à comprendre, vous pourrez suivre les étapes et créer votre propre version&quot;,&quot;tags&quot;:[&quot;html&quot;,&quot;css&quot;,&quot;javascript&quot;],&quot;image&quot;:&quot;/assets/thumbnail/animated-submit-button.png&quot;,&quot;slug&quot;:&quot;css/animated-submit-button&quot;,&quot;summary&quot;:[]},{&quot;isArticleIndex&quot;:false,&quot;isArticleSection&quot;:false,&quot;isArticleWithSections&quot;:false,&quot;date&quot;:&quot;20230624&quot;,&quot;title&quot;:&quot;Toggle Password Input&quot;,&quot;withScript&quot;:true,&quot;description&quot;:&quot;Dans cet article, nous allons apprendre comment afficher/masquer le mot de passe dans un formulaire en utilisant HTML, CSS et JavaScript. Avec un code source facile à comprendre, vous pourrez suivre les étapes et créer votre propre version&quot;,&quot;tags&quot;:[&quot;html&quot;,&quot;css&quot;,&quot;javascript&quot;],&quot;image&quot;:&quot;/assets/thumbnail/blog-thumbnail-7.jpg&quot;,&quot;slug&quot;:&quot;javascript/toggle-password-visibility&quot;,&quot;summary&quot;:[]},{&quot;isArticleIndex&quot;:false,&quot;isArticleSection&quot;:false,&quot;isArticleWithSections&quot;:false,&quot;date&quot;:&quot;20230618&quot;,&quot;title&quot;:&quot;Les jointures en SQL&quot;,&quot;withScript&quot;:false,&quot;description&quot;:&quot;Dans cet article, nous allons apprendre les types de jointures SQL, y compris inner join, left join, right join et full outer join. Nous couvrirons leur syntaxe, leurs différences et des exemples pratiques pour une meilleure compréhension&quot;,&quot;tags&quot;:[&quot;sql&quot;,&quot;jointure&quot;],&quot;image&quot;:&quot;/assets/thumbnail/blog-thumbnail-8.jpg&quot;,&quot;slug&quot;:&quot;sql/joins-types&quot;,&quot;summary&quot;:[]},{&quot;isArticleIndex&quot;:false,&quot;isArticleSection&quot;:false,&quot;isArticleWithSections&quot;:false,&quot;date&quot;:&quot;20230605&quot;,&quot;title&quot;:&quot;Countdown Timer&quot;,&quot;withScript&quot;:false,&quot;description&quot;:&quot;Dans cet article, nous allons apprendre à créer un minuteur de compte à rebours en utilisant HTML, CSS et JavaScript. Avec un code source facile à comprendre, vous pourrez suivre les étapes et créer votre propre version&quot;,&quot;tags&quot;:[&quot;html&quot;,&quot;css&quot;,&quot;javascript&quot;],&quot;image&quot;:&quot;http://img.youtube.com/vi/q6fFsOX2ihE/maxresdefault.jpg&quot;,&quot;slug&quot;:&quot;apps/count-down&quot;,&quot;summary&quot;:[]},{&quot;isArticleIndex&quot;:false,&quot;isArticleSection&quot;:false,&quot;isArticleWithSections&quot;:false,&quot;date&quot;:&quot;20230529&quot;,&quot;title&quot;:&quot;Todo List App&quot;,&quot;withScript&quot;:false,&quot;description&quot;:&quot;Dans cet article, nous allons apprendre à créer une application Todo App en utilisant HTML, CSS et JavaScript. Grâce à un code source facile à comprendre, vous pourrez suivre les étapes et créer votre propre version&quot;,&quot;tags&quot;:[&quot;html&quot;,&quot;css&quot;,&quot;javascript&quot;],&quot;image&quot;:&quot;http://img.youtube.com/vi/T1lBgZVgryw/maxresdefault.jpg&quot;,&quot;slug&quot;:&quot;apps/todo-list&quot;,&quot;summary&quot;:[]},{&quot;isArticleIndex&quot;:false,&quot;isArticleSection&quot;:false,&quot;isArticleWithSections&quot;:false,&quot;date&quot;:&quot;20230503&quot;,&quot;title&quot;:&quot;ScrollToTheTop Button&quot;,&quot;withScript&quot;:false,&quot;description&quot;:&quot;Dans cet article, nous allons apprendre à créer un bouton pour remonter en haut de la page en utilisant HTML, CSS et JavaScript. Grâce à un code source facile à comprendre, vous pourrez suivre les étapes et créer votre propre version&quot;,&quot;tags&quot;:[&quot;html&quot;,&quot;css&quot;],&quot;image&quot;:&quot;http://img.youtube.com/vi/7Vc_Di-qYEk/maxresdefault.jpg&quot;,&quot;slug&quot;:&quot;css/scroll-top-button&quot;,&quot;summary&quot;:[]}]"></app-main>
@@ -306,7 +533,4 @@ button.<span class=&quot;hljs-title function_&quot;>addEventListener</span>(<spa
 
                 gtag('config', 'G-S6JEVF53JZ');
                 </script>
-            
-                <script src="/assets/scripts/markdown.js"></script>
-                <script src="/assets/scripts/css/animated-submit-button.js"></script>
-            </body></html>
+            <script src="/assets/scripts/markdown.js"></script></body></html>
