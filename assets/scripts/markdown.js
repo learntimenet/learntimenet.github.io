@@ -1,15 +1,17 @@
 function toPreviousSectionLink(a) {
   const res = document.createElement("a");
   res.href = a.getAttribute("href");
+  const linkLabel = a.innerHTML.split('||')[0];
+  const linkValue = a.innerHTML.split('||')[1];
   res.classList.add('previous-section');
   const right = document.createElement("div");
   right.classList.add('right');
   const leftLabel = document.createElement("span");
   leftLabel.classList.add('label');
-  leftLabel.innerHTML = 'Précédant'
+  leftLabel.innerHTML = linkLabel;
   right.appendChild(leftLabel);
   const leftTitle = document.createElement("span");
-  leftTitle.innerHTML = a.innerHTML;
+  leftTitle.innerHTML = linkValue;
   right.appendChild(leftTitle);
   const left = document.createElement("div");
   left.classList.add('left');
@@ -22,15 +24,17 @@ function toPreviousSectionLink(a) {
 function toNextSectionLink(a) {
   const res = document.createElement("a");
   res.href = a.getAttribute("href");
+  const linkLabel = a.innerHTML.split('||')[0];
+  const linkValue = a.innerHTML.split('||')[1];
   res.classList.add('next-section');
   const left = document.createElement("div");
   left.classList.add('left');
   const leftLabel = document.createElement("span");
   leftLabel.classList.add('label');
-  leftLabel.innerHTML = 'Suivant'
+  leftLabel.innerHTML = linkLabel;
   left.appendChild(leftLabel);
   const leftTitle = document.createElement("span");
-  leftTitle.innerHTML = a.innerHTML;
+  leftTitle.innerHTML = linkValue;
   left.appendChild(leftTitle);
   const right = document.createElement("div");
   right.classList.add('right');
