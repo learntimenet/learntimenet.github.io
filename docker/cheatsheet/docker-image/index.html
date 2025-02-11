@@ -89,44 +89,44 @@
 <app-main metadata="{&quot;isArticleIndex&quot;:false,&quot;isArticleSection&quot;:true,&quot;isArticleWithSections&quot;:true,&quot;date&quot;:&quot;20250209&quot;,&quot;title&quot;:&quot;The Ultimate Docker Cheat Sheet&quot;,&quot;withScript&quot;:false,&quot;description&quot;:&quot;A comprehensive guide to essential Docker commands, tips, and best practices. Perfect for developers and DevOps professionals to streamline containerization efficiently&quot;,&quot;tags&quot;:[&quot;docker&quot;,&quot;cheatsheet&quot;],&quot;image&quot;:&quot;/assets/thumbnail/blog-thumbnail-2.jpg&quot;,&quot;slug&quot;:&quot;docker/cheatsheet/docker-image&quot;,&quot;summary&quot;:[{&quot;slug&quot;:&quot;/docker/cheatsheet&quot;,&quot;label&quot;:&quot;Introduction&quot;},{&quot;slug&quot;:&quot;/docker/cheatsheet/docker-image&quot;,&quot;label&quot;:&quot;Docker Image&quot;},{&quot;slug&quot;:&quot;/docker/cheatsheet/docker-container&quot;,&quot;label&quot;:&quot;Docker Container&quot;},{&quot;slug&quot;:&quot;/docker/cheatsheet/docker-volumes&quot;,&quot;label&quot;:&quot;Docker Volumes&quot;},{&quot;slug&quot;:&quot;/docker/cheatsheet/docker-network&quot;,&quot;label&quot;:&quot;Docker Network&quot;},{&quot;slug&quot;:&quot;/docker/cheatsheet/docker-compose&quot;,&quot;label&quot;:&quot;Docker Compose&quot;},{&quot;slug&quot;:&quot;/docker/cheatsheet/dockerfile&quot;,&quot;label&quot;:&quot;Dockerfile&quot;}]}" html="<h1>Docker Image</h1>
 <h2>Build an image from a Dockerfile:</h2>
 <p><strong>terminal</strong></p>
-<pre><code class=&quot;language-sh&quot;><pre class=&quot;highlight&quot;><code class=&quot;hljs&quot;>docker -t build image_name path_to_dockerfile
+<pre><code class=&quot;language-sh&quot;><pre class=&quot;highlight&quot;><code class=&quot;hljs&quot;>docker build -t image_name path_to_dockerfile
 <span class=&quot;hljs-comment&quot;># Example</span>
-docker -t build myapp .
+docker build -t myapp .
 </code></pre></code></pre>
+<p>This command builds a Docker image from a Dockerfile located at the specified path. The <code>-t</code> flag allows you to tag the image with a name.</p>
 <h2>List all local images:</h2>
 <p><strong>terminal</strong></p>
 <pre><code class=&quot;language-sh&quot;><pre class=&quot;highlight&quot;><code class=&quot;hljs&quot;>docker images
 </code></pre></code></pre>
+<p>This command lists all Docker images that are stored locally on your machine.</p>
 <h2>Pull an image from Docker Hub:</h2>
 <p><strong>terminal</strong></p>
 <pre><code class=&quot;language-sh&quot;><pre class=&quot;highlight&quot;><code class=&quot;hljs&quot;>docker pull image_name:tag
 <span class=&quot;hljs-comment&quot;># Example</span>
 docker pull nginx:latest
 </code></pre></code></pre>
+<p>This command downloads a Docker image from Docker Hub. You can specify the image name and optionally a tag to pull a specific version</p>
 <h2>Remove a local image:</h2>
 <p><strong>terminal</strong></p>
 <pre><code class=&quot;language-sh&quot;><pre class=&quot;highlight&quot;><code class=&quot;hljs&quot;>docker rmi image_name:tag
 <span class=&quot;hljs-comment&quot;># Example</span>
-docker pull nginx:latest
+docker rmi nginx:latest
 </code></pre></code></pre>
-<p>Or</p>
-<p><strong>terminal</strong></p>
-<pre><code class=&quot;language-sh&quot;><pre class=&quot;highlight&quot;><code class=&quot;hljs&quot;>docker <span class=&quot;hljs-built_in&quot;>rm</span> [image_name/image_id]
-<span class=&quot;hljs-comment&quot;># Example</span>
-docker <span class=&quot;hljs-built_in&quot;>rm</span> fd484f19954f
-</code></pre></code></pre>
+<p>This command removes a Docker image from your local machine. You need to specify the image name or ID.</p>
 <h2>Tag an image:</h2>
 <p><strong>terminal</strong></p>
 <pre><code class=&quot;language-sh&quot;><pre class=&quot;highlight&quot;><code class=&quot;hljs&quot;>docker tag source_image:tag new_image:tag
 <span class=&quot;hljs-comment&quot;># Example</span>
 docker tag myapp:latest myapp:v1
 </code></pre></code></pre>
+<p>This command tags an existing Docker image with a new tag. This is useful for versioning your images.</p>
 <h2>Push an image to Docker Hub:</h2>
 <p><strong>terminal</strong></p>
 <pre><code class=&quot;language-sh&quot;><pre class=&quot;highlight&quot;><code class=&quot;hljs&quot;>docker push image_name:tag
 <span class=&quot;hljs-comment&quot;># Example</span>
 docker push myapp:v1
 </code></pre></code></pre>
+<p>This command uploads a Docker image to Docker Hub. You need to specify the image name and tag.</p>
 <h2>Inspect details of an image:</h2>
 <p><strong>terminal</strong></p>
 <pre><code class=&quot;language-sh&quot;><pre class=&quot;highlight&quot;><code class=&quot;hljs&quot;>docker image inspect image image_name:tag
@@ -139,14 +139,17 @@ docker image inspect image myapp:v1
 <span class=&quot;hljs-comment&quot;># Example</span>
 docker -o save myapp.tar myapp:v1
 </code></pre></code></pre>
+<p>This command saves a Docker image to a tar archive file. The <code>-o</code> flag specifies the output file.</p>
 <h2>Load an image from a tar archive:</h2>
 <p><strong>terminal</strong></p>
 <pre><code class=&quot;language-sh&quot;><pre class=&quot;highlight&quot;><code class=&quot;hljs&quot;>docker -i load image_name.tar
 </code></pre></code></pre>
+<p>This command loads a Docker image from a tar archive file. The <code>-i</code> flag specifies the input file.</p>
 <h2>Prune unused images:</h2>
 <p><strong>terminal</strong></p>
 <pre><code class=&quot;language-sh&quot;><pre class=&quot;highlight&quot;><code class=&quot;hljs&quot;>docker image prune
 </code></pre></code></pre>
+<p>This command removes all unused Docker images, freeing up disk space.</p>
 <p><strong>previous-next-sections</strong></p>
 <p><a href=&quot;/docker/cheatsheet&quot; title=&quot;Previous||Introduction&quot;>Previous||Introduction</a>
 <a href=&quot;/docker/cheatsheet/docker-container&quot; title=&quot;Previous||Introduction&quot;>Next||Docker Container</a></p>
