@@ -22,7 +22,6 @@ function toPreviousSectionLink(a) {
 }
 
 function toNextSectionLink(a) {
-  console.log(a);
   const res = document.createElement("a");
   res.href = a.getAttribute("href");
   const linkLabel = a.innerHTML.split('||')[0];
@@ -68,7 +67,6 @@ function formatCode() {
       return;
     };
     if (p.innerHTML === '<strong>previous-next-sections</strong>') {
-      console.log('sdfsdf');
       const links = p.nextElementSibling.querySelectorAll('a')
       const aPrevious = links[0];
       const aNext = links[1];
