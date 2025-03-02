@@ -49,7 +49,7 @@
                         this.page.identifier = window.location.pathname.replace('/en', '');
                     };
                 </script>
-            <script defer src="/fr/apps/hash-generator/hash-generator.07f11cc9d80d6c34fc74.js"></script></head>
+            <script defer src="/fr/apps/hash-generator/hash-generator.b9d9d5f6e004430288f4.js"></script></head>
             <body>
                 <div class="loader">
                     <svg class="loader-logo" width="1000" height="1000" viewBox="0 0 1000 1000" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -88,315 +88,315 @@
 </style>
 <app-main metadata="{&quot;isArticleIndex&quot;:false,&quot;isArticleSection&quot;:false,&quot;isArticleWithSections&quot;:false,&quot;date&quot;:&quot;20241103&quot;,&quot;title&quot;:&quot;Générateur de Hash&quot;,&quot;withScript&quot;:false,&quot;description&quot;:&quot;Dans cet article, nous allons apprendre à créer un Générateur de Hash en utilisant HTML, CSS et JavaScript. Grâce à un code source facile à comprendre, vous pourrez suivre les étapes et créer votre propre version&quot;,&quot;tags&quot;:[&quot;html&quot;,&quot;css&quot;,&quot;javascript&quot;],&quot;image&quot;:&quot;http://img.youtube.com/vi/aNlaT0wh77o/maxresdefault.jpg&quot;,&quot;slug&quot;:&quot;apps/hash-generator&quot;,&quot;summary&quot;:[],&quot;visible&quot;:false}" html="<h2>Introduction</h2>
 <p>Dans cet article, nous allons apprendre à créer un Générateur de Hash en utilisant HTML, CSS et JavaScript. Grâce à un code source facile à comprendre, vous pourrez suivre les étapes et créer votre propre version</p>
-<iframe width=&quot;899&quot; height=&quot;506&quot; src=&quot;https://www.youtube.com/embed/aNlaT0wh77o&quot; title=&quot;Générateur de Hash&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&quot; allowfullscreen></iframe>
+<iframe width="899" height="506" src="https://www.youtube.com/embed/aNlaT0wh77o" title="Générateur de Hash" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 <h2>Code source</h2>
 <p><strong>code-tabs</strong></p>
 <ul>
 <li><p>index.html</p>
-<pre><code class=&quot;language-html&quot;><pre class=&quot;highlight&quot;><code class=&quot;hljs&quot;><span class=&quot;hljs-meta&quot;>&amp;lt;!DOCTYPE <span class=&quot;hljs-keyword&quot;>html</span>&amp;gt;</span>
-<span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>html</span> <span class=&quot;hljs-attr&quot;>lang</span>=<span class=&quot;hljs-string&quot;>&quot;en&quot;</span>&amp;gt;</span>
-<span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>head</span>&amp;gt;</span>
-  <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>meta</span> <span class=&quot;hljs-attr&quot;>charset</span>=<span class=&quot;hljs-string&quot;>&quot;UTF-8&quot;</span>&amp;gt;</span>
-  <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>meta</span> <span class=&quot;hljs-attr&quot;>http-equiv</span>=<span class=&quot;hljs-string&quot;>&quot;X-UA-Compatible&quot;</span> <span class=&quot;hljs-attr&quot;>content</span>=<span class=&quot;hljs-string&quot;>&quot;IE=edge&quot;</span>&amp;gt;</span>
-  <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>meta</span> <span class=&quot;hljs-attr&quot;>name</span>=<span class=&quot;hljs-string&quot;>&quot;viewport&quot;</span> <span class=&quot;hljs-attr&quot;>content</span>=<span class=&quot;hljs-string&quot;>&quot;width=device-width, initial-scale=1.0&quot;</span>&amp;gt;</span>
-  <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>title</span>&amp;gt;</span>Hash generator<span class=&quot;hljs-tag&quot;>&amp;lt;/<span class=&quot;hljs-name&quot;>title</span>&amp;gt;</span>
-  <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>script</span> <span class=&quot;hljs-attr&quot;>src</span>=<span class=&quot;hljs-string&quot;>&quot;https://code.iconify.design/iconify-icon/1.0.8/iconify-icon.min.js&quot;</span>&amp;gt;</span><span class=&quot;hljs-tag&quot;>&amp;lt;/<span class=&quot;hljs-name&quot;>script</span>&amp;gt;</span>
-  <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>link</span> <span class=&quot;hljs-attr&quot;>rel</span>=<span class=&quot;hljs-string&quot;>&quot;stylesheet&quot;</span> <span class=&quot;hljs-attr&quot;>href</span>=<span class=&quot;hljs-string&quot;>&quot;./style.css&quot;</span>&amp;gt;</span>
-<span class=&quot;hljs-tag&quot;>&amp;lt;/<span class=&quot;hljs-name&quot;>head</span>&amp;gt;</span>
-<span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>body</span>&amp;gt;</span>
-  <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>div</span> <span class=&quot;hljs-attr&quot;>class</span>=<span class=&quot;hljs-string&quot;>&quot;container&quot;</span>&amp;gt;</span>
-    <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>div</span> <span class=&quot;hljs-attr&quot;>class</span>=<span class=&quot;hljs-string&quot;>&quot;header-container&quot;</span>&amp;gt;</span>
-      <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>h1</span> <span class=&quot;hljs-attr&quot;>class</span>=<span class=&quot;hljs-string&quot;>&quot;gradient-font&quot;</span>&amp;gt;</span>Hash Generator<span class=&quot;hljs-tag&quot;>&amp;lt;/<span class=&quot;hljs-name&quot;>h1</span>&amp;gt;</span>
-      <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>h2</span>&amp;gt;</span>
+<pre><code class="language-html"><pre class="highlight"><code class="hljs"><span class="hljs-meta">&amp;lt;!DOCTYPE <span class="hljs-keyword">html</span>&amp;gt;</span>
+<span class="hljs-tag">&amp;lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">&quot;en&quot;</span>&amp;gt;</span>
+<span class="hljs-tag">&amp;lt;<span class="hljs-name">head</span>&amp;gt;</span>
+  <span class="hljs-tag">&amp;lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;UTF-8&quot;</span>&amp;gt;</span>
+  <span class="hljs-tag">&amp;lt;<span class="hljs-name">meta</span> <span class="hljs-attr">http-equiv</span>=<span class="hljs-string">&quot;X-UA-Compatible&quot;</span> <span class="hljs-attr">content</span>=<span class="hljs-string">&quot;IE=edge&quot;</span>&amp;gt;</span>
+  <span class="hljs-tag">&amp;lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;viewport&quot;</span> <span class="hljs-attr">content</span>=<span class="hljs-string">&quot;width=device-width, initial-scale=1.0&quot;</span>&amp;gt;</span>
+  <span class="hljs-tag">&amp;lt;<span class="hljs-name">title</span>&amp;gt;</span>Hash generator<span class="hljs-tag">&amp;lt;/<span class="hljs-name">title</span>&amp;gt;</span>
+  <span class="hljs-tag">&amp;lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://code.iconify.design/iconify-icon/1.0.8/iconify-icon.min.js&quot;</span>&amp;gt;</span><span class="hljs-tag">&amp;lt;/<span class="hljs-name">script</span>&amp;gt;</span>
+  <span class="hljs-tag">&amp;lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">&quot;stylesheet&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;./style.css&quot;</span>&amp;gt;</span>
+<span class="hljs-tag">&amp;lt;/<span class="hljs-name">head</span>&amp;gt;</span>
+<span class="hljs-tag">&amp;lt;<span class="hljs-name">body</span>&amp;gt;</span>
+  <span class="hljs-tag">&amp;lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;container&quot;</span>&amp;gt;</span>
+    <span class="hljs-tag">&amp;lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;header-container&quot;</span>&amp;gt;</span>
+      <span class="hljs-tag">&amp;lt;<span class="hljs-name">h1</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;gradient-font&quot;</span>&amp;gt;</span>Hash Generator<span class="hljs-tag">&amp;lt;/<span class="hljs-name">h1</span>&amp;gt;</span>
+      <span class="hljs-tag">&amp;lt;<span class="hljs-name">h2</span>&amp;gt;</span>
         Online tool to instantly generate the hash value of an input text
-      <span class=&quot;hljs-tag&quot;>&amp;lt;/<span class=&quot;hljs-name&quot;>h2</span>&amp;gt;</span>
-    <span class=&quot;hljs-tag&quot;>&amp;lt;/<span class=&quot;hljs-name&quot;>div</span>&amp;gt;</span>
-    <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>div</span> <span class=&quot;hljs-attr&quot;>class</span>=<span class=&quot;hljs-string&quot;>&quot;generated-hash-container&quot;</span>&amp;gt;</span>
-      <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>textarea</span> <span class=&quot;hljs-attr&quot;>id</span>=<span class=&quot;hljs-string&quot;>&quot;inputText&quot;</span>&amp;gt;</span>Text example<span class=&quot;hljs-tag&quot;>&amp;lt;/<span class=&quot;hljs-name&quot;>textarea</span>&amp;gt;</span>
-      <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>div</span> <span class=&quot;hljs-attr&quot;>class</span>=<span class=&quot;hljs-string&quot;>&quot;calculated-hashes-container&quot;</span>&amp;gt;</span>
-        <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>div</span> <span class=&quot;hljs-attr&quot;>class</span>=<span class=&quot;hljs-string&quot;>&quot;calculated-hash-container&quot;</span>&amp;gt;</span>
-          <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>div</span> <span class=&quot;hljs-attr&quot;>class</span>=<span class=&quot;hljs-string&quot;>&quot;left&quot;</span>&amp;gt;</span>
-            <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>span</span> <span class=&quot;hljs-attr&quot;>class</span>=<span class=&quot;hljs-string&quot;>&quot;hash-code-algo&quot;</span>&amp;gt;</span>SHA-1<span class=&quot;hljs-tag&quot;>&amp;lt;/<span class=&quot;hljs-name&quot;>span</span>&amp;gt;</span>
-            <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>span</span> <span class=&quot;hljs-attr&quot;>class</span>=<span class=&quot;hljs-string&quot;>&quot;hash-code-value&quot;</span> <span class=&quot;hljs-attr&quot;>id</span>=<span class=&quot;hljs-string&quot;>&quot;SHA1&quot;</span>&amp;gt;</span><span class=&quot;hljs-tag&quot;>&amp;lt;/<span class=&quot;hljs-name&quot;>span</span>&amp;gt;</span>
-          <span class=&quot;hljs-tag&quot;>&amp;lt;/<span class=&quot;hljs-name&quot;>div</span>&amp;gt;</span>
-          <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>button</span> <span class=&quot;hljs-attr&quot;>class</span>=<span class=&quot;hljs-string&quot;>&quot;icon-button copy-button&quot;</span> <span class=&quot;hljs-attr&quot;>title</span>=<span class=&quot;hljs-string&quot;>&quot;Copy&quot;</span>&amp;gt;</span>
-            <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>iconify-icon</span> <span class=&quot;hljs-attr&quot;>icon</span>=<span class=&quot;hljs-string&quot;>&quot;ci:copy&quot;</span> <span class=&quot;hljs-attr&quot;>class</span>=<span class=&quot;hljs-string&quot;>&quot;icon&quot;</span>&amp;gt;</span><span class=&quot;hljs-tag&quot;>&amp;lt;/<span class=&quot;hljs-name&quot;>iconify-icon</span>&amp;gt;</span>
-          <span class=&quot;hljs-tag&quot;>&amp;lt;/<span class=&quot;hljs-name&quot;>button</span>&amp;gt;</span>
-        <span class=&quot;hljs-tag&quot;>&amp;lt;/<span class=&quot;hljs-name&quot;>div</span>&amp;gt;</span>
-        <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>div</span> <span class=&quot;hljs-attr&quot;>class</span>=<span class=&quot;hljs-string&quot;>&quot;calculated-hash-container&quot;</span>&amp;gt;</span>
-          <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>div</span> <span class=&quot;hljs-attr&quot;>class</span>=<span class=&quot;hljs-string&quot;>&quot;left&quot;</span>&amp;gt;</span>
-            <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>span</span> <span class=&quot;hljs-attr&quot;>class</span>=<span class=&quot;hljs-string&quot;>&quot;hash-code-algo&quot;</span>&amp;gt;</span>SHA-256<span class=&quot;hljs-tag&quot;>&amp;lt;/<span class=&quot;hljs-name&quot;>span</span>&amp;gt;</span>
-            <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>span</span> <span class=&quot;hljs-attr&quot;>class</span>=<span class=&quot;hljs-string&quot;>&quot;hash-code-value&quot;</span> <span class=&quot;hljs-attr&quot;>id</span>=<span class=&quot;hljs-string&quot;>&quot;SHA256&quot;</span>&amp;gt;</span><span class=&quot;hljs-tag&quot;>&amp;lt;/<span class=&quot;hljs-name&quot;>span</span>&amp;gt;</span>
-          <span class=&quot;hljs-tag&quot;>&amp;lt;/<span class=&quot;hljs-name&quot;>div</span>&amp;gt;</span>
-          <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>button</span> <span class=&quot;hljs-attr&quot;>class</span>=<span class=&quot;hljs-string&quot;>&quot;icon-button copy-button&quot;</span> <span class=&quot;hljs-attr&quot;>title</span>=<span class=&quot;hljs-string&quot;>&quot;Copy&quot;</span>&amp;gt;</span>
-            <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>iconify-icon</span> <span class=&quot;hljs-attr&quot;>icon</span>=<span class=&quot;hljs-string&quot;>&quot;ci:copy&quot;</span> <span class=&quot;hljs-attr&quot;>class</span>=<span class=&quot;hljs-string&quot;>&quot;icon&quot;</span>&amp;gt;</span><span class=&quot;hljs-tag&quot;>&amp;lt;/<span class=&quot;hljs-name&quot;>iconify-icon</span>&amp;gt;</span>
-          <span class=&quot;hljs-tag&quot;>&amp;lt;/<span class=&quot;hljs-name&quot;>button</span>&amp;gt;</span>
-        <span class=&quot;hljs-tag&quot;>&amp;lt;/<span class=&quot;hljs-name&quot;>div</span>&amp;gt;</span>
-        <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>div</span> <span class=&quot;hljs-attr&quot;>class</span>=<span class=&quot;hljs-string&quot;>&quot;calculated-hash-container&quot;</span>&amp;gt;</span>
-          <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>div</span> <span class=&quot;hljs-attr&quot;>class</span>=<span class=&quot;hljs-string&quot;>&quot;left&quot;</span>&amp;gt;</span>
-            <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>span</span> <span class=&quot;hljs-attr&quot;>class</span>=<span class=&quot;hljs-string&quot;>&quot;hash-code-algo&quot;</span>&amp;gt;</span>SHA-384<span class=&quot;hljs-tag&quot;>&amp;lt;/<span class=&quot;hljs-name&quot;>span</span>&amp;gt;</span>
-            <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>span</span> <span class=&quot;hljs-attr&quot;>class</span>=<span class=&quot;hljs-string&quot;>&quot;hash-code-value&quot;</span> <span class=&quot;hljs-attr&quot;>id</span>=<span class=&quot;hljs-string&quot;>&quot;SHA384&quot;</span>&amp;gt;</span><span class=&quot;hljs-tag&quot;>&amp;lt;/<span class=&quot;hljs-name&quot;>span</span>&amp;gt;</span>
-          <span class=&quot;hljs-tag&quot;>&amp;lt;/<span class=&quot;hljs-name&quot;>div</span>&amp;gt;</span>
-          <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>button</span> <span class=&quot;hljs-attr&quot;>class</span>=<span class=&quot;hljs-string&quot;>&quot;icon-button copy-button&quot;</span> <span class=&quot;hljs-attr&quot;>title</span>=<span class=&quot;hljs-string&quot;>&quot;Copy&quot;</span>&amp;gt;</span>
-            <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>iconify-icon</span> <span class=&quot;hljs-attr&quot;>icon</span>=<span class=&quot;hljs-string&quot;>&quot;ci:copy&quot;</span> <span class=&quot;hljs-attr&quot;>class</span>=<span class=&quot;hljs-string&quot;>&quot;icon&quot;</span>&amp;gt;</span><span class=&quot;hljs-tag&quot;>&amp;lt;/<span class=&quot;hljs-name&quot;>iconify-icon</span>&amp;gt;</span>
-          <span class=&quot;hljs-tag&quot;>&amp;lt;/<span class=&quot;hljs-name&quot;>button</span>&amp;gt;</span>
-        <span class=&quot;hljs-tag&quot;>&amp;lt;/<span class=&quot;hljs-name&quot;>div</span>&amp;gt;</span>
-        <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>div</span> <span class=&quot;hljs-attr&quot;>class</span>=<span class=&quot;hljs-string&quot;>&quot;calculated-hash-container&quot;</span>&amp;gt;</span>
-          <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>div</span> <span class=&quot;hljs-attr&quot;>class</span>=<span class=&quot;hljs-string&quot;>&quot;left&quot;</span>&amp;gt;</span>
-            <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>span</span> <span class=&quot;hljs-attr&quot;>class</span>=<span class=&quot;hljs-string&quot;>&quot;hash-code-algo&quot;</span>&amp;gt;</span>SHA-512<span class=&quot;hljs-tag&quot;>&amp;lt;/<span class=&quot;hljs-name&quot;>span</span>&amp;gt;</span>
-            <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>span</span> <span class=&quot;hljs-attr&quot;>class</span>=<span class=&quot;hljs-string&quot;>&quot;hash-code-value&quot;</span> <span class=&quot;hljs-attr&quot;>id</span>=<span class=&quot;hljs-string&quot;>&quot;SHA512&quot;</span>&amp;gt;</span><span class=&quot;hljs-tag&quot;>&amp;lt;/<span class=&quot;hljs-name&quot;>span</span>&amp;gt;</span>
-          <span class=&quot;hljs-tag&quot;>&amp;lt;/<span class=&quot;hljs-name&quot;>div</span>&amp;gt;</span>
-          <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>button</span> <span class=&quot;hljs-attr&quot;>class</span>=<span class=&quot;hljs-string&quot;>&quot;icon-button copy-button&quot;</span> <span class=&quot;hljs-attr&quot;>title</span>=<span class=&quot;hljs-string&quot;>&quot;Copy&quot;</span>&amp;gt;</span>
-            <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>iconify-icon</span> <span class=&quot;hljs-attr&quot;>icon</span>=<span class=&quot;hljs-string&quot;>&quot;ci:copy&quot;</span> <span class=&quot;hljs-attr&quot;>class</span>=<span class=&quot;hljs-string&quot;>&quot;icon&quot;</span>&amp;gt;</span><span class=&quot;hljs-tag&quot;>&amp;lt;/<span class=&quot;hljs-name&quot;>iconify-icon</span>&amp;gt;</span>
-          <span class=&quot;hljs-tag&quot;>&amp;lt;/<span class=&quot;hljs-name&quot;>button</span>&amp;gt;</span>
-        <span class=&quot;hljs-tag&quot;>&amp;lt;/<span class=&quot;hljs-name&quot;>div</span>&amp;gt;</span>
-      <span class=&quot;hljs-tag&quot;>&amp;lt;/<span class=&quot;hljs-name&quot;>div</span>&amp;gt;</span>
-    <span class=&quot;hljs-tag&quot;>&amp;lt;/<span class=&quot;hljs-name&quot;>div</span>&amp;gt;</span>
-  <span class=&quot;hljs-tag&quot;>&amp;lt;/<span class=&quot;hljs-name&quot;>div</span>&amp;gt;</span>
-  <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>script</span> <span class=&quot;hljs-attr&quot;>src</span>=<span class=&quot;hljs-string&quot;>&quot;script.js&quot;</span>&amp;gt;</span><span class=&quot;hljs-tag&quot;>&amp;lt;/<span class=&quot;hljs-name&quot;>script</span>&amp;gt;</span>
-<span class=&quot;hljs-tag&quot;>&amp;lt;/<span class=&quot;hljs-name&quot;>body</span>&amp;gt;</span>
-<span class=&quot;hljs-tag&quot;>&amp;lt;/<span class=&quot;hljs-name&quot;>html</span>&amp;gt;</span>
+      <span class="hljs-tag">&amp;lt;/<span class="hljs-name">h2</span>&amp;gt;</span>
+    <span class="hljs-tag">&amp;lt;/<span class="hljs-name">div</span>&amp;gt;</span>
+    <span class="hljs-tag">&amp;lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;generated-hash-container&quot;</span>&amp;gt;</span>
+      <span class="hljs-tag">&amp;lt;<span class="hljs-name">textarea</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;inputText&quot;</span>&amp;gt;</span>Text example<span class="hljs-tag">&amp;lt;/<span class="hljs-name">textarea</span>&amp;gt;</span>
+      <span class="hljs-tag">&amp;lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;calculated-hashes-container&quot;</span>&amp;gt;</span>
+        <span class="hljs-tag">&amp;lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;calculated-hash-container&quot;</span>&amp;gt;</span>
+          <span class="hljs-tag">&amp;lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;left&quot;</span>&amp;gt;</span>
+            <span class="hljs-tag">&amp;lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hash-code-algo&quot;</span>&amp;gt;</span>SHA-1<span class="hljs-tag">&amp;lt;/<span class="hljs-name">span</span>&amp;gt;</span>
+            <span class="hljs-tag">&amp;lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hash-code-value&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;SHA1&quot;</span>&amp;gt;</span><span class="hljs-tag">&amp;lt;/<span class="hljs-name">span</span>&amp;gt;</span>
+          <span class="hljs-tag">&amp;lt;/<span class="hljs-name">div</span>&amp;gt;</span>
+          <span class="hljs-tag">&amp;lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;icon-button copy-button&quot;</span> <span class="hljs-attr">title</span>=<span class="hljs-string">&quot;Copy&quot;</span>&amp;gt;</span>
+            <span class="hljs-tag">&amp;lt;<span class="hljs-name">iconify-icon</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">&quot;ci:copy&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;icon&quot;</span>&amp;gt;</span><span class="hljs-tag">&amp;lt;/<span class="hljs-name">iconify-icon</span>&amp;gt;</span>
+          <span class="hljs-tag">&amp;lt;/<span class="hljs-name">button</span>&amp;gt;</span>
+        <span class="hljs-tag">&amp;lt;/<span class="hljs-name">div</span>&amp;gt;</span>
+        <span class="hljs-tag">&amp;lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;calculated-hash-container&quot;</span>&amp;gt;</span>
+          <span class="hljs-tag">&amp;lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;left&quot;</span>&amp;gt;</span>
+            <span class="hljs-tag">&amp;lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hash-code-algo&quot;</span>&amp;gt;</span>SHA-256<span class="hljs-tag">&amp;lt;/<span class="hljs-name">span</span>&amp;gt;</span>
+            <span class="hljs-tag">&amp;lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hash-code-value&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;SHA256&quot;</span>&amp;gt;</span><span class="hljs-tag">&amp;lt;/<span class="hljs-name">span</span>&amp;gt;</span>
+          <span class="hljs-tag">&amp;lt;/<span class="hljs-name">div</span>&amp;gt;</span>
+          <span class="hljs-tag">&amp;lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;icon-button copy-button&quot;</span> <span class="hljs-attr">title</span>=<span class="hljs-string">&quot;Copy&quot;</span>&amp;gt;</span>
+            <span class="hljs-tag">&amp;lt;<span class="hljs-name">iconify-icon</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">&quot;ci:copy&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;icon&quot;</span>&amp;gt;</span><span class="hljs-tag">&amp;lt;/<span class="hljs-name">iconify-icon</span>&amp;gt;</span>
+          <span class="hljs-tag">&amp;lt;/<span class="hljs-name">button</span>&amp;gt;</span>
+        <span class="hljs-tag">&amp;lt;/<span class="hljs-name">div</span>&amp;gt;</span>
+        <span class="hljs-tag">&amp;lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;calculated-hash-container&quot;</span>&amp;gt;</span>
+          <span class="hljs-tag">&amp;lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;left&quot;</span>&amp;gt;</span>
+            <span class="hljs-tag">&amp;lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hash-code-algo&quot;</span>&amp;gt;</span>SHA-384<span class="hljs-tag">&amp;lt;/<span class="hljs-name">span</span>&amp;gt;</span>
+            <span class="hljs-tag">&amp;lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hash-code-value&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;SHA384&quot;</span>&amp;gt;</span><span class="hljs-tag">&amp;lt;/<span class="hljs-name">span</span>&amp;gt;</span>
+          <span class="hljs-tag">&amp;lt;/<span class="hljs-name">div</span>&amp;gt;</span>
+          <span class="hljs-tag">&amp;lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;icon-button copy-button&quot;</span> <span class="hljs-attr">title</span>=<span class="hljs-string">&quot;Copy&quot;</span>&amp;gt;</span>
+            <span class="hljs-tag">&amp;lt;<span class="hljs-name">iconify-icon</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">&quot;ci:copy&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;icon&quot;</span>&amp;gt;</span><span class="hljs-tag">&amp;lt;/<span class="hljs-name">iconify-icon</span>&amp;gt;</span>
+          <span class="hljs-tag">&amp;lt;/<span class="hljs-name">button</span>&amp;gt;</span>
+        <span class="hljs-tag">&amp;lt;/<span class="hljs-name">div</span>&amp;gt;</span>
+        <span class="hljs-tag">&amp;lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;calculated-hash-container&quot;</span>&amp;gt;</span>
+          <span class="hljs-tag">&amp;lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;left&quot;</span>&amp;gt;</span>
+            <span class="hljs-tag">&amp;lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hash-code-algo&quot;</span>&amp;gt;</span>SHA-512<span class="hljs-tag">&amp;lt;/<span class="hljs-name">span</span>&amp;gt;</span>
+            <span class="hljs-tag">&amp;lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hash-code-value&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;SHA512&quot;</span>&amp;gt;</span><span class="hljs-tag">&amp;lt;/<span class="hljs-name">span</span>&amp;gt;</span>
+          <span class="hljs-tag">&amp;lt;/<span class="hljs-name">div</span>&amp;gt;</span>
+          <span class="hljs-tag">&amp;lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;icon-button copy-button&quot;</span> <span class="hljs-attr">title</span>=<span class="hljs-string">&quot;Copy&quot;</span>&amp;gt;</span>
+            <span class="hljs-tag">&amp;lt;<span class="hljs-name">iconify-icon</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">&quot;ci:copy&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;icon&quot;</span>&amp;gt;</span><span class="hljs-tag">&amp;lt;/<span class="hljs-name">iconify-icon</span>&amp;gt;</span>
+          <span class="hljs-tag">&amp;lt;/<span class="hljs-name">button</span>&amp;gt;</span>
+        <span class="hljs-tag">&amp;lt;/<span class="hljs-name">div</span>&amp;gt;</span>
+      <span class="hljs-tag">&amp;lt;/<span class="hljs-name">div</span>&amp;gt;</span>
+    <span class="hljs-tag">&amp;lt;/<span class="hljs-name">div</span>&amp;gt;</span>
+  <span class="hljs-tag">&amp;lt;/<span class="hljs-name">div</span>&amp;gt;</span>
+  <span class="hljs-tag">&amp;lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;script.js&quot;</span>&amp;gt;</span><span class="hljs-tag">&amp;lt;/<span class="hljs-name">script</span>&amp;gt;</span>
+<span class="hljs-tag">&amp;lt;/<span class="hljs-name">body</span>&amp;gt;</span>
+<span class="hljs-tag">&amp;lt;/<span class="hljs-name">html</span>&amp;gt;</span>
 </code></pre></code></pre></li>
 <li><p>style.css</p>
-<pre><code class=&quot;language-css&quot;><pre class=&quot;highlight&quot;><code class=&quot;hljs&quot;><span class=&quot;hljs-keyword&quot;>@import</span> url(<span class=&quot;hljs-string&quot;>&quot;https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap&quot;</span>);
+<pre><code class="language-css"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">@import</span> url(<span class="hljs-string">&quot;https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap&quot;</span>);
 
 *,
-*<span class=&quot;hljs-selector-pseudo&quot;>::before</span>,
-*<span class=&quot;hljs-selector-pseudo&quot;>::after</span> {
-  <span class=&quot;hljs-attribute&quot;>box-sizing</span>: border-box;
-  <span class=&quot;hljs-attribute&quot;>margin</span>: <span class=&quot;hljs-number&quot;>0</span>;
-  <span class=&quot;hljs-attribute&quot;>padding</span>: <span class=&quot;hljs-number&quot;>0</span>;
+*<span class="hljs-selector-pseudo">::before</span>,
+*<span class="hljs-selector-pseudo">::after</span> {{ '{' }}
+  <span class="hljs-attribute">box-sizing</span>: border-box;
+  <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span>;
+  <span class="hljs-attribute">padding</span>: <span class="hljs-number">0</span>;
 }
 
-<span class=&quot;hljs-selector-pseudo&quot;>:root</span> {
-  <span class=&quot;hljs-attr&quot;>--primary-color</span>: <span class=&quot;hljs-number&quot;>#c3e3ee</span>;
-  <span class=&quot;hljs-attr&quot;>--secondary-color</span>: <span class=&quot;hljs-number&quot;>#26688b</span>;
-  <span class=&quot;hljs-attr&quot;>--white-color</span>: <span class=&quot;hljs-number&quot;>#fff</span>;
-  <span class=&quot;hljs-attr&quot;>--text-color</span>: <span class=&quot;hljs-number&quot;>#424242</span>;
-  <span class=&quot;hljs-attr&quot;>--border-color</span>: <span class=&quot;hljs-number&quot;>#c3e3ee73</span>;
-  <span class=&quot;hljs-attr&quot;>--hover-color</span>: <span class=&quot;hljs-number&quot;>#ddd</span>;
+<span class="hljs-selector-pseudo">:root</span> {{ '{' }}
+  <span class="hljs-attr">--primary-color</span>: <span class="hljs-number">#c3e3ee</span>;
+  <span class="hljs-attr">--secondary-color</span>: <span class="hljs-number">#26688b</span>;
+  <span class="hljs-attr">--white-color</span>: <span class="hljs-number">#fff</span>;
+  <span class="hljs-attr">--text-color</span>: <span class="hljs-number">#424242</span>;
+  <span class="hljs-attr">--border-color</span>: <span class="hljs-number">#c3e3ee73</span>;
+  <span class="hljs-attr">--hover-color</span>: <span class="hljs-number">#ddd</span>;
 }
 
-<span class=&quot;hljs-selector-tag&quot;>body</span> {
-  <span class=&quot;hljs-attribute&quot;>font-family</span>: <span class=&quot;hljs-string&quot;>&quot;Poppins&quot;</span>, sans-serif;
-  <span class=&quot;hljs-attribute&quot;>min-height</span>: <span class=&quot;hljs-number&quot;>100vh</span>;
-  <span class=&quot;hljs-attribute&quot;>background-image</span>: <span class=&quot;hljs-built_in&quot;>url</span>(<span class=&quot;hljs-string&quot;>&quot;background.jpg&quot;</span>);
-  <span class=&quot;hljs-attribute&quot;>background-position</span>: center;
-  <span class=&quot;hljs-attribute&quot;>background-size</span>: cover;
-  <span class=&quot;hljs-attribute&quot;>display</span>: flex;
-  <span class=&quot;hljs-attribute&quot;>justify-content</span>: center;
-  <span class=&quot;hljs-attribute&quot;>align-items</span>: center;
+<span class="hljs-selector-tag">body</span> {{ '{' }}
+  <span class="hljs-attribute">font-family</span>: <span class="hljs-string">&quot;Poppins&quot;</span>, sans-serif;
+  <span class="hljs-attribute">min-height</span>: <span class="hljs-number">100vh</span>;
+  <span class="hljs-attribute">background-image</span>: <span class="hljs-built_in">url</span>(<span class="hljs-string">&quot;background.jpg&quot;</span>);
+  <span class="hljs-attribute">background-position</span>: center;
+  <span class="hljs-attribute">background-size</span>: cover;
+  <span class="hljs-attribute">display</span>: flex;
+  <span class="hljs-attribute">justify-content</span>: center;
+  <span class="hljs-attribute">align-items</span>: center;
 }
 
-<span class=&quot;hljs-selector-class&quot;>.container</span> {
-  backdrop-<span class=&quot;hljs-attribute&quot;>filter</span>: <span class=&quot;hljs-built_in&quot;>blur</span>(<span class=&quot;hljs-number&quot;>30px</span>);
-  <span class=&quot;hljs-attribute&quot;>max-width</span>: <span class=&quot;hljs-number&quot;>950px</span>;
-  <span class=&quot;hljs-attribute&quot;>border</span>: <span class=&quot;hljs-number&quot;>2px</span> <span class=&quot;hljs-built_in&quot;>var</span>(--border-color) solid;
-  <span class=&quot;hljs-attribute&quot;>padding</span>: <span class=&quot;hljs-number&quot;>50px</span>;
-  <span class=&quot;hljs-attribute&quot;>border-radius</span>: <span class=&quot;hljs-number&quot;>10px</span>;
-  <span class=&quot;hljs-attribute&quot;>box-shadow</span>: <span class=&quot;hljs-number&quot;>0px</span> <span class=&quot;hljs-number&quot;>0px</span> <span class=&quot;hljs-number&quot;>7px</span> <span class=&quot;hljs-number&quot;>0</span> <span class=&quot;hljs-built_in&quot;>rgba</span>(<span class=&quot;hljs-number&quot;>0</span>, <span class=&quot;hljs-number&quot;>0</span>, <span class=&quot;hljs-number&quot;>0</span>, <span class=&quot;hljs-number&quot;>0.1</span>);
+<span class="hljs-selector-class">.container</span> {{ '{' }}
+  backdrop-<span class="hljs-attribute">filter</span>: <span class="hljs-built_in">blur</span>(<span class="hljs-number">30px</span>);
+  <span class="hljs-attribute">max-width</span>: <span class="hljs-number">950px</span>;
+  <span class="hljs-attribute">border</span>: <span class="hljs-number">2px</span> <span class="hljs-built_in">var</span>(--border-color) solid;
+  <span class="hljs-attribute">padding</span>: <span class="hljs-number">50px</span>;
+  <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">10px</span>;
+  <span class="hljs-attribute">box-shadow</span>: <span class="hljs-number">0px</span> <span class="hljs-number">0px</span> <span class="hljs-number">7px</span> <span class="hljs-number">0</span> <span class="hljs-built_in">rgba</span>(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0.1</span>);
 }
 
-<span class=&quot;hljs-keyword&quot;>@media</span> <span class=&quot;hljs-keyword&quot;>only</span> screen <span class=&quot;hljs-keyword&quot;>and</span> (<span class=&quot;hljs-attribute&quot;>min-width</span>: <span class=&quot;hljs-number&quot;>576px</span>) {
-  <span class=&quot;hljs-selector-class&quot;>.container</span> {
-    <span class=&quot;hljs-attribute&quot;>padding</span>: <span class=&quot;hljs-number&quot;>50px</span> <span class=&quot;hljs-number&quot;>100px</span>;
+<span class="hljs-keyword">@media</span> <span class="hljs-keyword">only</span> screen <span class="hljs-keyword">and</span> (<span class="hljs-attribute">min-width</span>: <span class="hljs-number">576px</span>) {{ '{' }}
+  <span class="hljs-selector-class">.container</span> {{ '{' }}
+    <span class="hljs-attribute">padding</span>: <span class="hljs-number">50px</span> <span class="hljs-number">100px</span>;
   }
 }
 
-<span class=&quot;hljs-selector-class&quot;>.header-container</span> {
-  <span class=&quot;hljs-attribute&quot;>text-align</span>: center;
-  <span class=&quot;hljs-attribute&quot;>margin-bottom</span>: <span class=&quot;hljs-number&quot;>30px</span>;
+<span class="hljs-selector-class">.header-container</span> {{ '{' }}
+  <span class="hljs-attribute">text-align</span>: center;
+  <span class="hljs-attribute">margin-bottom</span>: <span class="hljs-number">30px</span>;
 }
 
-<span class=&quot;hljs-selector-tag&quot;>h1</span> {
-  <span class=&quot;hljs-attribute&quot;>color</span>: <span class=&quot;hljs-built_in&quot;>var</span>(--secondary-color);
-  <span class=&quot;hljs-attribute&quot;>font-size</span>: <span class=&quot;hljs-number&quot;>30px</span>;
+<span class="hljs-selector-tag">h1</span> {{ '{' }}
+  <span class="hljs-attribute">color</span>: <span class="hljs-built_in">var</span>(--secondary-color);
+  <span class="hljs-attribute">font-size</span>: <span class="hljs-number">30px</span>;
 }
 
-<span class=&quot;hljs-keyword&quot;>@media</span> <span class=&quot;hljs-keyword&quot;>only</span> screen <span class=&quot;hljs-keyword&quot;>and</span> (<span class=&quot;hljs-attribute&quot;>min-width</span>: <span class=&quot;hljs-number&quot;>576px</span>) {
-  <span class=&quot;hljs-selector-tag&quot;>h1</span> {
-    <span class=&quot;hljs-attribute&quot;>font-size</span>: <span class=&quot;hljs-number&quot;>40px</span>;
+<span class="hljs-keyword">@media</span> <span class="hljs-keyword">only</span> screen <span class="hljs-keyword">and</span> (<span class="hljs-attribute">min-width</span>: <span class="hljs-number">576px</span>) {{ '{' }}
+  <span class="hljs-selector-tag">h1</span> {{ '{' }}
+    <span class="hljs-attribute">font-size</span>: <span class="hljs-number">40px</span>;
   }
 }
 
-<span class=&quot;hljs-selector-tag&quot;>h2</span> {
-  <span class=&quot;hljs-attribute&quot;>font-size</span>: <span class=&quot;hljs-number&quot;>14px</span>;
-  <span class=&quot;hljs-attribute&quot;>font-weight</span>: <span class=&quot;hljs-number&quot;>400</span>;
+<span class="hljs-selector-tag">h2</span> {{ '{' }}
+  <span class="hljs-attribute">font-size</span>: <span class="hljs-number">14px</span>;
+  <span class="hljs-attribute">font-weight</span>: <span class="hljs-number">400</span>;
 }
 
-<span class=&quot;hljs-keyword&quot;>@media</span> <span class=&quot;hljs-keyword&quot;>only</span> screen <span class=&quot;hljs-keyword&quot;>and</span> (<span class=&quot;hljs-attribute&quot;>min-width</span>: <span class=&quot;hljs-number&quot;>576px</span>) {
-  <span class=&quot;hljs-selector-tag&quot;>h2</span> {
-    <span class=&quot;hljs-attribute&quot;>font-size</span>: <span class=&quot;hljs-number&quot;>17px</span>;
+<span class="hljs-keyword">@media</span> <span class="hljs-keyword">only</span> screen <span class="hljs-keyword">and</span> (<span class="hljs-attribute">min-width</span>: <span class="hljs-number">576px</span>) {{ '{' }}
+  <span class="hljs-selector-tag">h2</span> {{ '{' }}
+    <span class="hljs-attribute">font-size</span>: <span class="hljs-number">17px</span>;
   }
 }
 
-<span class=&quot;hljs-selector-tag&quot;>textarea</span> {
-  <span class=&quot;hljs-attribute&quot;>width</span>: <span class=&quot;hljs-number&quot;>100%</span>;
-  <span class=&quot;hljs-attribute&quot;>min-height</span>: <span class=&quot;hljs-number&quot;>150px</span>;
-  <span class=&quot;hljs-attribute&quot;>background-color</span>: <span class=&quot;hljs-built_in&quot;>var</span>(--primary-color);
-  <span class=&quot;hljs-attribute&quot;>padding</span>: <span class=&quot;hljs-number&quot;>8px</span> <span class=&quot;hljs-number&quot;>16px</span>;
-  <span class=&quot;hljs-attribute&quot;>font-size</span>: <span class=&quot;hljs-number&quot;>18px</span>;
-  <span class=&quot;hljs-attribute&quot;>border-radius</span>: <span class=&quot;hljs-number&quot;>5px</span>;
-  <span class=&quot;hljs-attribute&quot;>border</span>: none;
-  <span class=&quot;hljs-attribute&quot;>outline</span>: none;
-  <span class=&quot;hljs-attribute&quot;>transition</span>: background-color <span class=&quot;hljs-number&quot;>1s</span> ease;
+<span class="hljs-selector-tag">textarea</span> {{ '{' }}
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">100%</span>;
+  <span class="hljs-attribute">min-height</span>: <span class="hljs-number">150px</span>;
+  <span class="hljs-attribute">background-color</span>: <span class="hljs-built_in">var</span>(--primary-color);
+  <span class="hljs-attribute">padding</span>: <span class="hljs-number">8px</span> <span class="hljs-number">16px</span>;
+  <span class="hljs-attribute">font-size</span>: <span class="hljs-number">18px</span>;
+  <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">5px</span>;
+  <span class="hljs-attribute">border</span>: none;
+  <span class="hljs-attribute">outline</span>: none;
+  <span class="hljs-attribute">transition</span>: background-color <span class="hljs-number">1s</span> ease;
 }
 
-<span class=&quot;hljs-selector-tag&quot;>textarea</span><span class=&quot;hljs-selector-pseudo&quot;>:hover</span> {
-  <span class=&quot;hljs-attribute&quot;>background-color</span>: <span class=&quot;hljs-built_in&quot;>var</span>(--hover-color);
+<span class="hljs-selector-tag">textarea</span><span class="hljs-selector-pseudo">:hover</span> {{ '{' }}
+  <span class="hljs-attribute">background-color</span>: <span class="hljs-built_in">var</span>(--hover-color);
 }
 
-<span class=&quot;hljs-selector-class&quot;>.calculated-hashes-container</span> {
-  <span class=&quot;hljs-attribute&quot;>display</span>: grid;
-  <span class=&quot;hljs-attribute&quot;>grid-template-columns</span>: <span class=&quot;hljs-number&quot;>1</span>fr;
-  <span class=&quot;hljs-attribute&quot;>row-gap</span>: <span class=&quot;hljs-number&quot;>10px</span>;
-  <span class=&quot;hljs-attribute&quot;>margin-top</span>: <span class=&quot;hljs-number&quot;>10px</span>;
+<span class="hljs-selector-class">.calculated-hashes-container</span> {{ '{' }}
+  <span class="hljs-attribute">display</span>: grid;
+  <span class="hljs-attribute">grid-template-columns</span>: <span class="hljs-number">1</span>fr;
+  <span class="hljs-attribute">row-gap</span>: <span class="hljs-number">10px</span>;
+  <span class="hljs-attribute">margin-top</span>: <span class="hljs-number">10px</span>;
 }
 
-<span class=&quot;hljs-selector-class&quot;>.calculated-hashes-container</span> <span class=&quot;hljs-selector-class&quot;>.calculated-hash-container</span> {
-  <span class=&quot;hljs-attribute&quot;>background-color</span>: <span class=&quot;hljs-built_in&quot;>var</span>(--primary-color);
-  <span class=&quot;hljs-attribute&quot;>min-width</span>: <span class=&quot;hljs-number&quot;>0</span>;
-  <span class=&quot;hljs-attribute&quot;>padding</span>: <span class=&quot;hljs-number&quot;>8px</span> <span class=&quot;hljs-number&quot;>16px</span>;
-  <span class=&quot;hljs-attribute&quot;>display</span>: flex;
-  <span class=&quot;hljs-attribute&quot;>align-items</span>: center;
-  <span class=&quot;hljs-attribute&quot;>justify-content</span>: space-between;
-  <span class=&quot;hljs-attribute&quot;>border-radius</span>: <span class=&quot;hljs-number&quot;>5px</span>;
+<span class="hljs-selector-class">.calculated-hashes-container</span> <span class="hljs-selector-class">.calculated-hash-container</span> {{ '{' }}
+  <span class="hljs-attribute">background-color</span>: <span class="hljs-built_in">var</span>(--primary-color);
+  <span class="hljs-attribute">min-width</span>: <span class="hljs-number">0</span>;
+  <span class="hljs-attribute">padding</span>: <span class="hljs-number">8px</span> <span class="hljs-number">16px</span>;
+  <span class="hljs-attribute">display</span>: flex;
+  <span class="hljs-attribute">align-items</span>: center;
+  <span class="hljs-attribute">justify-content</span>: space-between;
+  <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">5px</span>;
 }
 
-<span class=&quot;hljs-selector-class&quot;>.calculated-hash-container</span> <span class=&quot;hljs-selector-class&quot;>.left</span> {
-  <span class=&quot;hljs-attribute&quot;>min-width</span>: <span class=&quot;hljs-number&quot;>0</span>;
-  <span class=&quot;hljs-attribute&quot;>display</span>: flex;
-  <span class=&quot;hljs-attribute&quot;>align-items</span>: center;
-  <span class=&quot;hljs-attribute&quot;>column-gap</span>: <span class=&quot;hljs-number&quot;>10px</span>;
+<span class="hljs-selector-class">.calculated-hash-container</span> <span class="hljs-selector-class">.left</span> {{ '{' }}
+  <span class="hljs-attribute">min-width</span>: <span class="hljs-number">0</span>;
+  <span class="hljs-attribute">display</span>: flex;
+  <span class="hljs-attribute">align-items</span>: center;
+  <span class="hljs-attribute">column-gap</span>: <span class="hljs-number">10px</span>;
 }
 
-<span class=&quot;hljs-selector-class&quot;>.calculated-hash-container</span> <span class=&quot;hljs-selector-class&quot;>.left</span> <span class=&quot;hljs-selector-class&quot;>.hash-code-algo</span> {
-  <span class=&quot;hljs-attribute&quot;>background-color</span>: <span class=&quot;hljs-built_in&quot;>var</span>(--secondary-color);
-  <span class=&quot;hljs-attribute&quot;>color</span>: <span class=&quot;hljs-built_in&quot;>var</span>(--white-color);
-  <span class=&quot;hljs-attribute&quot;>flex-shrink</span>: <span class=&quot;hljs-number&quot;>0</span>;
-  <span class=&quot;hljs-attribute&quot;>font-size</span>: <span class=&quot;hljs-number&quot;>14px</span>;
-  <span class=&quot;hljs-attribute&quot;>font-weight</span>: <span class=&quot;hljs-number&quot;>600</span>;
-  <span class=&quot;hljs-attribute&quot;>width</span>: <span class=&quot;hljs-number&quot;>85px</span>;
-  <span class=&quot;hljs-attribute&quot;>text-align</span>: center;
-  <span class=&quot;hljs-attribute&quot;>border-radius</span>: <span class=&quot;hljs-number&quot;>5px</span>;
+<span class="hljs-selector-class">.calculated-hash-container</span> <span class="hljs-selector-class">.left</span> <span class="hljs-selector-class">.hash-code-algo</span> {{ '{' }}
+  <span class="hljs-attribute">background-color</span>: <span class="hljs-built_in">var</span>(--secondary-color);
+  <span class="hljs-attribute">color</span>: <span class="hljs-built_in">var</span>(--white-color);
+  <span class="hljs-attribute">flex-shrink</span>: <span class="hljs-number">0</span>;
+  <span class="hljs-attribute">font-size</span>: <span class="hljs-number">14px</span>;
+  <span class="hljs-attribute">font-weight</span>: <span class="hljs-number">600</span>;
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">85px</span>;
+  <span class="hljs-attribute">text-align</span>: center;
+  <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">5px</span>;
 }
 
-<span class=&quot;hljs-selector-class&quot;>.calculated-hash-container</span> <span class=&quot;hljs-selector-class&quot;>.left</span> <span class=&quot;hljs-selector-class&quot;>.hash-code-value</span> {
-  <span class=&quot;hljs-attribute&quot;>overflow</span>: hidden;
-  <span class=&quot;hljs-attribute&quot;>text-overflow</span>: ellipsis;
-  <span class=&quot;hljs-attribute&quot;>letter-spacing</span>: <span class=&quot;hljs-number&quot;>1px</span>;
-  <span class=&quot;hljs-attribute&quot;>font-size</span>: <span class=&quot;hljs-number&quot;>14px</span>;
-  <span class=&quot;hljs-attribute&quot;>white-space</span>: nowrap;
+<span class="hljs-selector-class">.calculated-hash-container</span> <span class="hljs-selector-class">.left</span> <span class="hljs-selector-class">.hash-code-value</span> {{ '{' }}
+  <span class="hljs-attribute">overflow</span>: hidden;
+  <span class="hljs-attribute">text-overflow</span>: ellipsis;
+  <span class="hljs-attribute">letter-spacing</span>: <span class="hljs-number">1px</span>;
+  <span class="hljs-attribute">font-size</span>: <span class="hljs-number">14px</span>;
+  <span class="hljs-attribute">white-space</span>: nowrap;
 }
 
-<span class=&quot;hljs-selector-class&quot;>.icon-button</span> {
-  <span class=&quot;hljs-attribute&quot;>all</span>: initial;
-  <span class=&quot;hljs-attribute&quot;>height</span>: <span class=&quot;hljs-number&quot;>20px</span>;
-  <span class=&quot;hljs-attribute&quot;>width</span>: <span class=&quot;hljs-number&quot;>20px</span>;
-  <span class=&quot;hljs-attribute&quot;>border-radius</span>: <span class=&quot;hljs-number&quot;>3px</span>;
-  <span class=&quot;hljs-attribute&quot;>display</span>: flex;
-  <span class=&quot;hljs-attribute&quot;>align-items</span>: center;
-  <span class=&quot;hljs-attribute&quot;>justify-content</span>: center;
-  <span class=&quot;hljs-attribute&quot;>cursor</span>: pointer;
-  <span class=&quot;hljs-attribute&quot;>transition</span>: background-color <span class=&quot;hljs-number&quot;>1s</span> ease;
+<span class="hljs-selector-class">.icon-button</span> {{ '{' }}
+  <span class="hljs-attribute">all</span>: initial;
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">20px</span>;
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">20px</span>;
+  <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">3px</span>;
+  <span class="hljs-attribute">display</span>: flex;
+  <span class="hljs-attribute">align-items</span>: center;
+  <span class="hljs-attribute">justify-content</span>: center;
+  <span class="hljs-attribute">cursor</span>: pointer;
+  <span class="hljs-attribute">transition</span>: background-color <span class="hljs-number">1s</span> ease;
 }
 
-<span class=&quot;hljs-keyword&quot;>@media</span> <span class=&quot;hljs-keyword&quot;>only</span> screen <span class=&quot;hljs-keyword&quot;>and</span> (<span class=&quot;hljs-attribute&quot;>min-width</span>: <span class=&quot;hljs-number&quot;>576px</span>) {
-  <span class=&quot;hljs-selector-class&quot;>.icon-button</span> {
-    <span class=&quot;hljs-attribute&quot;>height</span>: <span class=&quot;hljs-number&quot;>30px</span>;
-    <span class=&quot;hljs-attribute&quot;>width</span>: <span class=&quot;hljs-number&quot;>30px</span>;
+<span class="hljs-keyword">@media</span> <span class="hljs-keyword">only</span> screen <span class="hljs-keyword">and</span> (<span class="hljs-attribute">min-width</span>: <span class="hljs-number">576px</span>) {{ '{' }}
+  <span class="hljs-selector-class">.icon-button</span> {{ '{' }}
+    <span class="hljs-attribute">height</span>: <span class="hljs-number">30px</span>;
+    <span class="hljs-attribute">width</span>: <span class="hljs-number">30px</span>;
   }
 }
 
-<span class=&quot;hljs-selector-class&quot;>.icon-button</span><span class=&quot;hljs-selector-pseudo&quot;>:hover</span> {
-  <span class=&quot;hljs-attribute&quot;>background-color</span>: <span class=&quot;hljs-built_in&quot;>var</span>(--secondary-color);
+<span class="hljs-selector-class">.icon-button</span><span class="hljs-selector-pseudo">:hover</span> {{ '{' }}
+  <span class="hljs-attribute">background-color</span>: <span class="hljs-built_in">var</span>(--secondary-color);
 }
 
-<span class=&quot;hljs-selector-class&quot;>.icon</span> {
-  <span class=&quot;hljs-attribute&quot;>font-size</span>: <span class=&quot;hljs-number&quot;>25px</span>;
-  <span class=&quot;hljs-attribute&quot;>color</span>: <span class=&quot;hljs-built_in&quot;>var</span>(--text-color);
+<span class="hljs-selector-class">.icon</span> {{ '{' }}
+  <span class="hljs-attribute">font-size</span>: <span class="hljs-number">25px</span>;
+  <span class="hljs-attribute">color</span>: <span class="hljs-built_in">var</span>(--text-color);
 }
 
-<span class=&quot;hljs-selector-class&quot;>.icon-button</span><span class=&quot;hljs-selector-pseudo&quot;>:hover</span> <span class=&quot;hljs-selector-class&quot;>.icon</span> {
-  <span class=&quot;hljs-attribute&quot;>color</span>: <span class=&quot;hljs-built_in&quot;>var</span>(--white-color);
+<span class="hljs-selector-class">.icon-button</span><span class="hljs-selector-pseudo">:hover</span> <span class="hljs-selector-class">.icon</span> {{ '{' }}
+  <span class="hljs-attribute">color</span>: <span class="hljs-built_in">var</span>(--white-color);
 }
 </code></pre></code></pre></li>
 <li><p>script.js</p>
-<pre><code class=&quot;language-js&quot;><pre class=&quot;highlight&quot;><code class=&quot;hljs&quot;><span class=&quot;hljs-keyword&quot;>const</span> <span class=&quot;hljs-title class_&quot;>SHA1</span> = <span class=&quot;hljs-variable language_&quot;>document</span>.<span class=&quot;hljs-title function_&quot;>getElementById</span>(<span class=&quot;hljs-string&quot;>&quot;SHA1&quot;</span>);
-<span class=&quot;hljs-keyword&quot;>const</span> <span class=&quot;hljs-title class_&quot;>SHA256</span> = <span class=&quot;hljs-variable language_&quot;>document</span>.<span class=&quot;hljs-title function_&quot;>getElementById</span>(<span class=&quot;hljs-string&quot;>&quot;SHA256&quot;</span>);
-<span class=&quot;hljs-keyword&quot;>const</span> <span class=&quot;hljs-title class_&quot;>SHA384</span> = <span class=&quot;hljs-variable language_&quot;>document</span>.<span class=&quot;hljs-title function_&quot;>getElementById</span>(<span class=&quot;hljs-string&quot;>&quot;SHA384&quot;</span>);
-<span class=&quot;hljs-keyword&quot;>const</span> <span class=&quot;hljs-title class_&quot;>SHA512</span> = <span class=&quot;hljs-variable language_&quot;>document</span>.<span class=&quot;hljs-title function_&quot;>getElementById</span>(<span class=&quot;hljs-string&quot;>&quot;SHA512&quot;</span>);
-<span class=&quot;hljs-keyword&quot;>const</span> inputText = <span class=&quot;hljs-variable language_&quot;>document</span>.<span class=&quot;hljs-title function_&quot;>getElementById</span>(<span class=&quot;hljs-string&quot;>&quot;inputText&quot;</span>);
-<span class=&quot;hljs-keyword&quot;>const</span> copyButtons = <span class=&quot;hljs-variable language_&quot;>document</span>.<span class=&quot;hljs-title function_&quot;>querySelectorAll</span>(<span class=&quot;hljs-string&quot;>&quot;.copy-button&quot;</span>);
+<pre><code class="language-js"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">const</span> <span class="hljs-title class_">SHA1</span> = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&quot;SHA1&quot;</span>);
+<span class="hljs-keyword">const</span> <span class="hljs-title class_">SHA256</span> = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&quot;SHA256&quot;</span>);
+<span class="hljs-keyword">const</span> <span class="hljs-title class_">SHA384</span> = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&quot;SHA384&quot;</span>);
+<span class="hljs-keyword">const</span> <span class="hljs-title class_">SHA512</span> = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&quot;SHA512&quot;</span>);
+<span class="hljs-keyword">const</span> inputText = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&quot;inputText&quot;</span>);
+<span class="hljs-keyword">const</span> copyButtons = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelectorAll</span>(<span class="hljs-string">&quot;.copy-button&quot;</span>);
 
-<span class=&quot;hljs-title function_&quot;>handleKeyPress</span>();
-<span class=&quot;hljs-variable language_&quot;>document</span>.<span class=&quot;hljs-title function_&quot;>addEventListener</span>(<span class=&quot;hljs-string&quot;>&quot;keyup&quot;</span>, handleKeyPress);
-copyButtons.<span class=&quot;hljs-title function_&quot;>forEach</span>((copyButton) =&amp;gt;
-  copyButton.<span class=&quot;hljs-title function_&quot;>addEventListener</span>(<span class=&quot;hljs-string&quot;>&quot;click&quot;</span>, (event) =&amp;gt; <span class=&quot;hljs-title function_&quot;>copyHashCodeToClipboard</span>(event))
+<span class="hljs-title function_">handleKeyPress</span>();
+<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">&quot;keyup&quot;</span>, handleKeyPress);
+copyButtons.<span class="hljs-title function_">forEach</span>((copyButton) =&amp;gt;
+  copyButton.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">&quot;click&quot;</span>, (event) =&amp;gt; <span class="hljs-title function_">copyHashCodeToClipboard</span>(event))
 );
 
-<span class=&quot;hljs-keyword&quot;>function</span> <span class=&quot;hljs-title function_&quot;>handleKeyPress</span>(<span class=&quot;hljs-params&quot;></span>) {
-  <span class=&quot;hljs-keyword&quot;>if</span> (inputText.<span class=&quot;hljs-property&quot;>value</span> == <span class=&quot;hljs-string&quot;>&quot;&quot;</span>) {
-    <span class=&quot;hljs-title class_&quot;>SHA1</span>.<span class=&quot;hljs-property&quot;>innerHTML</span> = <span class=&quot;hljs-string&quot;>&quot;&quot;</span>;
-    <span class=&quot;hljs-title class_&quot;>SHA256</span>.<span class=&quot;hljs-property&quot;>innerHTML</span> = <span class=&quot;hljs-string&quot;>&quot;&quot;</span>;
-    <span class=&quot;hljs-title class_&quot;>SHA384</span>.<span class=&quot;hljs-property&quot;>innerHTML</span> = <span class=&quot;hljs-string&quot;>&quot;&quot;</span>;
-    <span class=&quot;hljs-title class_&quot;>SHA512</span>.<span class=&quot;hljs-property&quot;>innerHTML</span> = <span class=&quot;hljs-string&quot;>&quot;&quot;</span>;
-    <span class=&quot;hljs-keyword&quot;>return</span>;
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">handleKeyPress</span>(<span class="hljs-params"></span>) {{ '{' }}
+  <span class="hljs-keyword">if</span> (inputText.<span class="hljs-property">value</span> == <span class="hljs-string">&quot;&quot;</span>) {{ '{' }}
+    <span class="hljs-title class_">SHA1</span>.<span class="hljs-property">innerHTML</span> = <span class="hljs-string">&quot;&quot;</span>;
+    <span class="hljs-title class_">SHA256</span>.<span class="hljs-property">innerHTML</span> = <span class="hljs-string">&quot;&quot;</span>;
+    <span class="hljs-title class_">SHA384</span>.<span class="hljs-property">innerHTML</span> = <span class="hljs-string">&quot;&quot;</span>;
+    <span class="hljs-title class_">SHA512</span>.<span class="hljs-property">innerHTML</span> = <span class="hljs-string">&quot;&quot;</span>;
+    <span class="hljs-keyword">return</span>;
   }
 
-  <span class=&quot;hljs-title function_&quot;>encode</span>(inputText.<span class=&quot;hljs-property&quot;>value</span>, <span class=&quot;hljs-string&quot;>&quot;SHA-1&quot;</span>).<span class=&quot;hljs-title function_&quot;>then</span>((hash) =&amp;gt; {
-    <span class=&quot;hljs-title class_&quot;>SHA1</span>.<span class=&quot;hljs-property&quot;>innerHTML</span> = hash;
+  <span class="hljs-title function_">encode</span>(inputText.<span class="hljs-property">value</span>, <span class="hljs-string">&quot;SHA-1&quot;</span>).<span class="hljs-title function_">then</span>((hash) =&amp;gt; {{ '{' }}
+    <span class="hljs-title class_">SHA1</span>.<span class="hljs-property">innerHTML</span> = hash;
   });
 
-  <span class=&quot;hljs-title function_&quot;>encode</span>(inputText.<span class=&quot;hljs-property&quot;>value</span>, <span class=&quot;hljs-string&quot;>&quot;SHA-256&quot;</span>).<span class=&quot;hljs-title function_&quot;>then</span>((hash) =&amp;gt; {
-    <span class=&quot;hljs-title class_&quot;>SHA256</span>.<span class=&quot;hljs-property&quot;>innerHTML</span> = hash;
+  <span class="hljs-title function_">encode</span>(inputText.<span class="hljs-property">value</span>, <span class="hljs-string">&quot;SHA-256&quot;</span>).<span class="hljs-title function_">then</span>((hash) =&amp;gt; {{ '{' }}
+    <span class="hljs-title class_">SHA256</span>.<span class="hljs-property">innerHTML</span> = hash;
   });
 
-  <span class=&quot;hljs-title function_&quot;>encode</span>(inputText.<span class=&quot;hljs-property&quot;>value</span>, <span class=&quot;hljs-string&quot;>&quot;SHA-384&quot;</span>).<span class=&quot;hljs-title function_&quot;>then</span>((hash) =&amp;gt; {
-    <span class=&quot;hljs-title class_&quot;>SHA384</span>.<span class=&quot;hljs-property&quot;>innerHTML</span> = hash;
+  <span class="hljs-title function_">encode</span>(inputText.<span class="hljs-property">value</span>, <span class="hljs-string">&quot;SHA-384&quot;</span>).<span class="hljs-title function_">then</span>((hash) =&amp;gt; {{ '{' }}
+    <span class="hljs-title class_">SHA384</span>.<span class="hljs-property">innerHTML</span> = hash;
   });
 
-  <span class=&quot;hljs-title function_&quot;>encode</span>(inputText.<span class=&quot;hljs-property&quot;>value</span>, <span class=&quot;hljs-string&quot;>&quot;SHA-512&quot;</span>).<span class=&quot;hljs-title function_&quot;>then</span>((hash) =&amp;gt; {
-    <span class=&quot;hljs-title class_&quot;>SHA512</span>.<span class=&quot;hljs-property&quot;>innerHTML</span> = hash;
+  <span class="hljs-title function_">encode</span>(inputText.<span class="hljs-property">value</span>, <span class="hljs-string">&quot;SHA-512&quot;</span>).<span class="hljs-title function_">then</span>((hash) =&amp;gt; {{ '{' }}
+    <span class="hljs-title class_">SHA512</span>.<span class="hljs-property">innerHTML</span> = hash;
   });
 }
 
-<span class=&quot;hljs-keyword&quot;>async</span> <span class=&quot;hljs-keyword&quot;>function</span> <span class=&quot;hljs-title function_&quot;>encode</span>(<span class=&quot;hljs-params&quot;>text, algo</span>) {
-  <span class=&quot;hljs-keyword&quot;>const</span> encoder = <span class=&quot;hljs-keyword&quot;>new</span> <span class=&quot;hljs-title class_&quot;>TextEncoder</span>();
-  <span class=&quot;hljs-keyword&quot;>const</span> data = encoder.<span class=&quot;hljs-title function_&quot;>encode</span>(text);
-  <span class=&quot;hljs-keyword&quot;>const</span> hashBuffer = <span class=&quot;hljs-keyword&quot;>await</span> crypto.<span class=&quot;hljs-property&quot;>subtle</span>.<span class=&quot;hljs-title function_&quot;>digest</span>(algo, data);
-  <span class=&quot;hljs-keyword&quot;>const</span> hashArray = <span class=&quot;hljs-title class_&quot;>Array</span>.<span class=&quot;hljs-title function_&quot;>from</span>(<span class=&quot;hljs-keyword&quot;>new</span> <span class=&quot;hljs-title class_&quot;>Uint8Array</span>(hashBuffer));
-  <span class=&quot;hljs-keyword&quot;>const</span> hashHex = hashArray
-    .<span class=&quot;hljs-title function_&quot;>map</span>((byte) =&amp;gt; byte.<span class=&quot;hljs-title function_&quot;>toString</span>(<span class=&quot;hljs-number&quot;>16</span>).<span class=&quot;hljs-title function_&quot;>padStart</span>(<span class=&quot;hljs-number&quot;>2</span>, <span class=&quot;hljs-string&quot;>&quot;0&quot;</span>))
-    .<span class=&quot;hljs-title function_&quot;>join</span>(<span class=&quot;hljs-string&quot;>&quot;&quot;</span>);
-  <span class=&quot;hljs-keyword&quot;>return</span> hashHex;
+<span class="hljs-keyword">async</span> <span class="hljs-keyword">function</span> <span class="hljs-title function_">encode</span>(<span class="hljs-params">text, algo</span>) {{ '{' }}
+  <span class="hljs-keyword">const</span> encoder = <span class="hljs-keyword">new</span> <span class="hljs-title class_">TextEncoder</span>();
+  <span class="hljs-keyword">const</span> data = encoder.<span class="hljs-title function_">encode</span>(text);
+  <span class="hljs-keyword">const</span> hashBuffer = <span class="hljs-keyword">await</span> crypto.<span class="hljs-property">subtle</span>.<span class="hljs-title function_">digest</span>(algo, data);
+  <span class="hljs-keyword">const</span> hashArray = <span class="hljs-title class_">Array</span>.<span class="hljs-title function_">from</span>(<span class="hljs-keyword">new</span> <span class="hljs-title class_">Uint8Array</span>(hashBuffer));
+  <span class="hljs-keyword">const</span> hashHex = hashArray
+    .<span class="hljs-title function_">map</span>((byte) =&amp;gt; byte.<span class="hljs-title function_">toString</span>(<span class="hljs-number">16</span>).<span class="hljs-title function_">padStart</span>(<span class="hljs-number">2</span>, <span class="hljs-string">&quot;0&quot;</span>))
+    .<span class="hljs-title function_">join</span>(<span class="hljs-string">&quot;&quot;</span>);
+  <span class="hljs-keyword">return</span> hashHex;
 }
 
-<span class=&quot;hljs-keyword&quot;>async</span> <span class=&quot;hljs-keyword&quot;>function</span> <span class=&quot;hljs-title function_&quot;>copyHashCodeToClipboard</span>(<span class=&quot;hljs-params&quot;>event</span>) {
-  <span class=&quot;hljs-keyword&quot;>try</span> {
-    <span class=&quot;hljs-keyword&quot;>if</span> (!navigator?.<span class=&quot;hljs-property&quot;>clipboard</span>?.<span class=&quot;hljs-property&quot;>writeText</span>) {
-      <span class=&quot;hljs-keyword&quot;>return</span>;
+<span class="hljs-keyword">async</span> <span class="hljs-keyword">function</span> <span class="hljs-title function_">copyHashCodeToClipboard</span>(<span class="hljs-params">event</span>) {{ '{' }}
+  <span class="hljs-keyword">try</span> {{ '{' }}
+    <span class="hljs-keyword">if</span> (!navigator?.<span class="hljs-property">clipboard</span>?.<span class="hljs-property">writeText</span>) {{ '{' }}
+      <span class="hljs-keyword">return</span>;
     }
-    <span class=&quot;hljs-keyword&quot;>const</span> hashCodeElement = event.<span class=&quot;hljs-property&quot;>target</span>.<span class=&quot;hljs-title function_&quot;>closest</span>(<span class=&quot;hljs-string&quot;>&quot;.calculated-hash-container&quot;</span>).<span class=&quot;hljs-title function_&quot;>querySelector</span>(<span class=&quot;hljs-string&quot;>&quot;.hash-code-value&quot;</span>);
+    <span class="hljs-keyword">const</span> hashCodeElement = event.<span class="hljs-property">target</span>.<span class="hljs-title function_">closest</span>(<span class="hljs-string">&quot;.calculated-hash-container&quot;</span>).<span class="hljs-title function_">querySelector</span>(<span class="hljs-string">&quot;.hash-code-value&quot;</span>);
 
-    <span class=&quot;hljs-keyword&quot;>await</span> navigator.<span class=&quot;hljs-property&quot;>clipboard</span>.<span class=&quot;hljs-title function_&quot;>writeText</span>(hashCodeElement.<span class=&quot;hljs-property&quot;>textContent</span>);
-    <span class=&quot;hljs-keyword&quot;>const</span> hashCodeValue = hashCodeElement.<span class=&quot;hljs-property&quot;>textContent</span>;
-    hashCodeElement.<span class=&quot;hljs-property&quot;>textContent</span> = <span class=&quot;hljs-string&quot;>&#x27;Copied!&#x27;</span>;
-    <span class=&quot;hljs-built_in&quot;>setTimeout</span>(() =&amp;gt; hashCodeElement.<span class=&quot;hljs-property&quot;>textContent</span> = hashCodeValue, <span class=&quot;hljs-string&quot;>&quot;1000&quot;</span>);
-  } <span class=&quot;hljs-keyword&quot;>catch</span> (err) {
-    <span class=&quot;hljs-variable language_&quot;>console</span>.<span class=&quot;hljs-title function_&quot;>error</span>(err);
+    <span class="hljs-keyword">await</span> navigator.<span class="hljs-property">clipboard</span>.<span class="hljs-title function_">writeText</span>(hashCodeElement.<span class="hljs-property">textContent</span>);
+    <span class="hljs-keyword">const</span> hashCodeValue = hashCodeElement.<span class="hljs-property">textContent</span>;
+    hashCodeElement.<span class="hljs-property">textContent</span> = <span class="hljs-string">&#x27;Copied!&#x27;</span>;
+    <span class="hljs-built_in">setTimeout</span>(() =&amp;gt; hashCodeElement.<span class="hljs-property">textContent</span> = hashCodeValue, <span class="hljs-string">&quot;1000&quot;</span>);
+  } <span class="hljs-keyword">catch</span> (err) {{ '{' }}
+    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">error</span>(err);
   }
 }
 </code></pre></code></pre></li>
 </ul>
 <h2>Ressources</h2>
-<div class=&quot;asset&quot;>
-  <img src=&quot;../../../assets/blog/hash-generator/background.jpg&quot; />
-<p><a href=&quot;../../../assets/blog/hash-generator/background.jpg&quot; title=&quot;background.jpg&quot; download>background.jpg</a></p>
+<div class="asset">
+  <img src="../../../../assets/blog/hash-generator/background.jpg" />
+<p><a href="../../../../assets/blog/hash-generator/background.jpg" title="background.jpg" download>background.jpg</a></p>
 </div>
 <h2>Conclusion</h2>
 <p>Merci de votre lecture. Nous espérons que cet article vous a été utile !</p>
-" blogs="[{&quot;isArticleIndex&quot;:false,&quot;isArticleSection&quot;:false,&quot;isArticleWithSections&quot;:false,&quot;date&quot;:&quot;20231121&quot;,&quot;title&quot;:&quot;Héritage avec JPA&quot;,&quot;withScript&quot;:false,&quot;description&quot;:&quot;Un guide pratique pour comprendre les différentes stratégies d'héritage avec l'API de persistance Java (JPA). Ce guide vous aidera à maîtriser les concepts essentiels pour modéliser efficacement vos entités dans une base de données relationnelle&quot;,&quot;tags&quot;:[&quot;Java&quot;,&quot;JPA&quot;],&quot;image&quot;:&quot;/assets/thumbnail/blog-thumbnail-9.jpg&quot;,&quot;slug&quot;:&quot;java/inheritance-with-jpa&quot;,&quot;summary&quot;:[],&quot;visible&quot;:true},{&quot;isArticleIndex&quot;:false,&quot;isArticleSection&quot;:false,&quot;isArticleWithSections&quot;:false,&quot;date&quot;:&quot;20231116&quot;,&quot;title&quot;:&quot;ThreadLocal en Java&quot;,&quot;withScript&quot;:false,&quot;description&quot;:&quot;Un guide pratique sur la classe ThreadLocal permettant de stocker des données spécifiques aux threads en Java, et d'assurer que chaque thread possède ses propres valeurs isolées, garantissant ainsi la sécurité et l'intégrité des données dans les environnements multithreadés&quot;,&quot;tags&quot;:[&quot;java&quot;,&quot;multithread&quot;],&quot;image&quot;:&quot;/assets/thumbnail/blog-thumbnail-0.jpg&quot;,&quot;slug&quot;:&quot;java/thread-local&quot;,&quot;summary&quot;:[],&quot;visible&quot;:true},{&quot;isArticleIndex&quot;:true,&quot;isArticleSection&quot;:false,&quot;isArticleWithSections&quot;:true,&quot;date&quot;:&quot;20230919&quot;,&quot;title&quot;:&quot;API REST avec Spring&quot;,&quot;withScript&quot;:false,&quot;description&quot;:&quot;Dans cet article, nous allons créer une API REST en utilisant le framework Spring Boot en utilisant une base de données H2 puis PostgreSQL et en ajoutant sa documentation Swagger&quot;,&quot;tags&quot;:[&quot;spring boot&quot;,&quot;api rest&quot;],&quot;image&quot;:&quot;/assets/thumbnail/api-rest-with-spring-boot.png&quot;,&quot;slug&quot;:&quot;spring/api-rest-with-spring-boot&quot;,&quot;summary&quot;:[{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot&quot;,&quot;label&quot;:&quot;Introduction&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/first-version&quot;,&quot;label&quot;:&quot;Première version du projet&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/test-our-api-rest&quot;,&quot;label&quot;:&quot;Tester notre API REST&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/add-validation&quot;,&quot;label&quot;:&quot;Ajouter la couche validation&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/add-exceptions-handlers&quot;,&quot;label&quot;:&quot;Ajouter les exceptions handlers&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/use-postgresql&quot;,&quot;label&quot;:&quot;Utiliser une base PostgreSQL&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/add-swagger&quot;,&quot;label&quot;:&quot;Ajouter Swagger&quot;}],&quot;visible&quot;:true},{&quot;isArticleIndex&quot;:false,&quot;isArticleSection&quot;:true,&quot;isArticleWithSections&quot;:true,&quot;date&quot;:&quot;20230919&quot;,&quot;title&quot;:&quot;API REST avec Spring&quot;,&quot;withScript&quot;:false,&quot;description&quot;:&quot;Dans cet article, nous allons créer une API REST en utilisant le framework Spring Boot en utilisant une base de données H2 puis PostgreSQL et en ajoutant sa documentation Swagger&quot;,&quot;tags&quot;:[&quot;spring boot&quot;,&quot;api rest&quot;],&quot;image&quot;:&quot;/assets/thumbnail/api-rest-with-spring-boot.png&quot;,&quot;slug&quot;:&quot;spring/api-rest-with-spring-boot/first-version&quot;,&quot;summary&quot;:[{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot&quot;,&quot;label&quot;:&quot;Introduction&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/first-version&quot;,&quot;label&quot;:&quot;Première version du projet&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/test-our-api-rest&quot;,&quot;label&quot;:&quot;Tester notre API REST&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/add-validation&quot;,&quot;label&quot;:&quot;Ajouter la couche validation&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/add-exceptions-handlers&quot;,&quot;label&quot;:&quot;Ajouter les exceptions handlers&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/use-postgresql&quot;,&quot;label&quot;:&quot;Utiliser une base PostgreSQL&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/add-swagger&quot;,&quot;label&quot;:&quot;Ajouter Swagger&quot;}],&quot;visible&quot;:true},{&quot;isArticleIndex&quot;:false,&quot;isArticleSection&quot;:true,&quot;isArticleWithSections&quot;:true,&quot;date&quot;:&quot;20230919&quot;,&quot;title&quot;:&quot;API REST avec Spring&quot;,&quot;withScript&quot;:false,&quot;description&quot;:&quot;Dans cet article, nous allons créer une API REST en utilisant le framework Spring Boot en utilisant une base de données H2 puis PostgreSQL et en ajoutant sa documentation Swagger&quot;,&quot;tags&quot;:[&quot;spring boot&quot;,&quot;api rest&quot;],&quot;image&quot;:&quot;/assets/thumbnail/api-rest-with-spring-boot.png&quot;,&quot;slug&quot;:&quot;spring/api-rest-with-spring-boot/test-our-api-rest&quot;,&quot;summary&quot;:[{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot&quot;,&quot;label&quot;:&quot;Introduction&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/first-version&quot;,&quot;label&quot;:&quot;Première version du projet&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/test-our-api-rest&quot;,&quot;label&quot;:&quot;Tester notre API REST&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/add-validation&quot;,&quot;label&quot;:&quot;Ajouter la couche validation&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/add-exceptions-handlers&quot;,&quot;label&quot;:&quot;Ajouter les exceptions handlers&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/use-postgresql&quot;,&quot;label&quot;:&quot;Utiliser une base PostgreSQL&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/add-swagger&quot;,&quot;label&quot;:&quot;Ajouter Swagger&quot;}],&quot;visible&quot;:true},{&quot;isArticleIndex&quot;:false,&quot;isArticleSection&quot;:true,&quot;isArticleWithSections&quot;:true,&quot;date&quot;:&quot;20230919&quot;,&quot;title&quot;:&quot;API REST avec Spring&quot;,&quot;withScript&quot;:false,&quot;description&quot;:&quot;Dans cet article, nous allons créer une API REST en utilisant le framework Spring Boot en utilisant une base de données H2 puis PostgreSQL et en ajoutant sa documentation Swagger&quot;,&quot;tags&quot;:[&quot;spring boot&quot;,&quot;api rest&quot;],&quot;image&quot;:&quot;/assets/thumbnail/api-rest-with-spring-boot.png&quot;,&quot;slug&quot;:&quot;spring/api-rest-with-spring-boot/add-validation&quot;,&quot;summary&quot;:[{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot&quot;,&quot;label&quot;:&quot;Introduction&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/first-version&quot;,&quot;label&quot;:&quot;Première version du projet&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/test-our-api-rest&quot;,&quot;label&quot;:&quot;Tester notre API REST&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/add-validation&quot;,&quot;label&quot;:&quot;Ajouter la couche validation&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/add-exceptions-handlers&quot;,&quot;label&quot;:&quot;Ajouter les exceptions handlers&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/use-postgresql&quot;,&quot;label&quot;:&quot;Utiliser une base PostgreSQL&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/add-swagger&quot;,&quot;label&quot;:&quot;Ajouter Swagger&quot;}],&quot;visible&quot;:true},{&quot;isArticleIndex&quot;:false,&quot;isArticleSection&quot;:true,&quot;isArticleWithSections&quot;:true,&quot;date&quot;:&quot;20230919&quot;,&quot;title&quot;:&quot;API REST avec Spring&quot;,&quot;withScript&quot;:false,&quot;description&quot;:&quot;Dans cet article, nous allons créer une API REST en utilisant le framework Spring Boot en utilisant une base de données H2 puis PostgreSQL et en ajoutant sa documentation Swagger&quot;,&quot;tags&quot;:[&quot;spring boot&quot;,&quot;api rest&quot;],&quot;image&quot;:&quot;/assets/thumbnail/api-rest-with-spring-boot.png&quot;,&quot;slug&quot;:&quot;spring/api-rest-with-spring-boot/add-exceptions-handlers&quot;,&quot;summary&quot;:[{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot&quot;,&quot;label&quot;:&quot;Introduction&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/first-version&quot;,&quot;label&quot;:&quot;Première version du projet&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/test-our-api-rest&quot;,&quot;label&quot;:&quot;Tester notre API REST&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/add-validation&quot;,&quot;label&quot;:&quot;Ajouter la couche validation&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/add-exceptions-handlers&quot;,&quot;label&quot;:&quot;Ajouter les exceptions handlers&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/use-postgresql&quot;,&quot;label&quot;:&quot;Utiliser une base PostgreSQL&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/add-swagger&quot;,&quot;label&quot;:&quot;Ajouter Swagger&quot;}],&quot;visible&quot;:true},{&quot;isArticleIndex&quot;:false,&quot;isArticleSection&quot;:true,&quot;isArticleWithSections&quot;:true,&quot;date&quot;:&quot;20230919&quot;,&quot;title&quot;:&quot;API REST avec Spring&quot;,&quot;withScript&quot;:false,&quot;description&quot;:&quot;Dans cet article, nous allons créer une API REST en utilisant le framework Spring Boot en utilisant une base de données H2 puis PostgreSQL et en ajoutant sa documentation Swagger&quot;,&quot;tags&quot;:[&quot;spring boot&quot;,&quot;api rest&quot;],&quot;image&quot;:&quot;/assets/thumbnail/api-rest-with-spring-boot.png&quot;,&quot;slug&quot;:&quot;spring/api-rest-with-spring-boot/use-postgresql&quot;,&quot;summary&quot;:[{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot&quot;,&quot;label&quot;:&quot;Introduction&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/first-version&quot;,&quot;label&quot;:&quot;Première version du projet&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/test-our-api-rest&quot;,&quot;label&quot;:&quot;Tester notre API REST&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/add-validation&quot;,&quot;label&quot;:&quot;Ajouter la couche validation&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/add-exceptions-handlers&quot;,&quot;label&quot;:&quot;Ajouter les exceptions handlers&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/use-postgresql&quot;,&quot;label&quot;:&quot;Utiliser une base PostgreSQL&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/add-swagger&quot;,&quot;label&quot;:&quot;Ajouter Swagger&quot;}],&quot;visible&quot;:true},{&quot;isArticleIndex&quot;:false,&quot;isArticleSection&quot;:true,&quot;isArticleWithSections&quot;:true,&quot;date&quot;:&quot;20230919&quot;,&quot;title&quot;:&quot;API REST avec Spring&quot;,&quot;withScript&quot;:false,&quot;description&quot;:&quot;Dans cet article, nous allons créer une API REST en utilisant le framework Spring Boot en utilisant une base de données H2 puis PostgreSQL et en ajoutant sa documentation Swagger&quot;,&quot;tags&quot;:[&quot;spring boot&quot;,&quot;api rest&quot;],&quot;image&quot;:&quot;/assets/thumbnail/api-rest-with-spring-boot.png&quot;,&quot;slug&quot;:&quot;spring/api-rest-with-spring-boot/add-swagger&quot;,&quot;summary&quot;:[{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot&quot;,&quot;label&quot;:&quot;Introduction&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/first-version&quot;,&quot;label&quot;:&quot;Première version du projet&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/test-our-api-rest&quot;,&quot;label&quot;:&quot;Tester notre API REST&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/add-validation&quot;,&quot;label&quot;:&quot;Ajouter la couche validation&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/add-exceptions-handlers&quot;,&quot;label&quot;:&quot;Ajouter les exceptions handlers&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/use-postgresql&quot;,&quot;label&quot;:&quot;Utiliser une base PostgreSQL&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/add-swagger&quot;,&quot;label&quot;:&quot;Ajouter Swagger&quot;}],&quot;visible&quot;:true},{&quot;isArticleIndex&quot;:false,&quot;isArticleSection&quot;:false,&quot;isArticleWithSections&quot;:false,&quot;date&quot;:&quot;20230618&quot;,&quot;title&quot;:&quot;Les jointures en SQL&quot;,&quot;withScript&quot;:false,&quot;description&quot;:&quot;Dans cet article, nous allons apprendre les types de jointures SQL, y compris inner join, left join, right join et full outer join. Nous couvrirons leur syntaxe, leurs différences et des exemples pratiques pour une meilleure compréhension&quot;,&quot;tags&quot;:[&quot;sql&quot;,&quot;jointure&quot;],&quot;image&quot;:&quot;/assets/thumbnail/blog-thumbnail-2.jpg&quot;,&quot;slug&quot;:&quot;sql/joins-types&quot;,&quot;summary&quot;:[],&quot;visible&quot;:true}]"></app-main>
+" blogs="[{&quot;isArticleIndex&quot;:false,&quot;isArticleSection&quot;:false,&quot;isArticleWithSections&quot;:false,&quot;date&quot;:&quot;20231121&quot;,&quot;title&quot;:&quot;Héritage avec JPA&quot;,&quot;withScript&quot;:false,&quot;description&quot;:&quot;Un guide pratique pour comprendre les différentes stratégies d'héritage avec l'API de persistance Java (JPA). Ce guide vous aidera à maîtriser les concepts essentiels pour modéliser efficacement vos entités dans une base de données relationnelle&quot;,&quot;tags&quot;:[&quot;Java&quot;,&quot;JPA&quot;],&quot;image&quot;:&quot;/assets/thumbnail/blog-thumbnail-9.jpg&quot;,&quot;slug&quot;:&quot;java/inheritance-with-jpa&quot;,&quot;summary&quot;:[],&quot;visible&quot;:true},{&quot;isArticleIndex&quot;:false,&quot;isArticleSection&quot;:false,&quot;isArticleWithSections&quot;:false,&quot;date&quot;:&quot;20231116&quot;,&quot;title&quot;:&quot;ThreadLocal en Java&quot;,&quot;withScript&quot;:false,&quot;description&quot;:&quot;Un guide pratique sur la classe ThreadLocal permettant de stocker des données spécifiques aux threads en Java, et d'assurer que chaque thread possède ses propres valeurs isolées, garantissant ainsi la sécurité et l'intégrité des données dans les environnements multithreadés&quot;,&quot;tags&quot;:[&quot;java&quot;,&quot;multithread&quot;],&quot;image&quot;:&quot;/assets/thumbnail/blog-thumbnail-0.jpg&quot;,&quot;slug&quot;:&quot;java/thread-local&quot;,&quot;summary&quot;:[],&quot;visible&quot;:true},{&quot;isArticleIndex&quot;:true,&quot;isArticleSection&quot;:false,&quot;isArticleWithSections&quot;:true,&quot;date&quot;:&quot;20230919&quot;,&quot;title&quot;:&quot;API REST avec Spring&quot;,&quot;withScript&quot;:false,&quot;description&quot;:&quot;Dans cet article, nous allons créer une API REST en utilisant le framework Spring Boot en utilisant une base de données H2 puis PostgreSQL et en ajoutant sa documentation Swagger&quot;,&quot;tags&quot;:[&quot;spring boot&quot;,&quot;api rest&quot;],&quot;image&quot;:&quot;/assets/thumbnail/api-rest-with-spring-boot.png&quot;,&quot;slug&quot;:&quot;spring/api-rest-with-spring-boot&quot;,&quot;summary&quot;:[{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot&quot;,&quot;label&quot;:&quot;Introduction&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/first-version&quot;,&quot;label&quot;:&quot;#Première version du projet&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/test-our-api-rest&quot;,&quot;label&quot;:&quot;#Tester notre API REST&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/add-validation&quot;,&quot;label&quot;:&quot;#Ajouter la couche validation&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/add-exceptions-handlers&quot;,&quot;label&quot;:&quot;#Ajouter les exceptions handlers&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/use-postgresql&quot;,&quot;label&quot;:&quot;#Utiliser une base PostgreSQL&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/add-swagger&quot;,&quot;label&quot;:&quot;#Ajouter Swagger&quot;}],&quot;visible&quot;:true},{&quot;isArticleIndex&quot;:false,&quot;isArticleSection&quot;:true,&quot;isArticleWithSections&quot;:true,&quot;date&quot;:&quot;20230919&quot;,&quot;title&quot;:&quot;API REST avec Spring&quot;,&quot;withScript&quot;:false,&quot;description&quot;:&quot;Dans cet article, nous allons créer une API REST en utilisant le framework Spring Boot en utilisant une base de données H2 puis PostgreSQL et en ajoutant sa documentation Swagger&quot;,&quot;tags&quot;:[&quot;spring boot&quot;,&quot;api rest&quot;],&quot;image&quot;:&quot;/assets/thumbnail/api-rest-with-spring-boot.png&quot;,&quot;slug&quot;:&quot;spring/api-rest-with-spring-boot/first-version&quot;,&quot;summary&quot;:[{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot&quot;,&quot;label&quot;:&quot;Introduction&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/first-version&quot;,&quot;label&quot;:&quot;#Première version du projet&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/test-our-api-rest&quot;,&quot;label&quot;:&quot;#Tester notre API REST&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/add-validation&quot;,&quot;label&quot;:&quot;#Ajouter la couche validation&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/add-exceptions-handlers&quot;,&quot;label&quot;:&quot;#Ajouter les exceptions handlers&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/use-postgresql&quot;,&quot;label&quot;:&quot;#Utiliser une base PostgreSQL&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/add-swagger&quot;,&quot;label&quot;:&quot;#Ajouter Swagger&quot;}],&quot;visible&quot;:true},{&quot;isArticleIndex&quot;:false,&quot;isArticleSection&quot;:true,&quot;isArticleWithSections&quot;:true,&quot;date&quot;:&quot;20230919&quot;,&quot;title&quot;:&quot;API REST avec Spring&quot;,&quot;withScript&quot;:false,&quot;description&quot;:&quot;Dans cet article, nous allons créer une API REST en utilisant le framework Spring Boot en utilisant une base de données H2 puis PostgreSQL et en ajoutant sa documentation Swagger&quot;,&quot;tags&quot;:[&quot;spring boot&quot;,&quot;api rest&quot;],&quot;image&quot;:&quot;/assets/thumbnail/api-rest-with-spring-boot.png&quot;,&quot;slug&quot;:&quot;spring/api-rest-with-spring-boot/test-our-api-rest&quot;,&quot;summary&quot;:[{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot&quot;,&quot;label&quot;:&quot;Introduction&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/first-version&quot;,&quot;label&quot;:&quot;#Première version du projet&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/test-our-api-rest&quot;,&quot;label&quot;:&quot;#Tester notre API REST&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/add-validation&quot;,&quot;label&quot;:&quot;#Ajouter la couche validation&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/add-exceptions-handlers&quot;,&quot;label&quot;:&quot;#Ajouter les exceptions handlers&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/use-postgresql&quot;,&quot;label&quot;:&quot;#Utiliser une base PostgreSQL&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/add-swagger&quot;,&quot;label&quot;:&quot;#Ajouter Swagger&quot;}],&quot;visible&quot;:true},{&quot;isArticleIndex&quot;:false,&quot;isArticleSection&quot;:true,&quot;isArticleWithSections&quot;:true,&quot;date&quot;:&quot;20230919&quot;,&quot;title&quot;:&quot;API REST avec Spring&quot;,&quot;withScript&quot;:false,&quot;description&quot;:&quot;Dans cet article, nous allons créer une API REST en utilisant le framework Spring Boot en utilisant une base de données H2 puis PostgreSQL et en ajoutant sa documentation Swagger&quot;,&quot;tags&quot;:[&quot;spring boot&quot;,&quot;api rest&quot;],&quot;image&quot;:&quot;/assets/thumbnail/api-rest-with-spring-boot.png&quot;,&quot;slug&quot;:&quot;spring/api-rest-with-spring-boot/add-validation&quot;,&quot;summary&quot;:[{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot&quot;,&quot;label&quot;:&quot;Introduction&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/first-version&quot;,&quot;label&quot;:&quot;#Première version du projet&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/test-our-api-rest&quot;,&quot;label&quot;:&quot;#Tester notre API REST&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/add-validation&quot;,&quot;label&quot;:&quot;#Ajouter la couche validation&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/add-exceptions-handlers&quot;,&quot;label&quot;:&quot;#Ajouter les exceptions handlers&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/use-postgresql&quot;,&quot;label&quot;:&quot;#Utiliser une base PostgreSQL&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/add-swagger&quot;,&quot;label&quot;:&quot;#Ajouter Swagger&quot;}],&quot;visible&quot;:true},{&quot;isArticleIndex&quot;:false,&quot;isArticleSection&quot;:true,&quot;isArticleWithSections&quot;:true,&quot;date&quot;:&quot;20230919&quot;,&quot;title&quot;:&quot;API REST avec Spring&quot;,&quot;withScript&quot;:false,&quot;description&quot;:&quot;Dans cet article, nous allons créer une API REST en utilisant le framework Spring Boot en utilisant une base de données H2 puis PostgreSQL et en ajoutant sa documentation Swagger&quot;,&quot;tags&quot;:[&quot;spring boot&quot;,&quot;api rest&quot;],&quot;image&quot;:&quot;/assets/thumbnail/api-rest-with-spring-boot.png&quot;,&quot;slug&quot;:&quot;spring/api-rest-with-spring-boot/add-exceptions-handlers&quot;,&quot;summary&quot;:[{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot&quot;,&quot;label&quot;:&quot;Introduction&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/first-version&quot;,&quot;label&quot;:&quot;#Première version du projet&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/test-our-api-rest&quot;,&quot;label&quot;:&quot;#Tester notre API REST&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/add-validation&quot;,&quot;label&quot;:&quot;#Ajouter la couche validation&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/add-exceptions-handlers&quot;,&quot;label&quot;:&quot;#Ajouter les exceptions handlers&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/use-postgresql&quot;,&quot;label&quot;:&quot;#Utiliser une base PostgreSQL&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/add-swagger&quot;,&quot;label&quot;:&quot;#Ajouter Swagger&quot;}],&quot;visible&quot;:true},{&quot;isArticleIndex&quot;:false,&quot;isArticleSection&quot;:true,&quot;isArticleWithSections&quot;:true,&quot;date&quot;:&quot;20230919&quot;,&quot;title&quot;:&quot;API REST avec Spring&quot;,&quot;withScript&quot;:false,&quot;description&quot;:&quot;Dans cet article, nous allons créer une API REST en utilisant le framework Spring Boot en utilisant une base de données H2 puis PostgreSQL et en ajoutant sa documentation Swagger&quot;,&quot;tags&quot;:[&quot;spring boot&quot;,&quot;api rest&quot;],&quot;image&quot;:&quot;/assets/thumbnail/api-rest-with-spring-boot.png&quot;,&quot;slug&quot;:&quot;spring/api-rest-with-spring-boot/use-postgresql&quot;,&quot;summary&quot;:[{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot&quot;,&quot;label&quot;:&quot;Introduction&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/first-version&quot;,&quot;label&quot;:&quot;#Première version du projet&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/test-our-api-rest&quot;,&quot;label&quot;:&quot;#Tester notre API REST&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/add-validation&quot;,&quot;label&quot;:&quot;#Ajouter la couche validation&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/add-exceptions-handlers&quot;,&quot;label&quot;:&quot;#Ajouter les exceptions handlers&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/use-postgresql&quot;,&quot;label&quot;:&quot;#Utiliser une base PostgreSQL&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/add-swagger&quot;,&quot;label&quot;:&quot;#Ajouter Swagger&quot;}],&quot;visible&quot;:true},{&quot;isArticleIndex&quot;:false,&quot;isArticleSection&quot;:true,&quot;isArticleWithSections&quot;:true,&quot;date&quot;:&quot;20230919&quot;,&quot;title&quot;:&quot;API REST avec Spring&quot;,&quot;withScript&quot;:false,&quot;description&quot;:&quot;Dans cet article, nous allons créer une API REST en utilisant le framework Spring Boot en utilisant une base de données H2 puis PostgreSQL et en ajoutant sa documentation Swagger&quot;,&quot;tags&quot;:[&quot;spring boot&quot;,&quot;api rest&quot;],&quot;image&quot;:&quot;/assets/thumbnail/api-rest-with-spring-boot.png&quot;,&quot;slug&quot;:&quot;spring/api-rest-with-spring-boot/add-swagger&quot;,&quot;summary&quot;:[{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot&quot;,&quot;label&quot;:&quot;Introduction&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/first-version&quot;,&quot;label&quot;:&quot;#Première version du projet&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/test-our-api-rest&quot;,&quot;label&quot;:&quot;#Tester notre API REST&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/add-validation&quot;,&quot;label&quot;:&quot;#Ajouter la couche validation&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/add-exceptions-handlers&quot;,&quot;label&quot;:&quot;#Ajouter les exceptions handlers&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/use-postgresql&quot;,&quot;label&quot;:&quot;#Utiliser une base PostgreSQL&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/add-swagger&quot;,&quot;label&quot;:&quot;#Ajouter Swagger&quot;}],&quot;visible&quot;:true},{&quot;isArticleIndex&quot;:false,&quot;isArticleSection&quot;:false,&quot;isArticleWithSections&quot;:false,&quot;date&quot;:&quot;20230618&quot;,&quot;title&quot;:&quot;Les jointures en SQL&quot;,&quot;withScript&quot;:false,&quot;description&quot;:&quot;Dans cet article, nous allons apprendre les types de jointures SQL, y compris inner join, left join, right join et full outer join. Nous couvrirons leur syntaxe, leurs différences et des exemples pratiques pour une meilleure compréhension&quot;,&quot;tags&quot;:[&quot;sql&quot;,&quot;jointure&quot;],&quot;image&quot;:&quot;/assets/thumbnail/blog-thumbnail-2.jpg&quot;,&quot;slug&quot;:&quot;sql/joins-types&quot;,&quot;summary&quot;:[],&quot;visible&quot;:true}]"></app-main>
 
         </main>
         <app-scroll-top-button></app-scroll-top-button>

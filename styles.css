@@ -8660,8 +8660,7 @@ video {
   .previous-section .label {
     font-size: 1.3rem;
     font-weight: 900;
-    margin-bottom: .7rem;
-    color: #999; }
+    margin-bottom: .7rem; }
   .next-section svg,
   .previous-section svg {
     font-size: 4rem;

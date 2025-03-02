@@ -52,21 +52,21 @@ function formatCode() {
     el.parentNode.replaceChild(wrapper, el);
   });
   document.querySelectorAll('p').forEach((p) => {
-    if (p.innerHTML === '<strong>next-section</strong>') {
+    if (p.innerHTML.endsWith('>next-section</strong>')) {
       const a = p.nextElementSibling.querySelector('a');
       p.nextElementSibling.remove();
       p.insertAdjacentElement("afterend", toNextSectionLink(a));
       p.remove();
       return;
     };
-    if (p.innerHTML === '<strong>previous-section</strong>') {
+    if (p.innerHTML.endsWith('>previous-section</strong>')) {
       const a = p.nextElementSibling.querySelector('a');
       p.nextElementSibling.remove();
       p.insertAdjacentElement("afterend", toPreviousSectionLink(a));
       p.remove();
       return;
     };
-    if (p.innerHTML === '<strong>previous-next-sections</strong>') {
+    if (p.innerHTML.endsWith('>previous-next-sections</strong>')) {
       const links = p.nextElementSibling.querySelectorAll('a')
       const aPrevious = links[0];
       const aNext = links[1];
@@ -96,32 +96,32 @@ function formatCode() {
       p.remove();
       return;
     };
-    if (p.innerHTML === '<strong>method-signature</strong>') {
+    if (p.innerHTML.endsWith('>method-signature</strong>')) {
       p.nextElementSibling.classList.add('method-signature');
       p.remove();
       return;
     };
-    if (p.innerHTML === '<strong>without-line-numbers</strong>') {
+    if (p.innerHTML.endsWith('>without-line-numbers</strong>')) {
       p.nextElementSibling.classList.add('without-line-numbers');
       p.remove();
       return;
     }
-    if (p.innerHTML === '<strong>terminal</strong>') {
+    if (p.innerHTML.endsWith('>terminal</strong>')) {
       p.nextElementSibling.classList.add('terminal');
       p.remove();
       return;
     }
-    if (p.innerHTML === '<strong>code-tabs</strong>') {
+    if (p.innerHTML.endsWith('>code-tabs</strong>')) {
       p.nextElementSibling.classList.add('code-tabs');
       p.remove();
       return;
     }
-    if (p.innerHTML === '<strong>code-tabs-with-max-height</strong>') {
+    if (p.innerHTML.endsWith('>code-tabs-with-max-height</strong>')) {
       p.nextElementSibling.classList.add('code-tabs', 'max-height');
       p.remove();
       return;
     }
-    if (p.innerHTML === '<strong>alert-info</strong>') {
+    if (p.innerHTML.endsWith('>alert-info</strong>')) {
       p.nextElementSibling.classList.add('alert-info');
       p.remove();
       return;
@@ -144,12 +144,12 @@ function formatCode() {
       p.remove();
       return;
     }
-    if (p.innerHTML === '<strong>alert-warn</strong>') {
+    if (p.innerHTML.endsWith('>alert-warn</strong>')) {
       p.nextElementSibling.classList.add('alert-warn');
       p.remove();
       return;
     }
-    if (p.innerHTML === '<strong>alert-error</strong>') {
+    if (p.innerHTML.endsWith('>alert-error</strong>')) {
       p.nextElementSibling.classList.add('alert-error');
       p.remove();
       return;

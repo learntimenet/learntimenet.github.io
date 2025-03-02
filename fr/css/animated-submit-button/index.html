@@ -49,7 +49,7 @@
                         this.page.identifier = window.location.pathname.replace('/en', '');
                     };
                 </script>
-            <script defer src="/fr/css/animated-submit-button/animated-submit-button.ecf8b018efea8cefba4e.js"></script></head>
+            <script defer src="/fr/css/animated-submit-button/animated-submit-button.ddf4dc9da92c4c1dab5a.js"></script></head>
             <body>
                 <div class="loader">
                     <svg class="loader-logo" width="1000" height="1000" viewBox="0 0 1000 1000" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -90,7 +90,7 @@
 <p>Dans cet article, nous allons apprendre à créer un bouton de soumission animé en utilisant HTML, CSS et JavaScript. Avec un code source facile à comprendre, vous pourrez suivre les étapes et créer votre propre version</p>
 <h2>Démo</h2>
 <style>
-  .output {
+  .output {{ '{' }}
     height: 190px;
     display: block;
     overflow: auto;
@@ -101,7 +101,7 @@
     align-items: center;
     justify-content: center;
   }
-  .output button {
+  .output button {{ '{' }}
     position: relative;
     font-size: 20px;
     font-weight: 500;
@@ -115,11 +115,11 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     transition: all linear 0.15s;
   }
-  .output button.animate {
+  .output button.animate {{ '{' }}
     width: 60px;
     color: transparent;
   }
-  .output button.animate::after {
+  .output button.animate::after {{ '{' }}
     transition: all .3s ease-in;
     content: '';
     width: 30px;
@@ -133,7 +133,7 @@
     transform: translate(-50%, -50%);
     animation: spin ease-in 2.5s forwards;
   }
-  .output button.animate::before {
+  .output button.animate::before {{ '{' }}
     transition: all .3s ease-in;
     content: '';
     width: 30px;
@@ -147,131 +147,131 @@
     transform: translate(-50%, -50%) rotate(0deg) scale(0);
     animation: checkmark ease-in 0.15s forwards 2.5s;
   }
-  @keyframes spin {
-    0% {
+  @keyframes spin {{ '{' }}
+    0% {{ '{' }}
       transform: translate(-50%, -50%) rotate(0deg) scale(1);
     }
-    90% {
+    90% {{ '{' }}
       transform: translate(-50%, -50%) rotate(1080deg) scale(1);
     }
-    100% {
+    100% {{ '{' }}
       transform: scale(0);
     }
   }
-  @keyframes checkmark {
-    0% {
+  @keyframes checkmark {{ '{' }}
+    0% {{ '{' }}
       transform: translate(-50%, -50%) rotate(0) scale(0);
     }
-    100% {
+    100% {{ '{' }}
       transform: translate(-50%, -50%) rotate(-45deg) scale(1);
     }
   }
 </style>
-<div class=&quot;output&quot;>
+<div class="output">
   <button>Submit</button>
 </div>
 <h2>Code source</h2>
 <p><strong>code-tabs</strong></p>
 <ul>
 <li><p>index.html</p>
-<pre><code class=&quot;language-html&quot;><pre class=&quot;highlight&quot;><code class=&quot;hljs&quot;><span class=&quot;hljs-meta&quot;>&amp;lt;!DOCTYPE <span class=&quot;hljs-keyword&quot;>html</span>&amp;gt;</span>
-<span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>html</span>&amp;gt;</span>
-<span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>head</span>&amp;gt;</span>
-  <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>link</span> <span class=&quot;hljs-attr&quot;>href</span>=<span class=&quot;hljs-string&quot;>&quot;./style.css&quot;</span> <span class=&quot;hljs-attr&quot;>rel</span>=<span class=&quot;hljs-string&quot;>&quot;stylesheet&quot;</span>&amp;gt;</span>
-<span class=&quot;hljs-tag&quot;>&amp;lt;/<span class=&quot;hljs-name&quot;>head</span>&amp;gt;</span>
-<span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>body</span>&amp;gt;</span>
-  <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>button</span>&amp;gt;</span>Submit<span class=&quot;hljs-tag&quot;>&amp;lt;/<span class=&quot;hljs-name&quot;>button</span>&amp;gt;</span>
-  <span class=&quot;hljs-tag&quot;>&amp;lt;<span class=&quot;hljs-name&quot;>script</span> <span class=&quot;hljs-attr&quot;>src</span>=<span class=&quot;hljs-string&quot;>&quot;./script.js&quot;</span>&amp;gt;</span><span class=&quot;hljs-tag&quot;>&amp;lt;/<span class=&quot;hljs-name&quot;>script</span>&amp;gt;</span>
-<span class=&quot;hljs-tag&quot;>&amp;lt;/<span class=&quot;hljs-name&quot;>body</span>&amp;gt;</span>
+<pre><code class="language-html"><pre class="highlight"><code class="hljs"><span class="hljs-meta">&amp;lt;!DOCTYPE <span class="hljs-keyword">html</span>&amp;gt;</span>
+<span class="hljs-tag">&amp;lt;<span class="hljs-name">html</span>&amp;gt;</span>
+<span class="hljs-tag">&amp;lt;<span class="hljs-name">head</span>&amp;gt;</span>
+  <span class="hljs-tag">&amp;lt;<span class="hljs-name">link</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;./style.css&quot;</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">&quot;stylesheet&quot;</span>&amp;gt;</span>
+<span class="hljs-tag">&amp;lt;/<span class="hljs-name">head</span>&amp;gt;</span>
+<span class="hljs-tag">&amp;lt;<span class="hljs-name">body</span>&amp;gt;</span>
+  <span class="hljs-tag">&amp;lt;<span class="hljs-name">button</span>&amp;gt;</span>Submit<span class="hljs-tag">&amp;lt;/<span class="hljs-name">button</span>&amp;gt;</span>
+  <span class="hljs-tag">&amp;lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;./script.js&quot;</span>&amp;gt;</span><span class="hljs-tag">&amp;lt;/<span class="hljs-name">script</span>&amp;gt;</span>
+<span class="hljs-tag">&amp;lt;/<span class="hljs-name">body</span>&amp;gt;</span>
 </code></pre></code></pre></li>
 <li><p>style.css</p>
-<pre><code class=&quot;language-css&quot;><pre class=&quot;highlight&quot;><code class=&quot;hljs&quot;><span class=&quot;hljs-selector-tag&quot;>button</span> {
-  <span class=&quot;hljs-attribute&quot;>position</span>: relative;
-  <span class=&quot;hljs-attribute&quot;>font-size</span>: <span class=&quot;hljs-number&quot;>20px</span>;
-  <span class=&quot;hljs-attribute&quot;>font-weight</span>: <span class=&quot;hljs-number&quot;>500</span>;
-  <span class=&quot;hljs-attribute&quot;>color</span>: <span class=&quot;hljs-number&quot;>#fefefe</span>;
-  <span class=&quot;hljs-attribute&quot;>background</span>: <span class=&quot;hljs-number&quot;>#ffbe2f</span>;
-  <span class=&quot;hljs-attribute&quot;>width</span>: <span class=&quot;hljs-number&quot;>250px</span>;
-  <span class=&quot;hljs-attribute&quot;>height</span>: <span class=&quot;hljs-number&quot;>60px</span>;
-  <span class=&quot;hljs-attribute&quot;>padding</span>: <span class=&quot;hljs-number&quot;>1em</span>;
-  <span class=&quot;hljs-attribute&quot;>border</span>: <span class=&quot;hljs-number&quot;>0</span>;
-  <span class=&quot;hljs-attribute&quot;>border-radius</span>: <span class=&quot;hljs-number&quot;>100px</span>;
-  <span class=&quot;hljs-attribute&quot;>box-shadow</span>: <span class=&quot;hljs-number&quot;>0</span> <span class=&quot;hljs-number&quot;>2px</span> <span class=&quot;hljs-number&quot;>4px</span> <span class=&quot;hljs-built_in&quot;>rgba</span>(<span class=&quot;hljs-number&quot;>0</span>, <span class=&quot;hljs-number&quot;>0</span>, <span class=&quot;hljs-number&quot;>0</span>, <span class=&quot;hljs-number&quot;>0.2</span>);
-  <span class=&quot;hljs-attribute&quot;>transition</span>: all linear <span class=&quot;hljs-number&quot;>0.15s</span>;
+<pre><code class="language-css"><pre class="highlight"><code class="hljs"><span class="hljs-selector-tag">button</span> {{ '{' }}
+  <span class="hljs-attribute">position</span>: relative;
+  <span class="hljs-attribute">font-size</span>: <span class="hljs-number">20px</span>;
+  <span class="hljs-attribute">font-weight</span>: <span class="hljs-number">500</span>;
+  <span class="hljs-attribute">color</span>: <span class="hljs-number">#fefefe</span>;
+  <span class="hljs-attribute">background</span>: <span class="hljs-number">#ffbe2f</span>;
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">250px</span>;
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">60px</span>;
+  <span class="hljs-attribute">padding</span>: <span class="hljs-number">1em</span>;
+  <span class="hljs-attribute">border</span>: <span class="hljs-number">0</span>;
+  <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">100px</span>;
+  <span class="hljs-attribute">box-shadow</span>: <span class="hljs-number">0</span> <span class="hljs-number">2px</span> <span class="hljs-number">4px</span> <span class="hljs-built_in">rgba</span>(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0.2</span>);
+  <span class="hljs-attribute">transition</span>: all linear <span class="hljs-number">0.15s</span>;
 }
 
-<span class=&quot;hljs-selector-tag&quot;>button</span><span class=&quot;hljs-selector-class&quot;>.animate</span> {
-  <span class=&quot;hljs-attribute&quot;>width</span>: <span class=&quot;hljs-number&quot;>60px</span>;
-  <span class=&quot;hljs-attribute&quot;>color</span>: transparent;
+<span class="hljs-selector-tag">button</span><span class="hljs-selector-class">.animate</span> {{ '{' }}
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">60px</span>;
+  <span class="hljs-attribute">color</span>: transparent;
 }
 
-<span class=&quot;hljs-selector-tag&quot;>button</span><span class=&quot;hljs-selector-class&quot;>.animate</span><span class=&quot;hljs-selector-pseudo&quot;>::after</span> {
-  <span class=&quot;hljs-attribute&quot;>transition</span>: all .<span class=&quot;hljs-number&quot;>3s</span> ease-in;
-  <span class=&quot;hljs-attribute&quot;>content</span>: <span class=&quot;hljs-string&quot;>&#x27;&#x27;</span>;
-  <span class=&quot;hljs-attribute&quot;>width</span>: <span class=&quot;hljs-number&quot;>30px</span>;
-  <span class=&quot;hljs-attribute&quot;>height</span>: <span class=&quot;hljs-number&quot;>30px</span>;
-  <span class=&quot;hljs-attribute&quot;>border</span>: <span class=&quot;hljs-number&quot;>4px</span> solid <span class=&quot;hljs-number&quot;>#fefefe</span>;
-  <span class=&quot;hljs-attribute&quot;>border-radius</span>: <span class=&quot;hljs-number&quot;>50%</span>;
-  <span class=&quot;hljs-attribute&quot;>border-left-color</span>: transparent;
-  <span class=&quot;hljs-attribute&quot;>position</span>: absolute;
-  <span class=&quot;hljs-attribute&quot;>left</span>: <span class=&quot;hljs-number&quot;>50%</span>;
-  <span class=&quot;hljs-attribute&quot;>top</span>: <span class=&quot;hljs-number&quot;>50%</span>;
-  <span class=&quot;hljs-attribute&quot;>transform</span>: <span class=&quot;hljs-built_in&quot;>translate</span>(-<span class=&quot;hljs-number&quot;>50%</span>, -<span class=&quot;hljs-number&quot;>50%</span>);
-  <span class=&quot;hljs-attribute&quot;>animation</span>: spin ease-in <span class=&quot;hljs-number&quot;>2.5s</span> forwards;
+<span class="hljs-selector-tag">button</span><span class="hljs-selector-class">.animate</span><span class="hljs-selector-pseudo">::after</span> {{ '{' }}
+  <span class="hljs-attribute">transition</span>: all .<span class="hljs-number">3s</span> ease-in;
+  <span class="hljs-attribute">content</span>: <span class="hljs-string">&#x27;&#x27;</span>;
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">30px</span>;
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">30px</span>;
+  <span class="hljs-attribute">border</span>: <span class="hljs-number">4px</span> solid <span class="hljs-number">#fefefe</span>;
+  <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">50%</span>;
+  <span class="hljs-attribute">border-left-color</span>: transparent;
+  <span class="hljs-attribute">position</span>: absolute;
+  <span class="hljs-attribute">left</span>: <span class="hljs-number">50%</span>;
+  <span class="hljs-attribute">top</span>: <span class="hljs-number">50%</span>;
+  <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">translate</span>(-<span class="hljs-number">50%</span>, -<span class="hljs-number">50%</span>);
+  <span class="hljs-attribute">animation</span>: spin ease-in <span class="hljs-number">2.5s</span> forwards;
 }
 
-<span class=&quot;hljs-selector-tag&quot;>button</span><span class=&quot;hljs-selector-class&quot;>.animate</span><span class=&quot;hljs-selector-pseudo&quot;>::before</span> {
-  <span class=&quot;hljs-attribute&quot;>transition</span>: all .<span class=&quot;hljs-number&quot;>3s</span> ease-in;
-  <span class=&quot;hljs-attribute&quot;>content</span>: <span class=&quot;hljs-string&quot;>&#x27;&#x27;</span>;
-  <span class=&quot;hljs-attribute&quot;>width</span>: <span class=&quot;hljs-number&quot;>30px</span>;
-  <span class=&quot;hljs-attribute&quot;>height</span>: <span class=&quot;hljs-number&quot;>15px</span>;
-  <span class=&quot;hljs-attribute&quot;>border</span>: <span class=&quot;hljs-number&quot;>4px</span> solid <span class=&quot;hljs-number&quot;>#fefefe</span>;
-  <span class=&quot;hljs-attribute&quot;>border-right</span>: <span class=&quot;hljs-number&quot;>0</span>;
-  <span class=&quot;hljs-attribute&quot;>border-top</span>: <span class=&quot;hljs-number&quot;>0</span>;
-  <span class=&quot;hljs-attribute&quot;>position</span>: absolute;
-  <span class=&quot;hljs-attribute&quot;>left</span>: <span class=&quot;hljs-number&quot;>50%</span>;
-  <span class=&quot;hljs-attribute&quot;>top</span>: <span class=&quot;hljs-number&quot;>50%</span>;
-  <span class=&quot;hljs-attribute&quot;>transform</span>: <span class=&quot;hljs-built_in&quot;>translate</span>(-<span class=&quot;hljs-number&quot;>50%</span>, -<span class=&quot;hljs-number&quot;>50%</span>) <span class=&quot;hljs-built_in&quot;>rotate</span>(<span class=&quot;hljs-number&quot;>0deg</span>) <span class=&quot;hljs-built_in&quot;>scale</span>(<span class=&quot;hljs-number&quot;>0</span>);
-  <span class=&quot;hljs-attribute&quot;>animation</span>: checkmark ease-in <span class=&quot;hljs-number&quot;>0.15s</span> forwards <span class=&quot;hljs-number&quot;>2.5s</span>;
+<span class="hljs-selector-tag">button</span><span class="hljs-selector-class">.animate</span><span class="hljs-selector-pseudo">::before</span> {{ '{' }}
+  <span class="hljs-attribute">transition</span>: all .<span class="hljs-number">3s</span> ease-in;
+  <span class="hljs-attribute">content</span>: <span class="hljs-string">&#x27;&#x27;</span>;
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">30px</span>;
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">15px</span>;
+  <span class="hljs-attribute">border</span>: <span class="hljs-number">4px</span> solid <span class="hljs-number">#fefefe</span>;
+  <span class="hljs-attribute">border-right</span>: <span class="hljs-number">0</span>;
+  <span class="hljs-attribute">border-top</span>: <span class="hljs-number">0</span>;
+  <span class="hljs-attribute">position</span>: absolute;
+  <span class="hljs-attribute">left</span>: <span class="hljs-number">50%</span>;
+  <span class="hljs-attribute">top</span>: <span class="hljs-number">50%</span>;
+  <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">translate</span>(-<span class="hljs-number">50%</span>, -<span class="hljs-number">50%</span>) <span class="hljs-built_in">rotate</span>(<span class="hljs-number">0deg</span>) <span class="hljs-built_in">scale</span>(<span class="hljs-number">0</span>);
+  <span class="hljs-attribute">animation</span>: checkmark ease-in <span class="hljs-number">0.15s</span> forwards <span class="hljs-number">2.5s</span>;
 }
 
-<span class=&quot;hljs-keyword&quot;>@keyframes</span> spin {
-  <span class=&quot;hljs-number&quot;>0%</span> {
-    <span class=&quot;hljs-attribute&quot;>transform</span>: <span class=&quot;hljs-built_in&quot;>translate</span>(-<span class=&quot;hljs-number&quot;>50%</span>, -<span class=&quot;hljs-number&quot;>50%</span>) <span class=&quot;hljs-built_in&quot;>rotate</span>(<span class=&quot;hljs-number&quot;>0deg</span>) <span class=&quot;hljs-built_in&quot;>scale</span>(<span class=&quot;hljs-number&quot;>1</span>);
+<span class="hljs-keyword">@keyframes</span> spin {{ '{' }}
+  <span class="hljs-number">0%</span> {{ '{' }}
+    <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">translate</span>(-<span class="hljs-number">50%</span>, -<span class="hljs-number">50%</span>) <span class="hljs-built_in">rotate</span>(<span class="hljs-number">0deg</span>) <span class="hljs-built_in">scale</span>(<span class="hljs-number">1</span>);
   }
 
-  <span class=&quot;hljs-number&quot;>90%</span> {
-    <span class=&quot;hljs-attribute&quot;>transform</span>: <span class=&quot;hljs-built_in&quot;>translate</span>(-<span class=&quot;hljs-number&quot;>50%</span>, -<span class=&quot;hljs-number&quot;>50%</span>) <span class=&quot;hljs-built_in&quot;>rotate</span>(<span class=&quot;hljs-number&quot;>1080deg</span>) <span class=&quot;hljs-built_in&quot;>scale</span>(<span class=&quot;hljs-number&quot;>1</span>);
+  <span class="hljs-number">90%</span> {{ '{' }}
+    <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">translate</span>(-<span class="hljs-number">50%</span>, -<span class="hljs-number">50%</span>) <span class="hljs-built_in">rotate</span>(<span class="hljs-number">1080deg</span>) <span class="hljs-built_in">scale</span>(<span class="hljs-number">1</span>);
   }
 
-  <span class=&quot;hljs-number&quot;>100%</span> {
-    <span class=&quot;hljs-attribute&quot;>transform</span>: <span class=&quot;hljs-built_in&quot;>scale</span>(<span class=&quot;hljs-number&quot;>0</span>);
+  <span class="hljs-number">100%</span> {{ '{' }}
+    <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">scale</span>(<span class="hljs-number">0</span>);
   }
 }
 
-<span class=&quot;hljs-keyword&quot;>@keyframes</span> checkmark {
-  <span class=&quot;hljs-number&quot;>0%</span> {
-    <span class=&quot;hljs-attribute&quot;>transform</span>: <span class=&quot;hljs-built_in&quot;>translate</span>(-<span class=&quot;hljs-number&quot;>50%</span>, -<span class=&quot;hljs-number&quot;>50%</span>) <span class=&quot;hljs-built_in&quot;>rotate</span>(<span class=&quot;hljs-number&quot;>0</span>) <span class=&quot;hljs-built_in&quot;>scale</span>(<span class=&quot;hljs-number&quot;>0</span>);
+<span class="hljs-keyword">@keyframes</span> checkmark {{ '{' }}
+  <span class="hljs-number">0%</span> {{ '{' }}
+    <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">translate</span>(-<span class="hljs-number">50%</span>, -<span class="hljs-number">50%</span>) <span class="hljs-built_in">rotate</span>(<span class="hljs-number">0</span>) <span class="hljs-built_in">scale</span>(<span class="hljs-number">0</span>);
   }
 
-  <span class=&quot;hljs-number&quot;>100%</span> {
-    <span class=&quot;hljs-attribute&quot;>transform</span>: <span class=&quot;hljs-built_in&quot;>translate</span>(-<span class=&quot;hljs-number&quot;>50%</span>, -<span class=&quot;hljs-number&quot;>50%</span>) <span class=&quot;hljs-built_in&quot;>rotate</span>(-<span class=&quot;hljs-number&quot;>45deg</span>) <span class=&quot;hljs-built_in&quot;>scale</span>(<span class=&quot;hljs-number&quot;>1</span>);
+  <span class="hljs-number">100%</span> {{ '{' }}
+    <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">translate</span>(-<span class="hljs-number">50%</span>, -<span class="hljs-number">50%</span>) <span class="hljs-built_in">rotate</span>(-<span class="hljs-number">45deg</span>) <span class="hljs-built_in">scale</span>(<span class="hljs-number">1</span>);
   }
 }
 </code></pre></code></pre></li>
 <li><p>script.js</p>
-<pre><code class=&quot;language-js&quot;><pre class=&quot;highlight&quot;><code class=&quot;hljs&quot;><span class=&quot;hljs-keyword&quot;>const</span> button = <span class=&quot;hljs-variable language_&quot;>document</span>.<span class=&quot;hljs-title function_&quot;>querySelector</span>(<span class=&quot;hljs-string&quot;>&quot;button&quot;</span>);
-button.<span class=&quot;hljs-title function_&quot;>addEventListener</span>(<span class=&quot;hljs-string&quot;>&#x27;click&#x27;</span>, (e) =&amp;gt; {
-  e.<span class=&quot;hljs-property&quot;>target</span>.<span class=&quot;hljs-property&quot;>classList</span>.<span class=&quot;hljs-title function_&quot;>add</span>(<span class=&quot;hljs-string&quot;>&#x27;animate&#x27;</span>);
-  <span class=&quot;hljs-built_in&quot;>setTimeout</span>(() =&amp;gt; {
-    e.<span class=&quot;hljs-property&quot;>target</span>.<span class=&quot;hljs-property&quot;>classList</span>.<span class=&quot;hljs-title function_&quot;>remove</span>(<span class=&quot;hljs-string&quot;>&#x27;animate&#x27;</span>);
-  }, <span class=&quot;hljs-number&quot;>4500</span>);
+<pre><code class="language-js"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">const</span> button = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelector</span>(<span class="hljs-string">&quot;button&quot;</span>);
+button.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">&#x27;click&#x27;</span>, (e) =&amp;gt; {{ '{' }}
+  e.<span class="hljs-property">target</span>.<span class="hljs-property">classList</span>.<span class="hljs-title function_">add</span>(<span class="hljs-string">&#x27;animate&#x27;</span>);
+  <span class="hljs-built_in">setTimeout</span>(() =&amp;gt; {{ '{' }}
+    e.<span class="hljs-property">target</span>.<span class="hljs-property">classList</span>.<span class="hljs-title function_">remove</span>(<span class="hljs-string">&#x27;animate&#x27;</span>);
+  }, <span class="hljs-number">4500</span>);
 });
 </code></pre></code></pre></li>
 </ul>
 <h2>Conclusion</h2>
 <p>Merci de votre lecture. Nous espérons que cet article vous a été utile !</p>
-" blogs="[{&quot;isArticleIndex&quot;:false,&quot;isArticleSection&quot;:false,&quot;isArticleWithSections&quot;:false,&quot;date&quot;:&quot;20231121&quot;,&quot;title&quot;:&quot;Héritage avec JPA&quot;,&quot;withScript&quot;:false,&quot;description&quot;:&quot;Un guide pratique pour comprendre les différentes stratégies d'héritage avec l'API de persistance Java (JPA). Ce guide vous aidera à maîtriser les concepts essentiels pour modéliser efficacement vos entités dans une base de données relationnelle&quot;,&quot;tags&quot;:[&quot;Java&quot;,&quot;JPA&quot;],&quot;image&quot;:&quot;/assets/thumbnail/blog-thumbnail-9.jpg&quot;,&quot;slug&quot;:&quot;java/inheritance-with-jpa&quot;,&quot;summary&quot;:[],&quot;visible&quot;:true},{&quot;isArticleIndex&quot;:false,&quot;isArticleSection&quot;:false,&quot;isArticleWithSections&quot;:false,&quot;date&quot;:&quot;20231116&quot;,&quot;title&quot;:&quot;ThreadLocal en Java&quot;,&quot;withScript&quot;:false,&quot;description&quot;:&quot;Un guide pratique sur la classe ThreadLocal permettant de stocker des données spécifiques aux threads en Java, et d'assurer que chaque thread possède ses propres valeurs isolées, garantissant ainsi la sécurité et l'intégrité des données dans les environnements multithreadés&quot;,&quot;tags&quot;:[&quot;java&quot;,&quot;multithread&quot;],&quot;image&quot;:&quot;/assets/thumbnail/blog-thumbnail-0.jpg&quot;,&quot;slug&quot;:&quot;java/thread-local&quot;,&quot;summary&quot;:[],&quot;visible&quot;:true},{&quot;isArticleIndex&quot;:true,&quot;isArticleSection&quot;:false,&quot;isArticleWithSections&quot;:true,&quot;date&quot;:&quot;20230919&quot;,&quot;title&quot;:&quot;API REST avec Spring&quot;,&quot;withScript&quot;:false,&quot;description&quot;:&quot;Dans cet article, nous allons créer une API REST en utilisant le framework Spring Boot en utilisant une base de données H2 puis PostgreSQL et en ajoutant sa documentation Swagger&quot;,&quot;tags&quot;:[&quot;spring boot&quot;,&quot;api rest&quot;],&quot;image&quot;:&quot;/assets/thumbnail/api-rest-with-spring-boot.png&quot;,&quot;slug&quot;:&quot;spring/api-rest-with-spring-boot&quot;,&quot;summary&quot;:[{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot&quot;,&quot;label&quot;:&quot;Introduction&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/first-version&quot;,&quot;label&quot;:&quot;Première version du projet&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/test-our-api-rest&quot;,&quot;label&quot;:&quot;Tester notre API REST&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/add-validation&quot;,&quot;label&quot;:&quot;Ajouter la couche validation&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/add-exceptions-handlers&quot;,&quot;label&quot;:&quot;Ajouter les exceptions handlers&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/use-postgresql&quot;,&quot;label&quot;:&quot;Utiliser une base PostgreSQL&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/add-swagger&quot;,&quot;label&quot;:&quot;Ajouter Swagger&quot;}],&quot;visible&quot;:true},{&quot;isArticleIndex&quot;:false,&quot;isArticleSection&quot;:true,&quot;isArticleWithSections&quot;:true,&quot;date&quot;:&quot;20230919&quot;,&quot;title&quot;:&quot;API REST avec Spring&quot;,&quot;withScript&quot;:false,&quot;description&quot;:&quot;Dans cet article, nous allons créer une API REST en utilisant le framework Spring Boot en utilisant une base de données H2 puis PostgreSQL et en ajoutant sa documentation Swagger&quot;,&quot;tags&quot;:[&quot;spring boot&quot;,&quot;api rest&quot;],&quot;image&quot;:&quot;/assets/thumbnail/api-rest-with-spring-boot.png&quot;,&quot;slug&quot;:&quot;spring/api-rest-with-spring-boot/first-version&quot;,&quot;summary&quot;:[{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot&quot;,&quot;label&quot;:&quot;Introduction&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/first-version&quot;,&quot;label&quot;:&quot;Première version du projet&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/test-our-api-rest&quot;,&quot;label&quot;:&quot;Tester notre API REST&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/add-validation&quot;,&quot;label&quot;:&quot;Ajouter la couche validation&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/add-exceptions-handlers&quot;,&quot;label&quot;:&quot;Ajouter les exceptions handlers&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/use-postgresql&quot;,&quot;label&quot;:&quot;Utiliser une base PostgreSQL&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/add-swagger&quot;,&quot;label&quot;:&quot;Ajouter Swagger&quot;}],&quot;visible&quot;:true},{&quot;isArticleIndex&quot;:false,&quot;isArticleSection&quot;:true,&quot;isArticleWithSections&quot;:true,&quot;date&quot;:&quot;20230919&quot;,&quot;title&quot;:&quot;API REST avec Spring&quot;,&quot;withScript&quot;:false,&quot;description&quot;:&quot;Dans cet article, nous allons créer une API REST en utilisant le framework Spring Boot en utilisant une base de données H2 puis PostgreSQL et en ajoutant sa documentation Swagger&quot;,&quot;tags&quot;:[&quot;spring boot&quot;,&quot;api rest&quot;],&quot;image&quot;:&quot;/assets/thumbnail/api-rest-with-spring-boot.png&quot;,&quot;slug&quot;:&quot;spring/api-rest-with-spring-boot/test-our-api-rest&quot;,&quot;summary&quot;:[{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot&quot;,&quot;label&quot;:&quot;Introduction&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/first-version&quot;,&quot;label&quot;:&quot;Première version du projet&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/test-our-api-rest&quot;,&quot;label&quot;:&quot;Tester notre API REST&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/add-validation&quot;,&quot;label&quot;:&quot;Ajouter la couche validation&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/add-exceptions-handlers&quot;,&quot;label&quot;:&quot;Ajouter les exceptions handlers&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/use-postgresql&quot;,&quot;label&quot;:&quot;Utiliser une base PostgreSQL&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/add-swagger&quot;,&quot;label&quot;:&quot;Ajouter Swagger&quot;}],&quot;visible&quot;:true},{&quot;isArticleIndex&quot;:false,&quot;isArticleSection&quot;:true,&quot;isArticleWithSections&quot;:true,&quot;date&quot;:&quot;20230919&quot;,&quot;title&quot;:&quot;API REST avec Spring&quot;,&quot;withScript&quot;:false,&quot;description&quot;:&quot;Dans cet article, nous allons créer une API REST en utilisant le framework Spring Boot en utilisant une base de données H2 puis PostgreSQL et en ajoutant sa documentation Swagger&quot;,&quot;tags&quot;:[&quot;spring boot&quot;,&quot;api rest&quot;],&quot;image&quot;:&quot;/assets/thumbnail/api-rest-with-spring-boot.png&quot;,&quot;slug&quot;:&quot;spring/api-rest-with-spring-boot/add-validation&quot;,&quot;summary&quot;:[{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot&quot;,&quot;label&quot;:&quot;Introduction&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/first-version&quot;,&quot;label&quot;:&quot;Première version du projet&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/test-our-api-rest&quot;,&quot;label&quot;:&quot;Tester notre API REST&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/add-validation&quot;,&quot;label&quot;:&quot;Ajouter la couche validation&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/add-exceptions-handlers&quot;,&quot;label&quot;:&quot;Ajouter les exceptions handlers&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/use-postgresql&quot;,&quot;label&quot;:&quot;Utiliser une base PostgreSQL&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/add-swagger&quot;,&quot;label&quot;:&quot;Ajouter Swagger&quot;}],&quot;visible&quot;:true},{&quot;isArticleIndex&quot;:false,&quot;isArticleSection&quot;:true,&quot;isArticleWithSections&quot;:true,&quot;date&quot;:&quot;20230919&quot;,&quot;title&quot;:&quot;API REST avec Spring&quot;,&quot;withScript&quot;:false,&quot;description&quot;:&quot;Dans cet article, nous allons créer une API REST en utilisant le framework Spring Boot en utilisant une base de données H2 puis PostgreSQL et en ajoutant sa documentation Swagger&quot;,&quot;tags&quot;:[&quot;spring boot&quot;,&quot;api rest&quot;],&quot;image&quot;:&quot;/assets/thumbnail/api-rest-with-spring-boot.png&quot;,&quot;slug&quot;:&quot;spring/api-rest-with-spring-boot/add-exceptions-handlers&quot;,&quot;summary&quot;:[{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot&quot;,&quot;label&quot;:&quot;Introduction&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/first-version&quot;,&quot;label&quot;:&quot;Première version du projet&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/test-our-api-rest&quot;,&quot;label&quot;:&quot;Tester notre API REST&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/add-validation&quot;,&quot;label&quot;:&quot;Ajouter la couche validation&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/add-exceptions-handlers&quot;,&quot;label&quot;:&quot;Ajouter les exceptions handlers&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/use-postgresql&quot;,&quot;label&quot;:&quot;Utiliser une base PostgreSQL&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/add-swagger&quot;,&quot;label&quot;:&quot;Ajouter Swagger&quot;}],&quot;visible&quot;:true},{&quot;isArticleIndex&quot;:false,&quot;isArticleSection&quot;:true,&quot;isArticleWithSections&quot;:true,&quot;date&quot;:&quot;20230919&quot;,&quot;title&quot;:&quot;API REST avec Spring&quot;,&quot;withScript&quot;:false,&quot;description&quot;:&quot;Dans cet article, nous allons créer une API REST en utilisant le framework Spring Boot en utilisant une base de données H2 puis PostgreSQL et en ajoutant sa documentation Swagger&quot;,&quot;tags&quot;:[&quot;spring boot&quot;,&quot;api rest&quot;],&quot;image&quot;:&quot;/assets/thumbnail/api-rest-with-spring-boot.png&quot;,&quot;slug&quot;:&quot;spring/api-rest-with-spring-boot/use-postgresql&quot;,&quot;summary&quot;:[{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot&quot;,&quot;label&quot;:&quot;Introduction&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/first-version&quot;,&quot;label&quot;:&quot;Première version du projet&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/test-our-api-rest&quot;,&quot;label&quot;:&quot;Tester notre API REST&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/add-validation&quot;,&quot;label&quot;:&quot;Ajouter la couche validation&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/add-exceptions-handlers&quot;,&quot;label&quot;:&quot;Ajouter les exceptions handlers&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/use-postgresql&quot;,&quot;label&quot;:&quot;Utiliser une base PostgreSQL&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/add-swagger&quot;,&quot;label&quot;:&quot;Ajouter Swagger&quot;}],&quot;visible&quot;:true},{&quot;isArticleIndex&quot;:false,&quot;isArticleSection&quot;:true,&quot;isArticleWithSections&quot;:true,&quot;date&quot;:&quot;20230919&quot;,&quot;title&quot;:&quot;API REST avec Spring&quot;,&quot;withScript&quot;:false,&quot;description&quot;:&quot;Dans cet article, nous allons créer une API REST en utilisant le framework Spring Boot en utilisant une base de données H2 puis PostgreSQL et en ajoutant sa documentation Swagger&quot;,&quot;tags&quot;:[&quot;spring boot&quot;,&quot;api rest&quot;],&quot;image&quot;:&quot;/assets/thumbnail/api-rest-with-spring-boot.png&quot;,&quot;slug&quot;:&quot;spring/api-rest-with-spring-boot/add-swagger&quot;,&quot;summary&quot;:[{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot&quot;,&quot;label&quot;:&quot;Introduction&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/first-version&quot;,&quot;label&quot;:&quot;Première version du projet&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/test-our-api-rest&quot;,&quot;label&quot;:&quot;Tester notre API REST&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/add-validation&quot;,&quot;label&quot;:&quot;Ajouter la couche validation&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/add-exceptions-handlers&quot;,&quot;label&quot;:&quot;Ajouter les exceptions handlers&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/use-postgresql&quot;,&quot;label&quot;:&quot;Utiliser une base PostgreSQL&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/add-swagger&quot;,&quot;label&quot;:&quot;Ajouter Swagger&quot;}],&quot;visible&quot;:true},{&quot;isArticleIndex&quot;:false,&quot;isArticleSection&quot;:false,&quot;isArticleWithSections&quot;:false,&quot;date&quot;:&quot;20230618&quot;,&quot;title&quot;:&quot;Les jointures en SQL&quot;,&quot;withScript&quot;:false,&quot;description&quot;:&quot;Dans cet article, nous allons apprendre les types de jointures SQL, y compris inner join, left join, right join et full outer join. Nous couvrirons leur syntaxe, leurs différences et des exemples pratiques pour une meilleure compréhension&quot;,&quot;tags&quot;:[&quot;sql&quot;,&quot;jointure&quot;],&quot;image&quot;:&quot;/assets/thumbnail/blog-thumbnail-2.jpg&quot;,&quot;slug&quot;:&quot;sql/joins-types&quot;,&quot;summary&quot;:[],&quot;visible&quot;:true}]"></app-main>
+" blogs="[{&quot;isArticleIndex&quot;:false,&quot;isArticleSection&quot;:false,&quot;isArticleWithSections&quot;:false,&quot;date&quot;:&quot;20231121&quot;,&quot;title&quot;:&quot;Héritage avec JPA&quot;,&quot;withScript&quot;:false,&quot;description&quot;:&quot;Un guide pratique pour comprendre les différentes stratégies d'héritage avec l'API de persistance Java (JPA). Ce guide vous aidera à maîtriser les concepts essentiels pour modéliser efficacement vos entités dans une base de données relationnelle&quot;,&quot;tags&quot;:[&quot;Java&quot;,&quot;JPA&quot;],&quot;image&quot;:&quot;/assets/thumbnail/blog-thumbnail-9.jpg&quot;,&quot;slug&quot;:&quot;java/inheritance-with-jpa&quot;,&quot;summary&quot;:[],&quot;visible&quot;:true},{&quot;isArticleIndex&quot;:false,&quot;isArticleSection&quot;:false,&quot;isArticleWithSections&quot;:false,&quot;date&quot;:&quot;20231116&quot;,&quot;title&quot;:&quot;ThreadLocal en Java&quot;,&quot;withScript&quot;:false,&quot;description&quot;:&quot;Un guide pratique sur la classe ThreadLocal permettant de stocker des données spécifiques aux threads en Java, et d'assurer que chaque thread possède ses propres valeurs isolées, garantissant ainsi la sécurité et l'intégrité des données dans les environnements multithreadés&quot;,&quot;tags&quot;:[&quot;java&quot;,&quot;multithread&quot;],&quot;image&quot;:&quot;/assets/thumbnail/blog-thumbnail-0.jpg&quot;,&quot;slug&quot;:&quot;java/thread-local&quot;,&quot;summary&quot;:[],&quot;visible&quot;:true},{&quot;isArticleIndex&quot;:true,&quot;isArticleSection&quot;:false,&quot;isArticleWithSections&quot;:true,&quot;date&quot;:&quot;20230919&quot;,&quot;title&quot;:&quot;API REST avec Spring&quot;,&quot;withScript&quot;:false,&quot;description&quot;:&quot;Dans cet article, nous allons créer une API REST en utilisant le framework Spring Boot en utilisant une base de données H2 puis PostgreSQL et en ajoutant sa documentation Swagger&quot;,&quot;tags&quot;:[&quot;spring boot&quot;,&quot;api rest&quot;],&quot;image&quot;:&quot;/assets/thumbnail/api-rest-with-spring-boot.png&quot;,&quot;slug&quot;:&quot;spring/api-rest-with-spring-boot&quot;,&quot;summary&quot;:[{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot&quot;,&quot;label&quot;:&quot;Introduction&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/first-version&quot;,&quot;label&quot;:&quot;#Première version du projet&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/test-our-api-rest&quot;,&quot;label&quot;:&quot;#Tester notre API REST&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/add-validation&quot;,&quot;label&quot;:&quot;#Ajouter la couche validation&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/add-exceptions-handlers&quot;,&quot;label&quot;:&quot;#Ajouter les exceptions handlers&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/use-postgresql&quot;,&quot;label&quot;:&quot;#Utiliser une base PostgreSQL&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/add-swagger&quot;,&quot;label&quot;:&quot;#Ajouter Swagger&quot;}],&quot;visible&quot;:true},{&quot;isArticleIndex&quot;:false,&quot;isArticleSection&quot;:true,&quot;isArticleWithSections&quot;:true,&quot;date&quot;:&quot;20230919&quot;,&quot;title&quot;:&quot;API REST avec Spring&quot;,&quot;withScript&quot;:false,&quot;description&quot;:&quot;Dans cet article, nous allons créer une API REST en utilisant le framework Spring Boot en utilisant une base de données H2 puis PostgreSQL et en ajoutant sa documentation Swagger&quot;,&quot;tags&quot;:[&quot;spring boot&quot;,&quot;api rest&quot;],&quot;image&quot;:&quot;/assets/thumbnail/api-rest-with-spring-boot.png&quot;,&quot;slug&quot;:&quot;spring/api-rest-with-spring-boot/first-version&quot;,&quot;summary&quot;:[{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot&quot;,&quot;label&quot;:&quot;Introduction&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/first-version&quot;,&quot;label&quot;:&quot;#Première version du projet&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/test-our-api-rest&quot;,&quot;label&quot;:&quot;#Tester notre API REST&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/add-validation&quot;,&quot;label&quot;:&quot;#Ajouter la couche validation&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/add-exceptions-handlers&quot;,&quot;label&quot;:&quot;#Ajouter les exceptions handlers&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/use-postgresql&quot;,&quot;label&quot;:&quot;#Utiliser une base PostgreSQL&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/add-swagger&quot;,&quot;label&quot;:&quot;#Ajouter Swagger&quot;}],&quot;visible&quot;:true},{&quot;isArticleIndex&quot;:false,&quot;isArticleSection&quot;:true,&quot;isArticleWithSections&quot;:true,&quot;date&quot;:&quot;20230919&quot;,&quot;title&quot;:&quot;API REST avec Spring&quot;,&quot;withScript&quot;:false,&quot;description&quot;:&quot;Dans cet article, nous allons créer une API REST en utilisant le framework Spring Boot en utilisant une base de données H2 puis PostgreSQL et en ajoutant sa documentation Swagger&quot;,&quot;tags&quot;:[&quot;spring boot&quot;,&quot;api rest&quot;],&quot;image&quot;:&quot;/assets/thumbnail/api-rest-with-spring-boot.png&quot;,&quot;slug&quot;:&quot;spring/api-rest-with-spring-boot/test-our-api-rest&quot;,&quot;summary&quot;:[{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot&quot;,&quot;label&quot;:&quot;Introduction&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/first-version&quot;,&quot;label&quot;:&quot;#Première version du projet&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/test-our-api-rest&quot;,&quot;label&quot;:&quot;#Tester notre API REST&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/add-validation&quot;,&quot;label&quot;:&quot;#Ajouter la couche validation&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/add-exceptions-handlers&quot;,&quot;label&quot;:&quot;#Ajouter les exceptions handlers&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/use-postgresql&quot;,&quot;label&quot;:&quot;#Utiliser une base PostgreSQL&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/add-swagger&quot;,&quot;label&quot;:&quot;#Ajouter Swagger&quot;}],&quot;visible&quot;:true},{&quot;isArticleIndex&quot;:false,&quot;isArticleSection&quot;:true,&quot;isArticleWithSections&quot;:true,&quot;date&quot;:&quot;20230919&quot;,&quot;title&quot;:&quot;API REST avec Spring&quot;,&quot;withScript&quot;:false,&quot;description&quot;:&quot;Dans cet article, nous allons créer une API REST en utilisant le framework Spring Boot en utilisant une base de données H2 puis PostgreSQL et en ajoutant sa documentation Swagger&quot;,&quot;tags&quot;:[&quot;spring boot&quot;,&quot;api rest&quot;],&quot;image&quot;:&quot;/assets/thumbnail/api-rest-with-spring-boot.png&quot;,&quot;slug&quot;:&quot;spring/api-rest-with-spring-boot/add-validation&quot;,&quot;summary&quot;:[{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot&quot;,&quot;label&quot;:&quot;Introduction&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/first-version&quot;,&quot;label&quot;:&quot;#Première version du projet&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/test-our-api-rest&quot;,&quot;label&quot;:&quot;#Tester notre API REST&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/add-validation&quot;,&quot;label&quot;:&quot;#Ajouter la couche validation&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/add-exceptions-handlers&quot;,&quot;label&quot;:&quot;#Ajouter les exceptions handlers&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/use-postgresql&quot;,&quot;label&quot;:&quot;#Utiliser une base PostgreSQL&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/add-swagger&quot;,&quot;label&quot;:&quot;#Ajouter Swagger&quot;}],&quot;visible&quot;:true},{&quot;isArticleIndex&quot;:false,&quot;isArticleSection&quot;:true,&quot;isArticleWithSections&quot;:true,&quot;date&quot;:&quot;20230919&quot;,&quot;title&quot;:&quot;API REST avec Spring&quot;,&quot;withScript&quot;:false,&quot;description&quot;:&quot;Dans cet article, nous allons créer une API REST en utilisant le framework Spring Boot en utilisant une base de données H2 puis PostgreSQL et en ajoutant sa documentation Swagger&quot;,&quot;tags&quot;:[&quot;spring boot&quot;,&quot;api rest&quot;],&quot;image&quot;:&quot;/assets/thumbnail/api-rest-with-spring-boot.png&quot;,&quot;slug&quot;:&quot;spring/api-rest-with-spring-boot/add-exceptions-handlers&quot;,&quot;summary&quot;:[{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot&quot;,&quot;label&quot;:&quot;Introduction&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/first-version&quot;,&quot;label&quot;:&quot;#Première version du projet&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/test-our-api-rest&quot;,&quot;label&quot;:&quot;#Tester notre API REST&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/add-validation&quot;,&quot;label&quot;:&quot;#Ajouter la couche validation&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/add-exceptions-handlers&quot;,&quot;label&quot;:&quot;#Ajouter les exceptions handlers&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/use-postgresql&quot;,&quot;label&quot;:&quot;#Utiliser une base PostgreSQL&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/add-swagger&quot;,&quot;label&quot;:&quot;#Ajouter Swagger&quot;}],&quot;visible&quot;:true},{&quot;isArticleIndex&quot;:false,&quot;isArticleSection&quot;:true,&quot;isArticleWithSections&quot;:true,&quot;date&quot;:&quot;20230919&quot;,&quot;title&quot;:&quot;API REST avec Spring&quot;,&quot;withScript&quot;:false,&quot;description&quot;:&quot;Dans cet article, nous allons créer une API REST en utilisant le framework Spring Boot en utilisant une base de données H2 puis PostgreSQL et en ajoutant sa documentation Swagger&quot;,&quot;tags&quot;:[&quot;spring boot&quot;,&quot;api rest&quot;],&quot;image&quot;:&quot;/assets/thumbnail/api-rest-with-spring-boot.png&quot;,&quot;slug&quot;:&quot;spring/api-rest-with-spring-boot/use-postgresql&quot;,&quot;summary&quot;:[{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot&quot;,&quot;label&quot;:&quot;Introduction&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/first-version&quot;,&quot;label&quot;:&quot;#Première version du projet&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/test-our-api-rest&quot;,&quot;label&quot;:&quot;#Tester notre API REST&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/add-validation&quot;,&quot;label&quot;:&quot;#Ajouter la couche validation&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/add-exceptions-handlers&quot;,&quot;label&quot;:&quot;#Ajouter les exceptions handlers&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/use-postgresql&quot;,&quot;label&quot;:&quot;#Utiliser une base PostgreSQL&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/add-swagger&quot;,&quot;label&quot;:&quot;#Ajouter Swagger&quot;}],&quot;visible&quot;:true},{&quot;isArticleIndex&quot;:false,&quot;isArticleSection&quot;:true,&quot;isArticleWithSections&quot;:true,&quot;date&quot;:&quot;20230919&quot;,&quot;title&quot;:&quot;API REST avec Spring&quot;,&quot;withScript&quot;:false,&quot;description&quot;:&quot;Dans cet article, nous allons créer une API REST en utilisant le framework Spring Boot en utilisant une base de données H2 puis PostgreSQL et en ajoutant sa documentation Swagger&quot;,&quot;tags&quot;:[&quot;spring boot&quot;,&quot;api rest&quot;],&quot;image&quot;:&quot;/assets/thumbnail/api-rest-with-spring-boot.png&quot;,&quot;slug&quot;:&quot;spring/api-rest-with-spring-boot/add-swagger&quot;,&quot;summary&quot;:[{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot&quot;,&quot;label&quot;:&quot;Introduction&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/first-version&quot;,&quot;label&quot;:&quot;#Première version du projet&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/test-our-api-rest&quot;,&quot;label&quot;:&quot;#Tester notre API REST&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/add-validation&quot;,&quot;label&quot;:&quot;#Ajouter la couche validation&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/add-exceptions-handlers&quot;,&quot;label&quot;:&quot;#Ajouter les exceptions handlers&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/use-postgresql&quot;,&quot;label&quot;:&quot;#Utiliser une base PostgreSQL&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/add-swagger&quot;,&quot;label&quot;:&quot;#Ajouter Swagger&quot;}],&quot;visible&quot;:true},{&quot;isArticleIndex&quot;:false,&quot;isArticleSection&quot;:false,&quot;isArticleWithSections&quot;:false,&quot;date&quot;:&quot;20230618&quot;,&quot;title&quot;:&quot;Les jointures en SQL&quot;,&quot;withScript&quot;:false,&quot;description&quot;:&quot;Dans cet article, nous allons apprendre les types de jointures SQL, y compris inner join, left join, right join et full outer join. Nous couvrirons leur syntaxe, leurs différences et des exemples pratiques pour une meilleure compréhension&quot;,&quot;tags&quot;:[&quot;sql&quot;,&quot;jointure&quot;],&quot;image&quot;:&quot;/assets/thumbnail/blog-thumbnail-2.jpg&quot;,&quot;slug&quot;:&quot;sql/joins-types&quot;,&quot;summary&quot;:[],&quot;visible&quot;:true}]"></app-main>
 
         </main>
         <app-scroll-top-button></app-scroll-top-button>
