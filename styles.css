@@ -7555,7 +7555,7 @@ ul {
   list-style-type: square; }
 
 li {
-  font-size: 1.7rem;
+  font-size: 1.6rem;
   line-height: 1.7; }
 
 img {
@@ -8593,6 +8593,23 @@ video {
       margin-top: 1rem; }
     .markdown details *:last-child {
       margin-bottom: 1rem; }
+  .markdown .cheatsheet {
+    list-style: none;
+    padding-left: 0;
+    display: inline; }
+    .markdown .cheatsheet li {
+      padding: 1.2rem 1.5rem;
+      border-radius: 3px;
+      margin-bottom: .4rem;
+      background-color: #F7F7F7;
+      font-family: 'Roboto Mono', monospace;
+      transition: all .2s ease-in;
+      transition-property: background-color; }
+      .markdown .cheatsheet li:hover {
+        background-color: #EFEFEF; }
+      .markdown .cheatsheet li .label {
+        font-family: var(--font-family);
+        color: #2854A1; }
 
 .previous-next-sections {
   display: flex;

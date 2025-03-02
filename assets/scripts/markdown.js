@@ -59,6 +59,12 @@ function formatCode() {
       p.remove();
       return;
     };
+    if (p.innerHTML.endsWith('>cheatsheet</strong>')) {
+      const ul = p.nextElementSibling;
+      ul.classList.add('cheatsheet');
+      p.remove();
+      return;
+    };
     if (p.innerHTML.endsWith('>previous-section</strong>')) {
       const a = p.nextElementSibling.querySelector('a');
       p.nextElementSibling.remove();
