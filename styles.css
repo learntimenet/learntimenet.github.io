@@ -8375,46 +8375,23 @@ video {
     margin-bottom: 16px;
     font-weight: 600;
     line-height: 1.25; }
-  .markdown h1 {
-    font-size: 2em; }
-  .markdown h1,
-  .markdown h2 {
-    padding-bottom: 0.3em;
-    border-bottom: 1px solid var(--border-color);
-    transition: var(--transition);
-    transition-property: border-color; }
-  .markdown h2 {
-    font-size: 1.5em; }
-  .markdown h3 {
-    font-size: 1.25em; }
-  .markdown h4 {
-    font-size: 1em; }
-  .markdown h5 {
-    font-size: 0.875em; }
-  .markdown h6 {
-    font-size: 0.85em;
-    color: #6a737d; }
-  .markdown h1 {
-    font-size: 32px; }
-  .markdown h1,
-  .markdown h2 {
-    font-weight: 600; }
-  .markdown h2 {
-    font-size: 24px; }
-  .markdown h3 {
-    font-size: 20px; }
   .markdown h3,
-  .markdown h4 {
-    font-weight: 600; }
-  .markdown h4 {
-    font-size: 16px; }
-  .markdown h5 {
-    font-size: 14px; }
+  .markdown h4,
   .markdown h5,
   .markdown h6 {
-    font-weight: 600; }
+    font-weight: 500; }
+  .markdown h1 {
+    font-size: 32px; }
+  .markdown h2 {
+    font-size: 26px; }
+  .markdown h3 {
+    font-size: 20px; }
+  .markdown h4 {
+    font-size: 18px; }
+  .markdown h5 {
+    font-size: 16px; }
   .markdown h6 {
-    font-size: 12px; }
+    font-size: 14px; }
   .markdown blockquote,
   .markdown details,
   .markdown dl,
@@ -8425,7 +8402,7 @@ video {
   .markdown ul {
     margin-top: 0;
     margin-bottom: 1.6rem;
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     line-height: 1.65;
     text-align: justify; }
   .markdown ol,
@@ -8482,20 +8459,6 @@ video {
     border-bottom: 1px solid var(--border-color);
     transition: var(--transition);
     transition-property: border-color, background-color; }
-  .markdown h2 {
-    margin: 0;
-    padding: 0;
-    margin-top: 3rem;
-    line-height: 1.25;
-    padding-bottom: 1rem;
-    border-bottom: none !important;
-    transition: var(--transition);
-    transition-property: border-color;
-    font-size: 2.4rem;
-    font-weight: 500; }
-  .markdown h3 {
-    font-weight: 600;
-    font-size: 16px; }
   .markdown img,
   .markdown canvas {
     width: 100%;
