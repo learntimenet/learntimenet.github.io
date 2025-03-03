@@ -8604,12 +8604,22 @@ video {
       background-color: #F7F7F7;
       font-family: 'Roboto Mono', monospace;
       transition: all .2s ease-in;
-      transition-property: background-color; }
-      .markdown .cheatsheet li:hover {
-        background-color: #EFEFEF; }
+      transition-property: background-color;
+      overflow-x: auto;
+      /* Hide scrollbar for IE, Edge and Firefox */
+      -ms-overflow-style: none;
+      /* IE and Edge */
+      scrollbar-width: none;
+      /* Firefox */
+      /* Hide scrollbar for Chrome, Safari and Opera */ }
+      .markdown .cheatsheet li::-webkit-scrollbar {
+        display: none; }
+      .markdown .cheatsheet li .li-wrapper {
+        white-space: nowrap; }
       .markdown .cheatsheet li .label {
         font-family: var(--font-family);
-        color: #2854A1; }
+        color: #2854A1;
+        font-weight: 500; }
 
 .previous-next-sections {
   display: flex;

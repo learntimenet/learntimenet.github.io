@@ -64,7 +64,7 @@ function formatCode() {
       ul.classList.add('cheatsheet');
       ul.querySelectorAll('li').forEach((li) => {
         var label = li.innerHTML.split(/<br.+>/)[0];
-        li.innerHTML = `<span class="label">${label}</span><br/>` + li.innerHTML.split(/<br.+>/).slice(1).join('<br/>');
+        li.innerHTML = `<div class="li-wrapper"><span class="label">${label}</span><br/>` + li.innerHTML.split(/<br.+>/).slice(1).join('<br/>') + '</div>';
       });
       p.remove();
       return;
