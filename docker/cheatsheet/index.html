@@ -49,7 +49,7 @@
                         this.page.identifier = window.location.pathname.replace('/en', '');
                     };
                 </script>
-            <script defer src="/docker/cheatsheet/cheatsheet.5fc021abad3ab997db2d.js"></script></head>
+            <script defer src="/docker/cheatsheet/cheatsheet.a8f4e9a751b9b95fd867.js"></script></head>
             <body>
                 <div class="loader">
                     <svg class="loader-logo" width="1000" height="1000" viewBox="0 0 1000 1000" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -97,26 +97,26 @@
 <h2>General commands</h2>
 <p><strong>cheatsheet</strong></p>
 <ul>
-<li><span class="label">Start the docker daemon</span><br/>
+<li>Start the docker daemon<br/>
 docker -d</li>
-<li><span class="label">Get help with Docker. Can also use <code>–help</code> on all subcommands</span><br/>
+<li>Get help with Docker. Can also use <code>–help</code> on all subcommands<br/>
 docker --help</li>
-<li><span class="label">Display system-wide information</span><br/>
+<li>Display system-wide information<br/>
 docker info</li>
 </ul>
 <h2>Images</h2>
 <p>Docker images are a lightweight, standalone, executable package of software that includes everything needed to run an application: code, runtime, system tools, system libraries and settings.</p>
 <p><strong>cheatsheet</strong></p>
 <ul>
-<li><span class="label">Build an Image from a Dockerfile</span><br/>
+<li>Build an Image from a Dockerfile<br/>
 docker build -t &lt;image_name&gt; .</li>
-<li><span class="label">Build an Image from a Dockerfile without the cache</span><br/>
+<li>Build an Image from a Dockerfile without the cache<br/>
 docker build -t &lt;image_name&gt; . –no-cache</li>
-<li><span class="label">List local images</span><br/>
+<li>List local images<br/>
 docker images</li>
-<li><span class="label">Delete an Image</span><br/>
+<li>Delete an Image<br/>
 docker rmi &lt;image_name&gt;</li>
-<li><span class="label">Remove all unused images</span><br/>
+<li>Remove all unused images<br/>
 docker image prune</li>
 </ul>
 <h2>Containers</h2>
@@ -124,40 +124,40 @@ docker image prune</li>
 development and staging.</p>
 <p><strong>cheatsheet</strong></p>
 <ul>
-<li><span class="label">Create and run a container from an image, with a custom name:</span><br/>
+<li>Create and run a container from an image, with a custom name:<br/>
 docker run --name &lt;container_name&gt; &lt;image_name&gt;</li>
-<li><span class="label">Run a container with and publish a container’s port(s) to the host.</span><br/>
+<li>Run a container with and publish a container’s port(s) to the host.<br/>
 docker run -p &lt;host_port&gt;:&lt;container_port&gt; &lt;image_name&gt;</li>
-<li><span class="label">Run a container in the background</span><br/>
+<li>Run a container in the background<br/>
 docker run -d &lt;image_name&gt;</li>
-<li><span class="label">Start or stop an existing container:</span><br/>
+<li>Start or stop an existing container:<br/>
 docker start|stop &lt;container_name&gt; (or &lt;container-id&gt;)</li>
-<li><span class="label">Remove a stopped container:</span><br/>
+<li>Remove a stopped container:<br/>
 docker rm &lt;container_name&gt;</li>
-<li><span class="label">Open a shell inside a running container:</span><br/>
+<li>Open a shell inside a running container:<br/>
 docker exec -it &lt;container_name&gt; sh</li>
-<li><span class="label">Fetch and follow the logs of a container:</span><br/>
+<li>Fetch and follow the logs of a container:<br/>
 docker logs -f &lt;container_name&gt;</li>
-<li><span class="label">To inspect a running container:</span><br/>
+<li>To inspect a running container:<br/>
 docker inspect &lt;container_name&gt; (or &lt;container_id&gt;)</li>
-<li><span class="label">To list currently running containers:</span><br/>
+<li>To list currently running containers:<br/>
 docker ps</li>
-<li><span class="label">List all docker containers (running and stopped):</span><br/>
+<li>List all docker containers (running and stopped):<br/>
 docker ps --all</li>
-<li><span class="label">View resource usage stats</span><br/>
+<li>View resource usage stats<br/>
 docker container stats</li>
 </ul>
 <h2>Docker HUB</h2>
 <p>Docker Hub is a service provided by Docker for finding and sharing container images with your team. Learn more and find images at <a href="https://hub.docker.com" title="https://hub.docker.com">https://hub.docker.com</a></p>
 <p><strong>cheatsheet</strong></p>
 <ul>
-<li><span class="label">Login into Docker</span><br/>
+<li>Login into Docker<br/>
 docker login -u &lt;user_name&gt;</li>
-<li><span class="label">Publish an image to Docker Hub</span><br/>
+<li>Publish an image to Docker Hub<br/>
 docker push &lt;user_name&gt;/&lt;image_name&gt;</li>
-<li><span class="label">Search Hub for an image</span><br/>
+<li>Search Hub for an image<br/>
 docker search &lt;image_name&gt;</li>
-<li><span class="label">Pull an image from a Docker Hub</span><br/>
+<li>Pull an image from a Docker Hub<br/>
 docker pull &lt;image_name&gt;</li>
 </ul>
 <h2>Conclusion</h2>
