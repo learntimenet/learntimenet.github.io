@@ -7342,7 +7342,7 @@ p-radiobutton {
   --code-padding-top: 1.5rem;
   --code-padding-bottom: 1.5rem;
   --code-line-height: 1.45;
-  --code-font-size: 1.6rem;
+  --code-font-size: 1.4rem;
   --max-width: 120rem;
   --promotion-height: 4rem; }
   @media screen and (max-width: 950px) {
@@ -8673,13 +8673,14 @@ code {
   font-weight: 700;
   color: #E74C3C;
   color: #d63384;
+  color: #0e2356;
   white-space: nowrap;
   max-width: 100%;
-  font-size: 90%;
   border-radius: 3px; }
 
 pre code {
-  color: #E74C3C; }
+  color: #E74C3C;
+  color: #0e2356; }
 
 div[class^='language-'] {
   margin-bottom: 1.45rem; }
