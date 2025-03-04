@@ -8676,7 +8676,9 @@ code {
   color: #0e2356;
   white-space: nowrap;
   max-width: 100%;
-  border-radius: 3px; }
+  border-radius: 3px;
+  font-size: 1.5rem;
+  font-family: 300; }
 
 pre code {
   color: #E74C3C;
