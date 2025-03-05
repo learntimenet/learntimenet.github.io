@@ -49,7 +49,7 @@
                         this.page.identifier = window.location.pathname.replace('/en', '');
                     };
                 </script>
-            <script defer src="/java/thread-local/thread-local.1a004105341c06dec161.js"></script></head>
+            <script defer src="/java/thread-local/thread-local.06b460abaa1f6a0cfde0.js"></script></head>
             <body>
                 <div class="loader">
                     <svg class="loader-logo" width="1000" height="1000" viewBox="0 0 1000 1000" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -177,6 +177,7 @@
 Valeur Child ThreadLocal: null
 </code></pre></code></pre>
 <h2>Using InheritableThreadLocal</h2>
+<p><strong>terminal</strong></p>
 <pre><code class="language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">class</span> <span class="hljs-title class_">ParentThread</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">Thread</span> {{ '{' }}
     <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> InheritableThreadLocal&lt;String&gt; parentThreadLocal = <span class="hljs-keyword">new</span> <span class="hljs-title class_">InheritableThreadLocal</span>&lt;&gt;();
 

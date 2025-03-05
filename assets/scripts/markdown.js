@@ -205,11 +205,44 @@ function openCode(event, tabId, tabsContentsId) {
   }
 }
 
+function generateRandom () {
+  return Date.now() + Math.floor(Math.random() * 100);
+}
+
+function addCodeHeader() {
+  try {
+    document.querySelectorAll('div.highlight').forEach((div) => {
+      try {
+        const code = div.querySelector('code');
+        const codeId = `code-id-${generateRandom()}`;
+        code.id = codeId;
+        div.insertAdjacentHTML('beforebegin', `
+          <div class="code-header">
+            <div class="code-header-left">
+              <div class="red-circle"></div>
+              <div class="yellow-circle"></div>
+              <div class="green-circle"></div>
+            </div>
+           <div class="code-header-right">
+              <button class="code-header-button" onclick="onCodeCopyIconClick(event, '${codeId}')" >Copy</button>
+            </div>
+          </div>
+        `);
+      } catch (error) {
+        console.error(error);
+      }
+    });
+  } catch (error) {
+    console.error(error);
+  }
+}
+
 function addCodeLineNumbers() {
   try {
     document.querySelectorAll('pre.highlight').forEach((code) => {
       try {
         const codeLineNumbers = (code.innerHTML.match(/\n/g) || []).length;
+        if (codeLineNumbers < 3) return;
         let codeLineNumbersHtml = '<div class="code-line-number">';
         for (let i = 1; i <= codeLineNumbers; i++) {
           codeLineNumbersHtml += `<span>${i}</span>`;
@@ -225,33 +258,6 @@ function addCodeLineNumbers() {
   }
 }
 
-function addCodeCopyIcon() {
-  try {
-    document.querySelectorAll('pre.highlight code').forEach((code) => {
-      code.addEventListener("mouseleave", () => {
-        copiedLabel = code.querySelector('.copy-code-icon-copied-label')
-        if (!copiedLabel) return;
-        copiedLabel.style.opacity = '0';
-      });
-      const codeId = 'code-id-' + Date.now() + Math.floor(Math.random() * 100);
-      code.id = codeId;
-      const copyCodeIconHtml = /* html */ `
-        <span 
-          title="copy code" 
-          onclick="onCodeCopyIconClick(event, '${codeId}')" 
-          class="code-copy-icon iconify" 
-          data-icon="icon-park-solid:copy" 
-          data-inline="false"
-        ></span>
-      `;
-      code.insertAdjacentHTML('beforebegin', copyCodeIconHtml);
-      code.style.position = 'relative';
-    });
-  } catch (error) {
-    console.error(error);
-  }
-}
-
 function onCodeCopyIconClick(event, codeId) {
   const code = document.getElementById(codeId);
   const codeText = code.innerText || code.contentText;
@@ -260,12 +266,8 @@ function onCodeCopyIconClick(event, codeId) {
   textarea.style.position = 'fixed'; // Prevent scrolling to bottom of page in Microsoft Edge.
   document.body.appendChild(textarea);
   textarea.select();
-  const span = document.createElement('span');
-  span.classList.add('copy-code-icon-copied-label');
-  span.innerText = 'Copied';
-  code.appendChild(span);
-  setTimeout(() => (span.style.opacity = '0'), 1250);
-  setTimeout(() => code.removeChild(span), 2000);
+  event.target.innerHTML = 'Copied';
+  setTimeout(() => event.target.innerHTML = 'Copy', 1000);
   try {
     return document.execCommand('copy');
   } catch (error) {
@@ -337,11 +339,9 @@ document.addEventListener('DOMContentLoaded', () => {
   formatCode();
   formatCodeTabs();
   addCodeLineNumbers();
-  addCodeCopyIcon();
   addCodeShadowOnLeftScroll();
+  addCodeHeader();
   formatShellCommands();
   highlightCodeLines();
   resizeIFrame();
 });
-
-
