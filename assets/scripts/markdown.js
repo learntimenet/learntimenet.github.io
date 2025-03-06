@@ -172,7 +172,14 @@ function formatCodeTabs() {
     try {
       const isMaxHeight = codeTabs.classList.contains('max-height');
       const tabsContentsId = 'tas-contents-id-' + Date.now() + Math.floor(Math.random() * 100);
-      let tabsLinks = '<div class="tab-links">';
+      let tabsLinks = `<div class="tab-links">
+        <div class="tab-links-left">
+          <div class="red-circle"></div>
+          <div class="yellow-circle"></div>
+          <div class="green-circle"></div>
+        </div>
+        <div class="tab-links-middle">
+      `;
       let tabsContents = `<div class="tab-content-wrapper ${isMaxHeight ? 'max-height' : ''}">`;
       codeTabs.querySelectorAll('li').forEach((codeTab) => {
         const tabName = codeTab.querySelector('p').textContent;
@@ -183,7 +190,12 @@ function formatCodeTabs() {
         tabsLinks += `<button class="tab-link" onclick="openCode(event, '${tabId}', '${tabsContentsId}')">${tabName}</button>`;
         tabsContents += `<div id="${tabId}" class="tab-content">${tabContent}</div>`;
       });
-      tabsLinks += '</div>';
+      tabsLinks += `
+        </div>
+        <div class="tab-links-right">
+          <button class="copy">Copy</button>
+        </div>
+      </div>`;
       tabsContents + '</div>';
       codeTabs.outerHTML = `<div id="${tabsContentsId}">${tabsLinks}${tabsContents}</div>`;
       document.querySelector(`#${tabsContentsId} .tab-link`).click();
@@ -224,7 +236,7 @@ function addCodeHeader() {
               <div class="green-circle"></div>
             </div>
            <div class="code-header-right">
-              <button class="code-header-button" onclick="onCodeCopyIconClick(event, '${codeId}')" >Copy</button>
+              <button class="copy" onclick="onCodeCopyIconClick(event, '${codeId}')" >Copy</button>
             </div>
           </div>
         `);
