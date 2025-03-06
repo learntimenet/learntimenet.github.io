@@ -8807,6 +8807,7 @@ pre.highlight .code-line-number {
   transition-property: background-color;
   text-align: end;
   font-size: var(--code-font-size);
+  font-weight: 500;
   line-height: 1.8; }
 
 pre.highlight .code-line-number span {

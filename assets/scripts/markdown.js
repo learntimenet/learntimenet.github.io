@@ -193,7 +193,7 @@ function formatCodeTabs() {
       tabsLinks += `
         </div>
         <div class="tab-links-right">
-          <button class="copy">Copy</button>
+          <button class="copy" onclick="onCodeTabsCopyButtonClick(event, '${tabsContentsId}')">Copy</button>
         </div>
       </div>`;
       tabsContents + '</div>';
@@ -208,9 +208,13 @@ function formatCodeTabs() {
 function openCode(event, tabId, tabsContentsId) {
   try {
     const tabsContents = document.getElementById(tabsContentsId);
-    tabsContents.querySelectorAll('.tab-content').forEach((tabContent) => (tabContent.style.display = 'none'));
+    tabsContents.querySelectorAll('.tab-content').forEach((tabContent) => {
+      tabContent.style.display = 'none';
+      tabContent.classList.remove('active-tab');
+    });
     tabsContents.querySelectorAll('.tab-link').forEach((tabLink) => tabLink.classList.remove('active'));
     document.getElementById(tabId).style.display = 'block';
+    document.getElementById(tabId).classList.add('active-tab');
     event.currentTarget.classList.add('active');
   } catch (error) {
     console.error(error);
@@ -236,7 +240,7 @@ function addCodeHeader() {
               <div class="green-circle"></div>
             </div>
            <div class="code-header-right">
-              <button class="copy" onclick="onCodeCopyIconClick(event, '${codeId}')" >Copy</button>
+              <button class="copy" onclick="onCodeCopyButtonClick(event, '${codeId}')">Copy</button>
             </div>
           </div>
         `);
@@ -270,8 +274,17 @@ function addCodeLineNumbers() {
   }
 }
 
-function onCodeCopyIconClick(event, codeId) {
-  const code = document.getElementById(codeId);
+function onCodeTabsCopyButtonClick(event, tabsContentsId) {
+  const tabsContents = document.getElementById(tabsContentsId);
+  const activeTab = tabsContents.querySelector('.active-tab');
+  onCodeCopyButtonClickCode(event, activeTab.querySelector('code'));
+}
+
+function onCodeCopyButtonClick(event, codeId) {
+  onCodeCopyButtonClickCode(event, document.getElementById(codeId));
+}
+
+function onCodeCopyButtonClickCode(event, code) {
   const codeText = code.innerText || code.contentText;
   const textarea = document.createElement('textarea');
   textarea.textContent = codeText;
