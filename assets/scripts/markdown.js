@@ -163,8 +163,8 @@ function formatCode() {
       p.remove();
       return;
     }
-    if (/<strong>alert-info-(\d+)<\/strong>/.test(p.innerHTML)) {
-      const nbElements = p.innerHTML.match(/<strong>alert-info-(\d+)<\/strong>/)[1];
+    if (/>alert-info-(\d+)<\/strong>/.test(p.innerHTML)) {
+      const nbElements = p.innerHTML.match(/>alert-info-(\d+)<\/strong>/)[1];
       let index = 0;
       let html = '';
       let nextElementSibling = p.nextElementSibling;

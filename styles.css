@@ -8994,7 +8994,6 @@ pre.highlight .copy-code-icon-copied-label {
   background-color: #d9edf7;
   background-color: #E5F3FE;
   color: #31708f;
-  color: #4e4e4e;
   border-color: #7eb6c1;
   border-color: #0889F2; }
 
@@ -9007,3 +9006,8 @@ pre.highlight .copy-code-icon-copied-label {
   background-color: #f8d7da;
   border-color: #dc3545;
   color: #721c24; }
+
+.alert-info p:last-child,
+.alert-warn p:last-child,
+.alert-error p:last-child {
+  margin-bottom: 0; }
