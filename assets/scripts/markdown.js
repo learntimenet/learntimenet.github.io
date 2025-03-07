@@ -158,13 +158,9 @@ function formatCode() {
       p.remove();
       return;
     }
-    if (p.innerHTML.endsWith('>alert-info</strong>')) {
-      p.nextElementSibling.classList.add('alert-info');
-      p.remove();
-      return;
-    }
-    if (/>alert-info-(\d+)<\/strong>/.test(p.innerHTML)) {
-      const nbElements = p.innerHTML.match(/>alert-info-(\d+)<\/strong>/)[1];
+    if (/>alert-(info|warn|error)(-\d+)?<\/strong>/.test(p.innerHTML)) {
+      const nbElements = p.innerHTML.match(/>alert-(info|warn|error)-(\d+)<\/strong>/) ? p.innerHTML.match(/>alert-(info|warn|error)-(\d+)<\/strong>/)[2] : 1;
+      const alertType = p.innerHTML.match(/>alert-(info|warn|error)(-\d+)?<\/strong>/)[1];
       let index = 0;
       let html = '';
       let nextElementSibling = p.nextElementSibling;
@@ -175,19 +171,9 @@ function formatCode() {
         index++;
       }
       div = document.createElement("div");
-      div.classList.add('alert-info');
+      div.classList.add(`alert-${alertType}`);
       div.innerHTML = html;
       p.insertAdjacentElement("afterend", div);
-      p.remove();
-      return;
-    }
-    if (p.innerHTML.endsWith('>alert-warn</strong>')) {
-      p.nextElementSibling.classList.add('alert-warn');
-      p.remove();
-      return;
-    }
-    if (p.innerHTML.endsWith('>alert-error</strong>')) {
-      p.nextElementSibling.classList.add('alert-error');
       p.remove();
       return;
     }

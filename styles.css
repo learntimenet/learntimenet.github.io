@@ -8985,10 +8985,10 @@ pre.highlight .copy-code-icon-copied-label {
 .alert-info,
 .alert-warn,
 .alert-error {
-  border-left: 2px solid;
+  border-left: 4px solid;
   border-radius: 4px;
   padding: 1.5rem 2.5rem;
-  margin-bottom: 4rem; }
+  margin-bottom: 2rem; }
 
 .alert-info {
   background-color: #d9edf7;
