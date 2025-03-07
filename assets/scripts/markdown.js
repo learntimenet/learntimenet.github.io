@@ -1,14 +1,35 @@
+const explanation = {
+  "en": "Explanation",
+  "fr": "Explication",
+  "__page.language__": "Language Not found",
+}
+
+const next = {
+  "en": "Next",
+  "fr": "Suivant",
+  "__page.language__": "Language Not found",
+}
+
+const previous = {
+  "en": "Previous",
+  "fr": "Précédent",
+  "__page.language__": "Language Not found",
+}
+
+function getLanguage() {
+  return document.querySelector('html').getAttribute('lang');
+}
+
 function toPreviousSectionLink(a) {
   const res = document.createElement("a");
   res.href = a.getAttribute("href");
-  const linkLabel = a.innerHTML.split('||')[0];
-  const linkValue = a.innerHTML.split('||')[1];
+  const linkValue = a.innerHTML;
   res.classList.add('previous-section');
   const right = document.createElement("div");
   right.classList.add('right');
   const leftLabel = document.createElement("span");
   leftLabel.classList.add('label');
-  leftLabel.innerHTML = linkLabel;
+  leftLabel.innerHTML = previous[getLanguage()];
   right.appendChild(leftLabel);
   const leftTitle = document.createElement("span");
   leftTitle.innerHTML = linkValue;
@@ -24,14 +45,13 @@ function toPreviousSectionLink(a) {
 function toNextSectionLink(a) {
   const res = document.createElement("a");
   res.href = a.getAttribute("href");
-  const linkLabel = a.innerHTML.split('||')[0];
-  const linkValue = a.innerHTML.split('||')[1];
+  const linkValue = a.innerHTML;
   res.classList.add('next-section');
   const left = document.createElement("div");
   left.classList.add('left');
   const leftLabel = document.createElement("span");
   leftLabel.classList.add('label');
-  leftLabel.innerHTML = linkLabel;
+  leftLabel.innerHTML = next[getLanguage()];
   left.appendChild(leftLabel);
   const leftTitle = document.createElement("span");
   leftTitle.innerHTML = linkValue;
@@ -52,13 +72,6 @@ function formatCode() {
     el.parentNode.replaceChild(wrapper, el);
   });
   document.querySelectorAll('p').forEach((p) => {
-    if (p.innerHTML.endsWith('>next-section</strong>')) {
-      const a = p.nextElementSibling.querySelector('a');
-      p.nextElementSibling.remove();
-      p.insertAdjacentElement("afterend", toNextSectionLink(a));
-      p.remove();
-      return;
-    };
     if (p.innerHTML.endsWith('>cheatsheet</strong>')) {
       const ul = p.nextElementSibling;
       ul.classList.add('cheatsheet');
@@ -66,6 +79,13 @@ function formatCode() {
         var label = li.innerHTML.split(/<br.+>/)[0];
         li.innerHTML = `<div class="li-wrapper"><span class="label">${label}</span><br/>` + li.innerHTML.split(/<br.+>/).slice(1).join('<br/>') + '</div>';
       });
+      p.remove();
+      return;
+    };
+    if (p.innerHTML.endsWith('>next-section</strong>')) {
+      const a = p.nextElementSibling.querySelector('a');
+      p.nextElementSibling.remove();
+      p.insertAdjacentElement("afterend", toNextSectionLink(a));
       p.remove();
       return;
     };
@@ -89,10 +109,10 @@ function formatCode() {
       p.remove();
       return;
     };
-    if (/<strong>code-explication-(\d+)<\/strong>/.test(p.innerHTML)) {
-      const nbElements = p.innerHTML.match(/<strong>code-explication-(\d+)<\/strong>/)[1];
+    if (/>code-explication-(\d+)<\/strong>/.test(p.innerHTML)) {
+      const nbElements = p.innerHTML.match(/>code-explication-(\d+)<\/strong>/)[1];
       let index = 0;
-      let html = '<summary>Explications</summary>';
+      let html = `<summary>${explanation[getLanguage()]}</summary>`;
       let nextElementSibling = p.nextElementSibling;
       while (index < nbElements) {
         html += nextElementSibling.outerHTML;
