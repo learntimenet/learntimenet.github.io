@@ -16,6 +16,18 @@ const previous = {
   "__page.language__": "Language Not found",
 }
 
+const copy = {
+  "en": "Copy",
+  "fr": "Copier",
+  "__page.language__": "Language Not found",
+}
+
+const copied = {
+  "en": "Copied",
+  "fr": "Copié",
+  "__page.language__": "Language Not found",
+}
+
 function getLanguage() {
   return document.querySelector('html').getAttribute('lang');
 }
@@ -136,11 +148,6 @@ function formatCode() {
       p.remove();
       return;
     }
-    if (p.innerHTML.endsWith('>terminal</strong>')) {
-      p.nextElementSibling.classList.add('terminal');
-      p.remove();
-      return;
-    }
     if (p.innerHTML.endsWith('>code-tabs</strong>')) {
       p.nextElementSibling.classList.add('code-tabs');
       p.remove();
@@ -213,7 +220,7 @@ function formatCodeTabs() {
       tabsLinks += `
         </div>
         <div class="tab-links-right">
-          <button class="copy" onclick="onCodeTabsCopyButtonClick(event, '${tabsContentsId}')">Copy</button>
+          <button class="copy" onclick="onCodeTabsCopyButtonClick(event, '${tabsContentsId}')">${copy[getLanguage()]}</button>
         </div>
       </div>`;
       tabsContents + '</div>';
@@ -260,7 +267,7 @@ function addCodeHeader() {
               <div class="green-circle"></div>
             </div>
            <div class="code-header-right">
-              <button class="copy" onclick="onCodeCopyButtonClick(event, '${codeId}')">Copy</button>
+              <button class="copy" onclick="onCodeCopyButtonClick(event, '${codeId}')">${copy[getLanguage()]}</button>
             </div>
           </div>
         `);
@@ -311,8 +318,8 @@ function onCodeCopyButtonClickCode(event, code) {
   textarea.style.position = 'fixed'; // Prevent scrolling to bottom of page in Microsoft Edge.
   document.body.appendChild(textarea);
   textarea.select();
-  event.target.innerHTML = 'Copied';
-  setTimeout(() => event.target.innerHTML = 'Copy', 1000);
+  event.target.innerHTML = copied[getLanguage()];
+  setTimeout(() => event.target.innerHTML = copy[getLanguage()], 1000);
   try {
     return document.execCommand('copy');
   } catch (error) {
