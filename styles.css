@@ -9011,3 +9011,37 @@ pre.highlight .copy-code-icon-copied-label {
 .alert-warn p:last-child,
 .alert-error p:last-child {
   margin-bottom: 0; }
+
+.blog-container {
+  display: flex;
+  column-gap: 3rem; }
+
+.section-container {
+  min-width: 0;
+  padding: 3rem; }
+  @media screen and (min-width: 768px) {
+    .section-container {
+      padding: 5rem; } }
+  @media screen and (min-width: 1024px) {
+    .section-container {
+      padding: 7rem; } }
+
+aside, .section-container {
+  margin-top: -6rem; }
+  @media screen and (min-width: 1024px) {
+    aside, .section-container {
+      margin-top: -12rem; } }
+
+.aside-container {
+  position: -webkit-sticky;
+  position: sticky;
+  top: calc(var(--navbar-height) + var(--promotion-height) + 3rem);
+  display: flex;
+  flex-direction: column;
+  row-gap: 3rem; }
+
+aside {
+  display: none; }
+  @media screen and (min-width: 1024px) {
+    aside {
+      display: block; } }
