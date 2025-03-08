@@ -49,7 +49,7 @@
                         this.page.identifier = window.location.pathname.replace('/en', '');
                     };
                 </script>
-            <script defer src="/fr/apps/calculateur-imc/calculateur-imc.e9fa06ce0a22e5dc8d96.js"></script></head>
+            <script defer src="/fr/apps/calculateur-imc/calculateur-imc.98dd4b796da166055513.js"></script></head>
             <body>
                 <div class="loader">
                     <svg class="loader-logo" width="1000" height="1000" viewBox="0 0 1000 1000" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -401,11 +401,11 @@
 </code></pre></code></pre></li>
 <li><p>script.js</p>
 <pre><code class="language-js"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">const</span> <span class="hljs-title class_">BMIRanges</span> = [
-  {{ '{' }} <span class="hljs-attr">description</span>: <span class="hljs-string">&quot;Underweight&quot;</span>, <span class="hljs-attr">color</span>: <span class="hljs-string">&quot;#5BC8F3&quot;</span>, <span class="hljs-attr">range</span>: [<span class="hljs-number">0</span>, <span class="hljs-number">18.5</span>] },
-  {{ '{' }} <span class="hljs-attr">description</span>: <span class="hljs-string">&quot;Normal&quot;</span>, <span class="hljs-attr">color</span>: <span class="hljs-string">&quot;#9DB63B&quot;</span>, <span class="hljs-attr">range</span>: [<span class="hljs-number">18.5</span>, <span class="hljs-number">25</span>] },
-  {{ '{' }} <span class="hljs-attr">description</span>: <span class="hljs-string">&quot;Overweight&quot;</span>, <span class="hljs-attr">color</span>: <span class="hljs-string">&quot;#FAC90E&quot;</span>, <span class="hljs-attr">range</span>: [<span class="hljs-number">25</span>, <span class="hljs-number">30</span>] },
-  {{ '{' }} <span class="hljs-attr">description</span>: <span class="hljs-string">&quot;Obese&quot;</span>, <span class="hljs-attr">color</span>: <span class="hljs-string">&quot;#F48A20&quot;</span>, <span class="hljs-attr">range</span>: [<span class="hljs-number">30</span>, <span class="hljs-number">40</span>] },
-  {{ '{' }} <span class="hljs-attr">description</span>: <span class="hljs-string">&quot;Extremely obesity&quot;</span>, <span class="hljs-attr">color</span>: <span class="hljs-string">&quot;#FF0000&quot;</span>,<span class="hljs-attr">range</span>: [<span class="hljs-number">40</span>, <span class="hljs-title class_">Number</span>.<span class="hljs-property">MAX_VALUE</span>]}
+  { <span class="hljs-attr">description</span>: <span class="hljs-string">&quot;Underweight&quot;</span>, <span class="hljs-attr">color</span>: <span class="hljs-string">&quot;#5BC8F3&quot;</span>, <span class="hljs-attr">range</span>: [<span class="hljs-number">0</span>, <span class="hljs-number">18.5</span>] },
+  { <span class="hljs-attr">description</span>: <span class="hljs-string">&quot;Normal&quot;</span>, <span class="hljs-attr">color</span>: <span class="hljs-string">&quot;#9DB63B&quot;</span>, <span class="hljs-attr">range</span>: [<span class="hljs-number">18.5</span>, <span class="hljs-number">25</span>] },
+  { <span class="hljs-attr">description</span>: <span class="hljs-string">&quot;Overweight&quot;</span>, <span class="hljs-attr">color</span>: <span class="hljs-string">&quot;#FAC90E&quot;</span>, <span class="hljs-attr">range</span>: [<span class="hljs-number">25</span>, <span class="hljs-number">30</span>] },
+  { <span class="hljs-attr">description</span>: <span class="hljs-string">&quot;Obese&quot;</span>, <span class="hljs-attr">color</span>: <span class="hljs-string">&quot;#F48A20&quot;</span>, <span class="hljs-attr">range</span>: [<span class="hljs-number">30</span>, <span class="hljs-number">40</span>] },
+  { <span class="hljs-attr">description</span>: <span class="hljs-string">&quot;Extremely obesity&quot;</span>, <span class="hljs-attr">color</span>: <span class="hljs-string">&quot;#FF0000&quot;</span>,<span class="hljs-attr">range</span>: [<span class="hljs-number">40</span>, <span class="hljs-title class_">Number</span>.<span class="hljs-property">MAX_VALUE</span>]}
 ];
 
 <span class="hljs-keyword">const</span> form = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelector</span>(<span class="hljs-string">&quot;form&quot;</span>);

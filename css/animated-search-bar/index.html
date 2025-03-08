@@ -49,7 +49,7 @@
                         this.page.identifier = window.location.pathname.replace('/en', '');
                     };
                 </script>
-            <script defer src="/css/animated-search-bar/animated-search-bar.7adc7767859f46a9455f.js"></script></head>
+            <script defer src="/css/animated-search-bar/animated-search-bar.5e055afd356168341e75.js"></script></head>
             <body>
                 <div class="loader">
                     <svg class="loader-logo" width="1000" height="1000" viewBox="0 0 1000 1000" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -90,7 +90,7 @@
 <p>In this article, we're going to learn how to create an animated search bar using HTML and CSS. With easy-to-understand source code, you can follow the steps and create your own version.</p>
 <h2>Demo</h2>
 <style>
-  .output {{ '{' }}
+  .output {
     height: 190px;
     display: block;
     overflow: auto;
@@ -101,7 +101,7 @@
     align-items: center;
     justify-content: center;
   }
-  .output .container {{ '{' }}
+  .output .container {
     display: flex;
     transition: 0.2s ease-in;
     box-sizing: content-box;
@@ -111,15 +111,15 @@
     padding: 10px;
   }
   .output input:not(:placeholder-shown),
-  .container:hover > input {{ '{' }}
+  .container:hover > input {
     width: 240px;
     padding: 0 6px;
   }
   input:not(:placeholder-shown) + button,
-  .container:hover > button {{ '{' }}
+  .container:hover > button {
     background: #f0b23a;
   }
-  .output button {{ '{' }}
+  .output button {
     font-size: 20px;
     border: none;
     color: white;
@@ -129,7 +129,7 @@
     background: #2f3640;
     transition: 0.4s;
   }
-  .output input {{ '{' }}
+  .output input {
     font-size: 20px;
     outline:none;
     color: white;

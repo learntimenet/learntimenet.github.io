@@ -49,7 +49,7 @@
                         this.page.identifier = window.location.pathname.replace('/en', '');
                     };
                 </script>
-            <script defer src="/fr/apps/weather-app/weather-app.3e03a56de3322959f2d6.js"></script></head>
+            <script defer src="/fr/apps/weather-app/weather-app.97e0518a25f2b2091993.js"></script></head>
             <body>
                 <div class="loader">
                     <svg class="loader-logo" width="1000" height="1000" viewBox="0 0 1000 1000" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -314,7 +314,7 @@ searchInput.<span class="hljs-title function_">addEventListener</span>(<span cla
 }
 
 <span class="hljs-keyword">async</span> <span class="hljs-keyword">function</span> <span class="hljs-title function_">getWeatherData</span>(<span class="hljs-params">city</span>) {{ '{' }}
-  <span class="hljs-keyword">const</span> apiUrl = <span class="hljs-string">`https://api.openweathermap.org/data/2.5/weather?q=<span class="hljs-subst">${{ '{' }}city}</span>&amp;units=metric&amp;appid=<span class="hljs-subst">${{ '{' }}API_KEY}</span>`</span>;
+  <span class="hljs-keyword">const</span> apiUrl = <span class="hljs-string">`https://api.openweathermap.org/data/2.5/weather?q=<span class="hljs-subst">${city}</span>&amp;units=metric&amp;appid=<span class="hljs-subst">${{ '{' }}API_KEY}</span>`</span>;
   <span class="hljs-keyword">const</span> apiResponse = <span class="hljs-keyword">await</span> <span class="hljs-title function_">fetch</span>(apiUrl);
   <span class="hljs-keyword">const</span> apiResponseBody = <span class="hljs-keyword">await</span> apiResponse.<span class="hljs-title function_">json</span>();
 

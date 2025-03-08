@@ -49,7 +49,7 @@
                         this.page.identifier = window.location.pathname.replace('/en', '');
                     };
                 </script>
-            <script defer src="/fr/css/animated-border/animated-border.81c25e4aa695e56891ca.js"></script></head>
+            <script defer src="/fr/css/animated-border/animated-border.925f6317e8aad1f9804f.js"></script></head>
             <body>
                 <div class="loader">
                     <svg class="loader-logo" width="1000" height="1000" viewBox="0 0 1000 1000" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -90,7 +90,7 @@
 <p>Dans cet article, nous allons apprendre à créer une bordure animée en utilisant HTML, CSS et JavaScript. Grâce à un code source facile à comprendre, vous pourrez suivre les étapes et créer votre propre version</p>
 <h2>Démo</h2>
 <style>
-  .output {{ '{' }}
+  .output {
     height: 190px;
     display: block;
     overflow: auto;
@@ -101,10 +101,10 @@
     align-items: center;
     justify-content: center;
   }
-  .output p {{ '{' }}
+  .output p {
     margin-bottom: 0;
   }
-  .border-animation {{ '{' }}
+  .border-animation {
     position: relative;
     padding: 20px 30px;
     overflow: hidden;
@@ -114,7 +114,7 @@
     align-items: center;
     justify-content: center;
   }
-  .border-animation .border-top {{ '{' }}
+  .border-animation .border-top {
     position: absolute;
     top: 0;
     right: 0;
@@ -123,15 +123,15 @@
     background: linear-gradient(to right, #c72b79, #de6d08, #fcc23f);
     animation: animate-border-top 2s linear infinite;
   }
-  @keyframes animate-border-top {{ '{' }}
-    0% {{ '{' }}
+  @keyframes animate-border-top {
+    0% {
       transform: translateX(-100%);
     }
-    100% {{ '{' }}
+    100% {
       transform: translateX(100%);
     }
   }
-  .border-animation .border-right {{ '{' }}
+  .border-animation .border-right {
     position: absolute;
     top: 0;
     right: 0;
@@ -141,15 +141,15 @@
     animation: animate-border-right 2s linear infinite;
     animation-delay: 1s;
   }
-  @keyframes animate-border-right {{ '{' }}
-    0% {{ '{' }}
+  @keyframes animate-border-right {
+    0% {
       transform: translateY(-100%);
     }
-    100% {{ '{' }}
+    100% {
       transform: translateY(100%);
     }
   }
-  .border-animation .border-bottom {{ '{' }}
+  .border-animation .border-bottom {
     position: absolute;
     bottom: 0;
     right: 0;
@@ -158,15 +158,15 @@
     background: linear-gradient(to left, #c72b79, #de6d08, #fcc23f);
     animation: animate-border-bottom 2s linear infinite;
   }
-  @keyframes animate-border-bottom {{ '{' }}
-    0% {{ '{' }}
+  @keyframes animate-border-bottom {
+    0% {
       transform: translateX(100%);
     }
-    100% {{ '{' }}
+    100% {
       transform: translateX(-100%);
     }
   }
-  .border-animation .border-left {{ '{' }}
+  .border-animation .border-left {
     position: absolute;
     top: 0;
     left: 0;
@@ -176,11 +176,11 @@
     animation: animate-border-left 2s linear infinite;
     animation-delay: 1s;
   }
-  @keyframes animate-border-left {{ '{' }}
-    0% {{ '{' }}
+  @keyframes animate-border-left {
+    0% {
       transform: translateY(100%);
     }
-    100% {{ '{' }}
+    100% {
       transform: translateY(-100%);
     }
   }

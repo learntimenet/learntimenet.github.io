@@ -49,7 +49,7 @@
                         this.page.identifier = window.location.pathname.replace('/en', '');
                     };
                 </script>
-            <script defer src="/fr/javascript/toggle-password-visibility/toggle-password-visibility.bdb3e7367842dc3e313e.js"></script></head>
+            <script defer src="/fr/javascript/toggle-password-visibility/toggle-password-visibility.976814b721ca154ef12a.js"></script></head>
             <body>
                 <div class="loader">
                     <svg class="loader-logo" width="1000" height="1000" viewBox="0 0 1000 1000" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -90,7 +90,7 @@
 <p>Dans cet article, nous allons apprendre comment afficher/masquer le mot de passe dans un formulaire en utilisant HTML, CSS et JavaScript. Avec un code source facile à comprendre, vous pourrez suivre les étapes et créer votre propre version</p>
 <h2>Démo</h2>
 <style>
-  .output {{ '{' }}
+  .output {
     height: 190px;
     display: block;
     overflow: auto;
@@ -101,12 +101,12 @@
     align-items: center;
     justify-content: center;
   }
-  .input-container {{ '{' }}
+  .input-container {
     position: relative;
     background-color: #eee;
     border-radius: 4px;
   }
-  .input-container input {{ '{' }}
+  .input-container input {
     font-family: 'Circular';
     font-size: 20px;
     font-weight: 600;
@@ -117,16 +117,16 @@
     color: #777;
     width: 100%;
   }
-  .input-container input:focus {{ '{' }}
+  .input-container input:focus {
     border: none;
     outline: none;
   }
-  .input-container input::placeholder {{ '{' }}
+  .input-container input::placeholder {
     color: #ABABAB;
     font-size: 20px;
     font-weight: 600;
   }
-  .input-container .icon {{ '{' }}
+  .input-container .icon {
     position: absolute;
     top: 12px;
     right: 15px;
@@ -146,19 +146,19 @@
   const input = document.querySelector('.input-container input');
   const showIcon = document.querySelector('.show-icon');
   const hideIcon = document.querySelector('.hide-icon');
-  const toggleInput = () => {{ '{' }}
-    if (input.type === "password") {{ '{' }}
+  const toggleInput = () => {
+    if (input.type === "password") {
       input.type = "text";
-    } else {{ '{' }}
+    } else {
       input.type = "password";
     }
   }
-  showIcon.addEventListener('click', () => {{ '{' }}
+  showIcon.addEventListener('click', () => {
     toggleInput();
     showIcon.style.display = 'none';
     hideIcon.style.display = 'initial';
   });
-  hideIcon.addEventListener('click', () => {{ '{' }}
+  hideIcon.addEventListener('click', () => {
     toggleInput();
     hideIcon.style.display = 'none';
     showIcon.style.display = 'initial';
