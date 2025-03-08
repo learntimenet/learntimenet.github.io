@@ -88,8 +88,8 @@ function formatCode() {
       const ul = p.nextElementSibling;
       ul.classList.add('cheatsheet');
       ul.querySelectorAll('li').forEach((li) => {
-        var label = li.innerHTML.split(/<br.+>/)[0];
-        li.innerHTML = `<div class="li-wrapper"><span class="label">${label}</span><br/>` + li.innerHTML.split(/<br.+>/).slice(1).join('<br/>') + '</div>';
+        var label = li.innerHTML.split(/<br>/)[0];
+        li.innerHTML = `<div class="li-wrapper"><span class="label">${label}</span><br/>` + li.innerHTML.split(/<br>/).slice(1).join('<br/>') + '</div>';
       });
       p.remove();
       return;
