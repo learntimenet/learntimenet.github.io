@@ -49,7 +49,7 @@
                         this.page.identifier = window.location.pathname.replace('/en', '');
                     };
                 </script>
-            <script defer src="/fr/apps/typing-speed-test/typing-speed-test.8215bc8d14c919090ffb.js"></script></head>
+            <script defer src="/fr/apps/typing-speed-test/typing-speed-test.4596d0417cc69f3fe26a.js"></script></head>
             <body>
                 <div class="loader">
                     <svg class="loader-logo" width="1000" height="1000" viewBox="0 0 1000 1000" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -308,7 +308,7 @@ tryAgainBtn.<span class="hljs-title function_">addEventListener</span>(<span cla
 <span class="hljs-keyword">function</span> <span class="hljs-title function_">setTextToType</span>(<span class="hljs-params"></span>) {{ '{' }}
   textToType.<span class="hljs-property">innerHTML</span> = <span class="hljs-title function_">getRandomText</span>()
     .<span class="hljs-title function_">split</span>(<span class="hljs-string">&quot;&quot;</span>)
-    .<span class="hljs-title function_">map</span>(<span class="hljs-function">(<span class="hljs-params">char, index</span>) =&gt;</span> <span class="hljs-string">`&lt;span class=&quot;<span class="hljs-subst">${index === <span class="hljs-number">0</span> ? <span class="hljs-string">&quot;cursor&quot;</span> : <span class="hljs-string">&quot;&quot;</span>}</span>&quot;&gt;<span class="hljs-subst">${{ '{' }}char}</span>&lt;/span&gt;`</span>)
+    .<span class="hljs-title function_">map</span>(<span class="hljs-function">(<span class="hljs-params">char, index</span>) =&gt;</span> <span class="hljs-string">`&lt;span class=&quot;<span class="hljs-subst">${{ '{' }}index === <span class="hljs-number">0</span> ? <span class="hljs-string">&quot;cursor&quot;</span> : <span class="hljs-string">&quot;&quot;</span>}</span>&quot;&gt;<span class="hljs-subst">${{ '{' }}char}</span>&lt;/span&gt;`</span>)
     .<span class="hljs-title function_">join</span>(<span class="hljs-string">&quot;&quot;</span>);
   caractersToType = textToType.<span class="hljs-title function_">querySelectorAll</span>(<span class="hljs-string">&quot;span&quot;</span>);
 }
