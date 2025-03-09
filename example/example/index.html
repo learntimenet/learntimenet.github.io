@@ -50,7 +50,7 @@
                         this.page.identifier = window.location.pathname.replace('/en', '');
                     };
                 </script>
-            <script defer src="/example/example/example.7818ee1d4054735137db.js"></script></head>
+            <script defer src="/example/example/example.251bb920060ec78af0a8.js"></script></head>
             <body>
                 <div class="loader">
                     <svg class="loader-logo" width="1000" height="1000" viewBox="0 0 1000 1000" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -104,6 +104,30 @@ docker pull &lt;image_name&gt;</li>
 </ul>
 <h2>Source code</h2>
 <pre><code class="language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">import</span> javax.persistence.Entity;
+<span class="hljs-keyword">import</span> javax.persistence.GeneratedValue;
+<span class="hljs-keyword">import</span> javax.persistence.GenerationType;
+<span class="hljs-keyword">import</span> javax.persistence.Id;
+<span class="hljs-keyword">import</span> javax.persistence.Inheritance;
+<span class="hljs-keyword">import</span> javax.persistence.InheritanceType;
+
+<span class="hljs-meta">@Entity</span>
+<span class="hljs-meta">@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">abstract</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Employee</span> {
+    <span class="hljs-comment">// ...</span>
+}
+
+<span class="hljs-meta">@Entity</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Manager</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">Employee</span> {
+    <span class="hljs-comment">// ...</span>
+}
+
+<span class="hljs-meta">@Entity</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Engineer</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">Employee</span> {
+    <span class="hljs-comment">// ...</span>
+}
+</code></pre></code></pre>
+<h2>Code Highlights</h2>
+<pre><code class="language-java {: .highlight-line-code-5-8-9-10 }"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">import</span> javax.persistence.Entity;
 <span class="hljs-keyword">import</span> javax.persistence.GeneratedValue;
 <span class="hljs-keyword">import</span> javax.persistence.GenerationType;
 <span class="hljs-keyword">import</span> javax.persistence.Id;
