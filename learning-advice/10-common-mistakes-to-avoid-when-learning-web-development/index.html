@@ -3,8 +3,8 @@
             <html lang="en">
             <head>
                 <meta charset="utf-8" />
-                <title>Learn Time | Understanding SOLID Principles in Software Development</title>
-                <meta name="description" content="Learn about the SOLID principles of object-oriented design: Single Responsibility, Open/Closed, Liskov Substitution, Interface Segregation, and Dependency Inversion. This guide explains each principle with practical examples to help you write better, more maintainable code.">
+                <title>Learn Time | 10 Common Mistakes to Avoid When Learning Web Development</title>
+                <meta name="description" content="Discover the 10 most common mistakes beginners make when learning web development and how to avoid them. From skipping the basics to ignoring version control, this guide will help you stay on track and succeed in your coding journey">
                 
                 <meta name="viewport" content="width=device-width,initial-scale=1" />
                 <!--
@@ -35,14 +35,14 @@
                     .loader.hide {opacity: 0;}
                 </style>
                 
-            <meta property="og:title" content="Understanding SOLID Principles in Software Development" />
-            <meta property="og:description" content="Learn about the SOLID principles of object-oriented design: Single Responsibility, Open/Closed, Liskov Substitution, Interface Segregation, and Dependency Inversion. This guide explains each principle with practical examples to help you write better, more maintainable code." />
-            <meta property="og:image" content="https://learntime.net/assets/thumbnail/blog-thumbnail-2.jpg" />
+            <meta property="og:title" content="10 Common Mistakes to Avoid When Learning Web Development" />
+            <meta property="og:description" content="Discover the 10 most common mistakes beginners make when learning web development and how to avoid them. From skipping the basics to ignoring version control, this guide will help you stay on track and succeed in your coding journey" />
+            <meta property="og:image" content="https://learntime.net/assets/thumbnail/blog-thumbnail-3.jpg" />
             <meta name="twitter:card" content="summary_large_image">
             <meta name="twitter:creator" content="@learntimenet">
-            <meta name="twitter:title" content="Understanding SOLID Principles in Software Development">
-            <meta name="twitter:description" content="Learn about the SOLID principles of object-oriented design: Single Responsibility, Open/Closed, Liskov Substitution, Interface Segregation, and Dependency Inversion. This guide explains each principle with practical examples to help you write better, more maintainable code.">
-            <meta name="twitter:image" content="https://learntime.net/assets/thumbnail/blog-thumbnail-2.jpg">
+            <meta name="twitter:title" content="10 Common Mistakes to Avoid When Learning Web Development">
+            <meta name="twitter:description" content="Discover the 10 most common mistakes beginners make when learning web development and how to avoid them. From skipping the basics to ignoring version control, this guide will help you stay on track and succeed in your coding journey">
+            <meta name="twitter:image" content="https://learntime.net/assets/thumbnail/blog-thumbnail-3.jpg">
         
                 <script>
                     var disqus_config = function () {
@@ -50,7 +50,7 @@
                         this.page.identifier = window.location.pathname.replace('/en', '');
                     };
                 </script>
-            <script defer src="/tips/understanding-solid-principles-in-software-development/understanding-solid-principles-in-software-development.b55cbd65dc6fd8765b37.js"></script></head>
+            <script defer src="/learning-advice/10-common-mistakes-to-avoid-when-learning-web-development/10-common-mistakes-to-avoid-when-learning-web-development.f541c7afbc3cd169915b.js"></script></head>
             <body>
                 <div class="loader">
                     <svg class="loader-logo" width="1000" height="1000" viewBox="0 0 1000 1000" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -87,256 +87,144 @@
         }
     }
 </style>
-<app-page-title title="Understanding SOLID Principles in Software Development"></app-page-title>
+<app-page-title title="10 Common Mistakes to Avoid When Learning Web Development"></app-page-title>
 <div class="blog-container">
   <div class="markdown section-container">
     <h2>Introduction</h2>
-<p><strong>SOLID</strong> is an acronym for five design principles that help software developers design robust, maintainable, and scalable object-oriented systems. These principles were introduced by Robert C. Martin (also known as Uncle Bob) and have become a cornerstone of modern software engineering. In this article, we’ll explore each of the <strong>SOLID principles</strong> in detail, along with practical examples to help you apply them in your projects.</p>
-<h2>What Are SOLID Principles?</h2>
-<p>SOLID stands for:</p>
-<ol>
-<li><strong>S</strong>ingle Responsibility Principle (SRP)</li>
-<li><strong>O</strong>pen/Closed Principle (OCP)</li>
-<li><strong>L</strong>iskov Substitution Principle (LSP)</li>
-<li><strong>I</strong>nterface Segregation Principle (ISP)</li>
-<li><strong>D</strong>ependency Inversion Principle (DIP)</li>
-</ol>
-<p>Let’s dive into each principle one by one.</p>
-<h2>1. Single Responsibility Principle (SRP)</h2>
-<h3>Definition</h3>
-<p>A class should have only one reason to change, meaning it should have only one responsibility.</p>
-<h3>Why It Matters</h3>
+<p>Learning web development is an exciting journey, but it can also be overwhelming, especially for beginners. With so many technologies, frameworks, and tools to master, it’s easy to fall into common pitfalls that can slow your progress or lead to frustration. In this article, we’ll explore <strong>10 common mistakes to avoid when learning web development</strong> and provide actionable tips to help you stay on track.</p>
+<h2>1. Skipping the Basics</h2>
+<p>One of the most common mistakes beginners make is jumping straight into frameworks like React or Spring Boot without understanding the fundamentals. HTML, CSS, and JavaScript are the building blocks of web development, and skipping them can lead to confusion later.</p>
+<h3>Why It’s a Problem:</h3>
 <ul>
-<li>Improves code readability and maintainability.</li>
-<li>Makes debugging and testing easier.</li>
-<li>Reduces the risk of unintended side effects when making changes.</li>
+<li>Without a solid understanding of the basics, you’ll struggle to debug issues or customize frameworks to fit your needs.</li>
+<li>Frameworks and libraries are built on top of core technologies, so understanding the fundamentals makes learning them easier.</li>
 </ul>
-<h3>Example that violates SRP Principle</h3>
-<pre><code class="language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Report</span> {
-    <span class="hljs-keyword">public</span> String <span class="hljs-title function_">generateReport</span><span class="hljs-params">()</span> {
-        <span class="hljs-comment">// Logic to generate report</span>
-    }
-
-    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">saveToFile</span><span class="hljs-params">(String filePath)</span> {
-        <span class="hljs-comment">// Logic to save report to file</span>
-    }
-}
-</code></pre></code></pre>
-<p><strong>alert-error</strong></p>
-<p><strong>Why It’s Bad</strong>: The <code>Report</code> class has two responsibilities: generating a report and saving it to a file. If the logic for saving files changes, the <code>Report</code> class will need to be modified, even if the report generation logic remains the same. This violates SRP.</p>
-<h3>Example that follows SRP Principle</h3>
-<pre><code class="language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Report</span> {
-    <span class="hljs-keyword">public</span> String <span class="hljs-title function_">generateReport</span><span class="hljs-params">()</span> {
-        <span class="hljs-comment">// Logic to generate report</span>
-    }
-}
-
-<span class="hljs-keyword">class</span> <span class="hljs-title class_">ReportSaver</span> {
-    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">saveToFile</span><span class="hljs-params">(Report report, String filePath)</span> {
-        <span class="hljs-comment">// Logic to save report to file</span>
-    }
-}
-</code></pre></code></pre>
-<p><strong>alert-info</strong></p>
-<p><strong>Why It’s Good</strong>: The responsibilities are separated into two classes. The Report class handles report generation, and the ReportSaver class handles saving the report. This makes the code easier to maintain and modify.</p>
-<h2>2. Open/Closed Principle (OCP)</h2>
-<h3>Definition</h3>
-<p>Software entities (classes, modules, functions) should be open for extension but closed for modification.</p>
-<h3>Why It Matters</h3>
+<h3>How to Avoid It:</h3>
 <ul>
-<li>Allows you to add new features without changing existing code.</li>
-<li>Reduces the risk of introducing bugs in already-tested code.</li>
+<li>Start with <strong>HTML</strong> to learn how to structure web pages.</li>
+<li>Move on to <strong>CSS</strong> for styling and layout.</li>
+<li>Master <strong>JavaScript</strong> for interactivity and logic.</li>
+<li>Only after mastering these should you explore frameworks like React or Angular.</li>
 </ul>
-<h3>Example that violates OCP Principle</h3>
-<pre><code class="language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Rectangle</span> {
-    <span class="hljs-keyword">public</span> <span class="hljs-type">double</span> width;
-    <span class="hljs-keyword">public</span> <span class="hljs-type">double</span> height;
-}
-
-<span class="hljs-keyword">class</span> <span class="hljs-title class_">AreaCalculator</span> {
-    <span class="hljs-keyword">public</span> <span class="hljs-type">double</span> <span class="hljs-title function_">calculateArea</span><span class="hljs-params">(Object shape)</span> {
-        <span class="hljs-keyword">if</span> (shape <span class="hljs-keyword">instanceof</span> Rectangle) {
-            <span class="hljs-type">Rectangle</span> <span class="hljs-variable">rect</span> <span class="hljs-operator">=</span> (Rectangle) shape;
-            <span class="hljs-keyword">return</span> rect.width * rect.height;
-        }
-        <span class="hljs-comment">// Adding a new shape requires modifying this method</span>
-    }
-}
-</code></pre></code></pre>
-<p><strong>alert-error</strong></p>
-<p><strong>Why It’s Bad</strong>: The <code>AreaCalculator</code> class is not closed for modification. If you want to add support for a new shape (e.g., a circle), you must modify the <code>calculateArea</code> method. This violates OCP</p>
-<h3>Example that follows OCP Principle</h3>
-<pre><code class="language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">interface</span> <span class="hljs-title class_">Shape</span> {
-    <span class="hljs-type">double</span> <span class="hljs-title function_">calculateArea</span><span class="hljs-params">()</span>;
-}
-
-<span class="hljs-keyword">class</span> <span class="hljs-title class_">Rectangle</span> <span class="hljs-keyword">implements</span> <span class="hljs-title class_">Shape</span> {
-    <span class="hljs-keyword">public</span> <span class="hljs-type">double</span> width;
-    <span class="hljs-keyword">public</span> <span class="hljs-type">double</span> height;
-
-    <span class="hljs-meta">@Override</span>
-    <span class="hljs-keyword">public</span> <span class="hljs-type">double</span> <span class="hljs-title function_">calculateArea</span><span class="hljs-params">()</span> {
-        <span class="hljs-keyword">return</span> width * height;
-    }
-}
-
-<span class="hljs-keyword">class</span> <span class="hljs-title class_">Circle</span> <span class="hljs-keyword">implements</span> <span class="hljs-title class_">Shape</span> {
-    <span class="hljs-keyword">public</span> <span class="hljs-type">double</span> radius;
-
-    <span class="hljs-meta">@Override</span>
-    <span class="hljs-keyword">public</span> <span class="hljs-type">double</span> <span class="hljs-title function_">calculateArea</span><span class="hljs-params">()</span> {
-        <span class="hljs-keyword">return</span> Math.PI * radius * radius;
-    }
-}
-</code></pre></code></pre>
-<p><strong>alert-info</strong></p>
-<p><strong>Why It’s Good</strong>: The <code>Shape</code> interface allows you to add new shapes (e.g., <code>Circle</code>) without modifying the existing <code>AreaCalculator</code> logic. This makes the system open for extension but closed for modification.</p>
-<h2>3. Liskov Substitution Principle (LSP)</h2>
-<h3>Definition</h3>
-<p>Objects of a superclass should be replaceable with objects of a subclass without affecting the correctness of the program.</p>
-<h3>Why It Matters</h3>
+<h2>2. Trying to Learn Everything at Once</h2>
+<p>Web development is a vast field, and it’s tempting to try to learn everything at once. However, this approach can lead to burnout and shallow understanding.</p>
+<h3>Why It’s a Problem:</h3>
 <ul>
-<li>Ensures that derived classes extend the base class without changing its behavior.</li>
-<li>Promotes polymorphism and code reuse.</li>
+<li>You’ll end up overwhelmed and unable to focus on mastering any one skill.</li>
+<li>It’s difficult to build meaningful projects without deep knowledge of a specific technology.</li>
 </ul>
-<h3>Example that violates LSP Principle</h3>
-<pre><code class="language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Bird</span> {
-    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">fly</span><span class="hljs-params">()</span> {
-        <span class="hljs-comment">// Logic to fly</span>
-    }
-}
-
-<span class="hljs-keyword">class</span> <span class="hljs-title class_">Ostrich</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">Bird</span> {
-    <span class="hljs-meta">@Override</span>
-    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">fly</span><span class="hljs-params">()</span> {
-        <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">UnsupportedOperationException</span>(<span class="hljs-string">&quot;Ostriches can&#x27;t fly!&quot;</span>);
-    }
-}
-</code></pre></code></pre>
-<p><strong>alert-error</strong></p>
-<p><strong>Why It’s Bad</strong>: The <code>Ostrich</code> class violates LSP because it changes the behavior of the <code>fly</code> method. If you substitute a <code>Bird</code> object with an <code>Ostrich</code>, the program will break because ostriches can’t fly.</p>
-<h3>Example that follows LSP Principle</h3>
-<pre><code class="language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">interface</span> <span class="hljs-title class_">Flyable</span> {
-    <span class="hljs-keyword">void</span> <span class="hljs-title function_">fly</span><span class="hljs-params">()</span>;
-}
-
-<span class="hljs-keyword">class</span> <span class="hljs-title class_">Sparrow</span> <span class="hljs-keyword">implements</span> <span class="hljs-title class_">Flyable</span> {
-    <span class="hljs-meta">@Override</span>
-    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">fly</span><span class="hljs-params">()</span> {
-        <span class="hljs-comment">// Logic to fly</span>
-    }
-}
-
-<span class="hljs-keyword">class</span> <span class="hljs-title class_">Ostrich</span> {
-    <span class="hljs-comment">// Ostrich doesn&#x27;t implement Flyable</span>
-}
-</code></pre></code></pre>
-<p><strong>alert-info</strong></p>
-<p><strong>Why It’s Good</strong>: The <code>Flyable</code> interface ensures that only birds that can fly implement the <code>fly</code> method. The <code>Ostrich</code> class doesn’t implement <code>Flyable</code>, so it doesn’t violate LSP.</p>
-<h2>4. Interface Segregation Principle (ISP)</h2>
-<h3>Definition</h3>
-<p>Clients should not be forced to depend on interfaces they do not use. In other words, keep interfaces small and focused.</p>
-<h3>Why It Matters</h3>
+<h3>How to Avoid It:</h3>
 <ul>
-<li>Reduces the complexity of implementing interfaces.</li>
-<li>Prevents classes from being burdened with unnecessary methods.</li>
+<li>Focus on <strong>one technology at a time</strong>. For example, start with front-end development (HTML, CSS, JavaScript) before moving to back-end (Java, Spring Boot).</li>
+<li>Create a <strong>learning roadmap</strong> and stick to it.</li>
+<li>Prioritize depth over breadth.</li>
 </ul>
-<h3>Example that violates ISP Principle</h3>
-<pre><code class="language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">interface</span> <span class="hljs-title class_">Worker</span> {
-    <span class="hljs-keyword">void</span> <span class="hljs-title function_">work</span><span class="hljs-params">()</span>;
-    <span class="hljs-keyword">void</span> <span class="hljs-title function_">eat</span><span class="hljs-params">()</span>;
-}
-
-<span class="hljs-keyword">class</span> <span class="hljs-title class_">Engineer</span> <span class="hljs-keyword">implements</span> <span class="hljs-title class_">Worker</span> {
-    <span class="hljs-meta">@Override</span>
-    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">work</span><span class="hljs-params">()</span> {
-        <span class="hljs-comment">// Logic to work</span>
-    }
-
-    <span class="hljs-meta">@Override</span>
-    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">eat</span><span class="hljs-params">()</span> {
-        <span class="hljs-comment">// Logic to eat</span>
-    }
-}
-</code></pre></code></pre>
-<p><strong>alert-error</strong></p>
-<p><strong>Why It’s Bad</strong>: The <code>Worker</code> interface forces the <code>Engineer</code> class to implement the <code>eat</code> method, even if it doesn’t need it. This violates ISP.</p>
-<h3>Example that follows ISP Principle</h3>
-<pre><code class="language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">interface</span> <span class="hljs-title class_">Workable</span> {
-    <span class="hljs-keyword">void</span> <span class="hljs-title function_">work</span><span class="hljs-params">()</span>;
-}
-
-<span class="hljs-keyword">interface</span> <span class="hljs-title class_">Eatable</span> {
-    <span class="hljs-keyword">void</span> <span class="hljs-title function_">eat</span><span class="hljs-params">()</span>;
-}
-
-<span class="hljs-keyword">class</span> <span class="hljs-title class_">Engineer</span> <span class="hljs-keyword">implements</span> <span class="hljs-title class_">Workable</span> {
-    <span class="hljs-meta">@Override</span>
-    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">work</span><span class="hljs-params">()</span> {
-        <span class="hljs-comment">// Logic to work</span>
-    }
-}
-</code></pre></code></pre>
-<p><strong>alert-info</strong></p>
-<p><strong>Why It’s Good</strong>: The <code>Workable</code> and <code>Eatable</code> interfaces are small and focused. The <code>Engineer</code> class only implements the <code>Workable</code> interface, so it’s not forced to implement unnecessary methods.</p>
-<h2>5. Dependency Inversion Principle (DIP)</h2>
-<h3>Definition</h3>
-<p>High-level modules should not depend on low-level modules. Both should depend on abstractions. Abstractions should not depend on details. Details should depend on abstractions.</p>
-<h3>Why It Matters</h3>
+<h2>3. Not Practicing Enough</h2>
+<p>Reading tutorials and watching videos is important, but it’s not enough. Many beginners make the mistake of not practicing enough, which leads to a lack of hands-on experience.</p>
+<h3>Why It’s a Problem:</h3>
 <ul>
-<li>Promotes loose coupling between modules.</li>
-<li>Makes the system more modular and easier to test.</li>
+<li>Without practice, you won’t retain what you’ve learned.</li>
+<li>Real-world coding challenges are different from tutorial examples.</li>
 </ul>
-<h3>Example that violates DIP Principle</h3>
-<pre><code class="language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">class</span> <span class="hljs-title class_">LightBulb</span> {
-    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">turnOn</span><span class="hljs-params">()</span> {
-        <span class="hljs-comment">// Logic to turn on</span>
-    }
-}
-
-<span class="hljs-keyword">class</span> <span class="hljs-title class_">Switch</span> {
-    <span class="hljs-keyword">private</span> LightBulb bulb;
-
-    <span class="hljs-keyword">public</span> <span class="hljs-title function_">Switch</span><span class="hljs-params">(LightBulb bulb)</span> {
-        <span class="hljs-built_in">this</span>.bulb = bulb;
-    }
-
-    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">operate</span><span class="hljs-params">()</span> {
-        bulb.turnOn();
-    }
-}
-</code></pre></code></pre>
-<p><strong>alert-error</strong></p>
-<p><strong>Why It’s Bad</strong>: The <code>Switch</code> class depends directly on the <code>LightBulb</code> class (a low-level module). If you want to replace the <code>LightBulb</code> with another device (e.g., a fan), you’ll need to modify the <code>Switch</code> class.</p>
-<h3>Example that follows DIP Principle</h3>
-<pre><code class="language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">interface</span> <span class="hljs-title class_">Switchable</span> {
-    <span class="hljs-keyword">void</span> <span class="hljs-title function_">turnOn</span><span class="hljs-params">()</span>;
-}
-
-<span class="hljs-keyword">class</span> <span class="hljs-title class_">LightBulb</span> <span class="hljs-keyword">implements</span> <span class="hljs-title class_">Switchable</span> {
-    <span class="hljs-meta">@Override</span>
-    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">turnOn</span><span class="hljs-params">()</span> {
-        <span class="hljs-comment">// Logic to turn on</span>
-    }
-}
-
-<span class="hljs-keyword">class</span> <span class="hljs-title class_">Switch</span> {
-    <span class="hljs-keyword">private</span> Switchable device;
-
-    <span class="hljs-keyword">public</span> <span class="hljs-title function_">Switch</span><span class="hljs-params">(Switchable device)</span> {
-        <span class="hljs-built_in">this</span>.device = device;
-    }
-
-    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">operate</span><span class="hljs-params">()</span> {
-        device.turnOn();
-    }
-}
-</code></pre></code></pre>
-<p><strong>alert-info</strong></p>
-<p><strong>Why It’s Good</strong>: The <code>Switch</code> class depends on the <code>Switchable</code> interface (an abstraction), not on a specific implementation like <code>LightBulb</code>. This allows you to easily switch between different devices without modifying the <code>Switch</code> class.</p>
+<h3>How to Avoid It:</h3>
+<ul>
+<li>Build <strong>small projects</strong> to apply what you’ve learned. For example, create a to-do list app or a personal portfolio website.</li>
+<li>Participate in <strong>coding challenges</strong> on platforms like LeetCode, HackerRank, or Codewars.</li>
+<li>Contribute to <strong>open-source projects</strong> on GitHub.</li>
+</ul>
+<h2>4. Ignoring Version Control (Git)</h2>
+<p>Many beginners overlook the importance of version control systems like Git, thinking it’s only for advanced developers. This is a big mistake.</p>
+<h3>Why It’s a Problem:</h3>
+<ul>
+<li>Without Git, it’s difficult to track changes, collaborate with others, or revert to previous versions of your code.</li>
+<li>Git is a must-have skill for professional developers.</li>
+</ul>
+<h3>How to Avoid It:</h3>
+<ul>
+<li>Learn the basics of Git and GitHub early in your journey.</li>
+<li>Practice creating repositories, committing changes, and pushing code to GitHub.</li>
+<li>Use Git for all your projects, no matter how small.</li>
+</ul>
+<h2>5. Not Writing Clean Code</h2>
+<p>Writing messy, unreadable code is a common mistake among beginners. While it might work, it makes your code difficult to maintain and debug.</p>
+<h3>Why It’s a Problem:</h3>
+<ul>
+<li>Poorly written code is hard to understand, even for you.</li>
+<li>It can lead to bugs and inefficiencies in your projects.</li>
+</ul>
+<h3>How to Avoid It:</h3>
+<ul>
+<li>Follow <strong>coding best practices</strong>, such as using meaningful variable names and writing modular code.</li>
+<li>Use tools like <strong>ESLint</strong> (for JavaScript) or <strong>Checkstyle</strong> (for Java) to enforce coding standards.</li>
+<li>Regularly <strong>refactor your code</strong> to improve readability and efficiency.</li>
+</ul>
+<h2>6. Over-Reliance on Frameworks and Libraries</h2>
+<p>Frameworks and libraries can make development faster, but relying on them too much can hinder your learning.</p>
+<h3>Why It’s a Problem:</h3>
+<ul>
+<li>You might not understand how things work under the hood.</li>
+<li>Overusing libraries can lead to bloated and inefficient code.</li>
+</ul>
+<h3>How to Avoid It:</h3>
+<ul>
+<li>Learn the <strong>core technologies</strong> before diving into frameworks.</li>
+<li>Try building small projects without frameworks to understand the basics.</li>
+<li>Use frameworks and libraries only when necessary.</li>
+</ul>
+<h2>7. Not Testing Your Code</h2>
+<p>Many beginners skip testing, thinking it’s only for advanced developers. However, testing is crucial for building reliable applications.</p>
+<h3>Why It’s a Problem:</h3>
+<ul>
+<li>Untested code is prone to bugs and errors.</li>
+<li>Testing helps you catch issues early and ensures your code works as expected.</li>
+</ul>
+<h3>How to Avoid It:</h3>
+<ul>
+<li>Learn the basics of <strong>unit testing</strong> and <strong>integration testing</strong>.</li>
+<li>Use testing frameworks like <strong>JUnit</strong> (for Java) or <strong>Jest</strong> (for JavaScript).</li>
+<li>Make testing a regular part of your development process.</li>
+</ul>
+<h2>8. Not Asking for Help</h2>
+<p>Some beginners struggle in silence, afraid to ask for help when they’re stuck. This can lead to wasted time and frustration.</p>
+<h3>Why It’s a Problem:</h3>
+<ul>
+<li>You might spend hours trying to solve a problem that could be resolved quickly with help.</li>
+<li>Learning from others is a key part of growth.</li>
+</ul>
+<h3>How to Avoid It:</h3>
+<ul>
+<li>Join <strong>online communities</strong> like Stack Overflow, Reddit, or Discord groups.</li>
+<li>Don’t be afraid to ask questions or seek feedback on your code.</li>
+<li>Collaborate with other learners or mentors.</li>
+</ul>
+<h2>9. Not Building a Portfolio</h2>
+<p>Many beginners focus solely on learning and forget to build a portfolio. Without one, it’s difficult to showcase your skills to potential employers or clients.</p>
+<h3>Why It’s a Problem:</h3>
+<ul>
+<li>A portfolio is essential for landing jobs or freelance gigs.</li>
+<li>It demonstrates your ability to apply what you’ve learned.</li>
+</ul>
+<h3>How to Avoid It:</h3>
+<ul>
+<li>Build <strong>real-world projects</strong> that solve problems or demonstrate your skills.</li>
+<li>Host your projects on GitHub or a personal website.</li>
+<li>Include a variety of projects to showcase your versatility.</li>
+</ul>
+<h2>10. Giving Up Too Soon</h2>
+<p>Web development can be challenging, and many beginners give up when they encounter difficulties. Persistence is key to success.</p>
+<h3>Why It’s a Problem:</h3>
+<ul>
+<li>You’ll never reach your full potential if you quit too soon.</li>
+<li>Every developer faces challenges, but overcoming them is part of the learning process.</li>
+</ul>
+<h3>How to Avoid It:</h3>
+<ul>
+<li>Set <strong>realistic goals</strong> and celebrate small wins.</li>
+<li>Break complex problems into smaller, manageable tasks.</li>
+<li>Remember that every developer was once a beginner.</li>
+</ul>
 <h2>Conclusion</h2>
-<p>The SOLID principles are essential guidelines for designing robust, maintainable, and scalable software systems. By applying these principles, you can create code that is easier to understand, extend, and maintain. Whether you’re a beginner or an experienced developer, mastering SOLID principles will significantly improve your software design skills.</p>
-<p>Remember, SOLID is not about perfection but about making thoughtful design decisions that lead to better code. Start applying these principles in your projects today and see the difference they make!</p>
+<p>Learning web development is a rewarding but challenging journey. By avoiding these <strong>10 common mistakes</strong>, you can save time, stay motivated, and make steady progress. Remember to focus on the basics, practice regularly, and seek help when needed. Most importantly, don’t give up—every line of code you write brings you one step closer to becoming a skilled web developer.</p>
 <p>Happy coding!</p>
 
     <app-comments></app-comments>
