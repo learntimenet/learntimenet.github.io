@@ -304,7 +304,7 @@ function onCodeCopyButtonClickCode(event, code) {
   textarea.style.position = 'fixed'; // Prevent scrolling to bottom of page in Microsoft Edge.
   document.body.appendChild(textarea);
   textarea.select();
-  event.target.innerHTML = copied[getLanguage()];
+  event.target.innerHTML = `${copied[getLanguage()]}!`;
   setTimeout(() => event.target.innerHTML = copy[getLanguage()], 1000);
   try {
     return document.execCommand('copy');

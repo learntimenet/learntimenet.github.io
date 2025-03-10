@@ -3,8 +3,8 @@
             <html lang="en">
             <head>
                 <meta charset="utf-8" />
-                <title>Learn Time | Docker CheatSheet</title>
-                <meta name="description" content="A comprehensive guide to essential Docker commands, tips, and best practices. Perfect for developers and DevOps professionals to streamline containerization efficiently">
+                <title>Learn Time | Understanding SOLID Principles in Software Development</title>
+                <meta name="description" content="Learn about the SOLID principles of object-oriented design—Single Responsibility, Open/Closed, Liskov Substitution, Interface Segregation, and Dependency Inversion. This guide explains each principle with practical examples to help you write better, more maintainable code.">
                 
                 <meta name="viewport" content="width=device-width,initial-scale=1" />
                 <!--
@@ -35,14 +35,14 @@
                     .loader.hide {opacity: 0;}
                 </style>
                 
-            <meta property="og:title" content="Docker CheatSheet" />
-            <meta property="og:description" content="A comprehensive guide to essential Docker commands, tips, and best practices. Perfect for developers and DevOps professionals to streamline containerization efficiently" />
-            <meta property="og:image" content="https://learntime.net/assets/thumbnail/blog-thumbnail-5.jpg" />
+            <meta property="og:title" content="Understanding SOLID Principles in Software Development" />
+            <meta property="og:description" content="Learn about the SOLID principles of object-oriented design—Single Responsibility, Open/Closed, Liskov Substitution, Interface Segregation, and Dependency Inversion. This guide explains each principle with practical examples to help you write better, more maintainable code." />
+            <meta property="og:image" content="https://learntime.net/assets/thumbnail/blog-thumbnail-1.jpg" />
             <meta name="twitter:card" content="summary_large_image">
             <meta name="twitter:creator" content="@learntimenet">
-            <meta name="twitter:title" content="Docker CheatSheet">
-            <meta name="twitter:description" content="A comprehensive guide to essential Docker commands, tips, and best practices. Perfect for developers and DevOps professionals to streamline containerization efficiently">
-            <meta name="twitter:image" content="https://learntime.net/assets/thumbnail/blog-thumbnail-5.jpg">
+            <meta name="twitter:title" content="Understanding SOLID Principles in Software Development">
+            <meta name="twitter:description" content="Learn about the SOLID principles of object-oriented design—Single Responsibility, Open/Closed, Liskov Substitution, Interface Segregation, and Dependency Inversion. This guide explains each principle with practical examples to help you write better, more maintainable code.">
+            <meta name="twitter:image" content="https://learntime.net/assets/thumbnail/blog-thumbnail-1.jpg">
         
                 <script>
                     var disqus_config = function () {
@@ -50,7 +50,7 @@
                         this.page.identifier = window.location.pathname.replace('/en', '');
                     };
                 </script>
-            <script defer src="/docker/cheatsheet/cheatsheet.201facd978a78df20842.js"></script></head>
+            <script defer src="/tips/understanding-solid-principles-in-software-development/understanding-solid-principles-in-software-development.f02f41c144e159ad2f10.js"></script></head>
             <body>
                 <div class="loader">
                     <svg class="loader-logo" width="1000" height="1000" viewBox="0 0 1000 1000" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -87,85 +87,257 @@
         }
     }
 </style>
-<app-page-title title="Docker CheatSheet"></app-page-title>
+<app-page-title title="Understanding SOLID Principles in Software Development"></app-page-title>
 <div class="blog-container">
   <div class="markdown section-container">
     <h2>Introduction</h2>
-<p>Docker provides the ability to package and run an application in a loosely isolated environment called a container. The isolation and security allows you to run many containers simultaneously on a given host. Containers are lightweight and contain everything needed to run the application, so you do not need to rely on what is currently installed on the host. You can easily share containers while you work, and be sure that everyone you share with gets the same container that works in the same way.</p>
-<h2>Installation</h2>
+<p>SOLID is an acronym for five design principles that help software developers design robust, maintainable, and scalable object-oriented systems. These principles were introduced by Robert C. Martin (also known as Uncle Bob) and have become a cornerstone of modern software engineering. In this article, we’ll explore each of the <strong>SOLID principles</strong> in detail, along with practical examples to help you apply them in your projects.</p>
+<h2>What Are SOLID Principles?</h2>
+<p>SOLID stands for:</p>
+<ol>
+<li><strong>S</strong>ingle Responsibility Principle (SRP)</li>
+<li><strong>O</strong>pen/Closed Principle (OCP)</li>
+<li><strong>L</strong>iskov Substitution Principle (LSP)</li>
+<li><strong>I</strong>nterface Segregation Principle (ISP)</li>
+<li><strong>D</strong>ependency Inversion Principle (DIP)</li>
+</ol>
+<p>Let’s dive into each principle one by one.</p>
+<h2>1. Single Responsibility Principle (SRP)</h2>
+<h3>Definition</h3>
+<p>A class should have only one reason to change, meaning it should have only one responsibility.</p>
+<h3>Why It Matters</h3>
 <ul>
-<li><a href="https://docs.docker.com/desktop" title="Docker Desktop">Docker Desktop</a> is available for Mac, Linux and Windows</li>
-<li>Here example <a href="https://github.com/docker/awesome-compose" title="projects">projects</a> that use Docker</li>
-<li>Check out offcial <a href="https://docs.docker.com" title="docs">docs</a> for information on using Docker</li>
+<li>Improves code readability and maintainability.</li>
+<li>Makes debugging and testing easier.</li>
+<li>Reduces the risk of unintended side effects when making changes.</li>
 </ul>
-<h2>General commands</h2>
-<p><strong>cheatsheet</strong></p>
+<h3>Example that violates SRP Principle</h3>
+<pre><code class="language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Report</span> {
+    <span class="hljs-keyword">public</span> String <span class="hljs-title function_">generateReport</span><span class="hljs-params">()</span> {
+        <span class="hljs-comment">// Logic to generate report</span>
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">saveToFile</span><span class="hljs-params">(String filePath)</span> {
+        <span class="hljs-comment">// Logic to save report to file</span>
+    }
+}
+</code></pre></code></pre>
+<p><strong>alert-error</strong></p>
+<p><strong>Why It’s Bad</strong>: The <code>Report</code> class has two responsibilities: generating a report and saving it to a file. If the logic for saving files changes, the <code>Report</code> class will need to be modified, even if the report generation logic remains the same. This violates SRP.</p>
+<h3>Example that follows SRP Principle</h3>
+<pre><code class="language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Report</span> {
+    <span class="hljs-keyword">public</span> String <span class="hljs-title function_">generateReport</span><span class="hljs-params">()</span> {
+        <span class="hljs-comment">// Logic to generate report</span>
+    }
+}
+
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">ReportSaver</span> {
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">saveToFile</span><span class="hljs-params">(Report report, String filePath)</span> {
+        <span class="hljs-comment">// Logic to save report to file</span>
+    }
+}
+</code></pre></code></pre>
+<p><strong>alert-info</strong></p>
+<p><strong>Why It’s Good</strong>: The responsibilities are separated into two classes. The Report class handles report generation, and the ReportSaver class handles saving the report. This makes the code easier to maintain and modify.</p>
+<h2>2. Open/Closed Principle (OCP)</h2>
+<h3>Definition</h3>
+<p>Software entities (classes, modules, functions) should be open for extension but closed for modification.</p>
+<h3>Why It Matters</h3>
 <ul>
-<li>Start the docker daemon<br/>
-docker -d</li>
-<li>Get help with Docker. Can also use <code>–help</code> on all subcommands<br/>
-docker --help</li>
-<li>Display system-wide information<br/>
-docker info</li>
+<li>Allows you to add new features without changing existing code.</li>
+<li>Reduces the risk of introducing bugs in already-tested code.</li>
 </ul>
-<h2>Images</h2>
-<p>Docker images are a lightweight, standalone, executable package of software that includes everything needed to run an application: code, runtime, system tools, system libraries and settings.</p>
-<p><strong>cheatsheet</strong></p>
+<h3>Example that violates OCP Principle</h3>
+<pre><code class="language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Rectangle</span> {
+    <span class="hljs-keyword">public</span> <span class="hljs-type">double</span> width;
+    <span class="hljs-keyword">public</span> <span class="hljs-type">double</span> height;
+}
+
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">AreaCalculator</span> {
+    <span class="hljs-keyword">public</span> <span class="hljs-type">double</span> <span class="hljs-title function_">calculateArea</span><span class="hljs-params">(Object shape)</span> {
+        <span class="hljs-keyword">if</span> (shape <span class="hljs-keyword">instanceof</span> Rectangle) {
+            <span class="hljs-type">Rectangle</span> <span class="hljs-variable">rect</span> <span class="hljs-operator">=</span> (Rectangle) shape;
+            <span class="hljs-keyword">return</span> rect.width * rect.height;
+        }
+        <span class="hljs-comment">// Adding a new shape requires modifying this method</span>
+    }
+}
+</code></pre></code></pre>
+<p><strong>alert-error</strong></p>
+<p><strong>Why It’s Bad</strong>: The <code>AreaCalculator</code> class is not closed for modification. If you want to add support for a new shape (e.g., a circle), you must modify the <code>calculateArea</code> method. This violates OCP</p>
+<h3>Example that follows OCP Principle</h3>
+<pre><code class="language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">interface</span> <span class="hljs-title class_">Shape</span> {
+    <span class="hljs-type">double</span> <span class="hljs-title function_">calculateArea</span><span class="hljs-params">()</span>;
+}
+
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">Rectangle</span> <span class="hljs-keyword">implements</span> <span class="hljs-title class_">Shape</span> {
+    <span class="hljs-keyword">public</span> <span class="hljs-type">double</span> width;
+    <span class="hljs-keyword">public</span> <span class="hljs-type">double</span> height;
+
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-type">double</span> <span class="hljs-title function_">calculateArea</span><span class="hljs-params">()</span> {
+        <span class="hljs-keyword">return</span> width * height;
+    }
+}
+
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">Circle</span> <span class="hljs-keyword">implements</span> <span class="hljs-title class_">Shape</span> {
+    <span class="hljs-keyword">public</span> <span class="hljs-type">double</span> radius;
+
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-type">double</span> <span class="hljs-title function_">calculateArea</span><span class="hljs-params">()</span> {
+        <span class="hljs-keyword">return</span> Math.PI * radius * radius;
+    }
+}
+</code></pre></code></pre>
+<p><strong>alert-info</strong></p>
+<p><strong>Why It’s Good</strong>: The <code>Shape</code> interface allows you to add new shapes (e.g., <code>Circle</code>) without modifying the existing <code>AreaCalculator</code> logic. This makes the system open for extension but closed for modification.</p>
+<h2>3. Liskov Substitution Principle (LSP)</h2>
+<h3>Definition</h3>
+<p>Objects of a superclass should be replaceable with objects of a subclass without affecting the correctness of the program.</p>
+<h3>Why It Matters</h3>
 <ul>
-<li>Build an Image from a Dockerfile<br/>
-docker build -t &lt;image_name&gt; .</li>
-<li>Build an Image from a Dockerfile without the cache<br/>
-docker build -t &lt;image_name&gt; . –no-cache</li>
-<li>List local images<br/>
-docker images</li>
-<li>Delete an Image<br/>
-docker rmi &lt;image_name&gt;</li>
-<li>Remove all unused images<br/>
-docker image prune</li>
+<li>Ensures that derived classes extend the base class without changing its behavior.</li>
+<li>Promotes polymorphism and code reuse.</li>
 </ul>
-<h2>Containers</h2>
-<p>A container is a runtime instance of a docker image. A container will always run the same, regardless of the infrastructure. Containers isolate software from its environment and ensure that it works uniformly despite differences for instance between
-development and staging.</p>
-<p><strong>cheatsheet</strong></p>
+<h3>Example that violates LSP Principle</h3>
+<pre><code class="language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Bird</span> {
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">fly</span><span class="hljs-params">()</span> {
+        <span class="hljs-comment">// Logic to fly</span>
+    }
+}
+
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">Ostrich</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">Bird</span> {
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">fly</span><span class="hljs-params">()</span> {
+        <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">UnsupportedOperationException</span>(<span class="hljs-string">&quot;Ostriches can&#x27;t fly!&quot;</span>);
+    }
+}
+</code></pre></code></pre>
+<p><strong>alert-error</strong></p>
+<p><strong>Why It’s Bad</strong>: The <code>Ostrich</code> class violates LSP because it changes the behavior of the <code>fly</code> method. If you substitute a <code>Bird</code> object with an <code>Ostrich</code>, the program will break because ostriches can’t fly.</p>
+<h3>Example that follows LSP Principle</h3>
+<pre><code class="language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">interface</span> <span class="hljs-title class_">Flyable</span> {
+    <span class="hljs-keyword">void</span> <span class="hljs-title function_">fly</span><span class="hljs-params">()</span>;
+}
+
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">Sparrow</span> <span class="hljs-keyword">implements</span> <span class="hljs-title class_">Flyable</span> {
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">fly</span><span class="hljs-params">()</span> {
+        <span class="hljs-comment">// Logic to fly</span>
+    }
+}
+
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">Ostrich</span> {
+    <span class="hljs-comment">// Ostrich doesn&#x27;t implement Flyable</span>
+}
+</code></pre></code></pre>
+<p><strong>alert-info</strong></p>
+<p><strong>Why It’s Good</strong>: The <code>Flyable</code> interface ensures that only birds that can fly implement the <code>fly</code> method. The <code>Ostrich</code> class doesn’t implement <code>Flyable</code>, so it doesn’t violate LSP.</p>
+<h2>4. Interface Segregation Principle (ISP)</h2>
+<h3>Definition</h3>
+<p>Clients should not be forced to depend on interfaces they do not use. In other words, keep interfaces small and focused.</p>
+<h3>Why It Matters</h3>
 <ul>
-<li>Create and run a container from an image, with a custom name:<br/>
-docker run --name &lt;container_name&gt; &lt;image_name&gt;</li>
-<li>Run a container with and publish a container’s port(s) to the host.<br/>
-docker run -p &lt;host_port&gt;:&lt;container_port&gt; &lt;image_name&gt;</li>
-<li>Run a container in the background<br/>
-docker run -d &lt;image_name&gt;</li>
-<li>Start or stop an existing container:<br/>
-docker start|stop &lt;container_name&gt; (or &lt;container-id&gt;)</li>
-<li>Remove a stopped container:<br/>
-docker rm &lt;container_name&gt;</li>
-<li>Open a shell inside a running container:<br/>
-docker exec -it &lt;container_name&gt; sh</li>
-<li>Fetch and follow the logs of a container:<br/>
-docker logs -f &lt;container_name&gt;</li>
-<li>To inspect a running container:<br/>
-docker inspect &lt;container_name&gt; (or &lt;container_id&gt;)</li>
-<li>To list currently running containers:<br/>
-docker ps</li>
-<li>List all docker containers (running and stopped):<br/>
-docker ps --all</li>
-<li>View resource usage stats<br/>
-docker container stats</li>
+<li>Reduces the complexity of implementing interfaces.</li>
+<li>Prevents classes from being burdened with unnecessary methods.</li>
 </ul>
-<h2>Docker HUB</h2>
-<p>Docker Hub is a service provided by Docker for finding and sharing container images with your team. Learn more and find images at <a href="https://hub.docker.com" title="https://hub.docker.com">https://hub.docker.com</a></p>
-<p><strong>cheatsheet</strong></p>
+<h3>Example that violates ISP Principle</h3>
+<pre><code class="language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">interface</span> <span class="hljs-title class_">Worker</span> {
+    <span class="hljs-keyword">void</span> <span class="hljs-title function_">work</span><span class="hljs-params">()</span>;
+    <span class="hljs-keyword">void</span> <span class="hljs-title function_">eat</span><span class="hljs-params">()</span>;
+}
+
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">Engineer</span> <span class="hljs-keyword">implements</span> <span class="hljs-title class_">Worker</span> {
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">work</span><span class="hljs-params">()</span> {
+        <span class="hljs-comment">// Logic to work</span>
+    }
+
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">eat</span><span class="hljs-params">()</span> {
+        <span class="hljs-comment">// Logic to eat</span>
+    }
+}
+</code></pre></code></pre>
+<p><strong>alert-error</strong></p>
+<p><strong>Why It’s Bad</strong>: The <code>Worker</code> interface forces the <code>Engineer</code> class to implement the <code>eat</code> method, even if it doesn’t need it. This violates ISP.</p>
+<h3>Example that follows ISP Principle</h3>
+<pre><code class="language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">interface</span> <span class="hljs-title class_">Workable</span> {
+    <span class="hljs-keyword">void</span> <span class="hljs-title function_">work</span><span class="hljs-params">()</span>;
+}
+
+<span class="hljs-keyword">interface</span> <span class="hljs-title class_">Eatable</span> {
+    <span class="hljs-keyword">void</span> <span class="hljs-title function_">eat</span><span class="hljs-params">()</span>;
+}
+
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">Engineer</span> <span class="hljs-keyword">implements</span> <span class="hljs-title class_">Workable</span> {
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">work</span><span class="hljs-params">()</span> {
+        <span class="hljs-comment">// Logic to work</span>
+    }
+}
+</code></pre></code></pre>
+<p><strong>alert-info</strong></p>
+<p><strong>Why It’s Good</strong>: The <code>Workable</code> and <code>Eatable</code> interfaces are small and focused. The <code>Engineer</code> class only implements the <code>Workable</code> interface, so it’s not forced to implement unnecessary methods.</p>
+<h2>5. Dependency Inversion Principle (DIP)</h2>
+<h3>Definition</h3>
+<p>High-level modules should not depend on low-level modules. Both should depend on abstractions. Abstractions should not depend on details. Details should depend on abstractions.</p>
+<h3>Why It Matters</h3>
 <ul>
-<li>Login into Docker<br/>
-docker login -u &lt;user_name&gt;</li>
-<li>Publish an image to Docker Hub<br/>
-docker push &lt;user_name&gt;/&lt;image_name&gt;</li>
-<li>Search Hub for an image<br/>
-docker search &lt;image_name&gt;</li>
-<li>Pull an image from a Docker Hub<br/>
-docker pull &lt;image_name&gt;</li>
+<li>Promotes loose coupling between modules.</li>
+<li>Makes the system more modular and easier to test.</li>
 </ul>
+<h3>Example that violates DIP Principle</h3>
+<pre><code class="language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">class</span> <span class="hljs-title class_">LightBulb</span> {
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">turnOn</span><span class="hljs-params">()</span> {
+        <span class="hljs-comment">// Logic to turn on</span>
+    }
+}
+
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">Switch</span> {
+    <span class="hljs-keyword">private</span> LightBulb bulb;
+
+    <span class="hljs-keyword">public</span> <span class="hljs-title function_">Switch</span><span class="hljs-params">(LightBulb bulb)</span> {
+        <span class="hljs-built_in">this</span>.bulb = bulb;
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">operate</span><span class="hljs-params">()</span> {
+        bulb.turnOn();
+    }
+}
+</code></pre></code></pre>
+<p><strong>alert-error</strong></p>
+<p><strong>Why It’s Bad</strong>: The <code>Switch</code> class depends directly on the <code>LightBulb</code> class (a low-level module). If you want to replace the <code>LightBulb</code> with another device (e.g., a fan), you’ll need to modify the <code>Switch</code> class.</p>
+<h3>Example that follows DIP Principle</h3>
+<pre><code class="language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">interface</span> <span class="hljs-title class_">Switchable</span> {
+    <span class="hljs-keyword">void</span> <span class="hljs-title function_">turnOn</span><span class="hljs-params">()</span>;
+}
+
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">LightBulb</span> <span class="hljs-keyword">implements</span> <span class="hljs-title class_">Switchable</span> {
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">turnOn</span><span class="hljs-params">()</span> {
+        <span class="hljs-comment">// Logic to turn on</span>
+    }
+}
+
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">Switch</span> {
+    <span class="hljs-keyword">private</span> Switchable device;
+
+    <span class="hljs-keyword">public</span> <span class="hljs-title function_">Switch</span><span class="hljs-params">(Switchable device)</span> {
+        <span class="hljs-built_in">this</span>.device = device;
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">operate</span><span class="hljs-params">()</span> {
+        device.turnOn();
+    }
+}
+</code></pre></code></pre>
+<p><strong>alert-info</strong></p>
+<p><strong>Why It’s Good</strong>: The <code>Switch</code> class depends on the <code>Switchable</code> interface (an abstraction), not on a specific implementation like <code>LightBulb</code>. This allows you to easily switch between different devices without modifying the <code>Switch</code> class.</p>
 <h2>Conclusion</h2>
-<p>This Docker Cheat Sheet is your ultimate guide to mastering Docker. Whether you're a beginner or an experienced developer, these commands and tips will help you streamline your workflow and make the most of Docker's powerful features. Bookmark this guide and refer to it whenever you need a quick refresher on Docker commands. Happy containerizing!</p>
+<p>The SOLID principles are essential guidelines for designing robust, maintainable, and scalable software systems. By applying these principles, you can create code that is easier to understand, extend, and maintain. Whether you’re a beginner or an experienced developer, mastering SOLID principles will significantly improve your software design skills.</p>
+<p>Remember, SOLID is not about perfection but about making thoughtful design decisions that lead to better code. Start applying these principles in your projects today and see the difference they make!</p>
+<p>Happy coding!</p>
 
     <app-comments></app-comments>
   </div>
