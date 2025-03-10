@@ -3,8 +3,8 @@
             <html lang="en">
             <head>
                 <meta charset="utf-8" />
-                <title>Learn Time | Countdown Timer</title>
-                <meta name="description" content="In this article, we'll learn how to create a countdown timer using HTML, CSS and JavaScript. With easy-to-understand source code, you can follow the steps and create your own version.">
+                <title>Learn Time | Caching in Spring Boot: Improving Performance with @Cacheable</title>
+                <meta name="description" content="Learn how to use the @Cacheable annotation in Spring Boot to improve application performance by caching method results. This guide covers configuration, usage, and best practices for effective caching.">
                 
                 <meta name="viewport" content="width=device-width,initial-scale=1" />
                 <!--
@@ -35,14 +35,14 @@
                     .loader.hide {opacity: 0;}
                 </style>
                 
-            <meta property="og:title" content="Countdown Timer" />
-            <meta property="og:description" content="In this article, we'll learn how to create a countdown timer using HTML, CSS and JavaScript. With easy-to-understand source code, you can follow the steps and create your own version." />
-            <meta property="og:image" content="https://learntime.nethttp://img.youtube.com/vi/q6fFsOX2ihE/maxresdefault.jpg" />
+            <meta property="og:title" content="Caching in Spring Boot: Improving Performance with @Cacheable" />
+            <meta property="og:description" content="Learn how to use the @Cacheable annotation in Spring Boot to improve application performance by caching method results. This guide covers configuration, usage, and best practices for effective caching." />
+            <meta property="og:image" content="https://learntime.net/assets/thumbnail/blog-thumbnail-1.jpg" />
             <meta name="twitter:card" content="summary_large_image">
             <meta name="twitter:creator" content="@learntimenet">
-            <meta name="twitter:title" content="Countdown Timer">
-            <meta name="twitter:description" content="In this article, we'll learn how to create a countdown timer using HTML, CSS and JavaScript. With easy-to-understand source code, you can follow the steps and create your own version.">
-            <meta name="twitter:image" content="https://learntime.nethttp://img.youtube.com/vi/q6fFsOX2ihE/maxresdefault.jpg">
+            <meta name="twitter:title" content="Caching in Spring Boot: Improving Performance with @Cacheable">
+            <meta name="twitter:description" content="Learn how to use the @Cacheable annotation in Spring Boot to improve application performance by caching method results. This guide covers configuration, usage, and best practices for effective caching.">
+            <meta name="twitter:image" content="https://learntime.net/assets/thumbnail/blog-thumbnail-1.jpg">
         
                 <script>
                     var disqus_config = function () {
@@ -50,7 +50,7 @@
                         this.page.identifier = window.location.pathname.replace('/en', '');
                     };
                 </script>
-            <script defer src="/apps/count-down/count-down.ecde99f5bb7139b428eb.js"></script></head>
+            <script defer src="/spring/caching-in-spring-boot-improving-performance-with-cacheable/caching-in-spring-boot-improving-performance-with-cacheable.6036b1e019893c612e2c.js"></script></head>
             <body>
                 <div class="loader">
                     <svg class="loader-logo" width="1000" height="1000" viewBox="0 0 1000 1000" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -87,141 +87,122 @@
         }
     }
 </style>
-<app-page-title title="Countdown Timer"></app-page-title>
+<app-page-title title="Caching in Spring Boot: Improving Performance with @Cacheable"></app-page-title>
 <div class="blog-container">
   <div class="markdown section-container">
     <h2>Introduction</h2>
-<p>In this article, we're going to learn how to create a countdown timer using HTML, CSS and JavaScript. With easy-to-understand source code, you can follow the steps and create your own version.</p>
-<iframe width="900" height="506" src="https://www.youtube.com/embed/q6fFsOX2ihE" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-<h2>Code source</h2>
-<p><strong>code-tabs</strong></p>
+<p>Caching is a powerful technique to improve the performance of your Spring Boot applications by storing the results of expensive method calls and reusing them for subsequent requests. Spring Boot provides built-in support for caching through the <strong>Spring Cache Abstraction</strong>, and the <code>@Cacheable</code> annotation is one of the most commonly used tools for implementing caching. In this article, we’ll explore how to use <code>@Cacheable</code> to optimize your application’s performance.</p>
+<h2>What is Caching?</h2>
+<p>Caching is the process of storing data in a temporary storage area (cache) so that future requests for the same data can be served faster. This is particularly useful for:</p>
 <ul>
-<li><p>index.html</p>
-<pre><code class="language-html"><pre class="highlight"><code class="hljs"><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-keyword">html</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">&quot;en&quot;</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;UTF-8&quot;</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">http-equiv</span>=<span class="hljs-string">&quot;X-UA-Compatible&quot;</span> <span class="hljs-attr">content</span>=<span class="hljs-string">&quot;IE=edge&quot;</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;viewport&quot;</span> <span class="hljs-attr">content</span>=<span class="hljs-string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>COUNT DOWN<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">&quot;stylesheet&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;./style.css&quot;</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">main</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>Comming Soon<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;container&quot;</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;counter-container&quot;</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;days&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;counter&quot;</span>&gt;</span>0<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>Days<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
-      <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;counter-container&quot;</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;hours&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;counter&quot;</span>&gt;</span>0<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>Hours<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
-      <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;counter-container&quot;</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;minutes&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;counter&quot;</span>&gt;</span>0<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>Minutes<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
-      <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;counter-container&quot;</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;seconds&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;counter&quot;</span>&gt;</span>0<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>Seconds<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
-      <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-  <span class="hljs-tag">&lt;/<span class="hljs-name">main</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;./script.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;./snow.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
-</code></pre></code></pre></li>
-<li><p>style.css</p>
-<pre><code class="language-css"><pre class="highlight"><code class="hljs">*,
-*<span class="hljs-selector-pseudo">::before</span>,
-*<span class="hljs-selector-pseudo">::after</span> {
-  <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span>;
-  <span class="hljs-attribute">padding</span>: <span class="hljs-number">0</span>;
-  <span class="hljs-attribute">box-sizing</span>: border-box;
-}
+<li>Reducing database load.</li>
+<li>Speeding up response times for frequently accessed data.</li>
+<li>Minimizing the cost of expensive computations or external API calls.</li>
+</ul>
+<h2>Spring Boot Caching with <code>@Cacheable</code></h2>
+<p>The <code>@Cacheable</code> annotation in Spring Boot allows you to cache the result of a method. When the method is called, Spring checks if the result is already in the cache. If it is, the cached result is returned. If not, the method is executed, and its result is stored in the cache for future use.</p>
+<h2>How to Use <code>@Cacheable</code></h2>
+<h3>Step 1: Enable Caching in Spring Boot</h3>
+<p>To enable caching in your Spring Boot application, add the <code>@EnableCaching</code> annotation to your main application class or a configuration class.</p>
+<pre><code class="language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">import</span> org.springframework.cache.annotation.EnableCaching;
+<span class="hljs-keyword">import</span> org.springframework.boot.SpringApplication;
+<span class="hljs-keyword">import</span> org.springframework.boot.autoconfigure.SpringBootApplication;
 
-<span class="hljs-selector-tag">body</span> {
-  <span class="hljs-attribute">font-family</span>: <span class="hljs-string">&#x27;Roboto&#x27;</span>, sans-serif;
-  <span class="hljs-attribute">height</span>: <span class="hljs-number">100vh</span>;
-  <span class="hljs-attribute">display</span>: flex;
-  <span class="hljs-attribute">align-items</span>: center;
-  <span class="hljs-attribute">justify-content</span>: center;
-  <span class="hljs-attribute">background</span>: <span class="hljs-built_in">url</span>(<span class="hljs-string">./background.png</span>) no-repeat;
-  <span class="hljs-attribute">background-position</span>: center;
-  <span class="hljs-attribute">background-size</span>: cover;
+<span class="hljs-meta">@EnableCaching</span>
+<span class="hljs-meta">@SpringBootApplication</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">MyApplication</span> {
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> {
+        SpringApplication.run(MyApplication.class, args);
+    }
 }
+</code></pre></code></pre>
+<h3>Step 2: Add @Cacheable to Methods</h3>
+<p>Use the <code>@Cacheable</code> annotation on methods whose results you want to cache. You can specify the cache name and optionally a key for the cache.</p>
+<pre><code class="language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">import</span> org.springframework.cache.annotation.Cacheable;
+<span class="hljs-keyword">import</span> org.springframework.stereotype.Service;
 
-<span class="hljs-selector-tag">h1</span> {
-  <span class="hljs-attribute">text-align</span>: center;
-  <span class="hljs-attribute">color</span>: <span class="hljs-number">#C75263</span>;
-  <span class="hljs-attribute">font-size</span>: <span class="hljs-number">50px</span>;
-  <span class="hljs-attribute">margin-bottom</span>: <span class="hljs-number">30px</span>;
-  <span class="hljs-attribute">text-transform</span>: uppercase;
+<span class="hljs-meta">@Service</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">ProductService</span> {
+
+    <span class="hljs-meta">@Cacheable(&quot;products&quot;)</span>
+    <span class="hljs-keyword">public</span> Product <span class="hljs-title function_">getProductById</span><span class="hljs-params">(Long id)</span> {
+        <span class="hljs-comment">// Simulate a slow database call or expensive computation</span>
+        simulateSlowService();
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Product</span>(id, <span class="hljs-string">&quot;Product &quot;</span> + id);
+    }
+
 }
-
-<span class="hljs-selector-class">.container</span> {
-  <span class="hljs-attribute">display</span>: flex;
+</code></pre></code></pre>
+<p><strong>Explanation:</strong></p>
+<ul>
+<li>The <code>@Cacheable(&quot;products&quot;)</code> annotation caches the result of the <code>getProductById</code> method in a cache named products.</li>
+<li>The first time the method is called, it will execute the logic and store the result in the cache.</li>
+<li>Subsequent calls with the same id will return the cached result without executing the method.</li>
+</ul>
+<h2>Customizing Cache Keys</h2>
+<p>By default, Spring uses the method parameters as the cache key. You can customize the cache key using the key attribute of the <code>@Cacheable</code> annotation.</p>
+<h3>Example: Custom Cache Key</h3>
+<pre><code class="language-java"><pre class="highlight"><code class="hljs"><span class="hljs-meta">@Cacheable(value = &quot;products&quot;, key = &quot;#id&quot;)</span>
+<span class="hljs-keyword">public</span> Product <span class="hljs-title function_">getProductById</span><span class="hljs-params">(Long id)</span> {
+    <span class="hljs-comment">// Method logic</span>
 }
-
-<span class="hljs-selector-class">.counter-container</span> {
-  <span class="hljs-attribute">width</span>: <span class="hljs-number">120px</span>;
-  <span class="hljs-attribute">height</span>: <span class="hljs-number">120px</span>;
-  <span class="hljs-attribute">display</span>: flex;
-  <span class="hljs-attribute">flex-direction</span>: column;
-  <span class="hljs-attribute">justify-content</span>: center;
-  <span class="hljs-attribute">text-align</span>: center;
-  <span class="hljs-attribute">background</span>: transparent;
-  <span class="hljs-attribute">border</span>: <span class="hljs-number">2px</span> solid <span class="hljs-number">#8c1c44</span>;
-  <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">10px</span>;
-  backdrop-<span class="hljs-attribute">filter</span>: <span class="hljs-built_in">blur</span>(<span class="hljs-number">15px</span>);
-  <span class="hljs-attribute">color</span>: <span class="hljs-number">#8c1c44</span>;
-  <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span> <span class="hljs-number">5px</span>;
-  <span class="hljs-attribute">text-transform</span>: uppercase;
+</code></pre></code></pre>
+<h3>Example: Composite Key</h3>
+<p>If your method has multiple parameters, you can create a composite key using SpEL (Spring Expression Language).</p>
+<pre><code class="language-java"><pre class="highlight"><code class="hljs"><span class="hljs-meta">@Cacheable(value = &quot;products&quot;, key = &quot;{#id, #name}&quot;)</span>
+<span class="hljs-keyword">public</span> Product <span class="hljs-title function_">getProductByIdAndName</span><span class="hljs-params">(Long id, String name)</span> {
+    <span class="hljs-comment">// Method logic</span>
 }
-
-<span class="hljs-selector-class">.counter</span> {
-  <span class="hljs-attribute">display</span>: block;
-  <span class="hljs-attribute">font-size</span>: <span class="hljs-number">35px</span>;
-  <span class="hljs-attribute">font-weight</span>: <span class="hljs-number">600</span>;
+</code></pre></code></pre>
+<h2>Cache Eviction with @CacheEvict</h2>
+<p>Cached data can become stale over time. To remove stale data from the cache, use the <code>@CacheEvict</code> annotation</p>
+<h3>Example: Evicting a Cache</h3>
+<pre><code class="language-java"><pre class="highlight"><code class="hljs"><span class="hljs-meta">@CacheEvict(value = &quot;products&quot;, key = &quot;#id&quot;)</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">updateProduct</span><span class="hljs-params">(Long id, Product product)</span> {
+    <span class="hljs-comment">// Update product in the database</span>
 }
-</code></pre></code></pre></li>
-<li><p>script.js</p>
-<pre><code class="language-js"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">const</span> countDownDate = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Date</span>(<span class="hljs-string">&quot;Jan 1, 2024 00:00:00&quot;</span>).<span class="hljs-title function_">getTime</span>();
-<span class="hljs-keyword">const</span> days = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&quot;days&quot;</span>);
-<span class="hljs-keyword">const</span> hours = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&quot;hours&quot;</span>);
-<span class="hljs-keyword">const</span> minutes = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&quot;minutes&quot;</span>);
-<span class="hljs-keyword">const</span> seconds = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&quot;seconds&quot;</span>);
-
-<span class="hljs-keyword">const</span> interval = <span class="hljs-built_in">setInterval</span>(<span class="hljs-function">() =&gt;</span> {
-  <span class="hljs-keyword">const</span> now = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Date</span>().<span class="hljs-title function_">getTime</span>();
-  <span class="hljs-keyword">const</span> duration = countDownDate - now;
-  
-  <span class="hljs-keyword">if</span> (duration &lt; <span class="hljs-number">0</span>) {
-    <span class="hljs-built_in">clearInterval</span>(interval);
-    <span class="hljs-title function_">updateDuration</span>(<span class="hljs-number">0</span>);
-    <span class="hljs-keyword">return</span>;
-  }
-  
-  <span class="hljs-title function_">updateDuration</span>(duration);
-  }, <span class="hljs-number">1000</span>);
-
-<span class="hljs-keyword">function</span> <span class="hljs-title function_">updateDuration</span>(<span class="hljs-params">duration</span>)  {
-  <span class="hljs-keyword">const</span> days = <span class="hljs-title class_">Math</span>.<span class="hljs-title function_">floor</span>(duration / (<span class="hljs-number">1000</span> * <span class="hljs-number">60</span> * <span class="hljs-number">60</span> * <span class="hljs-number">24</span>));
-  <span class="hljs-keyword">const</span> hours = <span class="hljs-title class_">Math</span>.<span class="hljs-title function_">floor</span>((duration % (<span class="hljs-number">1000</span> * <span class="hljs-number">60</span> * <span class="hljs-number">60</span> * <span class="hljs-number">24</span>)) / (<span class="hljs-number">1000</span> * <span class="hljs-number">60</span> * <span class="hljs-number">60</span>));
-  <span class="hljs-keyword">const</span> minutes = <span class="hljs-title class_">Math</span>.<span class="hljs-title function_">floor</span>((duration % (<span class="hljs-number">1000</span> * <span class="hljs-number">60</span> * <span class="hljs-number">60</span>)) / (<span class="hljs-number">1000</span> * <span class="hljs-number">60</span>));
-  <span class="hljs-keyword">const</span> seconds = <span class="hljs-title class_">Math</span>.<span class="hljs-title function_">floor</span>((duration % (<span class="hljs-number">1000</span> * <span class="hljs-number">60</span>)) / <span class="hljs-number">1000</span>);
-  
-  days.<span class="hljs-property">innerHTML</span> = days;
-  hours.<span class="hljs-property">innerHTML</span> = hours;
-  minutes.<span class="hljs-property">innerHTML</span> = minutes;
-  seconds.<span class="hljs-property">innerHTML</span> = seconds;
+</code></pre></code></pre>
+<p><strong>alert-info</strong></p>
+<p>The <code>@CacheEvict</code> annotation removes the cached entry for the specified key (<code>id</code>) from the <code>products</code> cache.</p>
+<h2>Conditional Caching with @Cacheable</h2>
+<p>You can conditionally cache results based on specific criteria using the condition and unless attributes.</p>
+<h3>Example: Conditional Caching</h3>
+<pre><code class="language-java"><pre class="highlight"><code class="hljs"><span class="hljs-meta">@Cacheable(value = &quot;products&quot;, key = &quot;#id&quot;, condition = &quot;#id &gt; 10&quot;)</span>
+<span class="hljs-keyword">public</span> Product <span class="hljs-title function_">getProductById</span><span class="hljs-params">(Long id)</span> {
+    <span class="hljs-comment">// Method logic</span>
 }
-</code></pre></code></pre></li>
+</code></pre></code></pre>
+<p><strong>alert-info</strong></p>
+<p>The result will only be cached if the <code>id</code> is greater than 10.</p>
+<h2>Configuring Cache Providers</h2>
+<p>Spring Boot supports multiple caching providers, such as:</p>
+<ul>
+<li><strong>In-Memory Cache</strong>: Simple and fast, but not persistent (e.g., Caffeine, Guava).</li>
+<li><strong>Distributed Cache</strong>: Suitable for distributed systems (e.g., Redis, Hazelcast).</li>
+</ul>
+<h3>Example: Using Caffeine Cache</h3>
+<p>Add the Caffeine dependency to your <code>pom.xml</code>:</p>
+<pre><code class="language-xml"><pre class="highlight"><code class="hljs"><span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>com.github.ben-manes.caffeine<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>caffeine<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span>
+</code></pre></code></pre>
+<p>Configure Caffeine in your <code>application.properties</code>:</p>
+<pre><code class="language-properties"><pre class="highlight"><code class="hljs"><span class="hljs-attr">spring.cache.cache-names</span>=<span class="hljs-string">products</span>
+<span class="hljs-attr">spring.cache.caffeine.spec</span>=<span class="hljs-string">maximumSize=500,expireAfterAccess=600s</span>
+</code></pre></code></pre>
+<h2>Best Practices</h2>
+<ul>
+<li><strong>Use Meaningful Cache Names</strong>: Choose descriptive names for your caches to make it easier to manage and debug.</li>
+<li><strong>Set Cache Expiration</strong>: Configure cache expiration (TTL) to avoid serving stale data.</li>
+<li><strong>Monitor Cache Usage</strong>: Use tools like <strong>Spring Boot Actuator</strong> to monitor cache hits and misses.</li>
+<li><strong>Avoid Over-Caching</strong>: Only cache data that is expensive to compute or fetch.</li>
+<li><strong>Test Cache Behavior</strong>: Ensure your caching logic works as expected by writing unit and integration tests.</li>
 </ul>
 <h2>Conclusion</h2>
-<p>Thank you for reading this. We hope you found this article useful!</p>
+<p>Caching is a powerful tool for improving the performance of your Spring Boot applications. By using the @Cacheable annotation, you can easily cache method results and reduce the load on your database or external services. Remember to follow best practices, such as setting cache expiration and monitoring cache usage, to ensure your caching strategy is effective.</p>
+<p>Start implementing caching in your Spring Boot applications today and experience the performance benefits firsthand!</p>
+<p>Happy coding!</p>
 
     <app-comments></app-comments>
   </div>
@@ -266,4 +247,11 @@
 
                 gtag('config', 'G-S6JEVF53JZ');
                 </script>
-            <script src="/assets/scripts/markdown.js"></script></body></html>
+            <script src="/assets/scripts/markdown.js"></script>
+                <script>
+                    document.addEventListener('DOMContentLoaded', () => {
+                        document.getElementById('languageSwitcherMobile').remove();
+                        document.getElementById('languageSwitcherDesktop').remove();
+                    });
+                </script>
+            </body></html>
