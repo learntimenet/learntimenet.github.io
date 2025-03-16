@@ -891,6 +891,12 @@ pre.highlight .copy-code-icon-copied-label {
   padding-left: 2rem;
   width: calc(100% + 4rem); }
 
+pre.diagram .code-header {
+  display: none !important; }
+
+pre.diagram code.hljs {
+  padding: 3rem !important; }
+
 .tab-content div.highlight {
   --code-border-top-left-radius: 0;
   --code-border-top-right-radius: 0; }

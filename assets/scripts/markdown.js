@@ -158,6 +158,11 @@ function formatCode() {
       p.remove();
       return;
     }
+    if (p.innerHTML.endsWith('>diagram</strong>')) {
+      p.nextElementSibling.classList.add('diagram');
+      p.remove();
+      return;
+    }
     if (/>alert-(info|warn|error)(-\d+)?<\/strong>/.test(p.innerHTML)) {
       const nbElements = p.innerHTML.match(/>alert-(info|warn|error)-(\d+)<\/strong>/) ? p.innerHTML.match(/>alert-(info|warn|error)-(\d+)<\/strong>/)[2] : 1;
       const alertType = p.innerHTML.match(/>alert-(info|warn|error)(-\d+)?<\/strong>/)[1];

@@ -3,8 +3,8 @@
             <html lang="en">
             <head>
                 <meta charset="utf-8" />
-                <title>Learn Time | ThreadLocal in Java</title>
-                <meta name="description" content="A practical guide to the ThreadLocal class for storing thread-specific data in Java, and ensuring that each thread has its own isolated values, thus guaranteeing data security and integrity in multithreaded environments.">
+                <title>Learn Time | Sharing Data Between Microservices: A Real-World Example</title>
+                <meta name="description" content="Learn how to share data between microservices effectively using a real-world e-commerce example. This article covers best practices, patterns, and tools for data sharing in a microservices architecture.">
                 
                 <meta name="viewport" content="width=device-width,initial-scale=1" />
                 <!--
@@ -35,13 +35,13 @@
                     .loader.hide {opacity: 0;}
                 </style>
                 
-            <meta property="og:title" content="ThreadLocal in Java" />
-            <meta property="og:description" content="A practical guide to the ThreadLocal class for storing thread-specific data in Java, and ensuring that each thread has its own isolated values, thus guaranteeing data security and integrity in multithreaded environments." />
+            <meta property="og:title" content="Sharing Data Between Microservices: A Real-World Example" />
+            <meta property="og:description" content="Learn how to share data between microservices effectively using a real-world e-commerce example. This article covers best practices, patterns, and tools for data sharing in a microservices architecture." />
             <meta property="og:image" content="https://learntime.net/assets/thumbnail/blog-thumbnail-1.jpg" />
             <meta name="twitter:card" content="summary_large_image">
             <meta name="twitter:creator" content="@learntimenet">
-            <meta name="twitter:title" content="ThreadLocal in Java">
-            <meta name="twitter:description" content="A practical guide to the ThreadLocal class for storing thread-specific data in Java, and ensuring that each thread has its own isolated values, thus guaranteeing data security and integrity in multithreaded environments.">
+            <meta name="twitter:title" content="Sharing Data Between Microservices: A Real-World Example">
+            <meta name="twitter:description" content="Learn how to share data between microservices effectively using a real-world e-commerce example. This article covers best practices, patterns, and tools for data sharing in a microservices architecture.">
             <meta name="twitter:image" content="https://learntime.net/assets/thumbnail/blog-thumbnail-1.jpg">
         
                 <script>
@@ -50,7 +50,7 @@
                         this.page.identifier = window.location.pathname.replace('/en', '');
                     };
                 </script>
-            <script defer src="/java/thread-local/thread-local.a50d2ad8b6a106b5b948.js"></script></head>
+            <script defer src="/microservices/sharing-data-between-microservices/sharing-data-between-microservices.eb7c999a527dbc76f861.js"></script></head>
             <body>
                 <div class="loader">
                     <svg class="loader-logo" width="1000" height="1000" viewBox="0 0 1000 1000" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -87,130 +87,123 @@
         }
     }
 </style>
-<app-page-title title="ThreadLocal in Java"></app-page-title>
+<app-page-title title="Sharing Data Between Microservices: A Real-World Example"></app-page-title>
 <div class="blog-container">
   <div class="markdown section-container">
     <h2>Introduction</h2>
-<p>The Java <code>ThreadLocal</code> class allows us to create variables that can only be read and written by the same thread. So, even if two threads are executing the same code and that code refers to the same <code>ThreadLocal</code> variable, both threads can't see each other's <code>ThreadLocal</code> variables, which is a simple way of making code thread-safe. ThreadLocal instances are usually static private fields in classes that wish to associate a state with a thread (for example, user ID, transaction ID, etc.).</p>
-<pre><code class="language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> ThreadLocal&lt;Integer&gt; userIdThreadLocal = <span class="hljs-keyword">new</span> <span class="hljs-title class_">ThreadLocal</span>&lt;&gt;();
-</code></pre></code></pre>
-<p>Then, when we want to use this value from a thread, we simply call the <code>get()</code> or <code>set()</code> method of <code>ThreadLocal</code>. You can imagine that <code>ThreadLocal</code> stores the data in a map with the thread as the key. As a result, when we call a <code>get()</code> method on <code>userIdThreadLocal</code>, we get the value for the requesting thread:</p>
-<pre><code class="language-java"><pre class="highlight"><code class="hljs">userIdThreadLocal.set(<span class="hljs-number">1</span>);
-<span class="hljs-type">Integer</span> <span class="hljs-variable">user</span> <span class="hljs-operator">=</span> userIdThreadLocal.get();
-</code></pre></code></pre>
-<h2>Méthodes de ThreadLocal</h2>
-<p><strong>method-signature</strong></p>
-<pre><code class="language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">static</span> &lt;S&gt; ThreadLocal&lt;S&gt; <span class="hljs-title function_">withInitial</span><span class="hljs-params">(Supplier&lt;? extends S&gt; supplier)</span>
-</code></pre></code></pre>
-<p>Creates a local variable for the thread.</p>
-<p><strong>method-signature</strong></p>
-<pre><code class="language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">protected</span> T <span class="hljs-title function_">initialValue</span><span class="hljs-params">()</span>
-</code></pre></code></pre>
-<p>Returns the ‘initial value’ of the current thread for this thread-local variable.</p>
-<p><strong>method-signature</strong></p>
-<pre><code class="language-java"><pre class="highlight"><code class="hljs">T <span class="hljs-title function_">get</span><span class="hljs-params">()</span>
-</code></pre></code></pre>
-<p>Returns the value in the copy of this thread-local variable for the current thread.</p>
-<p><strong>method-signature</strong></p>
-<pre><code class="language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">void</span> <span class="hljs-title function_">remove</span><span class="hljs-params">()</span>
-</code></pre></code></pre>
-<p>Deletes the value of the current thread for this thread-local variable.</p>
-<p><strong>method-signature</strong></p>
-<pre><code class="language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">void</span> <span class="hljs-title function_">set</span><span class="hljs-params">(T value)</span>
-</code></pre></code></pre>
-<p>Sets the copy of this thread-local variable for the current thread to the specified value.</p>
-<h2>ThreadLocal Initial Value</h2>
-<p>It is possible to set an initial value for a <code>ThreadLocal</code> which will be returned the first time the <code>get()</code> method is called, even before the <code>set()</code> method is called. We have two options for specifying an initial value for a <code>ThreadLocal</code>:</p>
-<p><strong>Overload the <code>initialValue()</code> method</strong></p>
-<p>The first way to specify an initial value for a <code>ThreadLocal</code> variable in Java is to create a subclass of <code>ThreadLocal</code> which overrides its <code>initialValue()</code> method. Here is an example that creates an anonymous subclass of <code>ThreadLocal</code> that overrides the <code>initialValue()</code> method:</p>
-<pre><code class="language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">private</span> ThreadLocal&lt;String&gt; threadLocal = <span class="hljs-keyword">new</span> <span class="hljs-title class_">ThreadLocal</span>&lt;String&gt;() {
-    <span class="hljs-meta">@Override</span>
-    <span class="hljs-keyword">protected</span> String <span class="hljs-title function_">initialValue</span><span class="hljs-params">()</span> {
-        <span class="hljs-keyword">return</span> UUID.randomUUID().toString();
-    }
-};
-</code></pre></code></pre>
-<p><strong>Providing an implementation of the <code>Supplier</code> interface</strong></p>
-<p>The second method is to use the <code>withInitial(Supplier)</code> static factory method of <code>ThreadLocal</code>, passing an implementation of the <code>Supplier</code> interface as a parameter. This implementation of <code>Supplier</code> provides the initial value for the <code>ThreadLocal</code>. Here is an example of creating a <code>ThreadLocal</code> using its static factory method <code>withInitial()</code> :</p>
-<pre><code class="language-java"><pre class="highlight"><code class="hljs">ThreadLocal&lt;String&gt; threadLocal = ThreadLocal.withInitial(<span class="hljs-keyword">new</span> <span class="hljs-title class_">Supplier</span>&lt;String&gt;() {
-    <span class="hljs-meta">@Override</span>
-    <span class="hljs-keyword">public</span> String <span class="hljs-title function_">get</span><span class="hljs-params">()</span> {
-        <span class="hljs-keyword">return</span> UUID.randomUUID().toString();
-    }
-});
-</code></pre></code></pre>
-<h2>ThreadLocals and Thread Pools</h2>
-<p>We need to be particularly careful when using <code>ThreadLocals</code> and thread pools together. The thread pool technique allows threads to be reused to reduce the overhead of creating threads. Each task that enters the pool expects to see the <code>ThreadLocals</code> objects in their initial state, by default. However, when <code>ThreadLocal</code> objects are modified on a thread which is then made available for reuse, the next task executed on the reused thread sees the state of the <code>ThreadLocal</code> objects as modified by the previous task which was executed on that thread.</p>
-<p>Programs need to ensure that each task executed on a thread in a thread pool only sees correctly initialised instances of the <code>ThreadLocal</code> objects. The good news is that it is possible to extend the <code>ThreadPoolExecutor</code> class and provide a custom implementation for the <code>beforeExecute()</code> and <code>afterExecute()</code> methods. So we can extend the <code>ThreadPoolExecutor</code> class and remove the <code>ThreadLocal</code> variable from the <code>afterExecute()</code> method:</p>
-<pre><code class="language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">ThreadLocalAwareThreadPoolExecutor</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">ThreadPoolExecutor</span> {
-    <span class="hljs-meta">@Override</span>
-    <span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">afterExecute</span><span class="hljs-params">(Runnable r, Throwable t)</span> {
-        <span class="hljs-comment">// delete the variable from the current thread</span>
-    }
-}
-</code></pre></code></pre>
-<h2>InheritableThreadLocal</h2>
-<p>The <code>InheritableThreadLocal</code> class extends <code>ThreadLocal</code> to provide inheritance of values from the parent thread to the child thread: when a child thread is created, it receives the initial values for all inheritable thread-local variables for which the parent has values. Normally, the child's values will be identical to those of the parent.</p>
-<p>Inheritable thread-local variables are used in preference to ordinary thread-local variables when the per-thread attribute maintained in the variable (for example, user ID, transaction ID, ...) needs to be automatically passed on to all child threads that are created. Here is an example to illustrate the benefits of using the <code>InheritableThreadLocal</code> class:</p>
-<h2>Using ThreadLocal</h2>
-<pre><code class="language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">class</span> <span class="hljs-title class_">ParentThread</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">Thread</span> {
-    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> ThreadLocal&lt;String&gt; parentThreadLocal = <span class="hljs-keyword">new</span> <span class="hljs-title class_">ThreadLocal</span>&lt;&gt;();
-
-    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">run</span><span class="hljs-params">()</span> {
-        parentThreadLocal.set(<span class="hljs-string">&quot;données parent&quot;</span>);
-        System.out.println(<span class="hljs-string">&quot;Valeur Parent ThreadLocal: &quot;</span> + parentThreadLocal.get());
-        <span class="hljs-keyword">new</span> <span class="hljs-title class_">ChildThread</span>().start();
-    }
-}
-
-<span class="hljs-keyword">class</span> <span class="hljs-title class_">ChildThread</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">Thread</span> {
-    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">run</span><span class="hljs-params">()</span> {
-        System.out.println(<span class="hljs-string">&quot;Valeur Child ThreadLocal: &quot;</span> + ParentThread.parentThreadLocal.get());
-    }
-}
-
-<span class="hljs-keyword">class</span> <span class="hljs-title class_">ThreadLocalDemo</span> {
-    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> {
-        <span class="hljs-keyword">new</span> <span class="hljs-title class_">ParentThread</span>().start();
-    }
-}
-</code></pre></code></pre>
-<p>Run the example above and you'll get the following result:</p>
-<p><strong>without-line-numbers</strong></p>
-<pre><code class="language-sh"><pre class="highlight"><code class="hljs">Valeur Parent ThreadLocal: données parent
-Valeur Child ThreadLocal: null
-</code></pre></code></pre>
-<h2>Using InheritableThreadLocal</h2>
-<p><strong>terminal</strong></p>
-<pre><code class="language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">class</span> <span class="hljs-title class_">ParentThread</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">Thread</span> {
-    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> InheritableThreadLocal&lt;String&gt; parentThreadLocal = <span class="hljs-keyword">new</span> <span class="hljs-title class_">InheritableThreadLocal</span>&lt;&gt;();
-
-    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">run</span><span class="hljs-params">()</span> {
-        parentThreadLocal.set(<span class="hljs-string">&quot;données parent&quot;</span>);
-        System.out.println(<span class="hljs-string">&quot;Valeur Parent InheritableThreadLocal: &quot;</span> + parentThreadLocal.get());
-        <span class="hljs-keyword">new</span> <span class="hljs-title class_">ChildThread</span>().start();
-    }
-}
-
-<span class="hljs-keyword">class</span> <span class="hljs-title class_">ChildThread</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">Thread</span> {
-    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">run</span><span class="hljs-params">()</span> {
-        System.out.println(<span class="hljs-string">&quot;Valeur Child InheritableThreadLocal: &quot;</span> + ParentThread.parentThreadLocal.get());
-    }
-}
-
-<span class="hljs-keyword">class</span> <span class="hljs-title class_">ThreadLocalDemo</span> {
-    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> {
-        <span class="hljs-keyword">new</span> <span class="hljs-title class_">ParentThread</span>().start();
-    }
-}
-</code></pre></code></pre>
-<p>Run the example above and you'll get the following result:</p>
-<p><strong>without-line-numbers</strong></p>
-<pre><code class="language-sh"><pre class="highlight"><code class="hljs">Valeur Parent InheritableThreadLocal: données parent
-Valeur Child InheritableThreadLocal: données parent
-</code></pre></code></pre>
+<p>Microservices architecture is widely used to build scalable and maintainable applications. However, sharing data between microservices can be challenging, especially in complex systems like e-commerce platforms. In this article, we’ll explore how to share data between microservices using a <strong>real-world e-commerce example</strong>. We’ll cover best practices, patterns, and tools to ensure your architecture remains scalable and efficient.</p>
+<h2>The E-Commerce Example</h2>
+<p>Imagine an e-commerce platform with the following microservices:</p>
+<ol>
+<li><strong>Product Service</strong>: Manages product information (e.g., name, price, description).</li>
+<li><strong>Order Service</strong>: Handles order creation and management.</li>
+<li><strong>Inventory Service</strong>: Tracks product stock levels.</li>
+<li><strong>Payment Service</strong>: Processes payments.</li>
+<li><strong>Notification Service</strong>: Sends order confirmation emails.</li>
+</ol>
+<p>These services need to share data to provide a seamless shopping experience. For example:</p>
+<ul>
+<li>The <strong>Order Service</strong> needs product details from the <strong>Product Service</strong>.</li>
+<li>The <strong>Inventory Service</strong> needs to update stock levels when an order is placed.</li>
+<li>The <strong>Payment Service</strong> needs order details to process payments.</li>
+<li>The <strong>Notification Service</strong> needs order and user details to send confirmation emails.</li>
+</ul>
+<p>Let’s explore how these services can share data effectively.</p>
+<h2>1. Using APIs for Communication</h2>
+<p>The most straightforward way to share data between microservices is through <strong>APIs</strong>. Each service exposes endpoints that other services can call to request or update data.</p>
+<p><img src="../../../../../assets/blog/sharing-data-between-microservices/using-apis-for-communication.png" alt="using-apis-for-communication" title="using-apis-for-communication"></p>
+<h3>How It Works</h3>
+<ul>
+<li>The <strong>Order Service</strong> sends an HTTP request to the <strong>Product Service</strong> to fetch product details.</li>
+<li>The <strong>Product Service</strong> responds with the requested data.</li>
+</ul>
+<h3>Advantages</h3>
+<ul>
+<li>Simple and easy to implement.</li>
+<li>Clear boundaries between services.</li>
+</ul>
+<h3>Disadvantages</h3>
+<ul>
+<li>Increased network calls.</li>
+<li>Tight coupling if not designed carefully.</li>
+</ul>
+<h2>2. Event-Driven Architecture</h2>
+<p>In an event-driven architecture, services communicate by producing and consuming events. When data changes in one service, it publishes an event that other services can subscribe to.</p>
+<p><img src="../../../../../assets/blog/sharing-data-between-microservices/event-driven-architecture.png" alt="event-driven-architecture" title="event-driven-architecture"></p>
+<h3>How It Works</h3>
+<ul>
+<li>The <strong>Order Service</strong> publishes an <code>OrderPlaced</code> event to a message broker (e.g., Kafka, RabbitMQ).</li>
+<li>The <strong>Inventory Service</strong> subscribes to the event and updates stock levels when it receives the event.</li>
+</ul>
+<h3>Advantages</h3>
+<ul>
+<li>Decouples services completely.</li>
+<li>Enables real-time data synchronization.</li>
+</ul>
+<h3>Disadvantages</h3>
+<ul>
+<li>Requires additional infrastructure (e.g., Kafka, RabbitMQ).</li>
+<li>Eventual consistency (not immediate).</li>
+</ul>
+<h2>3. API Gateway for Aggregation</h2>
+<p>An <strong>API Gateway</strong> can aggregate data from multiple services and provide a unified response to the client. This reduces the number of network calls and simplifies client-side logic.</p>
+<p><img src="../../../../../assets/blog/sharing-data-between-microservices/api-gateway-for-aggregation.png" alt="api-gateway-for-aggregation" title="api-gateway-for-aggregation"></p>
+<h3>How It Works</h3>
+<ul>
+<li>The client sends a request to the <strong>API Gateway</strong> to fetch order details.</li>
+<li>The <strong>API Gateway</strong> calls the <strong>Order Service</strong> and <strong>Product Service</strong> to aggregate the data.</li>
+<li>The <strong>API Gateway</strong> returns a unified response to the client.</li>
+</ul>
+<h3>Advantages</h3>
+<ul>
+<li>Reduces client-side complexity.</li>
+<li>Improves performance by reducing network calls.</li>
+</ul>
+<h3>Disadvantages</h3>
+<ul>
+<li>API Gateway can become a bottleneck.</li>
+<li>Adds complexity to the gateway.</li>
+</ul>
+<h2>4. Caching for Performance</h2>
+<p>To reduce the number of API calls and improve performance, you can use caching. Services can cache data locally or use a distributed cache like Redis.</p>
+<p><img src="../../../../../assets/blog/sharing-data-between-microservices/caching-for-performance.png" alt="caching-for-performance" title="caching-for-performance"></p>
+<h3>How It Works</h3>
+<ul>
+<li>The <strong>Order Service</strong> first checks the cache (e.g., Redis) for product details.</li>
+<li>If the data is not in the cache, it fetches the data from the <strong>Product Service</strong> and stores it in the cache for future use.</li>
+</ul>
+<h3>Advantages</h3>
+<ul>
+<li>Reduces latency and database load.</li>
+<li>Improves performance.</li>
+</ul>
+<h3>Disadvantages</h3>
+<ul>
+<li>Cache invalidation can be challenging.</li>
+<li>May lead to stale data.</li>
+</ul>
+<h2>5. Shared Database (Anti-Pattern)</h2>
+<p>While it’s generally discouraged, in some cases, services may share a database. This approach violates the principle of loose coupling but can simplify data sharing.</p>
+<p><img src="../../../../../assets/blog/sharing-data-between-microservices/shared-database.png" alt="shared-database" title="shared-database"></p>
+<h3>How It Works</h3>
+<ul>
+<li>Both the <strong>Order Service</strong> and <strong>Product Service</strong> access the same database directly.</li>
+<li>This eliminates the need for inter-service communication.</li>
+</ul>
+<h3>Advantages</h3>
+<ul>
+<li>Simplifies data access.</li>
+<li>No network calls between services.</li>
+</ul>
+<h3>Disadvantages</h3>
+<ul>
+<li>Tight coupling between services.</li>
+<li>Difficult to scale and maintain.</li>
+</ul>
 <h2>Conclusion</h2>
-<p>Thank you for reading this. We hope you found this article useful!</p>
+<p>Sharing data between microservices is a critical aspect of designing a scalable and maintainable microservices architecture. In our e-commerce example, we explored how to use <strong>APIs</strong>, <strong>event-driven architecture</strong>, <strong>API Gateway</strong>, <strong>caching</strong>, and (as a last resort) a <strong>shared database</strong> to share data effectively. Each approach has its pros and cons, and the best choice depends on your specific use case.</p>
+<p>By following these best practices, you can ensure that your microservices architecture remains scalable, maintainable, and efficient. Start implementing these patterns in your projects today and build systems that are both resilient and performant!</p>
+<p>Happy coding!</p>
 
     <app-comments></app-comments>
   </div>
@@ -255,4 +248,11 @@ Valeur Child InheritableThreadLocal: données parent
 
                 gtag('config', 'G-S6JEVF53JZ');
                 </script>
-            <script src="/assets/scripts/markdown.js"></script></body></html>
+            <script src="/assets/scripts/markdown.js"></script>
+                <script>
+                    document.addEventListener('DOMContentLoaded', () => {
+                        document.getElementById('languageSwitcherMobile').remove();
+                        document.getElementById('languageSwitcherDesktop').remove();
+                    });
+                </script>
+            </body></html>
