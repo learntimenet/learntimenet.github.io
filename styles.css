@@ -366,7 +366,8 @@ video {
   .markdown h6 {
     font-weight: 500; }
   .markdown h1 {
-    font-size: 32px; }
+    font-size: 32px;
+    padding: 0 3rem; }
   .markdown h2 {
     font-size: 26px; }
   .markdown h3 {
@@ -605,6 +606,9 @@ video {
         font-family: var(--font-family);
         color: #2854A1;
         font-weight: 500; }
+  .markdown img {
+    display: inline-block;
+    margin-bottom: 2rem; }
 
 .previous-next-sections {
   display: flex;
@@ -652,6 +656,10 @@ video {
   .next-section:hover svg,
   .previous-section:hover svg {
     color: var(--primary-color); }
+
+p code {
+  color: #d63384;
+  font-weight: 400; }
 
 code {
   font-family: 'Roboto Mono';

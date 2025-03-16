@@ -50,7 +50,7 @@
                         this.page.identifier = window.location.pathname.replace('/en', '');
                     };
                 </script>
-            <script defer src="/microservices/sharing-data-between-microservices/sharing-data-between-microservices.1c86deabb04c9d0e523e.js"></script></head>
+            <script defer src="/microservices/sharing-data-between-microservices/sharing-data-between-microservices.7388f4c81e01500f8c6d.js"></script></head>
             <body>
                 <div class="loader">
                     <svg class="loader-logo" width="1000" height="1000" viewBox="0 0 1000 1000" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -112,7 +112,6 @@
 <h2>1. Using APIs for Communication</h2>
 <p>The most straightforward way to share data between microservices is through <strong>APIs</strong>. Each service exposes endpoints that other services can call to request or update data.</p>
 <p><img src="../../../../../assets/blog/sharing-data-between-microservices/using-apis-for-communication.png" alt="using-apis-for-communication" title="using-apis-for-communication"></p>
-<h3>How It Works</h3>
 <ul>
 <li>The <strong>Order Service</strong> sends an HTTP request to the <strong>Product Service</strong> to fetch product details.</li>
 <li>The <strong>Product Service</strong> responds with the requested data.</li>
@@ -130,7 +129,6 @@
 <h2>2. Event-Driven Architecture</h2>
 <p>In an event-driven architecture, services communicate by producing and consuming events. When data changes in one service, it publishes an event that other services can subscribe to.</p>
 <p><img src="../../../../../assets/blog/sharing-data-between-microservices/event-driven-architecture.png" alt="event-driven-architecture" title="event-driven-architecture"></p>
-<h3>How It Works</h3>
 <ul>
 <li>The <strong>Order Service</strong> publishes an <code>OrderPlaced</code> event to a message broker (e.g., Kafka, RabbitMQ).</li>
 <li>The <strong>Inventory Service</strong> subscribes to the event and updates stock levels when it receives the event.</li>
@@ -148,7 +146,6 @@
 <h2>3. API Gateway for Aggregation</h2>
 <p>An <strong>API Gateway</strong> can aggregate data from multiple services and provide a unified response to the client. This reduces the number of network calls and simplifies client-side logic.</p>
 <p><img src="../../../../../assets/blog/sharing-data-between-microservices/api-gateway-for-aggregation.png" alt="api-gateway-for-aggregation" title="api-gateway-for-aggregation"></p>
-<h3>How It Works</h3>
 <ul>
 <li>The client sends a request to the <strong>API Gateway</strong> to fetch order details.</li>
 <li>The <strong>API Gateway</strong> calls the <strong>Order Service</strong> and <strong>Product Service</strong> to aggregate the data.</li>
@@ -167,7 +164,6 @@
 <h2>4. Caching for Performance</h2>
 <p>To reduce the number of API calls and improve performance, you can use caching. Services can cache data locally or use a distributed cache like Redis.</p>
 <p><img src="../../../../../assets/blog/sharing-data-between-microservices/caching-for-performance.png" alt="caching-for-performance" title="caching-for-performance"></p>
-<h3>How It Works</h3>
 <ul>
 <li>The <strong>Order Service</strong> first checks the cache (e.g., Redis) for product details.</li>
 <li>If the data is not in the cache, it fetches the data from the <strong>Product Service</strong> and stores it in the cache for future use.</li>
@@ -185,7 +181,6 @@
 <h2>5. Shared Database (Anti-Pattern)</h2>
 <p>While it’s generally discouraged, in some cases, services may share a database. This approach violates the principle of loose coupling but can simplify data sharing.</p>
 <p><img src="../../../../../assets/blog/sharing-data-between-microservices/shared-database.png" alt="shared-database" title="shared-database"></p>
-<h3>How It Works</h3>
 <ul>
 <li>Both the <strong>Order Service</strong> and <strong>Product Service</strong> access the same database directly.</li>
 <li>This eliminates the need for inter-service communication.</li>
