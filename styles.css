@@ -609,6 +609,29 @@ video {
   .markdown img {
     display: inline-block;
     margin-bottom: 2rem; }
+  .markdown .advantages-disadvantages {
+    display: flex;
+    column-gap: 2rem;
+    margin-top: 2rem; }
+    @media screen and (max-width: 426px) {
+      .markdown .advantages-disadvantages {
+        flex-direction: column;
+        row-gap: 2rem; } }
+    .markdown .advantages-disadvantages .advantages, .markdown .advantages-disadvantages .disadvantages {
+      background-color: #FAFAFA;
+      flex: 1;
+      border: 1px solid #EEEEEE;
+      border-radius: 2px;
+      padding: 2rem;
+      position: relative; }
+      .markdown .advantages-disadvantages .advantages .title, .markdown .advantages-disadvantages .disadvantages .title {
+        text-align: center;
+        font-weight: 600;
+        padding: 1rem; }
+    .markdown .advantages-disadvantages .advantages .title {
+      color: #4CAF50; }
+    .markdown .advantages-disadvantages .disadvantages .title {
+      color: #F44336; }
 
 .previous-next-sections {
   display: flex;

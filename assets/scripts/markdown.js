@@ -4,6 +4,18 @@ const explanation = {
   "__page.language__": "Language Not found",
 }
 
+const advantages = {
+  "en": "Advantages",
+  "fr": "Avantages",
+  "__page.language__": "Language Not found",
+}
+
+const disadvantages = {
+  "en": "Disadvantages",
+  "fr": "Inconvénients",
+  "__page.language__": "Language Not found",
+}
+
 const next = {
   "en": "Next",
   "fr": "Suivant",
@@ -160,6 +172,29 @@ function formatCode() {
     }
     if (p.innerHTML.endsWith('>diagram</strong>')) {
       p.nextElementSibling.classList.add('diagram');
+      p.remove();
+      return;
+    }
+    if (p.innerHTML.endsWith('>advantages-disadvantages</strong>')) {
+      const el = document.createElement('div');
+      el.classList.add('advantages-disadvantages');
+      const advantagesEl = document.createElement('div');
+      advantagesEl.classList.add('advantages');
+      const avantagesTitle = document.createElement('p');
+      avantagesTitle.classList.add('title');
+      avantagesTitle.innerHTML = `${advantages[getLanguage()]}`;
+      advantagesEl.appendChild(avantagesTitle);
+      advantagesEl.appendChild(p.nextElementSibling);
+      const disadvantagesEl = document.createElement('div');
+      disadvantagesEl.classList.add('disadvantages');
+      const disadvantagesTitle = document.createElement('p');
+      disadvantagesTitle.classList.add('title');
+      disadvantagesTitle.innerHTML = `${disadvantages[getLanguage()]}`;
+      disadvantagesEl.appendChild(disadvantagesTitle);
+      disadvantagesEl.appendChild(p.nextElementSibling);
+      el.appendChild(advantagesEl);
+      el.appendChild(disadvantagesEl);
+      p.insertAdjacentElement("afterend", el);
       p.remove();
       return;
     }
