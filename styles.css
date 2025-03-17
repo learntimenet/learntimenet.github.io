@@ -617,6 +617,8 @@ video {
       .markdown .advantages-disadvantages {
         flex-direction: column;
         row-gap: 2rem; } }
+    .markdown .advantages-disadvantages li {
+      text-align: start; }
     .markdown .advantages-disadvantages .advantages, .markdown .advantages-disadvantages .disadvantages {
       background-color: #FAFAFA;
       flex: 1;
