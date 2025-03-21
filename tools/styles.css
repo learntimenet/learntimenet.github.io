@@ -425,6 +425,9 @@ body {
 .relative-position {
   position: relative; }
 
+h2 {
+  margin-top: 5rem !important; }
+
 .hljs {
   display: block;
   overflow-x: auto;
@@ -2168,7 +2171,7 @@ body.dark {
     @media only screen and (max-width: 700px) {
       .tool-header-container h1 {
         font-size: 3.6rem; } }
-  .tool-header-container h2 {
+  .tool-header-container p {
     font-size: 1.85rem;
     font-weight: 400;
     padding: 0 4rem;

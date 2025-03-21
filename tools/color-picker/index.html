@@ -1,0 +1,124 @@
+
+            <!DOCTYPE html>
+            <html lang="en">
+            <head>
+                <meta charset="utf-8" />
+                <title>Learn Time | Color Picker</title>
+                <meta name="description" content="Discover the perfect colors effortlessly with [Your Tool Name]! Our intuitive color picker tool helps you find, customize, and save colors for your designs, websites, and projects. Whether you're a designer, developer, or hobbyist, create stunning color palettes with ease. Try it now and elevate your creativity!">
+                <meta name="keywords" content="color picker tool, online color picker, color palette generator, hex color picker, RGB color picker, color scheme tool, web design colors, color matching tool, color selector, color wheel tool, design color picker, color code finder, color palette creator, color inspiration tool, best color picker, color picker for designers, color picker for developers, custom color picker, color combination tool, color picker for websites">
+                <meta name="viewport" content="width=device-width,initial-scale=1" />
+                <!--
+                <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
+                <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
+                <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
+                <link rel="shortcut icon" sizes="192x192" href="/assets/favicon/android-chrome-192x192.png" >
+                <link rel="shortcut icon" sizes="512x512" href="/assets/favicon/android-chrome-512x512.png" >
+                <link rel="manifest" href="/assets/favicon/site.webmanifest">
+                <link rel="shortcut icon" href="/assets/favicon/favicon.ico">
+                <link rel="mask-icon" href="/assets/favicon/safari-pinned-tab.svg" color="#5bbad5">
+                <meta name="msapplication-TileColor" content="#da532c">
+                <meta name="theme-color" content="#ffffff">
+                -->
+                <link rel="shortcut icon" type="image/png" href="/assets/logo-circle.png">
+                
+            <link rel="stylesheet" href="/styles.css">
+            <link rel="stylesheet" href="/tools/styles.css">
+            <link rel="stylesheet" href="/tools/color-picker/styles.css">
+        
+                <script src="https://kit.fontawesome.com/ff0edf556e.js" crossorigin="anonymous"></script>
+                <script src="https://code.iconify.design/iconify-icon/1.0.2/iconify-icon.min.js"></script>
+                <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+                <script>window.startTime = new Date().getTime();</script>
+                <style>
+                    :root {
+                        --background-color: #f3f2ef;
+                        --loading-bar-background-color: #d6cec2;
+                        --moving-loading-bar-background-color: #D0514D;
+                    }
+                    .loader {transition: all .2s ease-out;z-index: 10000000000;margin-top: -200px;position: fixed;top: 0;left: 0;right: 0;bottom: 0;background-color: var(--background-color);display: flex;align-items: center;justify-content: center;flex-direction: column;}.loader-logo {width: 40px; height: 40px; margin-bottom: 20px;}.loading-bar {width: 130px;height: 4px;border-radius: 100rem;background-color: var(--loading-bar-background-color);position: relative;overflow: hidden;}.moving-loading-bar {height: 100%;width: 68px;position: absolute;border-radius: 100rem;background-color: var(--moving-loading-bar-background-color);animation: initial-loading 1.5s ease infinite;}@keyframes initial-loading {0% {transform: translate(-34px);}50% {transform: translate(96px);}to {transform: translate(-34px);}}
+                    .loader.hide {opacity: 0;}
+                </style>
+                
+                <script>
+                    var disqus_config = function () {
+                        this.page.url = window.location.origin + window.location.pathname;
+                        this.page.identifier = window.location.pathname.replace('/en', '');
+                    };
+                </script>
+            <script defer src="/color-picker/color-picker.6bcb6c869f9338c24a83.js"></script></head>
+            <body>
+                <div class="loader">
+                    <div class="loading-bar">
+                        <div class="moving-loading-bar"></div>
+                    </div>
+                </div>
+                <script>
+                    var lastVisitTime = parseInt(localStorage.getItem('LAST_VISIT_TIME') || '0');
+                    if ((new Date().valueOf() - lastVisitTime) < 1200000) {
+                        document.querySelector('.loading-bar').style.display = 'none';
+                    }
+                </script>
+                <div class="body-container">
+                    <app-navbar-promotion></app-navbar-promotion>
+                    <app-mobile-navbar></app-mobile-navbar>
+                    <app-desktop-navbar></app-desktop-navbar>
+                    <main class="max-width-index">
+        
+<style>
+  @media screen and (min-width: 1024px) {
+      :root {
+          --promotion-height: 0rem !important;
+          --max-width: 140rem !important;
+      }
+  }
+</style>
+<app-main></app-main>
+<app-tool-background></app-tool-background>
+<div class="tool-container">
+  <div class="markdown section-container">
+    <div class="description">
+      <h2>Description</h2> <p>Free online tool to easily pick a color and construct a palette of colors</p> <p> The design and the animations of this website was mainly inspired from <a href="https://coolors.co/color-picker" target="_blank">coolors</a> website and we really want to thank its creators for their great job! </p> <p> Once a color is selected, the color formats (<i>HEX</i>, <i>RGB</i>, <i>HSV</i>, ...) and color variations (<i>Shades</i>, <i>Tints</i>, <i>Tones</i>, ...) will be displayed accordingly and once hovered, two buttons will appear:   <ul> <li><span class="iconify" data-icon="ph:copy-fill"></span>&nbsp;&nbsp; which will let you copy the HEX code of the color to your clipboard</li> <li><span class="iconify" data-icon="fluent:add-12-filled"></span>&nbsp;&nbsp; which will let you add this color to your palette</li> </ul> </p> <p> To reorganize your palette, you can <i>Drag & Drop</i> the colors to change their positions. Personally we find this feature very useful and we hope you find it as well. </p> <p> For new inspirations, you can generate new colors by clicking the <span class="iconify" data-icon="si-glyph:arrow-reload"></span> button present on the top right corner of the selected color and on the palette section. </p> <p> We hope you enjoy it 😊 </p>  
+    </div>
+    <app-comments></app-comments>
+  </div>
+  <aside>
+    <div class="aside-container">
+      <app-blog-promotion></app-blog-promotion>
+    </div>
+  </aside>
+</div>
+
+        </main>
+        <app-scroll-top-button></app-scroll-top-button>
+        <app-footer></app-footer>
+        <app-privacy-consentement></app-privacy-consentement>
+        </div>
+            <script>
+                var lastVisitTime = parseInt(localStorage.getItem('LAST_VISIT_TIME') || '0');
+                var timeoutDuration = 1500;
+                if ((new Date().valueOf() - lastVisitTime) < 1200000) {
+                    timeoutDuration = 400;
+                }
+                setTimeout(() => {
+                    document.querySelector('.loader').classList.add('hide');
+                    document.querySelector('.body-container').style.display = 'block';
+                    document.dispatchEvent(new CustomEvent('page-loader-hide'));
+                }, timeoutDuration);
+                setTimeout(() => {
+                    document.querySelector('.loader').style.display = 'none';
+                }, 2000);
+                localStorage.setItem('LAST_VISIT_TIME', new Date().valueOf());
+            </script>
+        
+                <!-- Google tag (gtag.js) -->
+                <script async src="https://www.googletagmanager.com/gtag/js?id=G-S6JEVF53JZ"></script>
+                <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag() {
+                    dataLayer.push(arguments);
+                }
+                gtag('js', new Date());
+
+                gtag('config', 'G-S6JEVF53JZ');
+                </script>
+            </body></html>
