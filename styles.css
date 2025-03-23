@@ -280,6 +280,7 @@ button {
       padding-right: 4.5rem; } }
 
 .section-container {
+  flex: 1;
   background: var(--white-color);
   box-shadow: 0px 0px 20px 0 rgba(0, 0, 0, 0.05);
   padding: 2rem 4rem; }
