@@ -1,0 +1,437 @@
+
+            <!DOCTYPE html>
+            <html lang="en">
+            <head>
+                <meta charset="utf-8" />
+                <title>Learn Time | Hash Generator</title>
+                <meta name="description" content="In this article, we will learn how to create a Hash Generator using HTML, CSS and JavaScript. With easy-to-understand source code, you can follow the steps and create your own version.">
+                
+                <meta name="viewport" content="width=device-width,initial-scale=1" />
+                <!--
+                <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
+                <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
+                <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
+                <link rel="shortcut icon" sizes="192x192" href="/assets/favicon/android-chrome-192x192.png" >
+                <link rel="shortcut icon" sizes="512x512" href="/assets/favicon/android-chrome-512x512.png" >
+                <link rel="manifest" href="/assets/favicon/site.webmanifest">
+                <link rel="shortcut icon" href="/assets/favicon/favicon.ico">
+                <link rel="mask-icon" href="/assets/favicon/safari-pinned-tab.svg" color="#5bbad5">
+                <meta name="msapplication-TileColor" content="#da532c">
+                <meta name="theme-color" content="#ffffff">
+                -->
+                <link rel="shortcut icon" type="image/png" href="/assets/logo-circle.png">
+                <link rel="stylesheet" href="/styles.css">
+                <script src="https://kit.fontawesome.com/ff0edf556e.js" crossorigin="anonymous"></script>
+                <script src="https://code.iconify.design/iconify-icon/1.0.2/iconify-icon.min.js"></script>
+                <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+                <script>window.startTime = new Date().getTime();</script>
+                <style>
+                    :root {
+                        --background-color: #f3f2ef;
+                        --loading-bar-background-color: #d6cec2;
+                        --moving-loading-bar-background-color: #D0514D;
+                    }
+                    .loader {transition: all .2s ease-out;z-index: 10000000000;margin-top: -200px;position: fixed;top: 0;left: 0;right: 0;bottom: 0;background-color: var(--background-color);display: flex;align-items: center;justify-content: center;flex-direction: column;}.loader-logo {width: 40px; height: 40px; margin-bottom: 20px;}.loading-bar {width: 130px;height: 4px;border-radius: 100rem;background-color: var(--loading-bar-background-color);position: relative;overflow: hidden;}.moving-loading-bar {height: 100%;width: 68px;position: absolute;border-radius: 100rem;background-color: var(--moving-loading-bar-background-color);animation: initial-loading 1.5s ease infinite;}@keyframes initial-loading {0% {transform: translate(-34px);}50% {transform: translate(96px);}to {transform: translate(-34px);}}
+                    .loader.hide {opacity: 0;}
+                </style>
+                
+            <meta property="og:title" content="Hash Generator" />
+            <meta property="og:description" content="In this article, we will learn how to create a Hash Generator using HTML, CSS and JavaScript. With easy-to-understand source code, you can follow the steps and create your own version." />
+            <meta property="og:image" content="https://learntime.nethttp://img.youtube.com/vi/aNlaT0wh77o/maxresdefault.jpg" />
+            <meta name="twitter:card" content="summary_large_image">
+            <meta name="twitter:creator" content="@learntimenet">
+            <meta name="twitter:title" content="Hash Generator">
+            <meta name="twitter:description" content="In this article, we will learn how to create a Hash Generator using HTML, CSS and JavaScript. With easy-to-understand source code, you can follow the steps and create your own version.">
+            <meta name="twitter:image" content="https://learntime.nethttp://img.youtube.com/vi/aNlaT0wh77o/maxresdefault.jpg">
+        
+                <script>
+                    var disqus_config = function () {
+                        this.page.url = window.location.origin + window.location.pathname;
+                        this.page.identifier = window.location.pathname.replace('/en', '');
+                    };
+                </script>
+            <script defer src="//blog/apps/hash-generator/hash-generator.eb88806e774cef6d80ef.js"></script></head>
+            <body>
+                <div class="loader">
+                    <div class="loading-bar">
+                        <div class="moving-loading-bar"></div>
+                    </div>
+                </div>
+                <script>
+                    var lastVisitTime = parseInt(localStorage.getItem('LAST_VISIT_TIME') || '0');
+                    if ((new Date().valueOf() - lastVisitTime) < 1200000) {
+                        document.querySelector('.loading-bar').style.display = 'none';
+                    }
+                </script>
+                <div class="body-container">
+                    <app-navbar-promotion></app-navbar-promotion>
+                    <app-mobile-navbar></app-mobile-navbar>
+                    <app-desktop-navbar></app-desktop-navbar>
+                    <main class="max-width">
+        
+<style>
+    @media screen and (min-width: 1024px) {
+        :root {
+            --promotion-height: 0rem !important;
+            --max-width: 140rem !important;
+        }
+    }
+</style>
+<app-page-title title="Hash Generator"></app-page-title>
+<div class="blog-container">
+  <div class="markdown section-container">
+    <h2>Introduction</h2>
+<p>In this article, we're going to learn how to create a Hash Generator using HTML, CSS and JavaScript. With easy-to-understand source code, you can follow the steps and create your own version.</p>
+<iframe width="899" height="506" src="https://www.youtube.com/embed/aNlaT0wh77o" title="Générateur de Hash" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<h2>Code source</h2>
+<p><strong>code-tabs</strong></p>
+<ul>
+<li><p>index.html</p>
+<pre><code class="language-html"><pre class="highlight"><code class="hljs"><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-keyword">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">&quot;en&quot;</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;UTF-8&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">http-equiv</span>=<span class="hljs-string">&quot;X-UA-Compatible&quot;</span> <span class="hljs-attr">content</span>=<span class="hljs-string">&quot;IE=edge&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;viewport&quot;</span> <span class="hljs-attr">content</span>=<span class="hljs-string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Hash generator<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://code.iconify.design/iconify-icon/1.0.8/iconify-icon.min.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">&quot;stylesheet&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;./style.css&quot;</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;container&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;header-container&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">h1</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;gradient-font&quot;</span>&gt;</span>Hash Generator<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>
+        Online tool to instantly generate the hash value of an input text
+      <span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;generated-hash-container&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">textarea</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;inputText&quot;</span>&gt;</span>Text example<span class="hljs-tag">&lt;/<span class="hljs-name">textarea</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;calculated-hashes-container&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;calculated-hash-container&quot;</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;left&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hash-code-algo&quot;</span>&gt;</span>SHA-1<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hash-code-value&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;SHA1&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;icon-button copy-button&quot;</span> <span class="hljs-attr">title</span>=<span class="hljs-string">&quot;Copy&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">iconify-icon</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">&quot;ci:copy&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;icon&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">iconify-icon</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;calculated-hash-container&quot;</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;left&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hash-code-algo&quot;</span>&gt;</span>SHA-256<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hash-code-value&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;SHA256&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;icon-button copy-button&quot;</span> <span class="hljs-attr">title</span>=<span class="hljs-string">&quot;Copy&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">iconify-icon</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">&quot;ci:copy&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;icon&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">iconify-icon</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;calculated-hash-container&quot;</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;left&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hash-code-algo&quot;</span>&gt;</span>SHA-384<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hash-code-value&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;SHA384&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;icon-button copy-button&quot;</span> <span class="hljs-attr">title</span>=<span class="hljs-string">&quot;Copy&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">iconify-icon</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">&quot;ci:copy&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;icon&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">iconify-icon</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;calculated-hash-container&quot;</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;left&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hash-code-algo&quot;</span>&gt;</span>SHA-512<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hash-code-value&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;SHA512&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;icon-button copy-button&quot;</span> <span class="hljs-attr">title</span>=<span class="hljs-string">&quot;Copy&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">iconify-icon</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">&quot;ci:copy&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;icon&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">iconify-icon</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;script.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</code></pre></code></pre></li>
+<li><p>style.css</p>
+<pre><code class="language-css"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">@import</span> url(<span class="hljs-string">&quot;https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap&quot;</span>);
+
+*,
+*<span class="hljs-selector-pseudo">::before</span>,
+*<span class="hljs-selector-pseudo">::after</span> {
+  <span class="hljs-attribute">box-sizing</span>: border-box;
+  <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span>;
+  <span class="hljs-attribute">padding</span>: <span class="hljs-number">0</span>;
+}
+
+<span class="hljs-selector-pseudo">:root</span> {
+  <span class="hljs-attr">--primary-color</span>: <span class="hljs-number">#c3e3ee</span>;
+  <span class="hljs-attr">--secondary-color</span>: <span class="hljs-number">#26688b</span>;
+  <span class="hljs-attr">--white-color</span>: <span class="hljs-number">#fff</span>;
+  <span class="hljs-attr">--text-color</span>: <span class="hljs-number">#424242</span>;
+  <span class="hljs-attr">--border-color</span>: <span class="hljs-number">#c3e3ee73</span>;
+  <span class="hljs-attr">--hover-color</span>: <span class="hljs-number">#ddd</span>;
+}
+
+<span class="hljs-selector-tag">body</span> {
+  <span class="hljs-attribute">font-family</span>: <span class="hljs-string">&quot;Poppins&quot;</span>, sans-serif;
+  <span class="hljs-attribute">min-height</span>: <span class="hljs-number">100vh</span>;
+  <span class="hljs-attribute">background-image</span>: <span class="hljs-built_in">url</span>(<span class="hljs-string">&quot;background.jpg&quot;</span>);
+  <span class="hljs-attribute">background-position</span>: center;
+  <span class="hljs-attribute">background-size</span>: cover;
+  <span class="hljs-attribute">display</span>: flex;
+  <span class="hljs-attribute">justify-content</span>: center;
+  <span class="hljs-attribute">align-items</span>: center;
+}
+
+<span class="hljs-selector-class">.container</span> {
+  backdrop-<span class="hljs-attribute">filter</span>: <span class="hljs-built_in">blur</span>(<span class="hljs-number">30px</span>);
+  <span class="hljs-attribute">max-width</span>: <span class="hljs-number">950px</span>;
+  <span class="hljs-attribute">border</span>: <span class="hljs-number">2px</span> <span class="hljs-built_in">var</span>(--border-color) solid;
+  <span class="hljs-attribute">padding</span>: <span class="hljs-number">50px</span>;
+  <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">10px</span>;
+  <span class="hljs-attribute">box-shadow</span>: <span class="hljs-number">0px</span> <span class="hljs-number">0px</span> <span class="hljs-number">7px</span> <span class="hljs-number">0</span> <span class="hljs-built_in">rgba</span>(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0.1</span>);
+}
+
+<span class="hljs-keyword">@media</span> <span class="hljs-keyword">only</span> screen <span class="hljs-keyword">and</span> (<span class="hljs-attribute">min-width</span>: <span class="hljs-number">576px</span>) {
+  <span class="hljs-selector-class">.container</span> {
+    <span class="hljs-attribute">padding</span>: <span class="hljs-number">50px</span> <span class="hljs-number">100px</span>;
+  }
+}
+
+<span class="hljs-selector-class">.header-container</span> {
+  <span class="hljs-attribute">text-align</span>: center;
+  <span class="hljs-attribute">margin-bottom</span>: <span class="hljs-number">30px</span>;
+}
+
+<span class="hljs-selector-tag">h1</span> {
+  <span class="hljs-attribute">color</span>: <span class="hljs-built_in">var</span>(--secondary-color);
+  <span class="hljs-attribute">font-size</span>: <span class="hljs-number">30px</span>;
+}
+
+<span class="hljs-keyword">@media</span> <span class="hljs-keyword">only</span> screen <span class="hljs-keyword">and</span> (<span class="hljs-attribute">min-width</span>: <span class="hljs-number">576px</span>) {
+  <span class="hljs-selector-tag">h1</span> {
+    <span class="hljs-attribute">font-size</span>: <span class="hljs-number">40px</span>;
+  }
+}
+
+<span class="hljs-selector-tag">h2</span> {
+  <span class="hljs-attribute">font-size</span>: <span class="hljs-number">14px</span>;
+  <span class="hljs-attribute">font-weight</span>: <span class="hljs-number">400</span>;
+}
+
+<span class="hljs-keyword">@media</span> <span class="hljs-keyword">only</span> screen <span class="hljs-keyword">and</span> (<span class="hljs-attribute">min-width</span>: <span class="hljs-number">576px</span>) {
+  <span class="hljs-selector-tag">h2</span> {
+    <span class="hljs-attribute">font-size</span>: <span class="hljs-number">17px</span>;
+  }
+}
+
+<span class="hljs-selector-tag">textarea</span> {
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">100%</span>;
+  <span class="hljs-attribute">min-height</span>: <span class="hljs-number">150px</span>;
+  <span class="hljs-attribute">background-color</span>: <span class="hljs-built_in">var</span>(--primary-color);
+  <span class="hljs-attribute">padding</span>: <span class="hljs-number">8px</span> <span class="hljs-number">16px</span>;
+  <span class="hljs-attribute">font-size</span>: <span class="hljs-number">18px</span>;
+  <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">5px</span>;
+  <span class="hljs-attribute">border</span>: none;
+  <span class="hljs-attribute">outline</span>: none;
+  <span class="hljs-attribute">transition</span>: background-color <span class="hljs-number">1s</span> ease;
+}
+
+<span class="hljs-selector-tag">textarea</span><span class="hljs-selector-pseudo">:hover</span> {
+  <span class="hljs-attribute">background-color</span>: <span class="hljs-built_in">var</span>(--hover-color);
+}
+
+<span class="hljs-selector-class">.calculated-hashes-container</span> {
+  <span class="hljs-attribute">display</span>: grid;
+  <span class="hljs-attribute">grid-template-columns</span>: <span class="hljs-number">1</span>fr;
+  <span class="hljs-attribute">row-gap</span>: <span class="hljs-number">10px</span>;
+  <span class="hljs-attribute">margin-top</span>: <span class="hljs-number">10px</span>;
+}
+
+<span class="hljs-selector-class">.calculated-hashes-container</span> <span class="hljs-selector-class">.calculated-hash-container</span> {
+  <span class="hljs-attribute">background-color</span>: <span class="hljs-built_in">var</span>(--primary-color);
+  <span class="hljs-attribute">min-width</span>: <span class="hljs-number">0</span>;
+  <span class="hljs-attribute">padding</span>: <span class="hljs-number">8px</span> <span class="hljs-number">16px</span>;
+  <span class="hljs-attribute">display</span>: flex;
+  <span class="hljs-attribute">align-items</span>: center;
+  <span class="hljs-attribute">justify-content</span>: space-between;
+  <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">5px</span>;
+}
+
+<span class="hljs-selector-class">.calculated-hash-container</span> <span class="hljs-selector-class">.left</span> {
+  <span class="hljs-attribute">min-width</span>: <span class="hljs-number">0</span>;
+  <span class="hljs-attribute">display</span>: flex;
+  <span class="hljs-attribute">align-items</span>: center;
+  <span class="hljs-attribute">column-gap</span>: <span class="hljs-number">10px</span>;
+}
+
+<span class="hljs-selector-class">.calculated-hash-container</span> <span class="hljs-selector-class">.left</span> <span class="hljs-selector-class">.hash-code-algo</span> {
+  <span class="hljs-attribute">background-color</span>: <span class="hljs-built_in">var</span>(--secondary-color);
+  <span class="hljs-attribute">color</span>: <span class="hljs-built_in">var</span>(--white-color);
+  <span class="hljs-attribute">flex-shrink</span>: <span class="hljs-number">0</span>;
+  <span class="hljs-attribute">font-size</span>: <span class="hljs-number">14px</span>;
+  <span class="hljs-attribute">font-weight</span>: <span class="hljs-number">600</span>;
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">85px</span>;
+  <span class="hljs-attribute">text-align</span>: center;
+  <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">5px</span>;
+}
+
+<span class="hljs-selector-class">.calculated-hash-container</span> <span class="hljs-selector-class">.left</span> <span class="hljs-selector-class">.hash-code-value</span> {
+  <span class="hljs-attribute">overflow</span>: hidden;
+  <span class="hljs-attribute">text-overflow</span>: ellipsis;
+  <span class="hljs-attribute">letter-spacing</span>: <span class="hljs-number">1px</span>;
+  <span class="hljs-attribute">font-size</span>: <span class="hljs-number">14px</span>;
+  <span class="hljs-attribute">white-space</span>: nowrap;
+}
+
+<span class="hljs-selector-class">.icon-button</span> {
+  <span class="hljs-attribute">all</span>: initial;
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">20px</span>;
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">20px</span>;
+  <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">3px</span>;
+  <span class="hljs-attribute">display</span>: flex;
+  <span class="hljs-attribute">align-items</span>: center;
+  <span class="hljs-attribute">justify-content</span>: center;
+  <span class="hljs-attribute">cursor</span>: pointer;
+  <span class="hljs-attribute">transition</span>: background-color <span class="hljs-number">1s</span> ease;
+}
+
+<span class="hljs-keyword">@media</span> <span class="hljs-keyword">only</span> screen <span class="hljs-keyword">and</span> (<span class="hljs-attribute">min-width</span>: <span class="hljs-number">576px</span>) {
+  <span class="hljs-selector-class">.icon-button</span> {
+    <span class="hljs-attribute">height</span>: <span class="hljs-number">30px</span>;
+    <span class="hljs-attribute">width</span>: <span class="hljs-number">30px</span>;
+  }
+}
+
+<span class="hljs-selector-class">.icon-button</span><span class="hljs-selector-pseudo">:hover</span> {
+  <span class="hljs-attribute">background-color</span>: <span class="hljs-built_in">var</span>(--secondary-color);
+}
+
+<span class="hljs-selector-class">.icon</span> {
+  <span class="hljs-attribute">font-size</span>: <span class="hljs-number">25px</span>;
+  <span class="hljs-attribute">color</span>: <span class="hljs-built_in">var</span>(--text-color);
+}
+
+<span class="hljs-selector-class">.icon-button</span><span class="hljs-selector-pseudo">:hover</span> <span class="hljs-selector-class">.icon</span> {
+  <span class="hljs-attribute">color</span>: <span class="hljs-built_in">var</span>(--white-color);
+}
+</code></pre></code></pre></li>
+<li><p>script.js</p>
+<pre><code class="language-js"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">const</span> <span class="hljs-title class_">SHA1</span> = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&quot;SHA1&quot;</span>);
+<span class="hljs-keyword">const</span> <span class="hljs-title class_">SHA256</span> = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&quot;SHA256&quot;</span>);
+<span class="hljs-keyword">const</span> <span class="hljs-title class_">SHA384</span> = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&quot;SHA384&quot;</span>);
+<span class="hljs-keyword">const</span> <span class="hljs-title class_">SHA512</span> = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&quot;SHA512&quot;</span>);
+<span class="hljs-keyword">const</span> inputText = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&quot;inputText&quot;</span>);
+<span class="hljs-keyword">const</span> copyButtons = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelectorAll</span>(<span class="hljs-string">&quot;.copy-button&quot;</span>);
+
+<span class="hljs-title function_">handleKeyPress</span>();
+<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">&quot;keyup&quot;</span>, handleKeyPress);
+copyButtons.<span class="hljs-title function_">forEach</span>(<span class="hljs-function">(<span class="hljs-params">copyButton</span>) =&gt;</span>
+  copyButton.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">&quot;click&quot;</span>, <span class="hljs-function">(<span class="hljs-params">event</span>) =&gt;</span> <span class="hljs-title function_">copyHashCodeToClipboard</span>(event))
+);
+
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">handleKeyPress</span>(<span class="hljs-params"></span>) {
+  <span class="hljs-keyword">if</span> (inputText.<span class="hljs-property">value</span> == <span class="hljs-string">&quot;&quot;</span>) {
+    <span class="hljs-title class_">SHA1</span>.<span class="hljs-property">innerHTML</span> = <span class="hljs-string">&quot;&quot;</span>;
+    <span class="hljs-title class_">SHA256</span>.<span class="hljs-property">innerHTML</span> = <span class="hljs-string">&quot;&quot;</span>;
+    <span class="hljs-title class_">SHA384</span>.<span class="hljs-property">innerHTML</span> = <span class="hljs-string">&quot;&quot;</span>;
+    <span class="hljs-title class_">SHA512</span>.<span class="hljs-property">innerHTML</span> = <span class="hljs-string">&quot;&quot;</span>;
+    <span class="hljs-keyword">return</span>;
+  }
+
+  <span class="hljs-title function_">encode</span>(inputText.<span class="hljs-property">value</span>, <span class="hljs-string">&quot;SHA-1&quot;</span>).<span class="hljs-title function_">then</span>(<span class="hljs-function">(<span class="hljs-params">hash</span>) =&gt;</span> {
+    <span class="hljs-title class_">SHA1</span>.<span class="hljs-property">innerHTML</span> = hash;
+  });
+
+  <span class="hljs-title function_">encode</span>(inputText.<span class="hljs-property">value</span>, <span class="hljs-string">&quot;SHA-256&quot;</span>).<span class="hljs-title function_">then</span>(<span class="hljs-function">(<span class="hljs-params">hash</span>) =&gt;</span> {
+    <span class="hljs-title class_">SHA256</span>.<span class="hljs-property">innerHTML</span> = hash;
+  });
+
+  <span class="hljs-title function_">encode</span>(inputText.<span class="hljs-property">value</span>, <span class="hljs-string">&quot;SHA-384&quot;</span>).<span class="hljs-title function_">then</span>(<span class="hljs-function">(<span class="hljs-params">hash</span>) =&gt;</span> {
+    <span class="hljs-title class_">SHA384</span>.<span class="hljs-property">innerHTML</span> = hash;
+  });
+
+  <span class="hljs-title function_">encode</span>(inputText.<span class="hljs-property">value</span>, <span class="hljs-string">&quot;SHA-512&quot;</span>).<span class="hljs-title function_">then</span>(<span class="hljs-function">(<span class="hljs-params">hash</span>) =&gt;</span> {
+    <span class="hljs-title class_">SHA512</span>.<span class="hljs-property">innerHTML</span> = hash;
+  });
+}
+
+<span class="hljs-keyword">async</span> <span class="hljs-keyword">function</span> <span class="hljs-title function_">encode</span>(<span class="hljs-params">text, algo</span>) {
+  <span class="hljs-keyword">const</span> encoder = <span class="hljs-keyword">new</span> <span class="hljs-title class_">TextEncoder</span>();
+  <span class="hljs-keyword">const</span> data = encoder.<span class="hljs-title function_">encode</span>(text);
+  <span class="hljs-keyword">const</span> hashBuffer = <span class="hljs-keyword">await</span> crypto.<span class="hljs-property">subtle</span>.<span class="hljs-title function_">digest</span>(algo, data);
+  <span class="hljs-keyword">const</span> hashArray = <span class="hljs-title class_">Array</span>.<span class="hljs-title function_">from</span>(<span class="hljs-keyword">new</span> <span class="hljs-title class_">Uint8Array</span>(hashBuffer));
+  <span class="hljs-keyword">const</span> hashHex = hashArray
+    .<span class="hljs-title function_">map</span>(<span class="hljs-function">(<span class="hljs-params">byte</span>) =&gt;</span> byte.<span class="hljs-title function_">toString</span>(<span class="hljs-number">16</span>).<span class="hljs-title function_">padStart</span>(<span class="hljs-number">2</span>, <span class="hljs-string">&quot;0&quot;</span>))
+    .<span class="hljs-title function_">join</span>(<span class="hljs-string">&quot;&quot;</span>);
+  <span class="hljs-keyword">return</span> hashHex;
+}
+
+<span class="hljs-keyword">async</span> <span class="hljs-keyword">function</span> <span class="hljs-title function_">copyHashCodeToClipboard</span>(<span class="hljs-params">event</span>) {
+  <span class="hljs-keyword">try</span> {
+    <span class="hljs-keyword">if</span> (!navigator?.<span class="hljs-property">clipboard</span>?.<span class="hljs-property">writeText</span>) {
+      <span class="hljs-keyword">return</span>;
+    }
+    <span class="hljs-keyword">const</span> hashCodeElement = event.<span class="hljs-property">target</span>.<span class="hljs-title function_">closest</span>(<span class="hljs-string">&quot;.calculated-hash-container&quot;</span>).<span class="hljs-title function_">querySelector</span>(<span class="hljs-string">&quot;.hash-code-value&quot;</span>);
+
+    <span class="hljs-keyword">await</span> navigator.<span class="hljs-property">clipboard</span>.<span class="hljs-title function_">writeText</span>(hashCodeElement.<span class="hljs-property">textContent</span>);
+    <span class="hljs-keyword">const</span> hashCodeValue = hashCodeElement.<span class="hljs-property">textContent</span>;
+    hashCodeElement.<span class="hljs-property">textContent</span> = <span class="hljs-string">&#x27;Copied!&#x27;</span>;
+    <span class="hljs-built_in">setTimeout</span>(<span class="hljs-function">() =&gt;</span> hashCodeElement.<span class="hljs-property">textContent</span> = hashCodeValue, <span class="hljs-string">&quot;1000&quot;</span>);
+  } <span class="hljs-keyword">catch</span> (err) {
+    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">error</span>(err);
+  }
+}
+</code></pre></code></pre></li>
+</ul>
+<h2>Ressources</h2>
+<div class="asset">
+  <img src="../../../../assets/blog/hash-generator/background.jpg" />
+<p><a href="../../../../assets/blog/hash-generator/background.jpg" title="background.jpg" download>background.jpg</a></p>
+</div>
+<h2>Conclusion</h2>
+<p>Thank you for reading this. We hope you found this article useful!</p>
+
+    <app-comments></app-comments>
+  </div>
+  <aside>
+    <div class="aside-container">
+      <app-blog-summary summary="[]"></app-blog-summary>
+      <app-blog-promotion></app-blog-promotion>
+    </div>
+  </aside>
+</div>
+
+        </main>
+        <app-scroll-top-button></app-scroll-top-button>
+        <app-footer></app-footer>
+        <app-privacy-consentement></app-privacy-consentement>
+        </div>
+            <script>
+                var lastVisitTime = parseInt(localStorage.getItem('LAST_VISIT_TIME') || '0');
+                var timeoutDuration = 1500;
+                if ((new Date().valueOf() - lastVisitTime) < 1200000) {
+                    timeoutDuration = 400;
+                }
+                setTimeout(() => {
+                    document.querySelector('.loader').classList.add('hide');
+                    document.querySelector('.body-container').style.display = 'block';
+                    document.dispatchEvent(new CustomEvent('page-loader-hide'));
+                }, timeoutDuration);
+                setTimeout(() => {
+                    document.querySelector('.loader').style.display = 'none';
+                }, 2000);
+                localStorage.setItem('LAST_VISIT_TIME', new Date().valueOf());
+            </script>
+        
+                <!-- Google tag (gtag.js) -->
+                <script async src="https://www.googletagmanager.com/gtag/js?id=G-S6JEVF53JZ"></script>
+                <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag() {
+                    dataLayer.push(arguments);
+                }
+                gtag('js', new Date());
+
+                gtag('config', 'G-S6JEVF53JZ');
+                </script>
+            <script src="/assets/scripts/markdown.js"></script></body></html>

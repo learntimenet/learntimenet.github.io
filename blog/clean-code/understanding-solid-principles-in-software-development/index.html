@@ -1,0 +1,382 @@
+
+            <!DOCTYPE html>
+            <html lang="en">
+            <head>
+                <meta charset="utf-8" />
+                <title>Learn Time | Understanding SOLID Principles in Software Development</title>
+                <meta name="description" content="Learn about the SOLID principles of object-oriented design: Single Responsibility, Open/Closed, Liskov Substitution, Interface Segregation, and Dependency Inversion. This guide explains each principle with practical examples to help you write better, more maintainable code.">
+                
+                <meta name="viewport" content="width=device-width,initial-scale=1" />
+                <!--
+                <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
+                <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
+                <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
+                <link rel="shortcut icon" sizes="192x192" href="/assets/favicon/android-chrome-192x192.png" >
+                <link rel="shortcut icon" sizes="512x512" href="/assets/favicon/android-chrome-512x512.png" >
+                <link rel="manifest" href="/assets/favicon/site.webmanifest">
+                <link rel="shortcut icon" href="/assets/favicon/favicon.ico">
+                <link rel="mask-icon" href="/assets/favicon/safari-pinned-tab.svg" color="#5bbad5">
+                <meta name="msapplication-TileColor" content="#da532c">
+                <meta name="theme-color" content="#ffffff">
+                -->
+                <link rel="shortcut icon" type="image/png" href="/assets/logo-circle.png">
+                <link rel="stylesheet" href="/styles.css">
+                <script src="https://kit.fontawesome.com/ff0edf556e.js" crossorigin="anonymous"></script>
+                <script src="https://code.iconify.design/iconify-icon/1.0.2/iconify-icon.min.js"></script>
+                <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+                <script>window.startTime = new Date().getTime();</script>
+                <style>
+                    :root {
+                        --background-color: #f3f2ef;
+                        --loading-bar-background-color: #d6cec2;
+                        --moving-loading-bar-background-color: #D0514D;
+                    }
+                    .loader {transition: all .2s ease-out;z-index: 10000000000;margin-top: -200px;position: fixed;top: 0;left: 0;right: 0;bottom: 0;background-color: var(--background-color);display: flex;align-items: center;justify-content: center;flex-direction: column;}.loader-logo {width: 40px; height: 40px; margin-bottom: 20px;}.loading-bar {width: 130px;height: 4px;border-radius: 100rem;background-color: var(--loading-bar-background-color);position: relative;overflow: hidden;}.moving-loading-bar {height: 100%;width: 68px;position: absolute;border-radius: 100rem;background-color: var(--moving-loading-bar-background-color);animation: initial-loading 1.5s ease infinite;}@keyframes initial-loading {0% {transform: translate(-34px);}50% {transform: translate(96px);}to {transform: translate(-34px);}}
+                    .loader.hide {opacity: 0;}
+                </style>
+                
+            <meta property="og:title" content="Understanding SOLID Principles in Software Development" />
+            <meta property="og:description" content="Learn about the SOLID principles of object-oriented design: Single Responsibility, Open/Closed, Liskov Substitution, Interface Segregation, and Dependency Inversion. This guide explains each principle with practical examples to help you write better, more maintainable code." />
+            <meta property="og:image" content="https://learntime.net/assets/thumbnail/blog-thumbnail-4.jpg" />
+            <meta name="twitter:card" content="summary_large_image">
+            <meta name="twitter:creator" content="@learntimenet">
+            <meta name="twitter:title" content="Understanding SOLID Principles in Software Development">
+            <meta name="twitter:description" content="Learn about the SOLID principles of object-oriented design: Single Responsibility, Open/Closed, Liskov Substitution, Interface Segregation, and Dependency Inversion. This guide explains each principle with practical examples to help you write better, more maintainable code.">
+            <meta name="twitter:image" content="https://learntime.net/assets/thumbnail/blog-thumbnail-4.jpg">
+        
+                <script>
+                    var disqus_config = function () {
+                        this.page.url = window.location.origin + window.location.pathname;
+                        this.page.identifier = window.location.pathname.replace('/en', '');
+                    };
+                </script>
+            <script defer src="//blog/clean-code/understanding-solid-principles-in-software-development/understanding-solid-principles-in-software-development.c21c9d55f2d556162dd2.js"></script></head>
+            <body>
+                <div class="loader">
+                    <div class="loading-bar">
+                        <div class="moving-loading-bar"></div>
+                    </div>
+                </div>
+                <script>
+                    var lastVisitTime = parseInt(localStorage.getItem('LAST_VISIT_TIME') || '0');
+                    if ((new Date().valueOf() - lastVisitTime) < 1200000) {
+                        document.querySelector('.loading-bar').style.display = 'none';
+                    }
+                </script>
+                <div class="body-container">
+                    <app-navbar-promotion></app-navbar-promotion>
+                    <app-mobile-navbar></app-mobile-navbar>
+                    <app-desktop-navbar></app-desktop-navbar>
+                    <main class="max-width">
+        
+<style>
+    @media screen and (min-width: 1024px) {
+        :root {
+            --promotion-height: 0rem !important;
+            --max-width: 140rem !important;
+        }
+    }
+</style>
+<app-page-title title="Understanding SOLID Principles in Software Development"></app-page-title>
+<div class="blog-container">
+  <div class="markdown section-container">
+    <h2>Introduction</h2>
+<p><strong>SOLID</strong> is an acronym for five design principles that help software developers design robust, maintainable, and scalable object-oriented systems. These principles were introduced by Robert C. Martin (also known as Uncle Bob) and have become a cornerstone of modern software engineering. In this article, we’ll explore each of the <strong>SOLID principles</strong> in detail, along with practical examples to help you apply them in your projects.</p>
+<h2>What Are SOLID Principles?</h2>
+<p>SOLID stands for:</p>
+<ol>
+<li><strong>S</strong>ingle Responsibility Principle (SRP)</li>
+<li><strong>O</strong>pen/Closed Principle (OCP)</li>
+<li><strong>L</strong>iskov Substitution Principle (LSP)</li>
+<li><strong>I</strong>nterface Segregation Principle (ISP)</li>
+<li><strong>D</strong>ependency Inversion Principle (DIP)</li>
+</ol>
+<p>Let’s dive into each principle one by one.</p>
+<h2>1. Single Responsibility Principle (SRP)</h2>
+<h3>Definition</h3>
+<p>A class should have only one reason to change, meaning it should have only one responsibility.</p>
+<h3>Why It Matters</h3>
+<ul>
+<li>Improves code readability and maintainability.</li>
+<li>Makes debugging and testing easier.</li>
+<li>Reduces the risk of unintended side effects when making changes.</li>
+</ul>
+<h3>Example that violates SRP Principle</h3>
+<pre><code class="language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Report</span> {
+    <span class="hljs-keyword">public</span> String <span class="hljs-title function_">generateReport</span><span class="hljs-params">()</span> {
+        <span class="hljs-comment">// Logic to generate report</span>
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">saveToFile</span><span class="hljs-params">(String filePath)</span> {
+        <span class="hljs-comment">// Logic to save report to file</span>
+    }
+}
+</code></pre></code></pre>
+<p><strong>alert-error</strong></p>
+<p><strong>Why It’s Bad</strong>: The <code>Report</code> class has two responsibilities: generating a report and saving it to a file. If the logic for saving files changes, the <code>Report</code> class will need to be modified, even if the report generation logic remains the same. This violates SRP.</p>
+<h3>Example that follows SRP Principle</h3>
+<pre><code class="language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Report</span> {
+    <span class="hljs-keyword">public</span> String <span class="hljs-title function_">generateReport</span><span class="hljs-params">()</span> {
+        <span class="hljs-comment">// Logic to generate report</span>
+    }
+}
+
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">ReportSaver</span> {
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">saveToFile</span><span class="hljs-params">(Report report, String filePath)</span> {
+        <span class="hljs-comment">// Logic to save report to file</span>
+    }
+}
+</code></pre></code></pre>
+<p><strong>alert-info</strong></p>
+<p><strong>Why It’s Good</strong>: The responsibilities are separated into two classes. The Report class handles report generation, and the ReportSaver class handles saving the report. This makes the code easier to maintain and modify.</p>
+<h2>2. Open/Closed Principle (OCP)</h2>
+<h3>Definition</h3>
+<p>Software entities (classes, modules, functions) should be open for extension but closed for modification.</p>
+<h3>Why It Matters</h3>
+<ul>
+<li>Allows you to add new features without changing existing code.</li>
+<li>Reduces the risk of introducing bugs in already-tested code.</li>
+</ul>
+<h3>Example that violates OCP Principle</h3>
+<pre><code class="language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Rectangle</span> {
+    <span class="hljs-keyword">public</span> <span class="hljs-type">double</span> width;
+    <span class="hljs-keyword">public</span> <span class="hljs-type">double</span> height;
+}
+
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">AreaCalculator</span> {
+    <span class="hljs-keyword">public</span> <span class="hljs-type">double</span> <span class="hljs-title function_">calculateArea</span><span class="hljs-params">(Object shape)</span> {
+        <span class="hljs-keyword">if</span> (shape <span class="hljs-keyword">instanceof</span> Rectangle) {
+            <span class="hljs-type">Rectangle</span> <span class="hljs-variable">rect</span> <span class="hljs-operator">=</span> (Rectangle) shape;
+            <span class="hljs-keyword">return</span> rect.width * rect.height;
+        }
+        <span class="hljs-comment">// Adding a new shape requires modifying this method</span>
+    }
+}
+</code></pre></code></pre>
+<p><strong>alert-error</strong></p>
+<p><strong>Why It’s Bad</strong>: The <code>AreaCalculator</code> class is not closed for modification. If you want to add support for a new shape (e.g., a circle), you must modify the <code>calculateArea</code> method. This violates OCP</p>
+<h3>Example that follows OCP Principle</h3>
+<pre><code class="language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">interface</span> <span class="hljs-title class_">Shape</span> {
+    <span class="hljs-type">double</span> <span class="hljs-title function_">calculateArea</span><span class="hljs-params">()</span>;
+}
+
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">Rectangle</span> <span class="hljs-keyword">implements</span> <span class="hljs-title class_">Shape</span> {
+    <span class="hljs-keyword">public</span> <span class="hljs-type">double</span> width;
+    <span class="hljs-keyword">public</span> <span class="hljs-type">double</span> height;
+
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-type">double</span> <span class="hljs-title function_">calculateArea</span><span class="hljs-params">()</span> {
+        <span class="hljs-keyword">return</span> width * height;
+    }
+}
+
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">Circle</span> <span class="hljs-keyword">implements</span> <span class="hljs-title class_">Shape</span> {
+    <span class="hljs-keyword">public</span> <span class="hljs-type">double</span> radius;
+
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-type">double</span> <span class="hljs-title function_">calculateArea</span><span class="hljs-params">()</span> {
+        <span class="hljs-keyword">return</span> Math.PI * radius * radius;
+    }
+}
+</code></pre></code></pre>
+<p><strong>alert-info</strong></p>
+<p><strong>Why It’s Good</strong>: The <code>Shape</code> interface allows you to add new shapes (e.g., <code>Circle</code>) without modifying the existing <code>AreaCalculator</code> logic. This makes the system open for extension but closed for modification.</p>
+<h2>3. Liskov Substitution Principle (LSP)</h2>
+<h3>Definition</h3>
+<p>Objects of a superclass should be replaceable with objects of a subclass without affecting the correctness of the program.</p>
+<h3>Why It Matters</h3>
+<ul>
+<li>Ensures that derived classes extend the base class without changing its behavior.</li>
+<li>Promotes polymorphism and code reuse.</li>
+</ul>
+<h3>Example that violates LSP Principle</h3>
+<pre><code class="language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Bird</span> {
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">fly</span><span class="hljs-params">()</span> {
+        <span class="hljs-comment">// Logic to fly</span>
+    }
+}
+
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">Ostrich</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">Bird</span> {
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">fly</span><span class="hljs-params">()</span> {
+        <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">UnsupportedOperationException</span>(<span class="hljs-string">&quot;Ostriches can&#x27;t fly!&quot;</span>);
+    }
+}
+</code></pre></code></pre>
+<p><strong>alert-error</strong></p>
+<p><strong>Why It’s Bad</strong>: The <code>Ostrich</code> class violates LSP because it changes the behavior of the <code>fly</code> method. If you substitute a <code>Bird</code> object with an <code>Ostrich</code>, the program will break because ostriches can’t fly.</p>
+<h3>Example that follows LSP Principle</h3>
+<pre><code class="language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">interface</span> <span class="hljs-title class_">Flyable</span> {
+    <span class="hljs-keyword">void</span> <span class="hljs-title function_">fly</span><span class="hljs-params">()</span>;
+}
+
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">Sparrow</span> <span class="hljs-keyword">implements</span> <span class="hljs-title class_">Flyable</span> {
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">fly</span><span class="hljs-params">()</span> {
+        <span class="hljs-comment">// Logic to fly</span>
+    }
+}
+
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">Ostrich</span> {
+    <span class="hljs-comment">// Ostrich doesn&#x27;t implement Flyable</span>
+}
+</code></pre></code></pre>
+<p><strong>alert-info</strong></p>
+<p><strong>Why It’s Good</strong>: The <code>Flyable</code> interface ensures that only birds that can fly implement the <code>fly</code> method. The <code>Ostrich</code> class doesn’t implement <code>Flyable</code>, so it doesn’t violate LSP.</p>
+<h2>4. Interface Segregation Principle (ISP)</h2>
+<h3>Definition</h3>
+<p>Clients should not be forced to depend on interfaces they do not use. In other words, keep interfaces small and focused.</p>
+<h3>Why It Matters</h3>
+<ul>
+<li>Reduces the complexity of implementing interfaces.</li>
+<li>Prevents classes from being burdened with unnecessary methods.</li>
+</ul>
+<h3>Example that violates ISP Principle</h3>
+<pre><code class="language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">interface</span> <span class="hljs-title class_">Worker</span> {
+    <span class="hljs-keyword">void</span> <span class="hljs-title function_">work</span><span class="hljs-params">()</span>;
+    <span class="hljs-keyword">void</span> <span class="hljs-title function_">eat</span><span class="hljs-params">()</span>;
+}
+
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">Engineer</span> <span class="hljs-keyword">implements</span> <span class="hljs-title class_">Worker</span> {
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">work</span><span class="hljs-params">()</span> {
+        <span class="hljs-comment">// Logic to work</span>
+    }
+
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">eat</span><span class="hljs-params">()</span> {
+        <span class="hljs-comment">// Logic to eat</span>
+    }
+}
+</code></pre></code></pre>
+<p><strong>alert-error</strong></p>
+<p><strong>Why It’s Bad</strong>: The <code>Worker</code> interface forces the <code>Engineer</code> class to implement the <code>eat</code> method, even if it doesn’t need it. This violates ISP.</p>
+<h3>Example that follows ISP Principle</h3>
+<pre><code class="language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">interface</span> <span class="hljs-title class_">Workable</span> {
+    <span class="hljs-keyword">void</span> <span class="hljs-title function_">work</span><span class="hljs-params">()</span>;
+}
+
+<span class="hljs-keyword">interface</span> <span class="hljs-title class_">Eatable</span> {
+    <span class="hljs-keyword">void</span> <span class="hljs-title function_">eat</span><span class="hljs-params">()</span>;
+}
+
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">Engineer</span> <span class="hljs-keyword">implements</span> <span class="hljs-title class_">Workable</span> {
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">work</span><span class="hljs-params">()</span> {
+        <span class="hljs-comment">// Logic to work</span>
+    }
+}
+</code></pre></code></pre>
+<p><strong>alert-info</strong></p>
+<p><strong>Why It’s Good</strong>: The <code>Workable</code> and <code>Eatable</code> interfaces are small and focused. The <code>Engineer</code> class only implements the <code>Workable</code> interface, so it’s not forced to implement unnecessary methods.</p>
+<h2>5. Dependency Inversion Principle (DIP)</h2>
+<h3>Definition</h3>
+<p>High-level modules should not depend on low-level modules. Both should depend on abstractions. Abstractions should not depend on details. Details should depend on abstractions.</p>
+<h3>Why It Matters</h3>
+<ul>
+<li>Promotes loose coupling between modules.</li>
+<li>Makes the system more modular and easier to test.</li>
+</ul>
+<h3>Example that violates DIP Principle</h3>
+<pre><code class="language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">class</span> <span class="hljs-title class_">LightBulb</span> {
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">turnOn</span><span class="hljs-params">()</span> {
+        <span class="hljs-comment">// Logic to turn on</span>
+    }
+}
+
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">Switch</span> {
+    <span class="hljs-keyword">private</span> LightBulb bulb;
+
+    <span class="hljs-keyword">public</span> <span class="hljs-title function_">Switch</span><span class="hljs-params">(LightBulb bulb)</span> {
+        <span class="hljs-built_in">this</span>.bulb = bulb;
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">operate</span><span class="hljs-params">()</span> {
+        bulb.turnOn();
+    }
+}
+</code></pre></code></pre>
+<p><strong>alert-error</strong></p>
+<p><strong>Why It’s Bad</strong>: The <code>Switch</code> class depends directly on the <code>LightBulb</code> class (a low-level module). If you want to replace the <code>LightBulb</code> with another device (e.g., a fan), you’ll need to modify the <code>Switch</code> class.</p>
+<h3>Example that follows DIP Principle</h3>
+<pre><code class="language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">interface</span> <span class="hljs-title class_">Switchable</span> {
+    <span class="hljs-keyword">void</span> <span class="hljs-title function_">turnOn</span><span class="hljs-params">()</span>;
+}
+
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">LightBulb</span> <span class="hljs-keyword">implements</span> <span class="hljs-title class_">Switchable</span> {
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">turnOn</span><span class="hljs-params">()</span> {
+        <span class="hljs-comment">// Logic to turn on</span>
+    }
+}
+
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">Switch</span> {
+    <span class="hljs-keyword">private</span> Switchable device;
+
+    <span class="hljs-keyword">public</span> <span class="hljs-title function_">Switch</span><span class="hljs-params">(Switchable device)</span> {
+        <span class="hljs-built_in">this</span>.device = device;
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">operate</span><span class="hljs-params">()</span> {
+        device.turnOn();
+    }
+}
+</code></pre></code></pre>
+<p><strong>alert-info</strong></p>
+<p><strong>Why It’s Good</strong>: The <code>Switch</code> class depends on the <code>Switchable</code> interface (an abstraction), not on a specific implementation like <code>LightBulb</code>. This allows you to easily switch between different devices without modifying the <code>Switch</code> class.</p>
+<h2>Conclusion</h2>
+<p>The SOLID principles are essential guidelines for designing robust, maintainable, and scalable software systems. By applying these principles, you can create code that is easier to understand, extend, and maintain. Whether you’re a beginner or an experienced developer, mastering SOLID principles will significantly improve your software design skills.</p>
+<p>Remember, SOLID is not about perfection but about making thoughtful design decisions that lead to better code. Start applying these principles in your projects today and see the difference they make!</p>
+<p>Happy coding!</p>
+
+    <app-comments></app-comments>
+  </div>
+  <aside>
+    <div class="aside-container">
+      <app-blog-summary summary="[]"></app-blog-summary>
+      <app-blog-promotion></app-blog-promotion>
+    </div>
+  </aside>
+</div>
+
+        </main>
+        <app-scroll-top-button></app-scroll-top-button>
+        <app-footer></app-footer>
+        <app-privacy-consentement></app-privacy-consentement>
+        </div>
+            <script>
+                var lastVisitTime = parseInt(localStorage.getItem('LAST_VISIT_TIME') || '0');
+                var timeoutDuration = 1500;
+                if ((new Date().valueOf() - lastVisitTime) < 1200000) {
+                    timeoutDuration = 400;
+                }
+                setTimeout(() => {
+                    document.querySelector('.loader').classList.add('hide');
+                    document.querySelector('.body-container').style.display = 'block';
+                    document.dispatchEvent(new CustomEvent('page-loader-hide'));
+                }, timeoutDuration);
+                setTimeout(() => {
+                    document.querySelector('.loader').style.display = 'none';
+                }, 2000);
+                localStorage.setItem('LAST_VISIT_TIME', new Date().valueOf());
+            </script>
+        
+                <!-- Google tag (gtag.js) -->
+                <script async src="https://www.googletagmanager.com/gtag/js?id=G-S6JEVF53JZ"></script>
+                <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag() {
+                    dataLayer.push(arguments);
+                }
+                gtag('js', new Date());
+
+                gtag('config', 'G-S6JEVF53JZ');
+                </script>
+            <script src="/assets/scripts/markdown.js"></script>
+                <script>
+                    document.addEventListener('DOMContentLoaded', () => {
+                        document.getElementById('languageSwitcherMobile').remove();
+                        document.getElementById('languageSwitcherDesktop').remove();
+                    });
+                </script>
+            </body></html>

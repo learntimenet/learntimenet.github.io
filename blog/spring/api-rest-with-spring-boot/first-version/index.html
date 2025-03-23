@@ -1,0 +1,252 @@
+
+            <!DOCTYPE html>
+            <html lang="en">
+            <head>
+                <meta charset="utf-8" />
+                <title>Learn Time | REST API with Spring</title>
+                <meta name="description" content="In this article, we are going to create a REST API using the Spring Boot framework by using an H2 database then PostgreSQL and adding its Swagger documentation.">
+                
+                <meta name="viewport" content="width=device-width,initial-scale=1" />
+                <!--
+                <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
+                <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
+                <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
+                <link rel="shortcut icon" sizes="192x192" href="/assets/favicon/android-chrome-192x192.png" >
+                <link rel="shortcut icon" sizes="512x512" href="/assets/favicon/android-chrome-512x512.png" >
+                <link rel="manifest" href="/assets/favicon/site.webmanifest">
+                <link rel="shortcut icon" href="/assets/favicon/favicon.ico">
+                <link rel="mask-icon" href="/assets/favicon/safari-pinned-tab.svg" color="#5bbad5">
+                <meta name="msapplication-TileColor" content="#da532c">
+                <meta name="theme-color" content="#ffffff">
+                -->
+                <link rel="shortcut icon" type="image/png" href="/assets/logo-circle.png">
+                <link rel="stylesheet" href="/styles.css">
+                <script src="https://kit.fontawesome.com/ff0edf556e.js" crossorigin="anonymous"></script>
+                <script src="https://code.iconify.design/iconify-icon/1.0.2/iconify-icon.min.js"></script>
+                <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+                <script>window.startTime = new Date().getTime();</script>
+                <style>
+                    :root {
+                        --background-color: #f3f2ef;
+                        --loading-bar-background-color: #d6cec2;
+                        --moving-loading-bar-background-color: #D0514D;
+                    }
+                    .loader {transition: all .2s ease-out;z-index: 10000000000;margin-top: -200px;position: fixed;top: 0;left: 0;right: 0;bottom: 0;background-color: var(--background-color);display: flex;align-items: center;justify-content: center;flex-direction: column;}.loader-logo {width: 40px; height: 40px; margin-bottom: 20px;}.loading-bar {width: 130px;height: 4px;border-radius: 100rem;background-color: var(--loading-bar-background-color);position: relative;overflow: hidden;}.moving-loading-bar {height: 100%;width: 68px;position: absolute;border-radius: 100rem;background-color: var(--moving-loading-bar-background-color);animation: initial-loading 1.5s ease infinite;}@keyframes initial-loading {0% {transform: translate(-34px);}50% {transform: translate(96px);}to {transform: translate(-34px);}}
+                    .loader.hide {opacity: 0;}
+                </style>
+                
+            <meta property="og:title" content="REST API with Spring" />
+            <meta property="og:description" content="In this article, we are going to create a REST API using the Spring Boot framework by using an H2 database then PostgreSQL and adding its Swagger documentation." />
+            <meta property="og:image" content="https://learntime.net/assets/thumbnail/api-rest-with-spring-boot.png" />
+            <meta name="twitter:card" content="summary_large_image">
+            <meta name="twitter:creator" content="@learntimenet">
+            <meta name="twitter:title" content="REST API with Spring">
+            <meta name="twitter:description" content="In this article, we are going to create a REST API using the Spring Boot framework by using an H2 database then PostgreSQL and adding its Swagger documentation.">
+            <meta name="twitter:image" content="https://learntime.net/assets/thumbnail/api-rest-with-spring-boot.png">
+        
+                <script>
+                    var disqus_config = function () {
+                        this.page.url = window.location.origin + window.location.pathname;
+                        this.page.identifier = window.location.pathname.replace('/en', '');
+                    };
+                </script>
+            <script defer src="//blog/spring/api-rest-with-spring-boot/first-version/first-version.a3e992686b8fbce4a375.js"></script></head>
+            <body>
+                <div class="loader">
+                    <div class="loading-bar">
+                        <div class="moving-loading-bar"></div>
+                    </div>
+                </div>
+                <script>
+                    var lastVisitTime = parseInt(localStorage.getItem('LAST_VISIT_TIME') || '0');
+                    if ((new Date().valueOf() - lastVisitTime) < 1200000) {
+                        document.querySelector('.loading-bar').style.display = 'none';
+                    }
+                </script>
+                <div class="body-container">
+                    <app-navbar-promotion></app-navbar-promotion>
+                    <app-mobile-navbar></app-mobile-navbar>
+                    <app-desktop-navbar></app-desktop-navbar>
+                    <main class="max-width">
+        
+<style>
+    @media screen and (min-width: 1024px) {
+        :root {
+            --promotion-height: 0rem !important;
+            --max-width: 140rem !important;
+        }
+    }
+</style>
+<app-page-title title="REST API with Spring"></app-page-title>
+<div class="blog-container">
+  <div class="markdown section-container">
+    <h2>First version of the project</h2>
+<p>In this first version, we will create the <code>model</code> package in which we will create the <code>Todo</code> entity which will represent our Todo task:</p>
+<pre><code class="language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">package</span> net.learntime.todo.api.model;
+
+<span class="hljs-keyword">import</span> jakarta.persistence.*;
+<span class="hljs-keyword">import</span> lombok.Getter;
+<span class="hljs-keyword">import</span> lombok.Setter;
+
+<span class="hljs-meta">@Getter</span>
+<span class="hljs-meta">@Setter</span>
+<span class="hljs-meta">@Entity</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Todo</span> {
+
+    <span class="hljs-meta">@Id</span>
+    <span class="hljs-meta">@GeneratedValue(strategy = GenerationType.IDENTITY)</span>
+    <span class="hljs-keyword">private</span> Long id;
+
+    <span class="hljs-keyword">private</span> String title;
+    <span class="hljs-keyword">private</span> String description;
+    <span class="hljs-keyword">private</span> Boolean completed;
+}
+</code></pre></code></pre>
+<p><strong>code-explication-1</strong></p>
+<ul>
+<li><code>@Entity</code>: Indicates that the class is a JPA (Java Persistence API) entity, which means that it is mapped to a database table.</li>
+<li><code>@Getter</code> and <code>@Setter</code>: Lombok annotations which automatically generate get and set methods for all the fields in the class, simplifying the code and avoiding manual writing of these methods.</li>
+<li><code>@Id</code>: Specifies that the id attribute is the primary key of the entity.</li>
+<li><code>@GeneratedValue</code>: Indicates that the value of id is generated automatically by the database, using an auto-increment strategy.</li>
+</ul>
+<p>Next, we'll create the <code>repository</code> package in which we'll create the <code>TodoRepository</code> repository which will allow us to register, retrieve, modify and delete a Todo in the database.</p>
+<pre><code class="language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">package</span> net.learntime.todo.api.repository;
+
+<span class="hljs-keyword">import</span> net.learntime.todo.api.model.Todo;
+<span class="hljs-keyword">import</span> org.springframework.data.jpa.repository.JpaRepository;
+<span class="hljs-keyword">import</span> org.springframework.stereotype.Repository;
+
+<span class="hljs-meta">@Repository</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">interface</span> <span class="hljs-title class_">ITodoRepository</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">JpaRepository</span>&lt;Todo, Long&gt; {
+
+}
+</code></pre></code></pre>
+<p><strong>code-explication-1</strong></p>
+<p>This is a Java interface that extends the <code>JpaRepository</code> interface, which provides a full set of methods for manipulating entities, such as <code>save()</code>, <code>findAll()</code>, <code>findById()</code>, <code>delete()</code>, etc.</p>
+<p>Next, we'll create the <code>exception</code> package, in which we'll create the <code>TodoNotFoundException</code> exception. This exception will be thrown when a Todo task is not found with the id supplied in parameter</p>
+<pre><code class="language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">package</span> net.learntime.todo.api.exception;
+
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">TodoNotFoundException</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">RuntimeException</span> {
+    <span class="hljs-keyword">public</span> <span class="hljs-title function_">TodoNotFoundException</span><span class="hljs-params">(Long id)</span> {
+        <span class="hljs-built_in">super</span>(<span class="hljs-string">&quot;Todo with id %s does not exist&quot;</span>.formatted(id));
+    }
+}
+</code></pre></code></pre>
+<p>Finally, we'll create the <code>controller</code> package in which we'll create our REST controller <code>TodoController</code> to implement our APIs:</p>
+<ul>
+<li><code>GET /todos</code> to retrieve all Todos tasks</li>
+<li>GET /todos/{id}` to retrieve a Todo task based on its id</li>
+<li>POST /todo` to create a new Todo task</li>
+<li><code>PUT /todo/{id}</code> to update a Todo task using its id</li>
+<li>DELETE /todo/{id}` to delete a todo task from its id</li>
+</ul>
+<pre><code class="language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">package</span> net.learntime.todo.api.controller;
+
+<span class="hljs-keyword">import</span> net.learntime.todo.api.exception.TodoNotFoundException;
+<span class="hljs-keyword">import</span> net.learntime.todo.api.model.Todo;
+<span class="hljs-keyword">import</span> net.learntime.todo.api.repository.ITodoRepository;
+<span class="hljs-keyword">import</span> org.springframework.beans.factory.annotation.Autowired;
+<span class="hljs-keyword">import</span> org.springframework.web.bind.annotation.*;
+
+<span class="hljs-keyword">import</span> java.util.List;
+
+<span class="hljs-meta">@RestController</span>
+<span class="hljs-meta">@RequestMapping(path = &quot;/api/todos&quot;)</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">TodoController</span> {
+
+   <span class="hljs-meta">@Autowired</span>
+   <span class="hljs-keyword">private</span> ITodoRepository repository;
+
+   <span class="hljs-meta">@GetMapping</span>
+   <span class="hljs-keyword">public</span> List&lt;Todo&gt; <span class="hljs-title function_">getAll</span><span class="hljs-params">()</span> {
+      <span class="hljs-keyword">return</span> repository.findAll();
+   }
+
+   <span class="hljs-meta">@GetMapping(&quot;{id}&quot;)</span>
+   <span class="hljs-keyword">public</span> Todo <span class="hljs-title function_">getById</span><span class="hljs-params">(<span class="hljs-meta">@PathVariable</span> Long id)</span> {
+      <span class="hljs-keyword">return</span> repository.findById(id).orElseThrow(() -&gt; <span class="hljs-keyword">new</span> <span class="hljs-title class_">TodoNotFoundException</span>(id));
+   }
+
+   <span class="hljs-meta">@PostMapping</span>
+   <span class="hljs-keyword">public</span> Todo <span class="hljs-title function_">create</span><span class="hljs-params">(<span class="hljs-meta">@RequestBody</span> Todo todo)</span> {
+      <span class="hljs-keyword">return</span> repository.save(todo);
+   }
+
+    <span class="hljs-meta">@PutMapping(&quot;{id}&quot;)</span>
+    <span class="hljs-keyword">public</span> Todo <span class="hljs-title function_">update</span><span class="hljs-params">(<span class="hljs-meta">@PathVariable</span> Long id, <span class="hljs-meta">@RequestBody</span> Todo todo)</span> {
+        <span class="hljs-type">var</span> <span class="hljs-variable">entity</span> <span class="hljs-operator">=</span> repository.findById(id).orElseThrow(() -&gt; <span class="hljs-keyword">new</span> <span class="hljs-title class_">TodoNotFoundException</span>(id));
+        entity.setTitle(todo.getTitle());
+        entity.setDescription(todo.getDescription());
+        entity.setCompleted(todo.getCompleted());
+        repository.save(entity);
+        <span class="hljs-keyword">return</span> entity;
+    }
+
+   <span class="hljs-meta">@DeleteMapping(&quot;{id}&quot;)</span>
+   <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">delete</span><span class="hljs-params">(<span class="hljs-meta">@PathVariable</span> Long id)</span> {
+      repository.deleteById(id);
+   }
+
+}
+
+</code></pre></code></pre>
+<p><strong>code-explication-1</strong></p>
+<ul>
+<li><code>@RestController</code>: Declares the class as a REST controller for handling HTTP requests.</li>
+<li><code>@RequestMapping</code>: Sets the base path for all endpoints of this controller.</li>
+<li><code>@GetMapping</code>: Handles <strong>GET</strong> requests to retrieve all Todo tasks. Uses repository.findAll() to return the full list of tasks.</li>
+<li><code>@GetMapping(‘{id}’)</code> : Handles <strong>GET</strong> requests to retrieve a Todo task by its ID. If the ID is not found, a TodoNotFoundException is thrown.</li>
+<li><code>@PostMapping</code> : Handles <strong>POST</strong> requests to create a new Todo task. The task received in the request body is saved via repository.save(todo).</li>
+<li><code>@PutMapping(‘{id}’)</code> : Handles <strong>PUT</strong> requests to update an existing task based on its ID. If the ID does not exist, the TodoNotFoundException is thrown. The task's attributes are updated before being saved.</li>
+<li><code>@DeleteMapping(‘{id}’)</code>: Handles <strong>DELETE</strong> requests to delete a Todo task by its ID using repository.deleteById(id).</li>
+</ul>
+<h2>Conclusion</h2>
+<p>In this first version of our project, we've built a basic REST API to manage Todo tasks and in the <strong>next section</strong>, we're going to <strong>test our REST API with Postman</strong>, which will allow us to check that our endpoints are working properly.</p>
+<p><strong>previous-next-sections</strong></p>
+<p><a href="/spring/api-rest-with-spring-boot" title="Initializing the Spring Boot project">Initializing the Spring Boot project</a>
+<a href="/spring/api-rest-with-spring-boot/test-our-api-rest" title="Initializing the Spring Boot project">Testing our REST API</a></p>
+
+    <app-comments></app-comments>
+  </div>
+  <aside>
+    <div class="aside-container">
+      <app-blog-summary summary="[{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot&quot;,&quot;label&quot;:&quot;Introduction&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/first-version&quot;,&quot;label&quot;:&quot;First version of the project&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/test-our-api-rest&quot;,&quot;label&quot;:&quot;Tester notre API REST&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/add-validation&quot;,&quot;label&quot;:&quot;Add validation layer&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/add-exceptions-handlers&quot;,&quot;label&quot;:&quot;Add exception handlers&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/use-postgresql&quot;,&quot;label&quot;:&quot;Use a PostgreSQL database&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/add-swagger&quot;,&quot;label&quot;:&quot;Add Swagger&quot;}]"></app-blog-summary>
+      <app-blog-promotion></app-blog-promotion>
+    </div>
+  </aside>
+</div>
+
+        </main>
+        <app-scroll-top-button></app-scroll-top-button>
+        <app-footer></app-footer>
+        <app-privacy-consentement></app-privacy-consentement>
+        </div>
+            <script>
+                var lastVisitTime = parseInt(localStorage.getItem('LAST_VISIT_TIME') || '0');
+                var timeoutDuration = 1500;
+                if ((new Date().valueOf() - lastVisitTime) < 1200000) {
+                    timeoutDuration = 400;
+                }
+                setTimeout(() => {
+                    document.querySelector('.loader').classList.add('hide');
+                    document.querySelector('.body-container').style.display = 'block';
+                    document.dispatchEvent(new CustomEvent('page-loader-hide'));
+                }, timeoutDuration);
+                setTimeout(() => {
+                    document.querySelector('.loader').style.display = 'none';
+                }, 2000);
+                localStorage.setItem('LAST_VISIT_TIME', new Date().valueOf());
+            </script>
+        
+                <!-- Google tag (gtag.js) -->
+                <script async src="https://www.googletagmanager.com/gtag/js?id=G-S6JEVF53JZ"></script>
+                <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag() {
+                    dataLayer.push(arguments);
+                }
+                gtag('js', new Date());
+
+                gtag('config', 'G-S6JEVF53JZ');
+                </script>
+            <script src="/assets/scripts/markdown.js"></script></body></html>

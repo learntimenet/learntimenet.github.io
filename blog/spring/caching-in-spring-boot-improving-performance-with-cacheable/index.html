@@ -1,0 +1,247 @@
+
+            <!DOCTYPE html>
+            <html lang="en">
+            <head>
+                <meta charset="utf-8" />
+                <title>Learn Time | Caching in Spring Boot: Improving Performance with @Cacheable</title>
+                <meta name="description" content="Learn how to use the @Cacheable annotation in Spring Boot to improve application performance by caching method results. This guide covers configuration, usage, and best practices for effective caching.">
+                
+                <meta name="viewport" content="width=device-width,initial-scale=1" />
+                <!--
+                <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
+                <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
+                <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
+                <link rel="shortcut icon" sizes="192x192" href="/assets/favicon/android-chrome-192x192.png" >
+                <link rel="shortcut icon" sizes="512x512" href="/assets/favicon/android-chrome-512x512.png" >
+                <link rel="manifest" href="/assets/favicon/site.webmanifest">
+                <link rel="shortcut icon" href="/assets/favicon/favicon.ico">
+                <link rel="mask-icon" href="/assets/favicon/safari-pinned-tab.svg" color="#5bbad5">
+                <meta name="msapplication-TileColor" content="#da532c">
+                <meta name="theme-color" content="#ffffff">
+                -->
+                <link rel="shortcut icon" type="image/png" href="/assets/logo-circle.png">
+                <link rel="stylesheet" href="/styles.css">
+                <script src="https://kit.fontawesome.com/ff0edf556e.js" crossorigin="anonymous"></script>
+                <script src="https://code.iconify.design/iconify-icon/1.0.2/iconify-icon.min.js"></script>
+                <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+                <script>window.startTime = new Date().getTime();</script>
+                <style>
+                    :root {
+                        --background-color: #f3f2ef;
+                        --loading-bar-background-color: #d6cec2;
+                        --moving-loading-bar-background-color: #D0514D;
+                    }
+                    .loader {transition: all .2s ease-out;z-index: 10000000000;margin-top: -200px;position: fixed;top: 0;left: 0;right: 0;bottom: 0;background-color: var(--background-color);display: flex;align-items: center;justify-content: center;flex-direction: column;}.loader-logo {width: 40px; height: 40px; margin-bottom: 20px;}.loading-bar {width: 130px;height: 4px;border-radius: 100rem;background-color: var(--loading-bar-background-color);position: relative;overflow: hidden;}.moving-loading-bar {height: 100%;width: 68px;position: absolute;border-radius: 100rem;background-color: var(--moving-loading-bar-background-color);animation: initial-loading 1.5s ease infinite;}@keyframes initial-loading {0% {transform: translate(-34px);}50% {transform: translate(96px);}to {transform: translate(-34px);}}
+                    .loader.hide {opacity: 0;}
+                </style>
+                
+            <meta property="og:title" content="Caching in Spring Boot: Improving Performance with @Cacheable" />
+            <meta property="og:description" content="Learn how to use the @Cacheable annotation in Spring Boot to improve application performance by caching method results. This guide covers configuration, usage, and best practices for effective caching." />
+            <meta property="og:image" content="https://learntime.net/assets/thumbnail/blog-thumbnail-3.jpg" />
+            <meta name="twitter:card" content="summary_large_image">
+            <meta name="twitter:creator" content="@learntimenet">
+            <meta name="twitter:title" content="Caching in Spring Boot: Improving Performance with @Cacheable">
+            <meta name="twitter:description" content="Learn how to use the @Cacheable annotation in Spring Boot to improve application performance by caching method results. This guide covers configuration, usage, and best practices for effective caching.">
+            <meta name="twitter:image" content="https://learntime.net/assets/thumbnail/blog-thumbnail-3.jpg">
+        
+                <script>
+                    var disqus_config = function () {
+                        this.page.url = window.location.origin + window.location.pathname;
+                        this.page.identifier = window.location.pathname.replace('/en', '');
+                    };
+                </script>
+            <script defer src="//blog/spring/caching-in-spring-boot-improving-performance-with-cacheable/caching-in-spring-boot-improving-performance-with-cacheable.f4926abf2541f3dd4e1a.js"></script></head>
+            <body>
+                <div class="loader">
+                    <div class="loading-bar">
+                        <div class="moving-loading-bar"></div>
+                    </div>
+                </div>
+                <script>
+                    var lastVisitTime = parseInt(localStorage.getItem('LAST_VISIT_TIME') || '0');
+                    if ((new Date().valueOf() - lastVisitTime) < 1200000) {
+                        document.querySelector('.loading-bar').style.display = 'none';
+                    }
+                </script>
+                <div class="body-container">
+                    <app-navbar-promotion></app-navbar-promotion>
+                    <app-mobile-navbar></app-mobile-navbar>
+                    <app-desktop-navbar></app-desktop-navbar>
+                    <main class="max-width">
+        
+<style>
+    @media screen and (min-width: 1024px) {
+        :root {
+            --promotion-height: 0rem !important;
+            --max-width: 140rem !important;
+        }
+    }
+</style>
+<app-page-title title="Caching in Spring Boot: Improving Performance with @Cacheable"></app-page-title>
+<div class="blog-container">
+  <div class="markdown section-container">
+    <h2>Introduction</h2>
+<p>Caching is a powerful technique to improve the performance of your Spring Boot applications by storing the results of expensive method calls and reusing them for subsequent requests. Spring Boot provides built-in support for caching through the <strong>Spring Cache Abstraction</strong>, and the <code>@Cacheable</code> annotation is one of the most commonly used tools for implementing caching. In this article, we’ll explore how to use <code>@Cacheable</code> to optimize your application’s performance.</p>
+<h2>What is Caching?</h2>
+<p>Caching is the process of storing data in a temporary storage area (cache) so that future requests for the same data can be served faster. This is particularly useful for:</p>
+<ul>
+<li>Reducing database load.</li>
+<li>Speeding up response times for frequently accessed data.</li>
+<li>Minimizing the cost of expensive computations or external API calls.</li>
+</ul>
+<h2>Spring Boot Caching with @Cacheable</h2>
+<p>The <code>@Cacheable</code> annotation in Spring Boot allows you to cache the result of a method. When the method is called, Spring checks if the result is already in the cache. If it is, the cached result is returned. If not, the method is executed, and its result is stored in the cache for future use.</p>
+<h2>How to Use @Cacheable</h2>
+<h3>Step 1: Enable Caching in Spring Boot</h3>
+<p>To enable caching in your Spring Boot application, add the <code>@EnableCaching</code> annotation to your main application class or a configuration class.</p>
+<pre><code class="language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">import</span> org.springframework.cache.annotation.EnableCaching;
+<span class="hljs-keyword">import</span> org.springframework.boot.SpringApplication;
+<span class="hljs-keyword">import</span> org.springframework.boot.autoconfigure.SpringBootApplication;
+
+<span class="hljs-meta">@EnableCaching</span>
+<span class="hljs-meta">@SpringBootApplication</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">MyApplication</span> {
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> {
+        SpringApplication.run(MyApplication.class, args);
+    }
+}
+</code></pre></code></pre>
+<h3>Step 2: Add @Cacheable to Methods</h3>
+<p>Use the <code>@Cacheable</code> annotation on methods whose results you want to cache. You can specify the cache name and optionally a key for the cache.</p>
+<pre><code class="language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">import</span> org.springframework.cache.annotation.Cacheable;
+<span class="hljs-keyword">import</span> org.springframework.stereotype.Service;
+
+<span class="hljs-meta">@Service</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">ProductService</span> {
+
+    <span class="hljs-meta">@Cacheable(&quot;products&quot;)</span>
+    <span class="hljs-keyword">public</span> Product <span class="hljs-title function_">getProductById</span><span class="hljs-params">(Long id)</span> {
+        <span class="hljs-comment">// Simulate a slow database call or expensive computation</span>
+        simulateSlowService();
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Product</span>(id, <span class="hljs-string">&quot;Product &quot;</span> + id);
+    }
+
+}
+</code></pre></code></pre>
+<p><strong>Explanation:</strong></p>
+<ul>
+<li>The <code>@Cacheable(&quot;products&quot;)</code> annotation caches the result of the <code>getProductById</code> method in a cache named products.</li>
+<li>The first time the method is called, it will execute the logic and store the result in the cache.</li>
+<li>Subsequent calls with the same id will return the cached result without executing the method.</li>
+</ul>
+<h2>Customizing Cache Keys</h2>
+<p>By default, Spring uses the method parameters as the cache key. You can customize the cache key using the key attribute of the <code>@Cacheable</code> annotation.</p>
+<h3>Example: Custom Cache Key</h3>
+<pre><code class="language-java"><pre class="highlight"><code class="hljs"><span class="hljs-meta">@Cacheable(value = &quot;products&quot;, key = &quot;#id&quot;)</span>
+<span class="hljs-keyword">public</span> Product <span class="hljs-title function_">getProductById</span><span class="hljs-params">(Long id)</span> {
+    <span class="hljs-comment">// Method logic</span>
+}
+</code></pre></code></pre>
+<h3>Example: Composite Key</h3>
+<p>If your method has multiple parameters, you can create a composite key using SpEL (Spring Expression Language).</p>
+<pre><code class="language-java"><pre class="highlight"><code class="hljs"><span class="hljs-meta">@Cacheable(value = &quot;products&quot;, key = &quot;{#id, #name}&quot;)</span>
+<span class="hljs-keyword">public</span> Product <span class="hljs-title function_">getProductByIdAndName</span><span class="hljs-params">(Long id, String name)</span> {
+    <span class="hljs-comment">// Method logic</span>
+}
+</code></pre></code></pre>
+<h2>Cache Eviction with @CacheEvict</h2>
+<p>Cached data can become stale over time. To remove stale data from the cache, use the <code>@CacheEvict</code> annotation</p>
+<h3>Example: Evicting a Cache</h3>
+<pre><code class="language-java"><pre class="highlight"><code class="hljs"><span class="hljs-meta">@CacheEvict(value = &quot;products&quot;, key = &quot;#id&quot;)</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">updateProduct</span><span class="hljs-params">(Long id, Product product)</span> {
+    <span class="hljs-comment">// Update product in the database</span>
+}
+</code></pre></code></pre>
+<p><strong>alert-info</strong></p>
+<p>The <code>@CacheEvict</code> annotation removes the cached entry for the specified key (<code>id</code>) from the <code>products</code> cache.</p>
+<h2>Conditional Caching with @Cacheable</h2>
+<p>You can conditionally cache results based on specific criteria using the condition and unless attributes.</p>
+<h3>Example: Conditional Caching</h3>
+<pre><code class="language-java"><pre class="highlight"><code class="hljs"><span class="hljs-meta">@Cacheable(value = &quot;products&quot;, key = &quot;#id&quot;, condition = &quot;#id &gt; 10&quot;)</span>
+<span class="hljs-keyword">public</span> Product <span class="hljs-title function_">getProductById</span><span class="hljs-params">(Long id)</span> {
+    <span class="hljs-comment">// Method logic</span>
+}
+</code></pre></code></pre>
+<p><strong>alert-info</strong></p>
+<p>The result will only be cached if the <code>id</code> is greater than 10.</p>
+<h2>Configuring Cache Providers</h2>
+<p>Spring Boot supports multiple caching providers, such as:</p>
+<ul>
+<li><strong>In-Memory Cache</strong>: Simple and fast, but not persistent (e.g., Caffeine, Guava).</li>
+<li><strong>Distributed Cache</strong>: Suitable for distributed systems (e.g., Redis, Hazelcast).</li>
+</ul>
+<h3>Example: Using Caffeine Cache</h3>
+<p>Add the Caffeine dependency to your <code>pom.xml</code>:</p>
+<pre><code class="language-xml"><pre class="highlight"><code class="hljs"><span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>com.github.ben-manes.caffeine<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>caffeine<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span>
+</code></pre></code></pre>
+<p>Configure Caffeine in your <code>application.properties</code>:</p>
+<pre><code class="language-properties"><pre class="highlight"><code class="hljs"><span class="hljs-attr">spring.cache.cache-names</span>=<span class="hljs-string">products</span>
+<span class="hljs-attr">spring.cache.caffeine.spec</span>=<span class="hljs-string">maximumSize=500,expireAfterAccess=600s</span>
+</code></pre></code></pre>
+<h2>Best Practices</h2>
+<ul>
+<li><strong>Use Meaningful Cache Names</strong>: Choose descriptive names for your caches to make it easier to manage and debug.</li>
+<li><strong>Set Cache Expiration</strong>: Configure cache expiration (TTL) to avoid serving stale data.</li>
+<li><strong>Monitor Cache Usage</strong>: Use tools like <strong>Spring Boot Actuator</strong> to monitor cache hits and misses.</li>
+<li><strong>Avoid Over-Caching</strong>: Only cache data that is expensive to compute or fetch.</li>
+<li><strong>Test Cache Behavior</strong>: Ensure your caching logic works as expected by writing unit and integration tests.</li>
+</ul>
+<h2>Conclusion</h2>
+<p>Caching is a powerful tool for improving the performance of your Spring Boot applications. By using the @Cacheable annotation, you can easily cache method results and reduce the load on your database or external services. Remember to follow best practices, such as setting cache expiration and monitoring cache usage, to ensure your caching strategy is effective.</p>
+<p>Start implementing caching in your Spring Boot applications today and experience the performance benefits firsthand!</p>
+<p>Happy coding!</p>
+
+    <app-comments></app-comments>
+  </div>
+  <aside>
+    <div class="aside-container">
+      <app-blog-summary summary="[]"></app-blog-summary>
+      <app-blog-promotion></app-blog-promotion>
+    </div>
+  </aside>
+</div>
+
+        </main>
+        <app-scroll-top-button></app-scroll-top-button>
+        <app-footer></app-footer>
+        <app-privacy-consentement></app-privacy-consentement>
+        </div>
+            <script>
+                var lastVisitTime = parseInt(localStorage.getItem('LAST_VISIT_TIME') || '0');
+                var timeoutDuration = 1500;
+                if ((new Date().valueOf() - lastVisitTime) < 1200000) {
+                    timeoutDuration = 400;
+                }
+                setTimeout(() => {
+                    document.querySelector('.loader').classList.add('hide');
+                    document.querySelector('.body-container').style.display = 'block';
+                    document.dispatchEvent(new CustomEvent('page-loader-hide'));
+                }, timeoutDuration);
+                setTimeout(() => {
+                    document.querySelector('.loader').style.display = 'none';
+                }, 2000);
+                localStorage.setItem('LAST_VISIT_TIME', new Date().valueOf());
+            </script>
+        
+                <!-- Google tag (gtag.js) -->
+                <script async src="https://www.googletagmanager.com/gtag/js?id=G-S6JEVF53JZ"></script>
+                <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag() {
+                    dataLayer.push(arguments);
+                }
+                gtag('js', new Date());
+
+                gtag('config', 'G-S6JEVF53JZ');
+                </script>
+            <script src="/assets/scripts/markdown.js"></script>
+                <script>
+                    document.addEventListener('DOMContentLoaded', () => {
+                        document.getElementById('languageSwitcherMobile').remove();
+                        document.getElementById('languageSwitcherDesktop').remove();
+                    });
+                </script>
+            </body></html>

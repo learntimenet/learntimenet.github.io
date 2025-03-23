@@ -1,0 +1,194 @@
+
+            <!DOCTYPE html>
+            <html lang="fr">
+            <head>
+                <meta charset="utf-8" />
+                <title>Learn Time | API REST avec Spring</title>
+                <meta name="description" content="Dans cet article, nous allons créer une API REST en utilisant le framework Spring Boot en utilisant une base de données H2 puis PostgreSQL et en ajoutant sa documentation Swagger">
+                
+                <meta name="viewport" content="width=device-width,initial-scale=1" />
+                <!--
+                <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
+                <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
+                <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
+                <link rel="shortcut icon" sizes="192x192" href="/assets/favicon/android-chrome-192x192.png" >
+                <link rel="shortcut icon" sizes="512x512" href="/assets/favicon/android-chrome-512x512.png" >
+                <link rel="manifest" href="/assets/favicon/site.webmanifest">
+                <link rel="shortcut icon" href="/assets/favicon/favicon.ico">
+                <link rel="mask-icon" href="/assets/favicon/safari-pinned-tab.svg" color="#5bbad5">
+                <meta name="msapplication-TileColor" content="#da532c">
+                <meta name="theme-color" content="#ffffff">
+                -->
+                <link rel="shortcut icon" type="image/png" href="/assets/logo-circle.png">
+                <link rel="stylesheet" href="/styles.css">
+                <script src="https://kit.fontawesome.com/ff0edf556e.js" crossorigin="anonymous"></script>
+                <script src="https://code.iconify.design/iconify-icon/1.0.2/iconify-icon.min.js"></script>
+                <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+                <script>window.startTime = new Date().getTime();</script>
+                <style>
+                    :root {
+                        --background-color: #f3f2ef;
+                        --loading-bar-background-color: #d6cec2;
+                        --moving-loading-bar-background-color: #D0514D;
+                    }
+                    .loader {transition: all .2s ease-out;z-index: 10000000000;margin-top: -200px;position: fixed;top: 0;left: 0;right: 0;bottom: 0;background-color: var(--background-color);display: flex;align-items: center;justify-content: center;flex-direction: column;}.loader-logo {width: 40px; height: 40px; margin-bottom: 20px;}.loading-bar {width: 130px;height: 4px;border-radius: 100rem;background-color: var(--loading-bar-background-color);position: relative;overflow: hidden;}.moving-loading-bar {height: 100%;width: 68px;position: absolute;border-radius: 100rem;background-color: var(--moving-loading-bar-background-color);animation: initial-loading 1.5s ease infinite;}@keyframes initial-loading {0% {transform: translate(-34px);}50% {transform: translate(96px);}to {transform: translate(-34px);}}
+                    .loader.hide {opacity: 0;}
+                </style>
+                
+            <meta property="og:title" content="API REST avec Spring" />
+            <meta property="og:description" content="Dans cet article, nous allons créer une API REST en utilisant le framework Spring Boot en utilisant une base de données H2 puis PostgreSQL et en ajoutant sa documentation Swagger" />
+            <meta property="og:image" content="https://learntime.net/assets/thumbnail/api-rest-with-spring-boot.png" />
+            <meta name="twitter:card" content="summary_large_image">
+            <meta name="twitter:creator" content="@learntimenet">
+            <meta name="twitter:title" content="API REST avec Spring">
+            <meta name="twitter:description" content="Dans cet article, nous allons créer une API REST en utilisant le framework Spring Boot en utilisant une base de données H2 puis PostgreSQL et en ajoutant sa documentation Swagger">
+            <meta name="twitter:image" content="https://learntime.net/assets/thumbnail/api-rest-with-spring-boot.png">
+        
+                <script>
+                    var disqus_config = function () {
+                        this.page.url = window.location.origin + window.location.pathname;
+                        this.page.identifier = window.location.pathname.replace('/en', '');
+                    };
+                </script>
+            <script defer src="/fr/blog/spring/api-rest-with-spring-boot/add-exceptions-handlers/add-exceptions-handlers.7fe1ec09360546523d43.js"></script></head>
+            <body>
+                <div class="loader">
+                    <div class="loading-bar">
+                        <div class="moving-loading-bar"></div>
+                    </div>
+                </div>
+                <script>
+                    var lastVisitTime = parseInt(localStorage.getItem('LAST_VISIT_TIME') || '0');
+                    if ((new Date().valueOf() - lastVisitTime) < 1200000) {
+                        document.querySelector('.loading-bar').style.display = 'none';
+                    }
+                </script>
+                <div class="body-container">
+                    <app-navbar-promotion></app-navbar-promotion>
+                    <app-mobile-navbar></app-mobile-navbar>
+                    <app-desktop-navbar></app-desktop-navbar>
+                    <main class="max-width">
+        
+<style>
+    @media screen and (min-width: 1024px) {
+        :root {
+            --promotion-height: 0rem !important;
+            --max-width: 140rem !important;
+        }
+    }
+</style>
+<app-page-title title="API REST avec Spring"></app-page-title>
+<div class="blog-container">
+  <div class="markdown section-container">
+    <h2>Ajouter les exceptions handlers</h2>
+<p>Avec Spring Boot, il existe plusieurs façons de personnaliser la réponse d'une API en cas d'erreur. Dans cet article, nous allons nous concentrer sur l'utilisation de <code>@ControllerAdvice</code>, une classe qui permet de centraliser la gestion des exceptions émises par les contrôleurs.</p>
+<p>En combinaison avec l'annotation <code>@ExceptionHandler</code>, cette approche permet de définir des méthodes pour intercepter des exceptions spécifiques (ou génériques) et retourner une réponse appropriée au client.</p>
+<p>Pour celà, nous avons ajouter la classe <code>GlobalExceptionHandler</code> dans le package <code>exception</code> et la classe <code>ApiError</code> dans le package <code>model</code></p>
+<p><strong>code-tabs</strong></p>
+<ul>
+<li><p>GlobalExceptionHandler</p>
+<pre><code class="language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">package</span> net.learntime.todo.api.exception;
+
+<span class="hljs-keyword">import</span> net.learntime.todo.api.model.ApiError;
+<span class="hljs-keyword">import</span> org.springframework.http.HttpStatus;
+<span class="hljs-keyword">import</span> org.springframework.http.ResponseEntity;
+<span class="hljs-keyword">import</span> org.springframework.web.bind.annotation.ControllerAdvice;
+<span class="hljs-keyword">import</span> org.springframework.web.bind.annotation.ExceptionHandler;
+
+<span class="hljs-meta">@ControllerAdvice</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">GlobalExceptionHandler</span> {
+
+    <span class="hljs-meta">@ExceptionHandler(value = TodoNotFoundException.class)</span>
+    <span class="hljs-keyword">public</span> ResponseEntity&lt;ApiError&gt; <span class="hljs-title function_">handleException</span><span class="hljs-params">(TodoNotFoundException e)</span> {
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">ResponseEntity</span>&lt;&gt;(<span class="hljs-keyword">new</span> <span class="hljs-title class_">ApiError</span>(e.getMessage()), HttpStatus.NOT_FOUND);
+    }
+
+    <span class="hljs-meta">@ExceptionHandler(value = TodoBadRequestException.class)</span>
+    <span class="hljs-keyword">public</span> ResponseEntity&lt;ApiError&gt; <span class="hljs-title function_">handleException</span><span class="hljs-params">(TodoBadRequestException e)</span> {
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">ResponseEntity</span>&lt;&gt;(<span class="hljs-keyword">new</span> <span class="hljs-title class_">ApiError</span>(e.getMessage()), HttpStatus.BAD_REQUEST);
+    }
+
+    <span class="hljs-meta">@ExceptionHandler(value = Exception.class)</span>
+    <span class="hljs-keyword">public</span> ResponseEntity&lt;ApiError&gt; <span class="hljs-title function_">handleException</span><span class="hljs-params">(Exception e)</span> {
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">ResponseEntity</span>&lt;&gt;(<span class="hljs-keyword">new</span> <span class="hljs-title class_">ApiError</span>(e.getMessage()), HttpStatus.INTERNAL_SERVER_ERROR);
+    }
+}
+</code></pre></code></pre></li>
+<li><p>ApiError</p>
+<pre><code class="language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">package</span> net.learntime.todo.api.model;
+
+<span class="hljs-keyword">import</span> lombok.AllArgsConstructor;
+<span class="hljs-keyword">import</span> lombok.Getter;
+<span class="hljs-keyword">import</span> lombok.Setter;
+
+<span class="hljs-meta">@Getter</span>
+<span class="hljs-meta">@Setter</span>
+<span class="hljs-meta">@AllArgsConstructor</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">ApiError</span> {
+
+    <span class="hljs-keyword">private</span> String error;
+
+}
+</code></pre></code></pre></li>
+</ul>
+<p>La classe <code>GlobalExceptionHandler</code> capture trois types d'exceptions:</p>
+<ul>
+<li><code>TodoNotFoundException</code> : Lorsque cette exception est levée, la méthode associée renvoie une réponse HTTP avec un statut <strong>404 Not Found</strong> et un message d'erreur personnalisé.</li>
+<li><code>TodoBadRequestException</code> : Pour cette exception, une réponse HTTP avec un statut <strong>400 Bad Request</strong> est envoyée accompagnée d'un message d'erreur.</li>
+<li><code>Exception</code> : Pour toute autre exception, une réponse avec un statut <strong>500 Internal Server Error</strong> est renvoyée.</li>
+</ul>
+<p>Une fois mise en place, on obtient une erreur <strong>400 Bad Request</strong> quand on essaye de créer une tâche Todo sans titre:</p>
+<p><img src="../../../../assets/blog/api-rest-with-spring-boot/create-todo-without-title-and-description-after-validation-and-exceptions-handlers.png" alt="create-todo-without-title-and-description-after-validation-and-exceptions-handlers" title="create-todo-without-title-and-description-after-validation-and-exceptions-handlers"></p>
+<p>et on obtient une erreur <strong>404 Not Found</strong> quand on essaye de récupérer une tâche Todo qui n'existe pas à partir de son id:</p>
+<p><img src="../../../../assets/blog/api-rest-with-spring-boot/get-todo-by-id-error-case.png" alt="get-todo-by-id-error-case" title="get-todo-by-id-error-case"></p>
+<h2>Conclusion</h2>
+<p>Nous avons implémenté un mécanisme d'exception handling dans notre API REST en utilisant <code>@ControllerAdvice</code> et <code>@ExceptionHandler</code>, ce qui nous permet de gérer les erreurs de manière centralisée et de fournir des réponses HTTP appropriées. Grâce à la classe GlobalExceptionHandler, nous avons défini des réponses spécifiques pour les exceptions <code>TodoNotFoundException</code> et <code>TodoBadRequestException</code>, garantissant ainsi que les utilisateurs reçoivent des messages d'erreur clairs et des statuts HTTP adéquats.</p>
+<p><strong>Dans la prochaine section</strong>, nous allons remplacer notre base de données H2 par une base PostgreSQL, ce qui nous permettra d'utiliser un système de gestion de base de données plus robuste et adapté à un environnement de production.</p>
+<p><strong>previous-next-sections</strong></p>
+<p><a href="/fr/spring/api-rest-with-spring-boot/add-validation" title="Précédant||Ajouter la couche validation">Précédant||Ajouter la couche validation</a>
+<a href="/fr/spring/api-rest-with-spring-boot/use-postgresql" title="Précédant||Ajouter la couche validation">Suivant||Utiliser une base PostgreSQL</a></p>
+
+    <app-comments></app-comments>
+  </div>
+  <aside>
+    <div class="aside-container">
+      <app-blog-summary summary="[{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot&quot;,&quot;label&quot;:&quot;Introduction&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/first-version&quot;,&quot;label&quot;:&quot;Première version du projet&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/test-our-api-rest&quot;,&quot;label&quot;:&quot;Tester notre API REST&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/add-validation&quot;,&quot;label&quot;:&quot;Ajouter la couche validation&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/add-exceptions-handlers&quot;,&quot;label&quot;:&quot;Ajouter les exceptions handlers&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/use-postgresql&quot;,&quot;label&quot;:&quot;Utiliser une base PostgreSQL&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/add-swagger&quot;,&quot;label&quot;:&quot;Ajouter Swagger&quot;}]"></app-blog-summary>
+      <app-blog-promotion></app-blog-promotion>
+    </div>
+  </aside>
+</div>
+
+        </main>
+        <app-scroll-top-button></app-scroll-top-button>
+        <app-footer></app-footer>
+        <app-privacy-consentement></app-privacy-consentement>
+        </div>
+            <script>
+                var lastVisitTime = parseInt(localStorage.getItem('LAST_VISIT_TIME') || '0');
+                var timeoutDuration = 1500;
+                if ((new Date().valueOf() - lastVisitTime) < 1200000) {
+                    timeoutDuration = 400;
+                }
+                setTimeout(() => {
+                    document.querySelector('.loader').classList.add('hide');
+                    document.querySelector('.body-container').style.display = 'block';
+                    document.dispatchEvent(new CustomEvent('page-loader-hide'));
+                }, timeoutDuration);
+                setTimeout(() => {
+                    document.querySelector('.loader').style.display = 'none';
+                }, 2000);
+                localStorage.setItem('LAST_VISIT_TIME', new Date().valueOf());
+            </script>
+        
+                <!-- Google tag (gtag.js) -->
+                <script async src="https://www.googletagmanager.com/gtag/js?id=G-S6JEVF53JZ"></script>
+                <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag() {
+                    dataLayer.push(arguments);
+                }
+                gtag('js', new Date());
+
+                gtag('config', 'G-S6JEVF53JZ');
+                </script>
+            <script src="/assets/scripts/markdown.js"></script></body></html>

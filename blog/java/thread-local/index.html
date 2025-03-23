@@ -1,0 +1,248 @@
+
+            <!DOCTYPE html>
+            <html lang="en">
+            <head>
+                <meta charset="utf-8" />
+                <title>Learn Time | ThreadLocal in Java</title>
+                <meta name="description" content="A practical guide to the ThreadLocal class for storing thread-specific data in Java, and ensuring that each thread has its own isolated values, thus guaranteeing data security and integrity in multithreaded environments.">
+                
+                <meta name="viewport" content="width=device-width,initial-scale=1" />
+                <!--
+                <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
+                <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
+                <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
+                <link rel="shortcut icon" sizes="192x192" href="/assets/favicon/android-chrome-192x192.png" >
+                <link rel="shortcut icon" sizes="512x512" href="/assets/favicon/android-chrome-512x512.png" >
+                <link rel="manifest" href="/assets/favicon/site.webmanifest">
+                <link rel="shortcut icon" href="/assets/favicon/favicon.ico">
+                <link rel="mask-icon" href="/assets/favicon/safari-pinned-tab.svg" color="#5bbad5">
+                <meta name="msapplication-TileColor" content="#da532c">
+                <meta name="theme-color" content="#ffffff">
+                -->
+                <link rel="shortcut icon" type="image/png" href="/assets/logo-circle.png">
+                <link rel="stylesheet" href="/styles.css">
+                <script src="https://kit.fontawesome.com/ff0edf556e.js" crossorigin="anonymous"></script>
+                <script src="https://code.iconify.design/iconify-icon/1.0.2/iconify-icon.min.js"></script>
+                <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+                <script>window.startTime = new Date().getTime();</script>
+                <style>
+                    :root {
+                        --background-color: #f3f2ef;
+                        --loading-bar-background-color: #d6cec2;
+                        --moving-loading-bar-background-color: #D0514D;
+                    }
+                    .loader {transition: all .2s ease-out;z-index: 10000000000;margin-top: -200px;position: fixed;top: 0;left: 0;right: 0;bottom: 0;background-color: var(--background-color);display: flex;align-items: center;justify-content: center;flex-direction: column;}.loader-logo {width: 40px; height: 40px; margin-bottom: 20px;}.loading-bar {width: 130px;height: 4px;border-radius: 100rem;background-color: var(--loading-bar-background-color);position: relative;overflow: hidden;}.moving-loading-bar {height: 100%;width: 68px;position: absolute;border-radius: 100rem;background-color: var(--moving-loading-bar-background-color);animation: initial-loading 1.5s ease infinite;}@keyframes initial-loading {0% {transform: translate(-34px);}50% {transform: translate(96px);}to {transform: translate(-34px);}}
+                    .loader.hide {opacity: 0;}
+                </style>
+                
+            <meta property="og:title" content="ThreadLocal in Java" />
+            <meta property="og:description" content="A practical guide to the ThreadLocal class for storing thread-specific data in Java, and ensuring that each thread has its own isolated values, thus guaranteeing data security and integrity in multithreaded environments." />
+            <meta property="og:image" content="https://learntime.net/assets/thumbnail/blog-thumbnail-1.jpg" />
+            <meta name="twitter:card" content="summary_large_image">
+            <meta name="twitter:creator" content="@learntimenet">
+            <meta name="twitter:title" content="ThreadLocal in Java">
+            <meta name="twitter:description" content="A practical guide to the ThreadLocal class for storing thread-specific data in Java, and ensuring that each thread has its own isolated values, thus guaranteeing data security and integrity in multithreaded environments.">
+            <meta name="twitter:image" content="https://learntime.net/assets/thumbnail/blog-thumbnail-1.jpg">
+        
+                <script>
+                    var disqus_config = function () {
+                        this.page.url = window.location.origin + window.location.pathname;
+                        this.page.identifier = window.location.pathname.replace('/en', '');
+                    };
+                </script>
+            <script defer src="//blog/java/thread-local/thread-local.2b9f9731db46e23ac177.js"></script></head>
+            <body>
+                <div class="loader">
+                    <div class="loading-bar">
+                        <div class="moving-loading-bar"></div>
+                    </div>
+                </div>
+                <script>
+                    var lastVisitTime = parseInt(localStorage.getItem('LAST_VISIT_TIME') || '0');
+                    if ((new Date().valueOf() - lastVisitTime) < 1200000) {
+                        document.querySelector('.loading-bar').style.display = 'none';
+                    }
+                </script>
+                <div class="body-container">
+                    <app-navbar-promotion></app-navbar-promotion>
+                    <app-mobile-navbar></app-mobile-navbar>
+                    <app-desktop-navbar></app-desktop-navbar>
+                    <main class="max-width">
+        
+<style>
+    @media screen and (min-width: 1024px) {
+        :root {
+            --promotion-height: 0rem !important;
+            --max-width: 140rem !important;
+        }
+    }
+</style>
+<app-page-title title="ThreadLocal in Java"></app-page-title>
+<div class="blog-container">
+  <div class="markdown section-container">
+    <h2>Introduction</h2>
+<p>The Java <code>ThreadLocal</code> class allows us to create variables that can only be read and written by the same thread. So, even if two threads are executing the same code and that code refers to the same <code>ThreadLocal</code> variable, both threads can't see each other's <code>ThreadLocal</code> variables, which is a simple way of making code thread-safe. ThreadLocal instances are usually static private fields in classes that wish to associate a state with a thread (for example, user ID, transaction ID, etc.).</p>
+<pre><code class="language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> ThreadLocal&lt;Integer&gt; userIdThreadLocal = <span class="hljs-keyword">new</span> <span class="hljs-title class_">ThreadLocal</span>&lt;&gt;();
+</code></pre></code></pre>
+<p>Then, when we want to use this value from a thread, we simply call the <code>get()</code> or <code>set()</code> method of <code>ThreadLocal</code>. You can imagine that <code>ThreadLocal</code> stores the data in a map with the thread as the key. As a result, when we call a <code>get()</code> method on <code>userIdThreadLocal</code>, we get the value for the requesting thread:</p>
+<pre><code class="language-java"><pre class="highlight"><code class="hljs">userIdThreadLocal.set(<span class="hljs-number">1</span>);
+<span class="hljs-type">Integer</span> <span class="hljs-variable">user</span> <span class="hljs-operator">=</span> userIdThreadLocal.get();
+</code></pre></code></pre>
+<h2>Méthodes de ThreadLocal</h2>
+<p><strong>method-signature</strong></p>
+<pre><code class="language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">static</span> &lt;S&gt; ThreadLocal&lt;S&gt; <span class="hljs-title function_">withInitial</span><span class="hljs-params">(Supplier&lt;? extends S&gt; supplier)</span>
+</code></pre></code></pre>
+<p>Creates a local variable for the thread.</p>
+<p><strong>method-signature</strong></p>
+<pre><code class="language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">protected</span> T <span class="hljs-title function_">initialValue</span><span class="hljs-params">()</span>
+</code></pre></code></pre>
+<p>Returns the ‘initial value’ of the current thread for this thread-local variable.</p>
+<p><strong>method-signature</strong></p>
+<pre><code class="language-java"><pre class="highlight"><code class="hljs">T <span class="hljs-title function_">get</span><span class="hljs-params">()</span>
+</code></pre></code></pre>
+<p>Returns the value in the copy of this thread-local variable for the current thread.</p>
+<p><strong>method-signature</strong></p>
+<pre><code class="language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">void</span> <span class="hljs-title function_">remove</span><span class="hljs-params">()</span>
+</code></pre></code></pre>
+<p>Deletes the value of the current thread for this thread-local variable.</p>
+<p><strong>method-signature</strong></p>
+<pre><code class="language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">void</span> <span class="hljs-title function_">set</span><span class="hljs-params">(T value)</span>
+</code></pre></code></pre>
+<p>Sets the copy of this thread-local variable for the current thread to the specified value.</p>
+<h2>ThreadLocal Initial Value</h2>
+<p>It is possible to set an initial value for a <code>ThreadLocal</code> which will be returned the first time the <code>get()</code> method is called, even before the <code>set()</code> method is called. We have two options for specifying an initial value for a <code>ThreadLocal</code>:</p>
+<p><strong>Overload the <code>initialValue()</code> method</strong></p>
+<p>The first way to specify an initial value for a <code>ThreadLocal</code> variable in Java is to create a subclass of <code>ThreadLocal</code> which overrides its <code>initialValue()</code> method. Here is an example that creates an anonymous subclass of <code>ThreadLocal</code> that overrides the <code>initialValue()</code> method:</p>
+<pre><code class="language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">private</span> ThreadLocal&lt;String&gt; threadLocal = <span class="hljs-keyword">new</span> <span class="hljs-title class_">ThreadLocal</span>&lt;String&gt;() {
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-keyword">protected</span> String <span class="hljs-title function_">initialValue</span><span class="hljs-params">()</span> {
+        <span class="hljs-keyword">return</span> UUID.randomUUID().toString();
+    }
+};
+</code></pre></code></pre>
+<p><strong>Providing an implementation of the <code>Supplier</code> interface</strong></p>
+<p>The second method is to use the <code>withInitial(Supplier)</code> static factory method of <code>ThreadLocal</code>, passing an implementation of the <code>Supplier</code> interface as a parameter. This implementation of <code>Supplier</code> provides the initial value for the <code>ThreadLocal</code>. Here is an example of creating a <code>ThreadLocal</code> using its static factory method <code>withInitial()</code> :</p>
+<pre><code class="language-java"><pre class="highlight"><code class="hljs">ThreadLocal&lt;String&gt; threadLocal = ThreadLocal.withInitial(<span class="hljs-keyword">new</span> <span class="hljs-title class_">Supplier</span>&lt;String&gt;() {
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-keyword">public</span> String <span class="hljs-title function_">get</span><span class="hljs-params">()</span> {
+        <span class="hljs-keyword">return</span> UUID.randomUUID().toString();
+    }
+});
+</code></pre></code></pre>
+<h2>ThreadLocals and Thread Pools</h2>
+<p>We need to be particularly careful when using <code>ThreadLocals</code> and thread pools together. The thread pool technique allows threads to be reused to reduce the overhead of creating threads. Each task that enters the pool expects to see the <code>ThreadLocals</code> objects in their initial state, by default. However, when <code>ThreadLocal</code> objects are modified on a thread which is then made available for reuse, the next task executed on the reused thread sees the state of the <code>ThreadLocal</code> objects as modified by the previous task which was executed on that thread.</p>
+<p>Programs need to ensure that each task executed on a thread in a thread pool only sees correctly initialised instances of the <code>ThreadLocal</code> objects. The good news is that it is possible to extend the <code>ThreadPoolExecutor</code> class and provide a custom implementation for the <code>beforeExecute()</code> and <code>afterExecute()</code> methods. So we can extend the <code>ThreadPoolExecutor</code> class and remove the <code>ThreadLocal</code> variable from the <code>afterExecute()</code> method:</p>
+<pre><code class="language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">ThreadLocalAwareThreadPoolExecutor</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">ThreadPoolExecutor</span> {
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">afterExecute</span><span class="hljs-params">(Runnable r, Throwable t)</span> {
+        <span class="hljs-comment">// delete the variable from the current thread</span>
+    }
+}
+</code></pre></code></pre>
+<h2>InheritableThreadLocal</h2>
+<p>The <code>InheritableThreadLocal</code> class extends <code>ThreadLocal</code> to provide inheritance of values from the parent thread to the child thread: when a child thread is created, it receives the initial values for all inheritable thread-local variables for which the parent has values. Normally, the child's values will be identical to those of the parent.</p>
+<p>Inheritable thread-local variables are used in preference to ordinary thread-local variables when the per-thread attribute maintained in the variable (for example, user ID, transaction ID, ...) needs to be automatically passed on to all child threads that are created. Here is an example to illustrate the benefits of using the <code>InheritableThreadLocal</code> class:</p>
+<h2>Using ThreadLocal</h2>
+<pre><code class="language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">class</span> <span class="hljs-title class_">ParentThread</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">Thread</span> {
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> ThreadLocal&lt;String&gt; parentThreadLocal = <span class="hljs-keyword">new</span> <span class="hljs-title class_">ThreadLocal</span>&lt;&gt;();
+
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">run</span><span class="hljs-params">()</span> {
+        parentThreadLocal.set(<span class="hljs-string">&quot;données parent&quot;</span>);
+        System.out.println(<span class="hljs-string">&quot;Valeur Parent ThreadLocal: &quot;</span> + parentThreadLocal.get());
+        <span class="hljs-keyword">new</span> <span class="hljs-title class_">ChildThread</span>().start();
+    }
+}
+
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">ChildThread</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">Thread</span> {
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">run</span><span class="hljs-params">()</span> {
+        System.out.println(<span class="hljs-string">&quot;Valeur Child ThreadLocal: &quot;</span> + ParentThread.parentThreadLocal.get());
+    }
+}
+
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">ThreadLocalDemo</span> {
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> {
+        <span class="hljs-keyword">new</span> <span class="hljs-title class_">ParentThread</span>().start();
+    }
+}
+</code></pre></code></pre>
+<p>Run the example above and you'll get the following result:</p>
+<p><strong>without-line-numbers</strong></p>
+<pre><code class="language-sh"><pre class="highlight"><code class="hljs">Valeur Parent ThreadLocal: données parent
+Valeur Child ThreadLocal: null
+</code></pre></code></pre>
+<h2>Using InheritableThreadLocal</h2>
+<p><strong>terminal</strong></p>
+<pre><code class="language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">class</span> <span class="hljs-title class_">ParentThread</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">Thread</span> {
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> InheritableThreadLocal&lt;String&gt; parentThreadLocal = <span class="hljs-keyword">new</span> <span class="hljs-title class_">InheritableThreadLocal</span>&lt;&gt;();
+
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">run</span><span class="hljs-params">()</span> {
+        parentThreadLocal.set(<span class="hljs-string">&quot;données parent&quot;</span>);
+        System.out.println(<span class="hljs-string">&quot;Valeur Parent InheritableThreadLocal: &quot;</span> + parentThreadLocal.get());
+        <span class="hljs-keyword">new</span> <span class="hljs-title class_">ChildThread</span>().start();
+    }
+}
+
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">ChildThread</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">Thread</span> {
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">run</span><span class="hljs-params">()</span> {
+        System.out.println(<span class="hljs-string">&quot;Valeur Child InheritableThreadLocal: &quot;</span> + ParentThread.parentThreadLocal.get());
+    }
+}
+
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">ThreadLocalDemo</span> {
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> {
+        <span class="hljs-keyword">new</span> <span class="hljs-title class_">ParentThread</span>().start();
+    }
+}
+</code></pre></code></pre>
+<p>Run the example above and you'll get the following result:</p>
+<p><strong>without-line-numbers</strong></p>
+<pre><code class="language-sh"><pre class="highlight"><code class="hljs">Valeur Parent InheritableThreadLocal: données parent
+Valeur Child InheritableThreadLocal: données parent
+</code></pre></code></pre>
+<h2>Conclusion</h2>
+<p>Thank you for reading this. We hope you found this article useful!</p>
+
+    <app-comments></app-comments>
+  </div>
+  <aside>
+    <div class="aside-container">
+      <app-blog-summary summary="[]"></app-blog-summary>
+      <app-blog-promotion></app-blog-promotion>
+    </div>
+  </aside>
+</div>
+
+        </main>
+        <app-scroll-top-button></app-scroll-top-button>
+        <app-footer></app-footer>
+        <app-privacy-consentement></app-privacy-consentement>
+        </div>
+            <script>
+                var lastVisitTime = parseInt(localStorage.getItem('LAST_VISIT_TIME') || '0');
+                var timeoutDuration = 1500;
+                if ((new Date().valueOf() - lastVisitTime) < 1200000) {
+                    timeoutDuration = 400;
+                }
+                setTimeout(() => {
+                    document.querySelector('.loader').classList.add('hide');
+                    document.querySelector('.body-container').style.display = 'block';
+                    document.dispatchEvent(new CustomEvent('page-loader-hide'));
+                }, timeoutDuration);
+                setTimeout(() => {
+                    document.querySelector('.loader').style.display = 'none';
+                }, 2000);
+                localStorage.setItem('LAST_VISIT_TIME', new Date().valueOf());
+            </script>
+        
+                <!-- Google tag (gtag.js) -->
+                <script async src="https://www.googletagmanager.com/gtag/js?id=G-S6JEVF53JZ"></script>
+                <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag() {
+                    dataLayer.push(arguments);
+                }
+                gtag('js', new Date());
+
+                gtag('config', 'G-S6JEVF53JZ');
+                </script>
+            <script src="/assets/scripts/markdown.js"></script></body></html>

@@ -1,0 +1,223 @@
+
+            <!DOCTYPE html>
+            <html lang="fr">
+            <head>
+                <meta charset="utf-8" />
+                <title>Learn Time | API REST avec Spring</title>
+                <meta name="description" content="Dans cet article, nous allons créer une API REST en utilisant le framework Spring Boot en utilisant une base de données H2 puis PostgreSQL et en ajoutant sa documentation Swagger">
+                
+                <meta name="viewport" content="width=device-width,initial-scale=1" />
+                <!--
+                <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
+                <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
+                <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
+                <link rel="shortcut icon" sizes="192x192" href="/assets/favicon/android-chrome-192x192.png" >
+                <link rel="shortcut icon" sizes="512x512" href="/assets/favicon/android-chrome-512x512.png" >
+                <link rel="manifest" href="/assets/favicon/site.webmanifest">
+                <link rel="shortcut icon" href="/assets/favicon/favicon.ico">
+                <link rel="mask-icon" href="/assets/favicon/safari-pinned-tab.svg" color="#5bbad5">
+                <meta name="msapplication-TileColor" content="#da532c">
+                <meta name="theme-color" content="#ffffff">
+                -->
+                <link rel="shortcut icon" type="image/png" href="/assets/logo-circle.png">
+                <link rel="stylesheet" href="/styles.css">
+                <script src="https://kit.fontawesome.com/ff0edf556e.js" crossorigin="anonymous"></script>
+                <script src="https://code.iconify.design/iconify-icon/1.0.2/iconify-icon.min.js"></script>
+                <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+                <script>window.startTime = new Date().getTime();</script>
+                <style>
+                    :root {
+                        --background-color: #f3f2ef;
+                        --loading-bar-background-color: #d6cec2;
+                        --moving-loading-bar-background-color: #D0514D;
+                    }
+                    .loader {transition: all .2s ease-out;z-index: 10000000000;margin-top: -200px;position: fixed;top: 0;left: 0;right: 0;bottom: 0;background-color: var(--background-color);display: flex;align-items: center;justify-content: center;flex-direction: column;}.loader-logo {width: 40px; height: 40px; margin-bottom: 20px;}.loading-bar {width: 130px;height: 4px;border-radius: 100rem;background-color: var(--loading-bar-background-color);position: relative;overflow: hidden;}.moving-loading-bar {height: 100%;width: 68px;position: absolute;border-radius: 100rem;background-color: var(--moving-loading-bar-background-color);animation: initial-loading 1.5s ease infinite;}@keyframes initial-loading {0% {transform: translate(-34px);}50% {transform: translate(96px);}to {transform: translate(-34px);}}
+                    .loader.hide {opacity: 0;}
+                </style>
+                
+            <meta property="og:title" content="API REST avec Spring" />
+            <meta property="og:description" content="Dans cet article, nous allons créer une API REST en utilisant le framework Spring Boot en utilisant une base de données H2 puis PostgreSQL et en ajoutant sa documentation Swagger" />
+            <meta property="og:image" content="https://learntime.net/assets/thumbnail/api-rest-with-spring-boot.png" />
+            <meta name="twitter:card" content="summary_large_image">
+            <meta name="twitter:creator" content="@learntimenet">
+            <meta name="twitter:title" content="API REST avec Spring">
+            <meta name="twitter:description" content="Dans cet article, nous allons créer une API REST en utilisant le framework Spring Boot en utilisant une base de données H2 puis PostgreSQL et en ajoutant sa documentation Swagger">
+            <meta name="twitter:image" content="https://learntime.net/assets/thumbnail/api-rest-with-spring-boot.png">
+        
+                <script>
+                    var disqus_config = function () {
+                        this.page.url = window.location.origin + window.location.pathname;
+                        this.page.identifier = window.location.pathname.replace('/en', '');
+                    };
+                </script>
+            <script defer src="/fr/blog/spring/api-rest-with-spring-boot/add-validation/add-validation.787b6d84640f79d4f0bd.js"></script></head>
+            <body>
+                <div class="loader">
+                    <div class="loading-bar">
+                        <div class="moving-loading-bar"></div>
+                    </div>
+                </div>
+                <script>
+                    var lastVisitTime = parseInt(localStorage.getItem('LAST_VISIT_TIME') || '0');
+                    if ((new Date().valueOf() - lastVisitTime) < 1200000) {
+                        document.querySelector('.loading-bar').style.display = 'none';
+                    }
+                </script>
+                <div class="body-container">
+                    <app-navbar-promotion></app-navbar-promotion>
+                    <app-mobile-navbar></app-mobile-navbar>
+                    <app-desktop-navbar></app-desktop-navbar>
+                    <main class="max-width">
+        
+<style>
+    @media screen and (min-width: 1024px) {
+        :root {
+            --promotion-height: 0rem !important;
+            --max-width: 140rem !important;
+        }
+    }
+</style>
+<app-page-title title="API REST avec Spring"></app-page-title>
+<div class="blog-container">
+  <div class="markdown section-container">
+    <h2>Ajouter la couche validation</h2>
+<p>Dans la première version du projet, il n'y a aucune validation est faite aux APIs de création et de modification de Todo et on peut se retrouver avec des tâches Todo sans titre et description stockées en base de données. Pour pallier à ce problème, nous allons créer le package <code>validator</code> dans lequel nous allons ajouter l'interface <code>ITodoValidator</code> et son implémentation <code>TodoValidator</code> qui va nous permettre de valider une tâche Todo:</p>
+<p><strong>code-tabs</strong></p>
+<ul>
+<li><p>ITodoValidator</p>
+<pre><code class="language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">package</span> net.learntime.todo.api.validator;
+
+<span class="hljs-keyword">import</span> net.learntime.todo.api.model.Todo;
+
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">interface</span> <span class="hljs-title class_">ITodoValidator</span> {
+
+    <span class="hljs-keyword">void</span> <span class="hljs-title function_">validate</span><span class="hljs-params">(Todo todo)</span>;
+
+}
+</code></pre></code></pre></li>
+<li><p>TodoValidator</p>
+<pre><code class="language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">package</span> net.learntime.todo.api.validator;
+
+<span class="hljs-keyword">import</span> net.learntime.todo.api.exception.TodoBadRequestException;
+<span class="hljs-keyword">import</span> net.learntime.todo.api.model.Todo;
+<span class="hljs-keyword">import</span> org.apache.commons.lang3.StringUtils;
+<span class="hljs-keyword">import</span> org.springframework.stereotype.Service;
+
+<span class="hljs-keyword">import</span> java.util.Objects;
+
+<span class="hljs-meta">@Service</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">TodoValidator</span> <span class="hljs-keyword">implements</span> <span class="hljs-title class_">ITodoValidator</span> {
+
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">validate</span><span class="hljs-params">(Todo todo)</span> {
+        <span class="hljs-keyword">if</span> (StringUtils.isBlank(todo.getTitle())) {
+            <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">TodoBadRequestException</span>(<span class="hljs-string">&quot;title is mandatory&quot;</span>);
+        }
+        <span class="hljs-keyword">if</span> (StringUtils.isBlank(todo.getDescription())) {
+            <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">TodoBadRequestException</span>(<span class="hljs-string">&quot;description is mandatory&quot;</span>);
+        }
+        <span class="hljs-keyword">if</span> (Objects.isNull(todo.getCompleted())) {
+            <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">TodoBadRequestException</span>(<span class="hljs-string">&quot;completed is mandatory&quot;</span>);
+        }
+    }
+}
+</code></pre></code></pre></li>
+</ul>
+<p>Dans la classe <code>TodoValidator</code>, nous avons utilisé la classe <code>StringUtils</code> que nous avons importé de la bibliothèque <code>commons-lang3</code> de Apache et voici la modification que nous avons apporté au fichier <code>pom.xml</code> de notre projet pour pouvoir l'utiliser</p>
+<pre><code class="language-xml"><pre class="highlight"><code class="hljs"><span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.apache.commons<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>commons-lang3<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span>
+</code></pre></code></pre>
+<p><strong>alert-info</strong></p>
+<p>La version de cette dependance a été héritée puisqu'il s'agit d'un projet Spring Boot</p>
+<p>On a aussi créé une nouvelle exception <code>TodoBadRequestException</code> dans le package exception qu'on a levé une fois qu'on a une erreur de validation</p>
+<pre><code class="language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">package</span> net.learntime.todo.api.exception;
+
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">TodoBadRequestException</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">RuntimeException</span> {
+
+    <span class="hljs-keyword">public</span> <span class="hljs-title function_">TodoBadRequestException</span><span class="hljs-params">(String message)</span> {
+        <span class="hljs-built_in">super</span>(message);
+    }
+
+}
+</code></pre></code></pre>
+<p>Pour appliquer cette validation, nous allons utiliser notre validator dans notre controller:</p>
+<pre><code class="language-java {: .highlight-line-code-5-6-10-16 }"><pre class="highlight"><code class="hljs"><span class="hljs-meta">@RestController</span>
+<span class="hljs-meta">@RequestMapping(path = &quot;/todos&quot;)</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">TodoController</span> {
+
+    <span class="hljs-meta">@Autowired</span>
+    <span class="hljs-keyword">private</span> ITodoValidator validator;
+
+    <span class="hljs-meta">@PostMapping</span>
+    <span class="hljs-keyword">public</span> Todo <span class="hljs-title function_">create</span><span class="hljs-params">(<span class="hljs-meta">@RequestBody</span> Todo todo)</span> {
+        validator.validate(todo);
+        <span class="hljs-keyword">return</span> repository.save(todo);
+    }
+
+    <span class="hljs-meta">@PutMapping(&quot;{id}&quot;)</span>
+    <span class="hljs-keyword">public</span> Todo <span class="hljs-title function_">update</span><span class="hljs-params">(<span class="hljs-meta">@PathVariable</span> Long id, <span class="hljs-meta">@RequestBody</span> Todo todo)</span> {
+        validator.validate(todo);
+        <span class="hljs-type">var</span> <span class="hljs-variable">entity</span> <span class="hljs-operator">=</span> repository.findById(id).orElseThrow(() -&gt; <span class="hljs-keyword">new</span> <span class="hljs-title class_">TodoNotFoundException</span>(id));
+        entity.setTitle(todo.getTitle());
+        entity.setDescription(todo.getDescription());
+        entity.setCompleted(todo.getCompleted());
+        repository.save(entity);
+        <span class="hljs-keyword">return</span> entity;
+    }
+}
+</code></pre></code></pre>
+<p>Avec cette couche de validation, on obient une erreur quand on essaye de créer ou mettre à jour une tâche Todo invalide</p>
+<p><img src="../../../../assets/blog/api-rest-with-spring-boot/create-todo-without-title-and-description-after-validation.png" alt="create-todo-without-title-and-description-after-validation" title="create-todo-without-title-and-description-after-validation"></p>
+<h2>Conclusion</h2>
+<p>Nous avons maintenant intégré une couche de validation dans notre API REST pour garantir que chaque tâche Todo possède un titre, une description et un état de complétion valides.</p>
+<p>Cependant, nous avons constaté que notre API renvoie actuellement un statut d'erreur <strong>500 Internal Server Error</strong> lors de la validation, alors que le comportement attendu est un statut <strong>400 Bad Request</strong> avec un message d'erreur informatif.</p>
+<p><strong>Dans la prochaine section</strong>, nous allons mettre en place les <strong>Exceptions Handlers</strong> pour pouvoir modifier le statut http et le body de la réponse retournée en cas d'erreur.</p>
+<p><strong>previous-next-sections</strong></p>
+<p><a href="/fr/spring/api-rest-with-spring-boot/test-our-api-rest" title="Précédant||Tester notre API REST">Précédant||Tester notre API REST</a>
+<a href="/fr/spring/api-rest-with-spring-boot/add-exceptions-handlers" title="Précédant||Tester notre API REST">Suivant||Ajouter les exceptions handlers</a></p>
+
+    <app-comments></app-comments>
+  </div>
+  <aside>
+    <div class="aside-container">
+      <app-blog-summary summary="[{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot&quot;,&quot;label&quot;:&quot;Introduction&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/first-version&quot;,&quot;label&quot;:&quot;Première version du projet&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/test-our-api-rest&quot;,&quot;label&quot;:&quot;Tester notre API REST&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/add-validation&quot;,&quot;label&quot;:&quot;Ajouter la couche validation&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/add-exceptions-handlers&quot;,&quot;label&quot;:&quot;Ajouter les exceptions handlers&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/use-postgresql&quot;,&quot;label&quot;:&quot;Utiliser une base PostgreSQL&quot;},{&quot;slug&quot;:&quot;/spring/api-rest-with-spring-boot/add-swagger&quot;,&quot;label&quot;:&quot;Ajouter Swagger&quot;}]"></app-blog-summary>
+      <app-blog-promotion></app-blog-promotion>
+    </div>
+  </aside>
+</div>
+
+        </main>
+        <app-scroll-top-button></app-scroll-top-button>
+        <app-footer></app-footer>
+        <app-privacy-consentement></app-privacy-consentement>
+        </div>
+            <script>
+                var lastVisitTime = parseInt(localStorage.getItem('LAST_VISIT_TIME') || '0');
+                var timeoutDuration = 1500;
+                if ((new Date().valueOf() - lastVisitTime) < 1200000) {
+                    timeoutDuration = 400;
+                }
+                setTimeout(() => {
+                    document.querySelector('.loader').classList.add('hide');
+                    document.querySelector('.body-container').style.display = 'block';
+                    document.dispatchEvent(new CustomEvent('page-loader-hide'));
+                }, timeoutDuration);
+                setTimeout(() => {
+                    document.querySelector('.loader').style.display = 'none';
+                }, 2000);
+                localStorage.setItem('LAST_VISIT_TIME', new Date().valueOf());
+            </script>
+        
+                <!-- Google tag (gtag.js) -->
+                <script async src="https://www.googletagmanager.com/gtag/js?id=G-S6JEVF53JZ"></script>
+                <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag() {
+                    dataLayer.push(arguments);
+                }
+                gtag('js', new Date());
+
+                gtag('config', 'G-S6JEVF53JZ');
+                </script>
+            <script src="/assets/scripts/markdown.js"></script></body></html>

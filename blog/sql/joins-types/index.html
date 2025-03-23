@@ -1,0 +1,344 @@
+
+            <!DOCTYPE html>
+            <html lang="en">
+            <head>
+                <meta charset="utf-8" />
+                <title>Learn Time | Joins in SQL</title>
+                <meta name="description" content="In this article, we'll learn about SQL join types, including inner join, left join, right join and full outer join. We'll cover their syntax, differences and practical examples for a better understanding.">
+                
+                <meta name="viewport" content="width=device-width,initial-scale=1" />
+                <!--
+                <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
+                <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
+                <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
+                <link rel="shortcut icon" sizes="192x192" href="/assets/favicon/android-chrome-192x192.png" >
+                <link rel="shortcut icon" sizes="512x512" href="/assets/favicon/android-chrome-512x512.png" >
+                <link rel="manifest" href="/assets/favicon/site.webmanifest">
+                <link rel="shortcut icon" href="/assets/favicon/favicon.ico">
+                <link rel="mask-icon" href="/assets/favicon/safari-pinned-tab.svg" color="#5bbad5">
+                <meta name="msapplication-TileColor" content="#da532c">
+                <meta name="theme-color" content="#ffffff">
+                -->
+                <link rel="shortcut icon" type="image/png" href="/assets/logo-circle.png">
+                <link rel="stylesheet" href="/styles.css">
+                <script src="https://kit.fontawesome.com/ff0edf556e.js" crossorigin="anonymous"></script>
+                <script src="https://code.iconify.design/iconify-icon/1.0.2/iconify-icon.min.js"></script>
+                <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+                <script>window.startTime = new Date().getTime();</script>
+                <style>
+                    :root {
+                        --background-color: #f3f2ef;
+                        --loading-bar-background-color: #d6cec2;
+                        --moving-loading-bar-background-color: #D0514D;
+                    }
+                    .loader {transition: all .2s ease-out;z-index: 10000000000;margin-top: -200px;position: fixed;top: 0;left: 0;right: 0;bottom: 0;background-color: var(--background-color);display: flex;align-items: center;justify-content: center;flex-direction: column;}.loader-logo {width: 40px; height: 40px; margin-bottom: 20px;}.loading-bar {width: 130px;height: 4px;border-radius: 100rem;background-color: var(--loading-bar-background-color);position: relative;overflow: hidden;}.moving-loading-bar {height: 100%;width: 68px;position: absolute;border-radius: 100rem;background-color: var(--moving-loading-bar-background-color);animation: initial-loading 1.5s ease infinite;}@keyframes initial-loading {0% {transform: translate(-34px);}50% {transform: translate(96px);}to {transform: translate(-34px);}}
+                    .loader.hide {opacity: 0;}
+                </style>
+                
+            <meta property="og:title" content="Joins in SQL" />
+            <meta property="og:description" content="In this article, we'll learn about SQL join types, including inner join, left join, right join and full outer join. We'll cover their syntax, differences and practical examples for a better understanding." />
+            <meta property="og:image" content="https://learntime.net/assets/thumbnail/blog-thumbnail-3.jpg" />
+            <meta name="twitter:card" content="summary_large_image">
+            <meta name="twitter:creator" content="@learntimenet">
+            <meta name="twitter:title" content="Joins in SQL">
+            <meta name="twitter:description" content="In this article, we'll learn about SQL join types, including inner join, left join, right join and full outer join. We'll cover their syntax, differences and practical examples for a better understanding.">
+            <meta name="twitter:image" content="https://learntime.net/assets/thumbnail/blog-thumbnail-3.jpg">
+        
+                <script>
+                    var disqus_config = function () {
+                        this.page.url = window.location.origin + window.location.pathname;
+                        this.page.identifier = window.location.pathname.replace('/en', '');
+                    };
+                </script>
+            <script defer src="//blog/sql/joins-types/joins-types.79ecec28505c1f35d1c9.js"></script></head>
+            <body>
+                <div class="loader">
+                    <div class="loading-bar">
+                        <div class="moving-loading-bar"></div>
+                    </div>
+                </div>
+                <script>
+                    var lastVisitTime = parseInt(localStorage.getItem('LAST_VISIT_TIME') || '0');
+                    if ((new Date().valueOf() - lastVisitTime) < 1200000) {
+                        document.querySelector('.loading-bar').style.display = 'none';
+                    }
+                </script>
+                <div class="body-container">
+                    <app-navbar-promotion></app-navbar-promotion>
+                    <app-mobile-navbar></app-mobile-navbar>
+                    <app-desktop-navbar></app-desktop-navbar>
+                    <main class="max-width">
+        
+<style>
+    @media screen and (min-width: 1024px) {
+        :root {
+            --promotion-height: 0rem !important;
+            --max-width: 140rem !important;
+        }
+    }
+</style>
+<app-page-title title="Joins in SQL"></app-page-title>
+<div class="blog-container">
+  <div class="markdown section-container">
+    <style>
+  .sql-join-type {
+    /* all: initial; */
+    margin-top: 0px;
+    height: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+    padding-bottom: 20px;
+  }
+  .circle {
+    --size: 180px;
+    width: var(--size);
+    height: var(--size);
+    border-radius: 50%;
+    border: 3px solid #1f222b;
+    position: relative;
+    background-color: transparent;
+    transition: all .3s ease-in;
+    overflow: hidden;
+  }
+  .circle .label {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #222;
+    font-size: 75px;
+    font-family: 'ui-serif';
+    font-weight: 200;
+    transition: all .3s ease-in;
+  }
+  .circle .label-B {
+    padding-left: 25px;
+  }
+  .circle .label-A {
+    padding-right: 25px;
+  }
+  .circle-IA {
+    position: absolute;
+    background-color: #ffbe2f;
+    right: -123px;
+  }
+  .circle-B {
+    margin-left: -60px;
+    margin-top: 6px;
+  }
+  .circle-IB {
+    margin-top: -6px;
+    position: absolute;
+    background-color: #ffbe2f;
+    left: -123px;
+  }
+</style>
+<h2>Introduction</h2>
+<p>In this article, we'll learn about SQL join types, including inner join, left join, right join and full outer join. We'll cover their syntax, differences and practical examples for a better understanding.</p>
+<h2>INNER JOIN</h2>
+<p>Combines rows from two tables based on a common column between them</p>
+<style>
+  .inner-join .circle-A  {background-color: transparent;}
+  .inner-join .circle-IA {background-color: #ffbe2f;}
+  .inner-join .circle-IB {background-color: #ffbe2f;}
+  .inner-join .circle-B  {background-color: transparent;}
+</style>
+<div class="sql-join-type inner-join">
+  <div class="circle circle-A">
+    <span class="label label-A">A</span>
+    <div class="circle circle-IA"></div>
+  </div>
+  <div class="circle circle-B">
+    <span class="label label-B">B</span>
+    <div class="circle circle-IB"></div>
+  </div>
+</div>
+<pre><code class="language-sql"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">SELECT</span> <span class="hljs-operator">*</span>
+<span class="hljs-keyword">FROM</span> A
+<span class="hljs-keyword">INNER</span> <span class="hljs-keyword">JOIN</span> B <span class="hljs-keyword">ON</span> A.key <span class="hljs-operator">=</span> B.key
+</code></pre></code></pre>
+<h2>LEFT JOIN</h2>
+<p>Returns all rows in the left table and the corresponding rows in the right table according to a specified condition. If there is no match in the right-hand table, NULL values are returned for the columns in the right-hand table</p>
+<style>
+  .left-join .circle-A  {background-color: #ffbe2f;}
+  .left-join .circle-IA {background-color: #ffbe2f;}
+  .left-join .circle-IB {background-color: #ffbe2f;}
+  .left-join .circle-B  {background-color: transparent;}
+</style>
+<div class="sql-join-type left-join">
+  <div class="circle circle-A">
+    <span class="label label-A">A</span>
+    <div class="circle circle-IA"></div>
+  </div>
+  <div class="circle circle-B">
+    <span class="label label-B">B</span>
+    <div class="circle circle-IB"></div>
+  </div>
+</div>
+<pre><code class="language-sql"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">SELECT</span> <span class="hljs-operator">*</span>
+<span class="hljs-keyword">FROM</span> A
+<span class="hljs-keyword">LEFT</span> <span class="hljs-keyword">JOIN</span> B <span class="hljs-keyword">ON</span> A.key <span class="hljs-operator">=</span> B.key
+</code></pre></code></pre>
+<h2>LEFT EXCLUDING JOIN</h2>
+<p>Returns all rows in the left-hand table that do not match any rows in the right-hand table</p>
+<style>
+  .left-excluding-join .circle-A  {background-color: #ffbe2f;}
+  .left-excluding-join .circle-IA {background-color: var(--white-color);}
+  .left-excluding-join .circle-IB {background-color: var(--white-color);}
+  .left-excluding-join .circle-B  {background-color: transparent;}
+</style>
+<div class="sql-join-type left-excluding-join">
+  <div class="circle circle-A">
+    <span class="label label-A">A</span>
+    <div class="circle circle-IA"></div>
+  </div>
+  <div class="circle circle-B">
+    <span class="label label-B">B</span>
+    <div class="circle circle-IB"></div>
+  </div>
+</div>
+<pre><code class="language-sql"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">SELECT</span> <span class="hljs-operator">*</span>
+<span class="hljs-keyword">FROM</span> A
+<span class="hljs-keyword">LEFT</span> <span class="hljs-keyword">JOIN</span> B <span class="hljs-keyword">ON</span> A.key <span class="hljs-operator">=</span> B.key
+<span class="hljs-keyword">WHERE</span> B.key <span class="hljs-keyword">IS</span> <span class="hljs-keyword">NULL</span>
+</code></pre></code></pre>
+<h2>RIGHT JOIN</h2>
+<p>Returns all the rows in the right-hand table and the corresponding rows in the left-hand table according to a specified condition. If there is no match in the left-hand table, NULL values are returned for the columns in the left-hand table</p>
+<style>
+  .right-join .circle-A  {background-color: var(--white-color);}
+  .right-join .circle-IA {background-color: #ffbe2f;}
+  .right-join .circle-IB {background-color: #ffbe2f;}
+  .right-join .circle-B  {background-color: #ffbe2f;}
+</style>
+<div class="sql-join-type right-join">
+  <div class="circle circle-A">
+    <span class="label label-A">A</span>
+    <div class="circle circle-IA"></div>
+  </div>
+  <div class="circle circle-B">
+    <span class="label label-B">B</span>
+    <div class="circle circle-IB"></div>
+  </div>
+</div>
+<pre><code class="language-sql"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">SELECT</span> <span class="hljs-operator">*</span>
+<span class="hljs-keyword">FROM</span> A
+<span class="hljs-keyword">RIGHT</span> <span class="hljs-keyword">JOIN</span> B <span class="hljs-keyword">ON</span> A.key <span class="hljs-operator">=</span> B.key
+</code></pre></code></pre>
+<h2>RIGHT EXCLUDING JOIN</h2>
+<p>Returns all rows in the right-hand table that do not match any rows in the left-hand table.</p>
+<style>
+  .right-excluding-join .circle-A  {background-color: var(--white-color);}
+  .right-excluding-join .circle-IA {background-color: var(--white-color);}
+  .right-excluding-join .circle-IB {background-color: var(--white-color);}
+  .right-excluding-join .circle-B  {background-color: #ffbe2f;}
+</style>
+<div class="sql-join-type right-excluding-join">
+  <div class="circle circle-A">
+    <span class="label label-A">A</span>
+    <div class="circle circle-IA"></div>
+  </div>
+  <div class="circle circle-B">
+    <span class="label label-B">B</span>
+    <div class="circle circle-IB"></div>
+  </div>
+</div>
+<pre><code class="language-sql"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">SELECT</span> <span class="hljs-operator">*</span>
+<span class="hljs-keyword">FROM</span> A
+<span class="hljs-keyword">RIGHT</span> <span class="hljs-keyword">JOIN</span> B <span class="hljs-keyword">ON</span> A.key <span class="hljs-operator">=</span> B.key
+<span class="hljs-keyword">WHERE</span> A.key <span class="hljs-keyword">IS</span> <span class="hljs-keyword">NULL</span>
+</code></pre></code></pre>
+<h2>OUTER JOIN</h2>
+<p>Combines rows from two or more tables according to a specified condition, and includes non-matching rows from one or both tables</p>
+<style>
+  .outer-join .circle-A  {background-color: #ffbe2f;}
+  .outer-join .circle-IA {background-color: #ffbe2f;}
+  .outer-join .circle-IB {background-color: #ffbe2f;}
+  .outer-join .circle-B  {background-color: #ffbe2f;}
+</style>
+<div class="sql-join-type outer-join">
+  <div class="circle circle-A">
+    <span class="label label-A">A</span>
+    <div class="circle circle-IA"></div>
+  </div>
+  <div class="circle circle-B">
+    <span class="label label-B">B</span>
+    <div class="circle circle-IB"></div>
+  </div>
+</div>
+<pre><code class="language-sql"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">SELECT</span> <span class="hljs-operator">*</span>
+<span class="hljs-keyword">FROM</span> A
+<span class="hljs-keyword">FULL</span> <span class="hljs-keyword">OUTER</span> <span class="hljs-keyword">JOIN</span> B <span class="hljs-keyword">ON</span> A.key <span class="hljs-operator">=</span> B.key
+</code></pre></code></pre>
+<h2>OUTER EXCLUDING JOIN</h2>
+<p>Returns all rows in the table on the left and all records in the table on the right that do not match</p>
+<style>
+  .outer-excluding-join .circle-A  {background-color: #ffbe2f;}
+  .outer-excluding-join .circle-IA {background-color: var(--white-color);}
+  .outer-excluding-join .circle-IB {background-color: var(--white-color);}
+  .outer-excluding-join .circle-B  {background-color: #ffbe2f;}
+</style>
+<div class="sql-join-type outer-excluding-join">
+  <div class="circle circle-A">
+    <span class="label label-A">A</span>
+    <div class="circle circle-IA"></div>
+  </div>
+  <div class="circle circle-B">
+    <span class="label label-B">B</span>
+    <div class="circle circle-IB"></div>
+  </div>
+</div>
+<pre><code class="language-sql"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">SELECT</span> <span class="hljs-operator">*</span>
+<span class="hljs-keyword">FROM</span> A
+<span class="hljs-keyword">FULL</span> <span class="hljs-keyword">OUTER</span> <span class="hljs-keyword">JOIN</span> B <span class="hljs-keyword">ON</span> A.key <span class="hljs-operator">=</span> B.key
+<span class="hljs-keyword">WHERE</span> A.key <span class="hljs-keyword">IS</span> <span class="hljs-keyword">NULL</span> <span class="hljs-keyword">OR</span> B.key <span class="hljs-keyword">IS</span> <span class="hljs-keyword">NULL</span>
+</code></pre></code></pre>
+<h2>Conclusion</h2>
+<p>Thank you for reading this. We hope you found this article useful!</p>
+
+    <app-comments></app-comments>
+  </div>
+  <aside>
+    <div class="aside-container">
+      <app-blog-summary summary="[]"></app-blog-summary>
+      <app-blog-promotion></app-blog-promotion>
+    </div>
+  </aside>
+</div>
+
+        </main>
+        <app-scroll-top-button></app-scroll-top-button>
+        <app-footer></app-footer>
+        <app-privacy-consentement></app-privacy-consentement>
+        </div>
+            <script>
+                var lastVisitTime = parseInt(localStorage.getItem('LAST_VISIT_TIME') || '0');
+                var timeoutDuration = 1500;
+                if ((new Date().valueOf() - lastVisitTime) < 1200000) {
+                    timeoutDuration = 400;
+                }
+                setTimeout(() => {
+                    document.querySelector('.loader').classList.add('hide');
+                    document.querySelector('.body-container').style.display = 'block';
+                    document.dispatchEvent(new CustomEvent('page-loader-hide'));
+                }, timeoutDuration);
+                setTimeout(() => {
+                    document.querySelector('.loader').style.display = 'none';
+                }, 2000);
+                localStorage.setItem('LAST_VISIT_TIME', new Date().valueOf());
+            </script>
+        
+                <!-- Google tag (gtag.js) -->
+                <script async src="https://www.googletagmanager.com/gtag/js?id=G-S6JEVF53JZ"></script>
+                <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag() {
+                    dataLayer.push(arguments);
+                }
+                gtag('js', new Date());
+
+                gtag('config', 'G-S6JEVF53JZ');
+                </script>
+            <script src="/assets/scripts/markdown.js"></script></body></html>

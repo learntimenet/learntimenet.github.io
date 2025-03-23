@@ -1,0 +1,456 @@
+
+            <!DOCTYPE html>
+            <html lang="en">
+            <head>
+                <meta charset="utf-8" />
+                <title>Learn Time | Quiz App</title>
+                <meta name="description" content="In this article, we'll learn how to create a Quiz App using HTML, CSS and JavaScript. With easy-to-understand source code, you can follow the steps and create your own version.">
+                
+                <meta name="viewport" content="width=device-width,initial-scale=1" />
+                <!--
+                <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
+                <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
+                <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
+                <link rel="shortcut icon" sizes="192x192" href="/assets/favicon/android-chrome-192x192.png" >
+                <link rel="shortcut icon" sizes="512x512" href="/assets/favicon/android-chrome-512x512.png" >
+                <link rel="manifest" href="/assets/favicon/site.webmanifest">
+                <link rel="shortcut icon" href="/assets/favicon/favicon.ico">
+                <link rel="mask-icon" href="/assets/favicon/safari-pinned-tab.svg" color="#5bbad5">
+                <meta name="msapplication-TileColor" content="#da532c">
+                <meta name="theme-color" content="#ffffff">
+                -->
+                <link rel="shortcut icon" type="image/png" href="/assets/logo-circle.png">
+                <link rel="stylesheet" href="/styles.css">
+                <script src="https://kit.fontawesome.com/ff0edf556e.js" crossorigin="anonymous"></script>
+                <script src="https://code.iconify.design/iconify-icon/1.0.2/iconify-icon.min.js"></script>
+                <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+                <script>window.startTime = new Date().getTime();</script>
+                <style>
+                    :root {
+                        --background-color: #f3f2ef;
+                        --loading-bar-background-color: #d6cec2;
+                        --moving-loading-bar-background-color: #D0514D;
+                    }
+                    .loader {transition: all .2s ease-out;z-index: 10000000000;margin-top: -200px;position: fixed;top: 0;left: 0;right: 0;bottom: 0;background-color: var(--background-color);display: flex;align-items: center;justify-content: center;flex-direction: column;}.loader-logo {width: 40px; height: 40px; margin-bottom: 20px;}.loading-bar {width: 130px;height: 4px;border-radius: 100rem;background-color: var(--loading-bar-background-color);position: relative;overflow: hidden;}.moving-loading-bar {height: 100%;width: 68px;position: absolute;border-radius: 100rem;background-color: var(--moving-loading-bar-background-color);animation: initial-loading 1.5s ease infinite;}@keyframes initial-loading {0% {transform: translate(-34px);}50% {transform: translate(96px);}to {transform: translate(-34px);}}
+                    .loader.hide {opacity: 0;}
+                </style>
+                
+            <meta property="og:title" content="Quiz App" />
+            <meta property="og:description" content="In this article, we'll learn how to create a Quiz App using HTML, CSS and JavaScript. With easy-to-understand source code, you can follow the steps and create your own version." />
+            <meta property="og:image" content="https://learntime.nethttp://img.youtube.com/vi/d9KNP33AblQ/maxresdefault.jpg" />
+            <meta name="twitter:card" content="summary_large_image">
+            <meta name="twitter:creator" content="@learntimenet">
+            <meta name="twitter:title" content="Quiz App">
+            <meta name="twitter:description" content="In this article, we'll learn how to create a Quiz App using HTML, CSS and JavaScript. With easy-to-understand source code, you can follow the steps and create your own version.">
+            <meta name="twitter:image" content="https://learntime.nethttp://img.youtube.com/vi/d9KNP33AblQ/maxresdefault.jpg">
+        
+                <script>
+                    var disqus_config = function () {
+                        this.page.url = window.location.origin + window.location.pathname;
+                        this.page.identifier = window.location.pathname.replace('/en', '');
+                    };
+                </script>
+            <script defer src="//blog/apps/quiz-app/quiz-app.9157850b7fe739a49202.js"></script></head>
+            <body>
+                <div class="loader">
+                    <div class="loading-bar">
+                        <div class="moving-loading-bar"></div>
+                    </div>
+                </div>
+                <script>
+                    var lastVisitTime = parseInt(localStorage.getItem('LAST_VISIT_TIME') || '0');
+                    if ((new Date().valueOf() - lastVisitTime) < 1200000) {
+                        document.querySelector('.loading-bar').style.display = 'none';
+                    }
+                </script>
+                <div class="body-container">
+                    <app-navbar-promotion></app-navbar-promotion>
+                    <app-mobile-navbar></app-mobile-navbar>
+                    <app-desktop-navbar></app-desktop-navbar>
+                    <main class="max-width">
+        
+<style>
+    @media screen and (min-width: 1024px) {
+        :root {
+            --promotion-height: 0rem !important;
+            --max-width: 140rem !important;
+        }
+    }
+</style>
+<app-page-title title="Quiz App"></app-page-title>
+<div class="blog-container">
+  <div class="markdown section-container">
+    <h2>Introduction</h2>
+<p>In this article, we're going to learn how to create a Quiz App using HTML, CSS and JavaScript. With easy-to-understand source code, you can follow the steps and create your own version.</p>
+<iframe width="899" height="506" src="https://www.youtube.com/embed/d9KNP33AblQ" title="Quiz App" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<h2>Code source</h2>
+<p><strong>code-tabs</strong></p>
+<ul>
+<li><p>index.html</p>
+<pre><code class="language-html"><pre class="highlight"><code class="hljs"><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-keyword">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;UTF-8&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">http-equiv</span>=<span class="hljs-string">&quot;X-UA-Compatible&quot;</span> <span class="hljs-attr">content</span>=<span class="hljs-string">&quot;IE=edge&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;viewport&quot;</span> <span class="hljs-attr">content</span>=<span class="hljs-string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Quiz App<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">&quot;stylesheet&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;./style.css&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;container&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;quiz&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;header-container&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>Quiz App<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">h2</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;question&quot;</span>&gt;</span>Question text<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;options&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;submit&quot;</span>&gt;</span>Submit<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;module&quot;</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;script.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</code></pre></code></pre></li>
+<li><p>style.css</p>
+<pre><code class="language-css"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">@import</span> url(<span class="hljs-string">&#x27;https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap&#x27;</span>);
+
+*,
+*<span class="hljs-selector-pseudo">::before</span>,
+*<span class="hljs-selector-pseudo">::after</span> {
+  <span class="hljs-attribute">box-sizing</span>: border-box;
+  <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span>;
+  <span class="hljs-attribute">padding</span>: <span class="hljs-number">0</span>;
+}
+
+<span class="hljs-selector-pseudo">:root</span> {
+  <span class="hljs-attr">--primary-color</span>: <span class="hljs-number">#a5183b</span>;
+  <span class="hljs-attr">--secondary-color</span>: <span class="hljs-number">#ff6e3b</span>;
+  <span class="hljs-attr">--text-color</span>: <span class="hljs-number">#680131</span>;
+  <span class="hljs-attr">--white-color</span>: <span class="hljs-number">#fff</span>;
+  <span class="hljs-attr">--border-color</span>: <span class="hljs-number">#a5183b21</span>;
+  <span class="hljs-attr">--option-background-color</span> :<span class="hljs-number">#f7efdca8</span>;
+  <span class="hljs-attr">--option-hover-background-color</span> :<span class="hljs-number">#f7efdc</span>;
+}
+
+<span class="hljs-selector-tag">body</span> {
+  <span class="hljs-attribute">font-family</span>: <span class="hljs-string">&quot;Poppins&quot;</span>, sans-serif;
+  <span class="hljs-attribute">min-height</span>: <span class="hljs-number">100vh</span>;
+  <span class="hljs-attribute">background-image</span>: <span class="hljs-built_in">url</span>(<span class="hljs-string">&quot;background.jpg&quot;</span>);
+  <span class="hljs-attribute">background-position</span>: center;
+  <span class="hljs-attribute">background-size</span>: cover;
+  <span class="hljs-attribute">color</span>: <span class="hljs-built_in">var</span>(--text-color);
+  <span class="hljs-attribute">display</span>: flex;
+  <span class="hljs-attribute">justify-content</span>: center;
+  <span class="hljs-attribute">align-items</span>: center;
+}
+
+<span class="hljs-selector-class">.container</span> {
+  backdrop-<span class="hljs-attribute">filter</span>: <span class="hljs-built_in">blur</span>(<span class="hljs-number">100px</span>);
+  <span class="hljs-attribute">padding</span>: <span class="hljs-number">50px</span>;
+  <span class="hljs-attribute">border</span>: <span class="hljs-number">2px</span> <span class="hljs-built_in">var</span>(--border-color) solid;
+  <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">10px</span>;
+}
+
+<span class="hljs-keyword">@media</span>(min-width: <span class="hljs-number">768px</span>) {
+  <span class="hljs-selector-class">.container</span> {
+    <span class="hljs-attribute">width</span>: <span class="hljs-number">700px</span>;
+  }
+}
+
+<span class="hljs-keyword">@media</span>(min-width: <span class="hljs-number">992px</span>) {
+  <span class="hljs-selector-class">.container</span> {
+    <span class="hljs-attribute">width</span>: <span class="hljs-number">900px</span>;
+  }
+}
+
+<span class="hljs-selector-class">.header-container</span> {
+  <span class="hljs-attribute">text-align</span>: center;
+  <span class="hljs-attribute">margin-bottom</span>: <span class="hljs-number">30px</span>;
+}
+
+<span class="hljs-selector-tag">h1</span> {
+  <span class="hljs-attribute">color</span>: <span class="hljs-built_in">var</span>(--primary-color);
+  <span class="hljs-attribute">font-size</span>: <span class="hljs-number">30px</span>;
+  <span class="hljs-attribute">margin-bottom</span>: <span class="hljs-number">12px</span>;
+}
+
+<span class="hljs-keyword">@media</span> <span class="hljs-keyword">only</span> screen <span class="hljs-keyword">and</span> (<span class="hljs-attribute">min-width</span>: <span class="hljs-number">576px</span>) {
+  <span class="hljs-selector-tag">h1</span> {
+    <span class="hljs-attribute">font-size</span>: <span class="hljs-number">40px</span>;
+  }
+}
+
+<span class="hljs-selector-tag">h2</span> {
+  <span class="hljs-attribute">font-size</span>: <span class="hljs-number">18px</span>;
+  <span class="hljs-attribute">font-weight</span>: <span class="hljs-number">600</span>;
+}
+
+<span class="hljs-keyword">@media</span> <span class="hljs-keyword">only</span> screen <span class="hljs-keyword">and</span> (<span class="hljs-attribute">min-width</span>: <span class="hljs-number">576px</span>) {
+  <span class="hljs-selector-tag">h2</span> {
+    <span class="hljs-attribute">font-size</span>: <span class="hljs-number">22px</span>;
+  }
+}
+
+<span class="hljs-selector-tag">button</span> {
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">100%</span>;
+  <span class="hljs-attribute">font-size</span>: <span class="hljs-number">20px</span>;
+  <span class="hljs-attribute">background-color</span>: <span class="hljs-built_in">var</span>(--primary-color);
+  <span class="hljs-attribute">color</span>: <span class="hljs-built_in">var</span>(--white-color);
+  <span class="hljs-attribute">padding</span>: <span class="hljs-number">14px</span> <span class="hljs-number">0</span>;
+  <span class="hljs-attribute">border</span>: none;
+  <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">5px</span>;
+  <span class="hljs-attribute">cursor</span>: pointer;
+  <span class="hljs-attribute">transition</span>: opacity <span class="hljs-number">0.5s</span> ease;
+}
+
+<span class="hljs-selector-tag">button</span><span class="hljs-selector-pseudo">:hover</span>, <span class="hljs-selector-tag">button</span><span class="hljs-selector-pseudo">:focus</span> {
+  <span class="hljs-attribute">opacity</span>: <span class="hljs-number">0.90</span>;
+}
+
+<span class="hljs-selector-class">.options</span> {
+  <span class="hljs-attribute">display</span>: grid;
+  <span class="hljs-attribute">grid-template-columns</span>: <span class="hljs-number">1</span>fr;
+  <span class="hljs-attribute">column-gap</span>: <span class="hljs-number">15px</span>;
+  <span class="hljs-attribute">row-gap</span>: <span class="hljs-number">15px</span>;
+  <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">35px</span>;
+}
+
+<span class="hljs-keyword">@media</span>(min-width: <span class="hljs-number">768px</span>) {
+  <span class="hljs-selector-class">.options</span> {
+    <span class="hljs-attribute">grid-template-columns</span>: <span class="hljs-built_in">repeat</span>(<span class="hljs-number">2</span>, <span class="hljs-number">1</span>fr);
+  }
+}
+
+<span class="hljs-selector-class">.option</span> {
+  <span class="hljs-attribute">background-color</span>: <span class="hljs-built_in">var</span>(--option-background-color);
+  <span class="hljs-attribute">display</span>: flex;
+  <span class="hljs-attribute">align-items</span>: center;
+  <span class="hljs-attribute">padding</span>: <span class="hljs-number">10px</span> <span class="hljs-number">20px</span>;
+  <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">5px</span>;
+  <span class="hljs-attribute">font-size</span>: <span class="hljs-number">18px</span>;
+  <span class="hljs-attribute">cursor</span>: pointer;
+  <span class="hljs-attribute">transition</span>: background-color <span class="hljs-number">0.5s</span> ease;
+}
+
+<span class="hljs-selector-class">.option</span><span class="hljs-selector-pseudo">:hover</span> {
+  <span class="hljs-attribute">background-color</span>: <span class="hljs-built_in">var</span>(--option-hover-background-color);
+}
+
+<span class="hljs-selector-class">.option</span><span class="hljs-selector-class">.selected</span> {
+  <span class="hljs-attribute">background-color</span>: <span class="hljs-built_in">var</span>(--secondary-color);
+}
+
+<span class="hljs-selector-class">.option</span><span class="hljs-selector-class">.selected</span> <span class="hljs-selector-tag">span</span> {
+  <span class="hljs-attribute">color</span>: <span class="hljs-built_in">var</span>(--white-color); 
+}
+
+<span class="hljs-selector-class">.index</span> {
+  <span class="hljs-attribute">background-color</span>: <span class="hljs-built_in">var</span>(--secondary-color);
+  <span class="hljs-attribute">color</span>: <span class="hljs-built_in">var</span>(--white-color);
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">40px</span>;
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">40px</span>;
+  <span class="hljs-attribute">min-width</span>: <span class="hljs-number">40px</span>;
+  <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">50%</span>;
+  <span class="hljs-attribute">display</span>: flex;
+  <span class="hljs-attribute">align-items</span>: center;
+  <span class="hljs-attribute">justify-content</span>: center;
+  <span class="hljs-attribute">margin-right</span>: <span class="hljs-number">10px</span>;
+  <span class="hljs-attribute">font-size</span>: <span class="hljs-number">22px</span>;
+  <span class="hljs-attribute">text-transform</span>: uppercase;
+  <span class="hljs-attribute">transition</span>: background-color <span class="hljs-number">1s</span> ease;
+}
+
+<span class="hljs-selector-class">.option</span><span class="hljs-selector-class">.selected</span> <span class="hljs-selector-class">.index</span> {
+  <span class="hljs-attribute">color</span>: <span class="hljs-built_in">var</span>(--primary-color);
+  <span class="hljs-attribute">background-color</span>: <span class="hljs-built_in">var</span>(--white-color);
+}
+
+<span class="hljs-selector-class">.answer</span> {
+  <span class="hljs-attribute">text-align</span>: center;
+  <span class="hljs-attribute">margin-bottom</span>: <span class="hljs-number">40px</span>;
+}
+
+<span class="hljs-selector-class">.score</span> {
+  <span class="hljs-attribute">color</span>: <span class="hljs-built_in">var</span>(--primary-color);
+  <span class="hljs-attribute">font-size</span>: <span class="hljs-number">30px</span>;
+  <span class="hljs-attribute">font-weight</span>: <span class="hljs-number">900</span>;
+}
+</code></pre></code></pre></li>
+<li><p>script.js</p>
+<pre><code class="language-js"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">const</span> quizData = <span class="hljs-keyword">await</span> <span class="hljs-title function_">fetch</span>(<span class="hljs-string">&quot;quizzes.json&quot;</span>).<span class="hljs-title function_">then</span>(<span class="hljs-function">(<span class="hljs-params">res</span>) =&gt;</span> res.<span class="hljs-title function_">json</span>());
+<span class="hljs-keyword">const</span> container = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelector</span>(<span class="hljs-string">&quot;.container&quot;</span>);
+<span class="hljs-keyword">const</span> options = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelector</span>(<span class="hljs-string">&quot;.options&quot;</span>);
+<span class="hljs-keyword">const</span> questionEl = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&quot;question&quot;</span>);
+<span class="hljs-keyword">const</span> submitBtn = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&quot;submit&quot;</span>);
+
+<span class="hljs-keyword">let</span> currentQuiz = <span class="hljs-number">0</span>;
+<span class="hljs-keyword">let</span> score = <span class="hljs-number">0</span>;
+
+<span class="hljs-title function_">loadQuiz</span>();
+options.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">&quot;click&quot;</span>, selectAnswer);
+submitBtn.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">&quot;click&quot;</span>, answerQuestion);
+
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">loadQuiz</span>(<span class="hljs-params"></span>) {
+  <span class="hljs-keyword">const</span> currentQuizData = quizData[currentQuiz];
+  <span class="hljs-keyword">const</span> optionIndices = [<span class="hljs-string">&quot;a&quot;</span>, <span class="hljs-string">&quot;b&quot;</span>, <span class="hljs-string">&quot;c&quot;</span>, <span class="hljs-string">&quot;d&quot;</span>];
+
+  questionEl.<span class="hljs-property">innerText</span> = currentQuizData.<span class="hljs-property">question</span>;
+  options.<span class="hljs-property">innerHTML</span> = <span class="hljs-string">&quot;&quot;</span>;
+  currentQuizData.<span class="hljs-property">options</span>.<span class="hljs-title function_">forEach</span>(<span class="hljs-function">(<span class="hljs-params">option, index</span>) =&gt;</span> {
+    options.<span class="hljs-property">innerHTML</span> += <span class="hljs-string">`
+        &lt;div class=&quot;option&quot; data-option=&quot;<span class="hljs-subst">${option}</span>&quot;&gt;
+          &lt;div class=&quot;index&quot;&gt;<span class="hljs-subst">${optionIndices[index]}</span>&lt;/div&gt;
+          &lt;span class=&quot;option-answer&quot;&gt;<span class="hljs-subst">${option}</span>&lt;/span&gt;
+        &lt;/div&gt;`</span>;
+  });
+}
+
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">selectAnswer</span>(<span class="hljs-params">event</span>) {
+  <span class="hljs-keyword">const</span> selectedOption = event.<span class="hljs-property">target</span>.<span class="hljs-title function_">closest</span>(<span class="hljs-string">&#x27;.option&#x27;</span>);
+  <span class="hljs-keyword">if</span> (!selectedOption) {
+    <span class="hljs-keyword">return</span>;
+  }
+  
+  <span class="hljs-keyword">const</span> previouslySelectedOption = options.<span class="hljs-title function_">querySelector</span>(<span class="hljs-string">&#x27;.option.selected&#x27;</span>);
+  <span class="hljs-keyword">if</span> (previouslySelectedOption) {
+    previouslySelectedOption.<span class="hljs-property">classList</span>.<span class="hljs-title function_">remove</span>(<span class="hljs-string">&quot;selected&quot;</span>);
+  }
+
+  selectedOption.<span class="hljs-property">classList</span>.<span class="hljs-title function_">add</span>(<span class="hljs-string">&quot;selected&quot;</span>);
+}
+
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">answerQuestion</span>(<span class="hljs-params"></span>) {
+  <span class="hljs-keyword">const</span> selectedOption = <span class="hljs-title function_">getSelected</span>();
+  <span class="hljs-keyword">if</span> (<span class="hljs-title function_">isAnswerCorrect</span>(selectedOption)) {
+    score++;
+  }
+  currentQuiz++;
+  <span class="hljs-keyword">if</span> (!<span class="hljs-title function_">isQuizComplete</span>()) {
+    <span class="hljs-title function_">loadQuiz</span>();
+  } <span class="hljs-keyword">else</span> {
+    <span class="hljs-title function_">showResults</span>();
+  }
+}
+
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">getSelected</span>(<span class="hljs-params"></span>) {
+  <span class="hljs-keyword">const</span> selectedOption = [...options.<span class="hljs-title function_">querySelectorAll</span>(<span class="hljs-string">&quot;.option&quot;</span>)].<span class="hljs-title function_">find</span>(
+    <span class="hljs-function">(<span class="hljs-params">option</span>) =&gt;</span> option.<span class="hljs-property">classList</span>.<span class="hljs-title function_">contains</span>(<span class="hljs-string">&quot;selected&quot;</span>)
+  );
+  <span class="hljs-keyword">return</span> selectedOption ? selectedOption.<span class="hljs-title function_">getAttribute</span>(<span class="hljs-string">&quot;data-option&quot;</span>) : <span class="hljs-literal">null</span>;
+}
+
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">isAnswerCorrect</span>(<span class="hljs-params">selectedOption</span>) {
+  <span class="hljs-keyword">return</span> selectedOption &amp;&amp; selectedOption === <span class="hljs-title function_">getCurrentCorrectAnswer</span>();
+}
+
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">getCurrentCorrectAnswer</span>(<span class="hljs-params"></span>) {
+  <span class="hljs-keyword">return</span> quizData[currentQuiz].<span class="hljs-property">correct</span>;
+}
+
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">isQuizComplete</span>(<span class="hljs-params"></span>) {
+  <span class="hljs-keyword">return</span> currentQuiz &gt;= quizData.<span class="hljs-property">length</span>;
+}
+
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">showResults</span>(<span class="hljs-params"></span>) {
+  container.<span class="hljs-property">innerHTML</span> = <span class="hljs-string">`
+    &lt;h2 class=&quot;answer&quot;&gt;You answered correctly at &lt;span class=&quot;score&quot;&gt;<span class="hljs-subst">${score}</span>/<span class="hljs-subst">${quizData.length}</span>&lt;/span&gt; questions&lt;/h2&gt;
+    &lt;button onclick=&quot;location.reload()&quot;&gt;Reload&lt;/button&gt;
+  `</span>;
+}
+</code></pre></code></pre></li>
+<li><p>quizzes.json</p>
+<pre><code class="language-json"><pre class="highlight"><code class="hljs"><span class="hljs-punctuation">[</span>
+    <span class="hljs-punctuation">{</span>
+        <span class="hljs-attr">&quot;question&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;Which language runs in a web browser?&quot;</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">&quot;options&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
+            <span class="hljs-string">&quot;Java&quot;</span><span class="hljs-punctuation">,</span>
+            <span class="hljs-string">&quot;C&quot;</span><span class="hljs-punctuation">,</span>
+            <span class="hljs-string">&quot;Python&quot;</span><span class="hljs-punctuation">,</span>
+            <span class="hljs-string">&quot;JavaScript&quot;</span>
+        <span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">&quot;correct&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;JavaScript&quot;</span>
+    <span class="hljs-punctuation">}</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-punctuation">{</span>
+        <span class="hljs-attr">&quot;question&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;Which attribute is used to specify the URL of the page that the link goes to?&quot;</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">&quot;options&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
+            <span class="hljs-string">&quot;src&quot;</span><span class="hljs-punctuation">,</span>
+            <span class="hljs-string">&quot;href&quot;</span><span class="hljs-punctuation">,</span>
+            <span class="hljs-string">&quot;url&quot;</span><span class="hljs-punctuation">,</span>
+            <span class="hljs-string">&quot;link&quot;</span>
+        <span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">&quot;correct&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;href&quot;</span>
+    <span class="hljs-punctuation">}</span><span class="hljs-punctuation">,</span>    
+    <span class="hljs-punctuation">{</span>
+        <span class="hljs-attr">&quot;question&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;Which CSS property is used to change the font size of an element?&quot;</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">&quot;options&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
+            <span class="hljs-string">&quot;font-style&quot;</span><span class="hljs-punctuation">,</span>
+            <span class="hljs-string">&quot;font-family&quot;</span><span class="hljs-punctuation">,</span>
+            <span class="hljs-string">&quot;font-size&quot;</span><span class="hljs-punctuation">,</span>
+            <span class="hljs-string">&quot;text-size&quot;</span>
+        <span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">&quot;correct&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;font-size&quot;</span>
+    <span class="hljs-punctuation">}</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-punctuation">{</span>
+        <span class="hljs-attr">&quot;question&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;What keyword is used to declare a function in JavaScript?&quot;</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">&quot;options&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
+            <span class="hljs-string">&quot;func&quot;</span><span class="hljs-punctuation">,</span>
+            <span class="hljs-string">&quot;def&quot;</span><span class="hljs-punctuation">,</span>
+            <span class="hljs-string">&quot;function&quot;</span><span class="hljs-punctuation">,</span>
+            <span class="hljs-string">&quot;method&quot;</span>
+        <span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">&quot;correct&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;function&quot;</span>
+    <span class="hljs-punctuation">}</span>    
+<span class="hljs-punctuation">]</span>
+</code></pre></code></pre></li>
+</ul>
+<h2>Ressources</h2>
+<div class="asset">
+  <img src="../../../../assets/blog/quiz-app/background.jpg" />
+<p><a href="../../../../assets/blog/quiz-app/background.jpg" title="background.jpg" download>background.jpg</a></p>
+</div>
+<h2>Conclusion</h2>
+<p>Thank you for reading this. We hope you found this article useful!</p>
+
+    <app-comments></app-comments>
+  </div>
+  <aside>
+    <div class="aside-container">
+      <app-blog-summary summary="[]"></app-blog-summary>
+      <app-blog-promotion></app-blog-promotion>
+    </div>
+  </aside>
+</div>
+
+        </main>
+        <app-scroll-top-button></app-scroll-top-button>
+        <app-footer></app-footer>
+        <app-privacy-consentement></app-privacy-consentement>
+        </div>
+            <script>
+                var lastVisitTime = parseInt(localStorage.getItem('LAST_VISIT_TIME') || '0');
+                var timeoutDuration = 1500;
+                if ((new Date().valueOf() - lastVisitTime) < 1200000) {
+                    timeoutDuration = 400;
+                }
+                setTimeout(() => {
+                    document.querySelector('.loader').classList.add('hide');
+                    document.querySelector('.body-container').style.display = 'block';
+                    document.dispatchEvent(new CustomEvent('page-loader-hide'));
+                }, timeoutDuration);
+                setTimeout(() => {
+                    document.querySelector('.loader').style.display = 'none';
+                }, 2000);
+                localStorage.setItem('LAST_VISIT_TIME', new Date().valueOf());
+            </script>
+        
+                <!-- Google tag (gtag.js) -->
+                <script async src="https://www.googletagmanager.com/gtag/js?id=G-S6JEVF53JZ"></script>
+                <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag() {
+                    dataLayer.push(arguments);
+                }
+                gtag('js', new Date());
+
+                gtag('config', 'G-S6JEVF53JZ');
+                </script>
+            <script src="/assets/scripts/markdown.js"></script></body></html>

@@ -1,0 +1,412 @@
+
+            <!DOCTYPE html>
+            <html lang="fr">
+            <head>
+                <meta charset="utf-8" />
+                <title>Learn Time | Weather App</title>
+                <meta name="description" content="Dans cet article, nous allons apprendre à créer une Weather App en utilisant HTML, CSS et JavaScript. Grâce à un code source facile à comprendre, vous pourrez suivre les étapes et créer votre propre version">
+                
+                <meta name="viewport" content="width=device-width,initial-scale=1" />
+                <!--
+                <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
+                <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
+                <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
+                <link rel="shortcut icon" sizes="192x192" href="/assets/favicon/android-chrome-192x192.png" >
+                <link rel="shortcut icon" sizes="512x512" href="/assets/favicon/android-chrome-512x512.png" >
+                <link rel="manifest" href="/assets/favicon/site.webmanifest">
+                <link rel="shortcut icon" href="/assets/favicon/favicon.ico">
+                <link rel="mask-icon" href="/assets/favicon/safari-pinned-tab.svg" color="#5bbad5">
+                <meta name="msapplication-TileColor" content="#da532c">
+                <meta name="theme-color" content="#ffffff">
+                -->
+                <link rel="shortcut icon" type="image/png" href="/assets/logo-circle.png">
+                <link rel="stylesheet" href="/styles.css">
+                <script src="https://kit.fontawesome.com/ff0edf556e.js" crossorigin="anonymous"></script>
+                <script src="https://code.iconify.design/iconify-icon/1.0.2/iconify-icon.min.js"></script>
+                <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+                <script>window.startTime = new Date().getTime();</script>
+                <style>
+                    :root {
+                        --background-color: #f3f2ef;
+                        --loading-bar-background-color: #d6cec2;
+                        --moving-loading-bar-background-color: #D0514D;
+                    }
+                    .loader {transition: all .2s ease-out;z-index: 10000000000;margin-top: -200px;position: fixed;top: 0;left: 0;right: 0;bottom: 0;background-color: var(--background-color);display: flex;align-items: center;justify-content: center;flex-direction: column;}.loader-logo {width: 40px; height: 40px; margin-bottom: 20px;}.loading-bar {width: 130px;height: 4px;border-radius: 100rem;background-color: var(--loading-bar-background-color);position: relative;overflow: hidden;}.moving-loading-bar {height: 100%;width: 68px;position: absolute;border-radius: 100rem;background-color: var(--moving-loading-bar-background-color);animation: initial-loading 1.5s ease infinite;}@keyframes initial-loading {0% {transform: translate(-34px);}50% {transform: translate(96px);}to {transform: translate(-34px);}}
+                    .loader.hide {opacity: 0;}
+                </style>
+                
+            <meta property="og:title" content="Weather App" />
+            <meta property="og:description" content="Dans cet article, nous allons apprendre à créer une Weather App en utilisant HTML, CSS et JavaScript. Grâce à un code source facile à comprendre, vous pourrez suivre les étapes et créer votre propre version" />
+            <meta property="og:image" content="https://learntime.nethttp://img.youtube.com/vi/9T3afIMjsfE/maxresdefault.jpg" />
+            <meta name="twitter:card" content="summary_large_image">
+            <meta name="twitter:creator" content="@learntimenet">
+            <meta name="twitter:title" content="Weather App">
+            <meta name="twitter:description" content="Dans cet article, nous allons apprendre à créer une Weather App en utilisant HTML, CSS et JavaScript. Grâce à un code source facile à comprendre, vous pourrez suivre les étapes et créer votre propre version">
+            <meta name="twitter:image" content="https://learntime.nethttp://img.youtube.com/vi/9T3afIMjsfE/maxresdefault.jpg">
+        
+                <script>
+                    var disqus_config = function () {
+                        this.page.url = window.location.origin + window.location.pathname;
+                        this.page.identifier = window.location.pathname.replace('/en', '');
+                    };
+                </script>
+            <script defer src="/fr/blog/apps/weather-app/weather-app.cf5bf3fbe5bc2ff1e9f1.js"></script></head>
+            <body>
+                <div class="loader">
+                    <div class="loading-bar">
+                        <div class="moving-loading-bar"></div>
+                    </div>
+                </div>
+                <script>
+                    var lastVisitTime = parseInt(localStorage.getItem('LAST_VISIT_TIME') || '0');
+                    if ((new Date().valueOf() - lastVisitTime) < 1200000) {
+                        document.querySelector('.loading-bar').style.display = 'none';
+                    }
+                </script>
+                <div class="body-container">
+                    <app-navbar-promotion></app-navbar-promotion>
+                    <app-mobile-navbar></app-mobile-navbar>
+                    <app-desktop-navbar></app-desktop-navbar>
+                    <main class="max-width">
+        
+<style>
+    @media screen and (min-width: 1024px) {
+        :root {
+            --promotion-height: 0rem !important;
+            --max-width: 140rem !important;
+        }
+    }
+</style>
+<app-page-title title="Weather App"></app-page-title>
+<div class="blog-container">
+  <div class="markdown section-container">
+    <h2>Introduction</h2>
+<p>Dans cet article, nous allons apprendre à créer une Weather App en utilisant HTML, CSS et JavaScript. Grâce à un code source facile à comprendre, vous pourrez suivre les étapes et créer votre propre version</p>
+<iframe width="899" height="506" src="https://www.youtube.com/embed/9T3afIMjsfE" title="Weather App" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<h2>Code source</h2>
+<p><strong>code-tabs</strong></p>
+<ul>
+<li><p>index.html</p>
+<pre><code class="language-html"><pre class="highlight"><code class="hljs"><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-keyword">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">&quot;en&quot;</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;UTF-8&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">http-equiv</span>=<span class="hljs-string">&quot;X-UA-Compatible&quot;</span> <span class="hljs-attr">content</span>=<span class="hljs-string">&quot;IE=edge&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;viewport&quot;</span> <span class="hljs-attr">content</span>=<span class="hljs-string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Weather App<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">&quot;stylesheet&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">&quot;stylesheet&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;./style.css&quot;</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;container&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;input-container&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;search-input&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;searchInput&quot;</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">&quot;Search...&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;search-button&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;searchButton&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">i</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;fa fa-search&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">i</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;weather-container&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;cityWeather&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;city-weather hidden&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;icon&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;icon&quot;</span> <span class="hljs-attr">alt</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">h1</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;temperature&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;temperature&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">h2</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;city&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;city&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;details&quot;</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;detail&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;./images/icons/humidity.png&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;description&quot;</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;value&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;humidity&quot;</span>&gt;</span>%<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Humidity<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;detail&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;./images/icons/wind.png&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;description&quot;</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;value&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;wind&quot;</span>&gt;</span>km/h<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Wind<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;noCityFound&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;no-city-found hidden&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;images/location-not-found.png&quot;</span> <span class="hljs-attr">alt</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Oops! Location not found!<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;./script.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</code></pre></code></pre></li>
+<li><p>style.css</p>
+<pre><code class="language-css"><pre class="highlight"><code class="hljs">*,
+*<span class="hljs-selector-pseudo">::before</span>,
+*<span class="hljs-selector-pseudo">::after</span> {
+  <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span>;
+  <span class="hljs-attribute">padding</span>: <span class="hljs-number">0</span>;
+  <span class="hljs-attribute">box-sizing</span>: border-box;
+}
+
+<span class="hljs-selector-pseudo">:root</span> {
+  <span class="hljs-attr">--primary-color</span>: <span class="hljs-number">#4c77b6</span>;
+  <span class="hljs-attr">--white-color</span>: <span class="hljs-number">#fff</span>;
+}
+
+<span class="hljs-selector-tag">body</span> {
+  <span class="hljs-attribute">font-family</span>: <span class="hljs-string">&quot;Roboto&quot;</span>, sans-serif;
+  <span class="hljs-attribute">min-height</span>: <span class="hljs-number">100vh</span>;
+  <span class="hljs-attribute">background</span>: <span class="hljs-built_in">url</span>(<span class="hljs-string">images/background.jpg</span>) no-repeat;
+  <span class="hljs-attribute">background-position</span>: center;
+  <span class="hljs-attribute">background-size</span>: cover;
+  <span class="hljs-attribute">color</span>: <span class="hljs-built_in">var</span>(--white-color);
+  <span class="hljs-attribute">display</span>: flex;
+  <span class="hljs-attribute">justify-content</span>: center;
+  <span class="hljs-attribute">align-items</span>: center;
+}
+
+<span class="hljs-selector-class">.container</span> {
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">400px</span>;
+  <span class="hljs-attribute">border</span>: <span class="hljs-number">2px</span> solid <span class="hljs-built_in">var</span>(--white-color);
+  <span class="hljs-attribute">padding</span>: <span class="hljs-number">30px</span>;
+  <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">10px</span>;
+  backdrop-<span class="hljs-attribute">filter</span>: <span class="hljs-built_in">blur</span>(<span class="hljs-number">40px</span>);
+  <span class="hljs-attribute">text-align</span>: center;
+}
+
+<span class="hljs-selector-class">.city-weather</span>,<span class="hljs-selector-class">.no-city-found</span> {
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">0px</span>;
+  <span class="hljs-attribute">overflow</span>: hidden;
+  <span class="hljs-attribute">transition</span>: height <span class="hljs-number">0.7s</span> ease;
+}
+
+<span class="hljs-selector-class">.no-city-found</span> {
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">300px</span>;
+}
+
+<span class="hljs-selector-class">.city-weather</span>  {
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">410px</span>;
+}
+
+<span class="hljs-selector-class">.hidden</span> {
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">0</span>;
+}
+
+<span class="hljs-selector-class">.input-container</span> {
+  <span class="hljs-attribute">display</span>: flex;
+  <span class="hljs-attribute">justify-content</span>: space-between;
+}
+
+<span class="hljs-selector-class">.search-input</span> {
+  <span class="hljs-attribute">flex</span>: <span class="hljs-number">1</span>;
+  <span class="hljs-attribute">padding</span>: <span class="hljs-number">10px</span> <span class="hljs-number">10px</span> <span class="hljs-number">10px</span> <span class="hljs-number">20px</span>;
+  <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">30px</span>;
+  <span class="hljs-attribute">border</span>: <span class="hljs-number">2px</span> solid transparent;
+  <span class="hljs-attribute">font-size</span>: <span class="hljs-number">16px</span>;
+  <span class="hljs-attribute">margin-right</span>: <span class="hljs-number">10px</span>;
+  <span class="hljs-attribute">outline</span>: none;
+}
+
+<span class="hljs-selector-class">.search-button</span> {
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">40px</span>;
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">40px</span>;
+  <span class="hljs-attribute">background</span>: <span class="hljs-built_in">var</span>(--primary-color);
+  <span class="hljs-attribute">color</span>: <span class="hljs-built_in">var</span>(--white-color);
+  <span class="hljs-attribute">border</span>: none;
+  <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">40px</span>;
+  <span class="hljs-attribute">font-size</span>: <span class="hljs-number">24px</span>;
+  <span class="hljs-attribute">cursor</span>: pointer;
+  <span class="hljs-attribute">outline</span>: none;
+}
+
+<span class="hljs-selector-class">.no-city-found</span> <span class="hljs-selector-tag">img</span> {
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">100%</span>;
+  <span class="hljs-attribute">margin-top</span>: <span class="hljs-number">20px</span>;
+} 
+
+<span class="hljs-selector-class">.no-city-found</span> <span class="hljs-selector-tag">p</span> {
+  <span class="hljs-attribute">font-size</span>: <span class="hljs-number">24px</span>;
+}
+
+<span class="hljs-selector-class">.city-weather</span> <span class="hljs-selector-class">.icon</span> {
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">170px</span>;
+}
+
+<span class="hljs-selector-class">.city-weather</span> <span class="hljs-selector-class">.temperature</span> {
+  <span class="hljs-attribute">font-size</span>: <span class="hljs-number">75px</span>;
+  <span class="hljs-attribute">font-weight</span>: <span class="hljs-number">500</span>;
+}
+
+<span class="hljs-selector-class">.city-weather</span> <span class="hljs-selector-class">.city</span> {
+  <span class="hljs-attribute">font-size</span>: <span class="hljs-number">40px</span>;
+  <span class="hljs-attribute">font-weight</span>: <span class="hljs-number">400</span>;
+}
+
+<span class="hljs-selector-class">.city-weather</span> <span class="hljs-selector-class">.details</span> {
+  <span class="hljs-attribute">display</span>: flex;
+  <span class="hljs-attribute">justify-content</span>: space-between;
+  <span class="hljs-attribute">align-items</span>: center;
+  <span class="hljs-attribute">margin-top</span>: <span class="hljs-number">48px</span>;
+}
+
+<span class="hljs-selector-class">.details</span> <span class="hljs-selector-class">.detail</span> {
+  <span class="hljs-attribute">display</span>: flex;
+  <span class="hljs-attribute">align-items</span>: center;
+  <span class="hljs-attribute">column-gap</span>: <span class="hljs-number">8px</span>;
+  <span class="hljs-attribute">text-align</span>: left;
+}
+
+<span class="hljs-selector-class">.detail</span> <span class="hljs-selector-tag">img</span> {
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">40px</span>;
+}
+
+<span class="hljs-selector-class">.detail</span> <span class="hljs-selector-class">.value</span> {
+  <span class="hljs-attribute">font-size</span>: <span class="hljs-number">24px</span>;
+}
+</code></pre></code></pre></li>
+<li><p>script.js</p>
+<pre><code class="language-js"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">const</span> <span class="hljs-variable constant_">API_KEY</span> = <span class="hljs-string">&quot;REPLACE_IT_WITH_YOUR_API_KEY: https://api.openweathermap.org&quot;</span>;
+
+<span class="hljs-keyword">const</span> searchInput = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&quot;searchInput&quot;</span>);
+<span class="hljs-keyword">const</span> searchButton = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&quot;searchButton&quot;</span>);
+<span class="hljs-keyword">const</span> city = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&quot;city&quot;</span>);
+<span class="hljs-keyword">const</span> temperature = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&quot;temperature&quot;</span>);
+<span class="hljs-keyword">const</span> humidity = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&quot;humidity&quot;</span>);
+<span class="hljs-keyword">const</span> wind = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&quot;wind&quot;</span>);
+<span class="hljs-keyword">const</span> icon = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&quot;icon&quot;</span>);
+<span class="hljs-keyword">const</span> cityWeather = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&quot;cityWeather&quot;</span>);
+<span class="hljs-keyword">const</span> noCityFound = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&quot;noCityFound&quot;</span>);
+
+searchButton.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">&quot;click&quot;</span>, updateWeatherData);
+searchInput.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">&quot;keydown&quot;</span>,<span class="hljs-function">(<span class="hljs-params">event</span>) =&gt;</span> event.<span class="hljs-property">key</span> === <span class="hljs-string">&quot;Enter&quot;</span> &amp;&amp; <span class="hljs-title function_">updateWeatherData</span>());
+
+<span class="hljs-keyword">async</span> <span class="hljs-keyword">function</span> <span class="hljs-title function_">updateWeatherData</span>(<span class="hljs-params"></span>) {
+  <span class="hljs-keyword">try</span> {
+    <span class="hljs-keyword">if</span> (!searchInput.<span class="hljs-property">value</span>.<span class="hljs-title function_">trim</span>()) {
+      <span class="hljs-title function_">alert</span>(<span class="hljs-string">&quot;Please enter the city&quot;</span>);
+      <span class="hljs-keyword">return</span>;
+    }
+    <span class="hljs-keyword">const</span> weatherData = <span class="hljs-keyword">await</span> <span class="hljs-title function_">getWeatherData</span>(searchInput.<span class="hljs-property">value</span>);
+    noCityFound.<span class="hljs-property">classList</span>.<span class="hljs-title function_">add</span>(<span class="hljs-string">&quot;hidden&quot;</span>);
+    cityWeather.<span class="hljs-property">classList</span>.<span class="hljs-title function_">remove</span>(<span class="hljs-string">&quot;hidden&quot;</span>);
+    city.<span class="hljs-property">textContent</span> = weatherData.<span class="hljs-property">city</span>;
+    temperature.<span class="hljs-property">textContent</span> = weatherData.<span class="hljs-property">temperature</span> + <span class="hljs-string">&quot;°C&quot;</span>;
+    humidity.<span class="hljs-property">textContent</span> = weatherData.<span class="hljs-property">humidity</span> + <span class="hljs-string">&quot;%&quot;</span>;
+    wind.<span class="hljs-property">textContent</span> = weatherData.<span class="hljs-property">wind</span> + <span class="hljs-string">&quot; km/h&quot;</span>;
+    icon.<span class="hljs-property">src</span> = weatherData.<span class="hljs-property">icon</span>;
+  } <span class="hljs-keyword">catch</span> (error) {
+    <span class="hljs-keyword">if</span> (error?.<span class="hljs-property">code</span> === <span class="hljs-string">&quot;404&quot;</span>) {
+      cityWeather.<span class="hljs-property">classList</span>.<span class="hljs-title function_">add</span>(<span class="hljs-string">&quot;hidden&quot;</span>);
+      noCityFound.<span class="hljs-property">classList</span>.<span class="hljs-title function_">remove</span>(<span class="hljs-string">&quot;hidden&quot;</span>);
+      <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">error</span>(error.<span class="hljs-property">message</span>);
+    } <span class="hljs-keyword">else</span> {
+      <span class="hljs-title function_">alert</span>(<span class="hljs-string">&quot;Unknown error: &quot;</span> + error);
+    }
+  }
+}
+
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">getIconUrl</span>(<span class="hljs-params">icon</span>) {
+  <span class="hljs-keyword">return</span> <span class="hljs-string">`./images/icons/<span class="hljs-subst">${icon.toLowerCase()}</span>.png`</span>;
+}
+
+<span class="hljs-keyword">async</span> <span class="hljs-keyword">function</span> <span class="hljs-title function_">getWeatherData</span>(<span class="hljs-params">city</span>) {
+  <span class="hljs-keyword">const</span> apiUrl = <span class="hljs-string">`https://api.openweathermap.org/data/2.5/weather?q=<span class="hljs-subst">${city}</span>&amp;units=metric&amp;appid=<span class="hljs-subst">${API_KEY}</span>`</span>;
+  <span class="hljs-keyword">const</span> apiResponse = <span class="hljs-keyword">await</span> <span class="hljs-title function_">fetch</span>(apiUrl);
+  <span class="hljs-keyword">const</span> apiResponseBody = <span class="hljs-keyword">await</span> apiResponse.<span class="hljs-title function_">json</span>();
+
+  <span class="hljs-keyword">if</span> (apiResponseBody.<span class="hljs-property">cod</span> == <span class="hljs-string">&quot;404&quot;</span> || apiResponseBody.<span class="hljs-property">cod</span> == <span class="hljs-string">&quot;400&quot;</span>) {
+    <span class="hljs-keyword">throw</span> { <span class="hljs-attr">code</span>: <span class="hljs-string">&quot;404&quot;</span>, <span class="hljs-attr">message</span>: <span class="hljs-string">&quot;City not found&quot;</span> };
+  }
+
+  <span class="hljs-keyword">return</span> {
+    <span class="hljs-attr">city</span>: apiResponseBody.<span class="hljs-property">name</span>,
+    <span class="hljs-attr">temperature</span>: <span class="hljs-title class_">Math</span>.<span class="hljs-title function_">round</span>(apiResponseBody?.<span class="hljs-property">main</span>?.<span class="hljs-property">temp</span>),
+    <span class="hljs-attr">humidity</span>: apiResponseBody.<span class="hljs-property">main</span>.<span class="hljs-property">humidity</span>,
+    <span class="hljs-attr">wind</span>: <span class="hljs-title class_">Math</span>.<span class="hljs-title function_">round</span>(apiResponseBody.<span class="hljs-property">wind</span>.<span class="hljs-property">speed</span>),
+    <span class="hljs-attr">icon</span>: <span class="hljs-title function_">getIconUrl</span>(apiResponseBody.<span class="hljs-property">weather</span>[<span class="hljs-number">0</span>].<span class="hljs-property">main</span>),
+  };
+}
+</code></pre></code></pre></li>
+</ul>
+<h2>Ressources</h2>
+<div class="asset">
+  <img src="../../../../assets/blog/weather-app/background.jpg" />
+<p><a href="../../../../assets/blog/weather-app/background.jpg" title="background.jpg" download>background.jpg</a></p>
+</div>
+<div class="asset">
+  <img src="../../../../assets/blog/weather-app/clear.png" />
+<p><a href="../../../../assets/blog/weather-app/clear.png" title="clear.png" download>clear.png</a></p>
+</div>
+<div class="asset">
+  <img src="../../../../assets/blog/weather-app/clouds.png" />
+<p><a href="../../../../assets/blog/weather-app/clouds.png" title="clouds.png" download>clouds.png</a></p>
+</div>
+<div class="asset">
+  <img src="../../../../assets/blog/weather-app/humidity.png" />
+<p><a href="../../../../assets/blog/weather-app/humidity.png" title="humidity.png" download>humidity.png</a></p>
+</div>
+<div class="asset">
+  <img src="../../../../assets/blog/weather-app/location-not-found.png" />
+<p><a href="../../../../assets/blog/weather-app/location-not-found.png" title="location-not-found.png" download>location-not-found.png</a></p>
+</div>
+<div class="asset">
+  <img src="../../../../assets/blog/weather-app/mist.png" />
+<p><a href="../../../../assets/blog/weather-app/mist.png" title="mist.png" download>mist.png</a></p>
+</div>
+<div class="asset">
+  <img src="../../../../assets/blog/weather-app/rain.png" />
+<p><a href="../../../../assets/blog/weather-app/rain.png" title="rain.png" download>rain.png</a></p>
+</div>
+<div class="asset">
+  <img src="../../../../assets/blog/weather-app/snow.png" />
+<p><a href="../../../../assets/blog/weather-app/snow.png" title="snow.png" download>snow.png</a></p>
+</div>
+<div class="asset">
+  <img src="../../../../assets/blog/weather-app/wind.png" />
+<p><a href="../../../../assets/blog/weather-app/wind.png" title="wind.png" download>wind.png</a></p>
+</div>
+<h2>Conclusion</h2>
+<p>Merci de votre lecture. Nous espérons que cet article vous a été utile !</p>
+
+    <app-comments></app-comments>
+  </div>
+  <aside>
+    <div class="aside-container">
+      <app-blog-summary summary="[]"></app-blog-summary>
+      <app-blog-promotion></app-blog-promotion>
+    </div>
+  </aside>
+</div>
+
+        </main>
+        <app-scroll-top-button></app-scroll-top-button>
+        <app-footer></app-footer>
+        <app-privacy-consentement></app-privacy-consentement>
+        </div>
+            <script>
+                var lastVisitTime = parseInt(localStorage.getItem('LAST_VISIT_TIME') || '0');
+                var timeoutDuration = 1500;
+                if ((new Date().valueOf() - lastVisitTime) < 1200000) {
+                    timeoutDuration = 400;
+                }
+                setTimeout(() => {
+                    document.querySelector('.loader').classList.add('hide');
+                    document.querySelector('.body-container').style.display = 'block';
+                    document.dispatchEvent(new CustomEvent('page-loader-hide'));
+                }, timeoutDuration);
+                setTimeout(() => {
+                    document.querySelector('.loader').style.display = 'none';
+                }, 2000);
+                localStorage.setItem('LAST_VISIT_TIME', new Date().valueOf());
+            </script>
+        
+                <!-- Google tag (gtag.js) -->
+                <script async src="https://www.googletagmanager.com/gtag/js?id=G-S6JEVF53JZ"></script>
+                <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag() {
+                    dataLayer.push(arguments);
+                }
+                gtag('js', new Date());
+
+                gtag('config', 'G-S6JEVF53JZ');
+                </script>
+            <script src="/assets/scripts/markdown.js"></script></body></html>
