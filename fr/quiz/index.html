@@ -1,11 +1,11 @@
 
             <!DOCTYPE html>
-            <html lang="en" data-translated="true">
+            <html lang="fr" data-translated="true">
             <head>
                 <meta charset="utf-8" />
-                <title>Learn Time | REST API with Spring</title>
-                <meta name="description" content="In this article, we are going to create a REST API using the Spring Boot framework by using an H2 database then PostgreSQL and adding its Swagger documentation.">
-                
+                <title>Learn Time | Quiz</title>
+                <meta name="description" content="Plongez dans des articles, tutoriels et guides experts sur les langages de programmation comme Java, Spring, JavaScript et bien d'autres. Améliorez vos compétences en développement avec des conseils pratiques, des astuces et des solutions conçues pour les développeurs et passionnés de tech.">
+                <meta name="keywords" content="Java, Spring, JavaScript, programmation, tutoriels, guides, développement web, frameworks, backend, frontend, coding, bonnes pratiques, astuces développement, cours programmation, technologies informatiques">
                 <meta name="viewport" content="width=device-width,initial-scale=1" />
                 <!--
                 <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
@@ -35,22 +35,13 @@
                     .loader.hide {opacity: 0;}
                 </style>
                 
-            <meta property="og:title" content="REST API with Spring" />
-            <meta property="og:description" content="In this article, we are going to create a REST API using the Spring Boot framework by using an H2 database then PostgreSQL and adding its Swagger documentation." />
-            <meta property="og:image" content="https://learntime.net/assets/thumbnail/api-rest-with-spring-boot.png" />
-            <meta name="twitter:card" content="summary_large_image">
-            <meta name="twitter:creator" content="@learntimenet">
-            <meta name="twitter:title" content="REST API with Spring">
-            <meta name="twitter:description" content="In this article, we are going to create a REST API using the Spring Boot framework by using an H2 database then PostgreSQL and adding its Swagger documentation.">
-            <meta name="twitter:image" content="https://learntime.net/assets/thumbnail/api-rest-with-spring-boot.png">
-        
                 <script>
                     var disqus_config = function () {
                         this.page.url = window.location.origin + window.location.pathname;
                         this.page.identifier = window.location.pathname.replace('/en', '');
                     };
                 </script>
-            <script defer src="/blog/spring/api-rest-with-spring-boot/add-swagger/add-swagger.e9659b3407f277a2aa3a.js"></script></head>
+            <script defer src="/fr/quiz/index/index.a6348ac63ca8b4d6643a.js"></script></head>
             <body>
                 <div class="loader">
                     <div class="loading-bar">
@@ -67,47 +58,9 @@
                     <app-navbar-promotion></app-navbar-promotion>
                     <app-mobile-navbar></app-mobile-navbar>
                     <app-desktop-navbar></app-desktop-navbar>
-                    <main class="max-width">
+                    <main class="max-width-index">
         
-<style>
-    @media screen and (min-width: 1024px) {
-        :root {
-            --promotion-height: 0rem !important;
-            --max-width: 140rem !important;
-        }
-    }
-</style>
-<app-page-title title="REST API with Spring"></app-page-title>
-<div class="blog-container">
-  <div class="markdown section-container">
-    <h2>Add Swagger</h2>
-<p>In this section, we'll integrate Swagger into our REST API to facilitate documentation and endpoint discovery. Swagger provides an interactive interface that lets you view and test our API directly from a browser.</p>
-<h2>Step 1: Add Swagger dependencies</h2>
-<p>To begin with, we need to add the necessary Swagger dependencies to our <code>pom.xml</code> file. Let's add the following dependency:</p>
-<pre><code class="language-xml"><pre class="highlight"><code class="hljs"><span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.springdoc<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>springdoc-openapi-starter-webmvc-ui<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>2.0.2<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span>
-</code></pre></code></pre>
-<h2>Step 2: Access the Swagger interface</h2>
-<p>Once the dependencies have been added, we can start our application. Swagger will be available at the following URL:</p>
-<pre><code class="language-sh"><pre class="highlight"><code class="hljs">http://localhost:8080/swagger-ui/index.html
-</code></pre></code></pre>
-<p>On this interface, we can see all our API endpoints and their descriptions. We can also run tests directly from this interface, which is very useful for development and documentation purposes.</p>
-<p><img src="../../../../assets/blog/api-rest-with-spring-boot/swagger.png" alt="swagger" title="swagger"></p>
-<h2>Conclusion</h2>
-<p>With the integration of Swagger, our REST API is now interactively documented, facilitating its use by developers and end-users alike. This documentation enables us to maintain a clear understanding of the functionalities offered by our API, while providing an integrated testing platform.</p>
-
-    <app-comments></app-comments>
-  </div>
-  <aside>
-    <div class="aside-container">
-      <app-blog-summary summary="[{&quot;slug&quot;:&quot;/blog/spring/api-rest-with-spring-boot&quot;,&quot;label&quot;:&quot;Introduction&quot;},{&quot;slug&quot;:&quot;/blog/spring/api-rest-with-spring-boot/first-version&quot;,&quot;label&quot;:&quot;First version of the project&quot;},{&quot;slug&quot;:&quot;/blog/spring/api-rest-with-spring-boot/test-our-api-rest&quot;,&quot;label&quot;:&quot;Tester notre API REST&quot;},{&quot;slug&quot;:&quot;/blog/spring/api-rest-with-spring-boot/add-validation&quot;,&quot;label&quot;:&quot;Add validation layer&quot;},{&quot;slug&quot;:&quot;/blog/spring/api-rest-with-spring-boot/add-exceptions-handlers&quot;,&quot;label&quot;:&quot;Add exception handlers&quot;},{&quot;slug&quot;:&quot;/blog/spring/api-rest-with-spring-boot/use-postgresql&quot;,&quot;label&quot;:&quot;Use a PostgreSQL database&quot;},{&quot;slug&quot;:&quot;/blog/spring/api-rest-with-spring-boot/add-swagger&quot;,&quot;label&quot;:&quot;Add Swagger&quot;}]"></app-blog-summary>
-      <app-aside-promotion></app-aside-promotion>
-    </div>
-  </aside>
-</div>
+<app-main quizzes="[]"></app-main>
 
         </main>
         <app-scroll-top-button></app-scroll-top-button>
@@ -142,4 +95,4 @@
 
                 gtag('config', 'G-S6JEVF53JZ');
                 </script>
-            <script src="/assets/scripts/markdown.js"></script></body></html>
+            </body></html>
