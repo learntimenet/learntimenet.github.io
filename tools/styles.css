@@ -1747,10 +1747,10 @@ body.dark {
   justify-content: center; }
 
 body select {
-  background-image: url("../../../../assets/select-arrow-light.svg?encoding=base64"); }
+  background-image: url("../../../../assets/images/select-arrow-light.svg?encoding=base64"); }
 
 body.dark select {
-  background-image: url("../../../../assets/select-arrow-dark.svg?encoding=base64"); }
+  background-image: url("../../../../assets/images/select-arrow-dark.svg?encoding=base64"); }
 
 select {
   font-family: inherit;
