@@ -1,11 +1,11 @@
 
             <!DOCTYPE html>
-            <html lang="fr" data-translated="true">
+            <html lang="en" data-translated="false">
             <head>
                 <meta charset="utf-8" />
-                <title>Learn Time | API REST avec Spring</title>
-                <meta name="description" content="Dans cet article, nous allons créer une API REST en utilisant le framework Spring Boot en utilisant une base de données H2 puis PostgreSQL et en ajoutant sa documentation Swagger">
-                
+                <title>Learn Time | Java Programming Quiz</title>
+                <meta name="description" content="Challenge yourself with this advanced Java programming quiz covering multithreading, generics, collections, lambda expressions, and Java 8+ features. Perfect for Java developers, programmers, and coding interview preparation">
+                <meta name="keywords" content="java programming quiz, advanced java questions, java coding test, java interview questions, multithreading quiz, java generics quiz, collections framework quiz, lambda expressions quiz, java stream api quiz, java certification questions, java concurrency quiz, exception handling quiz, java memory management quiz, functional interfaces quiz, java modules quiz, thread-safe java quiz, coding interview prep, java 8 features quiz, java developer test, jvm internals quiz">
                 <meta name="viewport" content="width=device-width,initial-scale=1" />
                 <!--
                 <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
@@ -35,14 +35,14 @@
                     .loader.hide {opacity: 0;}
                 </style>
                 
-            <meta property="og:title" content="API REST avec Spring" />
-            <meta property="og:description" content="Dans cet article, nous allons créer une API REST en utilisant le framework Spring Boot en utilisant une base de données H2 puis PostgreSQL et en ajoutant sa documentation Swagger" />
-            <meta property="og:image" content="https://learntime.net/assets/thumbnail/blog/api-rest-with-spring-boot.png" />
+            <meta property="og:title" content="Java Programming Quiz" />
+            <meta property="og:description" content="Challenge yourself with this advanced Java programming quiz covering multithreading, generics, collections, lambda expressions, and Java 8+ features. Perfect for Java developers, programmers, and coding interview preparation" />
+            <meta property="og:image" content="https://learntime.net/assets/thumbnail/quiz/quiz-thumbnail-2.jpg" />
             <meta name="twitter:card" content="summary_large_image">
             <meta name="twitter:creator" content="@learntimenet">
-            <meta name="twitter:title" content="API REST avec Spring">
-            <meta name="twitter:description" content="Dans cet article, nous allons créer une API REST en utilisant le framework Spring Boot en utilisant une base de données H2 puis PostgreSQL et en ajoutant sa documentation Swagger">
-            <meta name="twitter:image" content="https://learntime.net/assets/thumbnail/blog/api-rest-with-spring-boot.png">
+            <meta name="twitter:title" content="Java Programming Quiz">
+            <meta name="twitter:description" content="Challenge yourself with this advanced Java programming quiz covering multithreading, generics, collections, lambda expressions, and Java 8+ features. Perfect for Java developers, programmers, and coding interview preparation">
+            <meta name="twitter:image" content="https://learntime.net/assets/thumbnail/quiz/quiz-thumbnail-2.jpg">
         
                 <script>
                     var disqus_config = function () {
@@ -50,7 +50,7 @@
                         this.page.identifier = window.location.pathname.replace('/en', '');
                     };
                 </script>
-            <script defer src="/fr/blog/spring/api-rest-with-spring-boot/test-our-api-rest/test-our-api-rest.bfd137a0cc28e3e75898.js"></script></head>
+            <script defer src="/quiz/java/example/example.caa292b5254fa91652a6.js"></script></head>
             <body>
                 <div class="loader">
                     <div class="loading-bar">
@@ -76,39 +76,24 @@
             --max-width: 140rem !important;
         }
     }
+    pre .code-header {
+        display: none !important;
+    }
+    pre .code-line-number {
+        display: none !important;
+    }
+    .option-container p {
+      margin-bottom: 0 !important;
+    }
 </style>
-<app-page-title title="API REST avec Spring"></app-page-title>
+<app-page-title title="Java Programming Quiz"></app-page-title>
 <div class="blog-container">
-  <div class="markdown section-container">
-    <h2>Tester notre API REST</h2>
-<p>Manitenant, on va démarrer notre projet via la commande</p>
-<pre><code class="language-sh"><pre class="highlight"><code class="hljs">mvn spring-boot:run
-</code></pre></code></pre>
-<p>et nous allons utiliser <a href="https://www.postman.com/" title="Postman">Postman</a> pour tester notre API REST:</p>
-<h2>Créer une tâche Todo</h2>
-<p><img src="../../../../assets/blog/api-rest-with-spring-boot/create-todo.png" alt="create-todo" title="create-todo"></p>
-<h2>Récupérer toutes les tâches Todos</h2>
-<p><img src="../../../../assets/blog/api-rest-with-spring-boot/get-all-todos.png" alt="get-all-todos" title="get-all-todos"></p>
-<h2>Récupérer une tâche Todo à partir de son id</h2>
-<p><img src="../../../../assets/blog/api-rest-with-spring-boot/get-todo-by-id.png" alt="get-todo-by-id" title="get-todo-by-id"></p>
-<h2>Mettre à jour une tâche Todo à partir de son id</h2>
-<p><img src="../../../../assets/blog/api-rest-with-spring-boot/update-todo.png" alt="update-todo" title="update-todo"></p>
-<h2>Supprimer une tâche Todo à partir de son id</h2>
-<p><img src="../../../../assets/blog/api-rest-with-spring-boot/delete-todo.png" alt="delete-todo" title="delete-todo"></p>
-<h2>Créer une tâche Todo sans titre ni description</h2>
-<p><img src="../../../../assets/blog/api-rest-with-spring-boot/create-todo-without-title-and-description.png" alt="create-todo-without-title-and-description" title="create-todo-without-title-and-description"></p>
-<h2>Conclusion</h2>
-<p>Nous avons maintenant testé notre API REST en utilisant Postman, en vérifiant que nous pouvons créer, récupérer, mettre à jour et supprimer des tâches Todo avec succès.</p>
-<p>Cependant, nous avons constaté que la création de tâches Todo sans titre ni description est possible. <strong>Dans la prochaine section</strong>, nous allons ajouter une couche de validation pour corriger ce comportement et garantir que les données respectent les contraintes définies.</p>
-<p><strong>previous-next-sections</strong></p>
-<p><a href="/fr/blog/spring/api-rest-with-spring-boot/first-version" title="Première version du projet">Première version du projet</a>
-<a href="/fr/blog/spring/api-rest-with-spring-boot/add-validation" title="Première version du projet">Ajouter la couche validation</a></p>
-
+  <div class="section-container">
+    <app-main quiz="{&quot;date&quot;:&quot;20241103&quot;,&quot;title&quot;:&quot;Java Programming Quiz&quot;,&quot;description&quot;:&quot;Challenge yourself with this advanced Java programming quiz covering multithreading, generics, collections, lambda expressions, and Java 8+ features. Perfect for Java developers, programmers, and coding interview preparation&quot;,&quot;category&quot;:&quot;java&quot;,&quot;slug&quot;:&quot;/quiz/java/example&quot;,&quot;tags&quot;:[&quot;Programming&quot;,&quot;Java&quot;],&quot;questions&quot;:[{&quot;question&quot;:&quot;<p>What will be the output of the following code?</p>\n&quot;,&quot;code&quot;:&quot;<pre><code class=\&quot;language-java\&quot;><pre class=\&quot;highlight\&quot;><code class=\&quot;hljs\&quot;><span class=\&quot;hljs-keyword\&quot;>public</span> <span class=\&quot;hljs-keyword\&quot;>class</span> <span class=\&quot;hljs-title class_\&quot;>Main</span> {\n    <span class=\&quot;hljs-keyword\&quot;>public</span> <span class=\&quot;hljs-keyword\&quot;>static</span> <span class=\&quot;hljs-keyword\&quot;>void</span> <span class=\&quot;hljs-title function_\&quot;>main</span><span class=\&quot;hljs-params\&quot;>(String[] args)</span> {\n        <span class=\&quot;hljs-type\&quot;>int</span> <span class=\&quot;hljs-variable\&quot;>x</span> <span class=\&quot;hljs-operator\&quot;>=</span> <span class=\&quot;hljs-number\&quot;>5</span>;\n        <span class=\&quot;hljs-type\&quot;>int</span> <span class=\&quot;hljs-variable\&quot;>y</span> <span class=\&quot;hljs-operator\&quot;>=</span> x++ + ++x;\n        System.out.println(y);\n    }\n}\n</code></pre></code></pre>\n&quot;,&quot;options&quot;:[&quot;<p>10</p>\n&quot;,&quot;<p>11</p>\n&quot;,&quot;<p>12</p>\n&quot;,&quot;<p>13</p>\n&quot;],&quot;answers&quot;:[&quot;<p>12</p>\n&quot;],&quot;explanation&quot;:&quot;<p>The expression <code>x++</code> uses the current value of <code>x</code> (5) and then increments it to 6. The expression <code>++x</code> increments <code>x</code> to 7 and then uses it. So, <code>y = 5 + 7</code>, which results in 12.</p>\n&quot;},{&quot;question&quot;:&quot;<p>What does the following code snippet do?</p>\n&quot;,&quot;code&quot;:&quot;&quot;,&quot;options&quot;:[&quot;<p>Prints \&quot;Hello World\&quot;</p>\n&quot;,&quot;<p>Prints \&quot;Hello\&quot;</p>\n&quot;,&quot;<p>Throws a compilation error</p>\n&quot;,&quot;<p>Prints \&quot;World\&quot;</p>\n&quot;],&quot;answers&quot;:[&quot;<p>Prints \&quot;Hello World\&quot;</p>\n&quot;,&quot;<p>Prints \&quot;Hello\&quot;</p>\n&quot;],&quot;explanation&quot;:&quot;<p>The <code>concat</code> method does not modify the original string <code>str</code> because strings in Java are immutable. It returns a new string, which is not used in this code. Hence, <code>str</code> remains \&quot;Hello\&quot;.</p>\n&quot;}],&quot;keywords&quot;:&quot;java programming quiz, advanced java questions, java coding test, java interview questions, multithreading quiz, java generics quiz, collections framework quiz, lambda expressions quiz, java stream api quiz, java certification questions, java concurrency quiz, exception handling quiz, java memory management quiz, functional interfaces quiz, java modules quiz, thread-safe java quiz, coding interview prep, java 8 features quiz, java developer test, jvm internals quiz&quot;,&quot;visible&quot;:false,&quot;image&quot;:&quot;/assets/thumbnail/quiz/quiz-thumbnail-2.jpg&quot;}"></app-main>
     <app-comments></app-comments>
   </div>
   <aside>
     <div class="aside-container">
-      <app-blog-summary summary="[{&quot;slug&quot;:&quot;/fr/blog/spring/api-rest-with-spring-boot&quot;,&quot;label&quot;:&quot;Introduction&quot;},{&quot;slug&quot;:&quot;/fr/blog/spring/api-rest-with-spring-boot/first-version&quot;,&quot;label&quot;:&quot;Première version du projet&quot;},{&quot;slug&quot;:&quot;/fr/blog/spring/api-rest-with-spring-boot/test-our-api-rest&quot;,&quot;label&quot;:&quot;Tester notre API REST&quot;},{&quot;slug&quot;:&quot;/fr/blog/spring/api-rest-with-spring-boot/add-validation&quot;,&quot;label&quot;:&quot;Ajouter la couche validation&quot;},{&quot;slug&quot;:&quot;/fr/blog/spring/api-rest-with-spring-boot/add-exceptions-handlers&quot;,&quot;label&quot;:&quot;Ajouter les exceptions handlers&quot;},{&quot;slug&quot;:&quot;/fr/blog/spring/api-rest-with-spring-boot/use-postgresql&quot;,&quot;label&quot;:&quot;Utiliser une base PostgreSQL&quot;},{&quot;slug&quot;:&quot;/fr/blog/spring/api-rest-with-spring-boot/add-swagger&quot;,&quot;label&quot;:&quot;Ajouter Swagger&quot;}]"></app-blog-summary>
       <app-aside-promotion></app-aside-promotion>
     </div>
   </aside>
@@ -147,4 +132,4 @@
 
                 gtag('config', 'G-S6JEVF53JZ');
                 </script>
-            <script src="/assets/scripts/markdown.js"></script></body></html>
+            </body></html>
