@@ -325,7 +325,7 @@ eval("// Module\nvar code = \"<div class=\\\"tool-background-container\\\">\\r\\
   \*****************************************************************/
 /***/ ((module) => {
 
-eval("// Module\nvar code = \"<app-stage></app-stage>\\r\\n<app-section-title value=\\\"Notre Website\\\"></app-section-title>\\r\\n<app-card-list [items]=\\\"pages\\\"></app-card-list>\";\n// Exports\nmodule.exports = code;\n\n//# sourceURL=webpack://learntime.github.io/./src/app/pages/index/components/main/main.component.html?");
+eval("// Module\nvar code = \"<app-stage></app-stage>\\r\\n<app-section-title value=\\\"Notre Services\\\"></app-section-title>\\r\\n<app-card-list [items]=\\\"pages\\\"></app-card-list>\";\n// Exports\nmodule.exports = code;\n\n//# sourceURL=webpack://learntime.github.io/./src/app/pages/index/components/main/main.component.html?");
 
 /***/ }),
 
