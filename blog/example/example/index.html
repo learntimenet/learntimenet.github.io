@@ -50,7 +50,7 @@
                         this.page.identifier = window.location.pathname.replace('/en', '');
                     };
                 </script>
-            <script defer src="/blog/example/example/example.8047a96fbf2a92e3b801.js"></script></head>
+            <script defer src="/blog/example/example/example.11057e7177b4c060c835.js"></script></head>
             <body>
                 <div class="loader">
                     <div class="loading-bar">
@@ -84,16 +84,16 @@
 <p><strong>cheatsheet</strong></p>
 <ul>
 <li>Login into Docker<br/>
-docker login -u &lt;user_name&gt;</li>
+docker login -u <user_name></li>
 <li>Publish an image to Docker Hub<br/>
-docker push &lt;user_name&gt;/&lt;image_name&gt;</li>
+docker push <user_name>/<image_name></li>
 <li>Search Hub for an image<br/>
-docker search &lt;image_name&gt;</li>
+docker search <image_name></li>
 <li>Pull an image from a Docker Hub<br/>
-docker pull &lt;image_name&gt;</li>
+docker pull <image_name></li>
 </ul>
 <h2>Source code</h2>
-<pre><code class="language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">import</span> javax.persistence.Entity;
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">import</span> javax.persistence.Entity;
 <span class="hljs-keyword">import</span> javax.persistence.GeneratedValue;
 <span class="hljs-keyword">import</span> javax.persistence.GenerationType;
 <span class="hljs-keyword">import</span> javax.persistence.Id;
@@ -114,10 +114,9 @@ docker pull &lt;image_name&gt;</li>
 <span class="hljs-meta">@Entity</span>
 <span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Engineer</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">Employee</span> {
     <span class="hljs-comment">// ...</span>
-}
-</code></pre></code></pre>
-<h2>Code Highlights</h2>
-<pre><code class="language-java {: .highlight-line-code-5-8-9-10 }"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">import</span> javax.persistence.Entity;
+}</code></pre>
+</code></pre><h2>Code Highlights</h2>
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">import</span> javax.persistence.Entity;
 <span class="hljs-keyword">import</span> javax.persistence.GeneratedValue;
 <span class="hljs-keyword">import</span> javax.persistence.GenerationType;
 <span class="hljs-keyword">import</span> javax.persistence.Id;
@@ -138,13 +137,12 @@ docker pull &lt;image_name&gt;</li>
 <span class="hljs-meta">@Entity</span>
 <span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Engineer</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">Employee</span> {
     <span class="hljs-comment">// ...</span>
-}
-</code></pre></code></pre>
-<h2>Code tabs</h2>
+}</code></pre>
+</code></pre><h2>Code tabs</h2>
 <p><strong>code-tabs</strong></p>
 <ul>
 <li><p>index.hmlt</p>
-<pre><code class="language-html"><pre class="highlight"><code class="hljs"><span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">autocomplete</span>=<span class="hljs-string">&quot;off&quot;</span>&gt;</span>
+<pre><code class="hljs language-html"><pre class="highlight"><code class="hljs"><span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">autocomplete</span>=<span class="hljs-string">&quot;off&quot;</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;inputs-container&quot;</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;input-container height-container&quot;</span>&gt;</span>
       <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;height&quot;</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">&quot; &quot;</span>&gt;</span>
@@ -158,10 +156,10 @@ docker pull &lt;image_name&gt;</li>
     <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">button</span>&gt;</span>Calculate your BMI<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span>
-</code></pre></code></pre></li>
+<span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span></code></pre>
+</code></pre></li>
 <li><p>style.css</p>
-<pre><code class="language-css"><pre class="highlight"><code class="hljs"><span class="hljs-selector-class">.output</span> {
+<pre><code class="hljs language-css"><pre class="highlight"><code class="hljs"><span class="hljs-selector-class">.output</span> {
   <span class="hljs-attribute">height</span>: <span class="hljs-number">190px</span>;
   <span class="hljs-attribute">display</span>: block;
   <span class="hljs-attribute">overflow</span>: auto;
@@ -176,18 +174,16 @@ docker pull &lt;image_name&gt;</li>
   <span class="hljs-attribute">position</span>: relative;
   <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#eee</span>;
   <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">4px</span>;
-}
-</code></pre></code></pre></li>
+}</code></pre>
+</code></pre></li>
 </ul>
 <h2>Method signature</h2>
 <p><strong>method-signature</strong></p>
-<pre><code class="language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">static</span> &lt;S&gt; ThreadLocal&lt;S&gt; <span class="hljs-title function_">withInitial</span><span class="hljs-params">(Supplier&lt;? extends S&gt; supplier)</span>
-</code></pre></code></pre>
-<p>Creates a local variable for the thread.</p>
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">static</span> &lt;S&gt; ThreadLocal&lt;S&gt; <span class="hljs-title function_">withInitial</span><span class="hljs-params">(Supplier&lt;? extends S&gt; supplier)</span></code></pre>
+</code></pre><p>Creates a local variable for the thread.</p>
 <p><strong>method-signature</strong></p>
-<pre><code class="language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">protected</span> T <span class="hljs-title function_">initialValue</span><span class="hljs-params">()</span>
-</code></pre></code></pre>
-<p>Returns the ‘initial value’ of the current thread for this thread-local variable.</p>
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">protected</span> T <span class="hljs-title function_">initialValue</span><span class="hljs-params">()</span></code></pre>
+</code></pre><p>Returns the ‘initial value’ of the current thread for this thread-local variable.</p>
 <h2>Code Explication</h2>
 <p><strong>code-explication-2</strong></p>
 <p>Deserunt sit ullamco sunt nostrud ad aliqua ut excepteur eu ut velit duis nisi.</p>
@@ -196,12 +192,14 @@ docker pull &lt;image_name&gt;</li>
 <h2>Advantages Disadvantages</h2>
 <p><strong>advantages-disadvantages</strong></p>
 <ul>
-<li>Simple and easy to implement.</li>
-<li>Clear boundaries between services.</li>
-</ul>
-<ul>
-<li>Increased network calls.</li>
-<li>Tight coupling if not designed carefully.</li>
+<li><p>Simple and easy to implement.</p>
+</li>
+<li><p>Clear boundaries between services.</p>
+</li>
+<li><p>Increased network calls.</p>
+</li>
+<li><p>Tight coupling if not designed carefully.</p>
+</li>
 </ul>
 <h2>Alerts</h2>
 <p><strong>alert-info</strong></p>
@@ -215,17 +213,21 @@ docker pull &lt;image_name&gt;</li>
 <p>Incididunt do tempor aliquip reprehenderit deserunt est.</p>
 <h2>Previous Next Sections</h2>
 <p><strong>previous-next-sections</strong></p>
-<p><a href="/" title="Home">Home</a>
-<a href="/" title="Home">Home</a></p>
+<p><a href="/">Home</a>
+<a href="/">Home</a></p>
 <p><strong>previous-section</strong></p>
-<p><a href="/" title="Home">Home</a></p>
+<p><a href="/">Home</a></p>
 <p><strong>next-section</strong></p>
-<p><a href="/" title="Home">Home</a></p>
+<p><a href="/">Home</a></p>
 <h2>Ressources</h2>
 <div class="asset">
   <img src="../../../../assets/blog/calculateur-imc/background.jpg" />
-<p><a href="../../../../assets/blog/calculateur-imc/background.jpg" title="background.jpg" download>background.jpg</a></p>
+
+<p>  <a href="../../../../assets/blog/calculateur-imc/background.jpg" title="download">background.jpg</a></p>
 </div>
+
+
+
 <h2>Conclusion</h2>
 <p>Thank you for reading this. We hope you found this article useful!</p>
 

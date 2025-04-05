@@ -50,7 +50,7 @@
                         this.page.identifier = window.location.pathname.replace('/en', '');
                     };
                 </script>
-            <script defer src="/fr/blog/java/thread-local/thread-local.63102443344a76448363.js"></script></head>
+            <script defer src="/fr/blog/java/thread-local/thread-local.eaa84a6afee1451ff01e.js"></script></head>
             <body>
                 <div class="loader">
                     <div class="loading-bar">
@@ -81,69 +81,59 @@
 <div class="blog-container">
   <div class="markdown section-container">
     <h2>Introduction</h2>
-<p>La classe Java <code>ThreadLocal</code> nous permet de créer des variables qui ne peuvent être lues et écrites que par le même thread. Ainsi, même si deux threads exécutent le même code et que ce code fait référence à la même variable <code>ThreadLocal</code>, les deux threads ne peuvent pas voir les variables <code>ThreadLocal</code> de l'autre, ce qui est un moyen simple de rendre le code sûr pour les threads. Les instances <code>ThreadLocal</code> sont généralement des champs privés statiques dans les classes qui souhaitent associer un état à un thread (par exemple, ID utilisateur, ID de transaction, ...)</p>
-<pre><code class="language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> ThreadLocal&lt;Integer&gt; userIdThreadLocal = <span class="hljs-keyword">new</span> <span class="hljs-title class_">ThreadLocal</span>&lt;&gt;();
-</code></pre></code></pre>
-<p>Ensuite, lorsque nous voulons utiliser cette valeur depuis un thread, il nous suffit d'appeler la méthode <code>get()</code> ou <code>set()</code> de <code>ThreadLocal</code>. On peut imaginer que <code>ThreadLocal</code> stocke les données dans une carte avec le thread comme clé. En conséquence, lorsque nous appelons une méthode <code>get()</code> sur <code>userIdThreadLocal</code>, nous obtenons la valeur pour le thread demandeur :</p>
-<pre><code class="language-java"><pre class="highlight"><code class="hljs">userIdThreadLocal.set(<span class="hljs-number">1</span>);
-<span class="hljs-type">Integer</span> <span class="hljs-variable">user</span> <span class="hljs-operator">=</span> userIdThreadLocal.get();
-</code></pre></code></pre>
-<h2>Méthodes de ThreadLocal</h2>
+<p>La classe Java <code>ThreadLocal</code> nous permet de créer des variables qui ne peuvent être lues et écrites que par le même thread. Ainsi, même si deux threads exécutent le même code et que ce code fait référence à la même variable <code>ThreadLocal</code>, les deux threads ne peuvent pas voir les variables <code>ThreadLocal</code> de l&#39;autre, ce qui est un moyen simple de rendre le code sûr pour les threads. Les instances <code>ThreadLocal</code> sont généralement des champs privés statiques dans les classes qui souhaitent associer un état à un thread (par exemple, ID utilisateur, ID de transaction, ...)</p>
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> ThreadLocal&lt;Integer&gt; userIdThreadLocal = <span class="hljs-keyword">new</span> <span class="hljs-title class_">ThreadLocal</span>&lt;&gt;();</code></pre>
+</code></pre><p>Ensuite, lorsque nous voulons utiliser cette valeur depuis un thread, il nous suffit d&#39;appeler la méthode <code>get()</code> ou <code>set()</code> de <code>ThreadLocal</code>. On peut imaginer que <code>ThreadLocal</code> stocke les données dans une carte avec le thread comme clé. En conséquence, lorsque nous appelons une méthode <code>get()</code> sur <code>userIdThreadLocal</code>, nous obtenons la valeur pour le thread demandeur :</p>
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs">userIdThreadLocal.set(<span class="hljs-number">1</span>);
+<span class="hljs-type">Integer</span> <span class="hljs-variable">user</span> <span class="hljs-operator">=</span> userIdThreadLocal.get();</code></pre>
+</code></pre><h2>Méthodes de ThreadLocal</h2>
 <p><strong>method-signature</strong></p>
-<pre><code class="language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">static</span> &lt;S&gt; ThreadLocal&lt;S&gt; <span class="hljs-title function_">withInitial</span><span class="hljs-params">(Supplier&lt;? extends S&gt; supplier)</span>
-</code></pre></code></pre>
-<p>Crée une variable locale au thread.</p>
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">static</span> &lt;S&gt; ThreadLocal&lt;S&gt; <span class="hljs-title function_">withInitial</span><span class="hljs-params">(Supplier&lt;? extends S&gt; supplier)</span></code></pre>
+</code></pre><p>Crée une variable locale au thread.</p>
 <p><strong>method-signature</strong></p>
-<pre><code class="language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">protected</span> T <span class="hljs-title function_">initialValue</span><span class="hljs-params">()</span>
-</code></pre></code></pre>
-<p>Renvoie la &quot;valeur initiale&quot; du thread actuel pour cette variable locale au thread.</p>
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">protected</span> T <span class="hljs-title function_">initialValue</span><span class="hljs-params">()</span></code></pre>
+</code></pre><p>Renvoie la &quot;valeur initiale&quot; du thread actuel pour cette variable locale au thread.</p>
 <p><strong>method-signature</strong></p>
-<pre><code class="language-java"><pre class="highlight"><code class="hljs">T <span class="hljs-title function_">get</span><span class="hljs-params">()</span>
-</code></pre></code></pre>
-<p>Renvoie la valeur dans la copie de cette variable locale au thread pour le thread actuel.</p>
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs">T <span class="hljs-title function_">get</span><span class="hljs-params">()</span></code></pre>
+</code></pre><p>Renvoie la valeur dans la copie de cette variable locale au thread pour le thread actuel.</p>
 <p><strong>method-signature</strong></p>
-<pre><code class="language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">void</span> <span class="hljs-title function_">remove</span><span class="hljs-params">()</span>
-</code></pre></code></pre>
-<p>Supprime la valeur du thread actuel pour cette variable locale au thread.</p>
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">void</span> <span class="hljs-title function_">remove</span><span class="hljs-params">()</span></code></pre>
+</code></pre><p>Supprime la valeur du thread actuel pour cette variable locale au thread.</p>
 <p><strong>method-signature</strong></p>
-<pre><code class="language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">void</span> <span class="hljs-title function_">set</span><span class="hljs-params">(T value)</span>
-</code></pre></code></pre>
-<p>Définit la copie de cette variable locale au thread pour le thread actuel à la valeur spécifiée.</p>
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">void</span> <span class="hljs-title function_">set</span><span class="hljs-params">(T value)</span></code></pre>
+</code></pre><p>Définit la copie de cette variable locale au thread pour le thread actuel à la valeur spécifiée.</p>
 <h2>Valeur Initiale de ThreadLocal</h2>
 <p>Il est possible de définir une valeur initiale pour un <code>ThreadLocal</code> qui sera renvoyée la première fois que la méthode <code>get()</code> est appelée, même avant que la méthode <code>set()</code> ne soit appelée. Nous avons deux options pour spécifier une valeur initiale pour un <code>ThreadLocal</code> :</p>
 <p><strong>Surcharger la méthode <code>initialValue()</code></strong></p>
 <p>La première façon de spécifier une valeur initiale pour une variable <code>ThreadLocal</code> en Java est de créer une sous-classe de <code>ThreadLocal</code> qui surcharge sa méthode <code>initialValue()</code>. Voici un exemple qui crée une sous-classe anonyme de <code>ThreadLocal</code> qui surcharge la méthode <code>initialValue()</code> :</p>
-<pre><code class="language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">private</span> ThreadLocal&lt;String&gt; threadLocal = <span class="hljs-keyword">new</span> <span class="hljs-title class_">ThreadLocal</span>&lt;String&gt;() {
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">private</span> ThreadLocal&lt;String&gt; threadLocal = <span class="hljs-keyword">new</span> <span class="hljs-title class_">ThreadLocal</span>&lt;String&gt;() {
     <span class="hljs-meta">@Override</span>
     <span class="hljs-keyword">protected</span> String <span class="hljs-title function_">initialValue</span><span class="hljs-params">()</span> {
         <span class="hljs-keyword">return</span> UUID.randomUUID().toString();
     }
-};
-</code></pre></code></pre>
-<p><strong>Fournir une implémentation du <code>Supplier</code></strong></p>
-<p>La deuxième méthode est d'utiliser la méthode de fabrique statique <code>withInitial(Supplier)</code> de <code>ThreadLocal</code> en passant une implémentation de l'interface <code>Supplier</code> en paramètre. Cette implémentation de <code>Supplier</code> fournit la valeur initiale pour le <code>ThreadLocal</code>. Voici un exemple de création d'un <code>ThreadLocal</code> en utilisant sa méthode de fabrique statique <code>withInitial()</code> :</p>
-<pre><code class="language-java"><pre class="highlight"><code class="hljs">ThreadLocal&lt;String&gt; threadLocal = ThreadLocal.withInitial(<span class="hljs-keyword">new</span> <span class="hljs-title class_">Supplier</span>&lt;String&gt;() {
+};</code></pre>
+</code></pre><p><strong>Fournir une implémentation du <code>Supplier</code></strong></p>
+<p>La deuxième méthode est d&#39;utiliser la méthode de fabrique statique <code>withInitial(Supplier)</code> de <code>ThreadLocal</code> en passant une implémentation de l&#39;interface <code>Supplier</code> en paramètre. Cette implémentation de <code>Supplier</code> fournit la valeur initiale pour le <code>ThreadLocal</code>. Voici un exemple de création d&#39;un <code>ThreadLocal</code> en utilisant sa méthode de fabrique statique <code>withInitial()</code> :</p>
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs">ThreadLocal&lt;String&gt; threadLocal = ThreadLocal.withInitial(<span class="hljs-keyword">new</span> <span class="hljs-title class_">Supplier</span>&lt;String&gt;() {
     <span class="hljs-meta">@Override</span>
     <span class="hljs-keyword">public</span> String <span class="hljs-title function_">get</span><span class="hljs-params">()</span> {
         <span class="hljs-keyword">return</span> UUID.randomUUID().toString();
     }
-});
-</code></pre></code></pre>
-<h2>ThreadLocals et Pools de Threads</h2>
-<p>Nous devons être particulièrement prudents lorsque nous utilisons <code>ThreadLocals</code> et pools de threads ensemble. La technique de pool de threads permet de réutiliser les threads pour réduire les frais de création de threads. Chaque tâche qui entre dans le pool s'attend à voir les objets <code>ThreadLocal</code> dans leur état initial, par défaut. Cependant, lorsque les objets <code>ThreadLocal</code> sont modifiés sur un thread qui est ensuite rendu disponible pour réutilisation, la prochaine tâche exécutée sur le thread réutilisé voit l'état des objets <code>ThreadLocal</code> comme modifié par la tâche précédente qui a été exécutée sur ce thread.</p>
-<p>Les programmes doivent s'assurer que chaque tâche exécutée sur un thread d'un pool de threads ne voit que des instances correctement initialisées des objets <code>ThreadLocal</code>. La bonne nouvelle est qu'il est possible d'étendre la classe <code>ThreadPoolExecutor</code> et de fournir une implémentation personnalisée pour les méthodes <code>beforeExecute()</code> et <code>afterExecute()</code>. Nous pouvons donc étendre la classe <code>ThreadPoolExecutor</code> et supprimer la variable <code>ThreadLocal</code> dans la méthode <code>afterExecute()</code> :</p>
-<pre><code class="language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">ThreadLocalAwareThreadPoolExecutor</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">ThreadPoolExecutor</span> {
+});</code></pre>
+</code></pre><h2>ThreadLocals et Pools de Threads</h2>
+<p>Nous devons être particulièrement prudents lorsque nous utilisons <code>ThreadLocals</code> et pools de threads ensemble. La technique de pool de threads permet de réutiliser les threads pour réduire les frais de création de threads. Chaque tâche qui entre dans le pool s&#39;attend à voir les objets <code>ThreadLocal</code> dans leur état initial, par défaut. Cependant, lorsque les objets <code>ThreadLocal</code> sont modifiés sur un thread qui est ensuite rendu disponible pour réutilisation, la prochaine tâche exécutée sur le thread réutilisé voit l&#39;état des objets <code>ThreadLocal</code> comme modifié par la tâche précédente qui a été exécutée sur ce thread.</p>
+<p>Les programmes doivent s&#39;assurer que chaque tâche exécutée sur un thread d&#39;un pool de threads ne voit que des instances correctement initialisées des objets <code>ThreadLocal</code>. La bonne nouvelle est qu&#39;il est possible d&#39;étendre la classe <code>ThreadPoolExecutor</code> et de fournir une implémentation personnalisée pour les méthodes <code>beforeExecute()</code> et <code>afterExecute()</code>. Nous pouvons donc étendre la classe <code>ThreadPoolExecutor</code> et supprimer la variable <code>ThreadLocal</code> dans la méthode <code>afterExecute()</code> :</p>
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">ThreadLocalAwareThreadPoolExecutor</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">ThreadPoolExecutor</span> {
     <span class="hljs-meta">@Override</span>
     <span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">afterExecute</span><span class="hljs-params">(Runnable r, Throwable t)</span> {
         <span class="hljs-comment">// suppression de la variable du thread actuel</span>
     }
-}
-</code></pre></code></pre>
-<h2>InheritableThreadLocal</h2>
-<p>La classe <code>InheritableThreadLocal</code> étend <code>ThreadLocal</code> pour fournir l'héritage des valeurs du thread parent au thread enfant : lorsqu'un thread enfant est créé, il reçoit les valeurs initiales pour toutes les variables locales au thread héritables pour lesquelles le parent a des valeurs. Normalement, les valeurs de l'enfant seront identiques à celles du parent.</p>
-<p>Les variables locales au thread héritables sont utilisées de préférence aux variables locales au thread ordinaires lorsque l'attribut par thread maintenu dans la variable (par exemple, ID utilisateur, ID de transaction, ...) doit être automatiquement transmis à tous les threads enfants qui sont créés. Voici un exemple pour illustrer les avantages de l'utilisation de la classe <code>InheritableThreadLocal</code> :</p>
+}</code></pre>
+</code></pre><h2>InheritableThreadLocal</h2>
+<p>La classe <code>InheritableThreadLocal</code> étend <code>ThreadLocal</code> pour fournir l&#39;héritage des valeurs du thread parent au thread enfant : lorsqu&#39;un thread enfant est créé, il reçoit les valeurs initiales pour toutes les variables locales au thread héritables pour lesquelles le parent a des valeurs. Normalement, les valeurs de l&#39;enfant seront identiques à celles du parent.</p>
+<p>Les variables locales au thread héritables sont utilisées de préférence aux variables locales au thread ordinaires lorsque l&#39;attribut par thread maintenu dans la variable (par exemple, ID utilisateur, ID de transaction, ...) doit être automatiquement transmis à tous les threads enfants qui sont créés. Voici un exemple pour illustrer les avantages de l&#39;utilisation de la classe <code>InheritableThreadLocal</code> :</p>
 <h2>Utilisation de ThreadLocal</h2>
-<pre><code class="language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">class</span> <span class="hljs-title class_">ParentThread</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">Thread</span> {
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">class</span> <span class="hljs-title class_">ParentThread</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">Thread</span> {
     <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> ThreadLocal&lt;String&gt; parentThreadLocal = <span class="hljs-keyword">new</span> <span class="hljs-title class_">ThreadLocal</span>&lt;&gt;();
 
     <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">run</span><span class="hljs-params">()</span> {
@@ -163,15 +153,13 @@
     <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> {
         <span class="hljs-keyword">new</span> <span class="hljs-title class_">ParentThread</span>().start();
     }
-}
-</code></pre></code></pre>
-<p>Exécutez l'exemple ci-dessus et vous obtiendrez le résultat suivant :</p>
+}</code></pre>
+</code></pre><p>Exécutez l&#39;exemple ci-dessus et vous obtiendrez le résultat suivant :</p>
 <p><strong>without-line-numbers</strong></p>
-<pre><code class="language-sh"><pre class="highlight"><code class="hljs">Valeur Parent ThreadLocal: données parent
-Valeur Child ThreadLocal: null
-</code></pre></code></pre>
-<h2>Utilisation de InheritableThreadLocal</h2>
-<pre><code class="language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">class</span> <span class="hljs-title class_">ParentThread</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">Thread</span> {
+<pre><code class="hljs language-sh"><pre class="highlight"><code class="hljs">Valeur Parent ThreadLocal: données parent
+Valeur Child ThreadLocal: null</code></pre>
+</code></pre><h2>Utilisation de InheritableThreadLocal</h2>
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">class</span> <span class="hljs-title class_">ParentThread</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">Thread</span> {
     <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> InheritableThreadLocal&lt;String&gt; parentThreadLocal = <span class="hljs-keyword">new</span> <span class="hljs-title class_">InheritableThreadLocal</span>&lt;&gt;();
 
     <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">run</span><span class="hljs-params">()</span> {
@@ -191,14 +179,12 @@ Valeur Child ThreadLocal: null
     <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> {
         <span class="hljs-keyword">new</span> <span class="hljs-title class_">ParentThread</span>().start();
     }
-}
-</code></pre></code></pre>
-<p>Exécutez l'exemple ci-dessus et vous obtiendrez le résultat suivant :</p>
+}</code></pre>
+</code></pre><p>Exécutez l&#39;exemple ci-dessus et vous obtiendrez le résultat suivant :</p>
 <p><strong>without-line-numbers</strong></p>
-<pre><code class="language-sh"><pre class="highlight"><code class="hljs">Valeur Parent InheritableThreadLocal: données parent
-Valeur Child InheritableThreadLocal: données parent
-</code></pre></code></pre>
-<h2>Conclusion</h2>
+<pre><code class="hljs language-sh"><pre class="highlight"><code class="hljs">Valeur Parent InheritableThreadLocal: données parent
+Valeur Child InheritableThreadLocal: données parent</code></pre>
+</code></pre><h2>Conclusion</h2>
 <p>Merci de votre lecture. Nous espérons que cet article vous a été utile !</p>
 
     <app-comments></app-comments>

@@ -50,7 +50,7 @@
                         this.page.identifier = window.location.pathname.replace('/en', '');
                     };
                 </script>
-            <script defer src="/blog/css/animated-submit-button/animated-submit-button.22c3a0ef88f199c8df48.js"></script></head>
+            <script defer src="/blog/css/animated-submit-button/animated-submit-button.0b069c566626d518fa2b.js"></script></head>
             <body>
                 <div class="loader">
                     <div class="loading-bar">
@@ -81,7 +81,7 @@
 <div class="blog-container">
   <div class="markdown section-container">
     <h2>Introduction</h2>
-<p>In this article, we're going to learn how to create an animated submit button using HTML, CSS and JavaScript. With easy-to-understand source code, you can follow the steps and create your own version.</p>
+<p>In this article, we&#39;re going to learn how to create an animated submit button using HTML, CSS and JavaScript. With easy-to-understand source code, you can follow the steps and create your own version.</p>
 <h2>Demo</h2>
 <style>
   .output {
@@ -161,14 +161,16 @@
     }
   }
 </style>
+
 <div class="output">
   <button>Submit</button>
 </div>
+
 <h2>Code source</h2>
 <p><strong>code-tabs</strong></p>
 <ul>
 <li><p>index.html</p>
-<pre><code class="language-html"><pre class="highlight"><code class="hljs"><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-keyword">html</span>&gt;</span>
+<pre><code class="hljs language-html"><pre class="highlight"><code class="hljs"><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-keyword">html</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;./style.css&quot;</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">&quot;stylesheet&quot;</span>&gt;</span>
@@ -176,10 +178,10 @@
 <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">button</span>&gt;</span>Submit<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;./script.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
-</code></pre></code></pre></li>
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span></code></pre>
+</code></pre></li>
 <li><p>style.css</p>
-<pre><code class="language-css"><pre class="highlight"><code class="hljs"><span class="hljs-selector-tag">button</span> {
+<pre><code class="hljs language-css"><pre class="highlight"><code class="hljs"><span class="hljs-selector-tag">button</span> {
   <span class="hljs-attribute">position</span>: relative;
   <span class="hljs-attribute">font-size</span>: <span class="hljs-number">20px</span>;
   <span class="hljs-attribute">font-weight</span>: <span class="hljs-number">500</span>;
@@ -251,17 +253,17 @@
   <span class="hljs-number">100%</span> {
     <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">translate</span>(-<span class="hljs-number">50%</span>, -<span class="hljs-number">50%</span>) <span class="hljs-built_in">rotate</span>(-<span class="hljs-number">45deg</span>) <span class="hljs-built_in">scale</span>(<span class="hljs-number">1</span>);
   }
-}
-</code></pre></code></pre></li>
+}</code></pre>
+</code></pre></li>
 <li><p>script.js</p>
-<pre><code class="language-js"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">const</span> button = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelector</span>(<span class="hljs-string">&quot;button&quot;</span>);
+<pre><code class="hljs language-js"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">const</span> button = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelector</span>(<span class="hljs-string">&quot;button&quot;</span>);
 button.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">&#x27;click&#x27;</span>, <span class="hljs-function">(<span class="hljs-params">e</span>) =&gt;</span> {
   e.<span class="hljs-property">target</span>.<span class="hljs-property">classList</span>.<span class="hljs-title function_">add</span>(<span class="hljs-string">&#x27;animate&#x27;</span>);
   <span class="hljs-built_in">setTimeout</span>(<span class="hljs-function">() =&gt;</span> {
     e.<span class="hljs-property">target</span>.<span class="hljs-property">classList</span>.<span class="hljs-title function_">remove</span>(<span class="hljs-string">&#x27;animate&#x27;</span>);
   }, <span class="hljs-number">4500</span>);
-});
-</code></pre></code></pre></li>
+});</code></pre>
+</code></pre></li>
 </ul>
 <h2>Conclusion</h2>
 <p>Thank you for reading this. We hope you found this article useful!</p>

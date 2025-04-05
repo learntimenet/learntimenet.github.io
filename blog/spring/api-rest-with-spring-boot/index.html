@@ -50,7 +50,7 @@
                         this.page.identifier = window.location.pathname.replace('/en', '');
                     };
                 </script>
-            <script defer src="/blog/spring/api-rest-with-spring-boot/api-rest-with-spring-boot.65cc9041585560c62531.js"></script></head>
+            <script defer src="/blog/spring/api-rest-with-spring-boot/api-rest-with-spring-boot.cb5934e575f958d798cc.js"></script></head>
             <body>
                 <div class="loader">
                     <div class="loading-bar">
@@ -81,34 +81,40 @@
 <div class="blog-container">
   <div class="markdown section-container">
     <h2>Introduction</h2>
-<p>In this article, we're going to create a REST API using Spring Boot. We'll start by initialising the project, adding the model, repository and controller layers using an H2 database. Finally, we'll add the validation layer and replace the H2 database with a real PostgreSQL database. As a bonus, we're going to add the Swagger documentation 😊</p>
+<p>In this article, we&#39;re going to create a REST API using Spring Boot. We&#39;ll start by initialising the project, adding the model, repository and controller layers using an H2 database. Finally, we&#39;ll add the validation layer and replace the H2 database with a real PostgreSQL database. As a bonus, we&#39;re going to add the Swagger documentation 😊</p>
 <h2>Initializing the Spring Boot project</h2>
 <p>The first step is to initialise our project using the <a href="https://start.spring.io/" target="_blank">start.spring.io</a>.</p>
-<p><img src="../../../../assets/blog/api-rest-with-spring-boot/start.spring.io.png" alt="start.spring.io" title="start.spring.io"></p>
+<p><img src="../../../../assets/blog/api-rest-with-spring-boot/start.spring.io.png" alt="start.spring.io"></p>
 <p>Here is the configuration we used:</p>
-<table>
-<thead>
-<tr><th>Propriété</th><th>Valeur</th></tr>
-</thead>
-<tbody>
-<tr><td><strong>Project</strong></td><td>Maven</td></tr>
-<tr><td><strong>Language</strong></td><td>Java</td></tr>
-<tr><td><strong>Spring Boot</strong></td><td>3.3.4</td></tr>
-<tr><td><strong>Group</strong></td><td>net.learntime</td></tr>
-<tr><td><strong>Artifact</strong></td><td>todo-api</td></tr>
-<tr><td><strong>Name</strong></td><td>Todo API</td></tr>
-<tr><td><strong>Description</strong></td><td>API REST pour une TodoApp</td></tr>
-<tr><td><strong>Package</strong></td><td>net.learntime.todo.api</td></tr>
-<tr><td><strong>Packaging</strong></td><td>Jar</td></tr>
-<tr><td><strong>Java</strong></td><td>21</td></tr>
-<tr><td><strong>Dépendances</strong></td><td>Spring Web, Spring Data JPA, H2 Database, Lombok</td></tr>
-</tbody>
-</table>
-<p>Once finished, click on the <strong>GENERATE</strong> button to download the project and open it in your favourite IDE.</p>
+<table><thead><tr><th>Propriété</th>
+<th>Valeur</th>
+</tr></thead><tbody><tr><td><strong>Project</strong></td>
+<td>Maven</td>
+</tr><tr><td><strong>Language</strong></td>
+<td>Java</td>
+</tr><tr><td><strong>Spring Boot</strong></td>
+<td>3.3.4</td>
+</tr><tr><td><strong>Group</strong></td>
+<td>net.learntime</td>
+</tr><tr><td><strong>Artifact</strong></td>
+<td>todo-api</td>
+</tr><tr><td><strong>Name</strong></td>
+<td>Todo API</td>
+</tr><tr><td><strong>Description</strong></td>
+<td>API REST pour une TodoApp</td>
+</tr><tr><td><strong>Package</strong></td>
+<td>net.learntime.todo.api</td>
+</tr><tr><td><strong>Packaging</strong></td>
+<td>Jar</td>
+</tr><tr><td><strong>Java</strong></td>
+<td>21</td>
+</tr><tr><td><strong>Dépendances</strong></td>
+<td>Spring Web, Spring Data JPA, H2 Database, Lombok</td>
+</tr></tbody></table><p>Once finished, click on the <strong>GENERATE</strong> button to download the project and open it in your favourite IDE.</p>
 <h2>Conclusion</h2>
-<p>In this introduction, we've initialized our project using <a href="https://start.spring.io/" target="_blank">start.spring.io</a> and in the next section, we'll dive into the first version of the project, where we'll set up the <code>Todo</code> entity, repositories and controllers needed to manage our Todo tasks.</p>
+<p>In this introduction, we&#39;ve initialized our project using <a href="https://start.spring.io/" target="_blank">start.spring.io</a> and in the next section, we&#39;ll dive into the first version of the project, where we&#39;ll set up the <code>Todo</code> entity, repositories and controllers needed to manage our Todo tasks.</p>
 <p><strong>next-section</strong></p>
-<p><a href="/blog/spring/api-rest-with-spring-boot/first-version" title="Première version du projet">Première version du projet</a></p>
+<p><a href="/blog/spring/api-rest-with-spring-boot/first-version">Première version du projet</a></p>
 
     <app-comments></app-comments>
   </div>

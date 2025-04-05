@@ -50,7 +50,7 @@
                         this.page.identifier = window.location.pathname.replace('/en', '');
                     };
                 </script>
-            <script defer src="/blog/microservices/saga-pattern/saga-pattern.3dcd83e1ce7afc5ae8ee.js"></script></head>
+            <script defer src="/blog/microservices/saga-pattern/saga-pattern.05125936913c3c7495ee.js"></script></head>
             <body>
                 <div class="loader">
                     <div class="loading-bar">
@@ -112,7 +112,7 @@
 <p>In a choreography-based Saga, each service publishes events that trigger actions in other services. Here’s how it works for our e-commerce example:</p>
 <h3>Step 1: Order Service</h3>
 <p>The <code>OrderService</code> creates an order and publishes an <code>OrderCreated</code> event.</p>
-<pre><code class="language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">OrderService</span> {
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">OrderService</span> {
     <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">createOrder</span><span class="hljs-params">(Order order)</span> {
         <span class="hljs-comment">// Save order to the database</span>
         orderRepository.save(order);
@@ -120,11 +120,10 @@
         <span class="hljs-comment">// Publish OrderCreated event</span>
         eventBus.publish(<span class="hljs-keyword">new</span> <span class="hljs-title class_">OrderCreatedEvent</span>(order.getId(), order.getItems()));
     }
-}
-</code></pre></code></pre>
-<h3>Step 2: Inventory Service</h3>
+}</code></pre>
+</code></pre><h3>Step 2: Inventory Service</h3>
 <p>The <code>InventoryService</code> listens to the <code>OrderCreated</code> event and reserves the items.</p>
-<pre><code class="language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">InventoryService</span> {
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">InventoryService</span> {
     <span class="hljs-meta">@EventListener</span>
     <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">handleOrderCreated</span><span class="hljs-params">(OrderCreatedEvent event)</span> {
         <span class="hljs-keyword">try</span> {
@@ -138,11 +137,10 @@
             eventBus.publish(<span class="hljs-keyword">new</span> <span class="hljs-title class_">InventoryReservationFailedEvent</span>(event.getOrderId()));
         }
     }
-}
-</code></pre></code></pre>
-<h3>Step 3: Payment Service</h3>
+}</code></pre>
+</code></pre><h3>Step 3: Payment Service</h3>
 <p>The <code>PaymentService</code> listens to the <code>InventoryReserved</code> event and processes the payment.</p>
-<pre><code class="language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">PaymentService</span> {
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">PaymentService</span> {
     <span class="hljs-meta">@EventListener</span>
     <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">handleInventoryReserved</span><span class="hljs-params">(InventoryReservedEvent event)</span> {
         <span class="hljs-keyword">try</span> {
@@ -156,11 +154,10 @@
             eventBus.publish(<span class="hljs-keyword">new</span> <span class="hljs-title class_">PaymentFailedEvent</span>(event.getOrderId()));
         }
     }
-}
-</code></pre></code></pre>
-<h3>Step 4: Shipping Service</h3>
+}</code></pre>
+</code></pre><h3>Step 4: Shipping Service</h3>
 <p>The <code>ShippingService</code> listens to the <code>PaymentProcessed</code> event and schedules the shipment.</p>
-<pre><code class="language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">ShippingService</span> {
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">ShippingService</span> {
     <span class="hljs-meta">@EventListener</span>
     <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">handlePaymentProcessed</span><span class="hljs-params">(PaymentProcessedEvent event)</span> {
         <span class="hljs-keyword">try</span> {
@@ -174,23 +171,21 @@
             eventBus.publish(<span class="hljs-keyword">new</span> <span class="hljs-title class_">ShipmentFailedEvent</span>(event.getOrderId()));
         }
     }
-}
-</code></pre></code></pre>
-<h3>Compensating Actions</h3>
+}</code></pre>
+</code></pre><h3>Compensating Actions</h3>
 <p>If any step fails, compensating actions are triggered. For example, if the payment fails, the <code>InventoryService</code> releases the reserved items.</p>
-<pre><code class="language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">InventoryService</span> {
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">InventoryService</span> {
     <span class="hljs-meta">@EventListener</span>
     <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">handlePaymentFailed</span><span class="hljs-params">(PaymentFailedEvent event)</span> {
         <span class="hljs-comment">// Release reserved items</span>
         inventoryRepository.releaseItems(event.getOrderId());
     }
-}
-</code></pre></code></pre>
-<h2>Orchestration-Based Saga Example</h2>
+}</code></pre>
+</code></pre><h2>Orchestration-Based Saga Example</h2>
 <p>In an orchestration-based Saga, a central orchestrator manages the flow of the transaction. Here’s how it works for our e-commerce example:</p>
 <h3>Step 1: Orchestrator</h3>
 <p>The <code>OrderOrchestrator</code> coordinates the order processing.</p>
-<pre><code class="language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">OrderOrchestrator</span> {
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">OrderOrchestrator</span> {
     <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">processOrder</span><span class="hljs-params">(Order order)</span> {
         <span class="hljs-keyword">try</span> {
             <span class="hljs-comment">// Step 1: Create order</span>
@@ -217,11 +212,10 @@
         inventoryService.releaseItems(orderId);
         orderService.cancelOrder(orderId);
     }
-}
-</code></pre></code></pre>
-<h3>Step 2: Services</h3>
+}</code></pre>
+</code></pre><h3>Step 2: Services</h3>
 <p>Each service exposes methods that are called by the orchestrator.</p>
-<pre><code class="language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">OrderService</span> {
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">OrderService</span> {
     <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">createOrder</span><span class="hljs-params">(Order order)</span> {
         <span class="hljs-comment">// Save order to the database</span>
         orderRepository.save(order);
@@ -267,9 +261,8 @@
         <span class="hljs-comment">// Cancel shipment</span>
         shippingRepository.cancelShipment(orderId);
     }
-}
-</code></pre></code></pre>
-<h2>Pros and Cons of the Saga Pattern</h2>
+}</code></pre>
+</code></pre><h2>Pros and Cons of the Saga Pattern</h2>
 <p>Pros:</p>
 <ul>
 <li>Scalability: Works well in distributed systems.</li>

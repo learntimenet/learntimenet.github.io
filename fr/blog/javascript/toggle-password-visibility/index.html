@@ -50,7 +50,7 @@
                         this.page.identifier = window.location.pathname.replace('/en', '');
                     };
                 </script>
-            <script defer src="/fr/blog/javascript/toggle-password-visibility/toggle-password-visibility.121edab28eb744fc3437.js"></script></head>
+            <script defer src="/fr/blog/javascript/toggle-password-visibility/toggle-password-visibility.34efe2d8b856eee0f1d5.js"></script></head>
             <body>
                 <div class="loader">
                     <div class="loading-bar">
@@ -158,18 +158,19 @@
     showIcon.style.display = 'initial';
   });
 </script>
+
 <h2>Code source</h2>
 <p><strong>code-tabs</strong></p>
 <ul>
 <li><p>index.html</p>
-<pre><code class="language-html"><pre class="highlight"><code class="hljs"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;input-container&quot;</span>&gt;</span>
+<pre><code class="hljs language-html"><pre class="highlight"><code class="hljs"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;input-container&quot;</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;password&quot;</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">&quot;Password&quot;</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">iconify-icon</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;icon show-icon&quot;</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">&quot;zondicons:view-show&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">iconify-icon</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">iconify-icon</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;icon hide-icon&quot;</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">&quot;mdi:hide&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">iconify-icon</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-</code></pre></code></pre></li>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+</code></pre></li>
 <li><p>style.css</p>
-<pre><code class="language-css"><pre class="highlight"><code class="hljs"><span class="hljs-selector-class">.input-container</span> {
+<pre><code class="hljs language-css"><pre class="highlight"><code class="hljs"><span class="hljs-selector-class">.input-container</span> {
   <span class="hljs-attribute">position</span>: relative;
   <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#1f222b</span>;
   <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">4px</span>;
@@ -206,11 +207,10 @@
 }
 <span class="hljs-selector-class">.hide-icon</span> {
   <span class="hljs-attribute">display</span>: none;
-}
-
-</code></pre></code></pre></li>
+}</code></pre>
+</code></pre></li>
 <li><p>script.js</p>
-<pre><code class="language-js"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">const</span> input = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelector</span>(<span class="hljs-string">&#x27;input&#x27;</span>);
+<pre><code class="hljs language-js"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">const</span> input = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelector</span>(<span class="hljs-string">&#x27;input&#x27;</span>);
 <span class="hljs-keyword">const</span> showIcon = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelector</span>(<span class="hljs-string">&#x27;.show-icon&#x27;</span>);
 <span class="hljs-keyword">const</span> hideIcon = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelector</span>(<span class="hljs-string">&#x27;.hide-icon&#x27;</span>);
 <span class="hljs-keyword">const</span> <span class="hljs-title function_">toggleInput</span> = (<span class="hljs-params"></span>) =&gt; {
@@ -229,9 +229,8 @@ hideIcon.<span class="hljs-title function_">addEventListener</span>(<span class=
   <span class="hljs-title function_">toggleInput</span>();
   hideIcon.<span class="hljs-property">style</span>.<span class="hljs-property">display</span> = <span class="hljs-string">&#x27;none&#x27;</span>;
   showIcon.<span class="hljs-property">style</span>.<span class="hljs-property">display</span> = <span class="hljs-string">&#x27;initial&#x27;</span>;
-});
-
-</code></pre></code></pre></li>
+});</code></pre>
+</code></pre></li>
 </ul>
 <h2>Conclusion</h2>
 <p>Merci de votre lecture. Nous espérons que cet article vous a été utile !</p>

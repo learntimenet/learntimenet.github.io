@@ -50,7 +50,7 @@
                         this.page.identifier = window.location.pathname.replace('/en', '');
                     };
                 </script>
-            <script defer src="/blog/clean-code/understanding-solid-principles-in-software-development/understanding-solid-principles-in-software-development.23ae4905a997a0b1edd8.js"></script></head>
+            <script defer src="/blog/clean-code/understanding-solid-principles-in-software-development/understanding-solid-principles-in-software-development.ee562643fa5fe0fb87e8.js"></script></head>
             <body>
                 <div class="loader">
                     <div class="loading-bar">
@@ -102,7 +102,7 @@
 <li>Reduces the risk of unintended side effects when making changes.</li>
 </ul>
 <h3>Example that violates SRP Principle</h3>
-<pre><code class="language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Report</span> {
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Report</span> {
     <span class="hljs-keyword">public</span> String <span class="hljs-title function_">generateReport</span><span class="hljs-params">()</span> {
         <span class="hljs-comment">// Logic to generate report</span>
     }
@@ -110,12 +110,11 @@
     <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">saveToFile</span><span class="hljs-params">(String filePath)</span> {
         <span class="hljs-comment">// Logic to save report to file</span>
     }
-}
-</code></pre></code></pre>
-<p><strong>alert-error</strong></p>
+}</code></pre>
+</code></pre><p><strong>alert-error</strong></p>
 <p><strong>Why It’s Bad</strong>: The <code>Report</code> class has two responsibilities: generating a report and saving it to a file. If the logic for saving files changes, the <code>Report</code> class will need to be modified, even if the report generation logic remains the same. This violates SRP.</p>
 <h3>Example that follows SRP Principle</h3>
-<pre><code class="language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Report</span> {
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Report</span> {
     <span class="hljs-keyword">public</span> String <span class="hljs-title function_">generateReport</span><span class="hljs-params">()</span> {
         <span class="hljs-comment">// Logic to generate report</span>
     }
@@ -125,9 +124,8 @@
     <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">saveToFile</span><span class="hljs-params">(Report report, String filePath)</span> {
         <span class="hljs-comment">// Logic to save report to file</span>
     }
-}
-</code></pre></code></pre>
-<p><strong>alert-info</strong></p>
+}</code></pre>
+</code></pre><p><strong>alert-info</strong></p>
 <p><strong>Why It’s Good</strong>: The responsibilities are separated into two classes. The Report class handles report generation, and the ReportSaver class handles saving the report. This makes the code easier to maintain and modify.</p>
 <h2>2. Open/Closed Principle (OCP)</h2>
 <h3>Definition</h3>
@@ -138,7 +136,7 @@
 <li>Reduces the risk of introducing bugs in already-tested code.</li>
 </ul>
 <h3>Example that violates OCP Principle</h3>
-<pre><code class="language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Rectangle</span> {
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Rectangle</span> {
     <span class="hljs-keyword">public</span> <span class="hljs-type">double</span> width;
     <span class="hljs-keyword">public</span> <span class="hljs-type">double</span> height;
 }
@@ -151,12 +149,11 @@
         }
         <span class="hljs-comment">// Adding a new shape requires modifying this method</span>
     }
-}
-</code></pre></code></pre>
-<p><strong>alert-error</strong></p>
+}</code></pre>
+</code></pre><p><strong>alert-error</strong></p>
 <p><strong>Why It’s Bad</strong>: The <code>AreaCalculator</code> class is not closed for modification. If you want to add support for a new shape (e.g., a circle), you must modify the <code>calculateArea</code> method. This violates OCP</p>
 <h3>Example that follows OCP Principle</h3>
-<pre><code class="language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">interface</span> <span class="hljs-title class_">Shape</span> {
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">interface</span> <span class="hljs-title class_">Shape</span> {
     <span class="hljs-type">double</span> <span class="hljs-title function_">calculateArea</span><span class="hljs-params">()</span>;
 }
 
@@ -177,9 +174,8 @@
     <span class="hljs-keyword">public</span> <span class="hljs-type">double</span> <span class="hljs-title function_">calculateArea</span><span class="hljs-params">()</span> {
         <span class="hljs-keyword">return</span> Math.PI * radius * radius;
     }
-}
-</code></pre></code></pre>
-<p><strong>alert-info</strong></p>
+}</code></pre>
+</code></pre><p><strong>alert-info</strong></p>
 <p><strong>Why It’s Good</strong>: The <code>Shape</code> interface allows you to add new shapes (e.g., <code>Circle</code>) without modifying the existing <code>AreaCalculator</code> logic. This makes the system open for extension but closed for modification.</p>
 <h2>3. Liskov Substitution Principle (LSP)</h2>
 <h3>Definition</h3>
@@ -190,7 +186,7 @@
 <li>Promotes polymorphism and code reuse.</li>
 </ul>
 <h3>Example that violates LSP Principle</h3>
-<pre><code class="language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Bird</span> {
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Bird</span> {
     <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">fly</span><span class="hljs-params">()</span> {
         <span class="hljs-comment">// Logic to fly</span>
     }
@@ -201,12 +197,11 @@
     <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">fly</span><span class="hljs-params">()</span> {
         <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">UnsupportedOperationException</span>(<span class="hljs-string">&quot;Ostriches can&#x27;t fly!&quot;</span>);
     }
-}
-</code></pre></code></pre>
-<p><strong>alert-error</strong></p>
+}</code></pre>
+</code></pre><p><strong>alert-error</strong></p>
 <p><strong>Why It’s Bad</strong>: The <code>Ostrich</code> class violates LSP because it changes the behavior of the <code>fly</code> method. If you substitute a <code>Bird</code> object with an <code>Ostrich</code>, the program will break because ostriches can’t fly.</p>
 <h3>Example that follows LSP Principle</h3>
-<pre><code class="language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">interface</span> <span class="hljs-title class_">Flyable</span> {
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">interface</span> <span class="hljs-title class_">Flyable</span> {
     <span class="hljs-keyword">void</span> <span class="hljs-title function_">fly</span><span class="hljs-params">()</span>;
 }
 
@@ -219,9 +214,8 @@
 
 <span class="hljs-keyword">class</span> <span class="hljs-title class_">Ostrich</span> {
     <span class="hljs-comment">// Ostrich doesn&#x27;t implement Flyable</span>
-}
-</code></pre></code></pre>
-<p><strong>alert-info</strong></p>
+}</code></pre>
+</code></pre><p><strong>alert-info</strong></p>
 <p><strong>Why It’s Good</strong>: The <code>Flyable</code> interface ensures that only birds that can fly implement the <code>fly</code> method. The <code>Ostrich</code> class doesn’t implement <code>Flyable</code>, so it doesn’t violate LSP.</p>
 <h2>4. Interface Segregation Principle (ISP)</h2>
 <h3>Definition</h3>
@@ -232,7 +226,7 @@
 <li>Prevents classes from being burdened with unnecessary methods.</li>
 </ul>
 <h3>Example that violates ISP Principle</h3>
-<pre><code class="language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">interface</span> <span class="hljs-title class_">Worker</span> {
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">interface</span> <span class="hljs-title class_">Worker</span> {
     <span class="hljs-keyword">void</span> <span class="hljs-title function_">work</span><span class="hljs-params">()</span>;
     <span class="hljs-keyword">void</span> <span class="hljs-title function_">eat</span><span class="hljs-params">()</span>;
 }
@@ -247,12 +241,11 @@
     <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">eat</span><span class="hljs-params">()</span> {
         <span class="hljs-comment">// Logic to eat</span>
     }
-}
-</code></pre></code></pre>
-<p><strong>alert-error</strong></p>
+}</code></pre>
+</code></pre><p><strong>alert-error</strong></p>
 <p><strong>Why It’s Bad</strong>: The <code>Worker</code> interface forces the <code>Engineer</code> class to implement the <code>eat</code> method, even if it doesn’t need it. This violates ISP.</p>
 <h3>Example that follows ISP Principle</h3>
-<pre><code class="language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">interface</span> <span class="hljs-title class_">Workable</span> {
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">interface</span> <span class="hljs-title class_">Workable</span> {
     <span class="hljs-keyword">void</span> <span class="hljs-title function_">work</span><span class="hljs-params">()</span>;
 }
 
@@ -265,9 +258,8 @@
     <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">work</span><span class="hljs-params">()</span> {
         <span class="hljs-comment">// Logic to work</span>
     }
-}
-</code></pre></code></pre>
-<p><strong>alert-info</strong></p>
+}</code></pre>
+</code></pre><p><strong>alert-info</strong></p>
 <p><strong>Why It’s Good</strong>: The <code>Workable</code> and <code>Eatable</code> interfaces are small and focused. The <code>Engineer</code> class only implements the <code>Workable</code> interface, so it’s not forced to implement unnecessary methods.</p>
 <h2>5. Dependency Inversion Principle (DIP)</h2>
 <h3>Definition</h3>
@@ -278,7 +270,7 @@
 <li>Makes the system more modular and easier to test.</li>
 </ul>
 <h3>Example that violates DIP Principle</h3>
-<pre><code class="language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">class</span> <span class="hljs-title class_">LightBulb</span> {
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">class</span> <span class="hljs-title class_">LightBulb</span> {
     <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">turnOn</span><span class="hljs-params">()</span> {
         <span class="hljs-comment">// Logic to turn on</span>
     }
@@ -294,12 +286,11 @@
     <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">operate</span><span class="hljs-params">()</span> {
         bulb.turnOn();
     }
-}
-</code></pre></code></pre>
-<p><strong>alert-error</strong></p>
+}</code></pre>
+</code></pre><p><strong>alert-error</strong></p>
 <p><strong>Why It’s Bad</strong>: The <code>Switch</code> class depends directly on the <code>LightBulb</code> class (a low-level module). If you want to replace the <code>LightBulb</code> with another device (e.g., a fan), you’ll need to modify the <code>Switch</code> class.</p>
 <h3>Example that follows DIP Principle</h3>
-<pre><code class="language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">interface</span> <span class="hljs-title class_">Switchable</span> {
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">interface</span> <span class="hljs-title class_">Switchable</span> {
     <span class="hljs-keyword">void</span> <span class="hljs-title function_">turnOn</span><span class="hljs-params">()</span>;
 }
 
@@ -320,9 +311,8 @@
     <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">operate</span><span class="hljs-params">()</span> {
         device.turnOn();
     }
-}
-</code></pre></code></pre>
-<p><strong>alert-info</strong></p>
+}</code></pre>
+</code></pre><p><strong>alert-info</strong></p>
 <p><strong>Why It’s Good</strong>: The <code>Switch</code> class depends on the <code>Switchable</code> interface (an abstraction), not on a specific implementation like <code>LightBulb</code>. This allows you to easily switch between different devices without modifying the <code>Switch</code> class.</p>
 <h2>Conclusion</h2>
 <p>The SOLID principles are essential guidelines for designing robust, maintainable, and scalable software systems. By applying these principles, you can create code that is easier to understand, extend, and maintain. Whether you’re a beginner or an experienced developer, mastering SOLID principles will significantly improve your software design skills.</p>

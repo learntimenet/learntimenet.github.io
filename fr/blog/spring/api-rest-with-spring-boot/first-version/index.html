@@ -50,7 +50,7 @@
                         this.page.identifier = window.location.pathname.replace('/en', '');
                     };
                 </script>
-            <script defer src="/fr/blog/spring/api-rest-with-spring-boot/first-version/first-version.39a223f68fc72ad5e41d.js"></script></head>
+            <script defer src="/fr/blog/spring/api-rest-with-spring-boot/first-version/first-version.5e6934ffce9849517fdf.js"></script></head>
             <body>
                 <div class="loader">
                     <div class="loading-bar">
@@ -81,8 +81,8 @@
 <div class="blog-container">
   <div class="markdown section-container">
     <h2>Première version du projet</h2>
-<p>Dans cette première version, nous allons créer le package <code>model</code> dans lequel nous allons créer l'entité <code>Todo</code> qui va représenter notre tâche Todo :</p>
-<pre><code class="language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">package</span> net.learntime.todo.api.model;
+<p>Dans cette première version, nous allons créer le package <code>model</code> dans lequel nous allons créer l&#39;entité <code>Todo</code> qui va représenter notre tâche Todo :</p>
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">package</span> net.learntime.todo.api.model;
 
 <span class="hljs-keyword">import</span> jakarta.persistence.*;
 <span class="hljs-keyword">import</span> lombok.Getter;
@@ -100,17 +100,16 @@
     <span class="hljs-keyword">private</span> String title;
     <span class="hljs-keyword">private</span> String description;
     <span class="hljs-keyword">private</span> Boolean completed;
-}
-</code></pre></code></pre>
-<p><strong>code-explication-1</strong></p>
+}</code></pre>
+</code></pre><p><strong>code-explication-1</strong></p>
 <ul>
-<li><code>@Entity</code> : Indique que la classe est une entité JPA (Java Persistence API), ce qui signifie qu'elle est mappée à une table de base de données.</li>
-<li><code>@Getter</code> et <code>@Setter</code> : Annotations de Lombok qui génèrent automatiquement les méthodes get et set pour tous les champs de la classe, simplifiant le code et évitant l'écriture manuelle de ces méthodes.</li>
-<li><code>@Id</code> : Spécifie que l'attribut id est la clé primaire de l'entité.</li>
-<li><code>@GeneratedValue</code> : Indique que la valeur de id est générée automatiquement par la base de données, en utilisant une stratégie d'auto-incrémentation.</li>
+<li><code>@Entity</code> : Indique que la classe est une entité JPA (Java Persistence API), ce qui signifie qu&#39;elle est mappée à une table de base de données.</li>
+<li><code>@Getter</code> et <code>@Setter</code> : Annotations de Lombok qui génèrent automatiquement les méthodes get et set pour tous les champs de la classe, simplifiant le code et évitant l&#39;écriture manuelle de ces méthodes.</li>
+<li><code>@Id</code> : Spécifie que l&#39;attribut id est la clé primaire de l&#39;entité.</li>
+<li><code>@GeneratedValue</code> : Indique que la valeur de id est générée automatiquement par la base de données, en utilisant une stratégie d&#39;auto-incrémentation.</li>
 </ul>
-<p>Après, nous allons créer le package <code>repository</code> dans lequel nous allons créer le repository <code>TodoRepository</code> qui va nous permettre d'enregistrer, récupérer, modifier et supprimer une Todo dans la base de données.</p>
-<pre><code class="language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">package</span> net.learntime.todo.api.repository;
+<p>Après, nous allons créer le package <code>repository</code> dans lequel nous allons créer le repository <code>TodoRepository</code> qui va nous permettre d&#39;enregistrer, récupérer, modifier et supprimer une Todo dans la base de données.</p>
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">package</span> net.learntime.todo.api.repository;
 
 <span class="hljs-keyword">import</span> net.learntime.todo.api.model.Todo;
 <span class="hljs-keyword">import</span> org.springframework.data.jpa.repository.JpaRepository;
@@ -119,20 +118,18 @@
 <span class="hljs-meta">@Repository</span>
 <span class="hljs-keyword">public</span> <span class="hljs-keyword">interface</span> <span class="hljs-title class_">ITodoRepository</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">JpaRepository</span>&lt;Todo, Long&gt; {
 
-}
-</code></pre></code></pre>
-<p><strong>code-explication-1</strong></p>
-<p>Il s'agit d'une interface Java qui étend l'interface <code>JpaRepository</code> qui fournit un ensemble complet de méthodes pour manipuler les entités comme <code>save()</code>, <code>findAll()</code>, <code>findById()</code>, <code>delete()</code>, etc.</p>
-<p>Ensuite, nous allons créer le package <code>exception</code> dans lequel nous allons créer l'exception <code>TodoNotFoundException</code>. Cette exception sera levée lorsqu'une tâche Todo ne sera pas trouvée avec l'id fourni en paramètre</p>
-<pre><code class="language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">package</span> net.learntime.todo.api.exception;
+}</code></pre>
+</code></pre><p><strong>code-explication-1</strong></p>
+<p>Il s&#39;agit d&#39;une interface Java qui étend l&#39;interface <code>JpaRepository</code> qui fournit un ensemble complet de méthodes pour manipuler les entités comme <code>save()</code>, <code>findAll()</code>, <code>findById()</code>, <code>delete()</code>, etc.</p>
+<p>Ensuite, nous allons créer le package <code>exception</code> dans lequel nous allons créer l&#39;exception <code>TodoNotFoundException</code>. Cette exception sera levée lorsqu&#39;une tâche Todo ne sera pas trouvée avec l&#39;id fourni en paramètre</p>
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">package</span> net.learntime.todo.api.exception;
 
 <span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">TodoNotFoundException</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">RuntimeException</span> {
     <span class="hljs-keyword">public</span> <span class="hljs-title function_">TodoNotFoundException</span><span class="hljs-params">(Long id)</span> {
         <span class="hljs-built_in">super</span>(<span class="hljs-string">&quot;Todo with id %s does not exist&quot;</span>.formatted(id));
     }
-}
-</code></pre></code></pre>
-<p>Enfin, nous allons créer le package <code>controller</code> dans lequel nous allons créer notre controller REST <code>TodoController</code> pour implémenter nos API :</p>
+}</code></pre>
+</code></pre><p>Enfin, nous allons créer le package <code>controller</code> dans lequel nous allons créer notre controller REST <code>TodoController</code> pour implémenter nos API :</p>
 <ul>
 <li><code>GET /todos</code> pour récupérer toutes les tâches Todos</li>
 <li><code>GET /todos/{id}</code> pour récupérer une tâche Todo à partir de son id</li>
@@ -140,7 +137,7 @@
 <li><code>PUT /todo/{id}</code> pour mettre à jour une tâche Todo à partir de son id</li>
 <li><code>DELETE /todo/{id}</code> pour supprimer une tâche Todo à partir de son id</li>
 </ul>
-<pre><code class="language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">package</span> net.learntime.todo.api.controller;
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">package</span> net.learntime.todo.api.controller;
 
 <span class="hljs-keyword">import</span> net.learntime.todo.api.exception.TodoNotFoundException;
 <span class="hljs-keyword">import</span> net.learntime.todo.api.model.Todo;
@@ -188,23 +185,22 @@
    }
 
 }
-
-</code></pre></code></pre>
-<p><strong>code-explication-1</strong></p>
+</code></pre>
+</code></pre><p><strong>code-explication-1</strong></p>
 <ul>
 <li><code>@RestController</code> : Déclare la classe comme un contrôleur REST pour gérer des requêtes HTTP.</li>
 <li><code>@RequestMapping</code> : Définit le chemin de base pour tous les endpoints de ce contrôleur.</li>
 <li><code>@GetMapping</code> : Gère les requêtes <strong>GET</strong> pour récupérer toutes les tâches Todo. Utilise repository.findAll() pour renvoyer la liste complète des tâches.</li>
-<li><code>@GetMapping(&quot;{id}&quot;)</code> : Gère les requêtes <strong>GET</strong> pour récupérer une tâche Todo par son ID. Si l'ID n'est pas trouvé, une exception TodoNotFoundException est levée.</li>
+<li><code>@GetMapping(&quot;{id}&quot;)</code> : Gère les requêtes <strong>GET</strong> pour récupérer une tâche Todo par son ID. Si l&#39;ID n&#39;est pas trouvé, une exception TodoNotFoundException est levée.</li>
 <li><code>@PostMapping</code> : Gère les requêtes <strong>POST</strong> pour créer une nouvelle tâche Todo. La tâche reçue dans le corps de la requête est sauvegardée via repository.save(todo).</li>
-<li><code>@PutMapping(&quot;{id}&quot;)</code> : Gère les requêtes <strong>PUT</strong> pour mettre à jour une tâche existante en fonction de son ID. Si l'ID n'existe pas, l'exception TodoNotFoundException est levée. Les attributs de la tâche sont mis à jour avant d'être sauvegardés.</li>
+<li><code>@PutMapping(&quot;{id}&quot;)</code> : Gère les requêtes <strong>PUT</strong> pour mettre à jour une tâche existante en fonction de son ID. Si l&#39;ID n&#39;existe pas, l&#39;exception TodoNotFoundException est levée. Les attributs de la tâche sont mis à jour avant d&#39;être sauvegardés.</li>
 <li><code>@DeleteMapping(&quot;{id}&quot;)</code> : Gère les requêtes <strong>DELETE</strong> pour supprimer une tâche Todo par son ID en utilisant repository.deleteById(id).</li>
 </ul>
 <h2>Conclusion</h2>
 <p>Dans cette première version de notre projet, nous avons construit une API REST basique pour gérer des tâches Todo et dans la <strong>prochaine section</strong>, nous allons <strong>tester notre API REST avec Postman</strong>, ce qui nous permettra de vérifier le bon fonctionnement de nos endpoints.</p>
 <p><strong>previous-next-sections</strong></p>
-<p><a href="/fr/blog/spring/api-rest-with-spring-boot" title="Initialiser le projet Spring Boot">Initialiser le projet Spring Boot</a>
-<a href="/fr/blog/spring/api-rest-with-spring-boot/test-our-api-rest" title="Initialiser le projet Spring Boot">Tester notre API REST</a></p>
+<p><a href="/fr/blog/spring/api-rest-with-spring-boot">Initialiser le projet Spring Boot</a>
+<a href="/fr/blog/spring/api-rest-with-spring-boot/test-our-api-rest">Tester notre API REST</a></p>
 
     <app-comments></app-comments>
   </div>

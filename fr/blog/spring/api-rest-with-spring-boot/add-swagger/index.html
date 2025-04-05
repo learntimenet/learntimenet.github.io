@@ -50,7 +50,7 @@
                         this.page.identifier = window.location.pathname.replace('/en', '');
                     };
                 </script>
-            <script defer src="/fr/blog/spring/api-rest-with-spring-boot/add-swagger/add-swagger.2e76bd2c1175e965b900.js"></script></head>
+            <script defer src="/fr/blog/spring/api-rest-with-spring-boot/add-swagger/add-swagger.2ee9fbfc85e0607e576c.js"></script></head>
             <body>
                 <div class="loader">
                     <div class="loading-bar">
@@ -81,23 +81,21 @@
 <div class="blog-container">
   <div class="markdown section-container">
     <h2>Ajouter Swagger</h2>
-<p>Dans cette section, nous allons intégrer Swagger à notre API REST pour faciliter la documentation et la découverte des endpoints. Swagger offre une interface interactive qui permet de visualiser et de tester notre API directement à partir d'un navigateur.</p>
+<p>Dans cette section, nous allons intégrer Swagger à notre API REST pour faciliter la documentation et la découverte des endpoints. Swagger offre une interface interactive qui permet de visualiser et de tester notre API directement à partir d&#39;un navigateur.</p>
 <h2>Étape 1 : Ajouter les dépendances Swagger</h2>
 <p>Pour commencer, nous devons ajouter les dépendances nécessaires à Swagger dans notre fichier <code>pom.xml</code>. Ajoutons la dépendance suivante :</p>
-<pre><code class="language-xml"><pre class="highlight"><code class="hljs"><span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span>
+<pre><code class="hljs language-xml"><pre class="highlight"><code class="hljs"><span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.springdoc<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>springdoc-openapi-starter-webmvc-ui<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>2.0.2<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span>
-</code></pre></code></pre>
-<h2>Étape 2 : Accéder à l’interface Swagger</h2>
-<p>Une fois les dépendances ajoutées, nous pouvons démarrer notre application. Swagger sera disponible à l'URL suivante :</p>
-<pre><code class="language-sh"><pre class="highlight"><code class="hljs">http://localhost:8080/swagger-ui/index.html
-</code></pre></code></pre>
-<p>Sur cette interface, nous pourrons voir tous les endpoints de notre API ainsi que leurs descriptions. Nous pourrons également effectuer des tests directement depuis cette interface, ce qui est très pratique pour le développement et la documentation.</p>
-<p><img src="../../../../assets/blog/api-rest-with-spring-boot/swagger.png" alt="swagger" title="swagger"></p>
+<span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span></code></pre>
+</code></pre><h2>Étape 2 : Accéder à l’interface Swagger</h2>
+<p>Une fois les dépendances ajoutées, nous pouvons démarrer notre application. Swagger sera disponible à l&#39;URL suivante :</p>
+<pre><code class="hljs language-sh"><pre class="highlight"><code class="hljs">http://localhost:8080/swagger-ui/index.html</code></pre>
+</code></pre><p>Sur cette interface, nous pourrons voir tous les endpoints de notre API ainsi que leurs descriptions. Nous pourrons également effectuer des tests directement depuis cette interface, ce qui est très pratique pour le développement et la documentation.</p>
+<p><img src="../../../../assets/blog/api-rest-with-spring-boot/swagger.png" alt="swagger"></p>
 <h2>Conclusion</h2>
-<p>Avec l'intégration de Swagger, notre API REST est maintenant documentée de manière interactive, facilitant ainsi son utilisation par les développeurs et les utilisateurs finaux. Cette documentation nous permet de maintenir une bonne compréhension des fonctionnalités offertes par notre API, tout en offrant une plateforme de test intégrée.</p>
+<p>Avec l&#39;intégration de Swagger, notre API REST est maintenant documentée de manière interactive, facilitant ainsi son utilisation par les développeurs et les utilisateurs finaux. Cette documentation nous permet de maintenir une bonne compréhension des fonctionnalités offertes par notre API, tout en offrant une plateforme de test intégrée.</p>
 
     <app-comments></app-comments>
   </div>

@@ -50,7 +50,7 @@
                         this.page.identifier = window.location.pathname.replace('/en', '');
                     };
                 </script>
-            <script defer src="/fr/blog/spring/api-rest-with-spring-boot/add-exceptions-handlers/add-exceptions-handlers.b9d59cfee408d320571a.js"></script></head>
+            <script defer src="/fr/blog/spring/api-rest-with-spring-boot/add-exceptions-handlers/add-exceptions-handlers.43a9e5d52d49d1dd28a5.js"></script></head>
             <body>
                 <div class="loader">
                     <div class="loading-bar">
@@ -81,13 +81,13 @@
 <div class="blog-container">
   <div class="markdown section-container">
     <h2>Ajouter les exceptions handlers</h2>
-<p>Avec Spring Boot, il existe plusieurs façons de personnaliser la réponse d'une API en cas d'erreur. Dans cet article, nous allons nous concentrer sur l'utilisation de <code>@ControllerAdvice</code>, une classe qui permet de centraliser la gestion des exceptions émises par les contrôleurs.</p>
-<p>En combinaison avec l'annotation <code>@ExceptionHandler</code>, cette approche permet de définir des méthodes pour intercepter des exceptions spécifiques (ou génériques) et retourner une réponse appropriée au client.</p>
+<p>Avec Spring Boot, il existe plusieurs façons de personnaliser la réponse d&#39;une API en cas d&#39;erreur. Dans cet article, nous allons nous concentrer sur l&#39;utilisation de <code>@ControllerAdvice</code>, une classe qui permet de centraliser la gestion des exceptions émises par les contrôleurs.</p>
+<p>En combinaison avec l&#39;annotation <code>@ExceptionHandler</code>, cette approche permet de définir des méthodes pour intercepter des exceptions spécifiques (ou génériques) et retourner une réponse appropriée au client.</p>
 <p>Pour celà, nous avons ajouter la classe <code>GlobalExceptionHandler</code> dans le package <code>exception</code> et la classe <code>ApiError</code> dans le package <code>model</code></p>
 <p><strong>code-tabs</strong></p>
 <ul>
 <li><p>GlobalExceptionHandler</p>
-<pre><code class="language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">package</span> net.learntime.todo.api.exception;
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">package</span> net.learntime.todo.api.exception;
 
 <span class="hljs-keyword">import</span> net.learntime.todo.api.model.ApiError;
 <span class="hljs-keyword">import</span> org.springframework.http.HttpStatus;
@@ -112,10 +112,10 @@
     <span class="hljs-keyword">public</span> ResponseEntity&lt;ApiError&gt; <span class="hljs-title function_">handleException</span><span class="hljs-params">(Exception e)</span> {
         <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">ResponseEntity</span>&lt;&gt;(<span class="hljs-keyword">new</span> <span class="hljs-title class_">ApiError</span>(e.getMessage()), HttpStatus.INTERNAL_SERVER_ERROR);
     }
-}
-</code></pre></code></pre></li>
+}</code></pre>
+</code></pre></li>
 <li><p>ApiError</p>
-<pre><code class="language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">package</span> net.learntime.todo.api.model;
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">package</span> net.learntime.todo.api.model;
 
 <span class="hljs-keyword">import</span> lombok.AllArgsConstructor;
 <span class="hljs-keyword">import</span> lombok.Getter;
@@ -128,25 +128,25 @@
 
     <span class="hljs-keyword">private</span> String error;
 
-}
-</code></pre></code></pre></li>
+}</code></pre>
+</code></pre></li>
 </ul>
-<p>La classe <code>GlobalExceptionHandler</code> capture trois types d'exceptions:</p>
+<p>La classe <code>GlobalExceptionHandler</code> capture trois types d&#39;exceptions:</p>
 <ul>
-<li><code>TodoNotFoundException</code> : Lorsque cette exception est levée, la méthode associée renvoie une réponse HTTP avec un statut <strong>404 Not Found</strong> et un message d'erreur personnalisé.</li>
-<li><code>TodoBadRequestException</code> : Pour cette exception, une réponse HTTP avec un statut <strong>400 Bad Request</strong> est envoyée accompagnée d'un message d'erreur.</li>
+<li><code>TodoNotFoundException</code> : Lorsque cette exception est levée, la méthode associée renvoie une réponse HTTP avec un statut <strong>404 Not Found</strong> et un message d&#39;erreur personnalisé.</li>
+<li><code>TodoBadRequestException</code> : Pour cette exception, une réponse HTTP avec un statut <strong>400 Bad Request</strong> est envoyée accompagnée d&#39;un message d&#39;erreur.</li>
 <li><code>Exception</code> : Pour toute autre exception, une réponse avec un statut <strong>500 Internal Server Error</strong> est renvoyée.</li>
 </ul>
 <p>Une fois mise en place, on obtient une erreur <strong>400 Bad Request</strong> quand on essaye de créer une tâche Todo sans titre:</p>
-<p><img src="../../../../assets/blog/api-rest-with-spring-boot/create-todo-without-title-and-description-after-validation-and-exceptions-handlers.png" alt="create-todo-without-title-and-description-after-validation-and-exceptions-handlers" title="create-todo-without-title-and-description-after-validation-and-exceptions-handlers"></p>
-<p>et on obtient une erreur <strong>404 Not Found</strong> quand on essaye de récupérer une tâche Todo qui n'existe pas à partir de son id:</p>
-<p><img src="../../../../assets/blog/api-rest-with-spring-boot/get-todo-by-id-error-case.png" alt="get-todo-by-id-error-case" title="get-todo-by-id-error-case"></p>
+<p><img src="../../../../assets/blog/api-rest-with-spring-boot/create-todo-without-title-and-description-after-validation-and-exceptions-handlers.png" alt="create-todo-without-title-and-description-after-validation-and-exceptions-handlers"></p>
+<p>et on obtient une erreur <strong>404 Not Found</strong> quand on essaye de récupérer une tâche Todo qui n&#39;existe pas à partir de son id:</p>
+<p><img src="../../../../assets/blog/api-rest-with-spring-boot/get-todo-by-id-error-case.png" alt="get-todo-by-id-error-case"></p>
 <h2>Conclusion</h2>
-<p>Nous avons implémenté un mécanisme d'exception handling dans notre API REST en utilisant <code>@ControllerAdvice</code> et <code>@ExceptionHandler</code>, ce qui nous permet de gérer les erreurs de manière centralisée et de fournir des réponses HTTP appropriées. Grâce à la classe GlobalExceptionHandler, nous avons défini des réponses spécifiques pour les exceptions <code>TodoNotFoundException</code> et <code>TodoBadRequestException</code>, garantissant ainsi que les utilisateurs reçoivent des messages d'erreur clairs et des statuts HTTP adéquats.</p>
-<p><strong>Dans la prochaine section</strong>, nous allons remplacer notre base de données H2 par une base PostgreSQL, ce qui nous permettra d'utiliser un système de gestion de base de données plus robuste et adapté à un environnement de production.</p>
+<p>Nous avons implémenté un mécanisme d&#39;exception handling dans notre API REST en utilisant <code>@ControllerAdvice</code> et <code>@ExceptionHandler</code>, ce qui nous permet de gérer les erreurs de manière centralisée et de fournir des réponses HTTP appropriées. Grâce à la classe GlobalExceptionHandler, nous avons défini des réponses spécifiques pour les exceptions <code>TodoNotFoundException</code> et <code>TodoBadRequestException</code>, garantissant ainsi que les utilisateurs reçoivent des messages d&#39;erreur clairs et des statuts HTTP adéquats.</p>
+<p><strong>Dans la prochaine section</strong>, nous allons remplacer notre base de données H2 par une base PostgreSQL, ce qui nous permettra d&#39;utiliser un système de gestion de base de données plus robuste et adapté à un environnement de production.</p>
 <p><strong>previous-next-sections</strong></p>
-<p><a href="/fr/blog/spring/api-rest-with-spring-boot/add-validation" title="Ajouter la couche validation">Ajouter la couche validation</a>
-<a href="/fr/blog/spring/api-rest-with-spring-boot/use-postgresql" title="Ajouter la couche validation">Utiliser une base PostgreSQL</a></p>
+<p><a href="/fr/blog/spring/api-rest-with-spring-boot/add-validation">Ajouter la couche validation</a>
+<a href="/fr/blog/spring/api-rest-with-spring-boot/use-postgresql">Utiliser une base PostgreSQL</a></p>
 
     <app-comments></app-comments>
   </div>

@@ -50,7 +50,7 @@
                         this.page.identifier = window.location.pathname.replace('/en', '');
                     };
                 </script>
-            <script defer src="/blog/spring/api-rest-with-spring-boot/add-swagger/add-swagger.f9245f2b8ca42e5f13b5.js"></script></head>
+            <script defer src="/blog/spring/api-rest-with-spring-boot/add-swagger/add-swagger.fc6c0cc84da0ea3899c4.js"></script></head>
             <body>
                 <div class="loader">
                     <div class="loading-bar">
@@ -81,21 +81,19 @@
 <div class="blog-container">
   <div class="markdown section-container">
     <h2>Add Swagger</h2>
-<p>In this section, we'll integrate Swagger into our REST API to facilitate documentation and endpoint discovery. Swagger provides an interactive interface that lets you view and test our API directly from a browser.</p>
+<p>In this section, we&#39;ll integrate Swagger into our REST API to facilitate documentation and endpoint discovery. Swagger provides an interactive interface that lets you view and test our API directly from a browser.</p>
 <h2>Step 1: Add Swagger dependencies</h2>
-<p>To begin with, we need to add the necessary Swagger dependencies to our <code>pom.xml</code> file. Let's add the following dependency:</p>
-<pre><code class="language-xml"><pre class="highlight"><code class="hljs"><span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span>
+<p>To begin with, we need to add the necessary Swagger dependencies to our <code>pom.xml</code> file. Let&#39;s add the following dependency:</p>
+<pre><code class="hljs language-xml"><pre class="highlight"><code class="hljs"><span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.springdoc<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>springdoc-openapi-starter-webmvc-ui<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>2.0.2<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span>
-</code></pre></code></pre>
-<h2>Step 2: Access the Swagger interface</h2>
+<span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span></code></pre>
+</code></pre><h2>Step 2: Access the Swagger interface</h2>
 <p>Once the dependencies have been added, we can start our application. Swagger will be available at the following URL:</p>
-<pre><code class="language-sh"><pre class="highlight"><code class="hljs">http://localhost:8080/swagger-ui/index.html
-</code></pre></code></pre>
-<p>On this interface, we can see all our API endpoints and their descriptions. We can also run tests directly from this interface, which is very useful for development and documentation purposes.</p>
-<p><img src="../../../../assets/blog/api-rest-with-spring-boot/swagger.png" alt="swagger" title="swagger"></p>
+<pre><code class="hljs language-sh"><pre class="highlight"><code class="hljs">http://localhost:8080/swagger-ui/index.html</code></pre>
+</code></pre><p>On this interface, we can see all our API endpoints and their descriptions. We can also run tests directly from this interface, which is very useful for development and documentation purposes.</p>
+<p><img src="../../../../assets/blog/api-rest-with-spring-boot/swagger.png" alt="swagger"></p>
 <h2>Conclusion</h2>
 <p>With the integration of Swagger, our REST API is now interactively documented, facilitating its use by developers and end-users alike. This documentation enables us to maintain a clear understanding of the functionalities offered by our API, while providing an integrated testing platform.</p>
 

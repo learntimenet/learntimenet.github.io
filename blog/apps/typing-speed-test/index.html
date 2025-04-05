@@ -50,7 +50,7 @@
                         this.page.identifier = window.location.pathname.replace('/en', '');
                     };
                 </script>
-            <script defer src="/blog/apps/typing-speed-test/typing-speed-test.61aa04cae8a07a9b839a.js"></script></head>
+            <script defer src="/blog/apps/typing-speed-test/typing-speed-test.a3477dc0dae259a33edb.js"></script></head>
             <body>
                 <div class="loader">
                     <div class="loading-bar">
@@ -83,11 +83,12 @@
     <h2>Introduction</h2>
 <p>In this article, we will learn how to create a typing speed test application using HTML, CSS and JavaScript. With easy-to-understand source code, you can follow the steps and create your own version.</p>
 <iframe width="899" height="506" src="https://www.youtube.com/embed/QXr_GNBGp0U" title="Application de test de vitesse de frappe" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
 <h2>Code source</h2>
 <p><strong>code-tabs</strong></p>
 <ul>
 <li><p>index.html</p>
-<pre><code class="language-html"><pre class="highlight"><code class="hljs"><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-keyword">html</span>&gt;</span>
+<pre><code class="hljs language-html"><pre class="highlight"><code class="hljs"><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-keyword">html</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">&quot;en&quot;</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;UTF-8&quot;</span>&gt;</span>
@@ -133,10 +134,10 @@
   <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;lorem-ipsum.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;script.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
-</code></pre></code></pre></li>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span></code></pre>
+</code></pre></li>
 <li><p>style.css</p>
-<pre><code class="language-css"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">@import</span> url(<span class="hljs-string">&quot;https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap&quot;</span>);
+<pre><code class="hljs language-css"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">@import</span> url(<span class="hljs-string">&quot;https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap&quot;</span>);
 <span class="hljs-keyword">@import</span> url(<span class="hljs-string">&quot;https://fonts.googleapis.com/css?family=Roboto Mono&quot;</span>);
 
 *,
@@ -266,10 +267,10 @@
 
 <span class="hljs-selector-class">.text-to-type-container</span> <span class="hljs-selector-tag">span</span><span class="hljs-selector-class">.OK</span> {
   <span class="hljs-attribute">color</span>: <span class="hljs-built_in">var</span>(--green-color);
-}
-</code></pre></code></pre></li>
+}</code></pre>
+</code></pre></li>
 <li><p>script.js</p>
-<pre><code class="language-js"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">const</span> textToType = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelector</span>(<span class="hljs-string">&quot;.text-to-type&quot;</span>);
+<pre><code class="hljs language-js"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">const</span> textToType = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelector</span>(<span class="hljs-string">&quot;.text-to-type&quot;</span>);
 <span class="hljs-keyword">const</span> tryAgainBtn = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelector</span>(<span class="hljs-string">&quot;#tryAgainBtn&quot;</span>);
 <span class="hljs-keyword">const</span> errorsElement = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelector</span>(<span class="hljs-string">&quot;#errors&quot;</span>);
 <span class="hljs-keyword">const</span> nbWordElement = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelector</span>(<span class="hljs-string">&quot;#nbWord&quot;</span>);
@@ -375,10 +376,10 @@ tryAgainBtn.<span class="hljs-title function_">addEventListener</span>(<span cla
 
 <span class="hljs-keyword">function</span> <span class="hljs-title function_">removeCursor</span>(<span class="hljs-params"></span>) {
   caractersToType[caracterToTypeIndex].<span class="hljs-property">classList</span>.<span class="hljs-title function_">remove</span>(<span class="hljs-string">&quot;cursor&quot;</span>);
-}
-</code></pre></code></pre></li>
+}</code></pre>
+</code></pre></li>
 <li><p>lorem-ipsum.js</p>
-<pre><code class="language-js"><pre class="highlight"><code class="hljs">;(<span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) {
+<pre><code class="hljs language-js"><pre class="highlight"><code class="hljs">;(<span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) {
 
   <span class="hljs-string">&quot;use strict&quot;</span>;
 
@@ -523,14 +524,18 @@ tryAgainBtn.<span class="hljs-title function_">addEventListener</span>(<span cla
 
   }
 
-})();
-</code></pre></code></pre></li>
+})();</code></pre>
+</code></pre></li>
 </ul>
 <h2>Ressources</h2>
 <div class="asset">
   <img src="../../../../assets/blog/typing-speed-test/background.jpg" />
-<p><a href="../../../../assets/blog/typing-speed-test/background.jpg" title="background.jpg" download>background.jpg</a></p>
+
+<p>  <a href="../../../../assets/blog/typing-speed-test/background.jpg" title="download">background.jpg</a></p>
 </div>
+
+
+
 <h2>Conclusion</h2>
 <p>Thank you for reading this. We hope you found this article useful!</p>
 

@@ -50,7 +50,7 @@
                         this.page.identifier = window.location.pathname.replace('/en', '');
                     };
                 </script>
-            <script defer src="/blog/spring/api-rest-with-spring-boot/first-version/first-version.43059f39346527408330.js"></script></head>
+            <script defer src="/blog/spring/api-rest-with-spring-boot/first-version/first-version.394551bd5ca5ba18b838.js"></script></head>
             <body>
                 <div class="loader">
                     <div class="loading-bar">
@@ -82,7 +82,7 @@
   <div class="markdown section-container">
     <h2>First version of the project</h2>
 <p>In this first version, we will create the <code>model</code> package in which we will create the <code>Todo</code> entity which will represent our Todo task:</p>
-<pre><code class="language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">package</span> net.learntime.todo.api.model;
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">package</span> net.learntime.todo.api.model;
 
 <span class="hljs-keyword">import</span> jakarta.persistence.*;
 <span class="hljs-keyword">import</span> lombok.Getter;
@@ -100,17 +100,16 @@
     <span class="hljs-keyword">private</span> String title;
     <span class="hljs-keyword">private</span> String description;
     <span class="hljs-keyword">private</span> Boolean completed;
-}
-</code></pre></code></pre>
-<p><strong>code-explication-1</strong></p>
+}</code></pre>
+</code></pre><p><strong>code-explication-1</strong></p>
 <ul>
 <li><code>@Entity</code>: Indicates that the class is a JPA (Java Persistence API) entity, which means that it is mapped to a database table.</li>
 <li><code>@Getter</code> and <code>@Setter</code>: Lombok annotations which automatically generate get and set methods for all the fields in the class, simplifying the code and avoiding manual writing of these methods.</li>
 <li><code>@Id</code>: Specifies that the id attribute is the primary key of the entity.</li>
 <li><code>@GeneratedValue</code>: Indicates that the value of id is generated automatically by the database, using an auto-increment strategy.</li>
 </ul>
-<p>Next, we'll create the <code>repository</code> package in which we'll create the <code>TodoRepository</code> repository which will allow us to register, retrieve, modify and delete a Todo in the database.</p>
-<pre><code class="language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">package</span> net.learntime.todo.api.repository;
+<p>Next, we&#39;ll create the <code>repository</code> package in which we&#39;ll create the <code>TodoRepository</code> repository which will allow us to register, retrieve, modify and delete a Todo in the database.</p>
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">package</span> net.learntime.todo.api.repository;
 
 <span class="hljs-keyword">import</span> net.learntime.todo.api.model.Todo;
 <span class="hljs-keyword">import</span> org.springframework.data.jpa.repository.JpaRepository;
@@ -119,20 +118,18 @@
 <span class="hljs-meta">@Repository</span>
 <span class="hljs-keyword">public</span> <span class="hljs-keyword">interface</span> <span class="hljs-title class_">ITodoRepository</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">JpaRepository</span>&lt;Todo, Long&gt; {
 
-}
-</code></pre></code></pre>
-<p><strong>code-explication-1</strong></p>
+}</code></pre>
+</code></pre><p><strong>code-explication-1</strong></p>
 <p>This is a Java interface that extends the <code>JpaRepository</code> interface, which provides a full set of methods for manipulating entities, such as <code>save()</code>, <code>findAll()</code>, <code>findById()</code>, <code>delete()</code>, etc.</p>
-<p>Next, we'll create the <code>exception</code> package, in which we'll create the <code>TodoNotFoundException</code> exception. This exception will be thrown when a Todo task is not found with the id supplied in parameter</p>
-<pre><code class="language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">package</span> net.learntime.todo.api.exception;
+<p>Next, we&#39;ll create the <code>exception</code> package, in which we&#39;ll create the <code>TodoNotFoundException</code> exception. This exception will be thrown when a Todo task is not found with the id supplied in parameter</p>
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">package</span> net.learntime.todo.api.exception;
 
 <span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">TodoNotFoundException</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">RuntimeException</span> {
     <span class="hljs-keyword">public</span> <span class="hljs-title function_">TodoNotFoundException</span><span class="hljs-params">(Long id)</span> {
         <span class="hljs-built_in">super</span>(<span class="hljs-string">&quot;Todo with id %s does not exist&quot;</span>.formatted(id));
     }
-}
-</code></pre></code></pre>
-<p>Finally, we'll create the <code>controller</code> package in which we'll create our REST controller <code>TodoController</code> to implement our APIs:</p>
+}</code></pre>
+</code></pre><p>Finally, we&#39;ll create the <code>controller</code> package in which we&#39;ll create our REST controller <code>TodoController</code> to implement our APIs:</p>
 <ul>
 <li><code>GET /todos</code> to retrieve all Todos tasks</li>
 <li>GET /todos/{id}` to retrieve a Todo task based on its id</li>
@@ -140,7 +137,7 @@
 <li><code>PUT /todo/{id}</code> to update a Todo task using its id</li>
 <li>DELETE /todo/{id}` to delete a todo task from its id</li>
 </ul>
-<pre><code class="language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">package</span> net.learntime.todo.api.controller;
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">package</span> net.learntime.todo.api.controller;
 
 <span class="hljs-keyword">import</span> net.learntime.todo.api.exception.TodoNotFoundException;
 <span class="hljs-keyword">import</span> net.learntime.todo.api.model.Todo;
@@ -188,23 +185,22 @@
    }
 
 }
-
-</code></pre></code></pre>
-<p><strong>code-explication-1</strong></p>
+</code></pre>
+</code></pre><p><strong>code-explication-1</strong></p>
 <ul>
 <li><code>@RestController</code>: Declares the class as a REST controller for handling HTTP requests.</li>
 <li><code>@RequestMapping</code>: Sets the base path for all endpoints of this controller.</li>
 <li><code>@GetMapping</code>: Handles <strong>GET</strong> requests to retrieve all Todo tasks. Uses repository.findAll() to return the full list of tasks.</li>
 <li><code>@GetMapping(‘{id}’)</code> : Handles <strong>GET</strong> requests to retrieve a Todo task by its ID. If the ID is not found, a TodoNotFoundException is thrown.</li>
 <li><code>@PostMapping</code> : Handles <strong>POST</strong> requests to create a new Todo task. The task received in the request body is saved via repository.save(todo).</li>
-<li><code>@PutMapping(‘{id}’)</code> : Handles <strong>PUT</strong> requests to update an existing task based on its ID. If the ID does not exist, the TodoNotFoundException is thrown. The task's attributes are updated before being saved.</li>
+<li><code>@PutMapping(‘{id}’)</code> : Handles <strong>PUT</strong> requests to update an existing task based on its ID. If the ID does not exist, the TodoNotFoundException is thrown. The task&#39;s attributes are updated before being saved.</li>
 <li><code>@DeleteMapping(‘{id}’)</code>: Handles <strong>DELETE</strong> requests to delete a Todo task by its ID using repository.deleteById(id).</li>
 </ul>
 <h2>Conclusion</h2>
-<p>In this first version of our project, we've built a basic REST API to manage Todo tasks and in the <strong>next section</strong>, we're going to <strong>test our REST API with Postman</strong>, which will allow us to check that our endpoints are working properly.</p>
+<p>In this first version of our project, we&#39;ve built a basic REST API to manage Todo tasks and in the <strong>next section</strong>, we&#39;re going to <strong>test our REST API with Postman</strong>, which will allow us to check that our endpoints are working properly.</p>
 <p><strong>previous-next-sections</strong></p>
-<p><a href="/blog/spring/api-rest-with-spring-boot" title="Initializing the Spring Boot project">Initializing the Spring Boot project</a>
-<a href="/blog/spring/api-rest-with-spring-boot/test-our-api-rest" title="Initializing the Spring Boot project">Testing our REST API</a></p>
+<p><a href="/blog/spring/api-rest-with-spring-boot">Initializing the Spring Boot project</a>
+<a href="/blog/spring/api-rest-with-spring-boot/test-our-api-rest">Testing our REST API</a></p>
 
     <app-comments></app-comments>
   </div>

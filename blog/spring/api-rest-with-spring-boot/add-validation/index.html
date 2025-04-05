@@ -50,7 +50,7 @@
                         this.page.identifier = window.location.pathname.replace('/en', '');
                     };
                 </script>
-            <script defer src="/blog/spring/api-rest-with-spring-boot/add-validation/add-validation.729e7220a03fb3afdc74.js"></script></head>
+            <script defer src="/blog/spring/api-rest-with-spring-boot/add-validation/add-validation.3ff9351190de0ba5bc1d.js"></script></head>
             <body>
                 <div class="loader">
                     <div class="loading-bar">
@@ -81,11 +81,11 @@
 <div class="blog-container">
   <div class="markdown section-container">
     <h2>Add validation layer</h2>
-<p>In the first version of the project, no validation is made to the Todo creation and modification APIs, and we can end up with Todo tasks with no title or description stored in the database. To overcome this problem, we're going to create the <code>validator</code> package, in which we'll add the <code>ITodoValidator</code> interface and its <code>TodoValidator</code> implementation, which will enable us to validate a Todo task:</p>
+<p>In the first version of the project, no validation is made to the Todo creation and modification APIs, and we can end up with Todo tasks with no title or description stored in the database. To overcome this problem, we&#39;re going to create the <code>validator</code> package, in which we&#39;ll add the <code>ITodoValidator</code> interface and its <code>TodoValidator</code> implementation, which will enable us to validate a Todo task:</p>
 <p><strong>code-tabs</strong></p>
 <ul>
 <li><p>ITodoValidator</p>
-<pre><code class="language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">package</span> net.learntime.todo.api.validator;
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">package</span> net.learntime.todo.api.validator;
 
 <span class="hljs-keyword">import</span> net.learntime.todo.api.model.Todo;
 
@@ -93,10 +93,10 @@
 
     <span class="hljs-keyword">void</span> <span class="hljs-title function_">validate</span><span class="hljs-params">(Todo todo)</span>;
 
-}
-</code></pre></code></pre></li>
+}</code></pre>
+</code></pre></li>
 <li><p>TodoValidator</p>
-<pre><code class="language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">package</span> net.learntime.todo.api.validator;
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">package</span> net.learntime.todo.api.validator;
 
 <span class="hljs-keyword">import</span> net.learntime.todo.api.exception.TodoBadRequestException;
 <span class="hljs-keyword">import</span> net.learntime.todo.api.model.Todo;
@@ -119,19 +119,18 @@
             <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">TodoBadRequestException</span>(<span class="hljs-string">&quot;completed is mandatory&quot;</span>);
         }
     }
-}
-</code></pre></code></pre></li>
+}</code></pre>
+</code></pre></li>
 </ul>
-<p>In the <code>TodoValidator</code> class, we used the <code>StringUtils</code> class that we imported from the Apache <code>commons-lang3</code> library, and here's the modification we made to our project's <code>pom.xml</code> file to be able to use it</p>
-<pre><code class="language-xml"><pre class="highlight"><code class="hljs"><span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.apache.commons<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>commons-lang3<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span>
-</code></pre></code></pre>
-<p><strong>alert-info</strong></p>
+<p>In the <code>TodoValidator</code> class, we used the <code>StringUtils</code> class that we imported from the Apache <code>commons-lang3</code> library, and here&#39;s the modification we made to our project&#39;s <code>pom.xml</code> file to be able to use it</p>
+<pre><code class="hljs language-xml"><pre class="highlight"><code class="hljs"><span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span>
+	<span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.apache.commons<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span>
+	<span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>commons-lang3<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span></code></pre>
+</code></pre><p><strong>alert-info</strong></p>
 <p>The version of this dependency has been inherited, since it is a Spring Boot project.</p>
 <p>We also created a new exception <code>TodoBadRequestException</code> in the exception package, which we raised once we had a validation error.</p>
-<pre><code class="language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">package</span> net.learntime.todo.api.exception;
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">package</span> net.learntime.todo.api.exception;
 
 <span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">TodoBadRequestException</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">RuntimeException</span> {
 
@@ -139,10 +138,9 @@
         <span class="hljs-built_in">super</span>(message);
     }
 
-}
-</code></pre></code></pre>
-<p>To apply this validation, we'll use our validator in our controller:</p>
-<pre><code class="language-java {: .highlight-line-code-5-6-10-16 }"><pre class="highlight"><code class="hljs"><span class="hljs-meta">@RestController</span>
+}</code></pre>
+</code></pre><p>To apply this validation, we&#39;ll use our validator in our controller:</p>
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-meta">@RestController</span>
 <span class="hljs-meta">@RequestMapping(path = &quot;/todos&quot;)</span>
 <span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">TodoController</span> {
 
@@ -165,17 +163,16 @@
         repository.save(entity);
         <span class="hljs-keyword">return</span> entity;
     }
-}
-</code></pre></code></pre>
-<p>With this validation layer, we get an error when we try to create or update an invalid Todo task.</p>
-<p><img src="../../../../assets/blog/api-rest-with-spring-boot/create-todo-without-title-and-description-after-validation.png" alt="create-todo-without-title-and-description-after-validation" title="create-todo-without-title-and-description-after-validation"></p>
+}</code></pre>
+</code></pre><p>With this validation layer, we get an error when we try to create or update an invalid Todo task.</p>
+<p><img src="../../../../assets/blog/api-rest-with-spring-boot/create-todo-without-title-and-description-after-validation.png" alt="create-todo-without-title-and-description-after-validation"></p>
 <h2>Conclusion</h2>
 <p>We have now integrated a validation layer into our REST API to ensure that each Todo task has a valid title, description and completion status.</p>
 <p>However, we have found that our API currently returns a <strong>500 Internal Server Error</strong> status during validation, whereas the expected behavior is a <strong>400 Bad Request</strong> status with an informative error message.</p>
-<p><strong>In the next section</strong>, we'll set up <strong>Exceptions Handlers</strong> to modify the http status and the body of the response returned in the event of an error.</p>
+<p><strong>In the next section</strong>, we&#39;ll set up <strong>Exceptions Handlers</strong> to modify the http status and the body of the response returned in the event of an error.</p>
 <p><strong>previous-next-sections</strong></p>
-<p><a href="/blog/spring/api-rest-with-spring-boot/test-our-api-rest" title="Testing our REST API">Testing our REST API</a>
-<a href="/blog/spring/api-rest-with-spring-boot/add-exceptions-handlers" title="Testing our REST API">Add exception handlers</a></p>
+<p><a href="/blog/spring/api-rest-with-spring-boot/test-our-api-rest">Testing our REST API</a>
+<a href="/blog/spring/api-rest-with-spring-boot/add-exceptions-handlers">Add exception handlers</a></p>
 
     <app-comments></app-comments>
   </div>

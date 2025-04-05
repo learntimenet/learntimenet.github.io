@@ -50,7 +50,7 @@
                         this.page.identifier = window.location.pathname.replace('/en', '');
                     };
                 </script>
-            <script defer src="/blog/git/cheatsheet/cheatsheet.da218de4b4938cce1795.js"></script></head>
+            <script defer src="/blog/git/cheatsheet/cheatsheet.b854b352c74b97af2219.js"></script></head>
             <body>
                 <div class="loader">
                     <div class="loading-bar">
@@ -81,19 +81,19 @@
 <div class="blog-container">
   <div class="markdown section-container">
     <h2>Introduction</h2>
-<p>Git is the most widely used version control system, enabling developers to track changes, collaborate efficiently, and manage codebases effectively. Whether you're a beginner or an experienced developer, having a quick reference to Git commands can save time and streamline your workflow. This Git Cheat Sheet provides a comprehensive list of essential Git commands, tips, and best practices.</p>
+<p>Git is the most widely used version control system, enabling developers to track changes, collaborate efficiently, and manage codebases effectively. Whether you&#39;re a beginner or an experienced developer, having a quick reference to Git commands can save time and streamline your workflow. This Git Cheat Sheet provides a comprehensive list of essential Git commands, tips, and best practices.</p>
 <h2>Git Basics</h2>
-<p>This section covers the foundational commands you need to get started with Git. These commands allow you to initialize a repository, track changes, and commit your work. Whether you're setting up a new project or cloning an existing one, these commands are essential for every developer.</p>
+<p>This section covers the foundational commands you need to get started with Git. These commands allow you to initialize a repository, track changes, and commit your work. Whether you&#39;re setting up a new project or cloning an existing one, these commands are essential for every developer.</p>
 <p><strong>cheatsheet</strong></p>
 <ul>
 <li>Create a new Git repository in your project directory<br/>
 git init</li>
 <li>Clone an existing repository from a remote URL<br/>
-git clone &lt;repository_url&gt;</li>
+git clone <repository_url></li>
 <li>View the status of your working directory<br/>
 git status</li>
 <li>Stage changes for the next commit<br/>
-git add &lt;file_name&gt;</li>
+git add <file_name></li>
 <li>Stage all changes<br/>
 git add .</li>
 <li>Commit staged changes with a message<br/>
@@ -106,49 +106,49 @@ git log</li>
 <p><strong>cheatsheet</strong></p>
 <ul>
 <li>Create a new branch<br/>
-git branch &lt;branch_name&gt;</li>
+git branch <branch_name></li>
 <li>Switch to an existing branch<br/>
-git checkout &lt;branch_name&gt;</li>
+git checkout <branch_name></li>
 <li>Create and switch to a new branch in one command<br/>
-git checkout -b &lt;branch_name&gt;</li>
+git checkout -b <branch_name></li>
 <li>View all branches in the repository<br/>
 git branch</li>
 <li>Merge a branch into the current branch<br/>
-git merge &lt;branch_name&gt;</li>
+git merge <branch_name></li>
 <li>Delete a branch<br/>
-git branch -d &lt;branch_name&gt;</li>
+git branch -d <branch_name></li>
 </ul>
 <h2>Remote Repositories</h2>
 <p>Remote repositories allow you to collaborate with others by pushing and pulling changes to and from a shared repository. Git makes it easy to manage remote repositories, enabling seamless collaboration across teams and projects.</p>
 <p><strong>cheatsheet</strong></p>
 <ul>
 <li>Add a remote repository<br/>
-git remote add &lt;remote_name&gt; &lt;repository_url&gt;</li>
+git remote add <remote_name> <repository_url></li>
 <li>List all remote repositories<br/>
 git remote -v</li>
 <li>Fetch changes from a remote repository<br/>
-git fetch &lt;remote_name&gt;</li>
+git fetch <remote_name></li>
 <li>Pull changes from a remote branch<br/>
-git pull &lt;remote_name&gt; &lt;branch_name&gt;</li>
+git pull <remote_name> <branch_name></li>
 <li>Push changes to a remote branch<br/>
-git push &lt;remote_name&gt; &lt;branch_name&gt;</li>
+git push <remote_name> <branch_name></li>
 <li>Remove a remote repository<br/>
-git remote remove &lt;remote_name&gt;</li>
+git remote remove <remote_name></li>
 </ul>
 <h2>Undoing Changes</h2>
 <p>Mistakes happen, and Git provides several ways to undo changes. Whether you need to unstage a file, revert a commit, or reset your repository to a previous state, Git has you covered.</p>
 <p><strong>cheatsheet</strong></p>
 <ul>
 <li>Unstage a file while keeping changes<br/>
-git reset &lt;file_name&gt;</li>
+git reset <file_name></li>
 <li>Revert changes in a file to the last commit<br/>
-git checkout -- &lt;file_name&gt;</li>
+git checkout -- <file_name></li>
 <li>Modify the last commit<br/>
 git commit --amend</li>
 <li>Revert a specific commit<br/>
-git revert &lt;commit_hash&gt;</li>
+git revert <commit_hash></li>
 <li>Reset the repository to a previous commit<br/>
-git reset --hard &lt;commit_hash&gt;</li>
+git reset --hard <commit_hash></li>
 </ul>
 <h2>Stashing</h2>
 <p>Stashing allows you to temporarily save changes that are not ready to be committed. This is useful when you need to switch branches or work on something else without losing your current progress.</p>
@@ -161,11 +161,11 @@ git stash list</li>
 <li>Apply the most recent stash<br/>
 git stash apply</li>
 <li>Apply a specific stash<br/>
-git stash apply stash@{&lt;stash_index&gt;}</li>
+git stash apply stash@{<stash_index>}</li>
 <li>Delete the most recent stash<br/>
 git stash drop</li>
 <li>Delete a specific stash<br/>
-git stash drop stash@{&lt;stash_index&gt;}</li>
+git stash drop stash@{<stash_index>}</li>
 </ul>
 <h2>Logs and History</h2>
 <p>Git logs provide a detailed history of commits, making it easy to track changes, identify issues, and understand the evolution of your codebase. You can view logs in various formats to suit your needs.</p>
@@ -176,42 +176,42 @@ git log</li>
 <li>Display a simplified commit history<br/>
 git log --oneline</li>
 <li>View changes made in a specific commit<br/>
-git show &lt;commit_hash&gt;</li>
+git show <commit_hash></li>
 <li>View changes between two commits<br/>
-git diff &lt;commit_hash_1&gt; &lt;commit_hash_2&gt;</li>
+git diff <commit_hash_1> <commit_hash_2></li>
 </ul>
 <h2>Tagging</h2>
-<p>Tags are used to mark specific points in your repository's history, such as releases or milestones. They provide a way to easily reference important commits.</p>
+<p>Tags are used to mark specific points in your repository&#39;s history, such as releases or milestones. They provide a way to easily reference important commits.</p>
 <p><strong>cheatsheet</strong></p>
 <ul>
 <li>Create a lightweight tag<br/>
-git tag &lt;tag_name&gt;</li>
+git tag <tag_name></li>
 <li>Create an annotated tag<br/>
-git tag -a &lt;tag_name&gt; -m &quot;Tag message&quot;</li>
+git tag -a <tag_name> -m &quot;Tag message&quot;</li>
 <li>View all tags<br/>
 git tag</li>
 <li>Push tags to a remote repository<br/>
-git push &lt;remote_name&gt; --tags</li>
+git push <remote_name> --tags</li>
 <li>Delete a tag<br/>
-git tag -d &lt;tag_name&gt;</li>
+git tag -d <tag_name></li>
 </ul>
 <h2>Advanced Git Commands</h2>
 <p>Advanced Git commands provide powerful tools for managing complex workflows, debugging, and optimizing your repository. These commands are essential for experienced developers working on large projects.</p>
 <p><strong>cheatsheet</strong></p>
 <ul>
 <li>Rebase the current branch onto another branch<br/>
-git rebase &lt;branch_name&gt;</li>
+git rebase <branch_name></li>
 <li>Start an interactive rebase<br/>
-git rebase -i &lt;commit_hash&gt;</li>
+git rebase -i <commit_hash></li>
 <li>Apply a specific commit to the current branch<br/>
-git cherry-pick &lt;commit_hash&gt;</li>
+git cherry-pick <commit_hash></li>
 <li>Push tags to a remote repository<br/>
-git push &lt;remote_name&gt; --tags</li>
+git push <remote_name> --tags</li>
 <li>Delete a tag<br/>
-git tag -d &lt;tag_name&gt;</li>
+git tag -d <tag_name></li>
 </ul>
 <h2>Tips and Best Practices</h2>
-<p>Following best practices ensures a smooth and efficient Git workflow. These tips will help you avoid common pitfalls and make the most of Git's features.</p>
+<p>Following best practices ensures a smooth and efficient Git workflow. These tips will help you avoid common pitfalls and make the most of Git&#39;s features.</p>
 <ul>
 <li><strong>Write Meaningful Commit Messages</strong>: Use clear and concise commit messages to describe changes.</li>
 <li><strong>Use Branches for Features</strong>: Create separate branches for new features or bug fixes.</li>
@@ -221,12 +221,12 @@ git tag -d &lt;tag_name&gt;</li>
 </ul>
 <h2>Additional Resources</h2>
 <ul>
-<li><a href="https://git-scm.com/doc" title="Git Documentation">Git Documentation</a></li>
-<li><a href="https://docs.github.com/en" title="GitHub Guides">GitHub Guides</a></li>
-<li><a href="https://www.atlassian.com/git/tutorials" title="Atlassian Git Tutorials">Atlassian Git Tutorials</a></li>
+<li><a href="https://git-scm.com/doc">Git Documentation</a></li>
+<li><a href="https://docs.github.com/en">GitHub Guides</a></li>
+<li><a href="https://www.atlassian.com/git/tutorials">Atlassian Git Tutorials</a></li>
 </ul>
 <h2>Conclusion</h2>
-<p>This Git Cheat Sheet is your ultimate guide to mastering Git. Whether you're a beginner or an experienced developer, these commands and tips will help you streamline your workflow and make the most of Git's powerful features. Bookmark this guide and refer to it whenever you need a quick refresher on Git commands. Happy coding!</p>
+<p>This Git Cheat Sheet is your ultimate guide to mastering Git. Whether you&#39;re a beginner or an experienced developer, these commands and tips will help you streamline your workflow and make the most of Git&#39;s powerful features. Bookmark this guide and refer to it whenever you need a quick refresher on Git commands. Happy coding!</p>
 
     <app-comments></app-comments>
   </div>

@@ -50,7 +50,7 @@
                         this.page.identifier = window.location.pathname.replace('/en', '');
                     };
                 </script>
-            <script defer src="/blog/spring/api-rest-with-spring-boot/add-exceptions-handlers/add-exceptions-handlers.3a7dc7956d8c834c81c2.js"></script></head>
+            <script defer src="/blog/spring/api-rest-with-spring-boot/add-exceptions-handlers/add-exceptions-handlers.4b70bafb1827b7305e74.js"></script></head>
             <body>
                 <div class="loader">
                     <div class="loading-bar">
@@ -81,13 +81,13 @@
 <div class="blog-container">
   <div class="markdown section-container">
     <h2>Add exception handlers</h2>
-<p>With Spring Boot, there are several ways to customize an API's response in the event of an error. In this article, we'll focus on the use of <code>@ControllerAdvice</code>, a class that centralizes the handling of exceptions thrown by controllers.</p>
+<p>With Spring Boot, there are several ways to customize an API&#39;s response in the event of an error. In this article, we&#39;ll focus on the use of <code>@ControllerAdvice</code>, a class that centralizes the handling of exceptions thrown by controllers.</p>
 <p>In combination with the <code>@ExceptionHandler</code> annotation, this approach enables methods to be defined to intercept specific (or generic) exceptions and return an appropriate response to the client.</p>
 <p>To achieve this, we have added the <code>GlobalExceptionHandler</code> class to the <code>exception</code> package and the <code>ApiError</code> class to the <code>model</code> package.</p>
 <p><strong>code-tabs</strong></p>
 <ul>
 <li><p>GlobalExceptionHandler</p>
-<pre><code class="language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">package</span> net.learntime.todo.api.exception;
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">package</span> net.learntime.todo.api.exception;
 
 <span class="hljs-keyword">import</span> net.learntime.todo.api.model.ApiError;
 <span class="hljs-keyword">import</span> org.springframework.http.HttpStatus;
@@ -112,10 +112,10 @@
     <span class="hljs-keyword">public</span> ResponseEntity&lt;ApiError&gt; <span class="hljs-title function_">handleException</span><span class="hljs-params">(Exception e)</span> {
         <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">ResponseEntity</span>&lt;&gt;(<span class="hljs-keyword">new</span> <span class="hljs-title class_">ApiError</span>(e.getMessage()), HttpStatus.INTERNAL_SERVER_ERROR);
     }
-}
-</code></pre></code></pre></li>
+}</code></pre>
+</code></pre></li>
 <li><p>ApiError</p>
-<pre><code class="language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">package</span> net.learntime.todo.api.model;
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">package</span> net.learntime.todo.api.model;
 
 <span class="hljs-keyword">import</span> lombok.AllArgsConstructor;
 <span class="hljs-keyword">import</span> lombok.Getter;
@@ -128,8 +128,8 @@
 
     <span class="hljs-keyword">private</span> String error;
 
-}
-</code></pre></code></pre></li>
+}</code></pre>
+</code></pre></li>
 </ul>
 <p>The <code>GlobalExceptionHandler</code> class captures three types of exception:</p>
 <ul>
@@ -138,15 +138,15 @@
 <li><code>Exception</code>: For any other exception, a response with status <strong>500 Internal Server Error</strong> is returned.</li>
 </ul>
 <p>Once set up, you get a <strong>400 Bad Request</strong> error when you try to create a Todo task without a title:</p>
-<p><img src="../../../../assets/blog/api-rest-with-spring-boot/create-todo-without-title-and-description-after-validation-and-exceptions-handlers.png" alt="create-todo-without-title-and-description-after-validation-and-exceptions-handlers" title="create-todo-without-title-and-description-after-validation-and-exceptions-handlers"></p>
-<p>and we get a <strong>404 Not Found</strong> error when we try to retrieve a Todo task that doesn't exist from its id:</p>
-<p><img src="../../../../assets/blog/api-rest-with-spring-boot/get-todo-by-id-error-case.png" alt="get-todo-by-id-error-case" title="get-todo-by-id-error-case"></p>
+<p><img src="../../../../assets/blog/api-rest-with-spring-boot/create-todo-without-title-and-description-after-validation-and-exceptions-handlers.png" alt="create-todo-without-title-and-description-after-validation-and-exceptions-handlers"></p>
+<p>and we get a <strong>404 Not Found</strong> error when we try to retrieve a Todo task that doesn&#39;t exist from its id:</p>
+<p><img src="../../../../assets/blog/api-rest-with-spring-boot/get-todo-by-id-error-case.png" alt="get-todo-by-id-error-case"></p>
 <h2>Conclusion</h2>
-<p>We've implemented an exception handling mechanism in our REST API using <code>@ControllerAdvice</code> and <code>@ExceptionHandler</code>, enabling us to handle errors centrally and provide appropriate HTTP responses. Thanks to the GlobalExceptionHandler class, we've defined specific responses for the <code>TodoNotFoundException</code> and <code>TodoBadRequestException</code> exceptions, ensuring that users receive clear error messages and appropriate HTTP statuses.</p>
-<p><strong>In the next section</strong>, we're going to replace our H2 database with a PostgreSQL one, which will enable us to use a more robust database management system suited to a production environment.</p>
+<p>We&#39;ve implemented an exception handling mechanism in our REST API using <code>@ControllerAdvice</code> and <code>@ExceptionHandler</code>, enabling us to handle errors centrally and provide appropriate HTTP responses. Thanks to the GlobalExceptionHandler class, we&#39;ve defined specific responses for the <code>TodoNotFoundException</code> and <code>TodoBadRequestException</code> exceptions, ensuring that users receive clear error messages and appropriate HTTP statuses.</p>
+<p><strong>In the next section</strong>, we&#39;re going to replace our H2 database with a PostgreSQL one, which will enable us to use a more robust database management system suited to a production environment.</p>
 <p><strong>previous-next-sections</strong></p>
-<p><a href="/blog/spring/api-rest-with-spring-boot/add-validation" title="Add validation layer">Add validation layer</a>
-<a href="/blog/spring/api-rest-with-spring-boot/use-postgresql" title="Add validation layer">Use a PostgreSQL database</a></p>
+<p><a href="/blog/spring/api-rest-with-spring-boot/add-validation">Add validation layer</a>
+<a href="/blog/spring/api-rest-with-spring-boot/use-postgresql">Use a PostgreSQL database</a></p>
 
     <app-comments></app-comments>
   </div>

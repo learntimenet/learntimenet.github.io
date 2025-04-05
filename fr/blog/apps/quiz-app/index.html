@@ -50,7 +50,7 @@
                         this.page.identifier = window.location.pathname.replace('/en', '');
                     };
                 </script>
-            <script defer src="/fr/blog/apps/quiz-app/quiz-app.8931d952d179a8eb219d.js"></script></head>
+            <script defer src="/fr/blog/apps/quiz-app/quiz-app.3676018459d1345fd203.js"></script></head>
             <body>
                 <div class="loader">
                     <div class="loading-bar">
@@ -83,11 +83,12 @@
     <h2>Introduction</h2>
 <p>Dans cet article, nous allons apprendre à créer une Quiz App en utilisant HTML, CSS et JavaScript. Grâce à un code source facile à comprendre, vous pourrez suivre les étapes et créer votre propre version</p>
 <iframe width="899" height="506" src="https://www.youtube.com/embed/d9KNP33AblQ" title="Quiz App" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
 <h2>Code source</h2>
 <p><strong>code-tabs</strong></p>
 <ul>
 <li><p>index.html</p>
-<pre><code class="language-html"><pre class="highlight"><code class="hljs"><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-keyword">html</span>&gt;</span>
+<pre><code class="hljs language-html"><pre class="highlight"><code class="hljs"><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-keyword">html</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;UTF-8&quot;</span>&gt;</span>
@@ -108,10 +109,10 @@
     <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;module&quot;</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;script.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
-</code></pre></code></pre></li>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span></code></pre>
+</code></pre></li>
 <li><p>style.css</p>
-<pre><code class="language-css"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">@import</span> url(<span class="hljs-string">&#x27;https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap&#x27;</span>);
+<pre><code class="hljs language-css"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">@import</span> url(<span class="hljs-string">&#x27;https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap&#x27;</span>);
 
 *,
 *<span class="hljs-selector-pseudo">::before</span>,
@@ -273,10 +274,10 @@
   <span class="hljs-attribute">color</span>: <span class="hljs-built_in">var</span>(--primary-color);
   <span class="hljs-attribute">font-size</span>: <span class="hljs-number">30px</span>;
   <span class="hljs-attribute">font-weight</span>: <span class="hljs-number">900</span>;
-}
-</code></pre></code></pre></li>
+}</code></pre>
+</code></pre></li>
 <li><p>script.js</p>
-<pre><code class="language-js"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">const</span> quizData = <span class="hljs-keyword">await</span> <span class="hljs-title function_">fetch</span>(<span class="hljs-string">&quot;quizzes.json&quot;</span>).<span class="hljs-title function_">then</span>(<span class="hljs-function">(<span class="hljs-params">res</span>) =&gt;</span> res.<span class="hljs-title function_">json</span>());
+<pre><code class="hljs language-js"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">const</span> quizData = <span class="hljs-keyword">await</span> <span class="hljs-title function_">fetch</span>(<span class="hljs-string">&quot;quizzes.json&quot;</span>).<span class="hljs-title function_">then</span>(<span class="hljs-function">(<span class="hljs-params">res</span>) =&gt;</span> res.<span class="hljs-title function_">json</span>());
 <span class="hljs-keyword">const</span> container = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelector</span>(<span class="hljs-string">&quot;.container&quot;</span>);
 <span class="hljs-keyword">const</span> options = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelector</span>(<span class="hljs-string">&quot;.options&quot;</span>);
 <span class="hljs-keyword">const</span> questionEl = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&quot;question&quot;</span>);
@@ -355,10 +356,10 @@ submitBtn.<span class="hljs-title function_">addEventListener</span>(<span class
     &lt;h2 class=&quot;answer&quot;&gt;You answered correctly at &lt;span class=&quot;score&quot;&gt;<span class="hljs-subst">${score}</span>/<span class="hljs-subst">${quizData.length}</span>&lt;/span&gt; questions&lt;/h2&gt;
     &lt;button onclick=&quot;location.reload()&quot;&gt;Reload&lt;/button&gt;
   `</span>;
-}
-</code></pre></code></pre></li>
+}</code></pre>
+</code></pre></li>
 <li><p>quizzes.json</p>
-<pre><code class="language-json"><pre class="highlight"><code class="hljs"><span class="hljs-punctuation">[</span>
+<pre><code class="hljs language-json"><pre class="highlight"><code class="hljs"><span class="hljs-punctuation">[</span>
     <span class="hljs-punctuation">{</span>
         <span class="hljs-attr">&quot;question&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;Which language runs in a web browser?&quot;</span><span class="hljs-punctuation">,</span>
         <span class="hljs-attr">&quot;options&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
@@ -399,14 +400,18 @@ submitBtn.<span class="hljs-title function_">addEventListener</span>(<span class
         <span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span>
         <span class="hljs-attr">&quot;correct&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;function&quot;</span>
     <span class="hljs-punctuation">}</span>    
-<span class="hljs-punctuation">]</span>
-</code></pre></code></pre></li>
+<span class="hljs-punctuation">]</span></code></pre>
+</code></pre></li>
 </ul>
 <h2>Ressources</h2>
 <div class="asset">
   <img src="../../../../assets/blog/quiz-app/background.jpg" />
-<p><a href="../../../../assets/blog/quiz-app/background.jpg" title="background.jpg" download>background.jpg</a></p>
+
+<p>  <a href="../../../../assets/blog/quiz-app/background.jpg" title="download">background.jpg</a></p>
 </div>
+
+
+
 <h2>Conclusion</h2>
 <p>Merci de votre lecture. Nous espérons que cet article vous a été utile !</p>
 

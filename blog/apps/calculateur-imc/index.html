@@ -50,7 +50,7 @@
                         this.page.identifier = window.location.pathname.replace('/en', '');
                     };
                 </script>
-            <script defer src="/blog/apps/calculateur-imc/calculateur-imc.2e9267950058e83aa54c.js"></script></head>
+            <script defer src="/blog/apps/calculateur-imc/calculateur-imc.2e7d9fa13a7b16fd1eae.js"></script></head>
             <body>
                 <div class="loader">
                     <div class="loading-bar">
@@ -81,13 +81,14 @@
 <div class="blog-container">
   <div class="markdown section-container">
     <h2>Introduction</h2>
-<p>In this article, we're going to learn how to create the BMI calculator using HTML, CSS and JavaScript. With easy-to-understand source code, you can follow the steps and create your own version.</p>
+<p>In this article, we&#39;re going to learn how to create the BMI calculator using HTML, CSS and JavaScript. With easy-to-understand source code, you can follow the steps and create your own version.</p>
 <iframe width="899" height="506" src="https://www.youtube.com/embed/oURcl1nQGW4" title="Calculateur IMC" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
 <h2>Code source</h2>
 <p><strong>code-tabs</strong></p>
 <ul>
 <li><p>index.html</p>
-<pre><code class="language-html"><pre class="highlight"><code class="hljs"><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-keyword">html</span>&gt;</span>
+<pre><code class="hljs language-html"><pre class="highlight"><code class="hljs"><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-keyword">html</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">&quot;en&quot;</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;UTF-8&quot;</span>&gt;</span>
@@ -157,10 +158,10 @@
   <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;script.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
-</code></pre></code></pre></li>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span></code></pre>
+</code></pre></li>
 <li><p>style.css</p>
-<pre><code class="language-css"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">@import</span> url(<span class="hljs-string">&quot;https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap&quot;</span>);
+<pre><code class="hljs language-css"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">@import</span> url(<span class="hljs-string">&quot;https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap&quot;</span>);
 
 *,
 *<span class="hljs-selector-pseudo">::before</span>,
@@ -391,10 +392,10 @@
 }
 <span class="hljs-selector-class">.morbid-obesity</span> {
   <span class="hljs-attr">--color</span>: <span class="hljs-number">#FF0000</span>;
-}
-</code></pre></code></pre></li>
+}</code></pre>
+</code></pre></li>
 <li><p>script.js</p>
-<pre><code class="language-js"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">const</span> <span class="hljs-title class_">BMIRanges</span> = [
+<pre><code class="hljs language-js"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">const</span> <span class="hljs-title class_">BMIRanges</span> = [
   { <span class="hljs-attr">description</span>: <span class="hljs-string">&quot;Underweight&quot;</span>, <span class="hljs-attr">color</span>: <span class="hljs-string">&quot;#5BC8F3&quot;</span>, <span class="hljs-attr">range</span>: [<span class="hljs-number">0</span>, <span class="hljs-number">18.5</span>] },
   { <span class="hljs-attr">description</span>: <span class="hljs-string">&quot;Normal&quot;</span>, <span class="hljs-attr">color</span>: <span class="hljs-string">&quot;#9DB63B&quot;</span>, <span class="hljs-attr">range</span>: [<span class="hljs-number">18.5</span>, <span class="hljs-number">25</span>] },
   { <span class="hljs-attr">description</span>: <span class="hljs-string">&quot;Overweight&quot;</span>, <span class="hljs-attr">color</span>: <span class="hljs-string">&quot;#FAC90E&quot;</span>, <span class="hljs-attr">range</span>: [<span class="hljs-number">25</span>, <span class="hljs-number">30</span>] },
@@ -482,14 +483,18 @@ weightInput.<span class="hljs-title function_">addEventListener</span>(<span cla
 
 <span class="hljs-keyword">function</span> <span class="hljs-title function_">getBmiRange</span>(<span class="hljs-params">BMI</span>) {
   <span class="hljs-keyword">return</span> <span class="hljs-title class_">BMIRanges</span>.<span class="hljs-title function_">find</span>(<span class="hljs-function">(<span class="hljs-params">data</span>) =&gt;</span> <span class="hljs-variable constant_">BMI</span> &gt;= data.<span class="hljs-property">range</span>[<span class="hljs-number">0</span>] &amp;&amp; <span class="hljs-variable constant_">BMI</span> &lt; data.<span class="hljs-property">range</span>[<span class="hljs-number">1</span>]);
-}
-</code></pre></code></pre></li>
+}</code></pre>
+</code></pre></li>
 </ul>
 <h2>Ressources</h2>
 <div class="asset">
   <img src="../../../../assets/blog/calculateur-imc/background.jpg" />
-<p><a href="../../../../assets/blog/calculateur-imc/background.jpg" title="background.jpg" download>background.jpg</a></p>
+
+<p>  <a href="../../../../assets/blog/calculateur-imc/background.jpg" title="download">background.jpg</a></p>
 </div>
+
+
+
 <h2>Conclusion</h2>
 <p>Thank you for reading this. We hope you found this article useful!</p>
 

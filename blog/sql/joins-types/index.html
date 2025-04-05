@@ -50,7 +50,7 @@
                         this.page.identifier = window.location.pathname.replace('/en', '');
                     };
                 </script>
-            <script defer src="/blog/sql/joins-types/joins-types.c474dd99022e93ca2324.js"></script></head>
+            <script defer src="/blog/sql/joins-types/joins-types.fd9ca7c2616fc185d963.js"></script></head>
             <body>
                 <div class="loader">
                     <div class="loading-bar">
@@ -136,8 +136,9 @@
     left: -123px;
   }
 </style>
+
 <h2>Introduction</h2>
-<p>In this article, we'll learn about SQL join types, including inner join, left join, right join and full outer join. We'll cover their syntax, differences and practical examples for a better understanding.</p>
+<p>In this article, we&#39;ll learn about SQL join types, including inner join, left join, right join and full outer join. We&#39;ll cover their syntax, differences and practical examples for a better understanding.</p>
 <h2>INNER JOIN</h2>
 <p>Combines rows from two tables based on a common column between them</p>
 <style>
@@ -156,11 +157,11 @@
     <div class="circle circle-IB"></div>
   </div>
 </div>
-<pre><code class="language-sql"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">SELECT</span> <span class="hljs-operator">*</span>
+
+<pre><code class="hljs language-sql"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">SELECT</span> <span class="hljs-operator">*</span>
 <span class="hljs-keyword">FROM</span> A
-<span class="hljs-keyword">INNER</span> <span class="hljs-keyword">JOIN</span> B <span class="hljs-keyword">ON</span> A.key <span class="hljs-operator">=</span> B.key
-</code></pre></code></pre>
-<h2>LEFT JOIN</h2>
+<span class="hljs-keyword">INNER</span> <span class="hljs-keyword">JOIN</span> B <span class="hljs-keyword">ON</span> A.key <span class="hljs-operator">=</span> B.key</code></pre>
+</code></pre><h2>LEFT JOIN</h2>
 <p>Returns all rows in the left table and the corresponding rows in the right table according to a specified condition. If there is no match in the right-hand table, NULL values are returned for the columns in the right-hand table</p>
 <style>
   .left-join .circle-A  {background-color: #ffbe2f;}
@@ -178,11 +179,11 @@
     <div class="circle circle-IB"></div>
   </div>
 </div>
-<pre><code class="language-sql"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">SELECT</span> <span class="hljs-operator">*</span>
+
+<pre><code class="hljs language-sql"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">SELECT</span> <span class="hljs-operator">*</span>
 <span class="hljs-keyword">FROM</span> A
-<span class="hljs-keyword">LEFT</span> <span class="hljs-keyword">JOIN</span> B <span class="hljs-keyword">ON</span> A.key <span class="hljs-operator">=</span> B.key
-</code></pre></code></pre>
-<h2>LEFT EXCLUDING JOIN</h2>
+<span class="hljs-keyword">LEFT</span> <span class="hljs-keyword">JOIN</span> B <span class="hljs-keyword">ON</span> A.key <span class="hljs-operator">=</span> B.key</code></pre>
+</code></pre><h2>LEFT EXCLUDING JOIN</h2>
 <p>Returns all rows in the left-hand table that do not match any rows in the right-hand table</p>
 <style>
   .left-excluding-join .circle-A  {background-color: #ffbe2f;}
@@ -200,12 +201,12 @@
     <div class="circle circle-IB"></div>
   </div>
 </div>
-<pre><code class="language-sql"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">SELECT</span> <span class="hljs-operator">*</span>
+
+<pre><code class="hljs language-sql"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">SELECT</span> <span class="hljs-operator">*</span>
 <span class="hljs-keyword">FROM</span> A
 <span class="hljs-keyword">LEFT</span> <span class="hljs-keyword">JOIN</span> B <span class="hljs-keyword">ON</span> A.key <span class="hljs-operator">=</span> B.key
-<span class="hljs-keyword">WHERE</span> B.key <span class="hljs-keyword">IS</span> <span class="hljs-keyword">NULL</span>
-</code></pre></code></pre>
-<h2>RIGHT JOIN</h2>
+<span class="hljs-keyword">WHERE</span> B.key <span class="hljs-keyword">IS</span> <span class="hljs-keyword">NULL</span></code></pre>
+</code></pre><h2>RIGHT JOIN</h2>
 <p>Returns all the rows in the right-hand table and the corresponding rows in the left-hand table according to a specified condition. If there is no match in the left-hand table, NULL values are returned for the columns in the left-hand table</p>
 <style>
   .right-join .circle-A  {background-color: var(--white-color);}
@@ -223,11 +224,11 @@
     <div class="circle circle-IB"></div>
   </div>
 </div>
-<pre><code class="language-sql"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">SELECT</span> <span class="hljs-operator">*</span>
+
+<pre><code class="hljs language-sql"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">SELECT</span> <span class="hljs-operator">*</span>
 <span class="hljs-keyword">FROM</span> A
-<span class="hljs-keyword">RIGHT</span> <span class="hljs-keyword">JOIN</span> B <span class="hljs-keyword">ON</span> A.key <span class="hljs-operator">=</span> B.key
-</code></pre></code></pre>
-<h2>RIGHT EXCLUDING JOIN</h2>
+<span class="hljs-keyword">RIGHT</span> <span class="hljs-keyword">JOIN</span> B <span class="hljs-keyword">ON</span> A.key <span class="hljs-operator">=</span> B.key</code></pre>
+</code></pre><h2>RIGHT EXCLUDING JOIN</h2>
 <p>Returns all rows in the right-hand table that do not match any rows in the left-hand table.</p>
 <style>
   .right-excluding-join .circle-A  {background-color: var(--white-color);}
@@ -245,12 +246,12 @@
     <div class="circle circle-IB"></div>
   </div>
 </div>
-<pre><code class="language-sql"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">SELECT</span> <span class="hljs-operator">*</span>
+
+<pre><code class="hljs language-sql"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">SELECT</span> <span class="hljs-operator">*</span>
 <span class="hljs-keyword">FROM</span> A
 <span class="hljs-keyword">RIGHT</span> <span class="hljs-keyword">JOIN</span> B <span class="hljs-keyword">ON</span> A.key <span class="hljs-operator">=</span> B.key
-<span class="hljs-keyword">WHERE</span> A.key <span class="hljs-keyword">IS</span> <span class="hljs-keyword">NULL</span>
-</code></pre></code></pre>
-<h2>OUTER JOIN</h2>
+<span class="hljs-keyword">WHERE</span> A.key <span class="hljs-keyword">IS</span> <span class="hljs-keyword">NULL</span></code></pre>
+</code></pre><h2>OUTER JOIN</h2>
 <p>Combines rows from two or more tables according to a specified condition, and includes non-matching rows from one or both tables</p>
 <style>
   .outer-join .circle-A  {background-color: #ffbe2f;}
@@ -268,11 +269,11 @@
     <div class="circle circle-IB"></div>
   </div>
 </div>
-<pre><code class="language-sql"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">SELECT</span> <span class="hljs-operator">*</span>
+
+<pre><code class="hljs language-sql"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">SELECT</span> <span class="hljs-operator">*</span>
 <span class="hljs-keyword">FROM</span> A
-<span class="hljs-keyword">FULL</span> <span class="hljs-keyword">OUTER</span> <span class="hljs-keyword">JOIN</span> B <span class="hljs-keyword">ON</span> A.key <span class="hljs-operator">=</span> B.key
-</code></pre></code></pre>
-<h2>OUTER EXCLUDING JOIN</h2>
+<span class="hljs-keyword">FULL</span> <span class="hljs-keyword">OUTER</span> <span class="hljs-keyword">JOIN</span> B <span class="hljs-keyword">ON</span> A.key <span class="hljs-operator">=</span> B.key</code></pre>
+</code></pre><h2>OUTER EXCLUDING JOIN</h2>
 <p>Returns all rows in the table on the left and all records in the table on the right that do not match</p>
 <style>
   .outer-excluding-join .circle-A  {background-color: #ffbe2f;}
@@ -290,12 +291,12 @@
     <div class="circle circle-IB"></div>
   </div>
 </div>
-<pre><code class="language-sql"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">SELECT</span> <span class="hljs-operator">*</span>
+
+<pre><code class="hljs language-sql"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">SELECT</span> <span class="hljs-operator">*</span>
 <span class="hljs-keyword">FROM</span> A
 <span class="hljs-keyword">FULL</span> <span class="hljs-keyword">OUTER</span> <span class="hljs-keyword">JOIN</span> B <span class="hljs-keyword">ON</span> A.key <span class="hljs-operator">=</span> B.key
-<span class="hljs-keyword">WHERE</span> A.key <span class="hljs-keyword">IS</span> <span class="hljs-keyword">NULL</span> <span class="hljs-keyword">OR</span> B.key <span class="hljs-keyword">IS</span> <span class="hljs-keyword">NULL</span>
-</code></pre></code></pre>
-<h2>Conclusion</h2>
+<span class="hljs-keyword">WHERE</span> A.key <span class="hljs-keyword">IS</span> <span class="hljs-keyword">NULL</span> <span class="hljs-keyword">OR</span> B.key <span class="hljs-keyword">IS</span> <span class="hljs-keyword">NULL</span></code></pre>
+</code></pre><h2>Conclusion</h2>
 <p>Thank you for reading this. We hope you found this article useful!</p>
 
     <app-comments></app-comments>

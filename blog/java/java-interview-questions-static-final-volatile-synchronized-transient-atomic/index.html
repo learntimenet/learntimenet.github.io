@@ -50,7 +50,7 @@
                         this.page.identifier = window.location.pathname.replace('/en', '');
                     };
                 </script>
-            <script defer src="/blog/java/java-interview-questions-static-final-volatile-synchronized-transient-atomic/java-interview-questions-static-final-volatile-synchronized-transient-atomic.7e2342d477055cae43b9.js"></script></head>
+            <script defer src="/blog/java/java-interview-questions-static-final-volatile-synchronized-transient-atomic/java-interview-questions-static-final-volatile-synchronized-transient-atomic.ad1eb33369d4962fc5fd.js"></script></head>
             <body>
                 <div class="loader">
                     <div class="loading-bar">
@@ -81,7 +81,7 @@
 <div class="blog-container">
   <div class="markdown section-container">
     <h2>Introduction</h2>
-<p>Java's rich set of keywords enables developers to write efficient, thread-safe, and maintainable code. Among these, <strong>static</strong>, <strong>final</strong>, <strong>volatile</strong>, <strong>synchronized</strong>, <strong>transient</strong>, and <strong>atomic</strong> concepts are particularly crucial for technical interviews and real-world applications. This article explores each keyword in depth, explaining their behavior, use cases, and how they interact with Java's memory model and threading architecture.</p>
+<p>Java&#39;s rich set of keywords enables developers to write efficient, thread-safe, and maintainable code. Among these, <strong>static</strong>, <strong>final</strong>, <strong>volatile</strong>, <strong>synchronized</strong>, <strong>transient</strong>, and <strong>atomic</strong> concepts are particularly crucial for technical interviews and real-world applications. This article explores each keyword in depth, explaining their behavior, use cases, and how they interact with Java&#39;s memory model and threading architecture.</p>
 <h2>1. static Keyword</h2>
 <h3>Definition</h3>
 <p>The <code>static</code> keyword indicates that a member (variable or method) belongs to the class itself rather than any specific instance.</p>
@@ -93,24 +93,22 @@
 </ul>
 <h3>Practical Examples</h3>
 <p><strong>Static Variable:</strong></p>
-<pre><code class="language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Employee</span> {
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Employee</span> {
     <span class="hljs-keyword">static</span> <span class="hljs-type">int</span> <span class="hljs-variable">employeeCount</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;  <span class="hljs-comment">// Shared across all instances</span>
     
     Employee() {
         employeeCount++;
     }
-}
-</code></pre></code></pre>
-<p><strong>Static Method:</strong></p>
-<pre><code class="language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">class</span> <span class="hljs-title class_">MathUtils</span> {
+}</code></pre>
+</code></pre><p><strong>Static Method:</strong></p>
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">class</span> <span class="hljs-title class_">MathUtils</span> {
     <span class="hljs-keyword">static</span> <span class="hljs-type">double</span> <span class="hljs-title function_">calculateCircleArea</span><span class="hljs-params">(<span class="hljs-type">double</span> radius)</span> {
         <span class="hljs-keyword">return</span> Math.PI * radius * radius;
     }
 }
-<span class="hljs-comment">// Usage: MathUtils.calculateCircleArea(5.0)</span>
-</code></pre></code></pre>
-<p><strong>Static Block:</strong></p>
-<pre><code class="language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">class</span> <span class="hljs-title class_">DatabaseConfig</span> {
+<span class="hljs-comment">// Usage: MathUtils.calculateCircleArea(5.0)</span></code></pre>
+</code></pre><p><strong>Static Block:</strong></p>
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">class</span> <span class="hljs-title class_">DatabaseConfig</span> {
     <span class="hljs-keyword">static</span> Properties config;
     
     <span class="hljs-keyword">static</span> {
@@ -121,11 +119,9 @@
             <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">RuntimeException</span>(<span class="hljs-string">&quot;Failed to load config&quot;</span>);
         }
     }
-}
-</code></pre></code></pre>
-<h3>Interview Insights</h3>
-<p><strong>Q:</strong> Can static methods be overridden?<br>
-<strong>A:</strong> No, they're hidden, not overridden. The method called depends on the reference type at compile time.
+}</code></pre>
+</code></pre><h3>Interview Insights</h3>
+<p><strong>Q:</strong> Can static methods be overridden?<br><strong>A:</strong> No, they&#39;re hidden, not overridden. The method called depends on the reference type at compile time.
 <strong>Memory Consideration:</strong> Static variables reside in the method area (a part of the heap memory).</p>
 <h2>2. final Keyword</h2>
 <p>The <code>final</code> keyword creates immutable references for variables, prevents method overriding, and restricts class inheritance.</p>
@@ -137,10 +133,9 @@
 </ol>
 <h3>Practical Examples</h3>
 <p><strong>Final Variable:</strong></p>
-<pre><code class="language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">final</span> <span class="hljs-type">double</span> <span class="hljs-variable">PI</span> <span class="hljs-operator">=</span> <span class="hljs-number">3.14159</span>;
-</code></pre></code></pre>
-<p><strong>Final Method:</strong></p>
-<pre><code class="language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Parent</span> {
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">final</span> <span class="hljs-type">double</span> <span class="hljs-variable">PI</span> <span class="hljs-operator">=</span> <span class="hljs-number">3.14159</span>;</code></pre>
+</code></pre><p><strong>Final Method:</strong></p>
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Parent</span> {
     <span class="hljs-keyword">final</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">criticalOperation</span><span class="hljs-params">()</span> {
         <span class="hljs-comment">// Implementation that shouldn&#x27;t be changed</span>
     }
@@ -148,16 +143,13 @@
 
 <span class="hljs-keyword">class</span> <span class="hljs-title class_">Child</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">Parent</span> {
     <span class="hljs-comment">// void criticalOperation() {}  // Compilation error</span>
-}
-</code></pre></code></pre>
-<p><strong>Final Class:</strong></p>
-<pre><code class="language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">final</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">SecurityToken</span> {
+}</code></pre>
+</code></pre><p><strong>Final Class:</strong></p>
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">final</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">SecurityToken</span> {
     <span class="hljs-comment">// Cannot be subclassed</span>
-}
-</code></pre></code></pre>
-<h3>Interview Insights</h3>
-<p><strong>Q:</strong> Are final variables thread-safe?<br>
-<strong>A:</strong> Yes, when properly constructed (after complete initialization).
+}</code></pre>
+</code></pre><h3>Interview Insights</h3>
+<p><strong>Q:</strong> Are final variables thread-safe?<br><strong>A:</strong> Yes, when properly constructed (after complete initialization).
 <strong>Performance Note:</strong> JVM may inline final variables during compilation.</p>
 <h2>3. volatile Keyword</h2>
 <h3>Definition</h3>
@@ -168,7 +160,7 @@
 <li>Writes are immediately flushed to main memory</li>
 </ul>
 <h3>Practical Example</h3>
-<pre><code class="language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">class</span> <span class="hljs-title class_">TaskRunner</span> {
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">class</span> <span class="hljs-title class_">TaskRunner</span> {
     <span class="hljs-keyword">volatile</span> <span class="hljs-type">boolean</span> <span class="hljs-variable">running</span> <span class="hljs-operator">=</span> <span class="hljs-literal">true</span>;
     
     <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">stop</span><span class="hljs-params">()</span> {
@@ -180,30 +172,28 @@
             <span class="hljs-comment">// Task execution</span>
         }
     }
-}
-</code></pre></code></pre>
-<h3>Interview Insights</h3>
-<p><strong>Q:</strong> Is volatile sufficient for atomic operations like increment?<br>
-<strong>A:</strong> No, it only guarantees visibility, not atomicity. Use <code>AtomicInteger</code> instead.</p>
+}</code></pre>
+</code></pre><h3>Interview Insights</h3>
+<p><strong>Q:</strong> Is volatile sufficient for atomic operations like increment?<br><strong>A:</strong> No, it only guarantees visibility, not atomicity. Use <code>AtomicInteger</code> instead.</p>
 <p><strong>Use Case:</strong> Perfect for status flags or read-only configurations.</p>
 <h2>4. synchronized Keyword</h2>
+<h3>Definition</h3>
 <p><code>synchronized</code> provides thread mutual exclusion and guarantees both visibility and atomicity.</p>
-<p>Implementation Options:</p>
+<h3>Implementation Options:</h3>
 <ol>
 <li>Synchronized methods</li>
 <li>Synchronized blocks</li>
 </ol>
 <p><strong>Method Synchronization:</strong></p>
-<pre><code class="language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Counter</span> {
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Counter</span> {
     <span class="hljs-keyword">private</span> <span class="hljs-type">int</span> count;
     
     <span class="hljs-keyword">public</span> <span class="hljs-keyword">synchronized</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">increment</span><span class="hljs-params">()</span> {
         count++;  <span class="hljs-comment">// Atomic operation</span>
     }
-}
-</code></pre></code></pre>
-<p><strong>Block Synchronization:</strong></p>
-<pre><code class="language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">class</span> <span class="hljs-title class_">TransactionProcessor</span> {
+}</code></pre>
+</code></pre><p><strong>Block Synchronization:</strong></p>
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">class</span> <span class="hljs-title class_">TransactionProcessor</span> {
     <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> <span class="hljs-type">Object</span> <span class="hljs-variable">lock</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Object</span>();
     
     <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">process</span><span class="hljs-params">()</span> {
@@ -211,16 +201,15 @@
             <span class="hljs-comment">// Critical section</span>
         }
     }
-}
-</code></pre></code></pre>
-<h3>Interview Insights</h3>
-<p><strong>Q:</strong> What's the difference between synchronized methods and blocks?<br>
-<strong>A:</strong> Methods lock on the object instance (or class for static methods), blocks can lock on any object.
+}</code></pre>
+</code></pre><h3>Interview Insights</h3>
+<p><strong>Q:</strong> What&#39;s the difference between synchronized methods and blocks?<br><strong>A:</strong> Methods lock on the object instance (or class for static methods), blocks can lock on any object.
 <strong>Performance Tip:</strong> Keep synchronized sections as small as possible.</p>
 <h2>5. transient Keyword</h2>
+<h3>Definition</h3>
 <p><code>transient</code> marks fields that should be excluded from serialization.</p>
 <h3>Practical Example</h3>
-<pre><code class="language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">class</span> <span class="hljs-title class_">UserCredentials</span> <span class="hljs-keyword">implements</span> <span class="hljs-title class_">Serializable</span> {
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">class</span> <span class="hljs-title class_">UserCredentials</span> <span class="hljs-keyword">implements</span> <span class="hljs-title class_">Serializable</span> {
     String username;
     <span class="hljs-keyword">transient</span> String password;  <span class="hljs-comment">// Won&#x27;t be serialized</span>
     
@@ -229,11 +218,9 @@
         ois.defaultReadObject();
         password = <span class="hljs-string">&quot;default&quot;</span>;  <span class="hljs-comment">// Reinitialize after deserialization</span>
     }
-}
-</code></pre></code></pre>
-<h3>Interview Insights</h3>
-<p><strong>Q:</strong> What happens to static fields during serialization?<br>
-<strong>A:</strong> They're never serialized, regardless of the transient keyword.</p>
+}</code></pre>
+</code></pre><h3>Interview Insights</h3>
+<p><strong>Q:</strong> What happens to static fields during serialization?<br><strong>A:</strong> They&#39;re never serialized, regardless of the transient keyword.</p>
 <h2>6. Atomic Classes</h2>
 <h3>Definition</h3>
 <p>Classes in <code>java.util.concurrent.atomic</code> provide lock-free thread-safe operations using CAS (Compare-And-Swap).</p>
@@ -244,26 +231,74 @@
 <li><code>LongAdder</code></li>
 </ul>
 <h3>Practical Example</h3>
-<pre><code class="language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">class</span> <span class="hljs-title class_">AtomicCounter</span> {
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">class</span> <span class="hljs-title class_">AtomicCounter</span> {
     <span class="hljs-keyword">private</span> <span class="hljs-type">AtomicInteger</span> <span class="hljs-variable">count</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">AtomicInteger</span>(<span class="hljs-number">0</span>);
     
     <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">increment</span><span class="hljs-params">()</span> {
         count.incrementAndGet();  <span class="hljs-comment">// Thread-safe without locking</span>
     }
-}
-</code></pre></code></pre>
-<h3>Interview Insights</h3>
-<p><strong>Q:</strong> When would you prefer atomic classes over synchronized blocks?<br>
-<strong>A:</strong> For simple operations under high contention where lock granularity matters.</p>
+}</code></pre>
+</code></pre><h3>Interview Insights</h3>
+<p><strong>Q:</strong> When would you prefer atomic classes over synchronized blocks?<br><strong>A:</strong> For simple operations under high contention where lock granularity matters.</p>
 <h2>Comparative Analysis</h2>
-<p>| Concept      | Thread Safety | Memory |
-|--||--|
-| static       | No            | No     |
-| final        | Yes*          | Yes    |
-| volatile     | Partial       | Yes    |
-| synchronized | Yes           | Yes    |
-| transient    | N/A           | N/A    |
-| atomic       | Yes           | Yes    |</p>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Thread Safety</th>
+<th>Memory Visibility</th>
+<th>Atomicity</th>
+<th>Serialization</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>static</td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>final</td>
+<td>Yes*</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>volatile</td>
+<td>Partial</td>
+<td>Yes</td>
+<td>No</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>synchronized</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>transient</td>
+<td>N/A</td>
+<td>N/A</td>
+<td>N/A</td>
+<td>No</td>
+</tr>
+<tr>
+<td>atomic</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>N/A</td>
+</tr>
+</tbody>
+</table>
+
+
+<p>*When properly constructed</p>
 <h2>Conclusion</h2>
 <p>Understanding these six Java keywords is essential for writing robust, thread-safe applications. Key takeaways:</p>
 <ol>

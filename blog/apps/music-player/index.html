@@ -50,7 +50,7 @@
                         this.page.identifier = window.location.pathname.replace('/en', '');
                     };
                 </script>
-            <script defer src="/blog/apps/music-player/music-player.08f7682bcadb08051059.js"></script></head>
+            <script defer src="/blog/apps/music-player/music-player.01cf5862a86fd984f3cd.js"></script></head>
             <body>
                 <div class="loader">
                     <div class="loading-bar">
@@ -81,13 +81,14 @@
 <div class="blog-container">
   <div class="markdown section-container">
     <h2>Introduction</h2>
-<p>In this article, we're going to learn how to create a Music Player using HTML, CSS and JavaScript. With easy-to-understand source code, you can follow the steps and create your own version.</p>
+<p>In this article, we&#39;re going to learn how to create a Music Player using HTML, CSS and JavaScript. With easy-to-understand source code, you can follow the steps and create your own version.</p>
 <iframe width="899" height="506" src="https://www.youtube.com/embed/1A5wew2mzJQ" title="Music Player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
 <h2>Code source</h2>
 <p><strong>code-tabs</strong></p>
 <ul>
 <li><p>index.html</p>
-<pre><code class="language-html"><pre class="highlight"><code class="hljs"><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-keyword">html</span>&gt;</span>
+<pre><code class="hljs language-html"><pre class="highlight"><code class="hljs"><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-keyword">html</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">&quot;en&quot;</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;UTF-8&quot;</span>&gt;</span>
@@ -129,10 +130,10 @@
   <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;module&quot;</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;script.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
-</code></pre></code></pre></li>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span></code></pre>
+</code></pre></li>
 <li><p>style.css</p>
-<pre><code class="language-css"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">@import</span> url(<span class="hljs-string">&quot;https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap&quot;</span>);
+<pre><code class="hljs language-css"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">@import</span> url(<span class="hljs-string">&quot;https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap&quot;</span>);
 
 *,
 *<span class="hljs-selector-pseudo">::before</span>,
@@ -266,10 +267,10 @@
 
 <span class="hljs-selector-class">.hidden</span> {
   <span class="hljs-attribute">display</span>: none;
-}
-</code></pre></code></pre></li>
+}</code></pre>
+</code></pre></li>
 <li><p>script.js</p>
-<pre><code class="language-js"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">const</span> songs = <span class="hljs-keyword">await</span> <span class="hljs-title function_">fetch</span>(<span class="hljs-string">&quot;songs.json&quot;</span>).<span class="hljs-title function_">then</span>(<span class="hljs-function">(<span class="hljs-params">res</span>) =&gt;</span> res.<span class="hljs-title function_">json</span>());
+<pre><code class="hljs language-js"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">const</span> songs = <span class="hljs-keyword">await</span> <span class="hljs-title function_">fetch</span>(<span class="hljs-string">&quot;songs.json&quot;</span>).<span class="hljs-title function_">then</span>(<span class="hljs-function">(<span class="hljs-params">res</span>) =&gt;</span> res.<span class="hljs-title function_">json</span>());
 
 <span class="hljs-keyword">const</span> playBtn = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelector</span>(<span class="hljs-string">&quot;.icon-play&quot;</span>);
 <span class="hljs-keyword">const</span> pauseBtn = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelector</span>(<span class="hljs-string">&quot;.icon-pause&quot;</span>);
@@ -372,10 +373,10 @@ progress.<span class="hljs-title function_">addEventListener</span>(<span class=
       <span class="hljs-title function_">changeSong</span>(<span class="hljs-number">1</span>);
     }
   }, <span class="hljs-number">1000</span>);
-}
-</code></pre></code></pre></li>
+}</code></pre>
+</code></pre></li>
 <li><p>songs.json</p>
-<pre><code class="language-json"><pre class="highlight"><code class="hljs"><span class="hljs-punctuation">[</span>
+<pre><code class="hljs language-json"><pre class="highlight"><code class="hljs"><span class="hljs-punctuation">[</span>
     <span class="hljs-punctuation">{</span>
         <span class="hljs-attr">&quot;name&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;Happier&quot;</span><span class="hljs-punctuation">,</span>
         <span class="hljs-attr">&quot;link&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;https://www.dropbox.com/s/zp1xfir101y4sc3/happier.mp3?raw=1&quot;</span><span class="hljs-punctuation">,</span>
@@ -406,14 +407,18 @@ progress.<span class="hljs-title function_">addEventListener</span>(<span class=
         <span class="hljs-attr">&quot;artists&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;Maroon 5&quot;</span><span class="hljs-punctuation">,</span>
         <span class="hljs-attr">&quot;image&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;https://www.dropbox.com/s/ouq5zzgbqsk9zx0/girls-like-you.png?raw=1&quot;</span>
     <span class="hljs-punctuation">}</span>
-<span class="hljs-punctuation">]</span>
-</code></pre></code></pre></li>
+<span class="hljs-punctuation">]</span></code></pre>
+</code></pre></li>
 </ul>
 <h2>Ressources</h2>
 <div class="asset">
   <img src="../../../../assets/blog/music-player/background.jpg" />
-<p><a href="../../../../assets/blog/music-player/background.jpg" title="background.jpg" download>background.jpg</a></p>
+
+<p>  <a href="../../../../assets/blog/music-player/background.jpg" title="download">background.jpg</a></p>
 </div>
+
+
+
 <h2>Conclusion</h2>
 <p>Thank you for reading this. We hope you found this article useful!</p>
 

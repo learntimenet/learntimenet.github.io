@@ -50,7 +50,7 @@
                         this.page.identifier = window.location.pathname.replace('/en', '');
                     };
                 </script>
-            <script defer src="/blog/spring/caching-in-spring-boot-improving-performance-with-cacheable/caching-in-spring-boot-improving-performance-with-cacheable.740ae0154c55b7cc746d.js"></script></head>
+            <script defer src="/blog/spring/caching-in-spring-boot-improving-performance-with-cacheable/caching-in-spring-boot-improving-performance-with-cacheable.53e80bc5e966f834fcb3.js"></script></head>
             <body>
                 <div class="loader">
                     <div class="loading-bar">
@@ -94,7 +94,7 @@
 <h2>How to Use @Cacheable</h2>
 <h3>Step 1: Enable Caching in Spring Boot</h3>
 <p>To enable caching in your Spring Boot application, add the <code>@EnableCaching</code> annotation to your main application class or a configuration class.</p>
-<pre><code class="language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">import</span> org.springframework.cache.annotation.EnableCaching;
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">import</span> org.springframework.cache.annotation.EnableCaching;
 <span class="hljs-keyword">import</span> org.springframework.boot.SpringApplication;
 <span class="hljs-keyword">import</span> org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -104,11 +104,10 @@
     <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> {
         SpringApplication.run(MyApplication.class, args);
     }
-}
-</code></pre></code></pre>
-<h3>Step 2: Add @Cacheable to Methods</h3>
+}</code></pre>
+</code></pre><h3>Step 2: Add @Cacheable to Methods</h3>
 <p>Use the <code>@Cacheable</code> annotation on methods whose results you want to cache. You can specify the cache name and optionally a key for the cache.</p>
-<pre><code class="language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">import</span> org.springframework.cache.annotation.Cacheable;
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">import</span> org.springframework.cache.annotation.Cacheable;
 <span class="hljs-keyword">import</span> org.springframework.stereotype.Service;
 
 <span class="hljs-meta">@Service</span>
@@ -121,9 +120,8 @@
         <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Product</span>(id, <span class="hljs-string">&quot;Product &quot;</span> + id);
     }
 
-}
-</code></pre></code></pre>
-<p><strong>Explanation:</strong></p>
+}</code></pre>
+</code></pre><p><strong>Explanation:</strong></p>
 <ul>
 <li>The <code>@Cacheable(&quot;products&quot;)</code> annotation caches the result of the <code>getProductById</code> method in a cache named products.</li>
 <li>The first time the method is called, it will execute the logic and store the result in the cache.</li>
@@ -132,37 +130,33 @@
 <h2>Customizing Cache Keys</h2>
 <p>By default, Spring uses the method parameters as the cache key. You can customize the cache key using the key attribute of the <code>@Cacheable</code> annotation.</p>
 <h3>Example: Custom Cache Key</h3>
-<pre><code class="language-java"><pre class="highlight"><code class="hljs"><span class="hljs-meta">@Cacheable(value = &quot;products&quot;, key = &quot;#id&quot;)</span>
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-meta">@Cacheable(value = &quot;products&quot;, key = &quot;#id&quot;)</span>
 <span class="hljs-keyword">public</span> Product <span class="hljs-title function_">getProductById</span><span class="hljs-params">(Long id)</span> {
     <span class="hljs-comment">// Method logic</span>
-}
-</code></pre></code></pre>
-<h3>Example: Composite Key</h3>
+}</code></pre>
+</code></pre><h3>Example: Composite Key</h3>
 <p>If your method has multiple parameters, you can create a composite key using SpEL (Spring Expression Language).</p>
-<pre><code class="language-java"><pre class="highlight"><code class="hljs"><span class="hljs-meta">@Cacheable(value = &quot;products&quot;, key = &quot;{#id, #name}&quot;)</span>
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-meta">@Cacheable(value = &quot;products&quot;, key = &quot;{#id, #name}&quot;)</span>
 <span class="hljs-keyword">public</span> Product <span class="hljs-title function_">getProductByIdAndName</span><span class="hljs-params">(Long id, String name)</span> {
     <span class="hljs-comment">// Method logic</span>
-}
-</code></pre></code></pre>
-<h2>Cache Eviction with @CacheEvict</h2>
+}</code></pre>
+</code></pre><h2>Cache Eviction with @CacheEvict</h2>
 <p>Cached data can become stale over time. To remove stale data from the cache, use the <code>@CacheEvict</code> annotation</p>
 <h3>Example: Evicting a Cache</h3>
-<pre><code class="language-java"><pre class="highlight"><code class="hljs"><span class="hljs-meta">@CacheEvict(value = &quot;products&quot;, key = &quot;#id&quot;)</span>
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-meta">@CacheEvict(value = &quot;products&quot;, key = &quot;#id&quot;)</span>
 <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">updateProduct</span><span class="hljs-params">(Long id, Product product)</span> {
     <span class="hljs-comment">// Update product in the database</span>
-}
-</code></pre></code></pre>
-<p><strong>alert-info</strong></p>
+}</code></pre>
+</code></pre><p><strong>alert-info</strong></p>
 <p>The <code>@CacheEvict</code> annotation removes the cached entry for the specified key (<code>id</code>) from the <code>products</code> cache.</p>
 <h2>Conditional Caching with @Cacheable</h2>
 <p>You can conditionally cache results based on specific criteria using the condition and unless attributes.</p>
 <h3>Example: Conditional Caching</h3>
-<pre><code class="language-java"><pre class="highlight"><code class="hljs"><span class="hljs-meta">@Cacheable(value = &quot;products&quot;, key = &quot;#id&quot;, condition = &quot;#id &gt; 10&quot;)</span>
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-meta">@Cacheable(value = &quot;products&quot;, key = &quot;#id&quot;, condition = &quot;#id &gt; 10&quot;)</span>
 <span class="hljs-keyword">public</span> Product <span class="hljs-title function_">getProductById</span><span class="hljs-params">(Long id)</span> {
     <span class="hljs-comment">// Method logic</span>
-}
-</code></pre></code></pre>
-<p><strong>alert-info</strong></p>
+}</code></pre>
+</code></pre><p><strong>alert-info</strong></p>
 <p>The result will only be cached if the <code>id</code> is greater than 10.</p>
 <h2>Configuring Cache Providers</h2>
 <p>Spring Boot supports multiple caching providers, such as:</p>
@@ -172,16 +166,14 @@
 </ul>
 <h3>Example: Using Caffeine Cache</h3>
 <p>Add the Caffeine dependency to your <code>pom.xml</code>:</p>
-<pre><code class="language-xml"><pre class="highlight"><code class="hljs"><span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span>
+<pre><code class="hljs language-xml"><pre class="highlight"><code class="hljs"><span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>com.github.ben-manes.caffeine<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>caffeine<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span>
-</code></pre></code></pre>
-<p>Configure Caffeine in your <code>application.properties</code>:</p>
-<pre><code class="language-properties"><pre class="highlight"><code class="hljs"><span class="hljs-attr">spring.cache.cache-names</span>=<span class="hljs-string">products</span>
-<span class="hljs-attr">spring.cache.caffeine.spec</span>=<span class="hljs-string">maximumSize=500,expireAfterAccess=600s</span>
-</code></pre></code></pre>
-<h2>Best Practices</h2>
+<span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span></code></pre>
+</code></pre><p>Configure Caffeine in your <code>application.properties</code>:</p>
+<pre><code class="hljs language-properties"><pre class="highlight"><code class="hljs"><span class="hljs-attr">spring.cache.cache-names</span>=<span class="hljs-string">products</span>
+<span class="hljs-attr">spring.cache.caffeine.spec</span>=<span class="hljs-string">maximumSize=500,expireAfterAccess=600s</span></code></pre>
+</code></pre><h2>Best Practices</h2>
 <ul>
 <li><strong>Use Meaningful Cache Names</strong>: Choose descriptive names for your caches to make it easier to manage and debug.</li>
 <li><strong>Set Cache Expiration</strong>: Configure cache expiration (TTL) to avoid serving stale data.</li>
