@@ -1,0 +1,335 @@
+
+            <!DOCTYPE html>
+            <html lang="en" data-translated="false" data-title="Saga Pattern">
+            <head>
+                <meta charset="utf-8" />
+                <title>Learn Time | Saga Pattern</title>
+                <meta name="description" content="Discover the Saga Pattern, a powerful design pattern for managing distributed transactions in microservices. Learn how to implement choreography and orchestration-based Sagas with practical code examples in Java. Perfect for developers tackling data consistency in distributed systems">
+                
+                <meta name="viewport" content="width=device-width,initial-scale=1" />
+                <!--
+                <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
+                <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
+                <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
+                <link rel="shortcut icon" sizes="192x192" href="/assets/favicon/android-chrome-192x192.png" >
+                <link rel="shortcut icon" sizes="512x512" href="/assets/favicon/android-chrome-512x512.png" >
+                <link rel="manifest" href="/assets/favicon/site.webmanifest">
+                <link rel="shortcut icon" href="/assets/favicon/favicon.ico">
+                <link rel="mask-icon" href="/assets/favicon/safari-pinned-tab.svg" color="#5bbad5">
+                <meta name="msapplication-TileColor" content="#da532c">
+                <meta name="theme-color" content="#ffffff">
+                -->
+                <link rel="shortcut icon" type="image/png" href="/assets/images/logo-circle.png">
+                <link rel="stylesheet" href="/styles.css">
+                <script src="https://kit.fontawesome.com/ff0edf556e.js" crossorigin="anonymous"></script>
+                <script src="https://code.iconify.design/iconify-icon/1.0.2/iconify-icon.min.js"></script>
+                <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+                <script>window.startTime = new Date().getTime();</script>
+                <style>
+                    :root {
+                        --background-color: #f3f2ef;
+                        --loading-bar-background-color: #d6cec2;
+                        --moving-loading-bar-background-color: #D0514D;
+                    }
+                    .loader {transition: all .2s ease-out;z-index: 10000000000;margin-top: -200px;position: fixed;top: 0;left: 0;right: 0;bottom: 0;background-color: var(--background-color);display: flex;align-items: center;justify-content: center;flex-direction: column;}.loader-logo {width: 40px; height: 40px; margin-bottom: 20px;}.loading-bar {width: 130px;height: 4px;border-radius: 100rem;background-color: var(--loading-bar-background-color);position: relative;overflow: hidden;}.moving-loading-bar {height: 100%;width: 68px;position: absolute;border-radius: 100rem;background-color: var(--moving-loading-bar-background-color);animation: initial-loading 1.5s ease infinite;}@keyframes initial-loading {0% {transform: translate(-34px);}50% {transform: translate(96px);}to {transform: translate(-34px);}}
+                    .loader.hide {opacity: 0;}
+                </style>
+                
+            <meta property="og:title" content="Saga Pattern" />
+            <meta property="og:description" content="Discover the Saga Pattern, a powerful design pattern for managing distributed transactions in microservices. Learn how to implement choreography and orchestration-based Sagas with practical code examples in Java. Perfect for developers tackling data consistency in distributed systems" />
+            <meta property="og:image" content="https://learntime.net/assets/thumbnail/blog/blog-thumbnail-1.jpg" />
+            <meta name="twitter:card" content="summary_large_image">
+            <meta name="twitter:creator" content="@learntimenet">
+            <meta name="twitter:title" content="Saga Pattern">
+            <meta name="twitter:description" content="Discover the Saga Pattern, a powerful design pattern for managing distributed transactions in microservices. Learn how to implement choreography and orchestration-based Sagas with practical code examples in Java. Perfect for developers tackling data consistency in distributed systems">
+            <meta name="twitter:image" content="https://learntime.net/assets/thumbnail/blog/blog-thumbnail-1.jpg">
+        
+                <script>
+                    var disqus_config = function () {
+                        this.page.url = window.location.origin + window.location.pathname;
+                        this.page.identifier = window.location.pathname.replace('/en', '');
+                    };
+                </script>
+            <script defer src="/blog/essentials/saga-pattern/saga-pattern.2e3adcf8cda122920373.js"></script></head>
+            <body>
+                <div class="loader">
+                    <div class="loading-bar">
+                        <div class="moving-loading-bar"></div>
+                    </div>
+                </div>
+                <script>
+                    var lastVisitTime = parseInt(localStorage.getItem('LAST_VISIT_TIME') || '0');
+                    if ((new Date().valueOf() - lastVisitTime) < 1200000) {
+                        document.querySelector('.loading-bar').style.display = 'none';
+                    }
+                </script>
+                <div class="body-container">
+                    <app-navbar></app-navbar>
+                    <app-breadcrumbs></app-breadcrumbs>
+                    <main>
+        
+<style>
+    :root {
+        --scroll-indicator-height: 1rem;
+    }
+    @media screen and (min-width: 1024px) {
+        :root {
+            --promotion-height: 0rem !important;
+        }
+    }
+</style>
+<div class="max-width blog-container">
+  <div class="main-container">
+    <app-blog-title blog-title="Saga Pattern" blog-description="Discover the Saga Pattern, a powerful design pattern for managing distributed transactions in microservices. Learn how to implement choreography and orchestration-based Sagas with practical code examples in Java. Perfect for developers tackling data consistency in distributed systems" blog-image="/assets/images/blog/blog-thumbnail-1.jpg"></app-blog-title>
+    <div class="blog-content markdown">
+      <h2>Introduction</h2>
+<p>In the world of distributed systems, ensuring data consistency across multiple services is a significant challenge. Traditional ACID transactions, which work well in monolithic applications, often fall short in microservices architectures due to the decentralized nature of these systems. This is where the Saga Pattern comes into play. The Saga Pattern is a design pattern that helps manage distributed transactions by breaking them down into a series of smaller, localized transactions, each with its own compensating action in case of failure.</p>
+<p>In this article, we’ll explore the Saga Pattern in detail, discuss its use cases, and provide practical code examples to help you understand how to implement it in your applications.</p>
+<h2>What is the Saga Pattern?</h2>
+<p>The Saga Pattern is a sequence of local transactions where each transaction updates data within a single service. If a transaction fails, the Saga executes a series of compensating transactions to undo the changes made by the previous transactions. This ensures that the system remains in a consistent state, even in the event of failures.</p>
+<p>There are two main types of Saga implementations:</p>
+<ul>
+<li>Choreography-Based Saga: In this approach, each service publishes events that trigger actions in other services. There is no central coordinator; the services communicate with each other through events.</li>
+<li>Orchestration-Based Saga: In this approach, a central orchestrator (often a dedicated service) coordinates the execution of the Saga. The orchestrator sends commands to the participating services and handles the flow of the transaction.</li>
+</ul>
+<p>Both approaches have their pros and cons, and the choice between them depends on the complexity of the workflow and the level of coupling between services.</p>
+<h2>When to Use the Saga Pattern?</h2>
+<p>The Saga Pattern is particularly useful in the following scenarios:</p>
+<ul>
+<li>Microservices Architecture: When multiple services need to collaborate to complete a business transaction.</li>
+<li>Long-Running Transactions: When a transaction spans multiple services and takes a significant amount of time to complete.</li>
+<li>Eventual Consistency: When strict ACID compliance is not required, and eventual consistency is acceptable.</li>
+<li>Failure Recovery: When you need a mechanism to handle partial failures and roll back changes.</li>
+</ul>
+<h2>Example Scenario: E-Commerce Order Processing</h2>
+<p>Let’s consider an e-commerce application where an order involves multiple services:</p>
+<ul>
+<li>Order Service: Creates the order.</li>
+<li>Inventory Service: Reserves the items in the inventory.</li>
+<li>Payment Service: Processes the payment.</li>
+<li>Shipping Service: Schedules the shipment.</li>
+</ul>
+<p>If any of these steps fail, the Saga must undo the previous steps to maintain consistency.</p>
+<h2>Choreography-Based Saga Example</h2>
+<p>In a choreography-based Saga, each service publishes events that trigger actions in other services. Here’s how it works for our e-commerce example:</p>
+<h3>Step 1: Order Service</h3>
+<p>The <code>OrderService</code> creates an order and publishes an <code>OrderCreated</code> event.</p>
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">OrderService</span> {
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">createOrder</span><span class="hljs-params">(Order order)</span> {
+        <span class="hljs-comment">// Save order to the database</span>
+        orderRepository.save(order);
+
+        <span class="hljs-comment">// Publish OrderCreated event</span>
+        eventBus.publish(<span class="hljs-keyword">new</span> <span class="hljs-title class_">OrderCreatedEvent</span>(order.getId(), order.getItems()));
+    }
+}</code></pre>
+</code></pre><h3>Step 2: Inventory Service</h3>
+<p>The <code>InventoryService</code> listens to the <code>OrderCreated</code> event and reserves the items.</p>
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">InventoryService</span> {
+    <span class="hljs-meta">@EventListener</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">handleOrderCreated</span><span class="hljs-params">(OrderCreatedEvent event)</span> {
+        <span class="hljs-keyword">try</span> {
+            <span class="hljs-comment">// Reserve items in the inventory</span>
+            inventoryRepository.reserveItems(event.getOrderId(), event.getItems());
+
+            <span class="hljs-comment">// Publish InventoryReserved event</span>
+            eventBus.publish(<span class="hljs-keyword">new</span> <span class="hljs-title class_">InventoryReservedEvent</span>(event.getOrderId()));
+        } <span class="hljs-keyword">catch</span> (Exception e) {
+            <span class="hljs-comment">// Publish InventoryReservationFailed event</span>
+            eventBus.publish(<span class="hljs-keyword">new</span> <span class="hljs-title class_">InventoryReservationFailedEvent</span>(event.getOrderId()));
+        }
+    }
+}</code></pre>
+</code></pre><h3>Step 3: Payment Service</h3>
+<p>The <code>PaymentService</code> listens to the <code>InventoryReserved</code> event and processes the payment.</p>
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">PaymentService</span> {
+    <span class="hljs-meta">@EventListener</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">handleInventoryReserved</span><span class="hljs-params">(InventoryReservedEvent event)</span> {
+        <span class="hljs-keyword">try</span> {
+            <span class="hljs-comment">// Process payment</span>
+            paymentRepository.processPayment(event.getOrderId());
+
+            <span class="hljs-comment">// Publish PaymentProcessed event</span>
+            eventBus.publish(<span class="hljs-keyword">new</span> <span class="hljs-title class_">PaymentProcessedEvent</span>(event.getOrderId()));
+        } <span class="hljs-keyword">catch</span> (Exception e) {
+            <span class="hljs-comment">// Publish PaymentFailed event</span>
+            eventBus.publish(<span class="hljs-keyword">new</span> <span class="hljs-title class_">PaymentFailedEvent</span>(event.getOrderId()));
+        }
+    }
+}</code></pre>
+</code></pre><h3>Step 4: Shipping Service</h3>
+<p>The <code>ShippingService</code> listens to the <code>PaymentProcessed</code> event and schedules the shipment.</p>
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">ShippingService</span> {
+    <span class="hljs-meta">@EventListener</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">handlePaymentProcessed</span><span class="hljs-params">(PaymentProcessedEvent event)</span> {
+        <span class="hljs-keyword">try</span> {
+            <span class="hljs-comment">// Schedule shipment</span>
+            shippingRepository.scheduleShipment(event.getOrderId());
+
+            <span class="hljs-comment">// Publish ShipmentScheduled event</span>
+            eventBus.publish(<span class="hljs-keyword">new</span> <span class="hljs-title class_">ShipmentScheduledEvent</span>(event.getOrderId()));
+        } <span class="hljs-keyword">catch</span> (Exception e) {
+            <span class="hljs-comment">// Publish ShipmentFailed event</span>
+            eventBus.publish(<span class="hljs-keyword">new</span> <span class="hljs-title class_">ShipmentFailedEvent</span>(event.getOrderId()));
+        }
+    }
+}</code></pre>
+</code></pre><h3>Compensating Actions</h3>
+<p>If any step fails, compensating actions are triggered. For example, if the payment fails, the <code>InventoryService</code> releases the reserved items.</p>
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">InventoryService</span> {
+    <span class="hljs-meta">@EventListener</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">handlePaymentFailed</span><span class="hljs-params">(PaymentFailedEvent event)</span> {
+        <span class="hljs-comment">// Release reserved items</span>
+        inventoryRepository.releaseItems(event.getOrderId());
+    }
+}</code></pre>
+</code></pre><h2>Orchestration-Based Saga Example</h2>
+<p>In an orchestration-based Saga, a central orchestrator manages the flow of the transaction. Here’s how it works for our e-commerce example:</p>
+<h3>Step 1: Orchestrator</h3>
+<p>The <code>OrderOrchestrator</code> coordinates the order processing.</p>
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">OrderOrchestrator</span> {
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">processOrder</span><span class="hljs-params">(Order order)</span> {
+        <span class="hljs-keyword">try</span> {
+            <span class="hljs-comment">// Step 1: Create order</span>
+            orderService.createOrder(order);
+
+            <span class="hljs-comment">// Step 2: Reserve inventory</span>
+            inventoryService.reserveItems(order.getId(), order.getItems());
+
+            <span class="hljs-comment">// Step 3: Process payment</span>
+            paymentService.processPayment(order.getId());
+
+            <span class="hljs-comment">// Step 4: Schedule shipment</span>
+            shippingService.scheduleShipment(order.getId());
+        } <span class="hljs-keyword">catch</span> (Exception e) {
+            <span class="hljs-comment">// Compensate for failures</span>
+            compensate(order.getId());
+        }
+    }
+
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">compensate</span><span class="hljs-params">(String orderId)</span> {
+        <span class="hljs-comment">// Undo changes in reverse order</span>
+        shippingService.cancelShipment(orderId);
+        paymentService.refundPayment(orderId);
+        inventoryService.releaseItems(orderId);
+        orderService.cancelOrder(orderId);
+    }
+}</code></pre>
+</code></pre><h3>Step 2: Services</h3>
+<p>Each service exposes methods that are called by the orchestrator.</p>
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">OrderService</span> {
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">createOrder</span><span class="hljs-params">(Order order)</span> {
+        <span class="hljs-comment">// Save order to the database</span>
+        orderRepository.save(order);
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">cancelOrder</span><span class="hljs-params">(String orderId)</span> {
+        <span class="hljs-comment">// Cancel the order</span>
+        orderRepository.deleteById(orderId);
+    }
+}
+
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">InventoryService</span> {
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">reserveItems</span><span class="hljs-params">(String orderId, List&lt;Item&gt; items)</span> {
+        <span class="hljs-comment">// Reserve items in the inventory</span>
+        inventoryRepository.reserveItems(orderId, items);
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">releaseItems</span><span class="hljs-params">(String orderId)</span> {
+        <span class="hljs-comment">// Release reserved items</span>
+        inventoryRepository.releaseItems(orderId);
+    }
+}
+
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">PaymentService</span> {
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">processPayment</span><span class="hljs-params">(String orderId)</span> {
+        <span class="hljs-comment">// Process payment</span>
+        paymentRepository.processPayment(orderId);
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">refundPayment</span><span class="hljs-params">(String orderId)</span> {
+        <span class="hljs-comment">// Refund payment</span>
+        paymentRepository.refundPayment(orderId);
+    }
+}
+
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">ShippingService</span> {
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">scheduleShipment</span><span class="hljs-params">(String orderId)</span> {
+        <span class="hljs-comment">// Schedule shipment</span>
+        shippingRepository.scheduleShipment(orderId);
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">cancelShipment</span><span class="hljs-params">(String orderId)</span> {
+        <span class="hljs-comment">// Cancel shipment</span>
+        shippingRepository.cancelShipment(orderId);
+    }
+}</code></pre>
+</code></pre><h2>Pros and Cons of the Saga Pattern</h2>
+<p>Pros:</p>
+<ul>
+<li>Scalability: Works well in distributed systems.</li>
+<li>Flexibility: Can handle long-running transactions.</li>
+<li>Failure Recovery: Provides mechanisms to handle partial failures.</li>
+</ul>
+<p>Cons:</p>
+<ul>
+<li>Complexity: Requires careful design and implementation.</li>
+<li>Eventual Consistency: Does not guarantee immediate consistency.</li>
+<li>Debugging: Can be challenging to debug due to distributed nature.</li>
+</ul>
+<h2>Conclusion</h2>
+<p>The Saga Pattern is a powerful tool for managing distributed transactions in microservices architectures. By breaking down transactions into smaller steps and providing compensating actions, it ensures that your system remains consistent even in the face of failures. Whether you choose a choreography-based or orchestration-based approach depends on your specific use case and the complexity of your workflow.</p>
+<p>With the examples provided in this article, you should have a solid foundation to start implementing the Saga Pattern in your own applications. Happy coding!</p>
+
+      <app-comments></app-comments>
+    </div>
+  </div>
+  <aside>
+    <div class="aside-container">
+      <app-blog-summary summary="[]"></app-blog-summary>
+      <app-share-buttons></app-share-buttons>
+      <app-aside-promotion></app-aside-promotion>
+    </div>
+  </aside>
+</div>
+
+        </main>
+        <app-scroll-top-button></app-scroll-top-button>
+        <app-footer></app-footer>
+        </div>
+            <script>
+                var lastVisitTime = parseInt(localStorage.getItem('LAST_VISIT_TIME') || '0');
+                var timeoutDuration = 1500;
+                if ((new Date().valueOf() - lastVisitTime) < 1200000) {
+                    timeoutDuration = 400;
+                }
+                setTimeout(() => {
+                    document.querySelector('.loader').classList.add('hide');
+                    document.querySelector('.body-container').style.display = 'block';
+                    document.dispatchEvent(new CustomEvent('page-loader-hide'));
+                }, timeoutDuration);
+                setTimeout(() => {
+                    document.querySelector('.loader').style.display = 'none';
+                }, 2000);
+                localStorage.setItem('LAST_VISIT_TIME', new Date().valueOf());
+            </script>
+        
+                <!-- Google tag (gtag.js) -->
+                <script async src="https://www.googletagmanager.com/gtag/js?id=G-S6JEVF53JZ"></script>
+                <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag() {
+                    dataLayer.push(arguments);
+                }
+                gtag('js', new Date());
+
+                gtag('config', 'G-S6JEVF53JZ');
+                </script>
+            <script src="/assets/scripts/markdown.js"></script>
+                <script>
+                    document.addEventListener('DOMContentLoaded', () => {
+                        document.getElementById('languageSwitcherMobile').remove();
+                        document.getElementById('languageSwitcherDesktop').remove();
+                    });
+                </script>
+            </body></html>
