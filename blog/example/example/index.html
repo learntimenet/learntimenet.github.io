@@ -50,7 +50,7 @@
                         this.page.identifier = window.location.pathname.replace('/en', '');
                     };
                 </script>
-            <script defer src="/blog/example/example/example.153f47051d525cbef16e.js"></script></head>
+            <script defer src="/blog/example/example/example.9cab6f30260be681881f.js"></script></head>
             <body>
                 <div class="loader">
                     <div class="loading-bar">
@@ -268,15 +268,36 @@ docker pull <image_name></li>
                 <!-- Google tag (gtag.js) -->
                 <script async src="https://www.googletagmanager.com/gtag/js?id=G-S6JEVF53JZ"></script>
                 <script>
-                window.dataLayer = window.dataLayer || [];
-                function gtag() {
-                    dataLayer.push(arguments);
-                }
-                gtag('js', new Date());
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag() {
+                        dataLayer.push(arguments);
+                    }
+                    gtag('js', new Date());
 
-                gtag('config', 'G-S6JEVF53JZ');
+                    gtag('config', 'G-S6JEVF53JZ');
                 </script>
-            <script src="/assets/scripts/markdown.js"></script>
+            
+            <script>
+                window.axeptioSettings = {
+                    clientId: "67fc2975df7d77940a4ff73d",
+                    cookiesVersion: "13042025",
+                    googleConsentMode: {
+                        default: {
+                            analytics_storage: "denied",
+                            ad_storage: "denied",
+                            ad_user_data: "denied",
+                            ad_personalization: "denied",
+                            wait_for_update: 500
+                        }
+                    }
+                };
+                (function(d, s) {
+                    var t = d.getElementsByTagName(s)[0], e = d.createElement(s);
+                    e.async = true; e.src = "//static.axept.io/sdk.js";
+                    t.parentNode.insertBefore(e, t);
+                })(document, "script");
+            </script>
+        <script src="/assets/scripts/markdown.js"></script>
                 <script>
                     document.addEventListener('DOMContentLoaded', () => {
                         document.getElementById('languageSwitcherMobile').remove();
