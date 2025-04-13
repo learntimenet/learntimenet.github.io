@@ -623,7 +623,6 @@ code {
   color: #0e2356;
   white-space: nowrap;
   max-width: 100%;
-  border-radius: 3px;
   font-size: 1.5rem;
   font-family: 300; }
 
@@ -672,8 +671,7 @@ div[class^='language-'] {
   transition-property: background-color, color;
   cursor: pointer;
   padding: .4rem .8rem;
-  margin-right: -.8rem;
-  border-radius: .3rem; }
+  margin-right: -.8rem; }
   .tab-links .copy:hover, .code-header .copy:hover {
     background-color: #DDD;
     color: #0e2356; }
@@ -686,18 +684,10 @@ div[class^='language-'] {
   align-items: center;
   justify-content: space-between;
   background-color: var(--code-header-background-color);
-  border-top-left-radius: var(--code-border-top-left-radius, var(--border-radius));
-  border-top-right-radius: var(--code-border-top-right-radius, var(--border-radius));
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
   padding: 0 2rem;
   border-bottom: 1px solid var(--border-color); }
 
 div.highlight {
-  border-top-left-radius: var(--code-border-top-left-radius, var(--border-radius));
-  border-top-right-radius: var(--code-border-top-right-radius, var(--border-radius));
-  border-bottom-left-radius: var(--code-border-bottom-left-radius, var(--border-radius));
-  border-bottom-right-radius: var(--code-border-bottom-right-radius, var(--border-radius));
   overflow: hidden;
   margin-bottom: 2rem; }
 
@@ -786,7 +776,6 @@ pre.highlight .copy-code-icon-copied-label {
   top: 13px;
   right: 43px;
   padding: 1px 14px;
-  border-radius: 3px;
   background-color: #F0B23A;
   color: white;
   opacity: 1;
