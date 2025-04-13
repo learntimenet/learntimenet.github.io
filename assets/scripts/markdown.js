@@ -314,7 +314,7 @@ function addCodeLineNumbers() {
         const codeLineNumbers = (code.innerHTML.match(/\n/g) || []).length;
         if (codeLineNumbers < 3) return;
         let codeLineNumbersHtml = '<div class="code-line-number">';
-        for (let i = 1; i <= codeLineNumbers; i++) {
+        for (let i = 1; i <= codeLineNumbers + 1; i++) {
           codeLineNumbersHtml += `<span>${i}</span>`;
         }
         codeLineNumbersHtml += '</div>';

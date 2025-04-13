@@ -747,6 +747,7 @@ pre.highlight .code-line-number {
 
 pre.highlight .code-line-number span {
   color: var(--code-line-number-color);
+  color: var(--text-color);
   transition: var(--transition);
   transition-property: color; }
 
