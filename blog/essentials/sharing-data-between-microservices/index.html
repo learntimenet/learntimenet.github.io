@@ -50,7 +50,7 @@
                         this.page.identifier = window.location.pathname.replace('/en', '');
                     };
                 </script>
-            <script defer src="/blog/essentials/sharing-data-between-microservices/sharing-data-between-microservices.66103f2266c5d97a78a8.js"></script></head>
+            <script defer src="/blog/essentials/sharing-data-between-microservices/sharing-data-between-microservices.9f13a1e67b19b56916b9.js"></script></head>
             <body>
                 <div class="loader">
                     <div class="loading-bar">
@@ -107,14 +107,13 @@
 <p>The <strong>Order Service</strong> sends an HTTP request to the <strong>Product Service</strong> to fetch product details. And the <strong>Product Service</strong> responds with the requested data.</p>
 <p><strong>advantages-disadvantages</strong></p>
 <ul>
-<li><p>Simple and easy to implement.</p>
-</li>
-<li><p>Clear boundaries between services.</p>
-</li>
-<li><p>Increased network calls.</p>
-</li>
-<li><p>Tight coupling if not designed carefully.</p>
-</li>
+<li>Simple and easy to implement.</li>
+<li>Clear boundaries between services.</li>
+</ul>
+<p><strong>disadvantages</strong></p>
+<ul>
+<li>Increased network calls.</li>
+<li>Tight coupling if not designed carefully.</li>
 </ul>
 <h2>2. Event-Driven Architecture</h2>
 <p>In an event-driven architecture, services communicate by producing and consuming events. When data changes in one service, it publishes an event that other services can subscribe to.</p>
@@ -122,14 +121,13 @@
 <p>The <strong>Order Service</strong> publishes an <code>OrderPlaced</code> event to a message broker (e.g., Kafka, RabbitMQ). And the <strong>Inventory Service</strong> subscribes to the event and updates stock levels when it receives the event.</p>
 <p><strong>advantages-disadvantages</strong></p>
 <ul>
-<li><p>Decouples services completely.</p>
-</li>
-<li><p>Enables real-time data synchronization.</p>
-</li>
-<li><p>Requires additional infrastructure (e.g., Kafka, RabbitMQ).</p>
-</li>
-<li><p>Eventual consistency (not immediate).</p>
-</li>
+<li>Decouples services completely.</li>
+<li>Enables real-time data synchronization.</li>
+</ul>
+<p><strong>disadvantages</strong></p>
+<ul>
+<li>Requires additional infrastructure (e.g., Kafka, RabbitMQ).</li>
+<li>Eventual consistency (not immediate).</li>
 </ul>
 <h2>3. API Gateway for Aggregation</h2>
 <p>An <strong>API Gateway</strong> can aggregate data from multiple services and provide a unified response to the client. This reduces the number of network calls and simplifies client-side logic.</p>
@@ -137,14 +135,13 @@
 <p>The client sends a request to the <strong>API Gateway</strong> to fetch order details. And the <strong>API Gateway</strong> calls the <strong>Order Service</strong> and <strong>Product Service</strong> to aggregate the data and returns a unified response to the client.</p>
 <p><strong>advantages-disadvantages</strong></p>
 <ul>
-<li><p>Reduces client-side complexity.</p>
-</li>
-<li><p>Improves performance by reducing network calls.</p>
-</li>
-<li><p>API Gateway can become a bottleneck.</p>
-</li>
-<li><p>Adds complexity to the gateway.</p>
-</li>
+<li>Reduces client-side complexity.</li>
+<li>Improves performance by reducing network calls.</li>
+</ul>
+<p><strong>disadvantages</strong></p>
+<ul>
+<li>API Gateway can become a bottleneck.</li>
+<li>Adds complexity to the gateway.</li>
 </ul>
 <h2>4. Caching for Performance</h2>
 <p>To reduce the number of API calls and improve performance, you can use caching. Services can cache data locally or use a distributed cache like Redis.</p>
@@ -152,14 +149,13 @@
 <p>The <strong>Order Service</strong> first checks the cache (e.g., Redis) for product details. If the data is not in the cache, it fetches the data from the <strong>Product Service</strong> and stores it in the cache for future use.</p>
 <p><strong>advantages-disadvantages</strong></p>
 <ul>
-<li><p>Reduces latency and database load.</p>
-</li>
-<li><p>Improves performance.</p>
-</li>
-<li><p>Cache invalidation can be challenging.</p>
-</li>
-<li><p>May lead to stale data.</p>
-</li>
+<li>Reduces latency and database load.</li>
+<li>Improves performance.</li>
+</ul>
+<p><strong>disadvantages</strong></p>
+<ul>
+<li>Cache invalidation can be challenging.</li>
+<li>May lead to stale data.</li>
 </ul>
 <h2>5. Shared Database (Anti-Pattern)</h2>
 <p>While it’s generally discouraged, in some cases, services may share a database. This approach violates the principle of loose coupling but can simplify data sharing.</p>
@@ -167,14 +163,13 @@
 <p>Both the <strong>Order Service</strong> and <strong>Product Service</strong> access the same database directly. This eliminates the need for inter-service communication.</p>
 <p><strong>advantages-disadvantages</strong></p>
 <ul>
-<li><p>Simplifies data access.</p>
-</li>
-<li><p>No network calls between services.</p>
-</li>
-<li><p>Tight coupling between services.</p>
-</li>
-<li><p>Difficult to scale and maintain.</p>
-</li>
+<li>Simplifies data access.</li>
+<li>No network calls between services.</li>
+</ul>
+<p><strong>disadvantages</strong></p>
+<ul>
+<li>Tight coupling between services.</li>
+<li>Difficult to scale and maintain.</li>
 </ul>
 <h2>Conclusion</h2>
 <p>Sharing data between microservices is a critical aspect of designing a scalable and maintainable microservices architecture. In our e-commerce example, we explored how to use <strong>APIs</strong>, <strong>event-driven architecture</strong>, <strong>API Gateway</strong>, <strong>caching</strong>, and (as a last resort) a <strong>shared database</strong> to share data effectively. Each approach has its pros and cons, and the best choice depends on your specific use case.</p>

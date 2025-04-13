@@ -191,9 +191,10 @@ function formatCode() {
       disadvantagesTitle.classList.add('title');
       disadvantagesTitle.innerHTML = `${disadvantages[getLanguage()]}`;
       disadvantagesEl.appendChild(disadvantagesTitle);
-      disadvantagesEl.appendChild(p.nextElementSibling);
+      disadvantagesEl.appendChild(p.nextElementSibling.nextElementSibling);
       el.appendChild(advantagesEl);
       el.appendChild(disadvantagesEl);
+      p.nextElementSibling.remove();
       p.insertAdjacentElement("afterend", el);
       p.remove();
       return;

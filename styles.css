@@ -532,7 +532,7 @@ video {
     display: flex;
     column-gap: 2rem;
     margin-top: 2rem; }
-    @media screen and (max-width: 426px) {
+    @media screen and (max-width: 768px) {
       .markdown .advantages-disadvantages {
         flex-direction: column;
         row-gap: 2rem; } }
