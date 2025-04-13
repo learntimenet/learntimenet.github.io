@@ -1,6 +1,6 @@
 
             <!DOCTYPE html>
-            <html lang="en" data-translated="true">
+            <html lang="en" data-translated="true" data-title="Animated Submit Button">
             <head>
                 <meta charset="utf-8" />
                 <title>Learn Time | Animated Submit Button</title>
@@ -50,7 +50,7 @@
                         this.page.identifier = window.location.pathname.replace('/en', '');
                     };
                 </script>
-            <script defer src="/blog/css/animated-submit-button/animated-submit-button.0b069c566626d518fa2b.js"></script></head>
+            <script defer src="/blog/css/animated-submit-button/animated-submit-button.e9a2b112b48ff1d48c91.js"></script></head>
             <body>
                 <div class="loader">
                     <div class="loading-bar">
@@ -64,23 +64,25 @@
                     }
                 </script>
                 <div class="body-container">
-                    <app-navbar-promotion></app-navbar-promotion>
-                    <app-mobile-navbar></app-mobile-navbar>
-                    <app-desktop-navbar></app-desktop-navbar>
-                    <main class="max-width">
+                    <app-navbar></app-navbar>
+                    <app-breadcrumbs></app-breadcrumbs>
+                    <main>
         
 <style>
+    :root {
+        --scroll-indicator-height: 1rem;
+    }
     @media screen and (min-width: 1024px) {
         :root {
             --promotion-height: 0rem !important;
-            --max-width: 140rem !important;
         }
     }
 </style>
-<app-page-title title="Animated Submit Button"></app-page-title>
-<div class="blog-container">
-  <div class="markdown section-container">
-    <h2>Introduction</h2>
+<div class="max-width blog-container">
+  <div class="main-container">
+    <app-blog-title blog-title="Animated Submit Button" blog-description="In this article, we'll learn how to create an animated submit button using HTML, CSS and JavaScript. With easy-to-understand source code, you can follow the steps and create your own version." blog-image="/assets/images/blog/animated-submit-button.png"></app-blog-title>
+    <div class="blog-content markdown">
+      <h2>Introduction</h2>
 <p>In this article, we&#39;re going to learn how to create an animated submit button using HTML, CSS and JavaScript. With easy-to-understand source code, you can follow the steps and create your own version.</p>
 <h2>Demo</h2>
 <style>
@@ -268,11 +270,13 @@ button.<span class="hljs-title function_">addEventListener</span>(<span class="h
 <h2>Conclusion</h2>
 <p>Thank you for reading this. We hope you found this article useful!</p>
 
-    <app-comments></app-comments>
+      <app-comments></app-comments>
+    </div>
   </div>
   <aside>
     <div class="aside-container">
       <app-blog-summary summary="[]"></app-blog-summary>
+      <app-share-buttons></app-share-buttons>
       <app-aside-promotion></app-aside-promotion>
     </div>
   </aside>

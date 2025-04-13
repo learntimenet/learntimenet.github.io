@@ -1,6 +1,6 @@
 
             <!DOCTYPE html>
-            <html lang="fr" data-translated="true">
+            <html lang="fr" data-translated="true" data-title="Music Player">
             <head>
                 <meta charset="utf-8" />
                 <title>Learn Time | Music Player</title>
@@ -50,7 +50,7 @@
                         this.page.identifier = window.location.pathname.replace('/en', '');
                     };
                 </script>
-            <script defer src="/fr/blog/apps/music-player/music-player.97e1ce88bd8ee9df9acf.js"></script></head>
+            <script defer src="/fr/blog/apps/music-player/music-player.db3b7cf7f705ac21a4b7.js"></script></head>
             <body>
                 <div class="loader">
                     <div class="loading-bar">
@@ -64,26 +64,26 @@
                     }
                 </script>
                 <div class="body-container">
-                    <app-navbar-promotion></app-navbar-promotion>
-                    <app-mobile-navbar></app-mobile-navbar>
-                    <app-desktop-navbar></app-desktop-navbar>
-                    <main class="max-width">
+                    <app-navbar></app-navbar>
+                    <app-breadcrumbs></app-breadcrumbs>
+                    <main>
         
 <style>
+    :root {
+        --scroll-indicator-height: 1rem;
+    }
     @media screen and (min-width: 1024px) {
         :root {
             --promotion-height: 0rem !important;
-            --max-width: 140rem !important;
         }
     }
 </style>
-<app-page-title title="Music Player"></app-page-title>
-<div class="blog-container">
-  <div class="markdown section-container">
-    <h2>Introduction</h2>
+<div class="max-width blog-container">
+  <div class="main-container">
+    <app-blog-title blog-title="Music Player" blog-description="Dans cet article, nous allons apprendre à créer un Music Player en utilisant HTML, CSS et JavaScript. Grâce à un code source facile à comprendre, vous pourrez suivre les étapes et créer votre propre version" blog-image="http://img.youtube.com/vi/1A5wew2mzJQ/maxresdefault.jpg"></app-blog-title>
+    <div class="blog-content markdown">
+      <h2>Introduction</h2>
 <p>Dans cet article, nous allons apprendre à créer un Music Player en utilisant HTML, CSS et JavaScript. Grâce à un code source facile à comprendre, vous pourrez suivre les étapes et créer votre propre version</p>
-<iframe width="899" height="506" src="https://www.youtube.com/embed/1A5wew2mzJQ" title="Music Player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-
 <h2>Code source</h2>
 <p><strong>code-tabs</strong></p>
 <ul>
@@ -422,11 +422,13 @@ progress.<span class="hljs-title function_">addEventListener</span>(<span class=
 <h2>Conclusion</h2>
 <p>Merci de votre lecture. Nous espérons que cet article vous a été utile !</p>
 
-    <app-comments></app-comments>
+      <app-comments></app-comments>
+    </div>
   </div>
   <aside>
     <div class="aside-container">
       <app-blog-summary summary="[]"></app-blog-summary>
+      <app-share-buttons></app-share-buttons>
       <app-aside-promotion></app-aside-promotion>
     </div>
   </aside>

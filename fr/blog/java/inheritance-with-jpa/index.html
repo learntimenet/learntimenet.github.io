@@ -1,6 +1,6 @@
 
             <!DOCTYPE html>
-            <html lang="fr" data-translated="true">
+            <html lang="fr" data-translated="true" data-title="Héritage avec JPA">
             <head>
                 <meta charset="utf-8" />
                 <title>Learn Time | Héritage avec JPA</title>
@@ -37,12 +37,12 @@
                 
             <meta property="og:title" content="Héritage avec JPA" />
             <meta property="og:description" content="Un guide pratique pour comprendre les différentes stratégies d'héritage avec l'API de persistance Java (JPA). Ce guide vous aidera à maîtriser les concepts essentiels pour modéliser efficacement vos entités dans une base de données relationnelle" />
-            <meta property="og:image" content="https://learntime.net/assets/thumbnail/blog/blog-thumbnail-7.jpg" />
+            <meta property="og:image" content="https://learntime.net/assets/thumbnail/blog/blog-thumbnail-9.jpg" />
             <meta name="twitter:card" content="summary_large_image">
             <meta name="twitter:creator" content="@learntimenet">
             <meta name="twitter:title" content="Héritage avec JPA">
             <meta name="twitter:description" content="Un guide pratique pour comprendre les différentes stratégies d'héritage avec l'API de persistance Java (JPA). Ce guide vous aidera à maîtriser les concepts essentiels pour modéliser efficacement vos entités dans une base de données relationnelle">
-            <meta name="twitter:image" content="https://learntime.net/assets/thumbnail/blog/blog-thumbnail-7.jpg">
+            <meta name="twitter:image" content="https://learntime.net/assets/thumbnail/blog/blog-thumbnail-9.jpg">
         
                 <script>
                     var disqus_config = function () {
@@ -50,7 +50,7 @@
                         this.page.identifier = window.location.pathname.replace('/en', '');
                     };
                 </script>
-            <script defer src="/fr/blog/java/inheritance-with-jpa/inheritance-with-jpa.3aa00c53151121bb713c.js"></script></head>
+            <script defer src="/fr/blog/java/inheritance-with-jpa/inheritance-with-jpa.042304e33145079a6b05.js"></script></head>
             <body>
                 <div class="loader">
                     <div class="loading-bar">
@@ -64,23 +64,25 @@
                     }
                 </script>
                 <div class="body-container">
-                    <app-navbar-promotion></app-navbar-promotion>
-                    <app-mobile-navbar></app-mobile-navbar>
-                    <app-desktop-navbar></app-desktop-navbar>
-                    <main class="max-width">
+                    <app-navbar></app-navbar>
+                    <app-breadcrumbs></app-breadcrumbs>
+                    <main>
         
 <style>
+    :root {
+        --scroll-indicator-height: 1rem;
+    }
     @media screen and (min-width: 1024px) {
         :root {
             --promotion-height: 0rem !important;
-            --max-width: 140rem !important;
         }
     }
 </style>
-<app-page-title title="Héritage avec JPA"></app-page-title>
-<div class="blog-container">
-  <div class="markdown section-container">
-    <h2>Introduction</h2>
+<div class="max-width blog-container">
+  <div class="main-container">
+    <app-blog-title blog-title="Héritage avec JPA" blog-description="Un guide pratique pour comprendre les différentes stratégies d'héritage avec l'API de persistance Java (JPA). Ce guide vous aidera à maîtriser les concepts essentiels pour modéliser efficacement vos entités dans une base de données relationnelle" blog-image="/assets/images/blog/blog-thumbnail-9.jpg"></app-blog-title>
+    <div class="blog-content markdown">
+      <h2>Introduction</h2>
 <p>L&#39;héritage est un concept fondamental en programmation orientée objet, permettant de créer une hiérarchie de classes pour modéliser des entités du monde réel. L&#39;API de Persistance Java (JPA) offre une solution puissante et flexible pour la persistance de ces entités dans une base de données relationnelle. Dans cet article, nous examinerons comment JPA gère l&#39;héritage et explorerons les différentes stratégies pour mapper les hiérarchies de classes aux tables de base de données.</p>
 <h2>Comprendre l&#39;héritage en Java</h2>
 <p>Java prend en charge deux types d&#39;héritage : l&#39;héritage simple, où une classe ne peut étendre qu&#39;une seule superclasse, et l&#39;héritage multiple, réalisé par le biais des interfaces. Dans le contexte de JPA, nous nous intéressons principalement à l&#39;héritage simple, qui est la capacité d&#39;une classe à hériter des attributs et des méthodes d&#39;une seule classe parente.</p>
@@ -239,11 +241,13 @@
 <h2>Conclusion</h2>
 <p>Dans cet article, nous avons exploré comment JPA gère l&#39;héritage et discuté de trois stratégies courantes pour mapper les hiérarchies de classes aux tables de base de données. Le choix de la stratégie dépend des exigences spécifiques de votre application et des caractéristiques de votre modèle de données. Comprendre ces stratégies et leurs implications est crucial pour concevoir des entités JPA efficaces et maintenables.</p>
 
-    <app-comments></app-comments>
+      <app-comments></app-comments>
+    </div>
   </div>
   <aside>
     <div class="aside-container">
       <app-blog-summary summary="[]"></app-blog-summary>
+      <app-share-buttons></app-share-buttons>
       <app-aside-promotion></app-aside-promotion>
     </div>
   </aside>

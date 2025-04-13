@@ -1,6 +1,6 @@
 
             <!DOCTYPE html>
-            <html lang="fr" data-translated="true">
+            <html lang="fr" data-translated="true" data-title="ThreadLocal en Java">
             <head>
                 <meta charset="utf-8" />
                 <title>Learn Time | ThreadLocal en Java</title>
@@ -37,12 +37,12 @@
                 
             <meta property="og:title" content="ThreadLocal en Java" />
             <meta property="og:description" content="Un guide pratique sur la classe ThreadLocal permettant de stocker des données spécifiques aux threads en Java, et d'assurer que chaque thread possède ses propres valeurs isolées, garantissant ainsi la sécurité et l'intégrité des données dans les environnements multithreadés" />
-            <meta property="og:image" content="https://learntime.net/assets/thumbnail/blog/blog-thumbnail-8.jpg" />
+            <meta property="og:image" content="https://learntime.net/assets/thumbnail/blog/blog-thumbnail-10.jpg" />
             <meta name="twitter:card" content="summary_large_image">
             <meta name="twitter:creator" content="@learntimenet">
             <meta name="twitter:title" content="ThreadLocal en Java">
             <meta name="twitter:description" content="Un guide pratique sur la classe ThreadLocal permettant de stocker des données spécifiques aux threads en Java, et d'assurer que chaque thread possède ses propres valeurs isolées, garantissant ainsi la sécurité et l'intégrité des données dans les environnements multithreadés">
-            <meta name="twitter:image" content="https://learntime.net/assets/thumbnail/blog/blog-thumbnail-8.jpg">
+            <meta name="twitter:image" content="https://learntime.net/assets/thumbnail/blog/blog-thumbnail-10.jpg">
         
                 <script>
                     var disqus_config = function () {
@@ -50,7 +50,7 @@
                         this.page.identifier = window.location.pathname.replace('/en', '');
                     };
                 </script>
-            <script defer src="/fr/blog/java/thread-local/thread-local.eaa84a6afee1451ff01e.js"></script></head>
+            <script defer src="/fr/blog/java/thread-local/thread-local.58afcf5728f499e2735f.js"></script></head>
             <body>
                 <div class="loader">
                     <div class="loading-bar">
@@ -64,23 +64,25 @@
                     }
                 </script>
                 <div class="body-container">
-                    <app-navbar-promotion></app-navbar-promotion>
-                    <app-mobile-navbar></app-mobile-navbar>
-                    <app-desktop-navbar></app-desktop-navbar>
-                    <main class="max-width">
+                    <app-navbar></app-navbar>
+                    <app-breadcrumbs></app-breadcrumbs>
+                    <main>
         
 <style>
+    :root {
+        --scroll-indicator-height: 1rem;
+    }
     @media screen and (min-width: 1024px) {
         :root {
             --promotion-height: 0rem !important;
-            --max-width: 140rem !important;
         }
     }
 </style>
-<app-page-title title="ThreadLocal en Java"></app-page-title>
-<div class="blog-container">
-  <div class="markdown section-container">
-    <h2>Introduction</h2>
+<div class="max-width blog-container">
+  <div class="main-container">
+    <app-blog-title blog-title="ThreadLocal en Java" blog-description="Un guide pratique sur la classe ThreadLocal permettant de stocker des données spécifiques aux threads en Java, et d'assurer que chaque thread possède ses propres valeurs isolées, garantissant ainsi la sécurité et l'intégrité des données dans les environnements multithreadés" blog-image="/assets/images/blog/blog-thumbnail-10.jpg"></app-blog-title>
+    <div class="blog-content markdown">
+      <h2>Introduction</h2>
 <p>La classe Java <code>ThreadLocal</code> nous permet de créer des variables qui ne peuvent être lues et écrites que par le même thread. Ainsi, même si deux threads exécutent le même code et que ce code fait référence à la même variable <code>ThreadLocal</code>, les deux threads ne peuvent pas voir les variables <code>ThreadLocal</code> de l&#39;autre, ce qui est un moyen simple de rendre le code sûr pour les threads. Les instances <code>ThreadLocal</code> sont généralement des champs privés statiques dans les classes qui souhaitent associer un état à un thread (par exemple, ID utilisateur, ID de transaction, ...)</p>
 <pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> ThreadLocal&lt;Integer&gt; userIdThreadLocal = <span class="hljs-keyword">new</span> <span class="hljs-title class_">ThreadLocal</span>&lt;&gt;();</code></pre>
 </code></pre><p>Ensuite, lorsque nous voulons utiliser cette valeur depuis un thread, il nous suffit d&#39;appeler la méthode <code>get()</code> ou <code>set()</code> de <code>ThreadLocal</code>. On peut imaginer que <code>ThreadLocal</code> stocke les données dans une carte avec le thread comme clé. En conséquence, lorsque nous appelons une méthode <code>get()</code> sur <code>userIdThreadLocal</code>, nous obtenons la valeur pour le thread demandeur :</p>
@@ -187,11 +189,13 @@ Valeur Child InheritableThreadLocal: données parent</code></pre>
 </code></pre><h2>Conclusion</h2>
 <p>Merci de votre lecture. Nous espérons que cet article vous a été utile !</p>
 
-    <app-comments></app-comments>
+      <app-comments></app-comments>
+    </div>
   </div>
   <aside>
     <div class="aside-container">
       <app-blog-summary summary="[]"></app-blog-summary>
+      <app-share-buttons></app-share-buttons>
       <app-aside-promotion></app-aside-promotion>
     </div>
   </aside>

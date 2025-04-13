@@ -1,6 +1,6 @@
 
             <!DOCTYPE html>
-            <html lang="fr" data-translated="true">
+            <html lang="fr" data-translated="true" data-title="Color Picker">
             <head>
                 <meta charset="utf-8" />
                 <title>Learn Time | Color Picker</title>
@@ -45,7 +45,7 @@
                         this.page.identifier = window.location.pathname.replace('/en', '');
                     };
                 </script>
-            <script defer src="/fr/color-picker/color-picker.e50146e6107ce6db6313.js"></script></head>
+            <script defer src="/fr/tools/color-picker/color-picker.06ef59da0066070edf67.js"></script></head>
             <body>
                 <div class="loader">
                     <div class="loading-bar">
@@ -59,23 +59,21 @@
                     }
                 </script>
                 <div class="body-container">
-                    <app-navbar-promotion></app-navbar-promotion>
-                    <app-mobile-navbar></app-mobile-navbar>
-                    <app-desktop-navbar></app-desktop-navbar>
-                    <main class="max-width-index">
+                    <app-navbar></app-navbar>
+                    <app-breadcrumbs></app-breadcrumbs>
+                    <main>
         
 <style>
   @media screen and (min-width: 1024px) {
       :root {
           --promotion-height: 0rem !important;
-          --max-width: 140rem !important;
       }
   }
 </style>
 <app-main></app-main>
-<app-tool-background></app-tool-background>
-<div class="tool-container">
-  <div class="markdown section-container">
+<div class="tool-container max-width">
+  <div class="markdown">
+    <div class="main-container"></div>
     <div class="description">
       <h2>Description</h2> <p>Outil en ligne gratuit pour sélectionner facilement une couleur et construire une palette de couleurs.</p> <p> Le design et les animations de ce site web sont principalement inspirés du site <a href="https://coolors.co/color-picker" target="_blank">coolors</a>, et nous tenons à remercier ses créateurs pour leur excellent travail ! </p> <p> Une fois une couleur sélectionnée, les formats de couleur (<i>HEX</i>, <i>RGB</i>, <i>HSV</i>, ...) et les variations de couleur (<i>Nuances</i>, <i>Teintes</i>, <i>Tons</i>, ...) seront affichés. Au survol, deux boutons apparaîtront :   <ul> <li><span class="iconify" data-icon="ph:copy-fill"></span>&nbsp;&nbsp; qui vous permet de copier le code HEX de la couleur dans votre presse-papiers</li> <li><span class="iconify" data-icon="fluent:add-12-filled"></span>&nbsp;&nbsp; qui vous permet d'ajouter cette couleur à votre palette</li> </ul> </p> <p> Pour réorganiser votre palette, vous pouvez utiliser la fonction <i>Glisser-Déposer</i> pour changer la position des couleurs. Personnellement, nous trouvons cette fonctionnalité très utile, et nous espérons que vous l'apprécierez également. </p> <p> Pour de nouvelles inspirations, vous pouvez générer de nouvelles couleurs en cliquant sur le bouton <span class="iconify" data-icon="si-glyph:arrow-reload"></span> situé dans le coin supérieur droit de la couleur sélectionnée et dans la section de la palette. </p> <p> Nous espérons que vous apprécierez cet outil 😊 </p>  
     </div>
@@ -83,6 +81,7 @@
   </div>
   <aside>
     <div class="aside-container">
+      <app-share-buttons></app-share-buttons>
       <app-aside-promotion></app-aside-promotion>
     </div>
   </aside>

@@ -1,6 +1,6 @@
 
             <!DOCTYPE html>
-            <html lang="fr" data-translated="true">
+            <html lang="fr" data-translated="true" data-title="Quiz">
             <head>
                 <meta charset="utf-8" />
                 <title>Learn Time | Quiz</title>
@@ -41,7 +41,7 @@
                         this.page.identifier = window.location.pathname.replace('/en', '');
                     };
                 </script>
-            <script defer src="/fr/quiz/quiz.a07c2419e2fef91d5e0e.js"></script></head>
+            <script defer src="/fr/quiz/quiz.a96f4765f783bce6f558.js"></script></head>
             <body>
                 <div class="loader">
                     <div class="loading-bar">
@@ -55,10 +55,9 @@
                     }
                 </script>
                 <div class="body-container">
-                    <app-navbar-promotion></app-navbar-promotion>
-                    <app-mobile-navbar></app-mobile-navbar>
-                    <app-desktop-navbar></app-desktop-navbar>
-                    <main class="max-width-index">
+                    <app-navbar></app-navbar>
+                    <app-breadcrumbs></app-breadcrumbs>
+                    <main>
         
 <app-main quizzes="[]"></app-main>
 

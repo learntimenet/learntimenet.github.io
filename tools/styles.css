@@ -6,8 +6,6 @@ body {
   --focus-color: #f57173;
   --focus-color: #e61972;
   --focus-box-shadow-secondary: 0px 0px 3px 2px var(--secondary-color);
-  --white-color: #fff;
-  --black-color: #222;
   --text-color-01: #1e1e1e;
   --text-color-02: #3b3b3b;
   --text-color-03: #424242;
@@ -492,18 +490,6 @@ h2 {
 
 .hljs-link {
   text-decoration: underline; }
-
-.tool-container {
-  display: flex;
-  justify-content: center;
-  column-gap: 3rem; }
-
-.section-container {
-  width: 100%;
-  min-height: calc(100vh - var(--navbar-height)); }
-
-.description {
-  margin-top: 5rem; }
 
 #bmc-wbtn {
   width: 5.4rem !important;
@@ -1112,46 +1098,6 @@ input[type='submit'] {
   right: 0;
   bottom: 0;
   left: 0; }
-
-footer {
-  background-color: var(--background-color-01);
-  padding: 3rem 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  position: relative; }
-  footer .ips {
-    position: absolute;
-    bottom: 0;
-    left: 2px; }
-  footer .logo {
-    height: 3.5rem;
-    display: flex;
-    align-items: center;
-    text-decoration: none; }
-    footer .logo img {
-      height: 3rem; }
-    footer .logo span {
-      margin-left: 1rem;
-      color: var(--navbar-logo-text-color); }
-  footer .links {
-    display: flex;
-    align-items: center;
-    column-gap: 1rem; }
-    footer .links a {
-      font-size: 1.35rem;
-      font-weight: 600;
-      color: var(--text-color-04);
-      transition: var(--transition);
-      transition-property: color, background-color; }
-      footer .links a:hover {
-        color: var(--text-color-02);
-        text-decoration: none; }
-  footer .all-right-reserved {
-    font-size: 1.35rem;
-    font-weight: 500;
-    margin: 0.8rem 0 0; }
 
 .game-canvas-container-container {
   padding: 1.4rem;
@@ -2154,29 +2100,16 @@ body.dark {
     border: 1px solid var(--toast-error-border-color); }
 
 .tool-header-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin: 1.5rem 0 3rem; }
+  margin: 1.5rem 0 5rem; }
   .tool-header-container h1 {
     font-size: 4rem;
     font-weight: bold;
-    margin: 0;
-    margin-bottom: 3.5rem;
-    padding: 0 4rem;
-    text-align: center; }
+    margin: 0; }
     .tool-header-container h1::before, .tool-header-container h1::after {
       display: none; }
     @media only screen and (max-width: 700px) {
       .tool-header-container h1 {
         font-size: 3.6rem; } }
-  .tool-header-container p {
-    font-size: 1.85rem;
-    font-weight: 400;
-    padding: 0 4rem;
-    text-align: center;
-    margin-bottom: 2rem; }
 
 .show-tutorial-button {
   position: absolute;

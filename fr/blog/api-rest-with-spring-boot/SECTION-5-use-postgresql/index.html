@@ -1,0 +1,191 @@
+
+            <!DOCTYPE html>
+            <html lang="fr" data-translated="false" data-title="API REST avec Spring">
+            <head>
+                <meta charset="utf-8" />
+                <title>Learn Time | API REST avec Spring</title>
+                <meta name="description" content="Dans cet article, nous allons créer une API REST en utilisant le framework Spring Boot en utilisant une base de données H2 puis PostgreSQL et en ajoutant sa documentation Swagger">
+                
+                <meta name="viewport" content="width=device-width,initial-scale=1" />
+                <!--
+                <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
+                <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
+                <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
+                <link rel="shortcut icon" sizes="192x192" href="/assets/favicon/android-chrome-192x192.png" >
+                <link rel="shortcut icon" sizes="512x512" href="/assets/favicon/android-chrome-512x512.png" >
+                <link rel="manifest" href="/assets/favicon/site.webmanifest">
+                <link rel="shortcut icon" href="/assets/favicon/favicon.ico">
+                <link rel="mask-icon" href="/assets/favicon/safari-pinned-tab.svg" color="#5bbad5">
+                <meta name="msapplication-TileColor" content="#da532c">
+                <meta name="theme-color" content="#ffffff">
+                -->
+                <link rel="shortcut icon" type="image/png" href="/assets/images/logo-circle.png">
+                <link rel="stylesheet" href="/styles.css">
+                <script src="https://kit.fontawesome.com/ff0edf556e.js" crossorigin="anonymous"></script>
+                <script src="https://code.iconify.design/iconify-icon/1.0.2/iconify-icon.min.js"></script>
+                <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+                <script>window.startTime = new Date().getTime();</script>
+                <style>
+                    :root {
+                        --background-color: #f3f2ef;
+                        --loading-bar-background-color: #d6cec2;
+                        --moving-loading-bar-background-color: #D0514D;
+                    }
+                    .loader {transition: all .2s ease-out;z-index: 10000000000;margin-top: -200px;position: fixed;top: 0;left: 0;right: 0;bottom: 0;background-color: var(--background-color);display: flex;align-items: center;justify-content: center;flex-direction: column;}.loader-logo {width: 40px; height: 40px; margin-bottom: 20px;}.loading-bar {width: 130px;height: 4px;border-radius: 100rem;background-color: var(--loading-bar-background-color);position: relative;overflow: hidden;}.moving-loading-bar {height: 100%;width: 68px;position: absolute;border-radius: 100rem;background-color: var(--moving-loading-bar-background-color);animation: initial-loading 1.5s ease infinite;}@keyframes initial-loading {0% {transform: translate(-34px);}50% {transform: translate(96px);}to {transform: translate(-34px);}}
+                    .loader.hide {opacity: 0;}
+                </style>
+                
+            <meta property="og:title" content="API REST avec Spring" />
+            <meta property="og:description" content="Dans cet article, nous allons créer une API REST en utilisant le framework Spring Boot en utilisant une base de données H2 puis PostgreSQL et en ajoutant sa documentation Swagger" />
+            <meta property="og:image" content="https://learntime.net/assets/thumbnail/blog/api-rest-with-spring-boot.png" />
+            <meta name="twitter:card" content="summary_large_image">
+            <meta name="twitter:creator" content="@learntimenet">
+            <meta name="twitter:title" content="API REST avec Spring">
+            <meta name="twitter:description" content="Dans cet article, nous allons créer une API REST en utilisant le framework Spring Boot en utilisant une base de données H2 puis PostgreSQL et en ajoutant sa documentation Swagger">
+            <meta name="twitter:image" content="https://learntime.net/assets/thumbnail/blog/api-rest-with-spring-boot.png">
+        
+                <script>
+                    var disqus_config = function () {
+                        this.page.url = window.location.origin + window.location.pathname;
+                        this.page.identifier = window.location.pathname.replace('/en', '');
+                    };
+                </script>
+            <script defer src="/fr/blog/api-rest-with-spring-boot/SECTION-5-use-postgresql/SECTION-5-use-postgresql.fc7b26646409368076b4.js"></script></head>
+            <body>
+                <div class="loader">
+                    <div class="loading-bar">
+                        <div class="moving-loading-bar"></div>
+                    </div>
+                </div>
+                <script>
+                    var lastVisitTime = parseInt(localStorage.getItem('LAST_VISIT_TIME') || '0');
+                    if ((new Date().valueOf() - lastVisitTime) < 1200000) {
+                        document.querySelector('.loading-bar').style.display = 'none';
+                    }
+                </script>
+                <div class="body-container">
+                    <app-navbar></app-navbar>
+                    <app-breadcrumbs></app-breadcrumbs>
+                    <main>
+        
+<style>
+    :root {
+        --scroll-indicator-height: 1rem;
+    }
+    @media screen and (min-width: 1024px) {
+        :root {
+            --promotion-height: 0rem !important;
+        }
+    }
+</style>
+<div class="max-width blog-container">
+  <div class="main-container">
+    <app-blog-title blog-title="API REST avec Spring" blog-description="Dans cet article, nous allons créer une API REST en utilisant le framework Spring Boot en utilisant une base de données H2 puis PostgreSQL et en ajoutant sa documentation Swagger" blog-image="/assets/images/blog/api-rest-with-spring-boot.png"></app-blog-title>
+    <div class="blog-content markdown">
+      <h2>Utiliser une base PostgreSQL</h2>
+<p>Dans cette section, nous allons remplacer la base de données H2 utilisée précédemment par une base de données PostgreSQL. Pour démarrer PostgreSQL en local, nous allons utiliser Docker Compose, ce qui facilitera la gestion de notre environnement de développement.</p>
+<h2>Étape 1 : Configurer docker-compose.yml</h2>
+<p>Commençons par créer un fichier docker-compose.yml à la racine du projet avec la configuration suivante :</p>
+<pre><code class="hljs language-yml"><pre class="highlight"><code class="hljs"><span class="hljs-attr">services:</span>
+  <span class="hljs-attr">database:</span>
+    <span class="hljs-attr">image:</span> <span class="hljs-string">postgres:15.4</span>
+    <span class="hljs-attr">environment:</span>
+      <span class="hljs-attr">POSTGRES_DB:</span> <span class="hljs-string">todoapp</span>
+      <span class="hljs-attr">POSTGRES_USER:</span> <span class="hljs-string">todoapp</span>
+      <span class="hljs-attr">POSTGRES_PASSWORD:</span> <span class="hljs-string">todoapp</span>
+    <span class="hljs-attr">ports:</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-string">&quot;5432:5432&quot;</span></code></pre>
+</code></pre><p>Cette configuration définit un service PostgreSQL à l&#39;aide de l&#39;image officielle <code>postgres:15.4</code>. Les variables d&#39;environnement définissent la base de données, l&#39;utilisateur, et le mot de passe que nous utiliserons :</p>
+<ul>
+<li><code>POSTGRES_DB</code> : Le nom de la base de données (todoapp).</li>
+<li><code>POSTGRES_USER</code> et <code>POSTGRES_PASSWORD</code> : Les identifiants d&#39;authentification pour accéder à la base de données.</li>
+</ul>
+<p>Nous exposons le port <code>5432</code> (le port par défaut pour PostgreSQL) afin de pouvoir nous y connecter localement.</p>
+<h2>Étape 2 : Démarrer la base de données PostgreSQL</h2>
+<p>Pour démarrer PostgreSQL avec Docker Compose, nous exécutons la commande suivante dans le répertoire où se trouve le fichier <code>docker-compose.yml</code> :</p>
+<pre><code class="hljs language-sh"><pre class="highlight"><code class="hljs">docker-compose up -d</code></pre>
+</code></pre><p>Cette commande télécharge l&#39;image <code>postgres:15.4</code> si elle n&#39;est pas déjà présente, crée un conteneur pour PostgreSQL, et lance la base de données en arrière-plan.</p>
+<h2>Étape 3 : Remplacer la dépendance H2 par PostgreSQL dans pom.xml</h2>
+<p>Pour permettre à Spring Boot de se connecter à PostgreSQL, nous devons modifier le fichier <code>pom.xml</code> pour remplacer la dépendance H2 </p>
+<pre><code class="hljs language-xml"><pre class="highlight"><code class="hljs"><span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>com.h2database<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>h2<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">scope</span>&gt;</span>runtime<span class="hljs-tag">&lt;/<span class="hljs-name">scope</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span></code></pre>
+</code></pre><p>par celle de PostgreSQL</p>
+<pre><code class="hljs language-xml"><pre class="highlight"><code class="hljs"><span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.postgresql<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>postgresql<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span></code></pre>
+</code></pre><h2>Étape 4 : Mettre à jour la configuration du projet</h2>
+<p>Nous devons maintenant modifier le fichier <code>application.properties</code> de notre projet Spring Boot pour ajouter la configuration nécessaire pour se connecter à notre base de données PostgreSQL :</p>
+<pre><code class="hljs language-properties"><pre class="highlight"><code class="hljs"><span class="hljs-attr">spring.datasource.url</span>=<span class="hljs-string">jdbc:postgresql://localhost:5432/todoapp</span>
+<span class="hljs-attr">spring.datasource.username</span>=<span class="hljs-string">todoapp</span>
+<span class="hljs-attr">spring.datasource.password</span>=<span class="hljs-string">todoapp</span>
+<span class="hljs-attr">spring.jpa.hibernate.ddl-auto</span>=<span class="hljs-string">update</span></code></pre>
+</code></pre><ul>
+<li><code>spring.datasource.url</code> : Spécifie l&#39;URL de connexion à la base de données PostgreSQL en local sur le port <code>5432</code> et la base <code>todoapp</code>.</li>
+<li><code>spring.datasource.username</code> et <code>spring.datasource.password</code> : Les identifiants que nous avons définis dans <code>docker-compose.yml</code>.</li>
+<li><code>spring.jpa.hibernate.ddl-auto</code>=update : Permet à Hibernate de gérer la mise à jour du schéma de la base de données en fonction des changements dans les entités JPA.</li>
+</ul>
+<p>Si tout est bien configuré, notre application se connectera à notre base de données PostgreSQL et nous pourrons interagir avec l&#39;API comme auparavant. Cette fois-ci, les données seront stockées dans la base PostgreSQL plutôt qu&#39;en mémoire.</p>
+<h2>Conclusion</h2>
+<p>Nous avons réussi à remplacer la base de données H2 par PostgreSQL dans notre application Spring Boot, en utilisant Docker Compose pour faciliter la gestion de la base de données en local. Cette configuration nous permet de travailler avec une base plus robuste, plus proche des environnements de production.</p>
+<p><strong>Dans la prochaine section</strong>, nous allons ajouter <strong>Swagger</strong> pour documenter notre API et faciliter son exploration et son utilisation.</p>
+<p><strong>previous-next-sections</strong></p>
+<p><a href="/fr/blog/spring/api-rest-with-spring-boot/add-exceptions-handlers">Ajouter les exceptions handlers</a>
+<a href="/fr/blog/spring/api-rest-with-spring-boot/add-swagger">Ajouter Swagger</a></p>
+
+      <app-comments></app-comments>
+    </div>
+  </div>
+  <aside>
+    <div class="aside-container">
+      <app-blog-summary summary="[]"></app-blog-summary>
+      <app-share-buttons></app-share-buttons>
+      <app-aside-promotion></app-aside-promotion>
+    </div>
+  </aside>
+</div>
+
+        </main>
+        <app-scroll-top-button></app-scroll-top-button>
+        <app-footer></app-footer>
+        <app-privacy-consentement></app-privacy-consentement>
+        </div>
+            <script>
+                var lastVisitTime = parseInt(localStorage.getItem('LAST_VISIT_TIME') || '0');
+                var timeoutDuration = 1500;
+                if ((new Date().valueOf() - lastVisitTime) < 1200000) {
+                    timeoutDuration = 400;
+                }
+                setTimeout(() => {
+                    document.querySelector('.loader').classList.add('hide');
+                    document.querySelector('.body-container').style.display = 'block';
+                    document.dispatchEvent(new CustomEvent('page-loader-hide'));
+                }, timeoutDuration);
+                setTimeout(() => {
+                    document.querySelector('.loader').style.display = 'none';
+                }, 2000);
+                localStorage.setItem('LAST_VISIT_TIME', new Date().valueOf());
+            </script>
+        
+                <!-- Google tag (gtag.js) -->
+                <script async src="https://www.googletagmanager.com/gtag/js?id=G-S6JEVF53JZ"></script>
+                <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag() {
+                    dataLayer.push(arguments);
+                }
+                gtag('js', new Date());
+
+                gtag('config', 'G-S6JEVF53JZ');
+                </script>
+            <script src="/assets/scripts/markdown.js"></script>
+                <script>
+                    document.addEventListener('DOMContentLoaded', () => {
+                        document.getElementById('languageSwitcherMobile').remove();
+                        document.getElementById('languageSwitcherDesktop').remove();
+                    });
+                </script>
+            </body></html>

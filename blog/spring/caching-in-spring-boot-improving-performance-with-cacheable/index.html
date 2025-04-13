@@ -1,6 +1,6 @@
 
             <!DOCTYPE html>
-            <html lang="en" data-translated="false">
+            <html lang="en" data-translated="false" data-title="Caching in Spring Boot: Improving Performance with @Cacheable">
             <head>
                 <meta charset="utf-8" />
                 <title>Learn Time | Caching in Spring Boot: Improving Performance with @Cacheable</title>
@@ -37,12 +37,12 @@
                 
             <meta property="og:title" content="Caching in Spring Boot: Improving Performance with @Cacheable" />
             <meta property="og:description" content="Learn how to use the @Cacheable annotation in Spring Boot to improve application performance by caching method results. This guide covers configuration, usage, and best practices for effective caching." />
-            <meta property="og:image" content="https://learntime.net/assets/thumbnail/blog/blog-thumbnail-6.jpg" />
+            <meta property="og:image" content="https://learntime.net/assets/thumbnail/blog/blog-thumbnail-8.jpg" />
             <meta name="twitter:card" content="summary_large_image">
             <meta name="twitter:creator" content="@learntimenet">
             <meta name="twitter:title" content="Caching in Spring Boot: Improving Performance with @Cacheable">
             <meta name="twitter:description" content="Learn how to use the @Cacheable annotation in Spring Boot to improve application performance by caching method results. This guide covers configuration, usage, and best practices for effective caching.">
-            <meta name="twitter:image" content="https://learntime.net/assets/thumbnail/blog/blog-thumbnail-6.jpg">
+            <meta name="twitter:image" content="https://learntime.net/assets/thumbnail/blog/blog-thumbnail-8.jpg">
         
                 <script>
                     var disqus_config = function () {
@@ -50,7 +50,7 @@
                         this.page.identifier = window.location.pathname.replace('/en', '');
                     };
                 </script>
-            <script defer src="/blog/spring/caching-in-spring-boot-improving-performance-with-cacheable/caching-in-spring-boot-improving-performance-with-cacheable.53e80bc5e966f834fcb3.js"></script></head>
+            <script defer src="/blog/spring/caching-in-spring-boot-improving-performance-with-cacheable/caching-in-spring-boot-improving-performance-with-cacheable.d23213f5cd7f06b09c9f.js"></script></head>
             <body>
                 <div class="loader">
                     <div class="loading-bar">
@@ -64,23 +64,25 @@
                     }
                 </script>
                 <div class="body-container">
-                    <app-navbar-promotion></app-navbar-promotion>
-                    <app-mobile-navbar></app-mobile-navbar>
-                    <app-desktop-navbar></app-desktop-navbar>
-                    <main class="max-width">
+                    <app-navbar></app-navbar>
+                    <app-breadcrumbs></app-breadcrumbs>
+                    <main>
         
 <style>
+    :root {
+        --scroll-indicator-height: 1rem;
+    }
     @media screen and (min-width: 1024px) {
         :root {
             --promotion-height: 0rem !important;
-            --max-width: 140rem !important;
         }
     }
 </style>
-<app-page-title title="Caching in Spring Boot: Improving Performance with @Cacheable"></app-page-title>
-<div class="blog-container">
-  <div class="markdown section-container">
-    <h2>Introduction</h2>
+<div class="max-width blog-container">
+  <div class="main-container">
+    <app-blog-title blog-title="Caching in Spring Boot: Improving Performance with @Cacheable" blog-description="Learn how to use the @Cacheable annotation in Spring Boot to improve application performance by caching method results. This guide covers configuration, usage, and best practices for effective caching." blog-image="/assets/images/blog/blog-thumbnail-8.jpg"></app-blog-title>
+    <div class="blog-content markdown">
+      <h2>Introduction</h2>
 <p>Caching is a powerful technique to improve the performance of your Spring Boot applications by storing the results of expensive method calls and reusing them for subsequent requests. Spring Boot provides built-in support for caching through the <strong>Spring Cache Abstraction</strong>, and the <code>@Cacheable</code> annotation is one of the most commonly used tools for implementing caching. In this article, we’ll explore how to use <code>@Cacheable</code> to optimize your application’s performance.</p>
 <h2>What is Caching?</h2>
 <p>Caching is the process of storing data in a temporary storage area (cache) so that future requests for the same data can be served faster. This is particularly useful for:</p>
@@ -186,11 +188,13 @@
 <p>Start implementing caching in your Spring Boot applications today and experience the performance benefits firsthand!</p>
 <p>Happy coding!</p>
 
-    <app-comments></app-comments>
+      <app-comments></app-comments>
+    </div>
   </div>
   <aside>
     <div class="aside-container">
       <app-blog-summary summary="[]"></app-blog-summary>
+      <app-share-buttons></app-share-buttons>
       <app-aside-promotion></app-aside-promotion>
     </div>
   </aside>

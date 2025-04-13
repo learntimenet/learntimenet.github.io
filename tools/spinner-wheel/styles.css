@@ -182,9 +182,6 @@
   margin-left: auto;
   margin-right: auto; }
 
-.tool-header-container {
-  margin-bottom: 0 !important; }
-
 @media screen and (max-width: 769px) {
   .choices-container-big-screens {
     display: none; }

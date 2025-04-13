@@ -173,7 +173,6 @@
 
 .text-to-type-container {
   position: relative;
-  margin-top: 2rem;
   overflow-y: auto;
   max-height: 25rem; }
   .text-to-type-container::-webkit-scrollbar {
@@ -433,9 +432,6 @@
     .typed-text-stats-container .change-text-to-type:focus {
       border-color: var(--secondary-color) !important;
       box-shadow: var(--focus-box-shadow-secondary); }
-
-.typed-keys-stats-container-container {
-  margin: 0 auto; }
 
 .typed-keys-stats-container {
   margin-top: 2rem;

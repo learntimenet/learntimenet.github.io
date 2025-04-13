@@ -1,6 +1,6 @@
 
             <!DOCTYPE html>
-            <html lang="en" data-translated="true">
+            <html lang="en" data-translated="true" data-title="QR Code Generator">
             <head>
                 <meta charset="utf-8" />
                 <title>Learn Time | QR Code Generator</title>
@@ -50,7 +50,7 @@
                         this.page.identifier = window.location.pathname.replace('/en', '');
                     };
                 </script>
-            <script defer src="/blog/apps/qrcode-generator/qrcode-generator.1139d1972d061ddc7407.js"></script></head>
+            <script defer src="/blog/apps/qrcode-generator/qrcode-generator.bbcee4e970dd34d0f081.js"></script></head>
             <body>
                 <div class="loader">
                     <div class="loading-bar">
@@ -64,26 +64,26 @@
                     }
                 </script>
                 <div class="body-container">
-                    <app-navbar-promotion></app-navbar-promotion>
-                    <app-mobile-navbar></app-mobile-navbar>
-                    <app-desktop-navbar></app-desktop-navbar>
-                    <main class="max-width">
+                    <app-navbar></app-navbar>
+                    <app-breadcrumbs></app-breadcrumbs>
+                    <main>
         
 <style>
+    :root {
+        --scroll-indicator-height: 1rem;
+    }
     @media screen and (min-width: 1024px) {
         :root {
             --promotion-height: 0rem !important;
-            --max-width: 140rem !important;
         }
     }
 </style>
-<app-page-title title="QR Code Generator"></app-page-title>
-<div class="blog-container">
-  <div class="markdown section-container">
-    <h2>Introduction</h2>
+<div class="max-width blog-container">
+  <div class="main-container">
+    <app-blog-title blog-title="QR Code Generator" blog-description="In this article, we will learn how to create the QR Code Generator using HTML, CSS and JavaScript. With easy-to-understand source code, you can follow the steps and create your own version." blog-image="http://img.youtube.com/vi/LdaY__bw6Ck/maxresdefault.jpg"></app-blog-title>
+    <div class="blog-content markdown">
+      <h2>Introduction</h2>
 <p>In this article, we&#39;re going to learn how to create the QR Code Generator using HTML, CSS and JavaScript. With easy-to-understand source code, you can follow the steps and create your own version.</p>
-<iframe width="899" height="506" src="https://www.youtube.com/embed/LdaY__bw6Ck" title="Générateur QR Code" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-
 <h2>Code source</h2>
 <p><strong>code-tabs</strong></p>
 <ul>
@@ -292,11 +292,13 @@ downloadButton.<span class="hljs-title function_">addEventListener</span>(<span 
 <h2>Conclusion</h2>
 <p>Thank you for reading this. We hope you found this article useful!</p>
 
-    <app-comments></app-comments>
+      <app-comments></app-comments>
+    </div>
   </div>
   <aside>
     <div class="aside-container">
       <app-blog-summary summary="[]"></app-blog-summary>
+      <app-share-buttons></app-share-buttons>
       <app-aside-promotion></app-aside-promotion>
     </div>
   </aside>

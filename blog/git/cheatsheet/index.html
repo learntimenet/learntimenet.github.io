@@ -1,6 +1,6 @@
 
             <!DOCTYPE html>
-            <html lang="en" data-translated="false">
+            <html lang="en" data-translated="false" data-title="Git CheatSheet">
             <head>
                 <meta charset="utf-8" />
                 <title>Learn Time | Git CheatSheet</title>
@@ -37,12 +37,12 @@
                 
             <meta property="og:title" content="Git CheatSheet" />
             <meta property="og:description" content="Master Git with this comprehensive cheat sheet! Learn essential Git commands, tips, and best practices for version control, branching, merging, and more. Perfect for developers of all levels to streamline their workflow and collaborate efficiently" />
-            <meta property="og:image" content="https://learntime.net/assets/thumbnail/blog/blog-thumbnail-9.jpg" />
+            <meta property="og:image" content="https://learntime.net/assets/thumbnail/blog/blog-thumbnail-1.jpg" />
             <meta name="twitter:card" content="summary_large_image">
             <meta name="twitter:creator" content="@learntimenet">
             <meta name="twitter:title" content="Git CheatSheet">
             <meta name="twitter:description" content="Master Git with this comprehensive cheat sheet! Learn essential Git commands, tips, and best practices for version control, branching, merging, and more. Perfect for developers of all levels to streamline their workflow and collaborate efficiently">
-            <meta name="twitter:image" content="https://learntime.net/assets/thumbnail/blog/blog-thumbnail-9.jpg">
+            <meta name="twitter:image" content="https://learntime.net/assets/thumbnail/blog/blog-thumbnail-1.jpg">
         
                 <script>
                     var disqus_config = function () {
@@ -50,7 +50,7 @@
                         this.page.identifier = window.location.pathname.replace('/en', '');
                     };
                 </script>
-            <script defer src="/blog/git/cheatsheet/cheatsheet.b854b352c74b97af2219.js"></script></head>
+            <script defer src="/blog/git/cheatsheet/cheatsheet.6f59f329f0ace2773753.js"></script></head>
             <body>
                 <div class="loader">
                     <div class="loading-bar">
@@ -64,23 +64,25 @@
                     }
                 </script>
                 <div class="body-container">
-                    <app-navbar-promotion></app-navbar-promotion>
-                    <app-mobile-navbar></app-mobile-navbar>
-                    <app-desktop-navbar></app-desktop-navbar>
-                    <main class="max-width">
+                    <app-navbar></app-navbar>
+                    <app-breadcrumbs></app-breadcrumbs>
+                    <main>
         
 <style>
+    :root {
+        --scroll-indicator-height: 1rem;
+    }
     @media screen and (min-width: 1024px) {
         :root {
             --promotion-height: 0rem !important;
-            --max-width: 140rem !important;
         }
     }
 </style>
-<app-page-title title="Git CheatSheet"></app-page-title>
-<div class="blog-container">
-  <div class="markdown section-container">
-    <h2>Introduction</h2>
+<div class="max-width blog-container">
+  <div class="main-container">
+    <app-blog-title blog-title="Git CheatSheet" blog-description="Master Git with this comprehensive cheat sheet! Learn essential Git commands, tips, and best practices for version control, branching, merging, and more. Perfect for developers of all levels to streamline their workflow and collaborate efficiently" blog-image="/assets/images/blog/blog-thumbnail-1.jpg"></app-blog-title>
+    <div class="blog-content markdown">
+      <h2>Introduction</h2>
 <p>Git is the most widely used version control system, enabling developers to track changes, collaborate efficiently, and manage codebases effectively. Whether you&#39;re a beginner or an experienced developer, having a quick reference to Git commands can save time and streamline your workflow. This Git Cheat Sheet provides a comprehensive list of essential Git commands, tips, and best practices.</p>
 <h2>Git Basics</h2>
 <p>This section covers the foundational commands you need to get started with Git. These commands allow you to initialize a repository, track changes, and commit your work. Whether you&#39;re setting up a new project or cloning an existing one, these commands are essential for every developer.</p>
@@ -228,11 +230,13 @@ git tag -d <tag_name></li>
 <h2>Conclusion</h2>
 <p>This Git Cheat Sheet is your ultimate guide to mastering Git. Whether you&#39;re a beginner or an experienced developer, these commands and tips will help you streamline your workflow and make the most of Git&#39;s powerful features. Bookmark this guide and refer to it whenever you need a quick refresher on Git commands. Happy coding!</p>
 
-    <app-comments></app-comments>
+      <app-comments></app-comments>
+    </div>
   </div>
   <aside>
     <div class="aside-container">
       <app-blog-summary summary="[]"></app-blog-summary>
+      <app-share-buttons></app-share-buttons>
       <app-aside-promotion></app-aside-promotion>
     </div>
   </aside>

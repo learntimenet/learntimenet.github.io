@@ -1,6 +1,6 @@
 
             <!DOCTYPE html>
-            <html lang="en" data-translated="false">
+            <html lang="en" data-translated="false" data-title="Docker CheatSheet">
             <head>
                 <meta charset="utf-8" />
                 <title>Learn Time | Docker CheatSheet</title>
@@ -37,12 +37,12 @@
                 
             <meta property="og:title" content="Docker CheatSheet" />
             <meta property="og:description" content="A comprehensive guide to essential Docker commands, tips, and best practices. Perfect for developers and DevOps professionals to streamline containerization efficiently" />
-            <meta property="og:image" content="https://learntime.net/assets/thumbnail/blog/blog-thumbnail-1.jpg" />
+            <meta property="og:image" content="https://learntime.net/assets/thumbnail/blog/blog-thumbnail-3.jpg" />
             <meta name="twitter:card" content="summary_large_image">
             <meta name="twitter:creator" content="@learntimenet">
             <meta name="twitter:title" content="Docker CheatSheet">
             <meta name="twitter:description" content="A comprehensive guide to essential Docker commands, tips, and best practices. Perfect for developers and DevOps professionals to streamline containerization efficiently">
-            <meta name="twitter:image" content="https://learntime.net/assets/thumbnail/blog/blog-thumbnail-1.jpg">
+            <meta name="twitter:image" content="https://learntime.net/assets/thumbnail/blog/blog-thumbnail-3.jpg">
         
                 <script>
                     var disqus_config = function () {
@@ -50,7 +50,7 @@
                         this.page.identifier = window.location.pathname.replace('/en', '');
                     };
                 </script>
-            <script defer src="/blog/docker/cheatsheet/cheatsheet.0b10b9dcf04aa3012100.js"></script></head>
+            <script defer src="/blog/docker/cheatsheet/cheatsheet.c625ac260bf901aa29ee.js"></script></head>
             <body>
                 <div class="loader">
                     <div class="loading-bar">
@@ -64,23 +64,25 @@
                     }
                 </script>
                 <div class="body-container">
-                    <app-navbar-promotion></app-navbar-promotion>
-                    <app-mobile-navbar></app-mobile-navbar>
-                    <app-desktop-navbar></app-desktop-navbar>
-                    <main class="max-width">
+                    <app-navbar></app-navbar>
+                    <app-breadcrumbs></app-breadcrumbs>
+                    <main>
         
 <style>
+    :root {
+        --scroll-indicator-height: 1rem;
+    }
     @media screen and (min-width: 1024px) {
         :root {
             --promotion-height: 0rem !important;
-            --max-width: 140rem !important;
         }
     }
 </style>
-<app-page-title title="Docker CheatSheet"></app-page-title>
-<div class="blog-container">
-  <div class="markdown section-container">
-    <h2>Introduction</h2>
+<div class="max-width blog-container">
+  <div class="main-container">
+    <app-blog-title blog-title="Docker CheatSheet" blog-description="A comprehensive guide to essential Docker commands, tips, and best practices. Perfect for developers and DevOps professionals to streamline containerization efficiently" blog-image="/assets/images/blog/blog-thumbnail-3.jpg"></app-blog-title>
+    <div class="blog-content markdown">
+      <h2>Introduction</h2>
 <p>Docker provides the ability to package and run an application in a loosely isolated environment called a container. The isolation and security allows you to run many containers simultaneously on a given host. Containers are lightweight and contain everything needed to run the application, so you do not need to rely on what is currently installed on the host. You can easily share containers while you work, and be sure that everyone you share with gets the same container that works in the same way.</p>
 <h2>Installation</h2>
 <ul>
@@ -157,11 +159,13 @@ docker pull <image_name></li>
 <h2>Conclusion</h2>
 <p>This Docker Cheat Sheet is your ultimate guide to mastering Docker. Whether you&#39;re a beginner or an experienced developer, these commands and tips will help you streamline your workflow and make the most of Docker&#39;s powerful features. Bookmark this guide and refer to it whenever you need a quick refresher on Docker commands. Happy containerizing!</p>
 
-    <app-comments></app-comments>
+      <app-comments></app-comments>
+    </div>
   </div>
   <aside>
     <div class="aside-container">
       <app-blog-summary summary="[]"></app-blog-summary>
+      <app-share-buttons></app-share-buttons>
       <app-aside-promotion></app-aside-promotion>
     </div>
   </aside>
