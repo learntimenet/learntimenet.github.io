@@ -1,16 +1,24 @@
 .color-conversions-container .color-conversion-table {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-column-gap: 2.5rem; }
+  grid-template-columns: 1fr; }
+  @media screen and (min-width: 768px) {
+    .color-conversions-container .color-conversion-table {
+      grid-template-columns: 1fr 1fr;
+      grid-column-gap: 2.5rem; } }
 
 .color-conversions-container .color-conversion {
   cursor: pointer;
-  padding: 1rem 1.8rem;
+  padding: 1rem 0rem;
+  border-bottom: 1px solid var(--border-color);
   display: flex;
   align-items: center;
   justify-content: space-between; }
-  .color-conversions-container .color-conversion.odd {
-    background-color: var(--color-conversion-background-color); }
+  @media screen and (min-width: 768px) {
+    .color-conversions-container .color-conversion {
+      padding: 1rem 1.8rem;
+      border: none; }
+      .color-conversions-container .color-conversion.odd {
+        background-color: var(--color-conversion-background-color); } }
   .color-conversions-container .color-conversion span {
     font-size: 1.7rem; }
   .color-conversions-container .color-conversion .label {
@@ -33,7 +41,7 @@
 
 .color-picker-input-container {
   height: 5.5rem;
-  border-radius: 0.4rem;
+  border-radius: 0rem;
   background-color: var(--background-color-03);
   border: 2px solid transparent;
   margin-bottom: 3rem;
