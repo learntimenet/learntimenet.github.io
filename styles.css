@@ -930,7 +930,6 @@ pre.diagram code.hljs {
 .alert-warn,
 .alert-error {
   border-left: 4px solid;
-  border-radius: 4px;
   padding: 1.5rem 2.5rem;
   margin-bottom: 2rem; }
 
@@ -938,6 +937,7 @@ pre.diagram code.hljs {
   background-color: #d9edf7;
   background-color: #E5F3FE;
   color: #31708f;
+  color: #076fc5;
   border-color: #7eb6c1;
   border-color: #0889F2; }
 
