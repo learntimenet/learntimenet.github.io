@@ -257,6 +257,7 @@ iframe {
   border-radius: 2px; }
 
 main {
+  margin-top: 4rem;
   margin-bottom: 5rem !important;
   min-height: calc(100vh - var(--navbar-height) - var(--promotion-height)); }
 
@@ -960,7 +961,7 @@ pre.diagram code.hljs {
 .tool-container,
 .blog-container {
   display: flex;
-  column-gap: clamp(3rem, 8rem, 13rem); }
+  column-gap: clamp(3rem, 5vw, 13rem); }
 
 .main-container {
   flex: 1; }
