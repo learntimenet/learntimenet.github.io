@@ -152,7 +152,19 @@ body {
   --tab-link-background-color-on-hover: #eeeeee;
   --active-tab-link-color: var(--primary-color);
   --active-tab-link-background-color: #eeeeee;
-  --contact-background: #FAFAFA; }
+  --contact-background: #FAFAFA;
+  --toast-success-color: #0e511e;
+  --toast-success-background-color: #d4edda;
+  --toast-success-border-color: #c3e6cb;
+  --toast-info-color: #004889;
+  --toast-info-background-color: #cce5ff;
+  --toast-info-border-color: #b8daff;
+  --toast-warn-color: #663c00;
+  --toast-warn-background-color: #fff4e5;
+  --toast-warn-border-color: #fcead0;
+  --toast-error-color: #8d1a26;
+  --toast-error-background-color: #fdecea;
+  --toast-error-border-color: #fadad7; }
 
 *,
 *::after,
@@ -985,3 +997,29 @@ aside {
   position: -webkit-sticky;
   position: sticky;
   top: calc(var(--navbar-height) + var(--promotion-height) + 3rem); }
+
+.toast-container {
+  z-index: var(--toast-z-index);
+  position: fixed;
+  bottom: 3rem;
+  right: -30rem;
+  width: 30rem;
+  transition: right 0.3s cubic-bezier(0.365, 0.01, 0.815, 1.63);
+  padding: 2rem 3rem;
+  font-size: 1.5rem; }
+  .toast-container.success {
+    background-color: var(--toast-success-background-color);
+    color: var(--toast-success-color);
+    border: 1px solid var(--toast-success-border-color); }
+  .toast-container.info {
+    background-color: var(--toast-info-background-color);
+    color: var(--toast-info-color);
+    border: 1px solid var(--toast-info-border-color); }
+  .toast-container.warn {
+    background-color: var(--toast-warn-background-color);
+    color: var(--toast-warn-color);
+    border: 1px solid var(--toast-warn-border-color); }
+  .toast-container.error {
+    background-color: var(--toast-error-background-color);
+    color: var(--toast-error-color);
+    border: 1px solid var(--toast-error-border-color); }

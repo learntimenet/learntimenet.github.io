@@ -108,15 +108,6 @@ body {
   --side-panel-background-background-color: #00000044;
   --side-panel-background-color: var(--background-color-01);
   --icon-background-color: var(--background-color-04);
-  --toast-info-color: #004889;
-  --toast-info-background-color: #cce5ff;
-  --toast-info-border-color: #b8daff;
-  --toast-warn-color: #663c00;
-  --toast-warn-background-color: #fff4e5;
-  --toast-warn-border-color: #fcead0;
-  --toast-error-color: #611a15;
-  --toast-error-background-color: #fdecea;
-  --toast-error-border-color: #fadad7;
   --button-icon-background-color: var(--background-color-04);
   --button-icon-background-color-on-hover: var(--background-color-05);
   --button-icon-color: var(--body-color);
@@ -2074,29 +2065,6 @@ body.dark {
 .textarea-label-mandatory {
   color: #ff4a59;
   font-size: 1.5rem; }
-
-.toast-container {
-  z-index: var(--toast-z-index);
-  position: fixed;
-  top: calc(var(--navbar-height) + 1.5rem);
-  right: -30rem;
-  width: 30rem;
-  border-radius: 0.3rem;
-  transition: right 0.3s ease-in;
-  padding: 0.8rem 1.5rem;
-  font-size: 1.5rem; }
-  .toast-container.info {
-    background-color: var(--toast-info-background-color);
-    color: var(--toast-info-color);
-    border: 1px solid var(--toast-info-border-color); }
-  .toast-container.warn {
-    background-color: var(--toast-warn-background-color);
-    color: var(--toast-warn-color);
-    border: 1px solid var(--toast-warn-border-color); }
-  .toast-container.error {
-    background-color: var(--toast-error-background-color);
-    color: var(--toast-error-color);
-    border: 1px solid var(--toast-error-border-color); }
 
 .tool-header-container {
   margin: 1.5rem 0 5rem; }
