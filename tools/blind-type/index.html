@@ -45,7 +45,7 @@
                         this.page.identifier = window.location.pathname.replace('/en', '');
                     };
                 </script>
-            <script defer src="/tools/blind-type/blind-type.0c634a699a1b00c3b61f.js"></script></head>
+            <script defer src="/tools/blind-type/blind-type.759e481c029ae03013df.js"></script></head>
             <body>
                 <div class="loader">
                     <div class="loading-bar">
@@ -77,6 +77,7 @@
     <div class="description">
       <h2>Description</h2> <p>  <strong>Speed Typing</strong> is an online tool designed to help you master <b>Touch Typing</b> (or <b>Blind Typing</b>)—a technique that lets you type quickly and accurately without looking at the keyboard. Every glance at the keys or typo slows you down. With our tool, you’ll train to type faster, more efficiently, and with fewer errors.  </p>  <p>  Unlike other typing apps, <strong>Speed Typing</strong> keeps practice engaging by offering:  <ul>  <li><b>Random text snippets</b> to simulate real-world typing scenarios</li>  <li><b>Inspirational quotes</b> to make practice enjoyable and motivational</li>  </ul>  <p>Track your progress with <b>Words per minute (WPM)</b> and <b>accuracy</b> metrics</p></p>  <p>  Proper typing starts with the <b>Home Row</b>—the keys <b>F</b> and <b>J</b> have tactile bumps to guide your index fingers. Each finger governs specific keys, as shown below:  </p>  <img src='/assets/images/tools/home-keys-position-light.svg' style="margin: 0rem auto 2rem; display: flex; max-width: 100%" />  <p>  The average typist manages 35–40 WPM (190–200 characters per minute), but professionals exceed 75 WPM. Speed improves with practice, especially when addressing <b>weak keys</b>. Start with our <b>Training Lessons</b> to build muscle memory.  <br><br>  </p>  
     </div>
+    <app-subscribe></app-subscribe>
     <app-comments></app-comments>
   </div>
   <aside>
@@ -94,9 +95,9 @@
             <script>
                 var lastVisitTime = parseInt(localStorage.getItem('LAST_VISIT_TIME') || '0');
                 var timeoutDuration = 1500;
-                if ((new Date().valueOf() - lastVisitTime) < 1200000) {
-                    timeoutDuration = 400;
-                }
+                //if ((new Date().valueOf() - lastVisitTime) < 1200000) {
+                //    timeoutDuration = 400;
+                //}
                 setTimeout(() => {
                     document.querySelector('.loader').classList.add('hide');
                     document.querySelector('.body-container').style.display = 'block';
@@ -140,7 +141,4 @@
                     t.parentNode.insertBefore(e, t);
                 })(document, "script");
             </script>
-            <script id="mcjs">
-                !function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/8d7e13326e7cf3fad9cac31f8/c091b8f6d72c216625b299df7.js");
-            </script>
-        </body></html>
+            </body></html>

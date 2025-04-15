@@ -45,7 +45,7 @@
                         this.page.identifier = window.location.pathname.replace('/en', '');
                     };
                 </script>
-            <script defer src="/tools/spinner-wheel/spinner-wheel.b0dc6307ed8edf17eb54.js"></script></head>
+            <script defer src="/tools/spinner-wheel/spinner-wheel.a640897fe6cd367df169.js"></script></head>
             <body>
                 <div class="loader">
                     <div class="loading-bar">
@@ -77,6 +77,7 @@
     <div class="description">
       <h2>Description</h2> <p> This spinner wheel uses advanced code and a random number generator to ensure the fairest possible outcome. The results are <b>100% random</b> and are not influenced by anything beyond the algorithm that runs it. </p> <p> You can use this spinner wheel for absolutely anything you have in mind. The best uses for this are anecdotes, lessons, raffles, meetings, surveys, and for making random decisions when you just don't know the right path to take. </p> <p> It's easy: type in your choices in the textbox to the left of the wheel, then click the wheel to spin it and get a random winner. You can create as many wheels as you want by clicking the <span class="iconify" data-icon="akar-icons:plus"></span> button. You can also change the wheel colors by clicking the color picker of any choice. </p>  
     </div>
+    <app-subscribe></app-subscribe>
     <app-comments></app-comments>
   </div>
   <aside>
@@ -94,9 +95,9 @@
             <script>
                 var lastVisitTime = parseInt(localStorage.getItem('LAST_VISIT_TIME') || '0');
                 var timeoutDuration = 1500;
-                if ((new Date().valueOf() - lastVisitTime) < 1200000) {
-                    timeoutDuration = 400;
-                }
+                //if ((new Date().valueOf() - lastVisitTime) < 1200000) {
+                //    timeoutDuration = 400;
+                //}
                 setTimeout(() => {
                     document.querySelector('.loader').classList.add('hide');
                     document.querySelector('.body-container').style.display = 'block';
@@ -140,7 +141,4 @@
                     t.parentNode.insertBefore(e, t);
                 })(document, "script");
             </script>
-            <script id="mcjs">
-                !function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/8d7e13326e7cf3fad9cac31f8/c091b8f6d72c216625b299df7.js");
-            </script>
-        </body></html>
+            </body></html>

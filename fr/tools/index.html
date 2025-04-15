@@ -41,7 +41,7 @@
                         this.page.identifier = window.location.pathname.replace('/en', '');
                     };
                 </script>
-            <script defer src="/fr/tools/tools.1925ed64a3b9d2241a93.js"></script></head>
+            <script defer src="/fr/tools/tools.1e7a1eed8c9f84412e95.js"></script></head>
             <body>
                 <div class="loader">
                     <div class="loading-bar">
@@ -68,9 +68,9 @@
             <script>
                 var lastVisitTime = parseInt(localStorage.getItem('LAST_VISIT_TIME') || '0');
                 var timeoutDuration = 1500;
-                if ((new Date().valueOf() - lastVisitTime) < 1200000) {
-                    timeoutDuration = 400;
-                }
+                //if ((new Date().valueOf() - lastVisitTime) < 1200000) {
+                //    timeoutDuration = 400;
+                //}
                 setTimeout(() => {
                     document.querySelector('.loader').classList.add('hide');
                     document.querySelector('.body-container').style.display = 'block';
@@ -114,7 +114,4 @@
                     t.parentNode.insertBefore(e, t);
                 })(document, "script");
             </script>
-            <script id="mcjs">
-                !function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/8d7e13326e7cf3fad9cac31f8/c091b8f6d72c216625b299df7.js");
-            </script>
-        </body></html>
+            </body></html>

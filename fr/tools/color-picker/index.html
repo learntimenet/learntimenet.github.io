@@ -45,7 +45,7 @@
                         this.page.identifier = window.location.pathname.replace('/en', '');
                     };
                 </script>
-            <script defer src="/fr/tools/color-picker/color-picker.700466282ee668959739.js"></script></head>
+            <script defer src="/fr/tools/color-picker/color-picker.ca4eadecd71183036989.js"></script></head>
             <body>
                 <div class="loader">
                     <div class="loading-bar">
@@ -77,6 +77,7 @@
     <div class="description">
       <h2>Description</h2> <p>Outil en ligne gratuit pour sélectionner facilement une couleur et construire une palette de couleurs.</p> <p> Le design et les animations de ce site web sont principalement inspirés du site <a href="https://coolors.co/color-picker" target="_blank">coolors</a>, et nous tenons à remercier ses créateurs pour leur excellent travail ! </p> <p> Une fois une couleur sélectionnée, les formats de couleur (<i>HEX</i>, <i>RGB</i>, <i>HSV</i>, ...) et les variations de couleur (<i>Nuances</i>, <i>Teintes</i>, <i>Tons</i>, ...) seront affichés. Au survol, deux boutons apparaîtront :   <ul> <li><span class="iconify" data-icon="ph:copy-fill"></span>&nbsp;&nbsp; qui vous permet de copier le code HEX de la couleur dans votre presse-papiers</li> <li><span class="iconify" data-icon="fluent:add-12-filled"></span>&nbsp;&nbsp; qui vous permet d'ajouter cette couleur à votre palette</li> </ul> </p> <p> Pour réorganiser votre palette, vous pouvez utiliser la fonction <i>Glisser-Déposer</i> pour changer la position des couleurs. Personnellement, nous trouvons cette fonctionnalité très utile, et nous espérons que vous l'apprécierez également. </p> <p> Pour de nouvelles inspirations, vous pouvez générer de nouvelles couleurs en cliquant sur le bouton <span class="iconify" data-icon="si-glyph:arrow-reload"></span> situé dans le coin supérieur droit de la couleur sélectionnée et dans la section de la palette. </p> <p> Nous espérons que vous apprécierez cet outil 😊 </p>  
     </div>
+    <app-subscribe></app-subscribe>
     <app-comments></app-comments>
   </div>
   <aside>
@@ -94,9 +95,9 @@
             <script>
                 var lastVisitTime = parseInt(localStorage.getItem('LAST_VISIT_TIME') || '0');
                 var timeoutDuration = 1500;
-                if ((new Date().valueOf() - lastVisitTime) < 1200000) {
-                    timeoutDuration = 400;
-                }
+                //if ((new Date().valueOf() - lastVisitTime) < 1200000) {
+                //    timeoutDuration = 400;
+                //}
                 setTimeout(() => {
                     document.querySelector('.loader').classList.add('hide');
                     document.querySelector('.body-container').style.display = 'block';
@@ -140,7 +141,4 @@
                     t.parentNode.insertBefore(e, t);
                 })(document, "script");
             </script>
-            <script id="mcjs">
-                !function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/8d7e13326e7cf3fad9cac31f8/c091b8f6d72c216625b299df7.js");
-            </script>
-        </body></html>
+            </body></html>
