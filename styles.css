@@ -503,8 +503,20 @@ video {
   .markdown details {
     background-color: #F7F7F7;
     cursor: pointer;
-    padding: 1rem 2rem;
-    border-radius: 3px; }
+    padding: 1rem 2rem; }
+    .markdown details.code-tabs-details, .markdown details.ressources-details {
+      background-color: #F5F5F5; }
+    .markdown details.ressources-details .asset {
+      background: var(--white-color); }
+    .markdown details.code-tabs-details[open] {
+      padding-bottom: 0; }
+    .markdown details.code-tabs-details > div {
+      margin-left: -2rem;
+      margin-right: -2rem; }
+    .markdown details.code-tabs-details *:last-child {
+      margin-bottom: 0; }
+    .markdown details .copy {
+      margin-bottom: 0 !important; }
     .markdown details summary::marker {
       margin-right: 1rem; }
     .markdown details summary + * {
