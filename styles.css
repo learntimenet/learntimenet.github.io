@@ -322,8 +322,17 @@ video {
     margin-top: 0;
     margin-bottom: 1.6rem;
     font-size: 1.6rem;
-    line-height: 1.65;
-    text-align: justify; }
+    line-height: 1.65; }
+    @media screen and (min-width: 1024px) {
+      .markdown blockquote,
+      .markdown details,
+      .markdown dl,
+      .markdown ol,
+      .markdown p,
+      .markdown pre,
+      .markdown table,
+      .markdown ul {
+        text-align: justify; } }
   .markdown ol,
   .markdown ul {
     margin-top: 0;
