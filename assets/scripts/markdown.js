@@ -284,6 +284,8 @@ function addCodeHeader() {
     document.querySelectorAll('div.highlight').forEach((div) => {
       try {
         const code = div.querySelector('code');
+        const codeLineNumbers = (code.innerHTML.match(/\n/g) || []).length;
+        if (codeLineNumbers < 3) return;
         const codeId = `code-id-${generateRandom()}`;
         code.id = codeId;
         div.insertAdjacentHTML('beforebegin', `
