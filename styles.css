@@ -554,6 +554,7 @@ video {
       .markdown .cheatsheet li::-webkit-scrollbar {
         display: none; }
       .markdown .cheatsheet li .li-wrapper {
+        width: 0;
         white-space: nowrap; }
       .markdown .cheatsheet li .label {
         font-family: var(--font-family);
