@@ -50,7 +50,7 @@
                         this.page.identifier = window.location.pathname.replace('/en', '');
                     };
                 </script>
-            <script defer src="/blog/java/jshell-tool/jshell-tool.177d04416e11bebcdba6.js"></script></head>
+            <script defer src="/blog/java/jshell-tool/jshell-tool.a2d9fc7942d9cad8cc9f.js"></script></head>
             <body>
                 <div class="loader">
                     <div class="loading-bar">
@@ -82,64 +82,86 @@
   <div class="main-container">
     <app-blog-title blog-title="Exploring JShell: Java's Interactive Shell for Rapid Prototyping" blog-description="Explore JShell, Java's interactive REPL tool, to execute code snippets, prototype quickly, and enhance your learning experience" blog-image="/assets/images/blog/blog-4.jpg"></app-blog-title>
     <div class="blog-content markdown">
-      <p>Java is one of the most popular programming languages in the world, known for its versatility, portability, and robust community support. Whether you&#39;re aiming to build desktop applications, mobile apps, or enterprise systems, Java provides a solid foundation. In this guide, we&#39;ll walk you through the essential steps to set up your Java development environment and write your first Java program.</p>
-<h2>🛠️ Setting Up Your Java Development Environment</h2>
-<h3>1. Download the Java Development Kit (JDK)</h3>
-<p>To start coding in Java, you&#39;ll need the Java Development Kit (JDK), which includes the tools necessary to compile and run Java program. You can download the latest version of the JDK from the official source: <a href="https://jdk.java.net/">https://jdk.java.net/</a>. Choose the appropriate version for your operating system (Windows, macOS, or Linux).</p>
-<h3>2. Install the JDK</h3>
-<p>After downloading, follow the installation instructions specific to your O. For Windows users, this typically involves running the installer and following the prompt. On macOS and Linux, you might need to use terminal commands to install and configure the JDK.</p>
-<h3>3. Set Up Environment Variables</h3>
-<p>Setting up environment variables allows your system to recognize Java commands from any terminal window.</p>
+      <p>Java has long been recognized for its robustness and versatilityWith the introduction of JShell in Java 9, developers gained a powerful tool to interactively evaluate Java code snippets, making experimentation and learning more accessibleIn this article, we&#39;ll delve into JShell&#39;s features, usage, and how it can streamline your Java development experience.</p>
+<h2>🔍 What is JShell?</h2>
+<p>JShell is Java&#39;s Read-Eval-Print Loop (REPL) tool, allowing developers to execute Java code snippets interactivel. It&#39;s particularly useful for:</p>
+<p> <strong>Learning Java</strong>: Test out language features and APIs in real-time.</p>
+<p> <strong>Prototyping</strong>: Quickly experiment with code without setting up a full project.</p>
+<p> <strong>Debugging</strong>: Isolate and test specific pieces of code.</p>
+<h2>🚀 Getting Started with JShell</h2>
+<h3>Launching JShel</h3>
+<p>To start JShell, simply open your terminal and type:</p>
+<pre><code class="hljs language-bash"><pre class="highlight"><code class="hljs">jshell</code></pre>
+</code></pre><h3>Executing Code Snippet</h3>
+<p>You can enter Java code directly at the prompt:</p>
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs">jshell&gt; <span class="hljs-type">int</span> <span class="hljs-variable">x</span> <span class="hljs-operator">=</span> <span class="hljs-number">10</span>;
+x ==&gt; <span class="hljs-number">10</span></code></pre>
+</code></pre><p>JShell provides immediate feedback, displaying the result of your code execution.</p>
+<h2>🛠️ Key Features of JShell</h2>
+<h3>1. Interactive Evaluation</h3>
+<p>JShell allows you to define variables, write methods, and even create classes on the fly:</p>
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs">jshell&gt; <span class="hljs-type">int</span> <span class="hljs-title function_">square</span><span class="hljs-params">(<span class="hljs-type">int</span> n)</span> {
+   ...&gt; <span class="hljs-keyword">return</span> n * n;
+   ...&gt; }
+|  created method <span class="hljs-title function_">square</span><span class="hljs-params">(<span class="hljs-type">int</span>)</span>
+
+jshell&gt; square(<span class="hljs-number">5</span>)
+$<span class="hljs-number">2</span> ==&gt; <span class="hljs-number">25</span></code></pre>
+</code></pre><h3>2. Command Suppot</h3>
+<p>JShell includes several built-in commands to enhance your experiece:</p>
 <ul>
-<li><p><strong>JAVA_HOME:</strong> This variable should point to the directory where the JDK is installed.</p>
-</li>
-<li><p><strong>Path:</strong> Add the <code>bin</code> directory inside your JDK installation to the system&#39;s PATH variable.</p>
-</li>
+<li><code>/list</code>: Displays all snippets entered in the current sesson.</li>
+<li><code>/edit</code>: Opens an editor to modify existing snippts.</li>
+<li><code>/save</code>: Saves your session to a fle.</li>
+<li><code>/open</code>: Loads snippets from a fle.</li>
+<li><code>/exit</code>: Exits the JShell sesson.</li>
 </ul>
-<p>This setup ensures that you can compile and run Java programs from the command line.</p>
-<h3>4. Verify the Installation</h3>
-<p>To confirm that Java is correctly installed, open your terminal or command prompt and type:</p>
-<pre><code class="hljs language-sh"><pre class="highlight"><code class="hljs">java --versin</code></pre>
-</code></pre><p>You should see output indicating the installed Java version.</p>
-<h2>✍️ Writing Your First Java Program</h2>
-<p>Let&#39;s create a simple Java program that prints <code>Hello, World!</code> to the console.</p>
-<h3>1. Create a Java Class</h3>
-<p>Open your preferred text editor and write the following code:</p>
-<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">HelloWorld</span> {
-    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> {
-        System.out.println(<span class="hljs-string">&quot;Hello, World!&quot;</span>);
-    }
-}</code></pre>
-</code></pre><p>Save this file as `HelloWorld.java. In Java, the filename must match the class nam.</p>
-<h3>2. Compile the Java Program</h3>
-<p>Open your terminal or command prompt, navigate to the directory containing <code>HelloWorld.java</code>, and compile the program:</p>
-<pre><code class="hljs language-sh"><pre class="highlight"><code class="hljs">javac HelloWorld.java</code></pre>
-</code></pre><p>This command uses the Java compiler (<code>javac</code>) to convert your source code into bytecode, producing a file named <code>HelloWorld.class</code>.</p>
-<h3>3. Run the Java Program</h3>
-<p>To execute the compiled program, enter:</p>
-<pre><code class="hljs language-sh"><pre class="highlight"><code class="hljs">java HelloWorld</code></pre>
-</code></pre><p>You should see the output:</p>
-<pre><code class="hljs language-output"><pre class="highlight"><code class="hljs">Hello, World!</code></pre>
-</code></pre><p>Congratulations! You&#39;ve written and run your first Java program.</p>
-<h2>🧠 Understanding the Compilation and Execution Proces</h2>
-<p>Java is a compiled language, which means your source code (<code>.java</code> files) is transformed into bytecode (<code>.class</code> files) by the Java compilr This bytecode is platform-independent and runs on the Java Virtual Machine (JVM), allowing your programs to be executed on any system with a compatible JVM.</p>
-<p>Starting with Java SE 11, you can also run simple Java programs without explicitly compiling them firt For single-file programs, you can use:</p>
-<pre><code class="hljs language-sh"><pre class="highlight"><code class="hljs">java HelloWorld.java</code></pre>
-</code></pre><p>This command compiles and runs the program in one stp.</p>
-<h2>🧰 Next Steps</h2>
-<p>Now that you&#39;ve set up your environment and written a basic program, consider exploring the following topics to deepen your Java knowlege:</p>
+<h3>3. Startup Scrips</h3>
+<p>JShell can load predefined scripts at startup to set up your environment:</p>
 <ul>
-<li><p><strong>Object-Oriented Programming (OOP)</strong>: Understand concepts like classes, objects, inheritance, and polymorphism.</p>
-</li>
-<li><p><strong>Data Types and Variables</strong>: Learn about Java&#39;s data types and how to use variables effectively.</p>
-</li>
-<li><p><strong>Control Structures</strong>: Practice using loops (<code>for</code>, <code>while</code>) and conditional statements (<code>if</code>, <code>switch</code>).</p>
-</li>
-<li><p><strong>Exception Handling</strong>: Discover how Java handles errors using <code>try</code>, <code>catch</code>, and <code>finally</code> blocks.</p>
-</li>
+<li><code>DEFAULT</code>: Loads commonly used imports.</li>
+<li><code>JAVASE</code>: Imports all Java SE packages.</li>
+<li><code>PRINTING</code>: Defines <code>print</code>, <code>println</code>, and <code>printf</code> methods for convenience.</li>
 </ul>
-<h2>🎯 Conclusion</h2>
-<p>Embarking on your Java programming journey opens up a world of possibilite. With consistent practice and exploration, you&#39;ll be well on your way to building robust and scalable applicatins. Happy coding! </p>
+<p>To load a script:</p>
+<pre><code class="hljs language-bash"><pre class="highlight"><code class="hljs">jshell --startup PRINTING</code></pre>
+</code></pre><h3>4. Feedback Modes</h3>
+<p>Customize the verbosity of JShell&#39;s feedback:</p>
+<ul>
+<li><code>/set feedback verbose</code>: Provides detailed feedback.</li>
+<li><code>/set feedback concise</code>: Displays minimal feedback.</li>
+<li><code>/set feedback silent</code>: Suppresses feedback unless errors occur.</li>
+</ul>
+<h2>📚 Practical Examples</h2>
+<h3>Defining and Using a Method</h3>
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs">jshell&gt; String <span class="hljs-title function_">greet</span><span class="hljs-params">(String name)</span> {
+   ...&gt; <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;Hello, &quot;</span> + name + <span class="hljs-string">&quot;!&quot;</span>;
+   ...&gt; }
+|  created method <span class="hljs-title function_">greet</span><span class="hljs-params">(String)</span>
+
+jshell&gt; greet(<span class="hljs-string">&quot;Alice&quot;</span>)
+$<span class="hljs-number">3</span> ==&gt; <span class="hljs-string">&quot;Hello, Alice!&quot;</span></code></pre>
+</code></pre><h3>Modifying an Existing Metod</h3>
+<p>You can redefine methods to change their behavior:</p>
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs">jshell&gt; String <span class="hljs-title function_">greet</span><span class="hljs-params">(String name)</span> {
+   ...&gt; <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;Hi, &quot;</span> + name + <span class="hljs-string">&quot;!&quot;</span>;
+   ...&gt; }
+|  modified method <span class="hljs-title function_">greet</span><span class="hljs-params">(String)</span>
+
+jshell&gt; greet(<span class="hljs-string">&quot;Bob&quot;</span>)
+$<span class="hljs-number">5</span> ==&gt; <span class="hljs-string">&quot;Hi, Bob!&quot;</span></code></pre>
+</code></pre><h3>Saving and Loading Sessions</h3>
+<p>To save your current session:</p>
+<pre><code class="hljs language-bash"><pre class="highlight"><code class="hljs">/save mySession.jsh
+``
+
+
+To load a saved session:
+
+```ash
+/open mySession.jsh</code></pre>
+</code></pre><h2>🎯 Conclusion</h2>
+<p>JShell is a versatile tool that enhances the Java development experience by allowing interactive coding, rapid prototyping, and efficient leanng. Whether you&#39;re a beginner exploring Java or an experienced developer testing new ideas, JShell offers a streamlined and responsive environment to meet your needs.</p>
 
       <app-subscribe></app-subscribe>
       <app-comments></app-comments>
