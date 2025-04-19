@@ -622,7 +622,8 @@ video {
   transition: all .2s ease-in;
   cursor: pointer;
   flex: 1;
-  color: var(--text-color); }
+  color: var(--text-color);
+  background-image: none; }
   .next-section .label,
   .previous-section .label {
     font-size: 1.3rem;
