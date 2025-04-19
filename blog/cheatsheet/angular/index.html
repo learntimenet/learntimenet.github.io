@@ -262,24 +262,28 @@ ng lint</li>
 <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">routerLink</span>=<span class="hljs-string">&quot;/about&quot;</span>&gt;</span>About<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span></code></pre>
 </code></pre><h2>Forms</h2>
 <h3>Template-Driven Forms</h3>
+<p>Import <code>FormsModule</code> in your <code>app.module.ts</code>:</p>
 <pre><code class="hljs language-ts"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">import</span> { <span class="hljs-title class_">FormsModule</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@angular/forms&#x27;</span>;
 
 <span class="hljs-meta">@NgModule</span>({
   <span class="hljs-attr">imports</span>: [<span class="hljs-title class_">FormsModule</span>],
 })
 <span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">AppModule</span> {}</code></pre>
-</code></pre><pre><code class="hljs language-html"><pre class="highlight"><code class="hljs"><span class="hljs-tag">&lt;<span class="hljs-name">form</span> #<span class="hljs-attr">myForm</span>=<span class="hljs-string">&quot;ngForm&quot;</span> (<span class="hljs-attr">ngSubmit</span>)=<span class="hljs-string">&quot;onSubmit(myForm)&quot;</span>&gt;</span>
+</code></pre><p>Use <code>ngModel</code> and <code>ngSubmit</code> in your components: </p>
+<pre><code class="hljs language-html"><pre class="highlight"><code class="hljs"><span class="hljs-tag">&lt;<span class="hljs-name">form</span> #<span class="hljs-attr">myForm</span>=<span class="hljs-string">&quot;ngForm&quot;</span> (<span class="hljs-attr">ngSubmit</span>)=<span class="hljs-string">&quot;onSubmit(myForm)&quot;</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;username&quot;</span> <span class="hljs-attr">ngModel</span> <span class="hljs-attr">required</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;submit&quot;</span>&gt;</span>Submit<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span></code></pre>
 </code></pre><h3>Reactive Forms</h3>
-<pre><code class="hljs language-ts"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">import</span> { <span class="hljs-title class_">ReactiveFormsModule</span>, <span class="hljs-title class_">FormGroup</span>, <span class="hljs-title class_">FormControl</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@angular/forms&#x27;</span>;
+<p>Import <code>ReactiveFormsModule</code> in your <code>app.module.ts</code>:</p>
+<pre><code class="hljs language-ts"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">import</span> { <span class="hljs-title class_">ReactiveFormsModule</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@angular/forms&#x27;</span>;
 
 <span class="hljs-meta">@NgModule</span>({
   <span class="hljs-attr">imports</span>: [<span class="hljs-title class_">ReactiveFormsModule</span>],
 })
 <span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">AppModule</span> {}</code></pre>
-</code></pre><pre><code class="hljs language-ts"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">MyFormComponent</span> {
+</code></pre><p>Create your <code>FormGroup</code> in your component:</p>
+<pre><code class="hljs language-ts"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">MyFormComponent</span> {
   form = <span class="hljs-keyword">new</span> <span class="hljs-title class_">FormGroup</span>({
     <span class="hljs-attr">username</span>: <span class="hljs-keyword">new</span> <span class="hljs-title class_">FormControl</span>(<span class="hljs-string">&#x27;&#x27;</span>, <span class="hljs-title class_">Validators</span>.<span class="hljs-property">required</span>),
     <span class="hljs-attr">email</span>: <span class="hljs-keyword">new</span> <span class="hljs-title class_">FormControl</span>(<span class="hljs-string">&#x27;&#x27;</span>, [<span class="hljs-title class_">Validators</span>.<span class="hljs-property">required</span>, <span class="hljs-title class_">Validators</span>.<span class="hljs-property">email</span>])
@@ -289,7 +293,8 @@ ng lint</li>
     <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">form</span>.<span class="hljs-property">value</span>);
   }
 }</code></pre>
-</code></pre><pre><code class="hljs language-html"><pre class="highlight"><code class="hljs"><span class="hljs-tag">&lt;<span class="hljs-name">form</span> [<span class="hljs-attr">formGroup</span>]=<span class="hljs-string">&quot;form&quot;</span> (<span class="hljs-attr">ngSubmit</span>)=<span class="hljs-string">&quot;onSubmit()&quot;</span>&gt;</span>
+</code></pre><p>And use it in the html code of your component:</p>
+<pre><code class="hljs language-html"><pre class="highlight"><code class="hljs"><span class="hljs-tag">&lt;<span class="hljs-name">form</span> [<span class="hljs-attr">formGroup</span>]=<span class="hljs-string">&quot;form&quot;</span> (<span class="hljs-attr">ngSubmit</span>)=<span class="hljs-string">&quot;onSubmit()&quot;</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">formControlName</span>=<span class="hljs-string">&quot;username&quot;</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">formControlName</span>=<span class="hljs-string">&quot;email&quot;</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;submit&quot;</span>&gt;</span>Submit<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
