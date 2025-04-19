@@ -1002,12 +1002,12 @@ pre.diagram code.hljs {
 .main-container {
   flex: 1; }
 
-.menu-container {
+.tutorial-menu-container {
   display: none;
   flex-shrink: 0;
   width: 23rem; }
   @media screen and (min-width: 1024px) {
-    .menu-container {
+    .tutorial-menu-container {
       display: block; } }
 
 aside {
