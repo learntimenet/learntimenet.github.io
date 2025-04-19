@@ -44,10 +44,14 @@ function getLanguage() {
   return document.querySelector('html').getAttribute('lang');
 }
 
-function toPreviousSectionLink(a) {
+function toPreviousUrlFromATag(a) {
+  return toPreviousUrl(a.innerHTML, a.getAttribute("href"));
+}
+
+function toPreviousUrl(title, url) {
   const res = document.createElement("a");
-  res.href = a.getAttribute("href");
-  const linkValue = a.innerHTML;
+  res.href = url;
+  const linkValue = title;
   res.classList.add('previous-section');
   const right = document.createElement("div");
   right.classList.add('right');
@@ -66,10 +70,14 @@ function toPreviousSectionLink(a) {
   return res;
 }
 
-function toNextSectionLink(a) {
+function toNextUrlFromATag(a) {
+  return toNextUrl(a.innerHTML, a.getAttribute("href"));
+}
+
+function toNextUrl(title, url) {
   const res = document.createElement("a");
-  res.href = a.getAttribute("href");
-  const linkValue = a.innerHTML;
+  res.href = url;
+  const linkValue = title;
   res.classList.add('next-section');
   const left = document.createElement("div");
   left.classList.add('left');
@@ -109,14 +117,14 @@ function formatCode() {
     if (p.innerHTML.endsWith('>next-section</strong>')) {
       const a = p.nextElementSibling.querySelector('a');
       p.nextElementSibling.remove();
-      p.insertAdjacentElement("afterend", toNextSectionLink(a));
+      p.insertAdjacentElement("afterend", toNextUrlFromATag(a));
       p.remove();
       return;
     };
     if (p.innerHTML.endsWith('>previous-section</strong>')) {
       const a = p.nextElementSibling.querySelector('a');
       p.nextElementSibling.remove();
-      p.insertAdjacentElement("afterend", toPreviousSectionLink(a));
+      p.insertAdjacentElement("afterend", toPreviousUrlFromATag(a));
       p.remove();
       return;
     };
@@ -127,8 +135,8 @@ function formatCode() {
       p.nextElementSibling.remove();
       const div = document.createElement('div');
       div.classList.add('previous-next-sections');
-      div.appendChild(toPreviousSectionLink(aPrevious));
-      div.appendChild(toNextSectionLink(aNext));
+      div.appendChild(toPreviousUrlFromATag(aPrevious));
+      div.appendChild(toNextUrlFromATag(aNext));
       p.insertAdjacentElement("afterend", div);
       p.remove();
       return;
@@ -416,6 +424,56 @@ function resizeIFrame() {
   });
 }
 
+function addTutorialNextAndPreviousUrls() {
+  const tutorial = document.querySelector('app-tutorial-menu');
+  if (!tutorial) return;
+  const menu = JSON.parse(tutorial.getAttribute('menu'));
+  const currentUrl = getCurrentUrl();
+  const urls = [];
+  menu.forEach((item) => {
+    item.articles.forEach((article) => {
+      urls.push({
+        title: article.title,
+        url: normalizeUrl(article.url),
+        currentUrl: currentUrl == normalizeUrl(article.url),
+      })
+    })
+  });
+  const currentIndex = urls.findIndex((url) => url.currentUrl);
+  if (currentIndex == -1) return;
+  const subscribe = document.querySelector('app-subscribe');
+  if (!subscribe) return;
+  const previousUrl = currentIndex == 0 ? null : urls[currentIndex - 1];
+  const nextUrl = currentIndex == urls.length - 1 ? null : urls[currentIndex + 1];
+  if (previousUrl && nextUrl) {
+    const div = document.createElement('div');
+    div.classList.add('previous-next-sections');
+    div.appendChild(toPreviousUrl(previousUrl.title, previousUrl.url));
+    div.appendChild(toNextUrl(nextUrl.title, nextUrl.url));
+    subscribe.insertAdjacentElement("beforebegin", div);
+    return;
+  }
+  if (previousUrl) {
+    subscribe.insertAdjacentElement('beforebegin', toPreviousUrl(previousUrl.title, previousUrl.url));
+  }
+  if (nextUrl) {
+    subscribe.insertAdjacentElement('beforebegin', toNextUrl(nextUrl.title, nextUrl.url));
+  }
+}
+
+function getCurrentUrl() {
+  const lang = document.querySelector('html').getAttribute('lang');
+  const url = window.location.pathname.replace(/\/+$/, '').replace(new RegExp("^/" + lang), '');
+  return normalizeUrl(url);
+}
+
+function normalizeUrl(url) {
+  if (!url) {
+    return '';
+  }
+  return url.endsWith('/') ? url.slice(0, -1) : url;
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   formatCode();
   formatCodeTabs();
@@ -425,4 +483,5 @@ document.addEventListener('DOMContentLoaded', () => {
   formatShellCommands();
   highlightCodeLines();
   resizeIFrame();
+  addTutorialNextAndPreviousUrls();
 });

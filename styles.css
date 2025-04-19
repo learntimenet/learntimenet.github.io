@@ -282,7 +282,7 @@ video {
 
 .markdown {
   flex: 1; }
-  .markdown *:first-child {
+  .markdown > *:first-child {
     margin-top: 0; }
   .markdown h1,
   .markdown h2,
@@ -619,7 +619,6 @@ video {
   padding: 2rem;
   font-size: 1.7rem;
   border: 1px solid #DDD;
-  border-radius: 3px;
   transition: all .2s ease-in;
   cursor: pointer;
   flex: 1;
@@ -996,8 +995,20 @@ pre.diagram code.hljs {
   display: flex;
   column-gap: clamp(3rem, 5vw, 13rem); }
 
+.tutorial-container {
+  display: flex;
+  column-gap: clamp(3rem, 3vw, 6rem); }
+
 .main-container {
   flex: 1; }
+
+.menu-container {
+  display: none;
+  flex-shrink: 0;
+  width: 23rem; }
+  @media screen and (min-width: 1024px) {
+    .menu-container {
+      display: block; } }
 
 aside {
   display: none;

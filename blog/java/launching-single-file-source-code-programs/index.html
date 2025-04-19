@@ -50,7 +50,7 @@
                         this.page.identifier = window.location.pathname.replace('/en', '');
                     };
                 </script>
-            <script defer src="/blog/java/launching-single-file-source-code-programs/launching-single-file-source-code-programs.45e5ff7a7d66ec1d20b7.js"></script></head>
+            <script defer src="/blog/java/launching-single-file-source-code-programs/launching-single-file-source-code-programs.f058ccae99f3dca7f1ff.js"></script></head>
             <body>
                 <div class="loader">
                     <div class="loading-bar">
@@ -65,12 +65,13 @@
                 </script>
                 <div class="body-container">
                     <app-navbar></app-navbar>
-                    <app-breadcrumbs></app-breadcrumbs>
+                    <div class="max-width"><app-breadcrumbs></app-breadcrumbs></div>
                     <main>
         
 <style>
     :root {
         --scroll-indicator-height: 1rem;
+        --max-width: 150rem;
     }
     @media screen and (min-width: 1024px) {
         :root {
@@ -78,9 +79,13 @@
         }
     }
 </style>
-<div class="max-width blog-container">
+<div class="max-width tutorial-container">
+  <div class="menu-container">
+    <app-tutorial-menu menu="[{&quot;category&quot;:&quot;Java Tutorial&quot;,&quot;articles&quot;:[{&quot;title&quot;:&quot;Java Home&quot;,&quot;url&quot;:&quot;/blog/java/&quot;},{&quot;title&quot;:&quot;Getting Started with Java&quot;,&quot;url&quot;:&quot;/blog/java/getting-started&quot;},{&quot;title&quot;:&quot;Launching Single-File&quot;,&quot;url&quot;:&quot;/blog/java/launching-single-file-source-code-programs&quot;},{&quot;title&quot;:&quot;JShell: The Java Shell Tool&quot;,&quot;url&quot;:&quot;/blog/java/jshell-tool&quot;}]},{&quot;category&quot;:&quot;Java Methods&quot;,&quot;articles&quot;:[{&quot;title&quot;:&quot;ThreadLocal in Java&quot;,&quot;url&quot;:&quot;/blog/java/thread-local&quot;},{&quot;title&quot;:&quot;Inheritance with JPA&quot;,&quot;url&quot;:&quot;/blog/java/inheritance-with-jpa&quot;}]}]"></app-tutorial-menu>
+  </div>
   <div class="main-container">
-    <app-blog-title blog-title="Executing Single-File Source-Code Programs" blog-description="Discover how to run Java programs without compilation using JDK 11’s single-file source-code execution. Simplify Java development with this modern and efficient approach." blog-image="/assets/images/blog/blog-5.jpg"></app-blog-title>
+    <app-breadcrumbs class="tutorial"></app-breadcrumbs>
+    <app-blog-title blog-title="Executing Single-File Source-Code Programs"></app-blog-title>
     <div class="blog-content markdown">
       <p>Java has long been celebrated for its robustness and portability. With the introduction of JDK 11, Java further enhances developer productivity by allowing the execution of single-file source-code programs without the need for explicit compilation. This feature simplifies the development process, making it more accessible for beginners and efficient for seasoned developers.</p>
 <h2>🛠️ What Is Single-File Source-Code Execution?</h2>
@@ -192,7 +197,6 @@ java -cp commons-lang3-<span class="hljs-number">3.12</span><span class="hljs-nu
   </div>
   <aside>
     <div class="aside-container">
-      <app-blog-summary summary="[]"></app-blog-summary>
       <app-share-buttons></app-share-buttons>
       <app-aside-promotion></app-aside-promotion>
     </div>

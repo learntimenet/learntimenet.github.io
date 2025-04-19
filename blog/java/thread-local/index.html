@@ -50,7 +50,7 @@
                         this.page.identifier = window.location.pathname.replace('/en', '');
                     };
                 </script>
-            <script defer src="/blog/java/thread-local/thread-local.fe8a730451b3f334b3ce.js"></script></head>
+            <script defer src="/blog/java/thread-local/thread-local.55e9d84892f1e2897ff0.js"></script></head>
             <body>
                 <div class="loader">
                     <div class="loading-bar">
@@ -65,12 +65,13 @@
                 </script>
                 <div class="body-container">
                     <app-navbar></app-navbar>
-                    <app-breadcrumbs></app-breadcrumbs>
+                    <div class="max-width"><app-breadcrumbs></app-breadcrumbs></div>
                     <main>
         
 <style>
     :root {
         --scroll-indicator-height: 1rem;
+        --max-width: 150rem;
     }
     @media screen and (min-width: 1024px) {
         :root {
@@ -78,9 +79,13 @@
         }
     }
 </style>
-<div class="max-width blog-container">
+<div class="max-width tutorial-container">
+  <div class="menu-container">
+    <app-tutorial-menu menu="[{&quot;category&quot;:&quot;Java Tutorial&quot;,&quot;articles&quot;:[{&quot;title&quot;:&quot;Java Home&quot;,&quot;url&quot;:&quot;/blog/java/&quot;},{&quot;title&quot;:&quot;Getting Started with Java&quot;,&quot;url&quot;:&quot;/blog/java/getting-started&quot;},{&quot;title&quot;:&quot;Launching Single-File&quot;,&quot;url&quot;:&quot;/blog/java/launching-single-file-source-code-programs&quot;},{&quot;title&quot;:&quot;JShell: The Java Shell Tool&quot;,&quot;url&quot;:&quot;/blog/java/jshell-tool&quot;}]},{&quot;category&quot;:&quot;Java Methods&quot;,&quot;articles&quot;:[{&quot;title&quot;:&quot;ThreadLocal in Java&quot;,&quot;url&quot;:&quot;/blog/java/thread-local&quot;},{&quot;title&quot;:&quot;Inheritance with JPA&quot;,&quot;url&quot;:&quot;/blog/java/inheritance-with-jpa&quot;}]}]"></app-tutorial-menu>
+  </div>
   <div class="main-container">
-    <app-blog-title blog-title="ThreadLocal in Java" blog-description="A practical guide to the ThreadLocal class for storing thread-specific data in Java, and ensuring that each thread has its own isolated values, thus guaranteeing data security and integrity in multithreaded environments." blog-image="/assets/images/blog/blog-6.jpg"></app-blog-title>
+    <app-breadcrumbs class="tutorial"></app-breadcrumbs>
+    <app-blog-title blog-title="ThreadLocal in Java"></app-blog-title>
     <div class="blog-content markdown">
       <h2>Introduction</h2>
 <p>The Java <code>ThreadLocal</code> class allows us to create variables that can only be read and written by the same thread. So, even if two threads are executing the same code and that code refers to the same <code>ThreadLocal</code> variable, both threads can&#39;t see each other&#39;s <code>ThreadLocal</code> variables, which is a simple way of making code thread-safe. ThreadLocal instances are usually static private fields in classes that wish to associate a state with a thread (for example, user ID, transaction ID, etc.).</p>
@@ -196,7 +201,6 @@ Valeur Child InheritableThreadLocal: données parent</code></pre>
   </div>
   <aside>
     <div class="aside-container">
-      <app-blog-summary summary="[]"></app-blog-summary>
       <app-share-buttons></app-share-buttons>
       <app-aside-promotion></app-aside-promotion>
     </div>
