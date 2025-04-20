@@ -1,10 +1,10 @@
 
             <!DOCTYPE html>
-            <html lang="en" data-translated="false" data-breadcrump-title="Control Flow">
+            <html lang="en" data-translated="false" data-breadcrump-title="Java Collections">
             <head>
                 <meta charset="utf-8" />
-                <title>Learn Time | Java Tutorial - Control Flow</title>
-                <meta name="description" content="Master Java control flow using if-else, switch, and loops like for, while, and do-while. Learn how to control execution flow in your Java programs.">
+                <title>Learn Time | Java Tutorial - Java Collections</title>
+                <meta name="description" content="Master Java Collections like ArrayList, HashSet, and HashMap. Learn how to store and manipulate data in Java using the Collections Framework with examples.">
                 
                 <meta name="viewport" content="width=device-width,initial-scale=1" />
                 <!--
@@ -35,14 +35,14 @@
                     .loader.hide {opacity: 0;}
                 </style>
                 
-            <meta property="og:title" content="Java Tutorial - Control Flow" />
-            <meta property="og:description" content="Master Java control flow using if-else, switch, and loops like for, while, and do-while. Learn how to control execution flow in your Java programs." />
-            <meta property="og:image" content="https://learntime.net/assets/thumbnail/blog/blog-5.jpg" />
+            <meta property="og:title" content="Java Tutorial - Java Collections" />
+            <meta property="og:description" content="Master Java Collections like ArrayList, HashSet, and HashMap. Learn how to store and manipulate data in Java using the Collections Framework with examples." />
+            <meta property="og:image" content="https://learntime.net/assets/thumbnail/blog/blog-10.jpg" />
             <meta name="twitter:card" content="summary_large_image">
             <meta name="twitter:creator" content="@learntimenet">
-            <meta name="twitter:title" content="Java Tutorial - Control Flow">
-            <meta name="twitter:description" content="Master Java control flow using if-else, switch, and loops like for, while, and do-while. Learn how to control execution flow in your Java programs.">
-            <meta name="twitter:image" content="https://learntime.net/assets/thumbnail/blog/blog-5.jpg">
+            <meta name="twitter:title" content="Java Tutorial - Java Collections">
+            <meta name="twitter:description" content="Master Java Collections like ArrayList, HashSet, and HashMap. Learn how to store and manipulate data in Java using the Collections Framework with examples.">
+            <meta name="twitter:image" content="https://learntime.net/assets/thumbnail/blog/blog-10.jpg">
         
                 <script>
                     var disqus_config = function () {
@@ -50,7 +50,7 @@
                         this.page.identifier = window.location.pathname.replace('/en', '');
                     };
                 </script>
-            <script defer src="/blog/java-tutorial/control-flow/control-flow.920e38ae1101f07761db.js"></script></head>
+            <script defer src="/blog/java-tutorial/collections/collections.c18b5b7c52fa8fb03a3b.js"></script></head>
             <body>
                 <div class="loader">
                     <div class="loading-bar">
@@ -85,90 +85,111 @@
   </div>
   <div class="main-container">
     <app-breadcrumbs class="tutorial"></app-breadcrumbs>
-    <app-blog-title class="tutorial" blog-title="Control Flow" blog-description="Master Java control flow using if-else, switch, and loops like for, while, and do-while. Learn how to control execution flow in your Java programs." blog-image="/assets/images/blog/blog-5.jpg"></app-blog-title>
+    <app-blog-title class="tutorial" blog-title="Java Collections" blog-description="Master Java Collections like ArrayList, HashSet, and HashMap. Learn how to store and manipulate data in Java using the Collections Framework with examples." blog-image="/assets/images/blog/blog-10.jpg"></app-blog-title>
     <div class="blog-content markdown">
       <h2>📝 What You’ll Learn</h2>
 <ul>
-<li><code>if</code>, <code>else</code>, and <code>switch</code> statements</li>
-<li>Looping with <code>for</code>, <code>while</code>, and <code>do-while</code></li>
-<li>Using <code>break</code> and <code>continue</code></li>
-<li>Real examples and best practices</li>
+<li>What the Java Collections Framework is</li>
+<li>How to use <code>List</code>, <code>Set</code>, and <code>Map</code></li>
+<li>Differences between <code>ArrayList</code>, <code>HashSet</code>, and <code>HashMap</code></li>
+<li>When and why to use each type</li>
 </ul>
-<h2>🧭 Conditional Statements</h2>
-<p>These allow your program to make <strong>decisions</strong>.</p>
-<h3>✅ <strong>if</strong>, <strong>else if</strong>, <strong>else</strong></h3>
-<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-type">int</span> <span class="hljs-variable">score</span> <span class="hljs-operator">=</span> <span class="hljs-number">85</span>;
+<h2>📚 What is the Java Collections Framework?</h2>
+<p>The <strong>Java Collections Framework (JCF)</strong> provides <strong>ready-to-use data structures</strong> for storing and manipulating groups of objects — like dynamic arrays, sets, and key-value pairs.</p>
+<h2>🧺 List – Ordered, Duplicates Allowed</h2>
+<p>A <strong>resizable array</strong> that allows duplicates and maintains order.</p>
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">import</span> java.util.List;
+<span class="hljs-keyword">import</span> java.util.ArrayList;
 
-<span class="hljs-keyword">if</span> (score &gt;= <span class="hljs-number">90</span>) {
-    System.out.println(<span class="hljs-string">&quot;Grade: A&quot;</span>);
-} <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (score &gt;= <span class="hljs-number">80</span>) {
-    System.out.println(<span class="hljs-string">&quot;Grade: B&quot;</span>);
-} <span class="hljs-keyword">else</span> {
-    System.out.println(<span class="hljs-string">&quot;Grade: C or lower&quot;</span>);
-}</code></pre>
-</code></pre><h3>🔄 <strong>switch</strong> Statement</h3>
-<p>Best for checking one variable against many possible values.</p>
-<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-type">int</span> <span class="hljs-variable">day</span> <span class="hljs-operator">=</span> <span class="hljs-number">3</span>;
+List&lt;String&gt; fruits = <span class="hljs-keyword">new</span> <span class="hljs-title class_">ArrayList</span>&lt;&gt;();
+fruits.add(<span class="hljs-string">&quot;Apple&quot;</span>);
+fruits.add(<span class="hljs-string">&quot;Banana&quot;</span>);
+fruits.add(<span class="hljs-string">&quot;Apple&quot;</span>);  <span class="hljs-comment">// duplicates allowed</span>
 
-<span class="hljs-keyword">switch</span> (day) {
-    <span class="hljs-keyword">case</span> <span class="hljs-number">1</span>: System.out.println(<span class="hljs-string">&quot;Monday&quot;</span>); <span class="hljs-keyword">break</span>;
-    <span class="hljs-keyword">case</span> <span class="hljs-number">2</span>: System.out.println(<span class="hljs-string">&quot;Tuesday&quot;</span>); <span class="hljs-keyword">break</span>;
-    <span class="hljs-keyword">case</span> <span class="hljs-number">3</span>: System.out.println(<span class="hljs-string">&quot;Wednesday&quot;</span>); <span class="hljs-keyword">break</span>;
-    <span class="hljs-keyword">default</span>: System.out.println(<span class="hljs-string">&quot;Other day&quot;</span>);
-}</code></pre>
-</code></pre><blockquote>
-<p>⚠️ Use <code>break</code> to avoid fall-through (executing multiple cases).</p>
-</blockquote>
-<h2>🔁 Loops</h2>
-<p>Loops let you <strong>repeat code</strong> while a condition is true.</p>
-<h3>➰ <strong>for</strong> Loop (Count-Controlled)</h3>
-<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>; i &lt;= <span class="hljs-number">5</span>; i++) {
-    System.out.println(<span class="hljs-string">&quot;Count: &quot;</span> + i);
-}</code></pre>
-</code></pre><h3>🔄 <strong>while</strong> Loop (Condition-Controlled)</h3>
-<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>;
-<span class="hljs-keyword">while</span> (i &lt;= <span class="hljs-number">5</span>) {
-    System.out.println(<span class="hljs-string">&quot;Count: &quot;</span> + i);
-    i++;
-}</code></pre>
-</code></pre><h3>🔂 <strong>do-while</strong> Loop (Runs at Least Once)</h3>
-<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>;
-<span class="hljs-keyword">do</span> {
-    System.out.println(<span class="hljs-string">&quot;Count: &quot;</span> + i);
-    i++;
-} <span class="hljs-keyword">while</span> (i &lt;= <span class="hljs-number">5</span>);</code></pre>
-</code></pre><h2>🧨 <strong>break</strong> and <strong>continue</strong></h2>
-<h3><strong>break</strong>: exit a loop early</h3>
-<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>; i &lt;= <span class="hljs-number">10</span>; i++) {
-    <span class="hljs-keyword">if</span> (i == <span class="hljs-number">5</span>) <span class="hljs-keyword">break</span>;
-    System.out.println(i);
-}</code></pre>
-</code></pre><h3><strong>continue</strong>: skip current loop iteration</h3>
-<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>; i &lt;= <span class="hljs-number">5</span>; i++) {
-    <span class="hljs-keyword">if</span> (i == <span class="hljs-number">3</span>) <span class="hljs-keyword">continue</span>;
-    System.out.println(i);  <span class="hljs-comment">// 3 is skipped</span>
-}</code></pre>
-</code></pre><h2>🧠 Example: Login Attempt Logic</h2>
-<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-type">String</span> <span class="hljs-variable">password</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;java123&quot;</span>;
-<span class="hljs-type">int</span> <span class="hljs-variable">attempts</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;
-<span class="hljs-type">boolean</span> <span class="hljs-variable">loggedIn</span> <span class="hljs-operator">=</span> <span class="hljs-literal">false</span>;
+System.out.println(fruits);  <span class="hljs-comment">// [Apple, Banana, Apple]</span></code></pre>
+</code></pre><h2>🚫 Set – No Duplicates Allowed</h2>
+<p>An <strong>unordered collection</strong> with <strong>no duplicates</strong>.</p>
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">import</span> java.util.Set;
+<span class="hljs-keyword">import</span> java.util.HashSet;
 
-<span class="hljs-keyword">while</span> (attempts &lt; <span class="hljs-number">3</span> &amp;&amp; !loggedIn) {
-    <span class="hljs-comment">// simulate input</span>
-    <span class="hljs-type">String</span> <span class="hljs-variable">input</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;java123&quot;</span>;
-    <span class="hljs-keyword">if</span> (input.equals(password)) {
-        System.out.println(<span class="hljs-string">&quot;Welcome!&quot;</span>);
-        loggedIn = <span class="hljs-literal">true</span>;
-    } <span class="hljs-keyword">else</span> {
-        System.out.println(<span class="hljs-string">&quot;Wrong password.&quot;</span>);
-        attempts++;
-    }
+Set&lt;String&gt; names = <span class="hljs-keyword">new</span> <span class="hljs-title class_">HashSet</span>&lt;&gt;();
+names.add(<span class="hljs-string">&quot;Alice&quot;</span>);
+names.add(<span class="hljs-string">&quot;Bob&quot;</span>);
+names.add(<span class="hljs-string">&quot;Alice&quot;</span>);  <span class="hljs-comment">// won&#x27;t be added again</span>
+
+System.out.println(names);  <span class="hljs-comment">// [Alice, Bob]</span></code></pre>
+</code></pre><h2>🔑 Map – Key/Value Pairs</h2>
+<p>Stores <strong>key-value pairs</strong>, like a dictionary.</p>
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">import</span> java.util.Map;
+<span class="hljs-keyword">import</span> java.util.HashMap;
+
+Map&lt;String, Integer&gt; ages = <span class="hljs-keyword">new</span> <span class="hljs-title class_">HashMap</span>&lt;&gt;();
+ages.put(<span class="hljs-string">&quot;John&quot;</span>, <span class="hljs-number">25</span>);
+ages.put(<span class="hljs-string">&quot;Jane&quot;</span>, <span class="hljs-number">30</span>);
+
+System.out.println(ages.get(<span class="hljs-string">&quot;Jane&quot;</span>));  <span class="hljs-comment">// 30</span></code></pre>
+</code></pre><h2>🔁 Iterating Over Collections</h2>
+<h3>ArrayList</h3>
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">for</span> (String fruit : fruits) {
+    System.out.println(fruit);
 }</code></pre>
-</code></pre><h2>📘 Recap</h2>
+</code></pre><h3>HashMap</h3>
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">for</span> (String key : ages.keySet()) {
+    System.out.println(key + <span class="hljs-string">&quot; is &quot;</span> + ages.get(key));
+}</code></pre>
+</code></pre><h2>🆚 When to Use What?</h2>
+<table>
+<thead>
+<tr>
+<th>Collection</th>
+<th>Ordered?</th>
+<th>Allows Duplicates?</th>
+<th>Key-Value?</th>
+<th>Example Use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ArrayList</code></td>
+<td>✅ Yes</td>
+<td>✅ Yes</td>
+<td>❌ No</td>
+<td>Shopping cart items</td>
+</tr>
+<tr>
+<td><code>HashSet</code></td>
+<td>❌ No</td>
+<td>❌ No</td>
+<td>❌ No</td>
+<td>Unique usernames</td>
+</tr>
+<tr>
+<td><code>HashMap</code></td>
+<td>❌ No</td>
+<td>✅ (values)</td>
+<td>✅ Yes</td>
+<td>Storing user settings</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+<h2>🧠 Bonus: Other Collections</h2>
 <ul>
-<li>Use <code>if</code>, <code>else</code>, and <code>switch</code> to handle decisions</li>
-<li>Use loops to repeat code: <code>for</code>, <code>while</code>, <code>do-while</code></li>
-<li>Control loop behavior with <code>break</code> and <code>continue</code></li>
+<li><code>LinkedList</code> – good for fast insertions/deletions</li>
+<li><code>TreeSet</code> – sorted version of a set</li>
+<li><code>TreeMap</code> – sorted version of a map</li>
+<li><code>Queue</code> – first-in-first-out structure</li>
+</ul>
+<h2>📘 Recap</h2>
+<ul>
+<li>Java Collections provide powerful, flexible data handling</li>
+<li><code>ArrayList</code> is for ordered lists</li>
+<li><code>HashSet</code> is for unique elements</li>
+<li><code>HashMap</code> is for key/value mapping</li>
+<li>Choose the right collection based on your data&#39;s needs</li>
 </ul>
 
       <app-subscribe></app-subscribe>

@@ -1,10 +1,10 @@
 
             <!DOCTYPE html>
-            <html lang="en" data-translated="false" data-breadcrump-title="Control Flow">
+            <html lang="en" data-translated="false" data-breadcrump-title="Java Arrays">
             <head>
                 <meta charset="utf-8" />
-                <title>Learn Time | Java Tutorial - Control Flow</title>
-                <meta name="description" content="Master Java control flow using if-else, switch, and loops like for, while, and do-while. Learn how to control execution flow in your Java programs.">
+                <title>Learn Time | Java Tutorial - Java Arrays</title>
+                <meta name="description" content="Learn how to use arrays in Java to store multiple values. Understand array declaration, initialization, looping, and multidimensional arrays with examples.">
                 
                 <meta name="viewport" content="width=device-width,initial-scale=1" />
                 <!--
@@ -35,14 +35,14 @@
                     .loader.hide {opacity: 0;}
                 </style>
                 
-            <meta property="og:title" content="Java Tutorial - Control Flow" />
-            <meta property="og:description" content="Master Java control flow using if-else, switch, and loops like for, while, and do-while. Learn how to control execution flow in your Java programs." />
-            <meta property="og:image" content="https://learntime.net/assets/thumbnail/blog/blog-5.jpg" />
+            <meta property="og:title" content="Java Tutorial - Java Arrays" />
+            <meta property="og:description" content="Learn how to use arrays in Java to store multiple values. Understand array declaration, initialization, looping, and multidimensional arrays with examples." />
+            <meta property="og:image" content="https://learntime.net/assets/thumbnail/blog/blog-7.jpg" />
             <meta name="twitter:card" content="summary_large_image">
             <meta name="twitter:creator" content="@learntimenet">
-            <meta name="twitter:title" content="Java Tutorial - Control Flow">
-            <meta name="twitter:description" content="Master Java control flow using if-else, switch, and loops like for, while, and do-while. Learn how to control execution flow in your Java programs.">
-            <meta name="twitter:image" content="https://learntime.net/assets/thumbnail/blog/blog-5.jpg">
+            <meta name="twitter:title" content="Java Tutorial - Java Arrays">
+            <meta name="twitter:description" content="Learn how to use arrays in Java to store multiple values. Understand array declaration, initialization, looping, and multidimensional arrays with examples.">
+            <meta name="twitter:image" content="https://learntime.net/assets/thumbnail/blog/blog-7.jpg">
         
                 <script>
                     var disqus_config = function () {
@@ -50,7 +50,7 @@
                         this.page.identifier = window.location.pathname.replace('/en', '');
                     };
                 </script>
-            <script defer src="/blog/java-tutorial/control-flow/control-flow.920e38ae1101f07761db.js"></script></head>
+            <script defer src="/blog/java-tutorial/arrays/arrays.be04bdab49b76c230820.js"></script></head>
             <body>
                 <div class="loader">
                     <div class="loading-bar">
@@ -85,90 +85,83 @@
   </div>
   <div class="main-container">
     <app-breadcrumbs class="tutorial"></app-breadcrumbs>
-    <app-blog-title class="tutorial" blog-title="Control Flow" blog-description="Master Java control flow using if-else, switch, and loops like for, while, and do-while. Learn how to control execution flow in your Java programs." blog-image="/assets/images/blog/blog-5.jpg"></app-blog-title>
+    <app-blog-title class="tutorial" blog-title="Java Arrays" blog-description="Learn how to use arrays in Java to store multiple values. Understand array declaration, initialization, looping, and multidimensional arrays with examples." blog-image="/assets/images/blog/blog-7.jpg"></app-blog-title>
     <div class="blog-content markdown">
       <h2>📝 What You’ll Learn</h2>
 <ul>
-<li><code>if</code>, <code>else</code>, and <code>switch</code> statements</li>
-<li>Looping with <code>for</code>, <code>while</code>, and <code>do-while</code></li>
-<li>Using <code>break</code> and <code>continue</code></li>
-<li>Real examples and best practices</li>
+<li>What arrays are and why they’re useful</li>
+<li>How to declare, initialize, and access arrays</li>
+<li>Looping through arrays</li>
+<li>Multidimensional arrays</li>
 </ul>
-<h2>🧭 Conditional Statements</h2>
-<p>These allow your program to make <strong>decisions</strong>.</p>
-<h3>✅ <strong>if</strong>, <strong>else if</strong>, <strong>else</strong></h3>
-<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-type">int</span> <span class="hljs-variable">score</span> <span class="hljs-operator">=</span> <span class="hljs-number">85</span>;
+<h2>🧱 What is an Array?</h2>
+<p>An <strong>array</strong> is a container that holds a <strong>fixed number of values</strong> of the same type.</p>
+<p>Think of it as a row of boxes:</p>
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-type">int</span>[] numbers = {<span class="hljs-number">10</span>, <span class="hljs-number">20</span>, <span class="hljs-number">30</span>, <span class="hljs-number">40</span>};</code></pre>
+</code></pre><h2>🔧 Declaring Arrays</h2>
+<p>There are a couple of ways to declare arrays in Java:</p>
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-type">int</span>[] scores;      <span class="hljs-comment">// preferred</span>
+String names[];    <span class="hljs-comment">// also valid</span></code></pre>
+</code></pre><p>Then initialize:</p>
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs">scores = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[<span class="hljs-number">5</span>];  <span class="hljs-comment">// space for 5 integers</span></code></pre>
+</code></pre><p>Or declare and initialize in one line:</p>
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-type">int</span>[] ages = {<span class="hljs-number">18</span>, <span class="hljs-number">21</span>, <span class="hljs-number">25</span>, <span class="hljs-number">30</span>};</code></pre>
+</code></pre><h2>📥 Accessing Array Elements</h2>
+<p>Arrays are <strong>zero-indexed</strong>:</p>
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs">System.out.println(ages[<span class="hljs-number">0</span>]);  <span class="hljs-comment">// 18</span>
+ages[<span class="hljs-number">2</span>] = <span class="hljs-number">26</span>;                 <span class="hljs-comment">// update value</span></code></pre>
+</code></pre><h2>🔁 Looping Through Arrays</h2>
+<p>Use a <code>for</code> loop to go through each element:</p>
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; ages.length; i++) {
+    System.out.println(ages[i]);
+}</code></pre>
+</code></pre><p>Or a <strong>foreach loop</strong>:</p>
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> age : ages) {
+    System.out.println(age);
+}</code></pre>
+</code></pre><h2>📐 Array Length</h2>
+<p>Use <code>.length</code> to get the number of elements:</p>
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs">System.out.println(<span class="hljs-string">&quot;Total: &quot;</span> + ages.length);</code></pre>
+</code></pre><h2>🔢 Multidimensional Arrays</h2>
+<p>You can create 2D (or more) arrays:</p>
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-type">int</span>[][] matrix = {
+    {<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>},
+    {<span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>}
+};
 
-<span class="hljs-keyword">if</span> (score &gt;= <span class="hljs-number">90</span>) {
-    System.out.println(<span class="hljs-string">&quot;Grade: A&quot;</span>);
-} <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (score &gt;= <span class="hljs-number">80</span>) {
-    System.out.println(<span class="hljs-string">&quot;Grade: B&quot;</span>);
-} <span class="hljs-keyword">else</span> {
-    System.out.println(<span class="hljs-string">&quot;Grade: C or lower&quot;</span>);
+System.out.println(matrix[<span class="hljs-number">1</span>][<span class="hljs-number">2</span>]);  <span class="hljs-comment">// Output: 6</span></code></pre>
+</code></pre><p>Looping through 2D arrays:</p>
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; matrix.length; i++) {
+    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">j</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; j &lt; matrix[i].length; j++) {
+        System.out.print(matrix[i][j] + <span class="hljs-string">&quot; &quot;</span>);
+    }
+    System.out.println();
 }</code></pre>
-</code></pre><h3>🔄 <strong>switch</strong> Statement</h3>
-<p>Best for checking one variable against many possible values.</p>
-<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-type">int</span> <span class="hljs-variable">day</span> <span class="hljs-operator">=</span> <span class="hljs-number">3</span>;
+</code></pre><h2>🧠 Example: Average Calculator</h2>
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Average</span> {
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> {
+        <span class="hljs-type">int</span>[] marks = {<span class="hljs-number">85</span>, <span class="hljs-number">90</span>, <span class="hljs-number">78</span>, <span class="hljs-number">92</span>};
+        <span class="hljs-type">int</span> <span class="hljs-variable">sum</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;
 
-<span class="hljs-keyword">switch</span> (day) {
-    <span class="hljs-keyword">case</span> <span class="hljs-number">1</span>: System.out.println(<span class="hljs-string">&quot;Monday&quot;</span>); <span class="hljs-keyword">break</span>;
-    <span class="hljs-keyword">case</span> <span class="hljs-number">2</span>: System.out.println(<span class="hljs-string">&quot;Tuesday&quot;</span>); <span class="hljs-keyword">break</span>;
-    <span class="hljs-keyword">case</span> <span class="hljs-number">3</span>: System.out.println(<span class="hljs-string">&quot;Wednesday&quot;</span>); <span class="hljs-keyword">break</span>;
-    <span class="hljs-keyword">default</span>: System.out.println(<span class="hljs-string">&quot;Other day&quot;</span>);
-}</code></pre>
-</code></pre><blockquote>
-<p>⚠️ Use <code>break</code> to avoid fall-through (executing multiple cases).</p>
-</blockquote>
-<h2>🔁 Loops</h2>
-<p>Loops let you <strong>repeat code</strong> while a condition is true.</p>
-<h3>➰ <strong>for</strong> Loop (Count-Controlled)</h3>
-<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>; i &lt;= <span class="hljs-number">5</span>; i++) {
-    System.out.println(<span class="hljs-string">&quot;Count: &quot;</span> + i);
-}</code></pre>
-</code></pre><h3>🔄 <strong>while</strong> Loop (Condition-Controlled)</h3>
-<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>;
-<span class="hljs-keyword">while</span> (i &lt;= <span class="hljs-number">5</span>) {
-    System.out.println(<span class="hljs-string">&quot;Count: &quot;</span> + i);
-    i++;
-}</code></pre>
-</code></pre><h3>🔂 <strong>do-while</strong> Loop (Runs at Least Once)</h3>
-<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>;
-<span class="hljs-keyword">do</span> {
-    System.out.println(<span class="hljs-string">&quot;Count: &quot;</span> + i);
-    i++;
-} <span class="hljs-keyword">while</span> (i &lt;= <span class="hljs-number">5</span>);</code></pre>
-</code></pre><h2>🧨 <strong>break</strong> and <strong>continue</strong></h2>
-<h3><strong>break</strong>: exit a loop early</h3>
-<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>; i &lt;= <span class="hljs-number">10</span>; i++) {
-    <span class="hljs-keyword">if</span> (i == <span class="hljs-number">5</span>) <span class="hljs-keyword">break</span>;
-    System.out.println(i);
-}</code></pre>
-</code></pre><h3><strong>continue</strong>: skip current loop iteration</h3>
-<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>; i &lt;= <span class="hljs-number">5</span>; i++) {
-    <span class="hljs-keyword">if</span> (i == <span class="hljs-number">3</span>) <span class="hljs-keyword">continue</span>;
-    System.out.println(i);  <span class="hljs-comment">// 3 is skipped</span>
-}</code></pre>
-</code></pre><h2>🧠 Example: Login Attempt Logic</h2>
-<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-type">String</span> <span class="hljs-variable">password</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;java123&quot;</span>;
-<span class="hljs-type">int</span> <span class="hljs-variable">attempts</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;
-<span class="hljs-type">boolean</span> <span class="hljs-variable">loggedIn</span> <span class="hljs-operator">=</span> <span class="hljs-literal">false</span>;
+        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> mark : marks) {
+            sum += mark;
+        }
 
-<span class="hljs-keyword">while</span> (attempts &lt; <span class="hljs-number">3</span> &amp;&amp; !loggedIn) {
-    <span class="hljs-comment">// simulate input</span>
-    <span class="hljs-type">String</span> <span class="hljs-variable">input</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;java123&quot;</span>;
-    <span class="hljs-keyword">if</span> (input.equals(password)) {
-        System.out.println(<span class="hljs-string">&quot;Welcome!&quot;</span>);
-        loggedIn = <span class="hljs-literal">true</span>;
-    } <span class="hljs-keyword">else</span> {
-        System.out.println(<span class="hljs-string">&quot;Wrong password.&quot;</span>);
-        attempts++;
+        <span class="hljs-type">double</span> <span class="hljs-variable">average</span> <span class="hljs-operator">=</span> sum / (<span class="hljs-type">double</span>) marks.length;
+        System.out.println(<span class="hljs-string">&quot;Average: &quot;</span> + average);
     }
 }</code></pre>
-</code></pre><h2>📘 Recap</h2>
+</code></pre><h2>⚠️ Common Pitfalls</h2>
 <ul>
-<li>Use <code>if</code>, <code>else</code>, and <code>switch</code> to handle decisions</li>
-<li>Use loops to repeat code: <code>for</code>, <code>while</code>, <code>do-while</code></li>
-<li>Control loop behavior with <code>break</code> and <code>continue</code></li>
+<li>Accessing out-of-bound indices: <code>array[array.length]</code> → ❌  </li>
+<li>Arrays can&#39;t grow/shrink — use <strong>ArrayList</strong> for dynamic collections (more on that later)</li>
+</ul>
+<h2>📘 Recap</h2>
+<ul>
+<li>Arrays store multiple values of the same type</li>
+<li>Elements are accessed by index (starting from 0)</li>
+<li>Use loops to process arrays easily</li>
+<li>Java supports multidimensional arrays</li>
 </ul>
 
       <app-subscribe></app-subscribe>

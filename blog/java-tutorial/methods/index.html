@@ -1,10 +1,10 @@
 
             <!DOCTYPE html>
-            <html lang="en" data-translated="false" data-breadcrump-title="Control Flow">
+            <html lang="en" data-translated="false" data-breadcrump-title="Java Methods">
             <head>
                 <meta charset="utf-8" />
-                <title>Learn Time | Java Tutorial - Control Flow</title>
-                <meta name="description" content="Master Java control flow using if-else, switch, and loops like for, while, and do-while. Learn how to control execution flow in your Java programs.">
+                <title>Learn Time | Java Tutorial - Java Methods</title>
+                <meta name="description" content="Learn how to define, call, and reuse methods in Java. Understand method parameters, return types, and overloading with clear examples.">
                 
                 <meta name="viewport" content="width=device-width,initial-scale=1" />
                 <!--
@@ -35,14 +35,14 @@
                     .loader.hide {opacity: 0;}
                 </style>
                 
-            <meta property="og:title" content="Java Tutorial - Control Flow" />
-            <meta property="og:description" content="Master Java control flow using if-else, switch, and loops like for, while, and do-while. Learn how to control execution flow in your Java programs." />
-            <meta property="og:image" content="https://learntime.net/assets/thumbnail/blog/blog-5.jpg" />
+            <meta property="og:title" content="Java Tutorial - Java Methods" />
+            <meta property="og:description" content="Learn how to define, call, and reuse methods in Java. Understand method parameters, return types, and overloading with clear examples." />
+            <meta property="og:image" content="https://learntime.net/assets/thumbnail/blog/blog-6.jpg" />
             <meta name="twitter:card" content="summary_large_image">
             <meta name="twitter:creator" content="@learntimenet">
-            <meta name="twitter:title" content="Java Tutorial - Control Flow">
-            <meta name="twitter:description" content="Master Java control flow using if-else, switch, and loops like for, while, and do-while. Learn how to control execution flow in your Java programs.">
-            <meta name="twitter:image" content="https://learntime.net/assets/thumbnail/blog/blog-5.jpg">
+            <meta name="twitter:title" content="Java Tutorial - Java Methods">
+            <meta name="twitter:description" content="Learn how to define, call, and reuse methods in Java. Understand method parameters, return types, and overloading with clear examples.">
+            <meta name="twitter:image" content="https://learntime.net/assets/thumbnail/blog/blog-6.jpg">
         
                 <script>
                     var disqus_config = function () {
@@ -50,7 +50,7 @@
                         this.page.identifier = window.location.pathname.replace('/en', '');
                     };
                 </script>
-            <script defer src="/blog/java-tutorial/control-flow/control-flow.920e38ae1101f07761db.js"></script></head>
+            <script defer src="/blog/java-tutorial/methods/methods.a36cdd349d84c9da89e7.js"></script></head>
             <body>
                 <div class="loader">
                     <div class="loading-bar">
@@ -85,90 +85,93 @@
   </div>
   <div class="main-container">
     <app-breadcrumbs class="tutorial"></app-breadcrumbs>
-    <app-blog-title class="tutorial" blog-title="Control Flow" blog-description="Master Java control flow using if-else, switch, and loops like for, while, and do-while. Learn how to control execution flow in your Java programs." blog-image="/assets/images/blog/blog-5.jpg"></app-blog-title>
+    <app-blog-title class="tutorial" blog-title="Java Methods" blog-description="Learn how to define, call, and reuse methods in Java. Understand method parameters, return types, and overloading with clear examples." blog-image="/assets/images/blog/blog-6.jpg"></app-blog-title>
     <div class="blog-content markdown">
       <h2>📝 What You’ll Learn</h2>
 <ul>
-<li><code>if</code>, <code>else</code>, and <code>switch</code> statements</li>
-<li>Looping with <code>for</code>, <code>while</code>, and <code>do-while</code></li>
-<li>Using <code>break</code> and <code>continue</code></li>
-<li>Real examples and best practices</li>
+<li>What methods are and why they matter</li>
+<li>Declaring and calling methods</li>
+<li>Method parameters and return values</li>
+<li>Method overloading</li>
 </ul>
-<h2>🧭 Conditional Statements</h2>
-<p>These allow your program to make <strong>decisions</strong>.</p>
-<h3>✅ <strong>if</strong>, <strong>else if</strong>, <strong>else</strong></h3>
-<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-type">int</span> <span class="hljs-variable">score</span> <span class="hljs-operator">=</span> <span class="hljs-number">85</span>;
+<h2>🛠️ What is a Method?</h2>
+<p>A <strong>method</strong> is a named block of code you can run (or &quot;call&quot;) when needed. It&#39;s like a function in other languages.</p>
+<h3>🧪 Basic Syntax</h3>
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs">returnType <span class="hljs-title function_">methodName</span><span class="hljs-params">(parameters)</span> {
+    <span class="hljs-comment">// code</span>
+    <span class="hljs-keyword">return</span> value; <span class="hljs-comment">// if needed</span>
+}</code></pre>
+</code></pre><h2>▶️ Defining and Calling a Method</h2>
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Greet</span> {
+    <span class="hljs-comment">// Method definition</span>
+    <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">sayHello</span><span class="hljs-params">()</span> {
+        System.out.println(<span class="hljs-string">&quot;Hello!&quot;</span>);
+    }
 
-<span class="hljs-keyword">if</span> (score &gt;= <span class="hljs-number">90</span>) {
-    System.out.println(<span class="hljs-string">&quot;Grade: A&quot;</span>);
-} <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (score &gt;= <span class="hljs-number">80</span>) {
-    System.out.println(<span class="hljs-string">&quot;Grade: B&quot;</span>);
-} <span class="hljs-keyword">else</span> {
-    System.out.println(<span class="hljs-string">&quot;Grade: C or lower&quot;</span>);
-}</code></pre>
-</code></pre><h3>🔄 <strong>switch</strong> Statement</h3>
-<p>Best for checking one variable against many possible values.</p>
-<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-type">int</span> <span class="hljs-variable">day</span> <span class="hljs-operator">=</span> <span class="hljs-number">3</span>;
-
-<span class="hljs-keyword">switch</span> (day) {
-    <span class="hljs-keyword">case</span> <span class="hljs-number">1</span>: System.out.println(<span class="hljs-string">&quot;Monday&quot;</span>); <span class="hljs-keyword">break</span>;
-    <span class="hljs-keyword">case</span> <span class="hljs-number">2</span>: System.out.println(<span class="hljs-string">&quot;Tuesday&quot;</span>); <span class="hljs-keyword">break</span>;
-    <span class="hljs-keyword">case</span> <span class="hljs-number">3</span>: System.out.println(<span class="hljs-string">&quot;Wednesday&quot;</span>); <span class="hljs-keyword">break</span>;
-    <span class="hljs-keyword">default</span>: System.out.println(<span class="hljs-string">&quot;Other day&quot;</span>);
-}</code></pre>
-</code></pre><blockquote>
-<p>⚠️ Use <code>break</code> to avoid fall-through (executing multiple cases).</p>
-</blockquote>
-<h2>🔁 Loops</h2>
-<p>Loops let you <strong>repeat code</strong> while a condition is true.</p>
-<h3>➰ <strong>for</strong> Loop (Count-Controlled)</h3>
-<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>; i &lt;= <span class="hljs-number">5</span>; i++) {
-    System.out.println(<span class="hljs-string">&quot;Count: &quot;</span> + i);
-}</code></pre>
-</code></pre><h3>🔄 <strong>while</strong> Loop (Condition-Controlled)</h3>
-<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>;
-<span class="hljs-keyword">while</span> (i &lt;= <span class="hljs-number">5</span>) {
-    System.out.println(<span class="hljs-string">&quot;Count: &quot;</span> + i);
-    i++;
-}</code></pre>
-</code></pre><h3>🔂 <strong>do-while</strong> Loop (Runs at Least Once)</h3>
-<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>;
-<span class="hljs-keyword">do</span> {
-    System.out.println(<span class="hljs-string">&quot;Count: &quot;</span> + i);
-    i++;
-} <span class="hljs-keyword">while</span> (i &lt;= <span class="hljs-number">5</span>);</code></pre>
-</code></pre><h2>🧨 <strong>break</strong> and <strong>continue</strong></h2>
-<h3><strong>break</strong>: exit a loop early</h3>
-<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>; i &lt;= <span class="hljs-number">10</span>; i++) {
-    <span class="hljs-keyword">if</span> (i == <span class="hljs-number">5</span>) <span class="hljs-keyword">break</span>;
-    System.out.println(i);
-}</code></pre>
-</code></pre><h3><strong>continue</strong>: skip current loop iteration</h3>
-<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>; i &lt;= <span class="hljs-number">5</span>; i++) {
-    <span class="hljs-keyword">if</span> (i == <span class="hljs-number">3</span>) <span class="hljs-keyword">continue</span>;
-    System.out.println(i);  <span class="hljs-comment">// 3 is skipped</span>
-}</code></pre>
-</code></pre><h2>🧠 Example: Login Attempt Logic</h2>
-<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-type">String</span> <span class="hljs-variable">password</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;java123&quot;</span>;
-<span class="hljs-type">int</span> <span class="hljs-variable">attempts</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;
-<span class="hljs-type">boolean</span> <span class="hljs-variable">loggedIn</span> <span class="hljs-operator">=</span> <span class="hljs-literal">false</span>;
-
-<span class="hljs-keyword">while</span> (attempts &lt; <span class="hljs-number">3</span> &amp;&amp; !loggedIn) {
-    <span class="hljs-comment">// simulate input</span>
-    <span class="hljs-type">String</span> <span class="hljs-variable">input</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;java123&quot;</span>;
-    <span class="hljs-keyword">if</span> (input.equals(password)) {
-        System.out.println(<span class="hljs-string">&quot;Welcome!&quot;</span>);
-        loggedIn = <span class="hljs-literal">true</span>;
-    } <span class="hljs-keyword">else</span> {
-        System.out.println(<span class="hljs-string">&quot;Wrong password.&quot;</span>);
-        attempts++;
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> {
+        <span class="hljs-comment">// Method call</span>
+        sayHello();
     }
 }</code></pre>
-</code></pre><h2>📘 Recap</h2>
+</code></pre><h2>📥 Method Parameters</h2>
+<p>You can pass values (arguments) into methods.</p>
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">greet</span><span class="hljs-params">(String name)</span> {
+    System.out.println(<span class="hljs-string">&quot;Hello, &quot;</span> + name + <span class="hljs-string">&quot;!&quot;</span>);
+}
+
+<span class="hljs-comment">// Calling it:</span>
+greet(<span class="hljs-string">&quot;Java&quot;</span>); <span class="hljs-comment">// Output: Hello, Java!</span></code></pre>
+</code></pre><h2>🎯 Return Values</h2>
+<p>Methods can return values using the <code>return</code> keyword.</p>
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">static</span> <span class="hljs-type">int</span> <span class="hljs-title function_">add</span><span class="hljs-params">(<span class="hljs-type">int</span> a, <span class="hljs-type">int</span> b)</span> {
+    <span class="hljs-keyword">return</span> a + b;
+}
+
+<span class="hljs-comment">// Use the result</span>
+<span class="hljs-type">int</span> <span class="hljs-variable">sum</span> <span class="hljs-operator">=</span> add(<span class="hljs-number">3</span>, <span class="hljs-number">4</span>);  <span class="hljs-comment">// sum = 7</span></code></pre>
+</code></pre><blockquote>
+<p>Always match the return type in your method declaration.</p>
+</blockquote>
+<h2>🧬 Method Overloading</h2>
+<p>You can define <strong>multiple methods with the same name</strong>, as long as their parameters differ.</p>
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">static</span> <span class="hljs-type">int</span> <span class="hljs-title function_">multiply</span><span class="hljs-params">(<span class="hljs-type">int</span> a, <span class="hljs-type">int</span> b)</span> {
+    <span class="hljs-keyword">return</span> a * b;
+}
+
+<span class="hljs-keyword">static</span> <span class="hljs-type">double</span> <span class="hljs-title function_">multiply</span><span class="hljs-params">(<span class="hljs-type">double</span> a, <span class="hljs-type">double</span> b)</span> {
+    <span class="hljs-keyword">return</span> a * b;
+}</code></pre>
+</code></pre><blockquote>
+<p>The compiler chooses which method to use based on the arguments.</p>
+</blockquote>
+<h2>💡 Why Use Methods?</h2>
 <ul>
-<li>Use <code>if</code>, <code>else</code>, and <code>switch</code> to handle decisions</li>
-<li>Use loops to repeat code: <code>for</code>, <code>while</code>, <code>do-while</code></li>
-<li>Control loop behavior with <code>break</code> and <code>continue</code></li>
+<li><strong>Reusability</strong> – write once, use many times</li>
+<li><strong>Readability</strong> – break large tasks into smaller steps</li>
+<li><strong>Maintainability</strong> – fix bugs or update logic in one place</li>
+</ul>
+<h2>🔍 Example: Method Practice</h2>
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Calculator</span> {
+    <span class="hljs-keyword">static</span> <span class="hljs-type">int</span> <span class="hljs-title function_">square</span><span class="hljs-params">(<span class="hljs-type">int</span> x)</span> {
+        <span class="hljs-keyword">return</span> x * x;
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> {
+        <span class="hljs-type">int</span> <span class="hljs-variable">result</span> <span class="hljs-operator">=</span> square(<span class="hljs-number">5</span>);
+        System.out.println(<span class="hljs-string">&quot;Square is: &quot;</span> + result);
+    }
+}</code></pre>
+</code></pre><h2>🧠 Best Practices</h2>
+<ul>
+<li>Keep methods short and focused</li>
+<li>Use meaningful method names (like <code>calculateTotal()</code>)</li>
+<li>Avoid too many parameters – consider helper methods</li>
+</ul>
+<h2>📘 Recap</h2>
+<ul>
+<li>Methods are reusable blocks of code</li>
+<li>They can take parameters and return values</li>
+<li>Java supports <strong>method overloading</strong> (same name, different arguments)</li>
 </ul>
 
       <app-subscribe></app-subscribe>

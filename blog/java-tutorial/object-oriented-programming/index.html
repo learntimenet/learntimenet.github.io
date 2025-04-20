@@ -1,10 +1,10 @@
 
             <!DOCTYPE html>
-            <html lang="en" data-translated="false" data-breadcrump-title="Control Flow">
+            <html lang="en" data-translated="false" data-breadcrump-title="Object-Oriented Programming (OOP)">
             <head>
                 <meta charset="utf-8" />
-                <title>Learn Time | Java Tutorial - Control Flow</title>
-                <meta name="description" content="Master Java control flow using if-else, switch, and loops like for, while, and do-while. Learn how to control execution flow in your Java programs.">
+                <title>Learn Time | Java Tutorial - Object-Oriented Programming (OOP)</title>
+                <meta name="description" content="Learn the fundamentals of Object-Oriented Programming (OOP) in Java. Understand classes, objects, encapsulation, inheritance, and polymorphism with examples.">
                 
                 <meta name="viewport" content="width=device-width,initial-scale=1" />
                 <!--
@@ -35,14 +35,14 @@
                     .loader.hide {opacity: 0;}
                 </style>
                 
-            <meta property="og:title" content="Java Tutorial - Control Flow" />
-            <meta property="og:description" content="Master Java control flow using if-else, switch, and loops like for, while, and do-while. Learn how to control execution flow in your Java programs." />
-            <meta property="og:image" content="https://learntime.net/assets/thumbnail/blog/blog-5.jpg" />
+            <meta property="og:title" content="Java Tutorial - Object-Oriented Programming (OOP)" />
+            <meta property="og:description" content="Learn the fundamentals of Object-Oriented Programming (OOP) in Java. Understand classes, objects, encapsulation, inheritance, and polymorphism with examples." />
+            <meta property="og:image" content="https://learntime.net/assets/thumbnail/blog/blog-8.jpg" />
             <meta name="twitter:card" content="summary_large_image">
             <meta name="twitter:creator" content="@learntimenet">
-            <meta name="twitter:title" content="Java Tutorial - Control Flow">
-            <meta name="twitter:description" content="Master Java control flow using if-else, switch, and loops like for, while, and do-while. Learn how to control execution flow in your Java programs.">
-            <meta name="twitter:image" content="https://learntime.net/assets/thumbnail/blog/blog-5.jpg">
+            <meta name="twitter:title" content="Java Tutorial - Object-Oriented Programming (OOP)">
+            <meta name="twitter:description" content="Learn the fundamentals of Object-Oriented Programming (OOP) in Java. Understand classes, objects, encapsulation, inheritance, and polymorphism with examples.">
+            <meta name="twitter:image" content="https://learntime.net/assets/thumbnail/blog/blog-8.jpg">
         
                 <script>
                     var disqus_config = function () {
@@ -50,7 +50,7 @@
                         this.page.identifier = window.location.pathname.replace('/en', '');
                     };
                 </script>
-            <script defer src="/blog/java-tutorial/control-flow/control-flow.920e38ae1101f07761db.js"></script></head>
+            <script defer src="/blog/java-tutorial/object-oriented-programming/object-oriented-programming.f10575d5db5f1889ad7e.js"></script></head>
             <body>
                 <div class="loader">
                     <div class="loading-bar">
@@ -85,90 +85,112 @@
   </div>
   <div class="main-container">
     <app-breadcrumbs class="tutorial"></app-breadcrumbs>
-    <app-blog-title class="tutorial" blog-title="Control Flow" blog-description="Master Java control flow using if-else, switch, and loops like for, while, and do-while. Learn how to control execution flow in your Java programs." blog-image="/assets/images/blog/blog-5.jpg"></app-blog-title>
+    <app-blog-title class="tutorial" blog-title="Object-Oriented Programming (OOP)" blog-description="Learn the fundamentals of Object-Oriented Programming (OOP) in Java. Understand classes, objects, encapsulation, inheritance, and polymorphism with examples." blog-image="/assets/images/blog/blog-8.jpg"></app-blog-title>
     <div class="blog-content markdown">
       <h2>📝 What You’ll Learn</h2>
 <ul>
-<li><code>if</code>, <code>else</code>, and <code>switch</code> statements</li>
-<li>Looping with <code>for</code>, <code>while</code>, and <code>do-while</code></li>
-<li>Using <code>break</code> and <code>continue</code></li>
-<li>Real examples and best practices</li>
+<li>What OOP is and why it&#39;s used</li>
+<li>How to create classes and objects</li>
+<li>Concepts like encapsulation, inheritance, and polymorphism</li>
+<li>Real-world analogies to understand OOP better</li>
 </ul>
-<h2>🧭 Conditional Statements</h2>
-<p>These allow your program to make <strong>decisions</strong>.</p>
-<h3>✅ <strong>if</strong>, <strong>else if</strong>, <strong>else</strong></h3>
-<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-type">int</span> <span class="hljs-variable">score</span> <span class="hljs-operator">=</span> <span class="hljs-number">85</span>;
-
-<span class="hljs-keyword">if</span> (score &gt;= <span class="hljs-number">90</span>) {
-    System.out.println(<span class="hljs-string">&quot;Grade: A&quot;</span>);
-} <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (score &gt;= <span class="hljs-number">80</span>) {
-    System.out.println(<span class="hljs-string">&quot;Grade: B&quot;</span>);
-} <span class="hljs-keyword">else</span> {
-    System.out.println(<span class="hljs-string">&quot;Grade: C or lower&quot;</span>);
-}</code></pre>
-</code></pre><h3>🔄 <strong>switch</strong> Statement</h3>
-<p>Best for checking one variable against many possible values.</p>
-<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-type">int</span> <span class="hljs-variable">day</span> <span class="hljs-operator">=</span> <span class="hljs-number">3</span>;
-
-<span class="hljs-keyword">switch</span> (day) {
-    <span class="hljs-keyword">case</span> <span class="hljs-number">1</span>: System.out.println(<span class="hljs-string">&quot;Monday&quot;</span>); <span class="hljs-keyword">break</span>;
-    <span class="hljs-keyword">case</span> <span class="hljs-number">2</span>: System.out.println(<span class="hljs-string">&quot;Tuesday&quot;</span>); <span class="hljs-keyword">break</span>;
-    <span class="hljs-keyword">case</span> <span class="hljs-number">3</span>: System.out.println(<span class="hljs-string">&quot;Wednesday&quot;</span>); <span class="hljs-keyword">break</span>;
-    <span class="hljs-keyword">default</span>: System.out.println(<span class="hljs-string">&quot;Other day&quot;</span>);
-}</code></pre>
-</code></pre><blockquote>
-<p>⚠️ Use <code>break</code> to avoid fall-through (executing multiple cases).</p>
+<h2>🧠 What is OOP?</h2>
+<p><strong>Object-Oriented Programming</strong> is a style of programming based on the concept of &quot;objects&quot; — like real-world entities.</p>
+<p>Java is built entirely around OOP.</p>
+<blockquote>
+<p>Think of a <strong>class</strong> as a blueprint, and an <strong>object</strong> as an actual item built from it.</p>
 </blockquote>
-<h2>🔁 Loops</h2>
-<p>Loops let you <strong>repeat code</strong> while a condition is true.</p>
-<h3>➰ <strong>for</strong> Loop (Count-Controlled)</h3>
-<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>; i &lt;= <span class="hljs-number">5</span>; i++) {
-    System.out.println(<span class="hljs-string">&quot;Count: &quot;</span> + i);
-}</code></pre>
-</code></pre><h3>🔄 <strong>while</strong> Loop (Condition-Controlled)</h3>
-<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>;
-<span class="hljs-keyword">while</span> (i &lt;= <span class="hljs-number">5</span>) {
-    System.out.println(<span class="hljs-string">&quot;Count: &quot;</span> + i);
-    i++;
-}</code></pre>
-</code></pre><h3>🔂 <strong>do-while</strong> Loop (Runs at Least Once)</h3>
-<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>;
-<span class="hljs-keyword">do</span> {
-    System.out.println(<span class="hljs-string">&quot;Count: &quot;</span> + i);
-    i++;
-} <span class="hljs-keyword">while</span> (i &lt;= <span class="hljs-number">5</span>);</code></pre>
-</code></pre><h2>🧨 <strong>break</strong> and <strong>continue</strong></h2>
-<h3><strong>break</strong>: exit a loop early</h3>
-<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>; i &lt;= <span class="hljs-number">10</span>; i++) {
-    <span class="hljs-keyword">if</span> (i == <span class="hljs-number">5</span>) <span class="hljs-keyword">break</span>;
-    System.out.println(i);
-}</code></pre>
-</code></pre><h3><strong>continue</strong>: skip current loop iteration</h3>
-<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>; i &lt;= <span class="hljs-number">5</span>; i++) {
-    <span class="hljs-keyword">if</span> (i == <span class="hljs-number">3</span>) <span class="hljs-keyword">continue</span>;
-    System.out.println(i);  <span class="hljs-comment">// 3 is skipped</span>
-}</code></pre>
-</code></pre><h2>🧠 Example: Login Attempt Logic</h2>
-<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-type">String</span> <span class="hljs-variable">password</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;java123&quot;</span>;
-<span class="hljs-type">int</span> <span class="hljs-variable">attempts</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;
-<span class="hljs-type">boolean</span> <span class="hljs-variable">loggedIn</span> <span class="hljs-operator">=</span> <span class="hljs-literal">false</span>;
+<h2>🧰 Creating a Class</h2>
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Car</span> {
+    String color;
+    <span class="hljs-type">int</span> speed;
 
-<span class="hljs-keyword">while</span> (attempts &lt; <span class="hljs-number">3</span> &amp;&amp; !loggedIn) {
-    <span class="hljs-comment">// simulate input</span>
-    <span class="hljs-type">String</span> <span class="hljs-variable">input</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;java123&quot;</span>;
-    <span class="hljs-keyword">if</span> (input.equals(password)) {
-        System.out.println(<span class="hljs-string">&quot;Welcome!&quot;</span>);
-        loggedIn = <span class="hljs-literal">true</span>;
-    } <span class="hljs-keyword">else</span> {
-        System.out.println(<span class="hljs-string">&quot;Wrong password.&quot;</span>);
-        attempts++;
+    <span class="hljs-keyword">void</span> <span class="hljs-title function_">drive</span><span class="hljs-params">()</span> {
+        System.out.println(<span class="hljs-string">&quot;Driving at &quot;</span> + speed + <span class="hljs-string">&quot; km/h&quot;</span>);
+    }
+}</code></pre>
+</code></pre><p>This is a <strong>blueprint</strong> of a Car. It has <strong>attributes</strong> (<code>color</code>, <code>speed</code>) and a <strong>behavior</strong> (<code>drive()</code>).</p>
+<h2>🛠️ Creating Objects</h2>
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Main</span> {
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> {
+        <span class="hljs-type">Car</span> <span class="hljs-variable">myCar</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Car</span>();  <span class="hljs-comment">// create an object</span>
+        myCar.color = <span class="hljs-string">&quot;Red&quot;</span>;
+        myCar.speed = <span class="hljs-number">60</span>;
+
+        myCar.drive();  <span class="hljs-comment">// Output: Driving at 60 km/h</span>
+    }
+}</code></pre>
+</code></pre><h2>🧱 Encapsulation</h2>
+<p>Encapsulation = <strong>data hiding</strong>. Use <code>private</code> variables and <code>public</code> getters/setters:</p>
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">BankAccount</span> {
+    <span class="hljs-keyword">private</span> <span class="hljs-type">double</span> balance;
+
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">deposit</span><span class="hljs-params">(<span class="hljs-type">double</span> amount)</span> {
+        balance += amount;
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-type">double</span> <span class="hljs-title function_">getBalance</span><span class="hljs-params">()</span> {
+        <span class="hljs-keyword">return</span> balance;
+    }
+}</code></pre>
+</code></pre><h2>🧬 Inheritance</h2>
+<p>Inheritance = a class can <strong>inherit</strong> fields and methods from another class.</p>
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Animal</span> {
+    <span class="hljs-keyword">void</span> <span class="hljs-title function_">speak</span><span class="hljs-params">()</span> {
+        System.out.println(<span class="hljs-string">&quot;Some sound&quot;</span>);
+    }
+}
+
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">Dog</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">Animal</span> {
+    <span class="hljs-keyword">void</span> <span class="hljs-title function_">bark</span><span class="hljs-params">()</span> {
+        System.out.println(<span class="hljs-string">&quot;Bark!&quot;</span>);
+    }
+}</code></pre>
+</code></pre><h2>🎭 Polymorphism</h2>
+<p>Polymorphism = the <strong>same method name</strong> can behave differently depending on the object.</p>
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Animal</span> {
+    <span class="hljs-keyword">void</span> <span class="hljs-title function_">sound</span><span class="hljs-params">()</span> {
+        System.out.println(<span class="hljs-string">&quot;Some sound&quot;</span>);
+    }
+}
+
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">Cat</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">Animal</span> {
+    <span class="hljs-keyword">void</span> <span class="hljs-title function_">sound</span><span class="hljs-params">()</span> {
+        System.out.println(<span class="hljs-string">&quot;Meow&quot;</span>);
+    }
+}</code></pre>
+</code></pre><pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-type">Animal</span> <span class="hljs-variable">myAnimal</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Cat</span>();
+myAnimal.sound();  <span class="hljs-comment">// Output: Meow</span></code></pre>
+</code></pre><h2>👥 Constructors</h2>
+<p>Special methods used to initialize objects.</p>
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Person</span> {
+    String name;
+
+    Person(String n) {
+        name = n;
+    }
+}</code></pre>
+</code></pre><h2>🔍 Example: Simple Class</h2>
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Student</span> {
+    String name;
+    <span class="hljs-type">int</span> age;
+
+    <span class="hljs-keyword">void</span> <span class="hljs-title function_">introduce</span><span class="hljs-params">()</span> {
+        System.out.println(<span class="hljs-string">&quot;Hi, I&#x27;m &quot;</span> + name);
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> {
+        <span class="hljs-type">Student</span> <span class="hljs-variable">s</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Student</span>();
+        s.name = <span class="hljs-string">&quot;Alice&quot;</span>;
+        s.age = <span class="hljs-number">20</span>;
+        s.introduce();  <span class="hljs-comment">// Output: Hi, I&#x27;m Alice</span>
     }
 }</code></pre>
 </code></pre><h2>📘 Recap</h2>
 <ul>
-<li>Use <code>if</code>, <code>else</code>, and <code>switch</code> to handle decisions</li>
-<li>Use loops to repeat code: <code>for</code>, <code>while</code>, <code>do-while</code></li>
-<li>Control loop behavior with <code>break</code> and <code>continue</code></li>
+<li>OOP helps organize code using objects and classes</li>
+<li>Key concepts: <strong>encapsulation</strong>, <strong>inheritance</strong>, <strong>polymorphism</strong></li>
+<li>Java is a fully OOP language — master this to build real-world apps</li>
 </ul>
 
       <app-subscribe></app-subscribe>
