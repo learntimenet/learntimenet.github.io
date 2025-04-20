@@ -50,7 +50,7 @@
                         this.page.identifier = window.location.pathname.replace('/en', '');
                     };
                 </script>
-            <script defer src="/blog/java-tutorial/control-flow/control-flow.f778a660ebaf43a60fb3.js"></script></head>
+            <script defer src="/blog/java-tutorial/control-flow/control-flow.920e38ae1101f07761db.js"></script></head>
             <body>
                 <div class="loader">
                     <div class="loading-bar">
@@ -85,209 +85,90 @@
   </div>
   <div class="main-container">
     <app-breadcrumbs class="tutorial"></app-breadcrumbs>
-    <app-blog-title blog-title="Control Flow" blog-description="Master Java control flow using if-else, switch, and loops like for, while, and do-while. Learn how to control execution flow in your Java programs." blog-image="/assets/images/blog/blog-5.jpg"></app-blog-title>
+    <app-blog-title class="tutorial" blog-title="Control Flow" blog-description="Master Java control flow using if-else, switch, and loops like for, while, and do-while. Learn how to control execution flow in your Java programs." blog-image="/assets/images/blog/blog-5.jpg"></app-blog-title>
     <div class="blog-content markdown">
       <h2>📝 What You’ll Learn</h2>
 <ul>
-<li>Types of operators in Java</li>
-<li>Arithmetic, comparison, logical, and assignment operators</li>
-<li>Operator precedence</li>
-<li>Practical examples</li>
+<li><code>if</code>, <code>else</code>, and <code>switch</code> statements</li>
+<li>Looping with <code>for</code>, <code>while</code>, and <code>do-while</code></li>
+<li>Using <code>break</code> and <code>continue</code></li>
+<li>Real examples and best practices</li>
 </ul>
-<h2>🔣 What Are Operators?</h2>
-<p><strong>Operators</strong> are symbols that perform operations on variables and values — like math, comparison, and logic.</p>
-<p>Example:</p>
-<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-type">int</span> <span class="hljs-variable">sum</span> <span class="hljs-operator">=</span> <span class="hljs-number">5</span> + <span class="hljs-number">3</span>; <span class="hljs-comment">// &#x27;+&#x27; is an operator</span></code></pre>
-</code></pre><h2>➗ Arithmetic Operators</h2>
-<p>Used for basic math:</p>
-<table>
-<thead>
-<tr>
-<th>Operator</th>
-<th>Description</th>
-<th>Example</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>+</code></td>
-<td>Addition</td>
-<td><code>a + b</code></td>
-</tr>
-<tr>
-<td><code>-</code></td>
-<td>Subtraction</td>
-<td><code>a - b</code></td>
-</tr>
-<tr>
-<td><code>*</code></td>
-<td>Multiplication</td>
-<td><code>a * b</code></td>
-</tr>
-<tr>
-<td><code>/</code></td>
-<td>Division</td>
-<td><code>a / b</code></td>
-</tr>
-<tr>
-<td><code>%</code></td>
-<td>Modulus (remainder)</td>
-<td><code>a % b</code></td>
-</tr>
-</tbody>
-</table>
+<h2>🧭 Conditional Statements</h2>
+<p>These allow your program to make <strong>decisions</strong>.</p>
+<h3>✅ <strong>if</strong>, <strong>else if</strong>, <strong>else</strong></h3>
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-type">int</span> <span class="hljs-variable">score</span> <span class="hljs-operator">=</span> <span class="hljs-number">85</span>;
 
-<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-type">int</span> <span class="hljs-variable">result</span> <span class="hljs-operator">=</span> <span class="hljs-number">10</span> % <span class="hljs-number">3</span>;  <span class="hljs-comment">// result = 1</span></code></pre>
-</code></pre><h2>⚖️ Comparison (Relational) Operators</h2>
-<p>Used to compare two values:</p>
-<table>
-<thead>
-<tr>
-<th>Operator</th>
-<th>Meaning</th>
-<th>Example</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>==</code></td>
-<td>Equal to</td>
-<td><code>a == b</code></td>
-</tr>
-<tr>
-<td><code>!=</code></td>
-<td>Not equal</td>
-<td><code>a != b</code></td>
-</tr>
-<tr>
-<td><code>&gt;</code></td>
-<td>Greater than</td>
-<td><code>a &gt; b</code></td>
-</tr>
-<tr>
-<td><code>&lt;</code></td>
-<td>Less than</td>
-<td><code>a &lt; b</code></td>
-</tr>
-<tr>
-<td><code>&gt;=</code></td>
-<td>Greater or equal</td>
-<td><code>a &gt;= b</code></td>
-</tr>
-<tr>
-<td><code>&lt;=</code></td>
-<td>Less or equal</td>
-<td><code>a &lt;= b</code></td>
-</tr>
-</tbody>
-</table>
+<span class="hljs-keyword">if</span> (score &gt;= <span class="hljs-number">90</span>) {
+    System.out.println(<span class="hljs-string">&quot;Grade: A&quot;</span>);
+} <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (score &gt;= <span class="hljs-number">80</span>) {
+    System.out.println(<span class="hljs-string">&quot;Grade: B&quot;</span>);
+} <span class="hljs-keyword">else</span> {
+    System.out.println(<span class="hljs-string">&quot;Grade: C or lower&quot;</span>);
+}</code></pre>
+</code></pre><h3>🔄 <strong>switch</strong> Statement</h3>
+<p>Best for checking one variable against many possible values.</p>
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-type">int</span> <span class="hljs-variable">day</span> <span class="hljs-operator">=</span> <span class="hljs-number">3</span>;
 
+<span class="hljs-keyword">switch</span> (day) {
+    <span class="hljs-keyword">case</span> <span class="hljs-number">1</span>: System.out.println(<span class="hljs-string">&quot;Monday&quot;</span>); <span class="hljs-keyword">break</span>;
+    <span class="hljs-keyword">case</span> <span class="hljs-number">2</span>: System.out.println(<span class="hljs-string">&quot;Tuesday&quot;</span>); <span class="hljs-keyword">break</span>;
+    <span class="hljs-keyword">case</span> <span class="hljs-number">3</span>: System.out.println(<span class="hljs-string">&quot;Wednesday&quot;</span>); <span class="hljs-keyword">break</span>;
+    <span class="hljs-keyword">default</span>: System.out.println(<span class="hljs-string">&quot;Other day&quot;</span>);
+}</code></pre>
+</code></pre><blockquote>
+<p>⚠️ Use <code>break</code> to avoid fall-through (executing multiple cases).</p>
+</blockquote>
+<h2>🔁 Loops</h2>
+<p>Loops let you <strong>repeat code</strong> while a condition is true.</p>
+<h3>➰ <strong>for</strong> Loop (Count-Controlled)</h3>
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>; i &lt;= <span class="hljs-number">5</span>; i++) {
+    System.out.println(<span class="hljs-string">&quot;Count: &quot;</span> + i);
+}</code></pre>
+</code></pre><h3>🔄 <strong>while</strong> Loop (Condition-Controlled)</h3>
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>;
+<span class="hljs-keyword">while</span> (i &lt;= <span class="hljs-number">5</span>) {
+    System.out.println(<span class="hljs-string">&quot;Count: &quot;</span> + i);
+    i++;
+}</code></pre>
+</code></pre><h3>🔂 <strong>do-while</strong> Loop (Runs at Least Once)</h3>
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>;
+<span class="hljs-keyword">do</span> {
+    System.out.println(<span class="hljs-string">&quot;Count: &quot;</span> + i);
+    i++;
+} <span class="hljs-keyword">while</span> (i &lt;= <span class="hljs-number">5</span>);</code></pre>
+</code></pre><h2>🧨 <strong>break</strong> and <strong>continue</strong></h2>
+<h3><strong>break</strong>: exit a loop early</h3>
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>; i &lt;= <span class="hljs-number">10</span>; i++) {
+    <span class="hljs-keyword">if</span> (i == <span class="hljs-number">5</span>) <span class="hljs-keyword">break</span>;
+    System.out.println(i);
+}</code></pre>
+</code></pre><h3><strong>continue</strong>: skip current loop iteration</h3>
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>; i &lt;= <span class="hljs-number">5</span>; i++) {
+    <span class="hljs-keyword">if</span> (i == <span class="hljs-number">3</span>) <span class="hljs-keyword">continue</span>;
+    System.out.println(i);  <span class="hljs-comment">// 3 is skipped</span>
+}</code></pre>
+</code></pre><h2>🧠 Example: Login Attempt Logic</h2>
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-type">String</span> <span class="hljs-variable">password</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;java123&quot;</span>;
+<span class="hljs-type">int</span> <span class="hljs-variable">attempts</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;
+<span class="hljs-type">boolean</span> <span class="hljs-variable">loggedIn</span> <span class="hljs-operator">=</span> <span class="hljs-literal">false</span>;
 
-<p>These return <code>true</code> or <code>false</code>.</p>
-<h2>🔁 Logical Operators</h2>
-<p>Used with boolean (<code>true/false</code>) values:</p>
-<table>
-<thead>
-<tr>
-<th>Operator</th>
-<th>Description</th>
-<th>Example</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>&amp;&amp;</code></td>
-<td>Logical AND</td>
-<td><code>a &gt; 5 &amp;&amp; b &lt; 10</code></td>
-</tr>
-
-<tr>
-<td><code>||</code></td>
-<td>Logical OR</td>
-<td><code>a &gt; 5 || b &lt; 10</code></td>
-</tr>
-
-<tr>
-<td><code>!</code></td>
-<td>Logical NOT</td>
-<td><code>!(a &gt; 5)</code></td>
-</tr>
-</tbody>
-</table>
-
-
-<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-type">boolean</span> <span class="hljs-variable">isAdult</span> <span class="hljs-operator">=</span> age &gt;= <span class="hljs-number">18</span> &amp;&amp; hasID;</code></pre>
-</code></pre><h2>🖊️ Assignment Operators</h2>
-<p>Assign values to variables:</p>
-<table>
-<thead>
-<tr>
-<th>Operator</th>
-<th>Example</th>
-<th>Equivalent</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>=</code></td>
-<td><code>x = 5</code></td>
-<td>x gets 5</td>
-</tr>
-<tr>
-<td><code>+=</code></td>
-<td><code>x += 3</code></td>
-<td><code>x = x + 3</code></td>
-</tr>
-<tr>
-<td><code>-=</code></td>
-<td><code>x -= 2</code></td>
-<td><code>x = x - 2</code></td>
-</tr>
-<tr>
-<td><code>*=</code></td>
-<td><code>x *= 4</code></td>
-<td><code>x = x * 4</code></td>
-</tr>
-<tr>
-<td><code>/=</code></td>
-<td><code>x /= 2</code></td>
-<td><code>x = x / 2</code></td>
-</tr>
-</tbody>
-</table>
-
-
-
-
-<h2>🧠 Operator Precedence</h2>
-<p>Just like math, Java follows an order of operations:</p>
-<ol>
-<li><code>()</code></li>
-<li><code>*</code>, <code>/</code>, <code>%</code></li>
-<li><code>+</code>, <code>-</code></li>
-<li>Comparisons (<code>&gt;</code>, <code>&lt;</code>, etc.)</li>
-<li>Logical (<code>&amp;&amp;</code>, <code>||</code>)</li>
-<li>Assignment (<code>=</code>)</li>
-</ol>
-<p>Example:</p>
-<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-type">int</span> <span class="hljs-variable">result</span> <span class="hljs-operator">=</span> <span class="hljs-number">2</span> + <span class="hljs-number">3</span> * <span class="hljs-number">4</span>; <span class="hljs-comment">// result = 14, not 20!</span></code></pre>
-</code></pre><p>Use <code>()</code> to control order:</p>
-<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-type">int</span> <span class="hljs-variable">result</span> <span class="hljs-operator">=</span> (<span class="hljs-number">2</span> + <span class="hljs-number">3</span>) * <span class="hljs-number">4</span>; <span class="hljs-comment">// result = 20</span></code></pre>
-</code></pre><h2>🔎 Example: Calculator Snippet</h2>
-<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Calculator</span> {
-    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> {
-        <span class="hljs-type">int</span> <span class="hljs-variable">a</span> <span class="hljs-operator">=</span> <span class="hljs-number">10</span>, b = <span class="hljs-number">4</span>;
-
-        System.out.println(<span class="hljs-string">&quot;Sum: &quot;</span> + (a + b));
-        System.out.println(<span class="hljs-string">&quot;Product: &quot;</span> + (a * b));
-        System.out.println(<span class="hljs-string">&quot;Is a &gt; b? &quot;</span> + (a &gt; b));
+<span class="hljs-keyword">while</span> (attempts &lt; <span class="hljs-number">3</span> &amp;&amp; !loggedIn) {
+    <span class="hljs-comment">// simulate input</span>
+    <span class="hljs-type">String</span> <span class="hljs-variable">input</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;java123&quot;</span>;
+    <span class="hljs-keyword">if</span> (input.equals(password)) {
+        System.out.println(<span class="hljs-string">&quot;Welcome!&quot;</span>);
+        loggedIn = <span class="hljs-literal">true</span>;
+    } <span class="hljs-keyword">else</span> {
+        System.out.println(<span class="hljs-string">&quot;Wrong password.&quot;</span>);
+        attempts++;
     }
 }</code></pre>
 </code></pre><h2>📘 Recap</h2>
 <ul>
-<li>Operators are essential for building expressions and decision logic.</li>
-<li>Java supports arithmetic, comparison, logical, and assignment operators.</li>
-<li>Use parentheses <code>()</code> to clarify complex expressions.</li>
+<li>Use <code>if</code>, <code>else</code>, and <code>switch</code> to handle decisions</li>
+<li>Use loops to repeat code: <code>for</code>, <code>while</code>, <code>do-while</code></li>
+<li>Control loop behavior with <code>break</code> and <code>continue</code></li>
 </ul>
 
       <app-subscribe></app-subscribe>
