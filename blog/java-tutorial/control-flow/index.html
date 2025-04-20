@@ -1,0 +1,365 @@
+
+            <!DOCTYPE html>
+            <html lang="en" data-translated="false" data-breadcrump-title="Control Flow">
+            <head>
+                <meta charset="utf-8" />
+                <title>Learn Time | Java Tutorial - Control Flow</title>
+                <meta name="description" content="Master Java control flow using if-else, switch, and loops like for, while, and do-while. Learn how to control execution flow in your Java programs.">
+                
+                <meta name="viewport" content="width=device-width,initial-scale=1" />
+                <!--
+                <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
+                <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
+                <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
+                <link rel="shortcut icon" sizes="192x192" href="/assets/favicon/android-chrome-192x192.png" >
+                <link rel="shortcut icon" sizes="512x512" href="/assets/favicon/android-chrome-512x512.png" >
+                <link rel="manifest" href="/assets/favicon/site.webmanifest">
+                <link rel="shortcut icon" href="/assets/favicon/favicon.ico">
+                <link rel="mask-icon" href="/assets/favicon/safari-pinned-tab.svg" color="#5bbad5">
+                <meta name="msapplication-TileColor" content="#da532c">
+                <meta name="theme-color" content="#ffffff">
+                -->
+                <link rel="shortcut icon" type="image/png" href="/assets/images/logo-circle.png">
+                <link rel="stylesheet" href="/styles.css">
+                <script src="https://kit.fontawesome.com/ff0edf556e.js" crossorigin="anonymous"></script>
+                <script src="https://code.iconify.design/iconify-icon/1.0.2/iconify-icon.min.js"></script>
+                <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+                <script>window.startTime = new Date().getTime();</script>
+                <style>
+                    :root {
+                        --background-color: #f3f2ef;
+                        --loading-bar-background-color: #d6cec2;
+                        --moving-loading-bar-background-color: #D0514D;
+                    }
+                    .loader {transition: all .2s ease-out;z-index: 10000000000;margin-top: -200px;position: fixed;top: 0;left: 0;right: 0;bottom: 0;background-color: var(--background-color);display: flex;align-items: center;justify-content: center;flex-direction: column;}.loader-logo {width: 40px; height: 40px; margin-bottom: 20px;}.loading-bar {width: 130px;height: 4px;border-radius: 100rem;background-color: var(--loading-bar-background-color);position: relative;overflow: hidden;}.moving-loading-bar {height: 100%;width: 68px;position: absolute;border-radius: 100rem;background-color: var(--moving-loading-bar-background-color);animation: initial-loading 1.5s ease infinite;}@keyframes initial-loading {0% {transform: translate(-34px);}50% {transform: translate(96px);}to {transform: translate(-34px);}}
+                    .loader.hide {opacity: 0;}
+                </style>
+                
+            <meta property="og:title" content="Java Tutorial - Control Flow" />
+            <meta property="og:description" content="Master Java control flow using if-else, switch, and loops like for, while, and do-while. Learn how to control execution flow in your Java programs." />
+            <meta property="og:image" content="https://learntime.net/assets/thumbnail/blog/blog-5.jpg" />
+            <meta name="twitter:card" content="summary_large_image">
+            <meta name="twitter:creator" content="@learntimenet">
+            <meta name="twitter:title" content="Java Tutorial - Control Flow">
+            <meta name="twitter:description" content="Master Java control flow using if-else, switch, and loops like for, while, and do-while. Learn how to control execution flow in your Java programs.">
+            <meta name="twitter:image" content="https://learntime.net/assets/thumbnail/blog/blog-5.jpg">
+        
+                <script>
+                    var disqus_config = function () {
+                        this.page.url = window.location.origin + window.location.pathname;
+                        this.page.identifier = window.location.pathname.replace('/en', '');
+                    };
+                </script>
+            <script defer src="/blog/java-tutorial/control-flow/control-flow.65c6095166edd8b3eb12.js"></script></head>
+            <body>
+                <div class="loader">
+                    <div class="loading-bar">
+                        <div class="moving-loading-bar"></div>
+                    </div>
+                </div>
+                <script>
+                    var lastVisitTime = parseInt(localStorage.getItem('LAST_VISIT_TIME') || '0');
+                    if ((new Date().valueOf() - lastVisitTime) < 1200000) {
+                        document.querySelector('.loading-bar').style.display = 'none';
+                    }
+                </script>
+                <div class="body-container">
+                    <app-navbar></app-navbar>
+                    <div class="max-width"><app-breadcrumbs></app-breadcrumbs></div>
+                    <main>
+        
+<style>
+    :root {
+        --scroll-indicator-height: 1rem;
+        --max-width: 150rem;
+    }
+    @media screen and (min-width: 1024px) {
+        :root {
+            --promotion-height: 0rem !important;
+        }
+    }
+</style>
+<div class="max-width tutorial-container">
+  <div class="tutorial-menu-container">
+    <app-tutorial-menu menu="[{&quot;category&quot;:&quot;Java Tutorial&quot;,&quot;articles&quot;:[{&quot;title&quot;:&quot;Introduction&quot;,&quot;url&quot;:&quot;/blog/java-tutorial/&quot;},{&quot;title&quot;:&quot;Setup and First Program&quot;,&quot;url&quot;:&quot;/blog/java-tutorial/setup-and-first-program&quot;},{&quot;title&quot;:&quot;Java Syntax&quot;,&quot;url&quot;:&quot;/blog/java-tutorial/syntax&quot;},{&quot;title&quot;:&quot;Variables & Data Types&quot;,&quot;url&quot;:&quot;/blog/java-tutorial/variables-and-data-types&quot;},{&quot;title&quot;:&quot;Java Operators&quot;,&quot;url&quot;:&quot;/blog/java-tutorial/operators&quot;},{&quot;title&quot;:&quot;Control Flow&quot;,&quot;url&quot;:&quot;/blog/java-tutorial/control-flow&quot;}]},{&quot;category&quot;:&quot;Java Advanced&quot;,&quot;articles&quot;:[{&quot;title&quot;:&quot;ThreadLocal in Java&quot;,&quot;url&quot;:&quot;/blog/java-tutorial/thread-local&quot;},{&quot;title&quot;:&quot;Inheritance with JPA&quot;,&quot;url&quot;:&quot;/blog/java-tutorial/inheritance-with-jpa&quot;}]}]"></app-tutorial-menu>
+  </div>
+  <div class="main-container">
+    <app-breadcrumbs class="tutorial"></app-breadcrumbs>
+    <app-blog-title blog-title="Control Flow" blog-description="Master Java control flow using if-else, switch, and loops like for, while, and do-while. Learn how to control execution flow in your Java programs." blog-image="/assets/images/blog/blog-5.jpg"></app-blog-title>
+    <div class="blog-content markdown">
+      <h2>📝 What You’ll Learn</h2>
+<ul>
+<li>Types of operators in Java</li>
+<li>Arithmetic, comparison, logical, and assignment operators</li>
+<li>Operator precedence</li>
+<li>Practical examples</li>
+</ul>
+<h2>🔣 What Are Operators?</h2>
+<p><strong>Operators</strong> are symbols that perform operations on variables and values — like math, comparison, and logic.</p>
+<p>Example:</p>
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-type">int</span> <span class="hljs-variable">sum</span> <span class="hljs-operator">=</span> <span class="hljs-number">5</span> + <span class="hljs-number">3</span>; <span class="hljs-comment">// &#x27;+&#x27; is an operator</span></code></pre>
+</code></pre><h2>➗ Arithmetic Operators</h2>
+<p>Used for basic math:</p>
+<table>
+<thead>
+<tr>
+<th>Operator</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>+</code></td>
+<td>Addition</td>
+<td><code>a + b</code></td>
+</tr>
+<tr>
+<td><code>-</code></td>
+<td>Subtraction</td>
+<td><code>a - b</code></td>
+</tr>
+<tr>
+<td><code>*</code></td>
+<td>Multiplication</td>
+<td><code>a * b</code></td>
+</tr>
+<tr>
+<td><code>/</code></td>
+<td>Division</td>
+<td><code>a / b</code></td>
+</tr>
+<tr>
+<td><code>%</code></td>
+<td>Modulus (remainder)</td>
+<td><code>a % b</code></td>
+</tr>
+</tbody>
+</table>
+
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-type">int</span> <span class="hljs-variable">result</span> <span class="hljs-operator">=</span> <span class="hljs-number">10</span> % <span class="hljs-number">3</span>;  <span class="hljs-comment">// result = 1</span></code></pre>
+</code></pre><h2>⚖️ Comparison (Relational) Operators</h2>
+<p>Used to compare two values:</p>
+<table>
+<thead>
+<tr>
+<th>Operator</th>
+<th>Meaning</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>==</code></td>
+<td>Equal to</td>
+<td><code>a == b</code></td>
+</tr>
+<tr>
+<td><code>!=</code></td>
+<td>Not equal</td>
+<td><code>a != b</code></td>
+</tr>
+<tr>
+<td><code>&gt;</code></td>
+<td>Greater than</td>
+<td><code>a &gt; b</code></td>
+</tr>
+<tr>
+<td><code>&lt;</code></td>
+<td>Less than</td>
+<td><code>a &lt; b</code></td>
+</tr>
+<tr>
+<td><code>&gt;=</code></td>
+<td>Greater or equal</td>
+<td><code>a &gt;= b</code></td>
+</tr>
+<tr>
+<td><code>&lt;=</code></td>
+<td>Less or equal</td>
+<td><code>a &lt;= b</code></td>
+</tr>
+</tbody>
+</table>
+
+
+<p>These return <code>true</code> or <code>false</code>.</p>
+<h2>🔁 Logical Operators</h2>
+<p>Used with boolean (<code>true/false</code>) values:</p>
+<table>
+<thead>
+<tr>
+<th>Operator</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&amp;&amp;</code></td>
+<td>Logical AND</td>
+<td><code>a &gt; 5 &amp;&amp; b &lt; 10</code></td>
+</tr>
+
+<tr>
+<td><code>||</code></td>
+<td>Logical OR</td>
+<td><code>a &gt; 5 || b &lt; 10</code></td>
+</tr>
+
+<tr>
+<td><code>!</code></td>
+<td>Logical NOT</td>
+<td><code>!(a &gt; 5)</code></td>
+</tr>
+</tbody>
+</table>
+
+
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-type">boolean</span> <span class="hljs-variable">isAdult</span> <span class="hljs-operator">=</span> age &gt;= <span class="hljs-number">18</span> &amp;&amp; hasID;</code></pre>
+</code></pre><h2>🖊️ Assignment Operators</h2>
+<p>Assign values to variables:</p>
+<table>
+<thead>
+<tr>
+<th>Operator</th>
+<th>Example</th>
+<th>Equivalent</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>=</code></td>
+<td><code>x = 5</code></td>
+<td>x gets 5</td>
+</tr>
+<tr>
+<td><code>+=</code></td>
+<td><code>x += 3</code></td>
+<td><code>x = x + 3</code></td>
+</tr>
+<tr>
+<td><code>-=</code></td>
+<td><code>x -= 2</code></td>
+<td><code>x = x - 2</code></td>
+</tr>
+<tr>
+<td><code>*=</code></td>
+<td><code>x *= 4</code></td>
+<td><code>x = x * 4</code></td>
+</tr>
+<tr>
+<td><code>/=</code></td>
+<td><code>x /= 2</code></td>
+<td><code>x = x / 2</code></td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+<h2>🧠 Operator Precedence</h2>
+<p>Just like math, Java follows an order of operations:</p>
+<ol>
+<li><code>()</code></li>
+<li><code>*</code>, <code>/</code>, <code>%</code></li>
+<li><code>+</code>, <code>-</code></li>
+<li>Comparisons (<code>&gt;</code>, <code>&lt;</code>, etc.)</li>
+<li>Logical (<code>&amp;&amp;</code>, <code>||</code>)</li>
+<li>Assignment (<code>=</code>)</li>
+</ol>
+<p>Example:</p>
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-type">int</span> <span class="hljs-variable">result</span> <span class="hljs-operator">=</span> <span class="hljs-number">2</span> + <span class="hljs-number">3</span> * <span class="hljs-number">4</span>; <span class="hljs-comment">// result = 14, not 20!</span></code></pre>
+</code></pre><p>Use <code>()</code> to control order:</p>
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-type">int</span> <span class="hljs-variable">result</span> <span class="hljs-operator">=</span> (<span class="hljs-number">2</span> + <span class="hljs-number">3</span>) * <span class="hljs-number">4</span>; <span class="hljs-comment">// result = 20</span></code></pre>
+</code></pre><h2>🔎 Example: Calculator Snippet</h2>
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Calculator</span> {
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> {
+        <span class="hljs-type">int</span> <span class="hljs-variable">a</span> <span class="hljs-operator">=</span> <span class="hljs-number">10</span>, b = <span class="hljs-number">4</span>;
+
+        System.out.println(<span class="hljs-string">&quot;Sum: &quot;</span> + (a + b));
+        System.out.println(<span class="hljs-string">&quot;Product: &quot;</span> + (a * b));
+        System.out.println(<span class="hljs-string">&quot;Is a &gt; b? &quot;</span> + (a &gt; b));
+    }
+}</code></pre>
+</code></pre><h2>📘 Recap</h2>
+<ul>
+<li>Operators are essential for building expressions and decision logic.</li>
+<li>Java supports arithmetic, comparison, logical, and assignment operators.</li>
+<li>Use parentheses <code>()</code> to clarify complex expressions.</li>
+</ul>
+
+      <app-subscribe></app-subscribe>
+      <app-comments></app-comments>
+    </div>
+  </div>
+  <aside>
+    <div class="aside-container">
+      <app-share-buttons></app-share-buttons>
+      <app-aside-promotion></app-aside-promotion>
+    </div>
+  </aside>
+</div>
+
+        </main>
+        <app-scroll-top-button></app-scroll-top-button>
+        <app-footer></app-footer>
+        </div>
+            <script>
+                var lastVisitTime = parseInt(localStorage.getItem('LAST_VISIT_TIME') || '0');
+                var timeoutDuration = 1500;
+                //if ((new Date().valueOf() - lastVisitTime) < 1200000) {
+                //    timeoutDuration = 400;
+                //}
+                setTimeout(() => {
+                    document.querySelector('.loader').classList.add('hide');
+                    document.querySelector('.body-container').style.display = 'block';
+                    document.dispatchEvent(new CustomEvent('page-loader-hide'));
+                }, timeoutDuration);
+                setTimeout(() => {
+                    document.querySelector('.loader').style.display = 'none';
+                }, 2000);
+                localStorage.setItem('LAST_VISIT_TIME', new Date().valueOf());
+            </script>
+        
+                <!-- Google tag (gtag.js) -->
+                <script async src="https://www.googletagmanager.com/gtag/js?id=G-S6JEVF53JZ"></script>
+                <script>
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag() {
+                        dataLayer.push(arguments);
+                    }
+                    gtag('js', new Date());
+
+                    gtag('config', 'G-S6JEVF53JZ');
+                </script>
+            
+            <script>
+                window.axeptioSettings = {
+                    clientId: "67fc2975df7d77940a4ff73d",
+                    cookiesVersion: "13042025",
+                    googleConsentMode: {
+                        default: {
+                            analytics_storage: "denied",
+                            ad_storage: "denied",
+                            ad_user_data: "denied",
+                            ad_personalization: "denied",
+                            wait_for_update: 500
+                        }
+                    }
+                };
+                (function(d, s) {
+                    var t = d.getElementsByTagName(s)[0], e = d.createElement(s);
+                    e.async = true; e.src = "//static.axept.io/sdk.js";
+                    t.parentNode.insertBefore(e, t);
+                })(document, "script");
+            </script>
+            <script src="/assets/scripts/markdown.js"></script>
+                <script>
+                    document.addEventListener('DOMContentLoaded', () => {
+                        document.getElementById('languageSwitcherMobile').remove();
+                        document.getElementById('languageSwitcherDesktop').remove();
+                    });
+                </script>
+            </body></html>
