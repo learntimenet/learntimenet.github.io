@@ -1,0 +1,227 @@
+
+            <!DOCTYPE html>
+            <html lang="en" data-translated="false" data-breadcrump-title="Java Files">
+            <head>
+                <meta charset="utf-8" />
+                <title>Learn Time | Java Tutorial - Java Files</title>
+                <meta name="description" content="Learn how to read from and write to files in Java using FileReader, BufferedReader, and FileWriter. Understand file handling and error management with examples.">
+                
+                <meta name="viewport" content="width=device-width,initial-scale=1" />
+                <!--
+                <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
+                <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
+                <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
+                <link rel="shortcut icon" sizes="192x192" href="/assets/favicon/android-chrome-192x192.png" >
+                <link rel="shortcut icon" sizes="512x512" href="/assets/favicon/android-chrome-512x512.png" >
+                <link rel="manifest" href="/assets/favicon/site.webmanifest">
+                <link rel="shortcut icon" href="/assets/favicon/favicon.ico">
+                <link rel="mask-icon" href="/assets/favicon/safari-pinned-tab.svg" color="#5bbad5">
+                <meta name="msapplication-TileColor" content="#da532c">
+                <meta name="theme-color" content="#ffffff">
+                -->
+                <link rel="shortcut icon" type="image/png" href="/assets/images/logo-circle.png">
+                <link rel="stylesheet" href="/styles.css">
+                <script src="https://kit.fontawesome.com/ff0edf556e.js" crossorigin="anonymous"></script>
+                <script src="https://code.iconify.design/iconify-icon/1.0.2/iconify-icon.min.js"></script>
+                <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+                <script>window.startTime = new Date().getTime();</script>
+                <style>
+                    :root {
+                        --background-color: #f3f2ef;
+                        --loading-bar-background-color: #d6cec2;
+                        --moving-loading-bar-background-color: #D0514D;
+                    }
+                    .loader {transition: all .2s ease-out;z-index: 10000000000;margin-top: -200px;position: fixed;top: 0;left: 0;right: 0;bottom: 0;background-color: var(--background-color);display: flex;align-items: center;justify-content: center;flex-direction: column;}.loader-logo {width: 40px; height: 40px; margin-bottom: 20px;}.loading-bar {width: 130px;height: 4px;border-radius: 100rem;background-color: var(--loading-bar-background-color);position: relative;overflow: hidden;}.moving-loading-bar {height: 100%;width: 68px;position: absolute;border-radius: 100rem;background-color: var(--moving-loading-bar-background-color);animation: initial-loading 1.5s ease infinite;}@keyframes initial-loading {0% {transform: translate(-34px);}50% {transform: translate(96px);}to {transform: translate(-34px);}}
+                    .loader.hide {opacity: 0;}
+                </style>
+                
+            <meta property="og:title" content="Java Tutorial - Java Files" />
+            <meta property="og:description" content="Learn how to read from and write to files in Java using FileReader, BufferedReader, and FileWriter. Understand file handling and error management with examples." />
+            <meta property="og:image" content="https://learntime.net/assets/thumbnail/blog/blog-0.jpg" />
+            <meta name="twitter:card" content="summary_large_image">
+            <meta name="twitter:creator" content="@learntimenet">
+            <meta name="twitter:title" content="Java Tutorial - Java Files">
+            <meta name="twitter:description" content="Learn how to read from and write to files in Java using FileReader, BufferedReader, and FileWriter. Understand file handling and error management with examples.">
+            <meta name="twitter:image" content="https://learntime.net/assets/thumbnail/blog/blog-0.jpg">
+        
+                <script>
+                    var disqus_config = function () {
+                        this.page.url = window.location.origin + window.location.pathname;
+                        this.page.identifier = window.location.pathname.replace('/en', '');
+                    };
+                </script>
+            <script defer src="/blog/java-tutorial/files/files.56048b7d46579f4844f7.js"></script></head>
+            <body>
+                <div class="loader">
+                    <div class="loading-bar">
+                        <div class="moving-loading-bar"></div>
+                    </div>
+                </div>
+                <script>
+                    var lastVisitTime = parseInt(localStorage.getItem('LAST_VISIT_TIME') || '0');
+                    if ((new Date().valueOf() - lastVisitTime) < 1200000) {
+                        document.querySelector('.loading-bar').style.display = 'none';
+                    }
+                </script>
+                <div class="body-container">
+                    <app-navbar></app-navbar>
+                    <div class="max-width"><app-breadcrumbs></app-breadcrumbs></div>
+                    <main>
+        
+<style>
+    :root {
+        --scroll-indicator-height: 1rem;
+        --max-width: 150rem;
+    }
+    @media screen and (min-width: 1024px) {
+        :root {
+            --promotion-height: 0rem !important;
+        }
+    }
+</style>
+<div class="max-width tutorial-container">
+  <div class="tutorial-menu-container">
+    <app-tutorial-menu menu="[{&quot;category&quot;:&quot;Java Tutorial&quot;,&quot;articles&quot;:[{&quot;title&quot;:&quot;Introduction&quot;,&quot;url&quot;:&quot;/blog/java-tutorial/&quot;},{&quot;title&quot;:&quot;Setup and First Program&quot;,&quot;url&quot;:&quot;/blog/java-tutorial/setup-and-first-program&quot;},{&quot;title&quot;:&quot;Java Syntax&quot;,&quot;url&quot;:&quot;/blog/java-tutorial/syntax&quot;},{&quot;title&quot;:&quot;Variables & Data Types&quot;,&quot;url&quot;:&quot;/blog/java-tutorial/variables-and-data-types&quot;},{&quot;title&quot;:&quot;Java Operators&quot;,&quot;url&quot;:&quot;/blog/java-tutorial/operators&quot;},{&quot;title&quot;:&quot;Control Flow&quot;,&quot;url&quot;:&quot;/blog/java-tutorial/control-flow&quot;},{&quot;title&quot;:&quot;Java Methods&quot;,&quot;url&quot;:&quot;/blog/java-tutorial/methods&quot;},{&quot;title&quot;:&quot;Java Arrays&quot;,&quot;url&quot;:&quot;/blog/java-tutorial/arrays&quot;},{&quot;title&quot;:&quot;Java OOP&quot;,&quot;url&quot;:&quot;/blog/java-tutorial/object-oriented-programming&quot;},{&quot;title&quot;:&quot;Exception Handling&quot;,&quot;url&quot;:&quot;/blog/java-tutorial/exception-handling&quot;},{&quot;title&quot;:&quot;Java Collections&quot;,&quot;url&quot;:&quot;/blog/java-tutorial/collections&quot;},{&quot;title&quot;:&quot;Java Files&quot;,&quot;url&quot;:&quot;/blog/java-tutorial/files&quot;},{&quot;title&quot;:&quot;Packages and Imports&quot;,&quot;url&quot;:&quot;/blog/java-tutorial/packages-and-imports&quot;},{&quot;title&quot;:&quot;Access Modifiers&quot;,&quot;url&quot;:&quot;/blog/java-tutorial/access-modifiers&quot;},{&quot;title&quot;:&quot;Java Annotations&quot;,&quot;url&quot;:&quot;/blog/java-tutorial/annotations&quot;},{&quot;title&quot;:&quot;Java Multithreading&quot;,&quot;url&quot;:&quot;/blog/java-tutorial/multithreading&quot;},{&quot;title&quot;:&quot;Java Generics&quot;,&quot;url&quot;:&quot;/blog/java-tutorial/generics&quot;},{&quot;title&quot;:&quot;Lambda Expressions&quot;,&quot;url&quot;:&quot;/blog/java-tutorial/lambda-expressions&quot;}]},{&quot;category&quot;:&quot;Java Advanced&quot;,&quot;articles&quot;:[{&quot;title&quot;:&quot;ThreadLocal in Java&quot;,&quot;url&quot;:&quot;/blog/java-tutorial/thread-local&quot;},{&quot;title&quot;:&quot;Inheritance with JPA&quot;,&quot;url&quot;:&quot;/blog/java-tutorial/inheritance-with-jpa&quot;}]}]"></app-tutorial-menu>
+  </div>
+  <div class="main-container">
+    <app-breadcrumbs class="tutorial"></app-breadcrumbs>
+    <app-blog-title class="tutorial" blog-title="Java Files" blog-description="Learn how to read from and write to files in Java using FileReader, BufferedReader, and FileWriter. Understand file handling and error management with examples." blog-image="/assets/images/blog/blog-0.jpg"></app-blog-title>
+    <div class="blog-content markdown">
+      <h2>📝 What You’ll Learn</h2>
+<ul>
+<li>How to read from and write to files</li>
+<li>Difference between character and buffered streams</li>
+<li>File handling best practices</li>
+<li>Try-with-resources for safe closing</li>
+</ul>
+<h2>📦 Working with Files</h2>
+<p>First, import the file-handling classes:</p>
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">import</span> java.io.*;</code></pre>
+</code></pre><h2>📖 Reading a File – <strong>FileReader</strong> &amp; <strong>BufferedReader</strong></h2>
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">try</span> {
+    <span class="hljs-type">BufferedReader</span> <span class="hljs-variable">reader</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">BufferedReader</span>(<span class="hljs-keyword">new</span> <span class="hljs-title class_">FileReader</span>(<span class="hljs-string">&quot;data.txt&quot;</span>));
+    String line;
+
+    <span class="hljs-keyword">while</span> ((line = reader.readLine()) != <span class="hljs-literal">null</span>) {
+        System.out.println(line);
+    }
+
+    reader.close();
+} <span class="hljs-keyword">catch</span> (IOException e) {
+    System.out.println(<span class="hljs-string">&quot;Error reading file: &quot;</span> + e.getMessage());
+}</code></pre>
+</code></pre><h2>✍️ Writing to a File – <strong>FileWriter</strong></h2>
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">try</span> {
+    <span class="hljs-type">FileWriter</span> <span class="hljs-variable">writer</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">FileWriter</span>(<span class="hljs-string">&quot;output.txt&quot;</span>);
+    writer.write(<span class="hljs-string">&quot;Hello, Java File I/O!&quot;</span>);
+    writer.close();
+} <span class="hljs-keyword">catch</span> (IOException e) {
+    System.out.println(<span class="hljs-string">&quot;Error writing file: &quot;</span> + e.getMessage());
+}</code></pre>
+</code></pre><blockquote>
+<p>By default, <code>FileWriter</code> <strong>overwrites</strong> the file. To append instead:</p>
+</blockquote>
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-type">FileWriter</span> <span class="hljs-variable">writer</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">FileWriter</span>(<span class="hljs-string">&quot;output.txt&quot;</span>, <span class="hljs-literal">true</span>);  <span class="hljs-comment">// true = append mode</span></code></pre>
+</code></pre><h2>🧼 Try-with-Resources (Auto-Close)</h2>
+<p>Java can automatically close resources like readers and writers:</p>
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">try</span> (<span class="hljs-type">BufferedReader</span> <span class="hljs-variable">reader</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">BufferedReader</span>(<span class="hljs-keyword">new</span> <span class="hljs-title class_">FileReader</span>(<span class="hljs-string">&quot;data.txt&quot;</span>))) {
+    String line;
+    <span class="hljs-keyword">while</span> ((line = reader.readLine()) != <span class="hljs-literal">null</span>) {
+        System.out.println(line);
+    }
+} <span class="hljs-keyword">catch</span> (IOException e) {
+    System.out.println(<span class="hljs-string">&quot;Error: &quot;</span> + e.getMessage());
+}</code></pre>
+</code></pre><h2>🧾 Check If File Exists</h2>
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-type">File</span> <span class="hljs-variable">file</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">File</span>(<span class="hljs-string">&quot;data.txt&quot;</span>);
+<span class="hljs-keyword">if</span> (file.exists()) {
+    System.out.println(<span class="hljs-string">&quot;File exists&quot;</span>);
+} <span class="hljs-keyword">else</span> {
+    System.out.println(<span class="hljs-string">&quot;File not found&quot;</span>);
+}</code></pre>
+</code></pre><h2>🧱 Other Useful File Methods</h2>
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs">file.getName();       <span class="hljs-comment">// file name</span>
+file.length();        <span class="hljs-comment">// file size in bytes</span>
+file.delete();        <span class="hljs-comment">// delete file</span>
+file.createNewFile(); <span class="hljs-comment">// create file</span></code></pre>
+</code></pre><h2>📘 Recap</h2>
+<ul>
+<li>Use <code>FileReader</code>/<code>BufferedReader</code> for reading files</li>
+<li>Use <code>FileWriter</code> to write to files (and append if needed)</li>
+<li>Always handle exceptions</li>
+<li>Use try-with-resources to auto-close streams</li>
+</ul>
+
+      <app-subscribe></app-subscribe>
+      <app-comments></app-comments>
+    </div>
+  </div>
+  <aside>
+    <div class="aside-container">
+      <app-share-buttons></app-share-buttons>
+      <app-aside-promotion></app-aside-promotion>
+    </div>
+  </aside>
+</div>
+
+        </main>
+        <app-scroll-top-button></app-scroll-top-button>
+        <app-footer></app-footer>
+        </div>
+            <script>
+                var lastVisitTime = parseInt(localStorage.getItem('LAST_VISIT_TIME') || '0');
+                var timeoutDuration = 1500;
+                //if ((new Date().valueOf() - lastVisitTime) < 1200000) {
+                //    timeoutDuration = 400;
+                //}
+                setTimeout(() => {
+                    document.querySelector('.loader').classList.add('hide');
+                    document.querySelector('.body-container').style.display = 'block';
+                    document.dispatchEvent(new CustomEvent('page-loader-hide'));
+                }, timeoutDuration);
+                setTimeout(() => {
+                    document.querySelector('.loader').style.display = 'none';
+                }, 2000);
+                localStorage.setItem('LAST_VISIT_TIME', new Date().valueOf());
+            </script>
+        
+                <!-- Google tag (gtag.js) -->
+                <script async src="https://www.googletagmanager.com/gtag/js?id=G-S6JEVF53JZ"></script>
+                <script>
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag() {
+                        dataLayer.push(arguments);
+                    }
+                    gtag('js', new Date());
+
+                    gtag('config', 'G-S6JEVF53JZ');
+                </script>
+            
+            <script>
+                window.axeptioSettings = {
+                    clientId: "67fc2975df7d77940a4ff73d",
+                    cookiesVersion: "13042025",
+                    googleConsentMode: {
+                        default: {
+                            analytics_storage: "denied",
+                            ad_storage: "denied",
+                            ad_user_data: "denied",
+                            ad_personalization: "denied",
+                            wait_for_update: 500
+                        }
+                    }
+                };
+                (function(d, s) {
+                    var t = d.getElementsByTagName(s)[0], e = d.createElement(s);
+                    e.async = true; e.src = "//static.axept.io/sdk.js";
+                    t.parentNode.insertBefore(e, t);
+                })(document, "script");
+            </script>
+            <script src="/assets/scripts/markdown.js"></script>
+                <script>
+                    document.addEventListener('DOMContentLoaded', () => {
+                        document.getElementById('languageSwitcherMobile').remove();
+                        document.getElementById('languageSwitcherDesktop').remove();
+                    });
+                </script>
+            </body></html>

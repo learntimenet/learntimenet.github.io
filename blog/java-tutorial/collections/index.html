@@ -50,7 +50,7 @@
                         this.page.identifier = window.location.pathname.replace('/en', '');
                     };
                 </script>
-            <script defer src="/blog/java-tutorial/collections/collections.c18b5b7c52fa8fb03a3b.js"></script></head>
+            <script defer src="/blog/java-tutorial/collections/collections.bb884cb6e9b35453dd87.js"></script></head>
             <body>
                 <div class="loader">
                     <div class="loading-bar">
@@ -81,7 +81,7 @@
 </style>
 <div class="max-width tutorial-container">
   <div class="tutorial-menu-container">
-    <app-tutorial-menu menu="[{&quot;category&quot;:&quot;Java Tutorial&quot;,&quot;articles&quot;:[{&quot;title&quot;:&quot;Introduction&quot;,&quot;url&quot;:&quot;/blog/java-tutorial/&quot;},{&quot;title&quot;:&quot;Setup and First Program&quot;,&quot;url&quot;:&quot;/blog/java-tutorial/setup-and-first-program&quot;},{&quot;title&quot;:&quot;Java Syntax&quot;,&quot;url&quot;:&quot;/blog/java-tutorial/syntax&quot;},{&quot;title&quot;:&quot;Variables & Data Types&quot;,&quot;url&quot;:&quot;/blog/java-tutorial/variables-and-data-types&quot;},{&quot;title&quot;:&quot;Java Operators&quot;,&quot;url&quot;:&quot;/blog/java-tutorial/operators&quot;},{&quot;title&quot;:&quot;Control Flow&quot;,&quot;url&quot;:&quot;/blog/java-tutorial/control-flow&quot;},{&quot;title&quot;:&quot;Java Methods&quot;,&quot;url&quot;:&quot;/blog/java-tutorial/methods&quot;},{&quot;title&quot;:&quot;Java Arrays&quot;,&quot;url&quot;:&quot;/blog/java-tutorial/arrays&quot;},{&quot;title&quot;:&quot;Java OOP&quot;,&quot;url&quot;:&quot;/blog/java-tutorial/object-oriented-programming&quot;},{&quot;title&quot;:&quot;Exception Handling&quot;,&quot;url&quot;:&quot;/blog/java-tutorial/exception-handling&quot;},{&quot;title&quot;:&quot;Java Collections&quot;,&quot;url&quot;:&quot;/blog/java-tutorial/collections&quot;}]},{&quot;category&quot;:&quot;Java Advanced&quot;,&quot;articles&quot;:[{&quot;title&quot;:&quot;ThreadLocal in Java&quot;,&quot;url&quot;:&quot;/blog/java-tutorial/thread-local&quot;},{&quot;title&quot;:&quot;Inheritance with JPA&quot;,&quot;url&quot;:&quot;/blog/java-tutorial/inheritance-with-jpa&quot;}]}]"></app-tutorial-menu>
+    <app-tutorial-menu menu="[{&quot;category&quot;:&quot;Java Tutorial&quot;,&quot;articles&quot;:[{&quot;title&quot;:&quot;Introduction&quot;,&quot;url&quot;:&quot;/blog/java-tutorial/&quot;},{&quot;title&quot;:&quot;Setup and First Program&quot;,&quot;url&quot;:&quot;/blog/java-tutorial/setup-and-first-program&quot;},{&quot;title&quot;:&quot;Java Syntax&quot;,&quot;url&quot;:&quot;/blog/java-tutorial/syntax&quot;},{&quot;title&quot;:&quot;Variables & Data Types&quot;,&quot;url&quot;:&quot;/blog/java-tutorial/variables-and-data-types&quot;},{&quot;title&quot;:&quot;Java Operators&quot;,&quot;url&quot;:&quot;/blog/java-tutorial/operators&quot;},{&quot;title&quot;:&quot;Control Flow&quot;,&quot;url&quot;:&quot;/blog/java-tutorial/control-flow&quot;},{&quot;title&quot;:&quot;Java Methods&quot;,&quot;url&quot;:&quot;/blog/java-tutorial/methods&quot;},{&quot;title&quot;:&quot;Java Arrays&quot;,&quot;url&quot;:&quot;/blog/java-tutorial/arrays&quot;},{&quot;title&quot;:&quot;Java OOP&quot;,&quot;url&quot;:&quot;/blog/java-tutorial/object-oriented-programming&quot;},{&quot;title&quot;:&quot;Exception Handling&quot;,&quot;url&quot;:&quot;/blog/java-tutorial/exception-handling&quot;},{&quot;title&quot;:&quot;Java Collections&quot;,&quot;url&quot;:&quot;/blog/java-tutorial/collections&quot;},{&quot;title&quot;:&quot;Java Files&quot;,&quot;url&quot;:&quot;/blog/java-tutorial/files&quot;},{&quot;title&quot;:&quot;Packages and Imports&quot;,&quot;url&quot;:&quot;/blog/java-tutorial/packages-and-imports&quot;},{&quot;title&quot;:&quot;Access Modifiers&quot;,&quot;url&quot;:&quot;/blog/java-tutorial/access-modifiers&quot;},{&quot;title&quot;:&quot;Java Annotations&quot;,&quot;url&quot;:&quot;/blog/java-tutorial/annotations&quot;},{&quot;title&quot;:&quot;Java Multithreading&quot;,&quot;url&quot;:&quot;/blog/java-tutorial/multithreading&quot;},{&quot;title&quot;:&quot;Java Generics&quot;,&quot;url&quot;:&quot;/blog/java-tutorial/generics&quot;},{&quot;title&quot;:&quot;Lambda Expressions&quot;,&quot;url&quot;:&quot;/blog/java-tutorial/lambda-expressions&quot;}]},{&quot;category&quot;:&quot;Java Advanced&quot;,&quot;articles&quot;:[{&quot;title&quot;:&quot;ThreadLocal in Java&quot;,&quot;url&quot;:&quot;/blog/java-tutorial/thread-local&quot;},{&quot;title&quot;:&quot;Inheritance with JPA&quot;,&quot;url&quot;:&quot;/blog/java-tutorial/inheritance-with-jpa&quot;}]}]"></app-tutorial-menu>
   </div>
   <div class="main-container">
     <app-breadcrumbs class="tutorial"></app-breadcrumbs>
@@ -90,85 +90,41 @@
       <h2>📝 What You’ll Learn</h2>
 <ul>
 <li>What the Java Collections Framework is</li>
-<li>How to use <code>List</code>, <code>Set</code>, and <code>Map</code></li>
-<li>Differences between <code>ArrayList</code>, <code>HashSet</code>, and <code>HashMap</code></li>
-<li>When and why to use each type</li>
+<li>Key interfaces: <code>List</code>, <code>Set</code>, <code>Map</code>, <code>Queue</code></li>
+<li>Differences between popular implementations</li>
+<li>Real-world use cases and code examples</li>
 </ul>
-<h2>📚 What is the Java Collections Framework?</h2>
-<p>The <strong>Java Collections Framework (JCF)</strong> provides <strong>ready-to-use data structures</strong> for storing and manipulating groups of objects — like dynamic arrays, sets, and key-value pairs.</p>
-<h2>🧺 List – Ordered, Duplicates Allowed</h2>
-<p>A <strong>resizable array</strong> that allows duplicates and maintains order.</p>
-<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">import</span> java.util.List;
-<span class="hljs-keyword">import</span> java.util.ArrayList;
-
-List&lt;String&gt; fruits = <span class="hljs-keyword">new</span> <span class="hljs-title class_">ArrayList</span>&lt;&gt;();
-fruits.add(<span class="hljs-string">&quot;Apple&quot;</span>);
-fruits.add(<span class="hljs-string">&quot;Banana&quot;</span>);
-fruits.add(<span class="hljs-string">&quot;Apple&quot;</span>);  <span class="hljs-comment">// duplicates allowed</span>
-
-System.out.println(fruits);  <span class="hljs-comment">// [Apple, Banana, Apple]</span></code></pre>
-</code></pre><h2>🚫 Set – No Duplicates Allowed</h2>
-<p>An <strong>unordered collection</strong> with <strong>no duplicates</strong>.</p>
-<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">import</span> java.util.Set;
-<span class="hljs-keyword">import</span> java.util.HashSet;
-
-Set&lt;String&gt; names = <span class="hljs-keyword">new</span> <span class="hljs-title class_">HashSet</span>&lt;&gt;();
-names.add(<span class="hljs-string">&quot;Alice&quot;</span>);
-names.add(<span class="hljs-string">&quot;Bob&quot;</span>);
-names.add(<span class="hljs-string">&quot;Alice&quot;</span>);  <span class="hljs-comment">// won&#x27;t be added again</span>
-
-System.out.println(names);  <span class="hljs-comment">// [Alice, Bob]</span></code></pre>
-</code></pre><h2>🔑 Map – Key/Value Pairs</h2>
-<p>Stores <strong>key-value pairs</strong>, like a dictionary.</p>
-<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">import</span> java.util.Map;
-<span class="hljs-keyword">import</span> java.util.HashMap;
-
-Map&lt;String, Integer&gt; ages = <span class="hljs-keyword">new</span> <span class="hljs-title class_">HashMap</span>&lt;&gt;();
-ages.put(<span class="hljs-string">&quot;John&quot;</span>, <span class="hljs-number">25</span>);
-ages.put(<span class="hljs-string">&quot;Jane&quot;</span>, <span class="hljs-number">30</span>);
-
-System.out.println(ages.get(<span class="hljs-string">&quot;Jane&quot;</span>));  <span class="hljs-comment">// 30</span></code></pre>
-</code></pre><h2>🔁 Iterating Over Collections</h2>
-<h3>ArrayList</h3>
-<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">for</span> (String fruit : fruits) {
-    System.out.println(fruit);
-}</code></pre>
-</code></pre><h3>HashMap</h3>
-<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">for</span> (String key : ages.keySet()) {
-    System.out.println(key + <span class="hljs-string">&quot; is &quot;</span> + ages.get(key));
-}</code></pre>
-</code></pre><h2>🆚 When to Use What?</h2>
+<h2>🧠 What is the Collections Framework?</h2>
+<p>The <strong>Collections Framework</strong> is a set of classes and interfaces in <code>java.util</code> that helps you <strong>work with groups of objects</strong> like lists of names, sets of tags, or maps of users and passwords.</p>
+<h2>🔑 Core Interfaces</h2>
 <table>
 <thead>
 <tr>
-<th>Collection</th>
-<th>Ordered?</th>
-<th>Allows Duplicates?</th>
-<th>Key-Value?</th>
-<th>Example Use</th>
+<th>Interface</th>
+<th>Description</th>
+<th>Example Class</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><code>ArrayList</code></td>
-<td>✅ Yes</td>
-<td>✅ Yes</td>
-<td>❌ No</td>
-<td>Shopping cart items</td>
+<td><code>List</code></td>
+<td>Ordered collection, allows duplicates</td>
+<td><code>ArrayList</code>, <code>LinkedList</code></td>
 </tr>
 <tr>
-<td><code>HashSet</code></td>
-<td>❌ No</td>
-<td>❌ No</td>
-<td>❌ No</td>
-<td>Unique usernames</td>
+<td><code>Set</code></td>
+<td>Unordered, no duplicates</td>
+<td><code>HashSet</code>, <code>TreeSet</code></td>
 </tr>
 <tr>
-<td><code>HashMap</code></td>
-<td>❌ No</td>
-<td>✅ (values)</td>
-<td>✅ Yes</td>
-<td>Storing user settings</td>
+<td><code>Map</code></td>
+<td>Key-value pairs</td>
+<td><code>HashMap</code>, <code>TreeMap</code></td>
+</tr>
+<tr>
+<td><code>Queue</code></td>
+<td>First-in, first-out collection</td>
+<td><code>LinkedList</code>, <code>PriorityQueue</code></td>
 </tr>
 </tbody>
 </table>
@@ -176,20 +132,80 @@ System.out.println(ages.get(<span class="hljs-string">&quot;Jane&quot;</span>));
 
 
 
-<h2>🧠 Bonus: Other Collections</h2>
-<ul>
-<li><code>LinkedList</code> – good for fast insertions/deletions</li>
-<li><code>TreeSet</code> – sorted version of a set</li>
-<li><code>TreeMap</code> – sorted version of a map</li>
-<li><code>Queue</code> – first-in-first-out structure</li>
-</ul>
+<h2>📋 Working with Lists</h2>
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs">List&lt;String&gt; fruits = <span class="hljs-keyword">new</span> <span class="hljs-title class_">ArrayList</span>&lt;&gt;();
+fruits.add(<span class="hljs-string">&quot;Apple&quot;</span>);
+fruits.add(<span class="hljs-string">&quot;Banana&quot;</span>);
+System.out.println(fruits.get(<span class="hljs-number">0</span>));  <span class="hljs-comment">// Apple</span></code></pre>
+</code></pre><p>Use <code>ArrayList</code> for fast access, <code>LinkedList</code> for fast inserts/removals.</p>
+<h2>🧩 Sets – No Duplicates</h2>
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs">Set&lt;String&gt; colors = <span class="hljs-keyword">new</span> <span class="hljs-title class_">HashSet</span>&lt;&gt;();
+colors.add(<span class="hljs-string">&quot;Red&quot;</span>);
+colors.add(<span class="hljs-string">&quot;Green&quot;</span>);
+colors.add(<span class="hljs-string">&quot;Red&quot;</span>);  <span class="hljs-comment">// ignored</span>
+System.out.println(colors);  <span class="hljs-comment">// [Red, Green]</span></code></pre>
+</code></pre><p>Use <code>TreeSet</code> if you want automatic sorting.</p>
+<h2>🔑 Maps – Key-Value Pairs</h2>
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs">Map&lt;String, Integer&gt; scores = <span class="hljs-keyword">new</span> <span class="hljs-title class_">HashMap</span>&lt;&gt;();
+scores.put(<span class="hljs-string">&quot;Alice&quot;</span>, <span class="hljs-number">90</span>);
+scores.put(<span class="hljs-string">&quot;Bob&quot;</span>, <span class="hljs-number">85</span>);
+System.out.println(scores.get(<span class="hljs-string">&quot;Alice&quot;</span>));  <span class="hljs-comment">// 90</span></code></pre>
+</code></pre><p>✅ <code>HashMap</code> for general use<br>✅ <code>LinkedHashMap</code> to preserve insertion order<br>✅ <code>TreeMap</code> for sorted keys</p>
+<h2>📦 Queues – FIFO</h2>
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs">Queue&lt;String&gt; tasks = <span class="hljs-keyword">new</span> <span class="hljs-title class_">LinkedList</span>&lt;&gt;();
+tasks.offer(<span class="hljs-string">&quot;Task1&quot;</span>);
+tasks.offer(<span class="hljs-string">&quot;Task2&quot;</span>);
+System.out.println(tasks.poll());  <span class="hljs-comment">// Task1</span></code></pre>
+</code></pre><p>Use <code>PriorityQueue</code> to automatically sort items by priority.</p>
+<h2>🔁 Iterating Over Collections</h2>
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">for</span> (String fruit : fruits) {
+    System.out.println(fruit);
+}</code></pre>
+</code></pre><p>Or using an iterator:</p>
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs">Iterator&lt;String&gt; it = fruits.iterator();
+<span class="hljs-keyword">while</span> (it.hasNext()) {
+    System.out.println(it.next());
+}</code></pre>
+</code></pre><h2>🧠 Choosing the Right Collection</h2>
+<table>
+<thead>
+<tr>
+<th>Need</th>
+<th>Use This</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fast random access</td>
+<td><code>ArrayList</code></td>
+</tr>
+<tr>
+<td>No duplicates</td>
+<td><code>HashSet</code></td>
+</tr>
+<tr>
+<td>Sorted elements</td>
+<td><code>TreeSet</code>, <code>TreeMap</code></td>
+</tr>
+<tr>
+<td>Fast key-based access</td>
+<td><code>HashMap</code></td>
+</tr>
+<tr>
+<td>FIFO processing</td>
+<td><code>Queue</code></td>
+</tr>
+</tbody>
+</table>
+
+
+
 <h2>📘 Recap</h2>
 <ul>
-<li>Java Collections provide powerful, flexible data handling</li>
-<li><code>ArrayList</code> is for ordered lists</li>
-<li><code>HashSet</code> is for unique elements</li>
-<li><code>HashMap</code> is for key/value mapping</li>
-<li>Choose the right collection based on your data&#39;s needs</li>
+<li>The Collections Framework includes powerful tools for managing data</li>
+<li>Know your core interfaces: <code>List</code>, <code>Set</code>, <code>Map</code>, and <code>Queue</code></li>
+<li>Each has multiple implementations optimized for different use cases</li>
+<li>Learn to choose the right one for performance and clarity</li>
 </ul>
 
       <app-subscribe></app-subscribe>
