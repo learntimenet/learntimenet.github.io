@@ -1,0 +1,291 @@
+
+            <!DOCTYPE html>
+            <html lang="en" data-translated="false" data-breadcrump-title="JavaScript Arrays">
+            <head>
+                <meta charset="utf-8" />
+                <title>Learn Time | JavaScript Tutorial - JavaScript Arrays</title>
+                <meta name="description" content="Learn how to create and manipulate JavaScript arrays, including array methods like .push(), .pop(), .map(), and how to loop through array elements.">
+                
+                <meta name="viewport" content="width=device-width,initial-scale=1" />
+                <!--
+                <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
+                <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
+                <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
+                <link rel="shortcut icon" sizes="192x192" href="/assets/favicon/android-chrome-192x192.png" >
+                <link rel="shortcut icon" sizes="512x512" href="/assets/favicon/android-chrome-512x512.png" >
+                <link rel="manifest" href="/assets/favicon/site.webmanifest">
+                <link rel="shortcut icon" href="/assets/favicon/favicon.ico">
+                <link rel="mask-icon" href="/assets/favicon/safari-pinned-tab.svg" color="#5bbad5">
+                <meta name="msapplication-TileColor" content="#da532c">
+                <meta name="theme-color" content="#ffffff">
+                -->
+                <link rel="shortcut icon" type="image/png" href="/assets/images/logo-circle.png">
+                <link rel="stylesheet" href="/styles.css">
+                <script src="https://kit.fontawesome.com/ff0edf556e.js" crossorigin="anonymous"></script>
+                <script src="https://code.iconify.design/iconify-icon/1.0.2/iconify-icon.min.js"></script>
+                <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+                <script>window.startTime = new Date().getTime();</script>
+                <style>
+                    :root {
+                        --background-color: #f3f2ef;
+                        --loading-bar-background-color: #d6cec2;
+                        --moving-loading-bar-background-color: #D0514D;
+                    }
+                    .loader {transition: all .2s ease-out;z-index: 10000000000;margin-top: -200px;position: fixed;top: 0;left: 0;right: 0;bottom: 0;background-color: var(--background-color);display: flex;align-items: center;justify-content: center;flex-direction: column;}.loader-logo {width: 40px; height: 40px; margin-bottom: 20px;}.loading-bar {width: 130px;height: 4px;border-radius: 100rem;background-color: var(--loading-bar-background-color);position: relative;overflow: hidden;}.moving-loading-bar {height: 100%;width: 68px;position: absolute;border-radius: 100rem;background-color: var(--moving-loading-bar-background-color);animation: initial-loading 1.5s ease infinite;}@keyframes initial-loading {0% {transform: translate(-34px);}50% {transform: translate(96px);}to {transform: translate(-34px);}}
+                    .loader.hide {opacity: 0;}
+                </style>
+                
+            <meta property="og:title" content="JavaScript Tutorial - JavaScript Arrays" />
+            <meta property="og:description" content="Learn how to create and manipulate JavaScript arrays, including array methods like .push(), .pop(), .map(), and how to loop through array elements." />
+            <meta property="og:image" content="https://learntime.net/assets/thumbnail/blog/blog-9.jpg" />
+            <meta name="twitter:card" content="summary_large_image">
+            <meta name="twitter:creator" content="@learntimenet">
+            <meta name="twitter:title" content="JavaScript Tutorial - JavaScript Arrays">
+            <meta name="twitter:description" content="Learn how to create and manipulate JavaScript arrays, including array methods like .push(), .pop(), .map(), and how to loop through array elements.">
+            <meta name="twitter:image" content="https://learntime.net/assets/thumbnail/blog/blog-9.jpg">
+        
+                <script>
+                    var disqus_config = function () {
+                        this.page.url = window.location.origin + window.location.pathname;
+                        this.page.identifier = window.location.pathname.replace('/en', '');
+                    };
+                </script>
+            <script defer src="/blog/javascript-tutorial/arrays/arrays.f7ec505a13b029257640.js"></script></head>
+            <body>
+                <div class="loader">
+                    <div class="loading-bar">
+                        <div class="moving-loading-bar"></div>
+                    </div>
+                </div>
+                <script>
+                    var lastVisitTime = parseInt(localStorage.getItem('LAST_VISIT_TIME') || '0');
+                    if ((new Date().valueOf() - lastVisitTime) < 1200000) {
+                        document.querySelector('.loading-bar').style.display = 'none';
+                    }
+                </script>
+                <div class="body-container">
+                    <app-navbar></app-navbar>
+                    <div class="max-width"><app-breadcrumbs></app-breadcrumbs></div>
+                    <main>
+        
+<style>
+    :root {
+        --scroll-indicator-height: 0.5rem;
+        --max-width: 150rem;
+    }
+    @media screen and (min-width: 1024px) {
+        :root {
+            --promotion-height: 0rem !important;
+        }
+    }
+</style>
+<div class="max-width tutorial-container">
+  <div class="tutorial-menu-container">
+    <app-tutorial-menu menu="[{&quot;category&quot;:&quot;JavaScript Tutorial&quot;,&quot;articles&quot;:[{&quot;title&quot;:&quot;Introduction&quot;,&quot;url&quot;:&quot;/blog/javascript-tutorial/&quot;},{&quot;title&quot;:&quot;JS Placement&quot;,&quot;url&quot;:&quot;/blog/javascript-tutorial/placement/&quot;},{&quot;title&quot;:&quot;JS Output&quot;,&quot;url&quot;:&quot;/blog/javascript-tutorial/output/&quot;},{&quot;title&quot;:&quot;JS Statements&quot;,&quot;url&quot;:&quot;/blog/javascript-tutorial/statements/&quot;},{&quot;title&quot;:&quot;JS Syntax&quot;,&quot;url&quot;:&quot;/blog/javascript-tutorial/syntax/&quot;},{&quot;title&quot;:&quot;JS Comments&quot;,&quot;url&quot;:&quot;/blog/javascript-tutorial/comments/&quot;},{&quot;title&quot;:&quot;JS Variables&quot;,&quot;url&quot;:&quot;/blog/javascript-tutorial/variables/&quot;},{&quot;title&quot;:&quot;JS Let&quot;,&quot;url&quot;:&quot;/blog/javascript-tutorial/let/&quot;},{&quot;title&quot;:&quot;JS Const&quot;,&quot;url&quot;:&quot;/blog/javascript-tutorial/const/&quot;},{&quot;title&quot;:&quot;JS Operators&quot;,&quot;url&quot;:&quot;/blog/javascript-tutorial/operators/&quot;},{&quot;title&quot;:&quot;JS Assignment&quot;,&quot;url&quot;:&quot;/blog/javascript-tutorial/assignment/&quot;},{&quot;title&quot;:&quot;JS Data Types&quot;,&quot;url&quot;:&quot;/blog/javascript-tutorial/data-types/&quot;},{&quot;title&quot;:&quot;JS Functions&quot;,&quot;url&quot;:&quot;/blog/javascript-tutorial/functions/&quot;},{&quot;title&quot;:&quot;JS Objects&quot;,&quot;url&quot;:&quot;/blog/javascript-tutorial/objects/&quot;},{&quot;title&quot;:&quot;JS Events&quot;,&quot;url&quot;:&quot;/blog/javascript-tutorial/events/&quot;},{&quot;title&quot;:&quot;JS Strings&quot;,&quot;url&quot;:&quot;/blog/javascript-tutorial/strings/&quot;},{&quot;title&quot;:&quot;JS Numbers&quot;,&quot;url&quot;:&quot;/blog/javascript-tutorial/numbers/&quot;},{&quot;title&quot;:&quot;JS BigInt&quot;,&quot;url&quot;:&quot;/blog/javascript-tutorial/bigint/&quot;},{&quot;title&quot;:&quot;JS Arrays&quot;,&quot;url&quot;:&quot;/blog/javascript-tutorial/arrays/&quot;},{&quot;title&quot;:&quot;JS Dates&quot;,&quot;url&quot;:&quot;/blog/javascript-tutorial/dates/&quot;}]}]"></app-tutorial-menu>
+  </div>
+  <div class="main-container">
+    <app-breadcrumbs class="tutorial"></app-breadcrumbs>
+    <app-blog-title class="tutorial" blog-title="JavaScript Arrays" blog-description="Learn how to create and manipulate JavaScript arrays, including array methods like .push(), .pop(), .map(), and how to loop through array elements." blog-image="/assets/images/blog/blog-9.jpg"></app-blog-title>
+    <div class="blog-content markdown">
+      <h2>📝 What You’ll Learn</h2>
+<ul>
+<li>What arrays are in JavaScript  </li>
+<li>How to create and use arrays  </li>
+<li>Common array methods for manipulating data  </li>
+<li>How to access and iterate over array elements  </li>
+<li>Practical examples to understand arrays</li>
+</ul>
+<h2>🔍 What Is an Array?</h2>
+<p>An <strong>array</strong> in JavaScript is a data structure used to store multiple values in a single variable. Unlike variables that hold a single value, arrays allow you to store ordered collections of data (of any type), such as numbers, strings, or objects.</p>
+<p>Arrays in JavaScript are <strong>zero-indexed</strong>, meaning the first element is at position 0, the second at position 1, and so on.</p>
+<h3>Example:</h3>
+<pre><code class="hljs language-javascript"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">let</span> fruits = [<span class="hljs-string">&quot;Apple&quot;</span>, <span class="hljs-string">&quot;Banana&quot;</span>, <span class="hljs-string">&quot;Cherry&quot;</span>];
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(fruits[<span class="hljs-number">0</span>]);  <span class="hljs-comment">// Output: Apple</span></code></pre>
+</code></pre><p>In this example, <code>fruits</code> is an array containing three string elements.</p>
+<h2>🧑‍🍳 Creating an Array</h2>
+<p>You can create an array using square brackets (<code>[]</code>). The values inside the brackets are the elements of the array.</p>
+<h3>Example:</h3>
+<pre><code class="hljs language-javascript"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">let</span> numbers = [<span class="hljs-number">10</span>, <span class="hljs-number">20</span>, <span class="hljs-number">30</span>, <span class="hljs-number">40</span>];
+<span class="hljs-keyword">let</span> mixedArray = [<span class="hljs-number">1</span>, <span class="hljs-string">&quot;Hello&quot;</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">null</span>];</code></pre>
+</code></pre><p>You can also create an empty array and add elements later:</p>
+<pre><code class="hljs language-javascript"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">let</span> emptyArray = [];
+emptyArray.<span class="hljs-title function_">push</span>(<span class="hljs-number">1</span>);
+emptyArray.<span class="hljs-title function_">push</span>(<span class="hljs-number">2</span>);
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(emptyArray);  <span class="hljs-comment">// Output: [1, 2]</span></code></pre>
+</code></pre><h2>🔄 Accessing Array Elements</h2>
+<p>You can access elements in an array using the <strong>index</strong> inside square brackets (<code>[]</code>).</p>
+<h3>Example:</h3>
+<pre><code class="hljs language-javascript"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">let</span> colors = [<span class="hljs-string">&quot;Red&quot;</span>, <span class="hljs-string">&quot;Green&quot;</span>, <span class="hljs-string">&quot;Blue&quot;</span>];
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(colors[<span class="hljs-number">0</span>]);  <span class="hljs-comment">// Output: Red</span>
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(colors[<span class="hljs-number">1</span>]);  <span class="hljs-comment">// Output: Green</span></code></pre>
+</code></pre><p>If you try to access an index that does not exist, you will get <code>undefined</code>:</p>
+<pre><code class="hljs language-javascript"><pre class="highlight"><code class="hljs"><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(colors[<span class="hljs-number">5</span>]);  <span class="hljs-comment">// Output: undefined</span></code></pre>
+</code></pre><h2>🛠️ Array Methods</h2>
+<p>JavaScript provides many built-in methods to manipulate arrays. Here are some of the most commonly used ones:</p>
+<h3>1️⃣ .push()</h3>
+<p>The <code>.push()</code> method adds one or more elements to the <strong>end</strong> of an array.</p>
+<pre><code class="hljs language-javascript"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">let</span> fruits = [<span class="hljs-string">&quot;Apple&quot;</span>, <span class="hljs-string">&quot;Banana&quot;</span>];
+fruits.<span class="hljs-title function_">push</span>(<span class="hljs-string">&quot;Cherry&quot;</span>);
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(fruits);  <span class="hljs-comment">// Output: [&quot;Apple&quot;, &quot;Banana&quot;, &quot;Cherry&quot;]</span></code></pre>
+</code></pre><h3>2️⃣ .pop()</h3>
+<p>The <code>.pop()</code> method removes the <strong>last</strong> element from an array.</p>
+<pre><code class="hljs language-javascript"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">let</span> fruits = [<span class="hljs-string">&quot;Apple&quot;</span>, <span class="hljs-string">&quot;Banana&quot;</span>, <span class="hljs-string">&quot;Cherry&quot;</span>];
+fruits.<span class="hljs-title function_">pop</span>();
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(fruits);  <span class="hljs-comment">// Output: [&quot;Apple&quot;, &quot;Banana&quot;]</span></code></pre>
+</code></pre><h3>3️⃣ .shift()</h3>
+<p>The <code>.shift()</code> method removes the <strong>first</strong> element from an array.</p>
+<pre><code class="hljs language-javascript"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">let</span> fruits = [<span class="hljs-string">&quot;Apple&quot;</span>, <span class="hljs-string">&quot;Banana&quot;</span>, <span class="hljs-string">&quot;Cherry&quot;</span>];
+fruits.<span class="hljs-title function_">shift</span>();
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(fruits);  <span class="hljs-comment">// Output: [&quot;Banana&quot;, &quot;Cherry&quot;]</span></code></pre>
+</code></pre><h3>4️⃣ .unshift()</h3>
+<p>The <code>.unshift()</code> method adds one or more elements to the <strong>beginning</strong> of an array.</p>
+<pre><code class="hljs language-javascript"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">let</span> fruits = [<span class="hljs-string">&quot;Banana&quot;</span>, <span class="hljs-string">&quot;Cherry&quot;</span>];
+fruits.<span class="hljs-title function_">unshift</span>(<span class="hljs-string">&quot;Apple&quot;</span>);
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(fruits);  <span class="hljs-comment">// Output: [&quot;Apple&quot;, &quot;Banana&quot;, &quot;Cherry&quot;]</span></code></pre>
+</code></pre><h3>5️⃣ .splice()</h3>
+<p>The <code>.splice()</code> method allows you to <strong>remove</strong> or <strong>add</strong> elements at any position in the array.</p>
+<h4>Example (Removing Elements):</h4>
+<pre><code class="hljs language-javascript"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">let</span> fruits = [<span class="hljs-string">&quot;Apple&quot;</span>, <span class="hljs-string">&quot;Banana&quot;</span>, <span class="hljs-string">&quot;Cherry&quot;</span>];
+fruits.<span class="hljs-title function_">splice</span>(<span class="hljs-number">1</span>, <span class="hljs-number">1</span>);  <span class="hljs-comment">// Removes 1 element starting from index 1</span>
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(fruits);  <span class="hljs-comment">// Output: [&quot;Apple&quot;, &quot;Cherry&quot;]</span></code></pre>
+</code></pre><h4>Example (Adding Elements):</h4>
+<pre><code class="hljs language-javascript"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">let</span> fruits = [<span class="hljs-string">&quot;Apple&quot;</span>, <span class="hljs-string">&quot;Banana&quot;</span>];
+fruits.<span class="hljs-title function_">splice</span>(<span class="hljs-number">1</span>, <span class="hljs-number">0</span>, <span class="hljs-string">&quot;Cherry&quot;</span>);  <span class="hljs-comment">// Adds &quot;Cherry&quot; at index 1 without removing any elements</span>
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(fruits);  <span class="hljs-comment">// Output: [&quot;Apple&quot;, &quot;Cherry&quot;, &quot;Banana&quot;]</span></code></pre>
+</code></pre><h3>6️⃣ .forEach()</h3>
+<p>The <code>.forEach()</code> method iterates over all elements in an array, executing a provided function on each element.</p>
+<pre><code class="hljs language-javascript"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">let</span> fruits = [<span class="hljs-string">&quot;Apple&quot;</span>, <span class="hljs-string">&quot;Banana&quot;</span>, <span class="hljs-string">&quot;Cherry&quot;</span>];
+fruits.<span class="hljs-title function_">forEach</span>(<span class="hljs-keyword">function</span>(<span class="hljs-params">fruit</span>) {
+  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(fruit);
+});
+<span class="hljs-comment">// Output:</span>
+<span class="hljs-comment">// Apple</span>
+<span class="hljs-comment">// Banana</span>
+<span class="hljs-comment">// Cherry</span></code></pre>
+</code></pre><h3>7️⃣ .map()</h3>
+<p>The <code>.map()</code> method creates a new array with the results of calling a provided function on every element in the array.</p>
+<pre><code class="hljs language-javascript"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">let</span> numbers = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>];
+<span class="hljs-keyword">let</span> doubled = numbers.<span class="hljs-title function_">map</span>(<span class="hljs-keyword">function</span>(<span class="hljs-params">num</span>) {
+  <span class="hljs-keyword">return</span> num * <span class="hljs-number">2</span>;
+});
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(doubled);  <span class="hljs-comment">// Output: [2, 4, 6, 8]</span></code></pre>
+</code></pre><h2>🧑‍🍳 Looping Over Arrays</h2>
+<p>There are various ways to loop through arrays in JavaScript, such as <code>for</code>, <code>forEach()</code>, and <code>map()</code>.</p>
+<h3>Example with <strong>for</strong> Loop:</h3>
+<pre><code class="hljs language-javascript"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">let</span> fruits = [<span class="hljs-string">&quot;Apple&quot;</span>, <span class="hljs-string">&quot;Banana&quot;</span>, <span class="hljs-string">&quot;Cherry&quot;</span>];
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; fruits.<span class="hljs-property">length</span>; i++) {
+  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(fruits[i]);
+}
+<span class="hljs-comment">// Output:</span>
+<span class="hljs-comment">// Apple</span>
+<span class="hljs-comment">// Banana</span>
+<span class="hljs-comment">// Cherry</span></code></pre>
+</code></pre><h3>Example with <strong>forEach()</strong>:</h3>
+<pre><code class="hljs language-javascript"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">let</span> fruits = [<span class="hljs-string">&quot;Apple&quot;</span>, <span class="hljs-string">&quot;Banana&quot;</span>, <span class="hljs-string">&quot;Cherry&quot;</span>];
+fruits.<span class="hljs-title function_">forEach</span>(<span class="hljs-keyword">function</span>(<span class="hljs-params">fruit</span>) {
+  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(fruit);
+});
+<span class="hljs-comment">// Output:</span>
+<span class="hljs-comment">// Apple</span>
+<span class="hljs-comment">// Banana</span>
+<span class="hljs-comment">// Cherry</span></code></pre>
+</code></pre><h2>🔄 Nested Arrays</h2>
+<p>Arrays can contain other arrays as elements. These are called <strong>nested arrays</strong>.</p>
+<h3>Example:</h3>
+<pre><code class="hljs language-javascript"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">let</span> nestedArray = [[<span class="hljs-number">1</span>, <span class="hljs-number">2</span>], [<span class="hljs-number">3</span>, <span class="hljs-number">4</span>], [<span class="hljs-number">5</span>, <span class="hljs-number">6</span>]];
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(nestedArray[<span class="hljs-number">0</span>]);  <span class="hljs-comment">// Output: [1, 2]</span>
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(nestedArray[<span class="hljs-number">0</span>][<span class="hljs-number">1</span>]);  <span class="hljs-comment">// Output: 2</span></code></pre>
+</code></pre><p>You can access elements inside the nested array by using multiple indices.</p>
+<h2>💡 Array Destructuring</h2>
+<p><strong>Array destructuring</strong> allows you to extract values from an array and assign them to variables.</p>
+<h3>Example:</h3>
+<pre><code class="hljs language-javascript"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">let</span> fruits = [<span class="hljs-string">&quot;Apple&quot;</span>, <span class="hljs-string">&quot;Banana&quot;</span>, <span class="hljs-string">&quot;Cherry&quot;</span>];
+<span class="hljs-keyword">let</span> [first, second] = fruits;
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(first);  <span class="hljs-comment">// Output: Apple</span>
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(second); <span class="hljs-comment">// Output: Banana</span></code></pre>
+</code></pre><p>You can also skip elements and assign values to variables:</p>
+<pre><code class="hljs language-javascript"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">let</span> fruits = [<span class="hljs-string">&quot;Apple&quot;</span>, <span class="hljs-string">&quot;Banana&quot;</span>, <span class="hljs-string">&quot;Cherry&quot;</span>];
+<span class="hljs-keyword">let</span> [, , third] = fruits;
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(third); <span class="hljs-comment">// Output: Cherry</span></code></pre>
+</code></pre><h2>🧠 Recap</h2>
+<ul>
+<li><strong>Arrays</strong> in JavaScript are used to store multiple values in a single variable.  </li>
+<li>You can access array elements using their index, starting from 0.  </li>
+<li>JavaScript provides many array methods such as <code>.push()</code>, <code>.pop()</code>, <code>.shift()</code>, <code>.unshift()</code>, <code>.splice()</code>, <code>.forEach()</code>, and <code>.map()</code>.  </li>
+<li>You can loop through arrays using <code>for</code> loops, <code>forEach()</code>, and <code>map()</code>.  </li>
+<li><strong>Nested arrays</strong> are arrays inside arrays, and you can use destructuring to extract values from them easily.</li>
+</ul>
+
+      <app-subscribe></app-subscribe>
+      <app-comments></app-comments>
+    </div>
+  </div>
+  <aside>
+    <div class="aside-container">
+      <app-share-buttons></app-share-buttons>
+      <app-aside-promotion></app-aside-promotion>
+    </div>
+  </aside>
+</div>
+
+        </main>
+        <app-scroll-top-button></app-scroll-top-button>
+        <app-footer></app-footer>
+        </div>
+            <script>
+                var lastVisitTime = parseInt(localStorage.getItem('LAST_VISIT_TIME') || '0');
+                var timeoutDuration = 1500;
+                //if ((new Date().valueOf() - lastVisitTime) < 1200000) {
+                //    timeoutDuration = 400;
+                //}
+                setTimeout(() => {
+                    document.querySelector('.loader').classList.add('hide');
+                    document.querySelector('.body-container').style.display = 'block';
+                    document.dispatchEvent(new CustomEvent('page-loader-hide'));
+                }, timeoutDuration);
+                setTimeout(() => {
+                    document.querySelector('.loader').style.display = 'none';
+                }, 2000);
+                localStorage.setItem('LAST_VISIT_TIME', new Date().valueOf());
+            </script>
+        
+                <!-- Google tag (gtag.js) -->
+                <script async src="https://www.googletagmanager.com/gtag/js?id=G-S6JEVF53JZ"></script>
+                <script>
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag() {
+                        dataLayer.push(arguments);
+                    }
+                    gtag('js', new Date());
+
+                    gtag('config', 'G-S6JEVF53JZ');
+                </script>
+            
+            <script>
+                window.axeptioSettings = {
+                    clientId: "67fc2975df7d77940a4ff73d",
+                    cookiesVersion: "13042025",
+                    googleConsentMode: {
+                        default: {
+                            analytics_storage: "denied",
+                            ad_storage: "denied",
+                            ad_user_data: "denied",
+                            ad_personalization: "denied",
+                            wait_for_update: 500
+                        }
+                    }
+                };
+                (function(d, s) {
+                    var t = d.getElementsByTagName(s)[0], e = d.createElement(s);
+                    e.async = true; e.src = "//static.axept.io/sdk.js";
+                    t.parentNode.insertBefore(e, t);
+                })(document, "script");
+            </script>
+            <script src="/assets/scripts/markdown.js"></script>
+                <script>
+                    document.addEventListener('DOMContentLoaded', () => {
+                        document.getElementById('languageSwitcherMobile').remove();
+                        document.getElementById('languageSwitcherDesktop').remove();
+                    });
+                </script>
+            </body></html>
