@@ -174,11 +174,11 @@ body {
   box-sizing: border-box; }
 
 ::-webkit-scrollbar {
-  width: 1.6em;
+  width: 1.2rem;
   background-color: var(--body-background-color); }
 
 ::-webkit-scrollbar-thumb {
-  border: 0.4em solid transparent;
+  border: 0.2rem solid transparent;
   background-clip: padding-box;
   border-radius: 100rem;
   background-color: var(--scrollbar-color); }
@@ -187,11 +187,7 @@ body.scrollbar-hidden::-webkit-scrollbar {
   display: none; }
 
 *:focus-visible {
-  outline: none;
-  border-color: var(--primary-color) !important; }
-
-input:focus {
-  border-color: transparent !important; }
+  outline: none; }
 
 html,
 body {
