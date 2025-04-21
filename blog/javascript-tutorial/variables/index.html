@@ -1,0 +1,207 @@
+
+            <!DOCTYPE html>
+            <html lang="en" data-translated="false" data-breadcrump-title="JavaScript Variables">
+            <head>
+                <meta charset="utf-8" />
+                <title>Learn Time | JavaScript Tutorial - JavaScript Variables</title>
+                <meta name="description" content="Learn how to use variables in JavaScript with this beginner-friendly guide. Understand the differences between let, const, and var, and how to declare and name variables.">
+                
+                <meta name="viewport" content="width=device-width,initial-scale=1" />
+                <!--
+                <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
+                <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
+                <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
+                <link rel="shortcut icon" sizes="192x192" href="/assets/favicon/android-chrome-192x192.png" >
+                <link rel="shortcut icon" sizes="512x512" href="/assets/favicon/android-chrome-512x512.png" >
+                <link rel="manifest" href="/assets/favicon/site.webmanifest">
+                <link rel="shortcut icon" href="/assets/favicon/favicon.ico">
+                <link rel="mask-icon" href="/assets/favicon/safari-pinned-tab.svg" color="#5bbad5">
+                <meta name="msapplication-TileColor" content="#da532c">
+                <meta name="theme-color" content="#ffffff">
+                -->
+                <link rel="shortcut icon" type="image/png" href="/assets/images/logo-circle.png">
+                <link rel="stylesheet" href="/styles.css">
+                <script src="https://kit.fontawesome.com/ff0edf556e.js" crossorigin="anonymous"></script>
+                <script src="https://code.iconify.design/iconify-icon/1.0.2/iconify-icon.min.js"></script>
+                <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+                <script>window.startTime = new Date().getTime();</script>
+                <style>
+                    :root {
+                        --background-color: #f3f2ef;
+                        --loading-bar-background-color: #d6cec2;
+                        --moving-loading-bar-background-color: #D0514D;
+                    }
+                    .loader {transition: all .2s ease-out;z-index: 10000000000;margin-top: -200px;position: fixed;top: 0;left: 0;right: 0;bottom: 0;background-color: var(--background-color);display: flex;align-items: center;justify-content: center;flex-direction: column;}.loader-logo {width: 40px; height: 40px; margin-bottom: 20px;}.loading-bar {width: 130px;height: 4px;border-radius: 100rem;background-color: var(--loading-bar-background-color);position: relative;overflow: hidden;}.moving-loading-bar {height: 100%;width: 68px;position: absolute;border-radius: 100rem;background-color: var(--moving-loading-bar-background-color);animation: initial-loading 1.5s ease infinite;}@keyframes initial-loading {0% {transform: translate(-34px);}50% {transform: translate(96px);}to {transform: translate(-34px);}}
+                    .loader.hide {opacity: 0;}
+                </style>
+                
+            <meta property="og:title" content="JavaScript Tutorial - JavaScript Variables" />
+            <meta property="og:description" content="Learn how to use variables in JavaScript with this beginner-friendly guide. Understand the differences between let, const, and var, and how to declare and name variables." />
+            <meta property="og:image" content="https://learntime.net/assets/thumbnail/blog/blog-8.jpg" />
+            <meta name="twitter:card" content="summary_large_image">
+            <meta name="twitter:creator" content="@learntimenet">
+            <meta name="twitter:title" content="JavaScript Tutorial - JavaScript Variables">
+            <meta name="twitter:description" content="Learn how to use variables in JavaScript with this beginner-friendly guide. Understand the differences between let, const, and var, and how to declare and name variables.">
+            <meta name="twitter:image" content="https://learntime.net/assets/thumbnail/blog/blog-8.jpg">
+        
+                <script>
+                    var disqus_config = function () {
+                        this.page.url = window.location.origin + window.location.pathname;
+                        this.page.identifier = window.location.pathname.replace('/en', '');
+                    };
+                </script>
+            <script defer src="/blog/javascript-tutorial/variables/variables.563f1d9c9b09247b8d5b.js"></script></head>
+            <body>
+                <div class="loader">
+                    <div class="loading-bar">
+                        <div class="moving-loading-bar"></div>
+                    </div>
+                </div>
+                <script>
+                    var lastVisitTime = parseInt(localStorage.getItem('LAST_VISIT_TIME') || '0');
+                    if ((new Date().valueOf() - lastVisitTime) < 1200000) {
+                        document.querySelector('.loading-bar').style.display = 'none';
+                    }
+                </script>
+                <div class="body-container">
+                    <app-navbar></app-navbar>
+                    <div class="max-width"><app-breadcrumbs></app-breadcrumbs></div>
+                    <main>
+        
+<style>
+    :root {
+        --scroll-indicator-height: 0.5rem;
+        --max-width: 150rem;
+    }
+    @media screen and (min-width: 1024px) {
+        :root {
+            --promotion-height: 0rem !important;
+        }
+    }
+</style>
+<div class="max-width tutorial-container">
+  <div class="tutorial-menu-container">
+    <app-tutorial-menu menu="[{&quot;category&quot;:&quot;JavaScript Tutorial&quot;,&quot;articles&quot;:[{&quot;title&quot;:&quot;Introduction&quot;,&quot;url&quot;:&quot;/blog/javascript-tutorial/&quot;},{&quot;title&quot;:&quot;JavaScript Placement&quot;,&quot;url&quot;:&quot;/blog/javascript-tutorial/placement/&quot;},{&quot;title&quot;:&quot;JavaScript Output&quot;,&quot;url&quot;:&quot;/blog/javascript-tutorial/output/&quot;},{&quot;title&quot;:&quot;JavaScript Statements&quot;,&quot;url&quot;:&quot;/blog/javascript-tutorial/statements/&quot;},{&quot;title&quot;:&quot;JavaScript Syntax&quot;,&quot;url&quot;:&quot;/blog/javascript-tutorial/syntax/&quot;},{&quot;title&quot;:&quot;JavaScript Comments&quot;,&quot;url&quot;:&quot;/blog/javascript-tutorial/comments/&quot;},{&quot;title&quot;:&quot;JavaScript Variables&quot;,&quot;url&quot;:&quot;/blog/javascript-tutorial/variables/&quot;},{&quot;title&quot;:&quot;JavaScript Let&quot;,&quot;url&quot;:&quot;/blog/javascript-tutorial/let/&quot;},{&quot;title&quot;:&quot;JavaScript Const&quot;,&quot;url&quot;:&quot;/blog/javascript-tutorial/const/&quot;},{&quot;title&quot;:&quot;JavaScript Operators&quot;,&quot;url&quot;:&quot;/blog/javascript-tutorial/operators/&quot;},{&quot;title&quot;:&quot;JavaScript Assignment&quot;,&quot;url&quot;:&quot;/blog/javascript-tutorial/assignment/&quot;},{&quot;title&quot;:&quot;JavaScript Data Types&quot;,&quot;url&quot;:&quot;/blog/javascript-tutorial/data-types/&quot;},{&quot;title&quot;:&quot;JavaScript Functions&quot;,&quot;url&quot;:&quot;/blog/javascript-tutorial/functions/&quot;},{&quot;title&quot;:&quot;JavaScript Objects&quot;,&quot;url&quot;:&quot;/blog/javascript-tutorial/objects/&quot;},{&quot;title&quot;:&quot;JavaScript Events&quot;,&quot;url&quot;:&quot;/blog/javascript-tutorial/events/&quot;},{&quot;title&quot;:&quot;JavaScript Strings&quot;,&quot;url&quot;:&quot;/blog/javascript-tutorial/strings/&quot;}]}]"></app-tutorial-menu>
+  </div>
+  <div class="main-container">
+    <app-breadcrumbs class="tutorial"></app-breadcrumbs>
+    <app-blog-title class="tutorial" blog-title="JavaScript Variables" blog-description="Learn how to use variables in JavaScript with this beginner-friendly guide. Understand the differences between let, const, and var, and how to declare and name variables." blog-image="/assets/images/blog/blog-8.jpg"></app-blog-title>
+    <div class="blog-content markdown">
+      <h2>📝 What You’ll Learn</h2>
+<ul>
+<li>What variables are in JavaScript  </li>
+<li>How to declare variables using <code>var</code>, <code>let</code>, and <code>const</code>  </li>
+<li>The differences between them  </li>
+<li>Best practices for naming and usage</li>
+</ul>
+<h2>🔤 What Is a Variable?</h2>
+<p>A <strong>variable</strong> is a container that stores data. You can think of it like a box that holds a value — such as a name, number, or even a list.</p>
+<pre><code class="hljs language-javascript"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">let</span> name = <span class="hljs-string">&quot;Alex&quot;</span>;</code></pre>
+</code></pre><p>In the example above, the variable <code>name</code> holds the value <code>&quot;Alex&quot;</code>.</p>
+<h2>✍️ Declaring Variables</h2>
+<p>You can declare variables using one of three keywords: <code>var</code>, <code>let</code>, or <code>const</code>.</p>
+<h3>✅ <code>let</code></h3>
+<p>Introduced in ES6, <code>let</code> is the most common way to declare variables that may change later.</p>
+<pre><code class="hljs language-javascript"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">let</span> age = <span class="hljs-number">25</span>;
+age = <span class="hljs-number">26</span>;</code></pre>
+</code></pre><h3>🔒 <code>const</code></h3>
+<p>Use <code>const</code> when you want a <strong>constant</strong> value that should not change.</p>
+<pre><code class="hljs language-javascript"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">const</span> pi = <span class="hljs-number">3.14</span>;
+<span class="hljs-comment">// pi = 3.15; ❌ This will cause an error</span></code></pre>
+</code></pre><h3>📦 <code>var</code> (Old Way)</h3>
+<p><code>var</code> is the older way to declare variables and is generally avoided in modern JavaScript due to scoping issues.</p>
+<pre><code class="hljs language-javascript"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">var</span> greeting = <span class="hljs-string">&quot;Hello!&quot;</span>;</code></pre>
+</code></pre><h2>📛 Variable Naming Rules</h2>
+<p>When naming a variable:</p>
+<ul>
+<li>Names must begin with a letter, <code>_</code>, or <code>$</code>  </li>
+<li>Can contain letters, digits, <code>_</code>, and <code>$</code>  </li>
+<li><strong>Cannot</strong> use reserved words (e.g., <code>let</code>, <code>class</code>, <code>function</code>)  </li>
+<li><strong>Case-sensitive</strong> (<code>name</code> and <code>Name</code> are different)</li>
+</ul>
+<p>✅ Valid: <code>userName</code>, <code>totalAmount</code>, <code>$price</code>, <code>_temp</code><br>❌ Invalid: <code>1stPlace</code>, <code>var</code>, <code>user name</code></p>
+<h2>🧠 Assigning Values Later</h2>
+<p>You can declare a variable without assigning it a value immediately:</p>
+<pre><code class="hljs language-javascript"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">let</span> score;
+score = <span class="hljs-number">100</span>;</code></pre>
+</code></pre><h2>📘 Recap</h2>
+<ul>
+<li>Use <code>let</code> for variables that change  </li>
+<li>Use <code>const</code> for fixed values  </li>
+<li>Avoid <code>var</code> unless you&#39;re dealing with older code  </li>
+<li>Name variables clearly and consistently</li>
+</ul>
+
+      <app-subscribe></app-subscribe>
+      <app-comments></app-comments>
+    </div>
+  </div>
+  <aside>
+    <div class="aside-container">
+      <app-share-buttons></app-share-buttons>
+      <app-aside-promotion></app-aside-promotion>
+    </div>
+  </aside>
+</div>
+
+        </main>
+        <app-scroll-top-button></app-scroll-top-button>
+        <app-footer></app-footer>
+        </div>
+            <script>
+                var lastVisitTime = parseInt(localStorage.getItem('LAST_VISIT_TIME') || '0');
+                var timeoutDuration = 1500;
+                //if ((new Date().valueOf() - lastVisitTime) < 1200000) {
+                //    timeoutDuration = 400;
+                //}
+                setTimeout(() => {
+                    document.querySelector('.loader').classList.add('hide');
+                    document.querySelector('.body-container').style.display = 'block';
+                    document.dispatchEvent(new CustomEvent('page-loader-hide'));
+                }, timeoutDuration);
+                setTimeout(() => {
+                    document.querySelector('.loader').style.display = 'none';
+                }, 2000);
+                localStorage.setItem('LAST_VISIT_TIME', new Date().valueOf());
+            </script>
+        
+                <!-- Google tag (gtag.js) -->
+                <script async src="https://www.googletagmanager.com/gtag/js?id=G-S6JEVF53JZ"></script>
+                <script>
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag() {
+                        dataLayer.push(arguments);
+                    }
+                    gtag('js', new Date());
+
+                    gtag('config', 'G-S6JEVF53JZ');
+                </script>
+            
+            <script>
+                window.axeptioSettings = {
+                    clientId: "67fc2975df7d77940a4ff73d",
+                    cookiesVersion: "13042025",
+                    googleConsentMode: {
+                        default: {
+                            analytics_storage: "denied",
+                            ad_storage: "denied",
+                            ad_user_data: "denied",
+                            ad_personalization: "denied",
+                            wait_for_update: 500
+                        }
+                    }
+                };
+                (function(d, s) {
+                    var t = d.getElementsByTagName(s)[0], e = d.createElement(s);
+                    e.async = true; e.src = "//static.axept.io/sdk.js";
+                    t.parentNode.insertBefore(e, t);
+                })(document, "script");
+            </script>
+            <script src="/assets/scripts/markdown.js"></script>
+                <script>
+                    document.addEventListener('DOMContentLoaded', () => {
+                        document.getElementById('languageSwitcherMobile').remove();
+                        document.getElementById('languageSwitcherDesktop').remove();
+                    });
+                </script>
+            </body></html>

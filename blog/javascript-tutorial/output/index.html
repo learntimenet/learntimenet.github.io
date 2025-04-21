@@ -1,0 +1,210 @@
+
+            <!DOCTYPE html>
+            <html lang="en" data-translated="false" data-breadcrump-title="JavaScript Output">
+            <head>
+                <meta charset="utf-8" />
+                <title>Learn Time | JavaScript Tutorial - JavaScript Output</title>
+                <meta name="description" content="Discover all the ways JavaScript can display output to the user or console. Learn when to use console.log, alert, innerHTML, and more.">
+                
+                <meta name="viewport" content="width=device-width,initial-scale=1" />
+                <!--
+                <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
+                <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
+                <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
+                <link rel="shortcut icon" sizes="192x192" href="/assets/favicon/android-chrome-192x192.png" >
+                <link rel="shortcut icon" sizes="512x512" href="/assets/favicon/android-chrome-512x512.png" >
+                <link rel="manifest" href="/assets/favicon/site.webmanifest">
+                <link rel="shortcut icon" href="/assets/favicon/favicon.ico">
+                <link rel="mask-icon" href="/assets/favicon/safari-pinned-tab.svg" color="#5bbad5">
+                <meta name="msapplication-TileColor" content="#da532c">
+                <meta name="theme-color" content="#ffffff">
+                -->
+                <link rel="shortcut icon" type="image/png" href="/assets/images/logo-circle.png">
+                <link rel="stylesheet" href="/styles.css">
+                <script src="https://kit.fontawesome.com/ff0edf556e.js" crossorigin="anonymous"></script>
+                <script src="https://code.iconify.design/iconify-icon/1.0.2/iconify-icon.min.js"></script>
+                <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+                <script>window.startTime = new Date().getTime();</script>
+                <style>
+                    :root {
+                        --background-color: #f3f2ef;
+                        --loading-bar-background-color: #d6cec2;
+                        --moving-loading-bar-background-color: #D0514D;
+                    }
+                    .loader {transition: all .2s ease-out;z-index: 10000000000;margin-top: -200px;position: fixed;top: 0;left: 0;right: 0;bottom: 0;background-color: var(--background-color);display: flex;align-items: center;justify-content: center;flex-direction: column;}.loader-logo {width: 40px; height: 40px; margin-bottom: 20px;}.loading-bar {width: 130px;height: 4px;border-radius: 100rem;background-color: var(--loading-bar-background-color);position: relative;overflow: hidden;}.moving-loading-bar {height: 100%;width: 68px;position: absolute;border-radius: 100rem;background-color: var(--moving-loading-bar-background-color);animation: initial-loading 1.5s ease infinite;}@keyframes initial-loading {0% {transform: translate(-34px);}50% {transform: translate(96px);}to {transform: translate(-34px);}}
+                    .loader.hide {opacity: 0;}
+                </style>
+                
+            <meta property="og:title" content="JavaScript Tutorial - JavaScript Output" />
+            <meta property="og:description" content="Discover all the ways JavaScript can display output to the user or console. Learn when to use console.log, alert, innerHTML, and more." />
+            <meta property="og:image" content="https://learntime.net/assets/thumbnail/blog/blog-4.jpg" />
+            <meta name="twitter:card" content="summary_large_image">
+            <meta name="twitter:creator" content="@learntimenet">
+            <meta name="twitter:title" content="JavaScript Tutorial - JavaScript Output">
+            <meta name="twitter:description" content="Discover all the ways JavaScript can display output to the user or console. Learn when to use console.log, alert, innerHTML, and more.">
+            <meta name="twitter:image" content="https://learntime.net/assets/thumbnail/blog/blog-4.jpg">
+        
+                <script>
+                    var disqus_config = function () {
+                        this.page.url = window.location.origin + window.location.pathname;
+                        this.page.identifier = window.location.pathname.replace('/en', '');
+                    };
+                </script>
+            <script defer src="/blog/javascript-tutorial/output/output.a43a3ec26c5b092bee3e.js"></script></head>
+            <body>
+                <div class="loader">
+                    <div class="loading-bar">
+                        <div class="moving-loading-bar"></div>
+                    </div>
+                </div>
+                <script>
+                    var lastVisitTime = parseInt(localStorage.getItem('LAST_VISIT_TIME') || '0');
+                    if ((new Date().valueOf() - lastVisitTime) < 1200000) {
+                        document.querySelector('.loading-bar').style.display = 'none';
+                    }
+                </script>
+                <div class="body-container">
+                    <app-navbar></app-navbar>
+                    <div class="max-width"><app-breadcrumbs></app-breadcrumbs></div>
+                    <main>
+        
+<style>
+    :root {
+        --scroll-indicator-height: 0.5rem;
+        --max-width: 150rem;
+    }
+    @media screen and (min-width: 1024px) {
+        :root {
+            --promotion-height: 0rem !important;
+        }
+    }
+</style>
+<div class="max-width tutorial-container">
+  <div class="tutorial-menu-container">
+    <app-tutorial-menu menu="[{&quot;category&quot;:&quot;JavaScript Tutorial&quot;,&quot;articles&quot;:[{&quot;title&quot;:&quot;Introduction&quot;,&quot;url&quot;:&quot;/blog/javascript-tutorial/&quot;},{&quot;title&quot;:&quot;JavaScript Placement&quot;,&quot;url&quot;:&quot;/blog/javascript-tutorial/placement/&quot;},{&quot;title&quot;:&quot;JavaScript Output&quot;,&quot;url&quot;:&quot;/blog/javascript-tutorial/output/&quot;},{&quot;title&quot;:&quot;JavaScript Statements&quot;,&quot;url&quot;:&quot;/blog/javascript-tutorial/statements/&quot;},{&quot;title&quot;:&quot;JavaScript Syntax&quot;,&quot;url&quot;:&quot;/blog/javascript-tutorial/syntax/&quot;},{&quot;title&quot;:&quot;JavaScript Comments&quot;,&quot;url&quot;:&quot;/blog/javascript-tutorial/comments/&quot;},{&quot;title&quot;:&quot;JavaScript Variables&quot;,&quot;url&quot;:&quot;/blog/javascript-tutorial/variables/&quot;},{&quot;title&quot;:&quot;JavaScript Let&quot;,&quot;url&quot;:&quot;/blog/javascript-tutorial/let/&quot;},{&quot;title&quot;:&quot;JavaScript Const&quot;,&quot;url&quot;:&quot;/blog/javascript-tutorial/const/&quot;},{&quot;title&quot;:&quot;JavaScript Operators&quot;,&quot;url&quot;:&quot;/blog/javascript-tutorial/operators/&quot;},{&quot;title&quot;:&quot;JavaScript Assignment&quot;,&quot;url&quot;:&quot;/blog/javascript-tutorial/assignment/&quot;},{&quot;title&quot;:&quot;JavaScript Data Types&quot;,&quot;url&quot;:&quot;/blog/javascript-tutorial/data-types/&quot;},{&quot;title&quot;:&quot;JavaScript Functions&quot;,&quot;url&quot;:&quot;/blog/javascript-tutorial/functions/&quot;},{&quot;title&quot;:&quot;JavaScript Objects&quot;,&quot;url&quot;:&quot;/blog/javascript-tutorial/objects/&quot;},{&quot;title&quot;:&quot;JavaScript Events&quot;,&quot;url&quot;:&quot;/blog/javascript-tutorial/events/&quot;},{&quot;title&quot;:&quot;JavaScript Strings&quot;,&quot;url&quot;:&quot;/blog/javascript-tutorial/strings/&quot;}]}]"></app-tutorial-menu>
+  </div>
+  <div class="main-container">
+    <app-breadcrumbs class="tutorial"></app-breadcrumbs>
+    <app-blog-title class="tutorial" blog-title="JavaScript Output" blog-description="Discover all the ways JavaScript can display output to the user or console. Learn when to use console.log, alert, innerHTML, and more." blog-image="/assets/images/blog/blog-4.jpg"></app-blog-title>
+    <div class="blog-content markdown">
+      <h2>📝 What You’ll Learn</h2>
+<ul>
+<li>The different ways JavaScript can display output  </li>
+<li>When and where to use each method  </li>
+<li>Real examples with code  </li>
+<li>Common beginner mistakes to avoid</li>
+</ul>
+<h2>🖥 Console Output</h2>
+<p>The <code>console.log()</code> method is one of the most commonly used ways to display output, especially for <strong>debugging</strong>.</p>
+<pre><code class="hljs language-javascript"><pre class="highlight"><code class="hljs"><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;Hello, console!&quot;</span>);</code></pre>
+</code></pre><p><strong>Where it shows:</strong> Developer Console in your browser (usually opened with F12 or right-click → Inspect → Console)</p>
+<h2>📦 Alert Boxes</h2>
+<p><code>alert()</code> displays a <strong>popup dialog</strong> with a message. It’s useful for very basic interaction or testing.</p>
+<pre><code class="hljs language-javascript"><pre class="highlight"><code class="hljs"><span class="hljs-title function_">alert</span>(<span class="hljs-string">&quot;Hello, user!&quot;</span>);</code></pre>
+</code></pre><p><strong>Note:</strong> This method interrupts the user experience, so it’s not used in production code.</p>
+<h2>📄 Writing to the Webpage</h2>
+<p>You can use <code>document.write()</code> to output content directly into the HTML of a page.</p>
+<pre><code class="hljs language-javascript"><pre class="highlight"><code class="hljs"><span class="hljs-variable language_">document</span>.<span class="hljs-title function_">write</span>(<span class="hljs-string">&quot;This is written to the page.&quot;</span>);</code></pre>
+</code></pre><p><strong>Caution:</strong> If used after the page has loaded, it can overwrite the entire document.</p>
+<h2>✏️ Updating HTML Elements</h2>
+<p>The most practical and modern way to show output is by updating an element on the webpage using <code>innerHTML</code>.</p>
+<pre><code class="hljs language-html"><pre class="highlight"><code class="hljs"><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;demo&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript">
+  <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&quot;demo&quot;</span>).<span class="hljs-property">innerHTML</span> = <span class="hljs-string">&quot;Hello from JavaScript!&quot;</span>;
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></pre>
+</code></pre><p>This method is <strong>non-intrusive</strong>, meaning it doesn’t pop up or replace the entire page—great for real UI work.</p>
+<h2>🛠 Other Output Methods</h2>
+<ul>
+<li><code>confirm()</code> – shows a dialog with OK/Cancel</li>
+<li><code>prompt()</code> – asks for user input</li>
+<li><code>console.error()</code> – logs an error message</li>
+<li><code>console.table()</code> – displays data in a table format (great for arrays and objects)</li>
+</ul>
+<h2>⚠️ Common Mistakes</h2>
+<ul>
+<li>Using <code>alert()</code> too much — it becomes annoying quickly  </li>
+<li>Forgetting to target the correct element with <code>getElementById()</code>  </li>
+<li>Using <code>document.write()</code> after the page has fully loaded (it erases content)</li>
+</ul>
+<h2>📘 Recap</h2>
+<ul>
+<li>Use <code>console.log()</code> for debugging  </li>
+<li>Use <code>alert()</code> sparingly, mostly for learning  </li>
+<li>Prefer <code>innerHTML</code> to show output in the UI  </li>
+<li>Avoid <code>document.write()</code> in real-world projects</li>
+</ul>
+
+      <app-subscribe></app-subscribe>
+      <app-comments></app-comments>
+    </div>
+  </div>
+  <aside>
+    <div class="aside-container">
+      <app-share-buttons></app-share-buttons>
+      <app-aside-promotion></app-aside-promotion>
+    </div>
+  </aside>
+</div>
+
+        </main>
+        <app-scroll-top-button></app-scroll-top-button>
+        <app-footer></app-footer>
+        </div>
+            <script>
+                var lastVisitTime = parseInt(localStorage.getItem('LAST_VISIT_TIME') || '0');
+                var timeoutDuration = 1500;
+                //if ((new Date().valueOf() - lastVisitTime) < 1200000) {
+                //    timeoutDuration = 400;
+                //}
+                setTimeout(() => {
+                    document.querySelector('.loader').classList.add('hide');
+                    document.querySelector('.body-container').style.display = 'block';
+                    document.dispatchEvent(new CustomEvent('page-loader-hide'));
+                }, timeoutDuration);
+                setTimeout(() => {
+                    document.querySelector('.loader').style.display = 'none';
+                }, 2000);
+                localStorage.setItem('LAST_VISIT_TIME', new Date().valueOf());
+            </script>
+        
+                <!-- Google tag (gtag.js) -->
+                <script async src="https://www.googletagmanager.com/gtag/js?id=G-S6JEVF53JZ"></script>
+                <script>
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag() {
+                        dataLayer.push(arguments);
+                    }
+                    gtag('js', new Date());
+
+                    gtag('config', 'G-S6JEVF53JZ');
+                </script>
+            
+            <script>
+                window.axeptioSettings = {
+                    clientId: "67fc2975df7d77940a4ff73d",
+                    cookiesVersion: "13042025",
+                    googleConsentMode: {
+                        default: {
+                            analytics_storage: "denied",
+                            ad_storage: "denied",
+                            ad_user_data: "denied",
+                            ad_personalization: "denied",
+                            wait_for_update: 500
+                        }
+                    }
+                };
+                (function(d, s) {
+                    var t = d.getElementsByTagName(s)[0], e = d.createElement(s);
+                    e.async = true; e.src = "//static.axept.io/sdk.js";
+                    t.parentNode.insertBefore(e, t);
+                })(document, "script");
+            </script>
+            <script src="/assets/scripts/markdown.js"></script>
+                <script>
+                    document.addEventListener('DOMContentLoaded', () => {
+                        document.getElementById('languageSwitcherMobile').remove();
+                        document.getElementById('languageSwitcherDesktop').remove();
+                    });
+                </script>
+            </body></html>

@@ -1,0 +1,220 @@
+
+            <!DOCTYPE html>
+            <html lang="en" data-translated="false" data-breadcrump-title="JavaScript Statements">
+            <head>
+                <meta charset="utf-8" />
+                <title>Learn Time | JavaScript Tutorial - JavaScript Statements</title>
+                <meta name="description" content="Learn what JavaScript statements are, how they work, and the different types you’ll use when coding. A simple guide for beginners.">
+                
+                <meta name="viewport" content="width=device-width,initial-scale=1" />
+                <!--
+                <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
+                <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
+                <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
+                <link rel="shortcut icon" sizes="192x192" href="/assets/favicon/android-chrome-192x192.png" >
+                <link rel="shortcut icon" sizes="512x512" href="/assets/favicon/android-chrome-512x512.png" >
+                <link rel="manifest" href="/assets/favicon/site.webmanifest">
+                <link rel="shortcut icon" href="/assets/favicon/favicon.ico">
+                <link rel="mask-icon" href="/assets/favicon/safari-pinned-tab.svg" color="#5bbad5">
+                <meta name="msapplication-TileColor" content="#da532c">
+                <meta name="theme-color" content="#ffffff">
+                -->
+                <link rel="shortcut icon" type="image/png" href="/assets/images/logo-circle.png">
+                <link rel="stylesheet" href="/styles.css">
+                <script src="https://kit.fontawesome.com/ff0edf556e.js" crossorigin="anonymous"></script>
+                <script src="https://code.iconify.design/iconify-icon/1.0.2/iconify-icon.min.js"></script>
+                <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+                <script>window.startTime = new Date().getTime();</script>
+                <style>
+                    :root {
+                        --background-color: #f3f2ef;
+                        --loading-bar-background-color: #d6cec2;
+                        --moving-loading-bar-background-color: #D0514D;
+                    }
+                    .loader {transition: all .2s ease-out;z-index: 10000000000;margin-top: -200px;position: fixed;top: 0;left: 0;right: 0;bottom: 0;background-color: var(--background-color);display: flex;align-items: center;justify-content: center;flex-direction: column;}.loader-logo {width: 40px; height: 40px; margin-bottom: 20px;}.loading-bar {width: 130px;height: 4px;border-radius: 100rem;background-color: var(--loading-bar-background-color);position: relative;overflow: hidden;}.moving-loading-bar {height: 100%;width: 68px;position: absolute;border-radius: 100rem;background-color: var(--moving-loading-bar-background-color);animation: initial-loading 1.5s ease infinite;}@keyframes initial-loading {0% {transform: translate(-34px);}50% {transform: translate(96px);}to {transform: translate(-34px);}}
+                    .loader.hide {opacity: 0;}
+                </style>
+                
+            <meta property="og:title" content="JavaScript Tutorial - JavaScript Statements" />
+            <meta property="og:description" content="Learn what JavaScript statements are, how they work, and the different types you’ll use when coding. A simple guide for beginners." />
+            <meta property="og:image" content="https://learntime.net/assets/thumbnail/blog/blog-5.jpg" />
+            <meta name="twitter:card" content="summary_large_image">
+            <meta name="twitter:creator" content="@learntimenet">
+            <meta name="twitter:title" content="JavaScript Tutorial - JavaScript Statements">
+            <meta name="twitter:description" content="Learn what JavaScript statements are, how they work, and the different types you’ll use when coding. A simple guide for beginners.">
+            <meta name="twitter:image" content="https://learntime.net/assets/thumbnail/blog/blog-5.jpg">
+        
+                <script>
+                    var disqus_config = function () {
+                        this.page.url = window.location.origin + window.location.pathname;
+                        this.page.identifier = window.location.pathname.replace('/en', '');
+                    };
+                </script>
+            <script defer src="/blog/javascript-tutorial/statements/statements.da2d98c8d291cf32f311.js"></script></head>
+            <body>
+                <div class="loader">
+                    <div class="loading-bar">
+                        <div class="moving-loading-bar"></div>
+                    </div>
+                </div>
+                <script>
+                    var lastVisitTime = parseInt(localStorage.getItem('LAST_VISIT_TIME') || '0');
+                    if ((new Date().valueOf() - lastVisitTime) < 1200000) {
+                        document.querySelector('.loading-bar').style.display = 'none';
+                    }
+                </script>
+                <div class="body-container">
+                    <app-navbar></app-navbar>
+                    <div class="max-width"><app-breadcrumbs></app-breadcrumbs></div>
+                    <main>
+        
+<style>
+    :root {
+        --scroll-indicator-height: 0.5rem;
+        --max-width: 150rem;
+    }
+    @media screen and (min-width: 1024px) {
+        :root {
+            --promotion-height: 0rem !important;
+        }
+    }
+</style>
+<div class="max-width tutorial-container">
+  <div class="tutorial-menu-container">
+    <app-tutorial-menu menu="[{&quot;category&quot;:&quot;JavaScript Tutorial&quot;,&quot;articles&quot;:[{&quot;title&quot;:&quot;Introduction&quot;,&quot;url&quot;:&quot;/blog/javascript-tutorial/&quot;},{&quot;title&quot;:&quot;JavaScript Placement&quot;,&quot;url&quot;:&quot;/blog/javascript-tutorial/placement/&quot;},{&quot;title&quot;:&quot;JavaScript Output&quot;,&quot;url&quot;:&quot;/blog/javascript-tutorial/output/&quot;},{&quot;title&quot;:&quot;JavaScript Statements&quot;,&quot;url&quot;:&quot;/blog/javascript-tutorial/statements/&quot;},{&quot;title&quot;:&quot;JavaScript Syntax&quot;,&quot;url&quot;:&quot;/blog/javascript-tutorial/syntax/&quot;},{&quot;title&quot;:&quot;JavaScript Comments&quot;,&quot;url&quot;:&quot;/blog/javascript-tutorial/comments/&quot;},{&quot;title&quot;:&quot;JavaScript Variables&quot;,&quot;url&quot;:&quot;/blog/javascript-tutorial/variables/&quot;},{&quot;title&quot;:&quot;JavaScript Let&quot;,&quot;url&quot;:&quot;/blog/javascript-tutorial/let/&quot;},{&quot;title&quot;:&quot;JavaScript Const&quot;,&quot;url&quot;:&quot;/blog/javascript-tutorial/const/&quot;},{&quot;title&quot;:&quot;JavaScript Operators&quot;,&quot;url&quot;:&quot;/blog/javascript-tutorial/operators/&quot;},{&quot;title&quot;:&quot;JavaScript Assignment&quot;,&quot;url&quot;:&quot;/blog/javascript-tutorial/assignment/&quot;},{&quot;title&quot;:&quot;JavaScript Data Types&quot;,&quot;url&quot;:&quot;/blog/javascript-tutorial/data-types/&quot;},{&quot;title&quot;:&quot;JavaScript Functions&quot;,&quot;url&quot;:&quot;/blog/javascript-tutorial/functions/&quot;},{&quot;title&quot;:&quot;JavaScript Objects&quot;,&quot;url&quot;:&quot;/blog/javascript-tutorial/objects/&quot;},{&quot;title&quot;:&quot;JavaScript Events&quot;,&quot;url&quot;:&quot;/blog/javascript-tutorial/events/&quot;},{&quot;title&quot;:&quot;JavaScript Strings&quot;,&quot;url&quot;:&quot;/blog/javascript-tutorial/strings/&quot;}]}]"></app-tutorial-menu>
+  </div>
+  <div class="main-container">
+    <app-breadcrumbs class="tutorial"></app-breadcrumbs>
+    <app-blog-title class="tutorial" blog-title="JavaScript Statements" blog-description="Learn what JavaScript statements are, how they work, and the different types you’ll use when coding. A simple guide for beginners." blog-image="/assets/images/blog/blog-5.jpg"></app-blog-title>
+    <div class="blog-content markdown">
+      <h2>📝 What You’ll Learn</h2>
+<ul>
+<li>What JavaScript statements are  </li>
+<li>Types of statements commonly used  </li>
+<li>How statements execute  </li>
+<li>Best practices and common pitfalls</li>
+</ul>
+<h2>📄 What Is a JavaScript Statement?</h2>
+<p>A <strong>JavaScript statement</strong> is a single instruction that the browser executes. Think of it like a sentence in English — each statement tells the browser to do something.</p>
+<pre><code class="hljs language-javascript"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">let</span> x = <span class="hljs-number">5</span>;
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(x);</code></pre>
+</code></pre><p>Each line above is a statement: one declares a variable, the other prints it.</p>
+<h2>🔄 Types of Statements</h2>
+<p>Here are the most common types of statements in JavaScript:</p>
+<h3>1. ✅ Declaration Statements</h3>
+<p>Used to declare variables:</p>
+<pre><code class="hljs language-javascript"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">let</span> name = <span class="hljs-string">&quot;Alex&quot;</span>;
+<span class="hljs-keyword">const</span> age = <span class="hljs-number">30</span>;</code></pre>
+</code></pre><h3>2. 🧠 Expression Statements</h3>
+<p>These evaluate an expression:</p>
+<pre><code class="hljs language-javascript"><pre class="highlight"><code class="hljs">x = <span class="hljs-number">5</span> + <span class="hljs-number">10</span>;</code></pre>
+</code></pre><h3>3. 📢 Output Statements</h3>
+<p>Used to display information:</p>
+<pre><code class="hljs language-javascript"><pre class="highlight"><code class="hljs"><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;Hello!&quot;</span>);</code></pre>
+</code></pre><h3>4. 🧩 Conditional Statements</h3>
+<p>Control decision-making:</p>
+<pre><code class="hljs language-javascript"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">if</span> (x &gt; <span class="hljs-number">10</span>) {
+  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;x is greater than 10&quot;</span>);
+}</code></pre>
+</code></pre><h3>5. 🔁 Looping Statements</h3>
+<p>Used for repeating tasks:</p>
+<pre><code class="hljs language-javascript"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">3</span>; i++) {
+  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(i);
+}</code></pre>
+</code></pre><h2>🧱 Multiple Statements on One Line</h2>
+<p>JavaScript allows you to write multiple statements on one line, separated by a semicolon (<code>;</code>):</p>
+<pre><code class="hljs language-javascript"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">let</span> a = <span class="hljs-number">1</span>; <span class="hljs-keyword">let</span> b = <span class="hljs-number">2</span>; <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(a + b);</code></pre>
+</code></pre><p>While valid, this is <strong>not recommended</strong> for readability.</p>
+<h2>🚫 Statement Blocks</h2>
+<p>A block is a group of statements wrapped in <code>{}</code>. Blocks are used in functions, conditionals, loops, etc.</p>
+<pre><code class="hljs language-javascript"><pre class="highlight"><code class="hljs">{
+  <span class="hljs-keyword">let</span> message = <span class="hljs-string">&quot;Hi!&quot;</span>;
+  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(message);
+}</code></pre>
+</code></pre><h2>⚠️ Common Mistakes</h2>
+<ul>
+<li>Forgetting the semicolon at the end of a statement (JavaScript usually handles it, but not always predictably)  </li>
+<li>Not wrapping multiple statements inside <code>{}</code> when required  </li>
+<li>Misunderstanding expressions vs. statements (e.g., trying to declare a variable inside a conditional expression)</li>
+</ul>
+<h2>📘 Recap</h2>
+<ul>
+<li>A statement is a complete instruction for the browser  </li>
+<li>JavaScript has many types: declarations, expressions, loops, conditionals, etc.  </li>
+<li>Use semicolons to separate statements, even when JavaScript sometimes allows you to skip them  </li>
+<li>Group related statements in blocks <code>{}</code> for structure</li>
+</ul>
+
+      <app-subscribe></app-subscribe>
+      <app-comments></app-comments>
+    </div>
+  </div>
+  <aside>
+    <div class="aside-container">
+      <app-share-buttons></app-share-buttons>
+      <app-aside-promotion></app-aside-promotion>
+    </div>
+  </aside>
+</div>
+
+        </main>
+        <app-scroll-top-button></app-scroll-top-button>
+        <app-footer></app-footer>
+        </div>
+            <script>
+                var lastVisitTime = parseInt(localStorage.getItem('LAST_VISIT_TIME') || '0');
+                var timeoutDuration = 1500;
+                //if ((new Date().valueOf() - lastVisitTime) < 1200000) {
+                //    timeoutDuration = 400;
+                //}
+                setTimeout(() => {
+                    document.querySelector('.loader').classList.add('hide');
+                    document.querySelector('.body-container').style.display = 'block';
+                    document.dispatchEvent(new CustomEvent('page-loader-hide'));
+                }, timeoutDuration);
+                setTimeout(() => {
+                    document.querySelector('.loader').style.display = 'none';
+                }, 2000);
+                localStorage.setItem('LAST_VISIT_TIME', new Date().valueOf());
+            </script>
+        
+                <!-- Google tag (gtag.js) -->
+                <script async src="https://www.googletagmanager.com/gtag/js?id=G-S6JEVF53JZ"></script>
+                <script>
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag() {
+                        dataLayer.push(arguments);
+                    }
+                    gtag('js', new Date());
+
+                    gtag('config', 'G-S6JEVF53JZ');
+                </script>
+            
+            <script>
+                window.axeptioSettings = {
+                    clientId: "67fc2975df7d77940a4ff73d",
+                    cookiesVersion: "13042025",
+                    googleConsentMode: {
+                        default: {
+                            analytics_storage: "denied",
+                            ad_storage: "denied",
+                            ad_user_data: "denied",
+                            ad_personalization: "denied",
+                            wait_for_update: 500
+                        }
+                    }
+                };
+                (function(d, s) {
+                    var t = d.getElementsByTagName(s)[0], e = d.createElement(s);
+                    e.async = true; e.src = "//static.axept.io/sdk.js";
+                    t.parentNode.insertBefore(e, t);
+                })(document, "script");
+            </script>
+            <script src="/assets/scripts/markdown.js"></script>
+                <script>
+                    document.addEventListener('DOMContentLoaded', () => {
+                        document.getElementById('languageSwitcherMobile').remove();
+                        document.getElementById('languageSwitcherDesktop').remove();
+                    });
+                </script>
+            </body></html>

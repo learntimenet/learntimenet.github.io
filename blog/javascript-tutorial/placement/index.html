@@ -1,0 +1,238 @@
+
+            <!DOCTYPE html>
+            <html lang="en" data-translated="false" data-breadcrump-title="JavaScript Placement">
+            <head>
+                <meta charset="utf-8" />
+                <title>Learn Time | JavaScript Tutorial - JavaScript Placement</title>
+                <meta name="description" content="Learn the best places to insert JavaScript in your HTML document. Discover the differences between inline, head, body, and external script placements.">
+                
+                <meta name="viewport" content="width=device-width,initial-scale=1" />
+                <!--
+                <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
+                <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
+                <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
+                <link rel="shortcut icon" sizes="192x192" href="/assets/favicon/android-chrome-192x192.png" >
+                <link rel="shortcut icon" sizes="512x512" href="/assets/favicon/android-chrome-512x512.png" >
+                <link rel="manifest" href="/assets/favicon/site.webmanifest">
+                <link rel="shortcut icon" href="/assets/favicon/favicon.ico">
+                <link rel="mask-icon" href="/assets/favicon/safari-pinned-tab.svg" color="#5bbad5">
+                <meta name="msapplication-TileColor" content="#da532c">
+                <meta name="theme-color" content="#ffffff">
+                -->
+                <link rel="shortcut icon" type="image/png" href="/assets/images/logo-circle.png">
+                <link rel="stylesheet" href="/styles.css">
+                <script src="https://kit.fontawesome.com/ff0edf556e.js" crossorigin="anonymous"></script>
+                <script src="https://code.iconify.design/iconify-icon/1.0.2/iconify-icon.min.js"></script>
+                <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+                <script>window.startTime = new Date().getTime();</script>
+                <style>
+                    :root {
+                        --background-color: #f3f2ef;
+                        --loading-bar-background-color: #d6cec2;
+                        --moving-loading-bar-background-color: #D0514D;
+                    }
+                    .loader {transition: all .2s ease-out;z-index: 10000000000;margin-top: -200px;position: fixed;top: 0;left: 0;right: 0;bottom: 0;background-color: var(--background-color);display: flex;align-items: center;justify-content: center;flex-direction: column;}.loader-logo {width: 40px; height: 40px; margin-bottom: 20px;}.loading-bar {width: 130px;height: 4px;border-radius: 100rem;background-color: var(--loading-bar-background-color);position: relative;overflow: hidden;}.moving-loading-bar {height: 100%;width: 68px;position: absolute;border-radius: 100rem;background-color: var(--moving-loading-bar-background-color);animation: initial-loading 1.5s ease infinite;}@keyframes initial-loading {0% {transform: translate(-34px);}50% {transform: translate(96px);}to {transform: translate(-34px);}}
+                    .loader.hide {opacity: 0;}
+                </style>
+                
+            <meta property="og:title" content="JavaScript Tutorial - JavaScript Placement" />
+            <meta property="og:description" content="Learn the best places to insert JavaScript in your HTML document. Discover the differences between inline, head, body, and external script placements." />
+            <meta property="og:image" content="https://learntime.net/assets/thumbnail/blog/blog-3.jpg" />
+            <meta name="twitter:card" content="summary_large_image">
+            <meta name="twitter:creator" content="@learntimenet">
+            <meta name="twitter:title" content="JavaScript Tutorial - JavaScript Placement">
+            <meta name="twitter:description" content="Learn the best places to insert JavaScript in your HTML document. Discover the differences between inline, head, body, and external script placements.">
+            <meta name="twitter:image" content="https://learntime.net/assets/thumbnail/blog/blog-3.jpg">
+        
+                <script>
+                    var disqus_config = function () {
+                        this.page.url = window.location.origin + window.location.pathname;
+                        this.page.identifier = window.location.pathname.replace('/en', '');
+                    };
+                </script>
+            <script defer src="/blog/javascript-tutorial/placement/placement.fbb322e6f58e8173a92b.js"></script></head>
+            <body>
+                <div class="loader">
+                    <div class="loading-bar">
+                        <div class="moving-loading-bar"></div>
+                    </div>
+                </div>
+                <script>
+                    var lastVisitTime = parseInt(localStorage.getItem('LAST_VISIT_TIME') || '0');
+                    if ((new Date().valueOf() - lastVisitTime) < 1200000) {
+                        document.querySelector('.loading-bar').style.display = 'none';
+                    }
+                </script>
+                <div class="body-container">
+                    <app-navbar></app-navbar>
+                    <div class="max-width"><app-breadcrumbs></app-breadcrumbs></div>
+                    <main>
+        
+<style>
+    :root {
+        --scroll-indicator-height: 0.5rem;
+        --max-width: 150rem;
+    }
+    @media screen and (min-width: 1024px) {
+        :root {
+            --promotion-height: 0rem !important;
+        }
+    }
+</style>
+<div class="max-width tutorial-container">
+  <div class="tutorial-menu-container">
+    <app-tutorial-menu menu="[{&quot;category&quot;:&quot;JavaScript Tutorial&quot;,&quot;articles&quot;:[{&quot;title&quot;:&quot;Introduction&quot;,&quot;url&quot;:&quot;/blog/javascript-tutorial/&quot;},{&quot;title&quot;:&quot;JavaScript Placement&quot;,&quot;url&quot;:&quot;/blog/javascript-tutorial/placement/&quot;},{&quot;title&quot;:&quot;JavaScript Output&quot;,&quot;url&quot;:&quot;/blog/javascript-tutorial/output/&quot;},{&quot;title&quot;:&quot;JavaScript Statements&quot;,&quot;url&quot;:&quot;/blog/javascript-tutorial/statements/&quot;},{&quot;title&quot;:&quot;JavaScript Syntax&quot;,&quot;url&quot;:&quot;/blog/javascript-tutorial/syntax/&quot;},{&quot;title&quot;:&quot;JavaScript Comments&quot;,&quot;url&quot;:&quot;/blog/javascript-tutorial/comments/&quot;},{&quot;title&quot;:&quot;JavaScript Variables&quot;,&quot;url&quot;:&quot;/blog/javascript-tutorial/variables/&quot;},{&quot;title&quot;:&quot;JavaScript Let&quot;,&quot;url&quot;:&quot;/blog/javascript-tutorial/let/&quot;},{&quot;title&quot;:&quot;JavaScript Const&quot;,&quot;url&quot;:&quot;/blog/javascript-tutorial/const/&quot;},{&quot;title&quot;:&quot;JavaScript Operators&quot;,&quot;url&quot;:&quot;/blog/javascript-tutorial/operators/&quot;},{&quot;title&quot;:&quot;JavaScript Assignment&quot;,&quot;url&quot;:&quot;/blog/javascript-tutorial/assignment/&quot;},{&quot;title&quot;:&quot;JavaScript Data Types&quot;,&quot;url&quot;:&quot;/blog/javascript-tutorial/data-types/&quot;},{&quot;title&quot;:&quot;JavaScript Functions&quot;,&quot;url&quot;:&quot;/blog/javascript-tutorial/functions/&quot;},{&quot;title&quot;:&quot;JavaScript Objects&quot;,&quot;url&quot;:&quot;/blog/javascript-tutorial/objects/&quot;},{&quot;title&quot;:&quot;JavaScript Events&quot;,&quot;url&quot;:&quot;/blog/javascript-tutorial/events/&quot;},{&quot;title&quot;:&quot;JavaScript Strings&quot;,&quot;url&quot;:&quot;/blog/javascript-tutorial/strings/&quot;}]}]"></app-tutorial-menu>
+  </div>
+  <div class="main-container">
+    <app-breadcrumbs class="tutorial"></app-breadcrumbs>
+    <app-blog-title class="tutorial" blog-title="JavaScript Placement" blog-description="Learn the best places to insert JavaScript in your HTML document. Discover the differences between inline, head, body, and external script placements." blog-image="/assets/images/blog/blog-3.jpg"></app-blog-title>
+    <div class="blog-content markdown">
+      <h2>📝 What You’ll Learn</h2>
+<ul>
+<li>Where JavaScript code can be placed in an HTML file  </li>
+<li>The difference between internal and external scripts  </li>
+<li>Best practices for script placement  </li>
+<li>How script placement affects page performance</li>
+</ul>
+<h2>🧱 Inside the <strong><head></strong> Section</h2>
+<p>You can place JavaScript inside the <code>&lt;head&gt;</code> tag using a <code>&lt;script&gt;</code> tag:</p>
+<pre><code class="hljs language-html"><pre class="highlight"><code class="hljs"><span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript">
+    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;This runs before the body loads&quot;</span>);
+  </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span></code></pre>
+</code></pre><p><strong>Note:</strong> If the script tries to interact with elements in the body before they are loaded, it may not work correctly unless wrapped in a function like <code>window.onload</code>.</p>
+<h2>📄 Inside the <strong><body></strong> Section</h2>
+<p>Placing JavaScript at the end of the <code>&lt;body&gt;</code> ensures all HTML is loaded before the script runs:</p>
+<pre><code class="hljs language-html"><pre class="highlight"><code class="hljs"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>Hello World<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript">
+    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;This runs after the page is loaded&quot;</span>);
+  </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span></code></pre>
+</code></pre><p>✅ <strong>Recommended for inline scripts</strong> that interact with page elements.</p>
+<h2>📁 External JavaScript Files</h2>
+<p>You can keep your JavaScript in a separate file (e.g., <code>script.js</code>) and include it with the <code>src</code> attribute:</p>
+<pre><code class="hljs language-html"><pre class="highlight"><code class="hljs"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;script.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></pre>
+</code></pre><p>This keeps your HTML clean and allows you to <strong>reuse scripts across multiple pages</strong>.</p>
+<h3>Example:</h3>
+<pre><code class="hljs language-html"><pre class="highlight"><code class="hljs"><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-keyword">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>My Page<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;script.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>Welcome!<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span></code></pre>
+</code></pre><h2>⏳ Using <strong>defer</strong> and <strong>async</strong></h2>
+<h3><strong>defer</strong></h3>
+<ul>
+<li>Loads the script in the background while parsing HTML  </li>
+<li>Executes the script after the HTML is fully parsed  </li>
+<li>Recommended for most external scripts</li>
+</ul>
+<pre><code class="hljs language-html"><pre class="highlight"><code class="hljs"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;script.js&quot;</span> <span class="hljs-attr">defer</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></pre>
+</code></pre><h3><strong>async</strong></h3>
+<ul>
+<li>Loads the script in the background  </li>
+<li>Executes the script as soon as it’s ready (may interrupt HTML parsing)  </li>
+<li>Use only when the script is <strong>independent</strong></li>
+</ul>
+<pre><code class="hljs language-html"><pre class="highlight"><code class="hljs"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;script.js&quot;</span> <span class="hljs-attr">async</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></pre>
+</code></pre><h2>🛠 Best Practices</h2>
+<ul>
+<li>Place <code>&lt;script&gt;</code> tags <strong>at the end of <code>&lt;body&gt;</code></strong> or use <code>defer</code> in <code>&lt;head&gt;</code>  </li>
+<li>Use <strong>external scripts</strong> for maintainability  </li>
+<li>Avoid <code>document.write()</code> in modern pages  </li>
+<li>Only use <code>async</code> if the script doesn&#39;t depend on or interfere with other scripts or the page content</li>
+</ul>
+<h2>⚠️ Common Mistakes</h2>
+<ul>
+<li>Placing JavaScript in the <code>&lt;head&gt;</code> without using <code>defer</code> or <code>window.onload</code>  </li>
+<li>Forgetting the file path when linking external scripts  </li>
+<li>Using <code>async</code> when script order matters</li>
+</ul>
+<h2>📘 Recap</h2>
+<ul>
+<li>JavaScript can go in <code>&lt;head&gt;</code>, <code>&lt;body&gt;</code>, or an external file  </li>
+<li>Use <code>defer</code> to safely load scripts in the <code>&lt;head&gt;</code>  </li>
+<li>Place scripts at the end of <code>&lt;body&gt;</code> if not using <code>defer</code>  </li>
+<li>Use external files for better organization</li>
+</ul>
+
+      <app-subscribe></app-subscribe>
+      <app-comments></app-comments>
+    </div>
+  </div>
+  <aside>
+    <div class="aside-container">
+      <app-share-buttons></app-share-buttons>
+      <app-aside-promotion></app-aside-promotion>
+    </div>
+  </aside>
+</div>
+
+        </main>
+        <app-scroll-top-button></app-scroll-top-button>
+        <app-footer></app-footer>
+        </div>
+            <script>
+                var lastVisitTime = parseInt(localStorage.getItem('LAST_VISIT_TIME') || '0');
+                var timeoutDuration = 1500;
+                //if ((new Date().valueOf() - lastVisitTime) < 1200000) {
+                //    timeoutDuration = 400;
+                //}
+                setTimeout(() => {
+                    document.querySelector('.loader').classList.add('hide');
+                    document.querySelector('.body-container').style.display = 'block';
+                    document.dispatchEvent(new CustomEvent('page-loader-hide'));
+                }, timeoutDuration);
+                setTimeout(() => {
+                    document.querySelector('.loader').style.display = 'none';
+                }, 2000);
+                localStorage.setItem('LAST_VISIT_TIME', new Date().valueOf());
+            </script>
+        
+                <!-- Google tag (gtag.js) -->
+                <script async src="https://www.googletagmanager.com/gtag/js?id=G-S6JEVF53JZ"></script>
+                <script>
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag() {
+                        dataLayer.push(arguments);
+                    }
+                    gtag('js', new Date());
+
+                    gtag('config', 'G-S6JEVF53JZ');
+                </script>
+            
+            <script>
+                window.axeptioSettings = {
+                    clientId: "67fc2975df7d77940a4ff73d",
+                    cookiesVersion: "13042025",
+                    googleConsentMode: {
+                        default: {
+                            analytics_storage: "denied",
+                            ad_storage: "denied",
+                            ad_user_data: "denied",
+                            ad_personalization: "denied",
+                            wait_for_update: 500
+                        }
+                    }
+                };
+                (function(d, s) {
+                    var t = d.getElementsByTagName(s)[0], e = d.createElement(s);
+                    e.async = true; e.src = "//static.axept.io/sdk.js";
+                    t.parentNode.insertBefore(e, t);
+                })(document, "script");
+            </script>
+            <script src="/assets/scripts/markdown.js"></script>
+                <script>
+                    document.addEventListener('DOMContentLoaded', () => {
+                        document.getElementById('languageSwitcherMobile').remove();
+                        document.getElementById('languageSwitcherDesktop').remove();
+                    });
+                </script>
+            </body></html>

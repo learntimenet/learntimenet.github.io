@@ -1,0 +1,246 @@
+
+            <!DOCTYPE html>
+            <html lang="en" data-translated="false" data-breadcrump-title="JavaScript Strings">
+            <head>
+                <meta charset="utf-8" />
+                <title>Learn Time | JavaScript Tutorial - JavaScript Strings</title>
+                <meta name="description" content="Learn the basics of JavaScript strings, including how to create, manipulate, and use built-in string methods. Explore string concatenation, escaping characters, and template literals.">
+                
+                <meta name="viewport" content="width=device-width,initial-scale=1" />
+                <!--
+                <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
+                <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
+                <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
+                <link rel="shortcut icon" sizes="192x192" href="/assets/favicon/android-chrome-192x192.png" >
+                <link rel="shortcut icon" sizes="512x512" href="/assets/favicon/android-chrome-512x512.png" >
+                <link rel="manifest" href="/assets/favicon/site.webmanifest">
+                <link rel="shortcut icon" href="/assets/favicon/favicon.ico">
+                <link rel="mask-icon" href="/assets/favicon/safari-pinned-tab.svg" color="#5bbad5">
+                <meta name="msapplication-TileColor" content="#da532c">
+                <meta name="theme-color" content="#ffffff">
+                -->
+                <link rel="shortcut icon" type="image/png" href="/assets/images/logo-circle.png">
+                <link rel="stylesheet" href="/styles.css">
+                <script src="https://kit.fontawesome.com/ff0edf556e.js" crossorigin="anonymous"></script>
+                <script src="https://code.iconify.design/iconify-icon/1.0.2/iconify-icon.min.js"></script>
+                <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+                <script>window.startTime = new Date().getTime();</script>
+                <style>
+                    :root {
+                        --background-color: #f3f2ef;
+                        --loading-bar-background-color: #d6cec2;
+                        --moving-loading-bar-background-color: #D0514D;
+                    }
+                    .loader {transition: all .2s ease-out;z-index: 10000000000;margin-top: -200px;position: fixed;top: 0;left: 0;right: 0;bottom: 0;background-color: var(--background-color);display: flex;align-items: center;justify-content: center;flex-direction: column;}.loader-logo {width: 40px; height: 40px; margin-bottom: 20px;}.loading-bar {width: 130px;height: 4px;border-radius: 100rem;background-color: var(--loading-bar-background-color);position: relative;overflow: hidden;}.moving-loading-bar {height: 100%;width: 68px;position: absolute;border-radius: 100rem;background-color: var(--moving-loading-bar-background-color);animation: initial-loading 1.5s ease infinite;}@keyframes initial-loading {0% {transform: translate(-34px);}50% {transform: translate(96px);}to {transform: translate(-34px);}}
+                    .loader.hide {opacity: 0;}
+                </style>
+                
+            <meta property="og:title" content="JavaScript Tutorial - JavaScript Strings" />
+            <meta property="og:description" content="Learn the basics of JavaScript strings, including how to create, manipulate, and use built-in string methods. Explore string concatenation, escaping characters, and template literals." />
+            <meta property="og:image" content="https://learntime.net/assets/thumbnail/blog/blog-6.jpg" />
+            <meta name="twitter:card" content="summary_large_image">
+            <meta name="twitter:creator" content="@learntimenet">
+            <meta name="twitter:title" content="JavaScript Tutorial - JavaScript Strings">
+            <meta name="twitter:description" content="Learn the basics of JavaScript strings, including how to create, manipulate, and use built-in string methods. Explore string concatenation, escaping characters, and template literals.">
+            <meta name="twitter:image" content="https://learntime.net/assets/thumbnail/blog/blog-6.jpg">
+        
+                <script>
+                    var disqus_config = function () {
+                        this.page.url = window.location.origin + window.location.pathname;
+                        this.page.identifier = window.location.pathname.replace('/en', '');
+                    };
+                </script>
+            <script defer src="/blog/javascript-tutorial/strings/strings.a3ebf15ca0e827497eaf.js"></script></head>
+            <body>
+                <div class="loader">
+                    <div class="loading-bar">
+                        <div class="moving-loading-bar"></div>
+                    </div>
+                </div>
+                <script>
+                    var lastVisitTime = parseInt(localStorage.getItem('LAST_VISIT_TIME') || '0');
+                    if ((new Date().valueOf() - lastVisitTime) < 1200000) {
+                        document.querySelector('.loading-bar').style.display = 'none';
+                    }
+                </script>
+                <div class="body-container">
+                    <app-navbar></app-navbar>
+                    <div class="max-width"><app-breadcrumbs></app-breadcrumbs></div>
+                    <main>
+        
+<style>
+    :root {
+        --scroll-indicator-height: 0.5rem;
+        --max-width: 150rem;
+    }
+    @media screen and (min-width: 1024px) {
+        :root {
+            --promotion-height: 0rem !important;
+        }
+    }
+</style>
+<div class="max-width tutorial-container">
+  <div class="tutorial-menu-container">
+    <app-tutorial-menu menu="[{&quot;category&quot;:&quot;JavaScript Tutorial&quot;,&quot;articles&quot;:[{&quot;title&quot;:&quot;Introduction&quot;,&quot;url&quot;:&quot;/blog/javascript-tutorial/&quot;},{&quot;title&quot;:&quot;JavaScript Placement&quot;,&quot;url&quot;:&quot;/blog/javascript-tutorial/placement/&quot;},{&quot;title&quot;:&quot;JavaScript Output&quot;,&quot;url&quot;:&quot;/blog/javascript-tutorial/output/&quot;},{&quot;title&quot;:&quot;JavaScript Statements&quot;,&quot;url&quot;:&quot;/blog/javascript-tutorial/statements/&quot;},{&quot;title&quot;:&quot;JavaScript Syntax&quot;,&quot;url&quot;:&quot;/blog/javascript-tutorial/syntax/&quot;},{&quot;title&quot;:&quot;JavaScript Comments&quot;,&quot;url&quot;:&quot;/blog/javascript-tutorial/comments/&quot;},{&quot;title&quot;:&quot;JavaScript Variables&quot;,&quot;url&quot;:&quot;/blog/javascript-tutorial/variables/&quot;},{&quot;title&quot;:&quot;JavaScript Let&quot;,&quot;url&quot;:&quot;/blog/javascript-tutorial/let/&quot;},{&quot;title&quot;:&quot;JavaScript Const&quot;,&quot;url&quot;:&quot;/blog/javascript-tutorial/const/&quot;},{&quot;title&quot;:&quot;JavaScript Operators&quot;,&quot;url&quot;:&quot;/blog/javascript-tutorial/operators/&quot;},{&quot;title&quot;:&quot;JavaScript Assignment&quot;,&quot;url&quot;:&quot;/blog/javascript-tutorial/assignment/&quot;},{&quot;title&quot;:&quot;JavaScript Data Types&quot;,&quot;url&quot;:&quot;/blog/javascript-tutorial/data-types/&quot;},{&quot;title&quot;:&quot;JavaScript Functions&quot;,&quot;url&quot;:&quot;/blog/javascript-tutorial/functions/&quot;},{&quot;title&quot;:&quot;JavaScript Objects&quot;,&quot;url&quot;:&quot;/blog/javascript-tutorial/objects/&quot;},{&quot;title&quot;:&quot;JavaScript Events&quot;,&quot;url&quot;:&quot;/blog/javascript-tutorial/events/&quot;},{&quot;title&quot;:&quot;JavaScript Strings&quot;,&quot;url&quot;:&quot;/blog/javascript-tutorial/strings/&quot;}]}]"></app-tutorial-menu>
+  </div>
+  <div class="main-container">
+    <app-breadcrumbs class="tutorial"></app-breadcrumbs>
+    <app-blog-title class="tutorial" blog-title="JavaScript Strings" blog-description="Learn the basics of JavaScript strings, including how to create, manipulate, and use built-in string methods. Explore string concatenation, escaping characters, and template literals." blog-image="/assets/images/blog/blog-6.jpg"></app-blog-title>
+    <div class="blog-content markdown">
+      <h2>📝 What You’ll Learn</h2>
+<ul>
+<li>What strings are in JavaScript  </li>
+<li>How to create and manipulate strings  </li>
+<li>Common string methods and operations  </li>
+<li>Practical examples of using strings in JavaScript</li>
+</ul>
+<h2>🔍 What Is a String?</h2>
+<p>A <strong>string</strong> is a sequence of characters used to represent text. Strings are one of the most commonly used data types in JavaScript, and they are enclosed in either single quotes (<code>&#39;</code>), double quotes (<code>&quot;</code>), or backticks (<code>`</code>). </p>
+<h3>Basic Syntax</h3>
+<pre><code class="hljs language-javascript"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">let</span> str1 = <span class="hljs-string">&#x27;Hello, World!&#x27;</span>;
+<span class="hljs-keyword">let</span> str2 = <span class="hljs-string">&quot;JavaScript is fun!&quot;</span>;
+<span class="hljs-keyword">let</span> str3 = <span class="hljs-string">`This is a string with template literals!`</span>;</code></pre>
+</code></pre><h2>🧑‍🍳 Creating Strings</h2>
+<p>You can create a string by enclosing characters in quotes:</p>
+<h3>Example:</h3>
+<pre><code class="hljs language-javascript"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">let</span> greeting = <span class="hljs-string">&quot;Hello, World!&quot;</span>;
+<span class="hljs-keyword">let</span> name = <span class="hljs-string">&#x27;Alice&#x27;</span>;</code></pre>
+</code></pre><p>You can use <strong>single quotes</strong> (<code>&#39;</code>), <strong>double quotes</strong> (<code>&quot;</code>), or <strong>backticks</strong> (<code>`</code>) to define strings. The choice depends on your needs, such as using quotes inside a string.</p>
+<h3>Example with Quotes Inside a String:</h3>
+<pre><code class="hljs language-javascript"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">let</span> sentence = <span class="hljs-string">&quot;Alice said, &#x27;Hello!&#x27;&quot;</span>;
+<span class="hljs-keyword">let</span> anotherSentence = <span class="hljs-string">&#x27;Bob replied, &quot;Hi!&quot;&#x27;</span>;</code></pre>
+</code></pre><h2>🧩 String Concatenation</h2>
+<p>You can <strong>concatenate</strong> (combine) strings using the <code>+</code> operator.</p>
+<h3>Example:</h3>
+<pre><code class="hljs language-javascript"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">let</span> firstName = <span class="hljs-string">&quot;John&quot;</span>;
+<span class="hljs-keyword">let</span> lastName = <span class="hljs-string">&quot;Doe&quot;</span>;
+<span class="hljs-keyword">let</span> fullName = firstName + <span class="hljs-string">&quot; &quot;</span> + lastName;
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(fullName);  <span class="hljs-comment">// Output: John Doe</span></code></pre>
+</code></pre><p>In this case, we joined <code>firstName</code>, a space, and <code>lastName</code> to create <code>fullName</code>.</p>
+<p>You can also use <strong>template literals</strong> (backticks) to concatenate strings more easily:</p>
+<pre><code class="hljs language-javascript"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">let</span> fullName = <span class="hljs-string">`<span class="hljs-subst">${firstName}</span> <span class="hljs-subst">${lastName}</span>`</span>;
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(fullName);  <span class="hljs-comment">// Output: John Doe</span></code></pre>
+</code></pre><h2>🛠️ String Methods</h2>
+<p>JavaScript strings come with a variety of <strong>built-in methods</strong> to perform common operations, like finding the length of a string, replacing characters, and converting case.</p>
+<h3>1️⃣ .length Property</h3>
+<p>The <code>.length</code> property returns the number of characters in a string.</p>
+<pre><code class="hljs language-javascript"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">let</span> text = <span class="hljs-string">&quot;Hello, World!&quot;</span>;
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(text.<span class="hljs-property">length</span>);  <span class="hljs-comment">// Output: 13</span></code></pre>
+</code></pre><h3>2️⃣ .toUpperCase() and .toLowerCase()</h3>
+<p>These methods convert a string to <strong>uppercase</strong> or <strong>lowercase</strong>.</p>
+<pre><code class="hljs language-javascript"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">let</span> greeting = <span class="hljs-string">&quot;Hello!&quot;</span>;
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(greeting.<span class="hljs-title function_">toUpperCase</span>());  <span class="hljs-comment">// Output: HELLO!</span>
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(greeting.<span class="hljs-title function_">toLowerCase</span>());  <span class="hljs-comment">// Output: hello!</span></code></pre>
+</code></pre><h3>3️⃣ .indexOf()</h3>
+<p>The <code>.indexOf()</code> method returns the position of the first occurrence of a specified value in a string.</p>
+<pre><code class="hljs language-javascript"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">let</span> text = <span class="hljs-string">&quot;JavaScript is awesome!&quot;</span>;
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(text.<span class="hljs-title function_">indexOf</span>(<span class="hljs-string">&quot;is&quot;</span>));  <span class="hljs-comment">// Output: 10</span></code></pre>
+</code></pre><h3>4️⃣ .slice()</h3>
+<p>The <code>.slice()</code> method extracts a portion of a string based on start and end positions.</p>
+<pre><code class="hljs language-javascript"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">let</span> text = <span class="hljs-string">&quot;JavaScript&quot;</span>;
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(text.<span class="hljs-title function_">slice</span>(<span class="hljs-number">0</span>, <span class="hljs-number">4</span>));  <span class="hljs-comment">// Output: Java</span></code></pre>
+</code></pre><h3>5️⃣ .replace()</h3>
+<p>The <code>.replace()</code> method replaces part of a string with a new value.</p>
+<pre><code class="hljs language-javascript"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">let</span> sentence = <span class="hljs-string">&quot;I like JavaScript&quot;</span>;
+<span class="hljs-keyword">let</span> newSentence = sentence.<span class="hljs-title function_">replace</span>(<span class="hljs-string">&quot;JavaScript&quot;</span>, <span class="hljs-string">&quot;programming&quot;</span>);
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(newSentence);  <span class="hljs-comment">// Output: I like programming</span></code></pre>
+</code></pre><h3>6️⃣ .split()</h3>
+<p>The <code>.split()</code> method splits a string into an array of substrings based on a separator.</p>
+<pre><code class="hljs language-javascript"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">let</span> sentence = <span class="hljs-string">&quot;Hello, World!&quot;</span>;
+<span class="hljs-keyword">let</span> words = sentence.<span class="hljs-title function_">split</span>(<span class="hljs-string">&quot; &quot;</span>);
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(words);  <span class="hljs-comment">// Output: [&quot;Hello,&quot;, &quot;World!&quot;]</span></code></pre>
+</code></pre><h2>📏 String Escaping</h2>
+<p>To include special characters like quotes inside a string, you can use the <strong>escape character</strong> (<code>\</code>).</p>
+<h3>Example:</h3>
+<pre><code class="hljs language-javascript"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">let</span> quote = <span class="hljs-string">&#x27;She said, &quot;Hello!&quot;&#x27;</span>;
+<span class="hljs-keyword">let</span> escapedQuote = <span class="hljs-string">&quot;She said, \&quot;Hello!\&quot;&quot;</span>;</code></pre>
+</code></pre><p>Both will result in: <code>She said, &quot;Hello!&quot;</code></p>
+<h2>💡 Template Literals</h2>
+<p><strong>Template literals</strong> (backticks) allow you to create multi-line strings and embed expressions inside a string using <code>${}</code>.</p>
+<h3>Example:</h3>
+<pre><code class="hljs language-javascript"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">let</span> name = <span class="hljs-string">&quot;Alice&quot;</span>;
+<span class="hljs-keyword">let</span> age = <span class="hljs-number">25</span>;
+
+<span class="hljs-keyword">let</span> greeting = <span class="hljs-string">`Hello, my name is <span class="hljs-subst">${name}</span> and I am <span class="hljs-subst">${age}</span> years old.`</span>;
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(greeting);  <span class="hljs-comment">// Output: Hello, my name is Alice and I am 25 years old.</span></code></pre>
+</code></pre><h2>🧠 Recap</h2>
+<ul>
+<li><strong>Strings</strong> in JavaScript represent text and are enclosed in quotes (<code>&#39;</code>, <code>&quot;</code>, or backticks).  </li>
+<li>You can <strong>concatenate</strong> strings using <code>+</code> or <strong>template literals</strong>.  </li>
+<li>JavaScript provides many <strong>string methods</strong>, such as <code>.length</code>, <code>.toUpperCase()</code>, <code>.indexOf()</code>, and <code>.replace()</code>.  </li>
+<li><strong>Template literals</strong> are a convenient way to handle multi-line strings and embedded expressions.</li>
+</ul>
+
+      <app-subscribe></app-subscribe>
+      <app-comments></app-comments>
+    </div>
+  </div>
+  <aside>
+    <div class="aside-container">
+      <app-share-buttons></app-share-buttons>
+      <app-aside-promotion></app-aside-promotion>
+    </div>
+  </aside>
+</div>
+
+        </main>
+        <app-scroll-top-button></app-scroll-top-button>
+        <app-footer></app-footer>
+        </div>
+            <script>
+                var lastVisitTime = parseInt(localStorage.getItem('LAST_VISIT_TIME') || '0');
+                var timeoutDuration = 1500;
+                //if ((new Date().valueOf() - lastVisitTime) < 1200000) {
+                //    timeoutDuration = 400;
+                //}
+                setTimeout(() => {
+                    document.querySelector('.loader').classList.add('hide');
+                    document.querySelector('.body-container').style.display = 'block';
+                    document.dispatchEvent(new CustomEvent('page-loader-hide'));
+                }, timeoutDuration);
+                setTimeout(() => {
+                    document.querySelector('.loader').style.display = 'none';
+                }, 2000);
+                localStorage.setItem('LAST_VISIT_TIME', new Date().valueOf());
+            </script>
+        
+                <!-- Google tag (gtag.js) -->
+                <script async src="https://www.googletagmanager.com/gtag/js?id=G-S6JEVF53JZ"></script>
+                <script>
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag() {
+                        dataLayer.push(arguments);
+                    }
+                    gtag('js', new Date());
+
+                    gtag('config', 'G-S6JEVF53JZ');
+                </script>
+            
+            <script>
+                window.axeptioSettings = {
+                    clientId: "67fc2975df7d77940a4ff73d",
+                    cookiesVersion: "13042025",
+                    googleConsentMode: {
+                        default: {
+                            analytics_storage: "denied",
+                            ad_storage: "denied",
+                            ad_user_data: "denied",
+                            ad_personalization: "denied",
+                            wait_for_update: 500
+                        }
+                    }
+                };
+                (function(d, s) {
+                    var t = d.getElementsByTagName(s)[0], e = d.createElement(s);
+                    e.async = true; e.src = "//static.axept.io/sdk.js";
+                    t.parentNode.insertBefore(e, t);
+                })(document, "script");
+            </script>
+            <script src="/assets/scripts/markdown.js"></script>
+                <script>
+                    document.addEventListener('DOMContentLoaded', () => {
+                        document.getElementById('languageSwitcherMobile').remove();
+                        document.getElementById('languageSwitcherDesktop').remove();
+                    });
+                </script>
+            </body></html>
