@@ -1,10 +1,10 @@
 
             <!DOCTYPE html>
-            <html lang="en" data-translated="false" data-breadcrump-title="Java Syntax">
+            <html lang="en" data-translated="false" data-breadcrump-title="Java Comments">
             <head>
                 <meta charset="utf-8" />
-                <title>Learn Time | Java Tutorial - Java Syntax</title>
-                <meta name="description" content="Learn the basic structure and syntax of Java programs, including how classes and methods are written, how statements work, and common Java formatting rules.">
+                <title>Learn Time | Java Tutorial - Java Comments</title>
+                <meta name="description" content="Learn how to use comments in Java. Understand single-line, multi-line, and Javadoc comments with examples for clear, maintainable code.">
                 
                 <meta name="viewport" content="width=device-width,initial-scale=1" />
                 <!--
@@ -35,14 +35,14 @@
                     .loader.hide {opacity: 0;}
                 </style>
                 
-            <meta property="og:title" content="Java Tutorial - Java Syntax" />
-            <meta property="og:description" content="Learn the basic structure and syntax of Java programs, including how classes and methods are written, how statements work, and common Java formatting rules." />
-            <meta property="og:image" content="https://learntime.net/assets/thumbnail/blog/blog-2.jpg" />
+            <meta property="og:title" content="Java Tutorial - Java Comments" />
+            <meta property="og:description" content="Learn how to use comments in Java. Understand single-line, multi-line, and Javadoc comments with examples for clear, maintainable code." />
+            <meta property="og:image" content="https://learntime.net/assets/thumbnail/blog/blog-5.jpg" />
             <meta name="twitter:card" content="summary_large_image">
             <meta name="twitter:creator" content="@learntimenet">
-            <meta name="twitter:title" content="Java Tutorial - Java Syntax">
-            <meta name="twitter:description" content="Learn the basic structure and syntax of Java programs, including how classes and methods are written, how statements work, and common Java formatting rules.">
-            <meta name="twitter:image" content="https://learntime.net/assets/thumbnail/blog/blog-2.jpg">
+            <meta name="twitter:title" content="Java Tutorial - Java Comments">
+            <meta name="twitter:description" content="Learn how to use comments in Java. Understand single-line, multi-line, and Javadoc comments with examples for clear, maintainable code.">
+            <meta name="twitter:image" content="https://learntime.net/assets/thumbnail/blog/blog-5.jpg">
         
                 <script>
                     var disqus_config = function () {
@@ -50,7 +50,7 @@
                         this.page.identifier = window.location.pathname.replace('/en', '');
                     };
                 </script>
-            <script defer src="/blog/java-tutorial/syntax/syntax.d86b8ad3e4d5a43a36a2.js"></script></head>
+            <script defer src="/blog/java-tutorial/comments/comments.3910201b9533745f2d31.js"></script></head>
             <body>
                 <div class="loader">
                     <div class="loading-bar">
@@ -85,79 +85,54 @@
   </div>
   <div class="main-container">
     <app-breadcrumbs class="tutorial"></app-breadcrumbs>
-    <app-blog-title class="tutorial" blog-title="Java Syntax" blog-description="Learn the basic structure and syntax of Java programs, including how classes and methods are written, how statements work, and common Java formatting rules." blog-image="/assets/images/blog/blog-2.jpg"></app-blog-title>
+    <app-blog-title class="tutorial" blog-title="Java Comments" blog-description="Learn how to use comments in Java. Understand single-line, multi-line, and Javadoc comments with examples for clear, maintainable code." blog-image="/assets/images/blog/blog-5.jpg"></app-blog-title>
     <div class="blog-content markdown">
       <h2>📝 What You’ll Learn</h2>
 <ul>
-<li>Java program structure</li>
-<li>Key syntax elements: classes, methods, statements</li>
-<li>Naming conventions</li>
-<li>How Java code is organized and executed</li>
+<li>Why comments are useful</li>
+<li>Single-line and multi-line comments</li>
+<li>Javadoc comments for documentation</li>
 </ul>
-<h2>🧱 Basic Java Structure</h2>
-<p>Every Java application is made up of <strong>classes</strong> and <strong>methods</strong>. The <strong><code>main</code> method</strong> is the entry point of any standalone Java program.</p>
-<p>Here’s a minimal Java program:</p>
-<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">HelloWorld</span> {
-    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> {
-        System.out.println(<span class="hljs-string">&quot;Hello, World!&quot;</span>);
-    }
-}</code></pre>
-</code></pre><h3>🔍 Breakdown</h3>
-<ul>
-<li><code>public</code> <code>class</code> <code>HelloWorld</code>: Defines a class named <code>HelloWorld</code>. Java programs are class-based.</li>
-<li><code>public</code> <code>static</code> <code>void</code> <code>main(String[] args)</code>: The starting point of the program.</li>
-<li><code>System.out.println()</code>: A statement that prints to the console.</li>
-<li><code>{}</code>: Code blocks grouped together.</li>
-<li><code>;</code>: Every statement ends with a semicolon.</li>
-</ul>
-<h2>🧭 Java is Case-Sensitive</h2>
-<p>These are <strong>not</strong> the same:</p>
-<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs">System.out.println();    <span class="hljs-comment">// valid</span>
-system.out.println();    <span class="hljs-comment">// invalid – “system” should be capitalized</span></code></pre>
-</code></pre><h2>🧠 Naming Conventions</h2>
-<p>Follow these <strong>standard conventions</strong> to keep code readable:</p>
-<p>| Type           | Convention               | Example            |
-|-||--|
-| Class          | PascalCase                | <code>MyFirstClass</code>     |
-| Method/Variable| camelCase                 | <code>printMessage()</code>   |
-| Constant       | ALL_CAPS_WITH_UNDERSCORES | <code>MAX_VALUE</code>        |</p>
-<h2>✅ Code Formatting Tips</h2>
-<ul>
-<li>Use <strong>indentation</strong> (typically 4 spaces or a tab).</li>
-<li>Keep braces on the same or next line (consistent with your IDE settings).</li>
-<li>Add comments using:<ul>
-<li><code>//</code> for single line</li>
-<li><code>/* */</code> for multi-line</li>
-</ul>
-</li>
-</ul>
+<h2>❓ What is a Comment?</h2>
+<p>A <strong>comment</strong> is a line in your code that is <strong>ignored by the compiler</strong>. It’s meant for <strong>humans</strong>, not machines.</p>
+<blockquote>
+<p>Use comments to explain <em>why</em> you&#39;re doing something, not <em>what</em> — your code should already say <em>what</em>.</p>
+</blockquote>
+<h2>🧵 Single-line Comments</h2>
+<p>Use <code>//</code> to add a comment that ends at the line break.</p>
 <pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-comment">// This is a single-line comment</span>
-
-<span class="hljs-comment">/*
- This is a
- multi-line comment
-*/</span></code></pre>
-</code></pre><h2>💡 Example: Simple Java Program</h2>
-<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Greeting</span> {
-    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> {
-        <span class="hljs-type">String</span> <span class="hljs-variable">name</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;Java&quot;</span>;
-        System.out.println(<span class="hljs-string">&quot;Hello, &quot;</span> + name + <span class="hljs-string">&quot;!&quot;</span>);
-    }
+<span class="hljs-type">int</span> <span class="hljs-variable">x</span> <span class="hljs-operator">=</span> <span class="hljs-number">10</span>; <span class="hljs-comment">// This sets x to 10</span></code></pre>
+</code></pre><h2>📜 Multi-line Comments</h2>
+<p>Use <code>/* */</code> to write comments that span multiple lines.</p>
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-comment">/*
+This is a multi-line comment.
+Useful for longer explanations.
+*/</span>
+<span class="hljs-type">int</span> <span class="hljs-variable">y</span> <span class="hljs-operator">=</span> <span class="hljs-number">20</span>;</code></pre>
+</code></pre><h2>📚 Javadoc Comments</h2>
+<p>Use <code>/** */</code> for <strong>Javadoc</strong> comments — these are used to generate external documentation for your classes and methods.</p>
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-comment">/**
+ * This method adds two numbers.
+ * <span class="hljs-doctag">@param</span> a First number
+ * <span class="hljs-doctag">@param</span> b Second number
+ * <span class="hljs-doctag">@return</span> Sum of a and b
+ */</span>
+<span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">add</span><span class="hljs-params">(<span class="hljs-type">int</span> a, <span class="hljs-type">int</span> b)</span> {
+    <span class="hljs-keyword">return</span> a + b;
 }</code></pre>
-</code></pre><h2>🚫 Common Syntax Errors</h2>
-<ul>
-<li>Missing semicolon <code>;</code></li>
-<li>Unmatched braces <code>{}</code> or parentheses <code>()</code></li>
-<li>Wrong casing (e.g., <code>String</code> vs <code>string</code>)</li>
-<li>Incorrect method or class names</li>
-</ul>
+</code></pre><p>Generate docs using:</p>
+<pre><code class="hljs"><pre class="highlight"><code class="hljs">javadoc MyClass.java</code></pre>
+</code></pre><h2>❌ Commenting Out Code</h2>
+<p>You can temporarily disable code without deleting it:</p>
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-comment">// int temp = 42;</span>
+<span class="hljs-comment">// System.out.println(temp);</span></code></pre>
+</code></pre><p>Great for debugging or testing.</p>
 <h2>📘 Recap</h2>
-<p>Java code follows a consistent structure:</p>
 <ul>
-<li>Classes contain methods</li>
-<li>The <code>main()</code> method is the starting point</li>
-<li>Every statement ends in <code>;</code></li>
-<li>Curly braces define code blocks</li>
+<li>Use <code>//</code> for single lines, <code>/* */</code> for blocks</li>
+<li>Use <code>/** */</code> for generating documentation (Javadoc)</li>
+<li>Comment <em>why</em> something is done, not just <em>what</em></li>
+<li>Avoid over-commenting obvious code</li>
 </ul>
 
       <app-subscribe></app-subscribe>

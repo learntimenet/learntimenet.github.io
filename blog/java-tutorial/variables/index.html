@@ -1,10 +1,10 @@
 
             <!DOCTYPE html>
-            <html lang="en" data-translated="false" data-breadcrump-title="Java Syntax">
+            <html lang="en" data-translated="false" data-breadcrump-title="Java Variables">
             <head>
                 <meta charset="utf-8" />
-                <title>Learn Time | Java Tutorial - Java Syntax</title>
-                <meta name="description" content="Learn the basic structure and syntax of Java programs, including how classes and methods are written, how statements work, and common Java formatting rules.">
+                <title>Learn Time | Java Tutorial - Variables</title>
+                <meta name="description" content="Learn how to use variables in Java. Understand declaration, assignment, constants, type inference, and naming conventions with examples.">
                 
                 <meta name="viewport" content="width=device-width,initial-scale=1" />
                 <!--
@@ -35,14 +35,14 @@
                     .loader.hide {opacity: 0;}
                 </style>
                 
-            <meta property="og:title" content="Java Tutorial - Java Syntax" />
-            <meta property="og:description" content="Learn the basic structure and syntax of Java programs, including how classes and methods are written, how statements work, and common Java formatting rules." />
-            <meta property="og:image" content="https://learntime.net/assets/thumbnail/blog/blog-2.jpg" />
+            <meta property="og:title" content="Java Tutorial - Variables" />
+            <meta property="og:description" content="Learn how to use variables in Java. Understand declaration, assignment, constants, type inference, and naming conventions with examples." />
+            <meta property="og:image" content="https://learntime.net/assets/thumbnail/blog/blog-6.jpg" />
             <meta name="twitter:card" content="summary_large_image">
             <meta name="twitter:creator" content="@learntimenet">
-            <meta name="twitter:title" content="Java Tutorial - Java Syntax">
-            <meta name="twitter:description" content="Learn the basic structure and syntax of Java programs, including how classes and methods are written, how statements work, and common Java formatting rules.">
-            <meta name="twitter:image" content="https://learntime.net/assets/thumbnail/blog/blog-2.jpg">
+            <meta name="twitter:title" content="Java Tutorial - Variables">
+            <meta name="twitter:description" content="Learn how to use variables in Java. Understand declaration, assignment, constants, type inference, and naming conventions with examples.">
+            <meta name="twitter:image" content="https://learntime.net/assets/thumbnail/blog/blog-6.jpg">
         
                 <script>
                     var disqus_config = function () {
@@ -50,7 +50,7 @@
                         this.page.identifier = window.location.pathname.replace('/en', '');
                     };
                 </script>
-            <script defer src="/blog/java-tutorial/syntax/syntax.d86b8ad3e4d5a43a36a2.js"></script></head>
+            <script defer src="/blog/java-tutorial/variables/variables.d69c59ca6921957b0c18.js"></script></head>
             <body>
                 <div class="loader">
                     <div class="loading-bar">
@@ -85,79 +85,59 @@
   </div>
   <div class="main-container">
     <app-breadcrumbs class="tutorial"></app-breadcrumbs>
-    <app-blog-title class="tutorial" blog-title="Java Syntax" blog-description="Learn the basic structure and syntax of Java programs, including how classes and methods are written, how statements work, and common Java formatting rules." blog-image="/assets/images/blog/blog-2.jpg"></app-blog-title>
+    <app-blog-title class="tutorial" blog-title="Java Variables" blog-description="Learn how to use variables in Java. Understand declaration, assignment, constants, type inference, and naming conventions with examples." blog-image="/assets/images/blog/blog-6.jpg"></app-blog-title>
     <div class="blog-content markdown">
       <h2>📝 What You’ll Learn</h2>
 <ul>
-<li>Java program structure</li>
-<li>Key syntax elements: classes, methods, statements</li>
-<li>Naming conventions</li>
-<li>How Java code is organized and executed</li>
+<li>What variables are</li>
+<li>How to declare and assign values</li>
+<li>Variable naming rules</li>
+<li>Constants with <code>final</code></li>
+<li>Intro to <code>var</code> (type inference)</li>
 </ul>
-<h2>🧱 Basic Java Structure</h2>
-<p>Every Java application is made up of <strong>classes</strong> and <strong>methods</strong>. The <strong><code>main</code> method</strong> is the entry point of any standalone Java program.</p>
-<p>Here’s a minimal Java program:</p>
-<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">HelloWorld</span> {
-    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> {
-        System.out.println(<span class="hljs-string">&quot;Hello, World!&quot;</span>);
-    }
-}</code></pre>
-</code></pre><h3>🔍 Breakdown</h3>
+<h2>📦 What is a Variable?</h2>
+<p>A <strong>variable</strong> is a name that refers to a value stored in memory. It&#39;s like a labeled box that holds data your program needs.</p>
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-type">int</span> <span class="hljs-variable">age</span> <span class="hljs-operator">=</span> <span class="hljs-number">25</span>;
+<span class="hljs-type">String</span> <span class="hljs-variable">name</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;Alice&quot;</span>;</code></pre>
+</code></pre><h2>✍️ Declaring a Variable</h2>
+<p>Syntax:</p>
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-type">type</span> <span class="hljs-variable">variableName</span> <span class="hljs-operator">=</span> value;</code></pre>
+</code></pre><p>Examples:</p>
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-type">int</span> <span class="hljs-variable">number</span> <span class="hljs-operator">=</span> <span class="hljs-number">10</span>;
+<span class="hljs-type">String</span> <span class="hljs-variable">city</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;Tokyo&quot;</span>;</code></pre>
+</code></pre><h2>🔁 Updating Variables</h2>
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-type">int</span> <span class="hljs-variable">score</span> <span class="hljs-operator">=</span> <span class="hljs-number">100</span>;
+score = <span class="hljs-number">150</span>;  <span class="hljs-comment">// updated value</span></code></pre>
+</code></pre><p>You can declare first, assign later:</p>
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-type">int</span> level;
+level = <span class="hljs-number">5</span>;</code></pre>
+</code></pre><h2>🚫 Constants with <strong>final</strong></h2>
+<p>Use the <code>final</code> keyword to make a variable <strong>read-only</strong> after it’s assigned.</p>
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">final</span> <span class="hljs-type">double</span> <span class="hljs-variable">PI</span> <span class="hljs-operator">=</span> <span class="hljs-number">3.14159</span>;
+<span class="hljs-comment">// PI = 3.14; ❌ Error – cannot reassign</span></code></pre>
+</code></pre><p>✅ Constants are usually written in <strong>UPPERCASE</strong> with underscores: <code>MAX_SPEED</code>, <code>DEFAULT_TIMEOUT</code>.</p>
+<h2>🤖 Type Inference (Java 10+)</h2>
+<p>If you&#39;re using Java 10 or newer, you can use <code>var</code> to let the compiler infer the type:</p>
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-type">var</span> <span class="hljs-variable">name</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;Java&quot;</span>;   <span class="hljs-comment">// String</span>
+<span class="hljs-type">var</span> <span class="hljs-variable">count</span> <span class="hljs-operator">=</span> <span class="hljs-number">5</span>;       <span class="hljs-comment">// int</span></code></pre>
+</code></pre><p>⚠️ Note: <code>var</code> <strong>must</strong> be initialized on declaration.</p>
+<h2>✅ Naming Rules &amp; Best Practices</h2>
 <ul>
-<li><code>public</code> <code>class</code> <code>HelloWorld</code>: Defines a class named <code>HelloWorld</code>. Java programs are class-based.</li>
-<li><code>public</code> <code>static</code> <code>void</code> <code>main(String[] args)</code>: The starting point of the program.</li>
-<li><code>System.out.println()</code>: A statement that prints to the console.</li>
-<li><code>{}</code>: Code blocks grouped together.</li>
-<li><code>;</code>: Every statement ends with a semicolon.</li>
+<li>Must start with a <strong>letter</strong>, <code>_</code>, or <code>$</code></li>
+<li>Can contain <strong>letters and numbers</strong></li>
+<li><strong>Cannot</strong> use spaces or start with a digit</li>
+<li>Avoid Java <strong>reserved words</strong> like <code>int</code>, <code>class</code>, <code>public</code>, etc.</li>
 </ul>
-<h2>🧭 Java is Case-Sensitive</h2>
-<p>These are <strong>not</strong> the same:</p>
-<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs">System.out.println();    <span class="hljs-comment">// valid</span>
-system.out.println();    <span class="hljs-comment">// invalid – “system” should be capitalized</span></code></pre>
-</code></pre><h2>🧠 Naming Conventions</h2>
-<p>Follow these <strong>standard conventions</strong> to keep code readable:</p>
-<p>| Type           | Convention               | Example            |
-|-||--|
-| Class          | PascalCase                | <code>MyFirstClass</code>     |
-| Method/Variable| camelCase                 | <code>printMessage()</code>   |
-| Constant       | ALL_CAPS_WITH_UNDERSCORES | <code>MAX_VALUE</code>        |</p>
-<h2>✅ Code Formatting Tips</h2>
+<h3>✅ Good names:</h3>
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs">userAge, totalScore, MAX_VALUE</code></pre>
+</code></pre><h3>❌ Avoid:</h3>
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-type">int</span>, 2cool, user age</code></pre>
+</code></pre><h2>📘 Recap</h2>
 <ul>
-<li>Use <strong>indentation</strong> (typically 4 spaces or a tab).</li>
-<li>Keep braces on the same or next line (consistent with your IDE settings).</li>
-<li>Add comments using:<ul>
-<li><code>//</code> for single line</li>
-<li><code>/* */</code> for multi-line</li>
-</ul>
-</li>
-</ul>
-<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-comment">// This is a single-line comment</span>
-
-<span class="hljs-comment">/*
- This is a
- multi-line comment
-*/</span></code></pre>
-</code></pre><h2>💡 Example: Simple Java Program</h2>
-<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Greeting</span> {
-    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> {
-        <span class="hljs-type">String</span> <span class="hljs-variable">name</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;Java&quot;</span>;
-        System.out.println(<span class="hljs-string">&quot;Hello, &quot;</span> + name + <span class="hljs-string">&quot;!&quot;</span>);
-    }
-}</code></pre>
-</code></pre><h2>🚫 Common Syntax Errors</h2>
-<ul>
-<li>Missing semicolon <code>;</code></li>
-<li>Unmatched braces <code>{}</code> or parentheses <code>()</code></li>
-<li>Wrong casing (e.g., <code>String</code> vs <code>string</code>)</li>
-<li>Incorrect method or class names</li>
-</ul>
-<h2>📘 Recap</h2>
-<p>Java code follows a consistent structure:</p>
-<ul>
-<li>Classes contain methods</li>
-<li>The <code>main()</code> method is the starting point</li>
-<li>Every statement ends in <code>;</code></li>
-<li>Curly braces define code blocks</li>
+<li>Variables store values that your program uses and updates</li>
+<li>Declare them with a type, or use <code>var</code> in modern Java</li>
+<li>Use <code>final</code> for constants</li>
+<li>Follow naming rules and use descriptive names</li>
 </ul>
 
       <app-subscribe></app-subscribe>

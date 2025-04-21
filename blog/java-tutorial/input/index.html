@@ -1,10 +1,10 @@
 
             <!DOCTYPE html>
-            <html lang="en" data-translated="false" data-breadcrump-title="Java Syntax">
+            <html lang="en" data-translated="false" data-breadcrump-title="Java Input">
             <head>
                 <meta charset="utf-8" />
-                <title>Learn Time | Java Tutorial - Java Syntax</title>
-                <meta name="description" content="Learn the basic structure and syntax of Java programs, including how classes and methods are written, how statements work, and common Java formatting rules.">
+                <title>Learn Time | Java Tutorial - Java Input</title>
+                <meta name="description" content="Learn Java input handling using the Scanner class. Accept user input like strings, numbers, and booleans with full code examples and best practices.">
                 
                 <meta name="viewport" content="width=device-width,initial-scale=1" />
                 <!--
@@ -35,14 +35,14 @@
                     .loader.hide {opacity: 0;}
                 </style>
                 
-            <meta property="og:title" content="Java Tutorial - Java Syntax" />
-            <meta property="og:description" content="Learn the basic structure and syntax of Java programs, including how classes and methods are written, how statements work, and common Java formatting rules." />
-            <meta property="og:image" content="https://learntime.net/assets/thumbnail/blog/blog-2.jpg" />
+            <meta property="og:title" content="Java Tutorial - Java Input" />
+            <meta property="og:description" content="Learn Java input handling using the Scanner class. Accept user input like strings, numbers, and booleans with full code examples and best practices." />
+            <meta property="og:image" content="https://learntime.net/assets/thumbnail/blog/blog-4.jpg" />
             <meta name="twitter:card" content="summary_large_image">
             <meta name="twitter:creator" content="@learntimenet">
-            <meta name="twitter:title" content="Java Tutorial - Java Syntax">
-            <meta name="twitter:description" content="Learn the basic structure and syntax of Java programs, including how classes and methods are written, how statements work, and common Java formatting rules.">
-            <meta name="twitter:image" content="https://learntime.net/assets/thumbnail/blog/blog-2.jpg">
+            <meta name="twitter:title" content="Java Tutorial - Java Input">
+            <meta name="twitter:description" content="Learn Java input handling using the Scanner class. Accept user input like strings, numbers, and booleans with full code examples and best practices.">
+            <meta name="twitter:image" content="https://learntime.net/assets/thumbnail/blog/blog-4.jpg">
         
                 <script>
                     var disqus_config = function () {
@@ -50,7 +50,7 @@
                         this.page.identifier = window.location.pathname.replace('/en', '');
                     };
                 </script>
-            <script defer src="/blog/java-tutorial/syntax/syntax.d86b8ad3e4d5a43a36a2.js"></script></head>
+            <script defer src="/blog/java-tutorial/input/input.25f962ee48dc71c7d063.js"></script></head>
             <body>
                 <div class="loader">
                     <div class="loading-bar">
@@ -85,79 +85,92 @@
   </div>
   <div class="main-container">
     <app-breadcrumbs class="tutorial"></app-breadcrumbs>
-    <app-blog-title class="tutorial" blog-title="Java Syntax" blog-description="Learn the basic structure and syntax of Java programs, including how classes and methods are written, how statements work, and common Java formatting rules." blog-image="/assets/images/blog/blog-2.jpg"></app-blog-title>
+    <app-blog-title class="tutorial" blog-title="Java Input" blog-description="Learn Java input handling using the Scanner class. Accept user input like strings, numbers, and booleans with full code examples and best practices." blog-image="/assets/images/blog/blog-4.jpg"></app-blog-title>
     <div class="blog-content markdown">
       <h2>📝 What You’ll Learn</h2>
 <ul>
-<li>Java program structure</li>
-<li>Key syntax elements: classes, methods, statements</li>
-<li>Naming conventions</li>
-<li>How Java code is organized and executed</li>
+<li>Using <code>Scanner</code> to read input</li>
+<li>Reading strings, integers, doubles, and booleans</li>
+<li>Handling input-related issues</li>
 </ul>
-<h2>🧱 Basic Java Structure</h2>
-<p>Every Java application is made up of <strong>classes</strong> and <strong>methods</strong>. The <strong><code>main</code> method</strong> is the entry point of any standalone Java program.</p>
-<p>Here’s a minimal Java program:</p>
-<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">HelloWorld</span> {
-    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> {
-        System.out.println(<span class="hljs-string">&quot;Hello, World!&quot;</span>);
-    }
-}</code></pre>
-</code></pre><h3>🔍 Breakdown</h3>
-<ul>
-<li><code>public</code> <code>class</code> <code>HelloWorld</code>: Defines a class named <code>HelloWorld</code>. Java programs are class-based.</li>
-<li><code>public</code> <code>static</code> <code>void</code> <code>main(String[] args)</code>: The starting point of the program.</li>
-<li><code>System.out.println()</code>: A statement that prints to the console.</li>
-<li><code>{}</code>: Code blocks grouped together.</li>
-<li><code>;</code>: Every statement ends with a semicolon.</li>
-</ul>
-<h2>🧭 Java is Case-Sensitive</h2>
-<p>These are <strong>not</strong> the same:</p>
-<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs">System.out.println();    <span class="hljs-comment">// valid</span>
-system.out.println();    <span class="hljs-comment">// invalid – “system” should be capitalized</span></code></pre>
-</code></pre><h2>🧠 Naming Conventions</h2>
-<p>Follow these <strong>standard conventions</strong> to keep code readable:</p>
-<p>| Type           | Convention               | Example            |
-|-||--|
-| Class          | PascalCase                | <code>MyFirstClass</code>     |
-| Method/Variable| camelCase                 | <code>printMessage()</code>   |
-| Constant       | ALL_CAPS_WITH_UNDERSCORES | <code>MAX_VALUE</code>        |</p>
-<h2>✅ Code Formatting Tips</h2>
-<ul>
-<li>Use <strong>indentation</strong> (typically 4 spaces or a tab).</li>
-<li>Keep braces on the same or next line (consistent with your IDE settings).</li>
-<li>Add comments using:<ul>
-<li><code>//</code> for single line</li>
-<li><code>/* */</code> for multi-line</li>
-</ul>
-</li>
-</ul>
-<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-comment">// This is a single-line comment</span>
+<h2>🧰 Importing Scanner</h2>
+<p>To use input features, you need to import the <code>Scanner</code> class from <code>java.util</code>.</p>
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">import</span> java.util.Scanner;</code></pre>
+</code></pre><h2>🔡 Basic Example</h2>
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">import</span> java.util.Scanner;
 
-<span class="hljs-comment">/*
- This is a
- multi-line comment
-*/</span></code></pre>
-</code></pre><h2>💡 Example: Simple Java Program</h2>
-<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Greeting</span> {
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">InputExample</span> {
     <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> {
-        <span class="hljs-type">String</span> <span class="hljs-variable">name</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;Java&quot;</span>;
+        <span class="hljs-type">Scanner</span> <span class="hljs-variable">sc</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Scanner</span>(System.in);
+        
+        System.out.print(<span class="hljs-string">&quot;Enter your name: &quot;</span>);
+        <span class="hljs-type">String</span> <span class="hljs-variable">name</span> <span class="hljs-operator">=</span> sc.nextLine();
+        
         System.out.println(<span class="hljs-string">&quot;Hello, &quot;</span> + name + <span class="hljs-string">&quot;!&quot;</span>);
     }
 }</code></pre>
-</code></pre><h2>🚫 Common Syntax Errors</h2>
+</code></pre><p>✅ <code>nextLine()</code> reads a <strong>full line</strong> of input.</p>
+<h2>🔢 Reading Numbers</h2>
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs">System.out.print(<span class="hljs-string">&quot;Enter your age: &quot;</span>);
+<span class="hljs-type">int</span> <span class="hljs-variable">age</span> <span class="hljs-operator">=</span> sc.nextInt();  <span class="hljs-comment">// Reads an integer</span>
+
+System.out.print(<span class="hljs-string">&quot;Enter your height: &quot;</span>);
+<span class="hljs-type">double</span> <span class="hljs-variable">height</span> <span class="hljs-operator">=</span> sc.nextDouble();  <span class="hljs-comment">// Reads a decimal</span></code></pre>
+</code></pre><h2>📌 Other Input Types</h2>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Input Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>next()</code></td>
+<td>Single word</td>
+</tr>
+<tr>
+<td><code>nextLine()</code></td>
+<td>Whole line</td>
+</tr>
+<tr>
+<td><code>nextInt()</code></td>
+<td>Integer</td>
+</tr>
+<tr>
+<td><code>nextDouble()</code></td>
+<td>Decimal</td>
+</tr>
+<tr>
+<td><code>nextBoolean()</code></td>
+<td><code>true</code> / <code>false</code></td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+<h2>⚠️ Common Pitfall: Mixing <strong>nextInt()</strong> and <strong>nextLine()</strong></h2>
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-type">int</span> <span class="hljs-variable">age</span> <span class="hljs-operator">=</span> sc.nextInt();
+sc.nextLine(); <span class="hljs-comment">// Consume leftover newline</span>
+<span class="hljs-type">String</span> <span class="hljs-variable">name</span> <span class="hljs-operator">=</span> sc.nextLine();</code></pre>
+</code></pre><blockquote>
+<p>Always clear the buffer after <code>nextInt()</code> or <code>nextDouble()</code> before using <code>nextLine()</code>.</p>
+</blockquote>
+<h2>🧪 Sample Program</h2>
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs">System.out.print(<span class="hljs-string">&quot;Enter a number: &quot;</span>);
+<span class="hljs-type">int</span> <span class="hljs-variable">num</span> <span class="hljs-operator">=</span> sc.nextInt();
+System.out.println(<span class="hljs-string">&quot;Square: &quot;</span> + (num * num));</code></pre>
+</code></pre><h2>🧼 Closing Scanner</h2>
+<p>Don&#39;t forget to close the scanner when you&#39;re done:</p>
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs">sc.close();</code></pre>
+</code></pre><h2>📘 Recap</h2>
 <ul>
-<li>Missing semicolon <code>;</code></li>
-<li>Unmatched braces <code>{}</code> or parentheses <code>()</code></li>
-<li>Wrong casing (e.g., <code>String</code> vs <code>string</code>)</li>
-<li>Incorrect method or class names</li>
-</ul>
-<h2>📘 Recap</h2>
-<p>Java code follows a consistent structure:</p>
-<ul>
-<li>Classes contain methods</li>
-<li>The <code>main()</code> method is the starting point</li>
-<li>Every statement ends in <code>;</code></li>
-<li>Curly braces define code blocks</li>
+<li>Use <code>Scanner</code> for console input</li>
+<li>Choose the correct method for data type</li>
+<li>Use <code>nextLine()</code> for full sentences</li>
+<li>Watch out for input buffer issues!</li>
 </ul>
 
       <app-subscribe></app-subscribe>

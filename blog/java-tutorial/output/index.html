@@ -1,10 +1,10 @@
 
             <!DOCTYPE html>
-            <html lang="en" data-translated="false" data-breadcrump-title="Java Syntax">
+            <html lang="en" data-translated="false" data-breadcrump-title="Java Output">
             <head>
                 <meta charset="utf-8" />
-                <title>Learn Time | Java Tutorial - Java Syntax</title>
-                <meta name="description" content="Learn the basic structure and syntax of Java programs, including how classes and methods are written, how statements work, and common Java formatting rules.">
+                <title>Learn Time | Java Tutorial - Java Output</title>
+                <meta name="description" content="Learn how to print output in Java using System.out.print, println, and printf. Explore formatting options and escape characters with examples.">
                 
                 <meta name="viewport" content="width=device-width,initial-scale=1" />
                 <!--
@@ -35,14 +35,14 @@
                     .loader.hide {opacity: 0;}
                 </style>
                 
-            <meta property="og:title" content="Java Tutorial - Java Syntax" />
-            <meta property="og:description" content="Learn the basic structure and syntax of Java programs, including how classes and methods are written, how statements work, and common Java formatting rules." />
-            <meta property="og:image" content="https://learntime.net/assets/thumbnail/blog/blog-2.jpg" />
+            <meta property="og:title" content="Java Tutorial - Java Output" />
+            <meta property="og:description" content="Learn how to print output in Java using System.out.print, println, and printf. Explore formatting options and escape characters with examples." />
+            <meta property="og:image" content="https://learntime.net/assets/thumbnail/blog/blog-3.jpg" />
             <meta name="twitter:card" content="summary_large_image">
             <meta name="twitter:creator" content="@learntimenet">
-            <meta name="twitter:title" content="Java Tutorial - Java Syntax">
-            <meta name="twitter:description" content="Learn the basic structure and syntax of Java programs, including how classes and methods are written, how statements work, and common Java formatting rules.">
-            <meta name="twitter:image" content="https://learntime.net/assets/thumbnail/blog/blog-2.jpg">
+            <meta name="twitter:title" content="Java Tutorial - Java Output">
+            <meta name="twitter:description" content="Learn how to print output in Java using System.out.print, println, and printf. Explore formatting options and escape characters with examples.">
+            <meta name="twitter:image" content="https://learntime.net/assets/thumbnail/blog/blog-3.jpg">
         
                 <script>
                     var disqus_config = function () {
@@ -50,7 +50,7 @@
                         this.page.identifier = window.location.pathname.replace('/en', '');
                     };
                 </script>
-            <script defer src="/blog/java-tutorial/syntax/syntax.d86b8ad3e4d5a43a36a2.js"></script></head>
+            <script defer src="/blog/java-tutorial/output/output.8cf984e2b37e72b5f953.js"></script></head>
             <body>
                 <div class="loader">
                     <div class="loading-bar">
@@ -85,79 +85,111 @@
   </div>
   <div class="main-container">
     <app-breadcrumbs class="tutorial"></app-breadcrumbs>
-    <app-blog-title class="tutorial" blog-title="Java Syntax" blog-description="Learn the basic structure and syntax of Java programs, including how classes and methods are written, how statements work, and common Java formatting rules." blog-image="/assets/images/blog/blog-2.jpg"></app-blog-title>
+    <app-blog-title class="tutorial" blog-title="Java Output" blog-description="Learn how to print output in Java using System.out.print, println, and printf. Explore formatting options and escape characters with examples." blog-image="/assets/images/blog/blog-3.jpg"></app-blog-title>
     <div class="blog-content markdown">
       <h2>📝 What You’ll Learn</h2>
 <ul>
-<li>Java program structure</li>
-<li>Key syntax elements: classes, methods, statements</li>
-<li>Naming conventions</li>
-<li>How Java code is organized and executed</li>
+<li>Using <code>System.out.print()</code> and <code>println()</code></li>
+<li>Formatting output with <code>printf()</code></li>
+<li>Escape characters (like <code>\n</code>, <code>\t</code>)</li>
+<li>Printing variables and expressions</li>
 </ul>
-<h2>🧱 Basic Java Structure</h2>
-<p>Every Java application is made up of <strong>classes</strong> and <strong>methods</strong>. The <strong><code>main</code> method</strong> is the entry point of any standalone Java program.</p>
-<p>Here’s a minimal Java program:</p>
-<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">HelloWorld</span> {
-    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> {
-        System.out.println(<span class="hljs-string">&quot;Hello, World!&quot;</span>);
-    }
-}</code></pre>
-</code></pre><h3>🔍 Breakdown</h3>
-<ul>
-<li><code>public</code> <code>class</code> <code>HelloWorld</code>: Defines a class named <code>HelloWorld</code>. Java programs are class-based.</li>
-<li><code>public</code> <code>static</code> <code>void</code> <code>main(String[] args)</code>: The starting point of the program.</li>
-<li><code>System.out.println()</code>: A statement that prints to the console.</li>
-<li><code>{}</code>: Code blocks grouped together.</li>
-<li><code>;</code>: Every statement ends with a semicolon.</li>
+<h2>📤 Basic Output</h2>
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs">System.out.print(<span class="hljs-string">&quot;Hello &quot;</span>);
+System.out.println(<span class="hljs-string">&quot;World!&quot;</span>);</code></pre>
+</code></pre><h3>Output:</h3>
+<pre><code class="hljs"><pre class="highlight"><code class="hljs">Hello World!</code></pre>
+</code></pre><ul>
+<li><code>print()</code> writes text <strong>without</strong> a new line  </li>
+<li><code>println()</code> adds a <strong>newline</strong> at the end</li>
 </ul>
-<h2>🧭 Java is Case-Sensitive</h2>
-<p>These are <strong>not</strong> the same:</p>
-<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs">System.out.println();    <span class="hljs-comment">// valid</span>
-system.out.println();    <span class="hljs-comment">// invalid – “system” should be capitalized</span></code></pre>
-</code></pre><h2>🧠 Naming Conventions</h2>
-<p>Follow these <strong>standard conventions</strong> to keep code readable:</p>
-<p>| Type           | Convention               | Example            |
-|-||--|
-| Class          | PascalCase                | <code>MyFirstClass</code>     |
-| Method/Variable| camelCase                 | <code>printMessage()</code>   |
-| Constant       | ALL_CAPS_WITH_UNDERSCORES | <code>MAX_VALUE</code>        |</p>
-<h2>✅ Code Formatting Tips</h2>
-<ul>
-<li>Use <strong>indentation</strong> (typically 4 spaces or a tab).</li>
-<li>Keep braces on the same or next line (consistent with your IDE settings).</li>
-<li>Add comments using:<ul>
-<li><code>//</code> for single line</li>
-<li><code>/* */</code> for multi-line</li>
-</ul>
-</li>
-</ul>
-<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-comment">// This is a single-line comment</span>
+<h2>✍️ Printing Variables</h2>
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-type">String</span> <span class="hljs-variable">name</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;Java&quot;</span>;
+<span class="hljs-type">int</span> <span class="hljs-variable">year</span> <span class="hljs-operator">=</span> <span class="hljs-number">2025</span>;
+System.out.println(<span class="hljs-string">&quot;Welcome to &quot;</span> + name + <span class="hljs-string">&quot; in &quot;</span> + year);</code></pre>
+</code></pre><h3>Output:</h3>
+<pre><code class="hljs"><pre class="highlight"><code class="hljs">Welcome to Java in 2025</code></pre>
+</code></pre><h2>🧑‍💻 Formatted Output with <strong>printf()</strong></h2>
+<p>The <code>printf()</code> method lets you control <strong>how</strong> values are displayed — similar to C-style formatting.</p>
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs">System.out.printf(<span class="hljs-string">&quot;Name: %s, Age: %d, Score: %.2f&quot;</span>, <span class="hljs-string">&quot;Alice&quot;</span>, <span class="hljs-number">25</span>, <span class="hljs-number">95.678</span>);</code></pre>
+</code></pre><h3>Output:</h3>
+<pre><code class="hljs"><pre class="highlight"><code class="hljs">Name: Alice, Age: 25, Score: 95.68</code></pre>
+</code></pre><h3>Common Format Specifiers</h3>
+<table>
+<thead>
+<tr>
+<th>Format</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>%s</code></td>
+<td>String</td>
+</tr>
+<tr>
+<td><code>%d</code></td>
+<td>Integer (decimal)</td>
+</tr>
+<tr>
+<td><code>%f</code></td>
+<td>Floating-point number</td>
+</tr>
+<tr>
+<td><code>%.2f</code></td>
+<td>Two decimal places</td>
+</tr>
+<tr>
+<td><code>%n</code></td>
+<td>New line (platform-safe)</td>
+</tr>
+</tbody>
+</table>
 
-<span class="hljs-comment">/*
- This is a
- multi-line comment
-*/</span></code></pre>
-</code></pre><h2>💡 Example: Simple Java Program</h2>
-<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Greeting</span> {
-    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> {
-        <span class="hljs-type">String</span> <span class="hljs-variable">name</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;Java&quot;</span>;
-        System.out.println(<span class="hljs-string">&quot;Hello, &quot;</span> + name + <span class="hljs-string">&quot;!&quot;</span>);
-    }
-}</code></pre>
-</code></pre><h2>🚫 Common Syntax Errors</h2>
+
+
+
+<h2>🔣 Escape Characters</h2>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>\n</code></td>
+<td>New line</td>
+</tr>
+<tr>
+<td><code>\t</code></td>
+<td>Tab</td>
+</tr>
+<tr>
+<td><code>\\</code></td>
+<td>Backslash</td>
+</tr>
+<tr>
+<td><code>\&quot;</code></td>
+<td>Double quote</td>
+</tr>
+</tbody>
+</table>
+
+
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs">System.out.println(<span class="hljs-string">&quot;Line1\nLine2&quot;</span>);
+System.out.println(<span class="hljs-string">&quot;Path: C:\\Java\\bin&quot;</span>);</code></pre>
+</code></pre><h2>🧪 Output Expressions</h2>
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs">System.out.println(<span class="hljs-string">&quot;2 + 3 = &quot;</span> + (<span class="hljs-number">2</span> + <span class="hljs-number">3</span>));</code></pre>
+</code></pre><h3>Output:</h3>
+<pre><code class="hljs"><pre class="highlight"><code class="hljs">2 + 3 = 5</code></pre>
+</code></pre><h2>📘 Recap</h2>
 <ul>
-<li>Missing semicolon <code>;</code></li>
-<li>Unmatched braces <code>{}</code> or parentheses <code>()</code></li>
-<li>Wrong casing (e.g., <code>String</code> vs <code>string</code>)</li>
-<li>Incorrect method or class names</li>
-</ul>
-<h2>📘 Recap</h2>
-<p>Java code follows a consistent structure:</p>
-<ul>
-<li>Classes contain methods</li>
-<li>The <code>main()</code> method is the starting point</li>
-<li>Every statement ends in <code>;</code></li>
-<li>Curly braces define code blocks</li>
+<li>Use <code>print()</code> for inline, <code>println()</code> for line breaks</li>
+<li><code>printf()</code> for formatted and styled output</li>
+<li>Escape characters add tabs, newlines, etc.</li>
+<li>Combine text + variables with <code>+</code> or format specifiers</li>
 </ul>
 
       <app-subscribe></app-subscribe>

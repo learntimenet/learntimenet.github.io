@@ -1,10 +1,10 @@
 
             <!DOCTYPE html>
-            <html lang="en" data-translated="false" data-breadcrump-title="Java Syntax">
+            <html lang="en" data-translated="false" data-breadcrump-title="Java Data Types">
             <head>
                 <meta charset="utf-8" />
-                <title>Learn Time | Java Tutorial - Java Syntax</title>
-                <meta name="description" content="Learn the basic structure and syntax of Java programs, including how classes and methods are written, how statements work, and common Java formatting rules.">
+                <title>Learn Time | Java Tutorial - Data Types</title>
+                <meta name="description" content="Understand Java data types with clear examples. Learn about primitives like int, double, and boolean, and reference types like String and arrays.">
                 
                 <meta name="viewport" content="width=device-width,initial-scale=1" />
                 <!--
@@ -35,14 +35,14 @@
                     .loader.hide {opacity: 0;}
                 </style>
                 
-            <meta property="og:title" content="Java Tutorial - Java Syntax" />
-            <meta property="og:description" content="Learn the basic structure and syntax of Java programs, including how classes and methods are written, how statements work, and common Java formatting rules." />
-            <meta property="og:image" content="https://learntime.net/assets/thumbnail/blog/blog-2.jpg" />
+            <meta property="og:title" content="Java Tutorial - Data Types" />
+            <meta property="og:description" content="Understand Java data types with clear examples. Learn about primitives like int, double, and boolean, and reference types like String and arrays." />
+            <meta property="og:image" content="https://learntime.net/assets/thumbnail/blog/blog-7.jpg" />
             <meta name="twitter:card" content="summary_large_image">
             <meta name="twitter:creator" content="@learntimenet">
-            <meta name="twitter:title" content="Java Tutorial - Java Syntax">
-            <meta name="twitter:description" content="Learn the basic structure and syntax of Java programs, including how classes and methods are written, how statements work, and common Java formatting rules.">
-            <meta name="twitter:image" content="https://learntime.net/assets/thumbnail/blog/blog-2.jpg">
+            <meta name="twitter:title" content="Java Tutorial - Data Types">
+            <meta name="twitter:description" content="Understand Java data types with clear examples. Learn about primitives like int, double, and boolean, and reference types like String and arrays.">
+            <meta name="twitter:image" content="https://learntime.net/assets/thumbnail/blog/blog-7.jpg">
         
                 <script>
                     var disqus_config = function () {
@@ -50,7 +50,7 @@
                         this.page.identifier = window.location.pathname.replace('/en', '');
                     };
                 </script>
-            <script defer src="/blog/java-tutorial/syntax/syntax.d86b8ad3e4d5a43a36a2.js"></script></head>
+            <script defer src="/blog/java-tutorial/data-types/data-types.0f4d51aaf54f40dab898.js"></script></head>
             <body>
                 <div class="loader">
                     <div class="loading-bar">
@@ -85,79 +85,116 @@
   </div>
   <div class="main-container">
     <app-breadcrumbs class="tutorial"></app-breadcrumbs>
-    <app-blog-title class="tutorial" blog-title="Java Syntax" blog-description="Learn the basic structure and syntax of Java programs, including how classes and methods are written, how statements work, and common Java formatting rules." blog-image="/assets/images/blog/blog-2.jpg"></app-blog-title>
+    <app-blog-title class="tutorial" blog-title="Java Data Types" blog-description="Understand Java data types with clear examples. Learn about primitives like int, double, and boolean, and reference types like String and arrays." blog-image="/assets/images/blog/blog-7.jpg"></app-blog-title>
     <div class="blog-content markdown">
       <h2>📝 What You’ll Learn</h2>
 <ul>
-<li>Java program structure</li>
-<li>Key syntax elements: classes, methods, statements</li>
-<li>Naming conventions</li>
-<li>How Java code is organized and executed</li>
+<li>What data types are</li>
+<li>Primitive vs reference types</li>
+<li>Overview of all 8 primitive types</li>
+<li>Type conversions (casting)</li>
 </ul>
-<h2>🧱 Basic Java Structure</h2>
-<p>Every Java application is made up of <strong>classes</strong> and <strong>methods</strong>. The <strong><code>main</code> method</strong> is the entry point of any standalone Java program.</p>
-<p>Here’s a minimal Java program:</p>
-<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">HelloWorld</span> {
-    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> {
-        System.out.println(<span class="hljs-string">&quot;Hello, World!&quot;</span>);
-    }
-}</code></pre>
-</code></pre><h3>🔍 Breakdown</h3>
-<ul>
-<li><code>public</code> <code>class</code> <code>HelloWorld</code>: Defines a class named <code>HelloWorld</code>. Java programs are class-based.</li>
-<li><code>public</code> <code>static</code> <code>void</code> <code>main(String[] args)</code>: The starting point of the program.</li>
-<li><code>System.out.println()</code>: A statement that prints to the console.</li>
-<li><code>{}</code>: Code blocks grouped together.</li>
-<li><code>;</code>: Every statement ends with a semicolon.</li>
-</ul>
-<h2>🧭 Java is Case-Sensitive</h2>
-<p>These are <strong>not</strong> the same:</p>
-<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs">System.out.println();    <span class="hljs-comment">// valid</span>
-system.out.println();    <span class="hljs-comment">// invalid – “system” should be capitalized</span></code></pre>
-</code></pre><h2>🧠 Naming Conventions</h2>
-<p>Follow these <strong>standard conventions</strong> to keep code readable:</p>
-<p>| Type           | Convention               | Example            |
-|-||--|
-| Class          | PascalCase                | <code>MyFirstClass</code>     |
-| Method/Variable| camelCase                 | <code>printMessage()</code>   |
-| Constant       | ALL_CAPS_WITH_UNDERSCORES | <code>MAX_VALUE</code>        |</p>
-<h2>✅ Code Formatting Tips</h2>
-<ul>
-<li>Use <strong>indentation</strong> (typically 4 spaces or a tab).</li>
-<li>Keep braces on the same or next line (consistent with your IDE settings).</li>
-<li>Add comments using:<ul>
-<li><code>//</code> for single line</li>
-<li><code>/* */</code> for multi-line</li>
-</ul>
-</li>
-</ul>
-<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-comment">// This is a single-line comment</span>
+<h2>📦 What is a Data Type?</h2>
+<p>A <strong>data type</strong> defines the kind of value a variable can hold — like numbers, text, true/false, etc.</p>
+<p>Every variable in Java <strong>must</strong> have a data type.</p>
+<h2>🔢 Primitive Data Types</h2>
+<p>Java has <strong>8 primitive types</strong> built into the language:</p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>byte</code></td>
+<td>8-bit integer</td>
+<td><code>byte a = 100;</code></td>
+</tr>
+<tr>
+<td><code>short</code></td>
+<td>16-bit integer</td>
+<td><code>short b = 2000;</code></td>
+</tr>
+<tr>
+<td><code>int</code></td>
+<td>32-bit integer</td>
+<td><code>int c = 10000;</code></td>
+</tr>
+<tr>
+<td><code>long</code></td>
+<td>64-bit integer</td>
+<td><code>long d = 100000L;</code></td>
+</tr>
+<tr>
+<td><code>float</code></td>
+<td>32-bit decimal</td>
+<td><code>float e = 5.75f;</code></td>
+</tr>
+<tr>
+<td><code>double</code></td>
+<td>64-bit decimal (default)</td>
+<td><code>double f = 19.99;</code></td>
+</tr>
+<tr>
+<td><code>char</code></td>
+<td>Single Unicode character</td>
+<td><code>char g = &#39;A&#39;;</code></td>
+</tr>
+<tr>
+<td><code>boolean</code></td>
+<td>True or false</td>
+<td><code>boolean h = true;</code></td>
+</tr>
+</tbody>
+</table>
 
-<span class="hljs-comment">/*
- This is a
- multi-line comment
-*/</span></code></pre>
-</code></pre><h2>💡 Example: Simple Java Program</h2>
-<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Greeting</span> {
-    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> {
-        <span class="hljs-type">String</span> <span class="hljs-variable">name</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;Java&quot;</span>;
-        System.out.println(<span class="hljs-string">&quot;Hello, &quot;</span> + name + <span class="hljs-string">&quot;!&quot;</span>);
-    }
-}</code></pre>
-</code></pre><h2>🚫 Common Syntax Errors</h2>
+
+<blockquote>
+<p>Use <code>float</code> with an <code>f</code> suffix, and <code>long</code> with an <code>L</code> suffix.</p>
+</blockquote>
+<h2>🧱 Reference (Non-Primitive) Data Types</h2>
+<p>These store <strong>references</strong> (addresses) to objects in memory.</p>
+<p>Common examples:</p>
 <ul>
-<li>Missing semicolon <code>;</code></li>
-<li>Unmatched braces <code>{}</code> or parentheses <code>()</code></li>
-<li>Wrong casing (e.g., <code>String</code> vs <code>string</code>)</li>
-<li>Incorrect method or class names</li>
+<li><code>String</code>  </li>
+<li>Arrays (<code>int[]</code>, <code>String[]</code>)</li>
+<li>Classes and Objects</li>
 </ul>
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-type">String</span> <span class="hljs-variable">name</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;Java&quot;</span>;
+<span class="hljs-type">int</span>[] numbers = {<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>};</code></pre>
+</code></pre><h2>🔁 Type Conversion (Casting)</h2>
+<h3>🔹 Widening Conversion (automatic)</h3>
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-type">int</span> <span class="hljs-variable">a</span> <span class="hljs-operator">=</span> <span class="hljs-number">10</span>;
+<span class="hljs-type">double</span> <span class="hljs-variable">b</span> <span class="hljs-operator">=</span> a;  <span class="hljs-comment">// OK: int to double</span></code></pre>
+</code></pre><h3>🔸 Narrowing Conversion (manual)</h3>
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-type">double</span> <span class="hljs-variable">x</span> <span class="hljs-operator">=</span> <span class="hljs-number">9.8</span>;
+<span class="hljs-type">int</span> <span class="hljs-variable">y</span> <span class="hljs-operator">=</span> (<span class="hljs-type">int</span>) x;  <span class="hljs-comment">// y = 9</span></code></pre>
+</code></pre><h2>💡 Default Values (for class-level variables)</h2>
+<table><thead><tr><th>Type</th>
+<th>Default</th>
+</tr></thead><tbody><tr><td><code>int</code></td>
+<td><code>0</code></td>
+</tr><tr><td><code>double</code></td>
+<td><code>0.0</code></td>
+</tr><tr><td><code>boolean</code></td>
+<td><code>false</code></td>
+</tr><tr><td><code>char</code></td>
+<td><code>\u0000</code></td>
+</tr><tr><td><code>String</code></td>
+<td><code>null</code></td>
+</tr></tbody></table><blockquote>
+<p>Local variables must be initialized before use.</p>
+</blockquote>
+<h2>🧠 Tip: Prefer <code>int</code> for whole numbers, <code>double</code> for decimals unless you need precision control (use <code>float</code>).</h2>
 <h2>📘 Recap</h2>
-<p>Java code follows a consistent structure:</p>
 <ul>
-<li>Classes contain methods</li>
-<li>The <code>main()</code> method is the starting point</li>
-<li>Every statement ends in <code>;</code></li>
-<li>Curly braces define code blocks</li>
+<li>Java has 8 built-in primitive types and many reference types</li>
+<li>Use the right type for the right job</li>
+<li>Type conversions let you shift between compatible types</li>
+<li>Reference types point to objects, not raw data</li>
 </ul>
 
       <app-subscribe></app-subscribe>

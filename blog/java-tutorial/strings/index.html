@@ -1,10 +1,10 @@
 
             <!DOCTYPE html>
-            <html lang="en" data-translated="false" data-breadcrump-title="Java Syntax">
+            <html lang="en" data-translated="false" data-breadcrump-title="Java Strings">
             <head>
                 <meta charset="utf-8" />
-                <title>Learn Time | Java Tutorial - Java Syntax</title>
-                <meta name="description" content="Learn the basic structure and syntax of Java programs, including how classes and methods are written, how statements work, and common Java formatting rules.">
+                <title>Learn Time | Java Tutorial - Strings</title>
+                <meta name="description" content="Learn Java Strings with detailed examples. Understand string creation, comparison, methods, and performance tips using StringBuilder vs StringBuffer.">
                 
                 <meta name="viewport" content="width=device-width,initial-scale=1" />
                 <!--
@@ -35,14 +35,14 @@
                     .loader.hide {opacity: 0;}
                 </style>
                 
-            <meta property="og:title" content="Java Tutorial - Java Syntax" />
-            <meta property="og:description" content="Learn the basic structure and syntax of Java programs, including how classes and methods are written, how statements work, and common Java formatting rules." />
-            <meta property="og:image" content="https://learntime.net/assets/thumbnail/blog/blog-2.jpg" />
+            <meta property="og:title" content="Java Tutorial - Strings" />
+            <meta property="og:description" content="Learn Java Strings with detailed examples. Understand string creation, comparison, methods, and performance tips using StringBuilder vs StringBuffer." />
+            <meta property="og:image" content="https://learntime.net/assets/thumbnail/blog/blog-9.jpg" />
             <meta name="twitter:card" content="summary_large_image">
             <meta name="twitter:creator" content="@learntimenet">
-            <meta name="twitter:title" content="Java Tutorial - Java Syntax">
-            <meta name="twitter:description" content="Learn the basic structure and syntax of Java programs, including how classes and methods are written, how statements work, and common Java formatting rules.">
-            <meta name="twitter:image" content="https://learntime.net/assets/thumbnail/blog/blog-2.jpg">
+            <meta name="twitter:title" content="Java Tutorial - Strings">
+            <meta name="twitter:description" content="Learn Java Strings with detailed examples. Understand string creation, comparison, methods, and performance tips using StringBuilder vs StringBuffer.">
+            <meta name="twitter:image" content="https://learntime.net/assets/thumbnail/blog/blog-9.jpg">
         
                 <script>
                     var disqus_config = function () {
@@ -50,7 +50,7 @@
                         this.page.identifier = window.location.pathname.replace('/en', '');
                     };
                 </script>
-            <script defer src="/blog/java-tutorial/syntax/syntax.d86b8ad3e4d5a43a36a2.js"></script></head>
+            <script defer src="/blog/java-tutorial/strings/strings.9a0440ca3499de3c6ca6.js"></script></head>
             <body>
                 <div class="loader">
                     <div class="loading-bar">
@@ -85,79 +85,114 @@
   </div>
   <div class="main-container">
     <app-breadcrumbs class="tutorial"></app-breadcrumbs>
-    <app-blog-title class="tutorial" blog-title="Java Syntax" blog-description="Learn the basic structure and syntax of Java programs, including how classes and methods are written, how statements work, and common Java formatting rules." blog-image="/assets/images/blog/blog-2.jpg"></app-blog-title>
+    <app-blog-title class="tutorial" blog-title="Java Strings" blog-description="Learn Java Strings with detailed examples. Understand string creation, comparison, methods, and performance tips using StringBuilder vs StringBuffer." blog-image="/assets/images/blog/blog-9.jpg"></app-blog-title>
     <div class="blog-content markdown">
       <h2>📝 What You’ll Learn</h2>
 <ul>
-<li>Java program structure</li>
-<li>Key syntax elements: classes, methods, statements</li>
-<li>Naming conventions</li>
-<li>How Java code is organized and executed</li>
+<li>How strings work in Java</li>
+<li>String methods for manipulation and searching</li>
+<li>String comparison and immutability</li>
+<li><code>StringBuilder</code> vs <code>StringBuffer</code></li>
 </ul>
-<h2>🧱 Basic Java Structure</h2>
-<p>Every Java application is made up of <strong>classes</strong> and <strong>methods</strong>. The <strong><code>main</code> method</strong> is the entry point of any standalone Java program.</p>
-<p>Here’s a minimal Java program:</p>
-<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">HelloWorld</span> {
-    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> {
-        System.out.println(<span class="hljs-string">&quot;Hello, World!&quot;</span>);
-    }
-}</code></pre>
-</code></pre><h3>🔍 Breakdown</h3>
-<ul>
-<li><code>public</code> <code>class</code> <code>HelloWorld</code>: Defines a class named <code>HelloWorld</code>. Java programs are class-based.</li>
-<li><code>public</code> <code>static</code> <code>void</code> <code>main(String[] args)</code>: The starting point of the program.</li>
-<li><code>System.out.println()</code>: A statement that prints to the console.</li>
-<li><code>{}</code>: Code blocks grouped together.</li>
-<li><code>;</code>: Every statement ends with a semicolon.</li>
-</ul>
-<h2>🧭 Java is Case-Sensitive</h2>
-<p>These are <strong>not</strong> the same:</p>
-<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs">System.out.println();    <span class="hljs-comment">// valid</span>
-system.out.println();    <span class="hljs-comment">// invalid – “system” should be capitalized</span></code></pre>
-</code></pre><h2>🧠 Naming Conventions</h2>
-<p>Follow these <strong>standard conventions</strong> to keep code readable:</p>
-<p>| Type           | Convention               | Example            |
-|-||--|
-| Class          | PascalCase                | <code>MyFirstClass</code>     |
-| Method/Variable| camelCase                 | <code>printMessage()</code>   |
-| Constant       | ALL_CAPS_WITH_UNDERSCORES | <code>MAX_VALUE</code>        |</p>
-<h2>✅ Code Formatting Tips</h2>
-<ul>
-<li>Use <strong>indentation</strong> (typically 4 spaces or a tab).</li>
-<li>Keep braces on the same or next line (consistent with your IDE settings).</li>
-<li>Add comments using:<ul>
-<li><code>//</code> for single line</li>
-<li><code>/* */</code> for multi-line</li>
-</ul>
-</li>
-</ul>
-<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-comment">// This is a single-line comment</span>
+<h2>🔠 What is a String in Java?</h2>
+<p>A <code>String</code> is a <strong>sequence of characters</strong> — like <code>&quot;Hello&quot;</code> or <code>&quot;123abc&quot;</code>. It’s one of the most used classes in Java and is <strong>immutable</strong>, meaning once created, it can&#39;t be changed.</p>
+<h2>🛠️ Creating Strings</h2>
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-type">String</span> <span class="hljs-variable">s1</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;Java&quot;</span>;
+<span class="hljs-type">String</span> <span class="hljs-variable">s2</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">String</span>(<span class="hljs-string">&quot;Java&quot;</span>);</code></pre>
+</code></pre><blockquote>
+<p>Both work, but the first is preferred.</p>
+</blockquote>
+<h2>📦 Useful String Methods</h2>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>length()</code></td>
+<td>Returns number of characters</td>
+</tr>
+<tr>
+<td><code>charAt(index)</code></td>
+<td>Gets character at a specific position</td>
+</tr>
+<tr>
+<td><code>toLowerCase()</code></td>
+<td>Converts to lowercase</td>
+</tr>
+<tr>
+<td><code>toUpperCase()</code></td>
+<td>Converts to uppercase</td>
+</tr>
+<tr>
+<td><code>trim()</code></td>
+<td>Removes leading/trailing spaces</td>
+</tr>
+<tr>
+<td><code>substring(begin, end)</code></td>
+<td>Extracts a portion</td>
+</tr>
+<tr>
+<td><code>contains(str)</code></td>
+<td>Checks if substring is present</td>
+</tr>
+<tr>
+<td><code>replace(a, b)</code></td>
+<td>Replaces characters or words</td>
+</tr>
+<tr>
+<td><code>split(delimiter)</code></td>
+<td>Splits string into an array</td>
+</tr>
+</tbody>
+</table>
 
-<span class="hljs-comment">/*
- This is a
- multi-line comment
-*/</span></code></pre>
-</code></pre><h2>💡 Example: Simple Java Program</h2>
-<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Greeting</span> {
-    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> {
-        <span class="hljs-type">String</span> <span class="hljs-variable">name</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;Java&quot;</span>;
-        System.out.println(<span class="hljs-string">&quot;Hello, &quot;</span> + name + <span class="hljs-string">&quot;!&quot;</span>);
-    }
-}</code></pre>
-</code></pre><h2>🚫 Common Syntax Errors</h2>
-<ul>
-<li>Missing semicolon <code>;</code></li>
-<li>Unmatched braces <code>{}</code> or parentheses <code>()</code></li>
-<li>Wrong casing (e.g., <code>String</code> vs <code>string</code>)</li>
-<li>Incorrect method or class names</li>
-</ul>
+
+
+
+<h2>🧪 String Comparison</h2>
+<h3>✅ Correct Way (compares values)</h3>
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-type">String</span> <span class="hljs-variable">a</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;hello&quot;</span>;
+<span class="hljs-type">String</span> <span class="hljs-variable">b</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;hello&quot;</span>;
+System.out.println(a.equals(b));  <span class="hljs-comment">// true</span></code></pre>
+</code></pre><h3>❌ Wrong Way (compares memory addresses)</h3>
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs">System.out.println(a == b);  <span class="hljs-comment">// sometimes true, sometimes false</span></code></pre>
+</code></pre><blockquote>
+<p>Always use <code>.equals()</code> for string content comparison.</p>
+</blockquote>
+<h2>🧬 Immutability of Strings</h2>
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-type">String</span> <span class="hljs-variable">s</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;Hi&quot;</span>;
+s.concat(<span class="hljs-string">&quot; there&quot;</span>);
+System.out.println(s);  <span class="hljs-comment">// Still &quot;Hi&quot;!</span></code></pre>
+</code></pre><p>✅ Use <code>StringBuilder</code> if you need to modify strings repeatedly.</p>
+<h2>🧱 StringBuilder and StringBuffer</h2>
+<h3>StringBuilder (non-thread-safe, faster)</h3>
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-type">StringBuilder</span> <span class="hljs-variable">sb</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">StringBuilder</span>(<span class="hljs-string">&quot;Java&quot;</span>);
+sb.append(<span class="hljs-string">&quot; Rocks!&quot;</span>);
+System.out.println(sb);  <span class="hljs-comment">// Java Rocks!</span></code></pre>
+</code></pre><h3>StringBuffer (thread-safe)</h3>
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-type">StringBuffer</span> <span class="hljs-variable">sbf</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">StringBuffer</span>(<span class="hljs-string">&quot;Java&quot;</span>);
+sbf.append(<span class="hljs-string">&quot; is cool&quot;</span>);</code></pre>
+</code></pre><h2>🔍 Searching Inside Strings</h2>
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-type">String</span> <span class="hljs-variable">txt</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;banana&quot;</span>;
+System.out.println(txt.indexOf(<span class="hljs-string">&quot;a&quot;</span>));      <span class="hljs-comment">// 1</span>
+System.out.println(txt.lastIndexOf(<span class="hljs-string">&quot;a&quot;</span>));  <span class="hljs-comment">// 5</span>
+System.out.println(txt.startsWith(<span class="hljs-string">&quot;ban&quot;</span>)); <span class="hljs-comment">// true</span>
+System.out.println(txt.endsWith(<span class="hljs-string">&quot;na&quot;</span>));    <span class="hljs-comment">// true</span></code></pre>
+</code></pre><h2>🧹 String Formatting</h2>
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-type">String</span> <span class="hljs-variable">name</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;Alice&quot;</span>;
+<span class="hljs-type">int</span> <span class="hljs-variable">age</span> <span class="hljs-operator">=</span> <span class="hljs-number">30</span>;
+System.out.printf(<span class="hljs-string">&quot;Name: %s, Age: %d\n&quot;</span>, name, age);</code></pre>
+</code></pre><p>Also available via <code>String.format()</code>.</p>
 <h2>📘 Recap</h2>
-<p>Java code follows a consistent structure:</p>
 <ul>
-<li>Classes contain methods</li>
-<li>The <code>main()</code> method is the starting point</li>
-<li>Every statement ends in <code>;</code></li>
-<li>Curly braces define code blocks</li>
+<li>Strings are objects and are immutable</li>
+<li>Use <code>.equals()</code> to compare values</li>
+<li>Tons of handy methods like <code>substring()</code>, <code>replace()</code>, <code>split()</code></li>
+<li>Use <code>StringBuilder</code> for better performance in loops</li>
 </ul>
 
       <app-subscribe></app-subscribe>
