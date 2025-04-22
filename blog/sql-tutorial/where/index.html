@@ -1,0 +1,293 @@
+
+            <!DOCTYPE html>
+            <html lang="en" data-translated="false" data-breadcrump-title="SQL Where">
+            <head>
+                <meta charset="utf-8" />
+                <title>Learn Time | SQL Tutorial - Where</title>
+                <meta name="description" content="Learn how to use the SQL WHERE clause to filter database records based on conditions. Includes syntax, examples, and common use cases.">
+                
+                <meta name="viewport" content="width=device-width,initial-scale=1" />
+                <!--
+                <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
+                <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
+                <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
+                <link rel="shortcut icon" sizes="192x192" href="/assets/favicon/android-chrome-192x192.png" >
+                <link rel="shortcut icon" sizes="512x512" href="/assets/favicon/android-chrome-512x512.png" >
+                <link rel="manifest" href="/assets/favicon/site.webmanifest">
+                <link rel="shortcut icon" href="/assets/favicon/favicon.ico">
+                <link rel="mask-icon" href="/assets/favicon/safari-pinned-tab.svg" color="#5bbad5">
+                <meta name="msapplication-TileColor" content="#da532c">
+                <meta name="theme-color" content="#ffffff">
+                -->
+                <link rel="shortcut icon" type="image/png" href="/assets/images/logo-circle.png">
+                <link rel="stylesheet" href="/styles.css">
+                <script src="https://kit.fontawesome.com/ff0edf556e.js" crossorigin="anonymous"></script>
+                <script src="https://code.iconify.design/iconify-icon/1.0.2/iconify-icon.min.js"></script>
+                <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+                <script>window.startTime = new Date().getTime();</script>
+                <style>
+                    :root {
+                        --background-color: #f3f2ef;
+                        --loading-bar-background-color: #d6cec2;
+                        --moving-loading-bar-background-color: #D0514D;
+                    }
+                    .loader {transition: all .2s ease-out;z-index: 10000000000;margin-top: -200px;position: fixed;top: 0;left: 0;right: 0;bottom: 0;background-color: var(--background-color);display: flex;align-items: center;justify-content: center;flex-direction: column;}.loader-logo {width: 40px; height: 40px; margin-bottom: 20px;}.loading-bar {width: 130px;height: 4px;border-radius: 100rem;background-color: var(--loading-bar-background-color);position: relative;overflow: hidden;}.moving-loading-bar {height: 100%;width: 68px;position: absolute;border-radius: 100rem;background-color: var(--moving-loading-bar-background-color);animation: initial-loading 1.5s ease infinite;}@keyframes initial-loading {0% {transform: translate(-34px);}50% {transform: translate(96px);}to {transform: translate(-34px);}}
+                    .loader.hide {opacity: 0;}
+                </style>
+                
+            <meta property="og:title" content="SQL Tutorial - Where" />
+            <meta property="og:description" content="Learn how to use the SQL WHERE clause to filter database records based on conditions. Includes syntax, examples, and common use cases." />
+            <meta property="og:image" content="https://learntime.net/assets/thumbnail/blog/blog-7.jpg" />
+            <meta name="twitter:card" content="summary_large_image">
+            <meta name="twitter:creator" content="@learntimenet">
+            <meta name="twitter:title" content="SQL Tutorial - Where">
+            <meta name="twitter:description" content="Learn how to use the SQL WHERE clause to filter database records based on conditions. Includes syntax, examples, and common use cases.">
+            <meta name="twitter:image" content="https://learntime.net/assets/thumbnail/blog/blog-7.jpg">
+        
+                <script>
+                    var disqus_config = function () {
+                        this.page.url = window.location.origin + window.location.pathname;
+                        this.page.identifier = window.location.pathname.replace('/en', '');
+                    };
+                </script>
+            <script defer src="/blog/sql-tutorial/where/where.59f74a3f270ff2e0ae78.js"></script></head>
+            <body>
+                <div class="loader">
+                    <div class="loading-bar">
+                        <div class="moving-loading-bar"></div>
+                    </div>
+                </div>
+                <script>
+                    var lastVisitTime = parseInt(localStorage.getItem('LAST_VISIT_TIME') || '0');
+                    if ((new Date().valueOf() - lastVisitTime) < 1200000) {
+                        document.querySelector('.loading-bar').style.display = 'none';
+                    }
+                </script>
+                <div class="body-container">
+                    <app-navbar></app-navbar>
+                    <div class="max-width"><app-breadcrumbs></app-breadcrumbs></div>
+                    <main>
+        
+<style>
+    :root {
+        --scroll-indicator-height: 0.5rem;
+        --max-width: 150rem;
+    }
+    @media screen and (min-width: 1024px) {
+        :root {
+            --promotion-height: 0rem !important;
+        }
+    }
+</style>
+<div class="max-width tutorial-container">
+  <div class="tutorial-menu-container">
+    <app-tutorial-menu menu="[{&quot;category&quot;:&quot;JavaScript Tutorial&quot;,&quot;articles&quot;:[{&quot;title&quot;:&quot;Introduction&quot;,&quot;url&quot;:&quot;/blog/sql-tutorial/&quot;},{&quot;title&quot;:&quot;SQL Syntax&quot;,&quot;url&quot;:&quot;/blog/sql-tutorial/syntax/&quot;},{&quot;title&quot;:&quot;SQL Select&quot;,&quot;url&quot;:&quot;/blog/sql-tutorial/select/&quot;},{&quot;title&quot;:&quot;SQL Select Distinct&quot;,&quot;url&quot;:&quot;/blog/sql-tutorial/select-distinct/&quot;},{&quot;title&quot;:&quot;SQL Where&quot;,&quot;url&quot;:&quot;/blog/sql-tutorial/where/&quot;},{&quot;title&quot;:&quot;SQL Order By&quot;,&quot;url&quot;:&quot;/blog/sql-tutorial/order-by/&quot;},{&quot;title&quot;:&quot;SQL And&quot;,&quot;url&quot;:&quot;/blog/sql-tutorial/and/&quot;}]}]"></app-tutorial-menu>
+  </div>
+  <div class="main-container">
+    <app-breadcrumbs class="tutorial"></app-breadcrumbs>
+    <app-blog-title class="tutorial" blog-title="SQL Where" blog-description="Learn how to use the SQL WHERE clause to filter database records based on conditions. Includes syntax, examples, and common use cases." blog-image="/assets/images/blog/blog-7.jpg"></app-blog-title>
+    <div class="blog-content markdown">
+      <h2>📝 What You’ll Learn</h2>
+<ul>
+<li>What the <code>WHERE</code> clause does  </li>
+<li>Basic syntax and structure  </li>
+<li>Comparison operators  </li>
+<li>Logical operators (AND, OR, NOT)  </li>
+<li>Filter examples in action  </li>
+<li>Best practices</li>
+</ul>
+<h2>🎯 What Is the WHERE Clause?</h2>
+<p>The <code>WHERE</code> clause is used to <strong>filter records</strong> based on specific conditions. It allows you to return only the rows that match your criteria.</p>
+<p>You can use it in statements like:</p>
+<ul>
+<li><code>SELECT</code> – filter the rows you retrieve  </li>
+<li><code>UPDATE</code> – choose which rows to change  </li>
+<li><code>DELETE</code> – specify which rows to remove</li>
+</ul>
+<h2>🧱 Basic Syntax</h2>
+<pre><code class="hljs language-sql"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">SELECT</span> column1, column2
+<span class="hljs-keyword">FROM</span> table_name
+<span class="hljs-keyword">WHERE</span> <span class="hljs-keyword">condition</span>;</code></pre>
+</code></pre><p>Example:</p>
+<pre><code class="hljs language-sql"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">SELECT</span> name, country
+<span class="hljs-keyword">FROM</span> customers
+<span class="hljs-keyword">WHERE</span> country <span class="hljs-operator">=</span> <span class="hljs-string">&#x27;Canada&#x27;</span>;</code></pre>
+</code></pre><h2>⚖️ Common Comparison Operators</h2>
+<table>
+<thead>
+<tr>
+<th>Operator</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>=</code></td>
+<td>Equal to</td>
+<td><code>country = &#39;Canada&#39;</code></td>
+</tr>
+<tr>
+<td><code>!=</code> or <code>&lt;&gt;</code></td>
+<td>Not equal to</td>
+<td><code>age &lt;&gt; 30</code></td>
+</tr>
+<tr>
+<td><code>&gt;</code></td>
+<td>Greater than</td>
+<td><code>price &gt; 100</code></td>
+</tr>
+<tr>
+<td><code>&lt;</code></td>
+<td>Less than</td>
+<td><code>age &lt; 50</code></td>
+</tr>
+<tr>
+<td><code>&gt;=</code></td>
+<td>Greater than or equal to</td>
+<td><code>score &gt;= 90</code></td>
+</tr>
+<tr>
+<td><code>&lt;=</code></td>
+<td>Less than or equal to</td>
+<td><code>salary &lt;= 60000</code></td>
+</tr>
+<tr>
+<td><code>BETWEEN</code></td>
+<td>Within a range</td>
+<td><code>price BETWEEN 50 AND 100</code></td>
+</tr>
+<tr>
+<td><code>LIKE</code></td>
+<td>Pattern matching</td>
+<td><code>name LIKE &#39;A%&#39;</code></td>
+</tr>
+<tr>
+<td><code>IN</code></td>
+<td>Match any in list</td>
+<td><code>country IN (&#39;US&#39;, &#39;UK&#39;)</code></td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+<h2>🧠 Logical Operators</h2>
+<p>You can combine multiple conditions using:</p>
+<ul>
+<li><code>AND</code> – All conditions must be true  </li>
+<li><code>OR</code> – At least one condition must be true  </li>
+<li><code>NOT</code> – Negates a condition</li>
+</ul>
+<h3>Example:</h3>
+<pre><code class="hljs language-sql"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">SELECT</span> name, age
+<span class="hljs-keyword">FROM</span> employees
+<span class="hljs-keyword">WHERE</span> age <span class="hljs-operator">&gt;</span> <span class="hljs-number">30</span> <span class="hljs-keyword">AND</span> department <span class="hljs-operator">=</span> <span class="hljs-string">&#x27;Sales&#x27;</span>;</code></pre>
+</code></pre><pre><code class="hljs language-sql"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">SELECT</span> name
+<span class="hljs-keyword">FROM</span> users
+<span class="hljs-keyword">WHERE</span> <span class="hljs-keyword">NOT</span> country <span class="hljs-operator">=</span> <span class="hljs-string">&#x27;USA&#x27;</span>;</code></pre>
+</code></pre><h2>🧪 Real-World Examples</h2>
+<h3>Get customers from the USA</h3>
+<pre><code class="hljs language-sql"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">SELECT</span> <span class="hljs-operator">*</span> <span class="hljs-keyword">FROM</span> customers
+<span class="hljs-keyword">WHERE</span> country <span class="hljs-operator">=</span> <span class="hljs-string">&#x27;USA&#x27;</span>;</code></pre>
+</code></pre><h3>Find products over $100</h3>
+<pre><code class="hljs language-sql"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">SELECT</span> product_name, price
+<span class="hljs-keyword">FROM</span> products
+<span class="hljs-keyword">WHERE</span> price <span class="hljs-operator">&gt;</span> <span class="hljs-number">100</span>;</code></pre>
+</code></pre><h3>Users aged between 20 and 30</h3>
+<pre><code class="hljs language-sql"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">SELECT</span> name, age
+<span class="hljs-keyword">FROM</span> users
+<span class="hljs-keyword">WHERE</span> age <span class="hljs-keyword">BETWEEN</span> <span class="hljs-number">20</span> <span class="hljs-keyword">AND</span> <span class="hljs-number">30</span>;</code></pre>
+</code></pre><h2>🧷 Best Practices</h2>
+<ul>
+<li>✅ Use specific filters to improve performance  </li>
+<li>✅ Combine <code>AND</code>/<code>OR</code> logically with parentheses if needed  </li>
+<li>⚠️ Always use <code>WHERE</code> with <code>UPDATE</code> or <code>DELETE</code> to avoid unintended changes</li>
+</ul>
+<pre><code class="hljs language-sql"><pre class="highlight"><code class="hljs"><span class="hljs-comment">-- Be careful:</span>
+<span class="hljs-keyword">DELETE</span> <span class="hljs-keyword">FROM</span> users;  <span class="hljs-comment">-- deletes ALL users ❌</span>
+
+<span class="hljs-comment">-- Do this instead:</span>
+<span class="hljs-keyword">DELETE</span> <span class="hljs-keyword">FROM</span> users <span class="hljs-keyword">WHERE</span> inactive <span class="hljs-operator">=</span> <span class="hljs-number">1</span>; ✅</code></pre>
+</code></pre><h2>📘 Recap</h2>
+<ul>
+<li><code>WHERE</code> filters rows based on conditions  </li>
+<li>Use comparison and logical operators for flexibility  </li>
+<li>Combine with <code>SELECT</code>, <code>UPDATE</code>, and <code>DELETE</code>  </li>
+<li>Be cautious when modifying data — always test your conditions</li>
+</ul>
+
+      <app-subscribe></app-subscribe>
+      <app-comments></app-comments>
+    </div>
+  </div>
+  <aside>
+    <div class="aside-container">
+      <app-share-buttons></app-share-buttons>
+      <app-aside-promotion></app-aside-promotion>
+    </div>
+  </aside>
+</div>
+
+        </main>
+        <app-scroll-top-button></app-scroll-top-button>
+        <app-footer></app-footer>
+        </div>
+            <script>
+                var lastVisitTime = parseInt(localStorage.getItem('LAST_VISIT_TIME') || '0');
+                var timeoutDuration = 1500;
+                //if ((new Date().valueOf() - lastVisitTime) < 1200000) {
+                //    timeoutDuration = 400;
+                //}
+                setTimeout(() => {
+                    document.querySelector('.loader').classList.add('hide');
+                    document.querySelector('.body-container').style.display = 'block';
+                    document.dispatchEvent(new CustomEvent('page-loader-hide'));
+                }, timeoutDuration);
+                setTimeout(() => {
+                    document.querySelector('.loader').style.display = 'none';
+                }, 2000);
+                localStorage.setItem('LAST_VISIT_TIME', new Date().valueOf());
+            </script>
+        
+                <!-- Google tag (gtag.js) -->
+                <script async src="https://www.googletagmanager.com/gtag/js?id=G-S6JEVF53JZ"></script>
+                <script>
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag() {
+                        dataLayer.push(arguments);
+                    }
+                    gtag('js', new Date());
+
+                    gtag('config', 'G-S6JEVF53JZ');
+                </script>
+            
+            <script>
+                window.axeptioSettings = {
+                    clientId: "67fc2975df7d77940a4ff73d",
+                    cookiesVersion: "13042025",
+                    googleConsentMode: {
+                        default: {
+                            analytics_storage: "denied",
+                            ad_storage: "denied",
+                            ad_user_data: "denied",
+                            ad_personalization: "denied",
+                            wait_for_update: 500
+                        }
+                    }
+                };
+                (function(d, s) {
+                    var t = d.getElementsByTagName(s)[0], e = d.createElement(s);
+                    e.async = true; e.src = "//static.axept.io/sdk.js";
+                    t.parentNode.insertBefore(e, t);
+                })(document, "script");
+            </script>
+            <script src="/assets/scripts/markdown.js"></script>
+                <script>
+                    document.addEventListener('DOMContentLoaded', () => {
+                        document.getElementById('languageSwitcherMobile').remove();
+                        document.getElementById('languageSwitcherDesktop').remove();
+                    });
+                </script>
+            </body></html>
