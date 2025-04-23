@@ -335,7 +335,7 @@ eval("// Module\nvar code = \"<a [href]=\\\"url\\\">\\r\\n    <app-icon [iconNam
   \*****************************************************************/
 /***/ ((module) => {
 
-eval("// Module\nvar code = \"<div class=\\\"max-width\\\">\\r\\n    <h1>Boost Your Skills</h1>\\r\\n    <p>Explore our blog articles, take interactive quizzes, and sharpen your skills with practical tools</p>\\r\\n    <!-- <div class=\\\"features\\\">\\r\\n        <app-home-card *ngFor=\\\"let page of pages\\\"\\r\\n            [icon]=\\\"page.icon\\\"\\r\\n            [name]=\\\"page.name\\\"\\r\\n            [description]=\\\"page.description\\\"\\r\\n            [url]=\\\"page.url\\\">\\r\\n        </app-home-card>\\r\\n    </div> -->\\r\\n    <app-card-list class=\\\"services\\\" [items]=\\\"pages\\\"></app-card-list>\\r\\n\\r\\n</div>\";\n// Exports\nmodule.exports = code;\n\n//# sourceURL=webpack://learntime.github.io/./src/app/pages/index/components/main/main.component.html?");
+eval("// Module\nvar code = \"<div class=\\\"max-width\\\">\\r\\n    <h1>Boost Your Skills</h1>\\r\\n    <p>Explore our blog articles, take interactive quizzes, and sharpen your skills with practical tools</p>\\r\\n    <app-card-list class=\\\"services\\\" [items]=\\\"pages\\\"></app-card-list>\\r\\n</div>\";\n// Exports\nmodule.exports = code;\n\n//# sourceURL=webpack://learntime.github.io/./src/app/pages/index/components/main/main.component.html?");
 
 /***/ }),
 
