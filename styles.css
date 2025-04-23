@@ -296,7 +296,8 @@ video {
   .markdown h6 {
     font-weight: 500; }
   .markdown h1 {
-    font-size: 32px; }
+    font-size: 32px;
+    margin-top: 0; }
   .markdown h2 {
     font-size: 26px; }
   .markdown h3 {
