@@ -1,10 +1,10 @@
 
             <!DOCTYPE html>
-            <html lang="en" data-translated="false" data-breadcrump-title="SQL Where">
+            <html lang="en" data-translated="false" data-breadcrump-title="SQL Delete">
             <head>
                 <meta charset="utf-8" />
-                <title>Learn Time | SQL Tutorial - Where</title>
-                <meta name="description" content="Learn how to use the SQL WHERE clause to filter database records based on conditions. Includes syntax, examples, and common use cases.">
+                <title>Learn Time | SQL Tutorial - Delete</title>
+                <meta name="description" content="Learn how to use the SQL DELETE statement to remove rows from a database safely. Covers syntax, examples, and best practices to avoid data loss.">
                 
                 <meta name="viewport" content="width=device-width,initial-scale=1" />
                 <!--
@@ -35,14 +35,14 @@
                     .loader.hide {opacity: 0;}
                 </style>
                 
-            <meta property="og:title" content="SQL Tutorial - Where" />
-            <meta property="og:description" content="Learn how to use the SQL WHERE clause to filter database records based on conditions. Includes syntax, examples, and common use cases." />
-            <meta property="og:image" content="https://learntime.net/assets/thumbnail/blog/blog-7.jpg" />
+            <meta property="og:title" content="SQL Tutorial - Delete" />
+            <meta property="og:description" content="Learn how to use the SQL DELETE statement to remove rows from a database safely. Covers syntax, examples, and best practices to avoid data loss." />
+            <meta property="og:image" content="https://learntime.net/assets/thumbnail/blog/blog-3.jpg" />
             <meta name="twitter:card" content="summary_large_image">
             <meta name="twitter:creator" content="@learntimenet">
-            <meta name="twitter:title" content="SQL Tutorial - Where">
-            <meta name="twitter:description" content="Learn how to use the SQL WHERE clause to filter database records based on conditions. Includes syntax, examples, and common use cases.">
-            <meta name="twitter:image" content="https://learntime.net/assets/thumbnail/blog/blog-7.jpg">
+            <meta name="twitter:title" content="SQL Tutorial - Delete">
+            <meta name="twitter:description" content="Learn how to use the SQL DELETE statement to remove rows from a database safely. Covers syntax, examples, and best practices to avoid data loss.">
+            <meta name="twitter:image" content="https://learntime.net/assets/thumbnail/blog/blog-3.jpg">
         
                 <script>
                     var disqus_config = function () {
@@ -50,7 +50,7 @@
                         this.page.identifier = window.location.pathname.replace('/en', '');
                     };
                 </script>
-            <script defer src="/blog/sql-tutorial/where/where.dc824d9885881e840bb4.js"></script></head>
+            <script defer src="/blog/sql-tutorial/delete/delete.7d03fa8e77c57d584100.js"></script></head>
             <body>
                 <div class="loader">
                     <div class="loading-bar">
@@ -85,137 +85,47 @@
   </div>
   <div class="main-container">
     <app-breadcrumbs class="tutorial"></app-breadcrumbs>
-    <app-blog-title class="tutorial" blog-title="SQL Where" blog-description="Learn how to use the SQL WHERE clause to filter database records based on conditions. Includes syntax, examples, and common use cases." blog-image="/assets/images/blog/blog-7.jpg"></app-blog-title>
+    <app-blog-title class="tutorial" blog-title="SQL Delete" blog-description="Learn how to use the SQL DELETE statement to remove rows from a database safely. Covers syntax, examples, and best practices to avoid data loss." blog-image="/assets/images/blog/blog-3.jpg"></app-blog-title>
     <div class="blog-content markdown">
       <h2>📝 What You’ll Learn</h2>
 <ul>
-<li>What the <code>WHERE</code> clause does  </li>
-<li>Basic syntax and structure  </li>
-<li>Comparison operators  </li>
-<li>Logical operators (AND, OR, NOT)  </li>
-<li>Filter examples in action  </li>
-<li>Best practices</li>
+<li>What the <code>DELETE</code> statement is for  </li>
+<li>Syntax to delete specific or all rows  </li>
+<li>Practical examples  </li>
+<li>How to avoid accidental data loss</li>
 </ul>
-<h2>🎯 What Is the WHERE Clause?</h2>
-<p>The <code>WHERE</code> clause is used to <strong>filter records</strong> based on specific conditions. It allows you to return only the rows that match your criteria.</p>
-<p>You can use it in statements like:</p>
-<ul>
-<li><code>SELECT</code> – filter the rows you retrieve  </li>
-<li><code>UPDATE</code> – choose which rows to change  </li>
-<li><code>DELETE</code> – specify which rows to remove</li>
-</ul>
+<h2>🔍 What Is DELETE?</h2>
+<p>The <code>DELETE</code> statement is used to <strong>remove one or more rows</strong> from a table.</p>
+<p>It’s a powerful command that should be used with care—once data is deleted, it’s typically gone unless you have backups.</p>
 <h2>🧱 Basic Syntax</h2>
-<pre><code class="hljs language-sql"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">SELECT</span> column1, column2
-<span class="hljs-keyword">FROM</span> table_name
+<pre><code class="hljs language-sql"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">DELETE</span> <span class="hljs-keyword">FROM</span> table_name
 <span class="hljs-keyword">WHERE</span> <span class="hljs-keyword">condition</span>;</code></pre>
-</code></pre><p>Example:</p>
-<pre><code class="hljs language-sql"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">SELECT</span> name, country
-<span class="hljs-keyword">FROM</span> customers
-<span class="hljs-keyword">WHERE</span> country <span class="hljs-operator">=</span> <span class="hljs-string">&#x27;Canada&#x27;</span>;</code></pre>
-</code></pre><h2>⚖️ Common Comparison Operators</h2>
-<table>
-<thead>
-<tr>
-<th>Operator</th>
-<th>Description</th>
-<th>Example</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>=</code></td>
-<td>Equal to</td>
-<td><code>country = &#39;Canada&#39;</code></td>
-</tr>
-<tr>
-<td><code>!=</code> or <code>&lt;&gt;</code></td>
-<td>Not equal to</td>
-<td><code>age &lt;&gt; 30</code></td>
-</tr>
-<tr>
-<td><code>&gt;</code></td>
-<td>Greater than</td>
-<td><code>price &gt; 100</code></td>
-</tr>
-<tr>
-<td><code>&lt;</code></td>
-<td>Less than</td>
-<td><code>age &lt; 50</code></td>
-</tr>
-<tr>
-<td><code>&gt;=</code></td>
-<td>Greater than or equal to</td>
-<td><code>score &gt;= 90</code></td>
-</tr>
-<tr>
-<td><code>&lt;=</code></td>
-<td>Less than or equal to</td>
-<td><code>salary &lt;= 60000</code></td>
-</tr>
-<tr>
-<td><code>BETWEEN</code></td>
-<td>Within a range</td>
-<td><code>price BETWEEN 50 AND 100</code></td>
-</tr>
-<tr>
-<td><code>LIKE</code></td>
-<td>Pattern matching</td>
-<td><code>name LIKE &#39;A%&#39;</code></td>
-</tr>
-<tr>
-<td><code>IN</code></td>
-<td>Match any in list</td>
-<td><code>country IN (&#39;US&#39;, &#39;UK&#39;)</code></td>
-</tr>
-</tbody>
-</table>
-
-
-
-
-<h2>🧠 Logical Operators</h2>
-<p>You can combine multiple conditions using:</p>
-<ul>
-<li><code>AND</code> – All conditions must be true  </li>
-<li><code>OR</code> – At least one condition must be true  </li>
-<li><code>NOT</code> – Negates a condition</li>
+</code></pre><ul>
+<li><code>WHERE</code> specifies which rows to delete  </li>
+<li><strong>Without <code>WHERE</code></strong>, all rows in the table will be deleted ⚠️</li>
 </ul>
-<h3>Example:</h3>
-<pre><code class="hljs language-sql"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">SELECT</span> name, age
-<span class="hljs-keyword">FROM</span> employees
-<span class="hljs-keyword">WHERE</span> age <span class="hljs-operator">&gt;</span> <span class="hljs-number">30</span> <span class="hljs-keyword">AND</span> department <span class="hljs-operator">=</span> <span class="hljs-string">&#x27;Sales&#x27;</span>;</code></pre>
-</code></pre><pre><code class="hljs language-sql"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">SELECT</span> name
-<span class="hljs-keyword">FROM</span> users
-<span class="hljs-keyword">WHERE</span> <span class="hljs-keyword">NOT</span> country <span class="hljs-operator">=</span> <span class="hljs-string">&#x27;USA&#x27;</span>;</code></pre>
-</code></pre><h2>🧪 Real-World Examples</h2>
-<h3>Get customers from the USA</h3>
-<pre><code class="hljs language-sql"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">SELECT</span> <span class="hljs-operator">*</span> <span class="hljs-keyword">FROM</span> customers
-<span class="hljs-keyword">WHERE</span> country <span class="hljs-operator">=</span> <span class="hljs-string">&#x27;USA&#x27;</span>;</code></pre>
-</code></pre><h3>Find products over $100</h3>
-<pre><code class="hljs language-sql"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">SELECT</span> product_name, price
-<span class="hljs-keyword">FROM</span> products
-<span class="hljs-keyword">WHERE</span> price <span class="hljs-operator">&gt;</span> <span class="hljs-number">100</span>;</code></pre>
-</code></pre><h3>Users aged between 20 and 30</h3>
-<pre><code class="hljs language-sql"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">SELECT</span> name, age
-<span class="hljs-keyword">FROM</span> users
-<span class="hljs-keyword">WHERE</span> age <span class="hljs-keyword">BETWEEN</span> <span class="hljs-number">20</span> <span class="hljs-keyword">AND</span> <span class="hljs-number">30</span>;</code></pre>
-</code></pre><h2>🧷 Best Practices</h2>
+<h2>🧪 Example: Deleting Records</h2>
+<h3>Delete a specific user</h3>
+<pre><code class="hljs language-sql"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">DELETE</span> <span class="hljs-keyword">FROM</span> users
+<span class="hljs-keyword">WHERE</span> name <span class="hljs-operator">=</span> <span class="hljs-string">&#x27;Alice&#x27;</span>;</code></pre>
+</code></pre><h3>Delete users with no email</h3>
+<pre><code class="hljs language-sql"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">DELETE</span> <span class="hljs-keyword">FROM</span> users
+<span class="hljs-keyword">WHERE</span> email <span class="hljs-keyword">IS</span> <span class="hljs-keyword">NULL</span>;</code></pre>
+</code></pre><h3>Delete all rows in a table (use with caution)</h3>
+<pre><code class="hljs language-sql"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">DELETE</span> <span class="hljs-keyword">FROM</span> users;</code></pre>
+</code></pre><h2>⚠️ Safety Tips</h2>
 <ul>
-<li>✅ Use specific filters to improve performance  </li>
-<li>✅ Combine <code>AND</code>/<code>OR</code> logically with parentheses if needed  </li>
-<li>⚠️ Always use <code>WHERE</code> with <code>UPDATE</code> or <code>DELETE</code> to avoid unintended changes</li>
+<li>✅ Always use a <code>WHERE</code> clause unless you&#39;re clearing a table intentionally  </li>
+<li>🔎 Preview your delete target with a <code>SELECT</code> query first  </li>
+<li>💾 Use transactions (<code>BEGIN</code>, <code>ROLLBACK</code>) when supported to test safely  </li>
+<li>🔁 Consider using <code>TRUNCATE</code> instead if you want to <strong>quickly empty</strong> a whole table (but note: <code>TRUNCATE</code> is not reversible and skips triggers)</li>
 </ul>
-<pre><code class="hljs language-sql"><pre class="highlight"><code class="hljs"><span class="hljs-comment">-- Be careful:</span>
-<span class="hljs-keyword">DELETE</span> <span class="hljs-keyword">FROM</span> users;  <span class="hljs-comment">-- deletes ALL users ❌</span>
-
-<span class="hljs-comment">-- Do this instead:</span>
-<span class="hljs-keyword">DELETE</span> <span class="hljs-keyword">FROM</span> users <span class="hljs-keyword">WHERE</span> inactive <span class="hljs-operator">=</span> <span class="hljs-number">1</span>; ✅</code></pre>
-</code></pre><h2>📘 Recap</h2>
+<h2>📘 Recap</h2>
 <ul>
-<li><code>WHERE</code> filters rows based on conditions  </li>
-<li>Use comparison and logical operators for flexibility  </li>
-<li>Combine with <code>SELECT</code>, <code>UPDATE</code>, and <code>DELETE</code>  </li>
-<li>Be cautious when modifying data — always test your conditions</li>
+<li><code>DELETE</code> removes rows from a table  </li>
+<li>Add a <code>WHERE</code> clause to target specific records  </li>
+<li>Use <code>SELECT</code> to verify before deleting  </li>
+<li>Be cautious—deleted data may be unrecoverable</li>
 </ul>
 
       <app-subscribe></app-subscribe>
