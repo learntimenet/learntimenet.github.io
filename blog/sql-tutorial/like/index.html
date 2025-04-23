@@ -1,10 +1,10 @@
 
             <!DOCTYPE html>
-            <html lang="en" data-translated="false" data-breadcrump-title="SQL Order By">
+            <html lang="en" data-translated="false" data-breadcrump-title="SQL Like">
             <head>
                 <meta charset="utf-8" />
-                <title>Learn Time | SQL Tutorial - Order By</title>
-                <meta name="description" content="Learn how to use the SQL ORDER BY clause to sort query results by one or more columns. Understand ascending/descending order and tips for sorting efficiently.">
+                <title>Learn Time | SQL Tutorial - Like</title>
+                <meta name="description" content="Learn how to use the SQL LIKE operator to filter text using patterns. Includes wildcard characters, syntax, examples, and use cases.">
                 
                 <meta name="viewport" content="width=device-width,initial-scale=1" />
                 <!--
@@ -35,13 +35,13 @@
                     .loader.hide {opacity: 0;}
                 </style>
                 
-            <meta property="og:title" content="SQL Tutorial - Order By" />
-            <meta property="og:description" content="Learn how to use the SQL ORDER BY clause to sort query results by one or more columns. Understand ascending/descending order and tips for sorting efficiently." />
+            <meta property="og:title" content="SQL Tutorial - Like" />
+            <meta property="og:description" content="Learn how to use the SQL LIKE operator to filter text using patterns. Includes wildcard characters, syntax, examples, and use cases." />
             <meta property="og:image" content="https://learntime.net/assets/thumbnail/blog/blog-8.jpg" />
             <meta name="twitter:card" content="summary_large_image">
             <meta name="twitter:creator" content="@learntimenet">
-            <meta name="twitter:title" content="SQL Tutorial - Order By">
-            <meta name="twitter:description" content="Learn how to use the SQL ORDER BY clause to sort query results by one or more columns. Understand ascending/descending order and tips for sorting efficiently.">
+            <meta name="twitter:title" content="SQL Tutorial - Like">
+            <meta name="twitter:description" content="Learn how to use the SQL LIKE operator to filter text using patterns. Includes wildcard characters, syntax, examples, and use cases.">
             <meta name="twitter:image" content="https://learntime.net/assets/thumbnail/blog/blog-8.jpg">
         
                 <script>
@@ -50,7 +50,7 @@
                         this.page.identifier = window.location.pathname.replace('/en', '');
                     };
                 </script>
-            <script defer src="/blog/sql-tutorial/order-by/order-by.d5ba9d7fe909133b7129.js"></script></head>
+            <script defer src="/blog/sql-tutorial/like/like.07577f414caddd793ef4.js"></script></head>
             <body>
                 <div class="loader">
                     <div class="loading-bar">
@@ -85,66 +85,52 @@
   </div>
   <div class="main-container">
     <app-breadcrumbs class="tutorial"></app-breadcrumbs>
-    <app-blog-title class="tutorial" blog-title="SQL Order By" blog-description="Learn how to use the SQL ORDER BY clause to sort query results by one or more columns. Understand ascending/descending order and tips for sorting efficiently." blog-image="/assets/images/blog/blog-8.jpg"></app-blog-title>
+    <app-blog-title class="tutorial" blog-title="SQL Like" blog-description="Learn how to use the SQL LIKE operator to filter text using patterns. Includes wildcard characters, syntax, examples, and use cases." blog-image="/assets/images/blog/blog-8.jpg"></app-blog-title>
     <div class="blog-content markdown">
       <h2>📝 What You’ll Learn</h2>
 <ul>
-<li>What <code>ORDER BY</code> does  </li>
-<li>Syntax and structure  </li>
-<li>Sorting in ascending vs descending order  </li>
-<li>Sorting by multiple columns  </li>
-<li>Notes on NULLs and performance</li>
+<li>What the <code>LIKE</code> operator does  </li>
+<li>Syntax and wildcards  </li>
+<li>Practical text-matching examples  </li>
+<li>Use cases and tips</li>
 </ul>
-<h2>📊 What Is ORDER BY?</h2>
-<p>The <code>ORDER BY</code> clause is used to <strong>sort the result set</strong> of a query by one or more columns. You can sort results in <strong>ascending (ASC)</strong> or <strong>descending (DESC)</strong> order.</p>
-<h2>🧱 Syntax</h2>
-<pre><code class="hljs language-sql"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">SELECT</span> column1, column2
-<span class="hljs-keyword">FROM</span> table_name
-<span class="hljs-keyword">ORDER</span> <span class="hljs-keyword">BY</span> column1 [<span class="hljs-keyword">ASC</span><span class="hljs-operator">|</span><span class="hljs-keyword">DESC</span>];</code></pre>
-</code></pre><ul>
-<li><code>ASC</code> (default) – ascending order  </li>
-<li><code>DESC</code> – descending order</li>
-</ul>
-<h2>🔼 Example: Ascending vs Descending</h2>
-<h3>Sort users by name (A–Z)</h3>
-<pre><code class="hljs language-sql"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">SELECT</span> name, email
-<span class="hljs-keyword">FROM</span> users
-<span class="hljs-keyword">ORDER</span> <span class="hljs-keyword">BY</span> name <span class="hljs-keyword">ASC</span>;</code></pre>
-</code></pre><h3>Sort users by age (oldest first)</h3>
-<pre><code class="hljs language-sql"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">SELECT</span> name, age
-<span class="hljs-keyword">FROM</span> users
-<span class="hljs-keyword">ORDER</span> <span class="hljs-keyword">BY</span> age <span class="hljs-keyword">DESC</span>;</code></pre>
-</code></pre><h2>📚 Sorting by Multiple Columns</h2>
-<p>You can sort by more than one column. SQL will sort by the <strong>first column</strong>, and for rows with the same value, sort by the <strong>second</strong>, and so on.</p>
-<pre><code class="hljs language-sql"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">SELECT</span> name, department, salary
-<span class="hljs-keyword">FROM</span> employees
-<span class="hljs-keyword">ORDER</span> <span class="hljs-keyword">BY</span> department <span class="hljs-keyword">ASC</span>, salary <span class="hljs-keyword">DESC</span>;</code></pre>
-</code></pre><blockquote>
-<p>💡 This sorts alphabetically by department, and then within each department, by highest salary.</p>
-</blockquote>
-<h2>⚠️ Handling NULLs</h2>
-<p>Different SQL databases handle <code>NULL</code> values differently when sorting:</p>
+<h2>🔤 What Is LIKE?</h2>
+<p>The <code>LIKE</code> operator is used in a <code>WHERE</code> clause to <strong>search for a specific pattern</strong> in a column.</p>
+<p>It works with two special <strong>wildcards</strong>:</p>
 <ul>
-<li>Some place <code>NULL</code>s <strong>first</strong> in ascending order</li>
-<li>Others place them <strong>last</strong></li>
+<li><code>%</code> – matches <strong>zero or more characters</strong>  </li>
+<li><code>_</code> – matches <strong>exactly one character</strong></li>
 </ul>
-<p>You can often control this behavior:</p>
-<pre><code class="hljs language-sql"><pre class="highlight"><code class="hljs"><span class="hljs-comment">-- Example in PostgreSQL</span>
-<span class="hljs-keyword">ORDER</span> <span class="hljs-keyword">BY</span> column_name <span class="hljs-keyword">ASC</span> NULLS <span class="hljs-keyword">LAST</span>;</code></pre>
-</code></pre><h2>🚦 Performance Tip</h2>
-<p>Sorting large datasets can slow down your queries. For better performance:</p>
+<h2>🧱 Basic Syntax</h2>
+<pre><code class="hljs language-sql"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">SELECT</span> <span class="hljs-operator">*</span> <span class="hljs-keyword">FROM</span> table_name
+<span class="hljs-keyword">WHERE</span> column_name <span class="hljs-keyword">LIKE</span> <span class="hljs-keyword">pattern</span>;</code></pre>
+</code></pre><h2>🧪 Example: Starts With</h2>
+<h3>Find names that start with &quot;A&quot;:</h3>
+<pre><code class="hljs language-sql"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">SELECT</span> <span class="hljs-operator">*</span> <span class="hljs-keyword">FROM</span> users
+<span class="hljs-keyword">WHERE</span> name <span class="hljs-keyword">LIKE</span> <span class="hljs-string">&#x27;A%&#x27;</span>;</code></pre>
+</code></pre><h2>🧪 Example: Ends With</h2>
+<h3>Find emails that end in &quot;.org&quot;:</h3>
+<pre><code class="hljs language-sql"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">SELECT</span> <span class="hljs-operator">*</span> <span class="hljs-keyword">FROM</span> users
+<span class="hljs-keyword">WHERE</span> email <span class="hljs-keyword">LIKE</span> <span class="hljs-string">&#x27;%.org&#x27;</span>;</code></pre>
+</code></pre><h2>🧪 Example: Contains</h2>
+<h3>Find products that include &quot;phone&quot;:</h3>
+<pre><code class="hljs language-sql"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">SELECT</span> <span class="hljs-operator">*</span> <span class="hljs-keyword">FROM</span> products
+<span class="hljs-keyword">WHERE</span> name <span class="hljs-keyword">LIKE</span> <span class="hljs-string">&#x27;%phone%&#x27;</span>;</code></pre>
+</code></pre><h2>🧠 Advanced Example: One Character Wildcard</h2>
+<h3>Find usernames with 5 characters, where the third character is &quot;x&quot;:</h3>
+<pre><code class="hljs language-sql"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">SELECT</span> <span class="hljs-operator">*</span> <span class="hljs-keyword">FROM</span> users
+<span class="hljs-keyword">WHERE</span> username <span class="hljs-keyword">LIKE</span> <span class="hljs-string">&#x27;__x__&#x27;</span>;</code></pre>
+</code></pre><h2>⚠️ Case Sensitivity</h2>
 <ul>
-<li>✅ Use indexes on the columns you&#39;re ordering by  </li>
-<li>✅ Avoid unnecessary sorting if the order doesn&#39;t matter  </li>
-<li>🚫 Don’t sort by expressions unless required</li>
+<li>In <strong>some databases</strong> (like PostgreSQL), <code>LIKE</code> is <strong>case-sensitive</strong>  </li>
+<li>Use <code>ILIKE</code> in PostgreSQL or <code>LOWER()</code> for case-insensitive searches</li>
 </ul>
 <h2>📘 Recap</h2>
 <ul>
-<li><code>ORDER BY</code> lets you sort your query results  </li>
-<li>Use <code>ASC</code> (default) or <code>DESC</code> for direction  </li>
-<li>You can sort by multiple columns for precise control  </li>
-<li>Be aware of how your database handles <code>NULL</code>s  </li>
-<li>Efficient ordering improves the user experience in reports and dashboards</li>
+<li>Use <code>LIKE</code> to match patterns in text fields  </li>
+<li><code>%</code> = any number of characters  </li>
+<li><code>_</code> = one character  </li>
+<li>Combine with <code>WHERE</code> to filter by partial matches</li>
 </ul>
 
       <app-subscribe></app-subscribe>
