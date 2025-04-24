@@ -1,10 +1,10 @@
 
             <!DOCTYPE html>
-            <html lang="en" data-translated="false" data-breadcrump-title="SQL Min Max">
+            <html lang="en" data-translated="false" data-breadcrump-title="SQL In Operator">
             <head>
                 <meta charset="utf-8" />
-                <title>Learn Time | SQL Tutorial - Min Max</title>
-                <meta name="description" content="Learn how to use SQL MIN and MAX functions to find the smallest and largest values in a column. Includes syntax, examples, and use with GROUP BY.">
+                <title>Learn Time | SQL Tutorial - In Operator</title>
+                <meta name="description" content="Learn how to use the SQL IN operator to match multiple values in one condition. Includes examples, syntax, and subquery usage.">
                 
                 <meta name="viewport" content="width=device-width,initial-scale=1" />
                 <!--
@@ -35,14 +35,14 @@
                     .loader.hide {opacity: 0;}
                 </style>
                 
-            <meta property="og:title" content="SQL Tutorial - Min Max" />
-            <meta property="og:description" content="Learn how to use SQL MIN and MAX functions to find the smallest and largest values in a column. Includes syntax, examples, and use with GROUP BY." />
-            <meta property="og:image" content="https://learntime.net/assets/thumbnail/blog/blog-4.jpg" />
+            <meta property="og:title" content="SQL Tutorial - In Operator" />
+            <meta property="og:description" content="Learn how to use the SQL IN operator to match multiple values in one condition. Includes examples, syntax, and subquery usage." />
+            <meta property="og:image" content="https://learntime.net/assets/thumbnail/blog/blog-9.jpg" />
             <meta name="twitter:card" content="summary_large_image">
             <meta name="twitter:creator" content="@learntimenet">
-            <meta name="twitter:title" content="SQL Tutorial - Min Max">
-            <meta name="twitter:description" content="Learn how to use SQL MIN and MAX functions to find the smallest and largest values in a column. Includes syntax, examples, and use with GROUP BY.">
-            <meta name="twitter:image" content="https://learntime.net/assets/thumbnail/blog/blog-4.jpg">
+            <meta name="twitter:title" content="SQL Tutorial - In Operator">
+            <meta name="twitter:description" content="Learn how to use the SQL IN operator to match multiple values in one condition. Includes examples, syntax, and subquery usage.">
+            <meta name="twitter:image" content="https://learntime.net/assets/thumbnail/blog/blog-9.jpg">
         
                 <script>
                     var disqus_config = function () {
@@ -50,7 +50,7 @@
                         this.page.identifier = window.location.pathname.replace('/en', '');
                     };
                 </script>
-            <script defer src="/blog/sql-tutorial/min-max/min-max.c1ae7003c09826f69ffa.js"></script></head>
+            <script defer src="/blog/sql-tutorial/in-operator/in-operator.68fbbb49a26942f61c70.js"></script></head>
             <body>
                 <div class="loader">
                     <div class="loading-bar">
@@ -85,49 +85,50 @@
   </div>
   <div class="main-container">
     <app-breadcrumbs class="tutorial"></app-breadcrumbs>
-    <app-blog-title class="tutorial" blog-title="SQL Min Max" blog-description="Learn how to use SQL MIN and MAX functions to find the smallest and largest values in a column. Includes syntax, examples, and use with GROUP BY." blog-image="/assets/images/blog/blog-4.jpg"></app-blog-title>
+    <app-blog-title class="tutorial" blog-title="SQL In Operator" blog-description="Learn how to use the SQL IN operator to match multiple values in one condition. Includes examples, syntax, and subquery usage." blog-image="/assets/images/blog/blog-9.jpg"></app-blog-title>
     <div class="blog-content markdown">
       <h2>📝 What You’ll Learn</h2>
 <ul>
-<li>What <code>MIN()</code> and <code>MAX()</code> functions do  </li>
+<li>What the <code>IN</code> operator is  </li>
 <li>Syntax and structure  </li>
-<li>Practical examples with numbers and dates  </li>
-<li>Use cases with <code>GROUP BY</code></li>
+<li>Practical examples for filtering values  </li>
+<li>Use in subqueries</li>
 </ul>
-<h2>🔍 What Are MIN and MAX?</h2>
-<ul>
-<li><code>MIN()</code> returns the <strong>lowest value</strong> in a column  </li>
-<li><code>MAX()</code> returns the <strong>highest value</strong> in a column</li>
-</ul>
-<p>These are <strong>aggregate functions</strong>, meaning they work on a set of values and return a single result.</p>
+<h2>🔍 What Is IN?</h2>
+<p>The <code>IN</code> operator allows you to <strong>filter records based on a list of values</strong>.</p>
+<p>It’s a cleaner alternative to using multiple <code>OR</code> conditions in a <code>WHERE</code> clause.</p>
 <h2>🧱 Basic Syntax</h2>
-<pre><code class="hljs language-sql"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">SELECT</span> <span class="hljs-built_in">MIN</span>(column_name) <span class="hljs-keyword">FROM</span> table_name;
-
-<span class="hljs-keyword">SELECT</span> <span class="hljs-built_in">MAX</span>(column_name) <span class="hljs-keyword">FROM</span> table_name;</code></pre>
-</code></pre><p>You can also use them alongside <code>WHERE</code>, <code>GROUP BY</code>, and other clauses.</p>
-<h2>🧪 Example: Using MIN and MAX</h2>
-<h3>Find the lowest price in the <code>products</code> table</h3>
-<pre><code class="hljs language-sql"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">SELECT</span> <span class="hljs-built_in">MIN</span>(price) <span class="hljs-keyword">AS</span> lowest_price
-<span class="hljs-keyword">FROM</span> products;</code></pre>
-</code></pre><h3>Find the most expensive product</h3>
-<pre><code class="hljs language-sql"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">SELECT</span> <span class="hljs-built_in">MAX</span>(price) <span class="hljs-keyword">AS</span> highest_price
-<span class="hljs-keyword">FROM</span> products;</code></pre>
-</code></pre><h2>🧪 Example: Dates</h2>
-<h3>Get the first and last registered user by date</h3>
-<pre><code class="hljs language-sql"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">SELECT</span> <span class="hljs-built_in">MIN</span>(signup_date) <span class="hljs-keyword">AS</span> first_signup,
-       <span class="hljs-built_in">MAX</span>(signup_date) <span class="hljs-keyword">AS</span> last_signup
-<span class="hljs-keyword">FROM</span> users;</code></pre>
-</code></pre><h2>📌 Example with GROUP BY</h2>
-<h3>Get the highest salary per department</h3>
-<pre><code class="hljs language-sql"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">SELECT</span> department, <span class="hljs-built_in">MAX</span>(salary) <span class="hljs-keyword">AS</span> top_salary
-<span class="hljs-keyword">FROM</span> employees
-<span class="hljs-keyword">GROUP</span> <span class="hljs-keyword">BY</span> department;</code></pre>
-</code></pre><h2>📘 Recap</h2>
+<pre><code class="hljs language-sql"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">SELECT</span> <span class="hljs-operator">*</span> <span class="hljs-keyword">FROM</span> table_name
+<span class="hljs-keyword">WHERE</span> column_name <span class="hljs-keyword">IN</span> (value1, value2, value3);</code></pre>
+</code></pre><h2>🧪 Example: Match Multiple Countries</h2>
+<pre><code class="hljs language-sql"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">SELECT</span> <span class="hljs-operator">*</span> <span class="hljs-keyword">FROM</span> users
+<span class="hljs-keyword">WHERE</span> country <span class="hljs-keyword">IN</span> (<span class="hljs-string">&#x27;USA&#x27;</span>, <span class="hljs-string">&#x27;Canada&#x27;</span>, <span class="hljs-string">&#x27;Mexico&#x27;</span>);</code></pre>
+</code></pre><p>✅ Equivalent to:</p>
+<pre><code class="hljs language-sql"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">WHERE</span> country <span class="hljs-operator">=</span> <span class="hljs-string">&#x27;USA&#x27;</span> <span class="hljs-keyword">OR</span> country <span class="hljs-operator">=</span> <span class="hljs-string">&#x27;Canada&#x27;</span> <span class="hljs-keyword">OR</span> country <span class="hljs-operator">=</span> <span class="hljs-string">&#x27;Mexico&#x27;</span></code></pre>
+</code></pre><h2>🧪 Example: With Numbers</h2>
+<h3>Find orders with specific statuses</h3>
+<pre><code class="hljs language-sql"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">SELECT</span> <span class="hljs-operator">*</span> <span class="hljs-keyword">FROM</span> orders
+<span class="hljs-keyword">WHERE</span> status_id <span class="hljs-keyword">IN</span> (<span class="hljs-number">1</span>, <span class="hljs-number">3</span>, <span class="hljs-number">5</span>);</code></pre>
+</code></pre><h2>📊 Example: With Subquery</h2>
+<h3>Get users who placed an order</h3>
+<pre><code class="hljs language-sql"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">SELECT</span> <span class="hljs-operator">*</span> <span class="hljs-keyword">FROM</span> users
+<span class="hljs-keyword">WHERE</span> user_id <span class="hljs-keyword">IN</span> (
+  <span class="hljs-keyword">SELECT</span> user_id <span class="hljs-keyword">FROM</span> orders
+);</code></pre>
+</code></pre><blockquote>
+<p>🔁 The subquery returns a list used as a filter in the main query.</p>
+</blockquote>
+<h2>⚠️ Notes</h2>
 <ul>
-<li><code>MIN()</code> gives the smallest value; <code>MAX()</code> gives the largest  </li>
-<li>Work with numbers, dates, and text (alphabetically)  </li>
-<li>Useful for reporting, summaries, and comparisons  </li>
-<li>Combine with <code>GROUP BY</code> for segmented analysis</li>
+<li>Works well for cleaner, more readable queries  </li>
+<li>Values in the list must be of the <strong>same data type</strong>  </li>
+<li>Avoid very large lists inside <code>IN</code> for performance reasons</li>
+</ul>
+<h2>📘 Recap</h2>
+<ul>
+<li><code>IN</code> filters records by matching <strong>any</strong> of a list of values  </li>
+<li>Can be used with text, numbers, or subqueries  </li>
+<li>It’s a better alternative to long chains of <code>OR</code> conditions</li>
 </ul>
 
       <app-subscribe></app-subscribe>
