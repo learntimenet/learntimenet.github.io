@@ -1,0 +1,267 @@
+
+            <!DOCTYPE html>
+            <html lang="en" data-translated="false" data-breadcrump-title="Dependency Inversion Principle">
+            <head>
+                <meta charset="utf-8" />
+                <title>Learn Time | SOLID Principles - Dependency Inversion Principle</title>
+                <meta name="description" content="Discover the Dependency Inversion Principle (DIP) in the SOLID design pattern series. Learn how to reduce coupling and build flexible, abstracted systems using Java.">
+                
+                <meta name="viewport" content="width=device-width,initial-scale=1" />
+                <!--
+                <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
+                <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
+                <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
+                <link rel="shortcut icon" sizes="192x192" href="/assets/favicon/android-chrome-192x192.png" >
+                <link rel="shortcut icon" sizes="512x512" href="/assets/favicon/android-chrome-512x512.png" >
+                <link rel="manifest" href="/assets/favicon/site.webmanifest">
+                <link rel="shortcut icon" href="/assets/favicon/favicon.ico">
+                <link rel="mask-icon" href="/assets/favicon/safari-pinned-tab.svg" color="#5bbad5">
+                <meta name="msapplication-TileColor" content="#da532c">
+                <meta name="theme-color" content="#ffffff">
+                -->
+                <link rel="shortcut icon" type="image/png" href="/assets/images/logo-circle.png">
+                <link rel="stylesheet" href="/styles.css">
+                <script src="https://kit.fontawesome.com/ff0edf556e.js" crossorigin="anonymous"></script>
+                <script src="https://code.iconify.design/iconify-icon/1.0.2/iconify-icon.min.js"></script>
+                <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+                <script>window.startTime = new Date().getTime();</script>
+                <style>
+                    :root {
+                        --background-color: #f3f2ef;
+                        --loading-bar-background-color: #d6cec2;
+                        --moving-loading-bar-background-color: #D0514D;
+                    }
+                    .loader {transition: all .2s ease-out;z-index: 10000000000;margin-top: -200px;position: fixed;top: 0;left: 0;right: 0;bottom: 0;background-color: var(--background-color);display: flex;align-items: center;justify-content: center;flex-direction: column;}.loader-logo {width: 40px; height: 40px; margin-bottom: 20px;}.loading-bar {width: 130px;height: 4px;border-radius: 100rem;background-color: var(--loading-bar-background-color);position: relative;overflow: hidden;}.moving-loading-bar {height: 100%;width: 68px;position: absolute;border-radius: 100rem;background-color: var(--moving-loading-bar-background-color);animation: initial-loading 1.5s ease infinite;}@keyframes initial-loading {0% {transform: translate(-34px);}50% {transform: translate(96px);}to {transform: translate(-34px);}}
+                    .loader.hide {opacity: 0;}
+                </style>
+                
+            <meta property="og:title" content="SOLID Principles - Dependency Inversion Principle" />
+            <meta property="og:description" content="Discover the Dependency Inversion Principle (DIP) in the SOLID design pattern series. Learn how to reduce coupling and build flexible, abstracted systems using Java." />
+            <meta property="og:image" content="https://learntime.net/assets/thumbnail/blog/blog-8.jpg" />
+            <meta name="twitter:card" content="summary_large_image">
+            <meta name="twitter:creator" content="@learntimenet">
+            <meta name="twitter:title" content="SOLID Principles - Dependency Inversion Principle">
+            <meta name="twitter:description" content="Discover the Dependency Inversion Principle (DIP) in the SOLID design pattern series. Learn how to reduce coupling and build flexible, abstracted systems using Java.">
+            <meta name="twitter:image" content="https://learntime.net/assets/thumbnail/blog/blog-8.jpg">
+        
+                <script>
+                    var disqus_config = function () {
+                        this.page.url = window.location.origin + window.location.pathname;
+                        this.page.identifier = window.location.pathname.replace('/en', '');
+                    };
+                </script>
+            <script defer src="/blog/solid-principles/dependency-inversion-principle/dependency-inversion-principle.a940833544bf08663933.js"></script></head>
+            <body>
+                <div class="loader">
+                    <div class="loading-bar">
+                        <div class="moving-loading-bar"></div>
+                    </div>
+                </div>
+                <script>
+                    var lastVisitTime = parseInt(localStorage.getItem('LAST_VISIT_TIME') || '0');
+                    if ((new Date().valueOf() - lastVisitTime) < 1200000) {
+                        document.querySelector('.loading-bar').style.display = 'none';
+                    }
+                </script>
+                <div class="body-container">
+                    <app-navbar></app-navbar>
+                    <div class="max-width"><app-breadcrumbs></app-breadcrumbs></div>
+                    <main>
+        
+<style>
+    :root {
+        --scroll-indicator-height: 0.5rem;
+        --max-width: 150rem;
+    }
+    @media screen and (min-width: 1024px) {
+        :root {
+            --promotion-height: 0rem !important;
+        }
+    }
+</style>
+<div class="max-width tutorial-container">
+  <div class="tutorial-menu-container">
+    <app-tutorial-menu menu="[{&quot;category&quot;:&quot;Solid Principles&quot;,&quot;articles&quot;:[{&quot;title&quot;:&quot;Introduction&quot;,&quot;url&quot;:&quot;/blog/solid-principles/&quot;},{&quot;title&quot;:&quot;SOLID SRP Principle&quot;,&quot;url&quot;:&quot;/blog/solid-principles/single-responsibility-principle/&quot;},{&quot;title&quot;:&quot;SOLID OCP Principle&quot;,&quot;url&quot;:&quot;/blog/solid-principles/open-closed-principle/&quot;},{&quot;title&quot;:&quot;SOLID LSP Principle&quot;,&quot;url&quot;:&quot;/blog/solid-principles/liskov-substitution-principle/&quot;},{&quot;title&quot;:&quot;SOLID ISP Principle&quot;,&quot;url&quot;:&quot;/blog/solid-principles/interface-segregation-principle/&quot;}]}]"></app-tutorial-menu>
+  </div>
+  <div class="main-container">
+    <app-breadcrumbs class="tutorial"></app-breadcrumbs>
+    <app-blog-title class="tutorial" blog-title="Dependency Inversion Principle" blog-description="Discover the Dependency Inversion Principle (DIP) in the SOLID design pattern series. Learn how to reduce coupling and build flexible, abstracted systems using Java." blog-image="/assets/images/blog/blog-8.jpg"></app-blog-title>
+    <div class="blog-content markdown">
+      <h2>📝 What You’ll Learn</h2>
+<ul>
+<li>What Dependency Inversion really means  </li>
+<li>Why high-level modules shouldn’t depend on low-level ones  </li>
+<li>Practical code examples  </li>
+<li>How to apply DIP using interfaces and dependency injection</li>
+</ul>
+<h2>📖 What Is the Dependency Inversion Principle?</h2>
+<p>The <strong>Dependency Inversion Principle</strong> says:</p>
+<blockquote>
+<p><strong>High-level modules should not depend on low-level modules. Both should depend on abstractions.</strong><br><strong>Abstractions should not depend on details. Details should depend on abstractions.</strong></p>
+</blockquote>
+<p>In other words:<br><strong>Depend on interfaces, not concrete implementations.</strong></p>
+<h2>❌ A Typical Violation of DIP</h2>
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">LightBulb</span> {
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">turnOn</span><span class="hljs-params">()</span> { ... }
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">turnOff</span><span class="hljs-params">()</span> { ... }
+}
+
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Switch</span> {
+    <span class="hljs-keyword">private</span> <span class="hljs-type">LightBulb</span> <span class="hljs-variable">bulb</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">LightBulb</span>();
+
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">operate</span><span class="hljs-params">()</span> {
+        bulb.turnOn(); <span class="hljs-comment">// tightly coupled</span>
+    }
+}</code></pre>
+</code></pre><p>Here, <code>Switch</code> depends directly on <code>LightBulb</code>, a <strong>low-level module</strong>. Changing <code>LightBulb</code> means modifying <code>Switch</code>.</p>
+<h2>✅ Applying DIP with Abstraction</h2>
+<p>Introduce an interface:</p>
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">public</span> <span class="hljs-keyword">interface</span> <span class="hljs-title class_">Switchable</span> {
+    <span class="hljs-keyword">void</span> <span class="hljs-title function_">turnOn</span><span class="hljs-params">()</span>;
+    <span class="hljs-keyword">void</span> <span class="hljs-title function_">turnOff</span><span class="hljs-params">()</span>;
+}</code></pre>
+</code></pre><p>Now decouple:</p>
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">LightBulb</span> <span class="hljs-keyword">implements</span> <span class="hljs-title class_">Switchable</span> {
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">turnOn</span><span class="hljs-params">()</span> { ... }
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">turnOff</span><span class="hljs-params">()</span> { ... }
+}
+
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Switch</span> {
+    <span class="hljs-keyword">private</span> Switchable device;
+
+    <span class="hljs-keyword">public</span> <span class="hljs-title function_">Switch</span><span class="hljs-params">(Switchable device)</span> {
+        <span class="hljs-built_in">this</span>.device = device;
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">operate</span><span class="hljs-params">()</span> {
+        device.turnOn();
+    }
+}</code></pre>
+</code></pre><p>Now, <code>Switch</code> depends on the <strong>abstraction</strong> <code>Switchable</code>, not the <strong>concrete class</strong>.</p>
+<h2>🧪 Real-World Analogy: Payment Gateway</h2>
+<p>Imagine your app handles payments:</p>
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">class</span> <span class="hljs-title class_">PaymentService</span> {
+    <span class="hljs-keyword">private</span> <span class="hljs-type">PayPalAPI</span> <span class="hljs-variable">paypal</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">PayPalAPI</span>();
+
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">pay</span><span class="hljs-params">()</span> {
+        paypal.sendMoney();
+    }
+}</code></pre>
+</code></pre><p>Tomorrow, you switch to Stripe. That’s a nightmare.</p>
+<p><strong>Better:</strong></p>
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">interface</span> <span class="hljs-title class_">PaymentGateway</span> {
+    <span class="hljs-keyword">void</span> <span class="hljs-title function_">pay</span><span class="hljs-params">()</span>;
+}
+
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">PayPalGateway</span> <span class="hljs-keyword">implements</span> <span class="hljs-title class_">PaymentGateway</span> { ... }
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">StripeGateway</span> <span class="hljs-keyword">implements</span> <span class="hljs-title class_">PaymentGateway</span> { ... }
+
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">PaymentService</span> {
+    <span class="hljs-keyword">private</span> PaymentGateway gateway;
+
+    <span class="hljs-keyword">public</span> <span class="hljs-title function_">PaymentService</span><span class="hljs-params">(PaymentGateway gateway)</span> {
+        <span class="hljs-built_in">this</span>.gateway = gateway;
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">processPayment</span><span class="hljs-params">()</span> {
+        gateway.pay();
+    }
+}</code></pre>
+</code></pre><p>Now you can swap payment providers <strong>without rewriting business logic</strong>.</p>
+<h2>🧠 Benefits of DIP</h2>
+<ul>
+<li>🚦 Loose coupling  </li>
+<li>🔄 Easy to change implementations  </li>
+<li>🧪 Better testability (mocks, stubs)  </li>
+<li>🔧 Cleaner architecture</li>
+</ul>
+<h2>📘 Recap</h2>
+<ul>
+<li>DIP = Rely on abstractions, not concrete implementations  </li>
+<li>Both high-level and low-level modules should depend on interfaces  </li>
+<li>Enables flexibility, testability, and long-term maintainability</li>
+</ul>
+<h2>🏁 Wrapping Up the SOLID Series</h2>
+<p>Congratulations! You&#39;ve now learned:</p>
+<ol>
+<li><strong>Single Responsibility Principle</strong>  </li>
+<li><strong>Open/Closed Principle</strong>  </li>
+<li><strong>Liskov Substitution Principle</strong>  </li>
+<li><strong>Interface Segregation Principle</strong>  </li>
+<li><strong>Dependency Inversion Principle</strong></li>
+</ol>
+<p>You&#39;re on the path to writing <strong>clean, robust, and scalable object-oriented code</strong>.</p>
+
+      <app-subscribe></app-subscribe>
+      <app-comments></app-comments>
+    </div>
+  </div>
+  <aside>
+    <div class="aside-container">
+      <app-share-buttons></app-share-buttons>
+      <app-aside-promotion></app-aside-promotion>
+    </div>
+  </aside>
+</div>
+
+        </main>
+        <app-scroll-top-button></app-scroll-top-button>
+        <app-footer></app-footer>
+        </div>
+            <script>
+                var lastVisitTime = parseInt(localStorage.getItem('LAST_VISIT_TIME') || '0');
+                var timeoutDuration = 1500;
+                //if ((new Date().valueOf() - lastVisitTime) < 1200000) {
+                //    timeoutDuration = 400;
+                //}
+                setTimeout(() => {
+                    document.querySelector('.loader').classList.add('hide');
+                    document.querySelector('.body-container').style.display = 'block';
+                    document.dispatchEvent(new CustomEvent('page-loader-hide'));
+                }, timeoutDuration);
+                setTimeout(() => {
+                    document.querySelector('.loader').style.display = 'none';
+                }, 2000);
+                localStorage.setItem('LAST_VISIT_TIME', new Date().valueOf());
+            </script>
+        
+                <!-- Google tag (gtag.js) -->
+                <script async src="https://www.googletagmanager.com/gtag/js?id=G-S6JEVF53JZ"></script>
+                <script>
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag() {
+                        dataLayer.push(arguments);
+                    }
+                    gtag('js', new Date());
+
+                    gtag('config', 'G-S6JEVF53JZ');
+                </script>
+            
+            <script>
+                window.axeptioSettings = {
+                    clientId: "67fc2975df7d77940a4ff73d",
+                    cookiesVersion: "13042025",
+                    googleConsentMode: {
+                        default: {
+                            analytics_storage: "denied",
+                            ad_storage: "denied",
+                            ad_user_data: "denied",
+                            ad_personalization: "denied",
+                            wait_for_update: 500
+                        }
+                    }
+                };
+                (function(d, s) {
+                    var t = d.getElementsByTagName(s)[0], e = d.createElement(s);
+                    e.async = true; e.src = "//static.axept.io/sdk.js";
+                    t.parentNode.insertBefore(e, t);
+                })(document, "script");
+            </script>
+            <script src="/assets/scripts/markdown.js"></script>
+                <script>
+                    document.addEventListener('DOMContentLoaded', () => {
+                        document.getElementById('languageSwitcherMobile').remove();
+                        document.getElementById('languageSwitcherDesktop').remove();
+                    });
+                </script>
+            </body></html>
