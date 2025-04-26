@@ -108,8 +108,10 @@ function formatCode() {
       const ul = p.nextElementSibling;
       ul.classList.add('cheatsheet');
       ul.querySelectorAll('li').forEach((li) => {
-        var label = li.innerHTML.split(/<br>/)[0];
-        li.innerHTML = `<div class="li-wrapper"><span class="label">${label}</span><br/>` + li.innerHTML.split(/<br>/).slice(1).join('<br/>') + '</div>';
+        const label = li.innerHTML.split(/<br>/)[0];
+        let code = li.innerHTML.split(/<br>/).slice(1).map(p => p.replaceAll('<', '&lt;').replaceAll('>', '&gt;')).join('<br/>');
+        code = code.replace(/&lt;\/.+;/g, '');
+        li.innerHTML = `<div class="li-wrapper"><span class="label">${label}</span><br/>` + code + '</div>';
       });
       p.remove();
       return;
