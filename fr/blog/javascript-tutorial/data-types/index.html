@@ -1,0 +1,236 @@
+
+            <!DOCTYPE html>
+            <html lang="fr" data-translated="true" data-breadcrump-title="Types de données JavaScript">
+            <head>
+                <meta charset="utf-8" />
+                <title>Learn Time | JavaScript Tutorial - Types de données JavaScript</title>
+                <meta name="description" content="Apprendre les types de données JavaScript, y compris les types primitifs et non primitifs comme les chaînes de caractères, les nombres, les objets et les tableaux. Comprendre la conversion des types à l'aide d'exemples pratiques.">
+                
+                <meta name="viewport" content="width=device-width,initial-scale=1" />
+                <!--
+                <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
+                <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
+                <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
+                <link rel="shortcut icon" sizes="192x192" href="/assets/favicon/android-chrome-192x192.png" >
+                <link rel="shortcut icon" sizes="512x512" href="/assets/favicon/android-chrome-512x512.png" >
+                <link rel="manifest" href="/assets/favicon/site.webmanifest">
+                <link rel="shortcut icon" href="/assets/favicon/favicon.ico">
+                <link rel="mask-icon" href="/assets/favicon/safari-pinned-tab.svg" color="#5bbad5">
+                <meta name="msapplication-TileColor" content="#da532c">
+                <meta name="theme-color" content="#ffffff">
+                -->
+                <link rel="shortcut icon" type="image/png" href="/assets/images/logo-circle.png">
+                <link rel="stylesheet" href="/styles.css">
+                <script src="https://kit.fontawesome.com/ff0edf556e.js" crossorigin="anonymous"></script>
+                <script src="https://code.iconify.design/iconify-icon/1.0.2/iconify-icon.min.js"></script>
+                <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+                <script>window.startTime = new Date().getTime();</script>
+                <style>
+                    :root {
+                        --background-color: #f3f2ef;
+                        --loading-bar-background-color: #d6cec2;
+                        --moving-loading-bar-background-color: #D0514D;
+                    }
+                    .loader {transition: all .2s ease-out;z-index: 10000000000;margin-top: -200px;position: fixed;top: 0;left: 0;right: 0;bottom: 0;background-color: var(--background-color);display: flex;align-items: center;justify-content: center;flex-direction: column;}.loader-logo {width: 40px; height: 40px; margin-bottom: 20px;}.loading-bar {width: 130px;height: 4px;border-radius: 100rem;background-color: var(--loading-bar-background-color);position: relative;overflow: hidden;}.moving-loading-bar {height: 100%;width: 68px;position: absolute;border-radius: 100rem;background-color: var(--moving-loading-bar-background-color);animation: initial-loading 1.5s ease infinite;}@keyframes initial-loading {0% {transform: translate(-34px);}50% {transform: translate(96px);}to {transform: translate(-34px);}}
+                    .loader.hide {opacity: 0;}
+                </style>
+                
+            <meta property="og:title" content="JavaScript Tutorial - Types de données JavaScript" />
+            <meta property="og:description" content="Apprendre les types de données JavaScript, y compris les types primitifs et non primitifs comme les chaînes de caractères, les nombres, les objets et les tableaux. Comprendre la conversion des types à l'aide d'exemples pratiques." />
+            <meta property="og:image" content="https://learntime.net/assets/thumbnail/blog/blog-1.jpg" />
+            <meta name="twitter:card" content="summary_large_image">
+            <meta name="twitter:creator" content="@learntimenet">
+            <meta name="twitter:title" content="JavaScript Tutorial - Types de données JavaScript">
+            <meta name="twitter:description" content="Apprendre les types de données JavaScript, y compris les types primitifs et non primitifs comme les chaînes de caractères, les nombres, les objets et les tableaux. Comprendre la conversion des types à l'aide d'exemples pratiques.">
+            <meta name="twitter:image" content="https://learntime.net/assets/thumbnail/blog/blog-1.jpg">
+        
+                <script>
+                    var disqus_config = function () {
+                        this.page.url = window.location.origin + window.location.pathname;
+                        this.page.identifier = window.location.pathname.replace('/en', '');
+                    };
+                </script>
+            <script defer src="/fr/blog/javascript-tutorial/data-types/data-types.12305739171f821f4313.js"></script></head>
+            <body>
+                <div class="loader">
+                    <div class="loading-bar">
+                        <div class="moving-loading-bar"></div>
+                    </div>
+                </div>
+                <script>
+                    var lastVisitTime = parseInt(localStorage.getItem('LAST_VISIT_TIME') || '0');
+                    if ((new Date().valueOf() - lastVisitTime) < 1200000) {
+                        document.querySelector('.loading-bar').style.display = 'none';
+                    }
+                </script>
+                <div class="body-container">
+                    <app-navbar></app-navbar>
+                    <div class="max-width"><app-breadcrumbs></app-breadcrumbs></div>
+                    <main>
+        
+<style>
+    :root {
+        --scroll-indicator-height: 0.5rem;
+        --max-width: 150rem;
+    }
+    @media screen and (min-width: 1024px) {
+        :root {
+            --promotion-height: 0rem !important;
+        }
+    }
+</style>
+<div class="max-width tutorial-container">
+  <div class="tutorial-menu-container">
+    <app-tutorial-menu menu="[{&quot;category&quot;:&quot;Tutoriel JavaScript&quot;,&quot;articles&quot;:[{&quot;title&quot;:&quot;Introduction&quot;,&quot;url&quot;:&quot;/fr/blog/javascript-tutorial/&quot;},{&quot;title&quot;:&quot;JS Placement&quot;,&quot;url&quot;:&quot;/fr/blog/javascript-tutorial/placement/&quot;},{&quot;title&quot;:&quot;JS Output&quot;,&quot;url&quot;:&quot;/fr/blog/javascript-tutorial/output/&quot;},{&quot;title&quot;:&quot;JS Statements&quot;,&quot;url&quot;:&quot;/fr/blog/javascript-tutorial/statements/&quot;},{&quot;title&quot;:&quot;JS Syntax&quot;,&quot;url&quot;:&quot;/fr/blog/javascript-tutorial/syntax/&quot;},{&quot;title&quot;:&quot;JS Comments&quot;,&quot;url&quot;:&quot;/fr/blog/javascript-tutorial/comments/&quot;},{&quot;title&quot;:&quot;JS Variables&quot;,&quot;url&quot;:&quot;/fr/blog/javascript-tutorial/variables/&quot;},{&quot;title&quot;:&quot;JS Let&quot;,&quot;url&quot;:&quot;/fr/blog/javascript-tutorial/let/&quot;},{&quot;title&quot;:&quot;JS Const&quot;,&quot;url&quot;:&quot;/fr/blog/javascript-tutorial/const/&quot;},{&quot;title&quot;:&quot;JS Operators&quot;,&quot;url&quot;:&quot;/fr/blog/javascript-tutorial/operators/&quot;},{&quot;title&quot;:&quot;JS Assignment&quot;,&quot;url&quot;:&quot;/fr/blog/javascript-tutorial/assignment/&quot;},{&quot;title&quot;:&quot;JS Data Types&quot;,&quot;url&quot;:&quot;/fr/blog/javascript-tutorial/data-types/&quot;},{&quot;title&quot;:&quot;JS Functions&quot;,&quot;url&quot;:&quot;/fr/blog/javascript-tutorial/functions/&quot;},{&quot;title&quot;:&quot;JS Objects&quot;,&quot;url&quot;:&quot;/fr/blog/javascript-tutorial/objects/&quot;},{&quot;title&quot;:&quot;JS Events&quot;,&quot;url&quot;:&quot;/fr/blog/javascript-tutorial/events/&quot;},{&quot;title&quot;:&quot;JS Strings&quot;,&quot;url&quot;:&quot;/fr/blog/javascript-tutorial/strings/&quot;},{&quot;title&quot;:&quot;JS Numbers&quot;,&quot;url&quot;:&quot;/fr/blog/javascript-tutorial/numbers/&quot;},{&quot;title&quot;:&quot;JS BigInt&quot;,&quot;url&quot;:&quot;/fr/blog/javascript-tutorial/bigint/&quot;},{&quot;title&quot;:&quot;JS Arrays&quot;,&quot;url&quot;:&quot;/fr/blog/javascript-tutorial/arrays/&quot;},{&quot;title&quot;:&quot;JS Dates&quot;,&quot;url&quot;:&quot;/fr/blog/javascript-tutorial/dates/&quot;},{&quot;title&quot;:&quot;JS Math&quot;,&quot;url&quot;:&quot;/fr/blog/javascript-tutorial/math/&quot;},{&quot;title&quot;:&quot;JS Random&quot;,&quot;url&quot;:&quot;/fr/blog/javascript-tutorial/random/&quot;}]}]"></app-tutorial-menu>
+  </div>
+  <div class="main-container">
+    <app-breadcrumbs class="tutorial"></app-breadcrumbs>
+    <app-blog-title class="tutorial" blog-title="Types de données JavaScript" blog-description="Apprendre les types de données JavaScript, y compris les types primitifs et non primitifs comme les chaînes de caractères, les nombres, les objets et les tableaux. Comprendre la conversion des types à l'aide d'exemples pratiques." blog-image="/assets/images/blog/blog-1.jpg"></app-blog-title>
+    <div class="blog-content markdown">
+      <h2>📝 Ce que vous apprendrez</h2>
+<ul>
+<li>Quels sont les types de données en JavaScript ?</li>
+<li>Les différentes catégories de types de données en JavaScript</li>
+<li>Comment travailler avec des types de données primitifs et non primitifs ?</li>
+<li>Exemples pratiques pour chaque type de données</li>
+</ul>
+<h2>🔍 Que sont les types de données ?</h2>
+<p>En JavaScript, un <strong>type de données</strong> est une classification du type de valeur qu&#39;une variable peut contenir. Il aide JavaScript à comprendre quel type d&#39;opérations peut être effectué sur une valeur particulière. JavaScript dispose de plusieurs types de données intégrés.</p>
+<h2>🧩 Types de données en JavaScript</h2>
+<p>JavaScript dispose de deux catégories de types de données :</p>
+<ol>
+<li><strong>Types de données primitives</strong> (également appelés types de base)</li>
+<li><strong>Types de données non primitifs</strong> (également appelés types de référence)</li>
+</ol>
+<p>Voyons ce qu&#39;il en est pour les deux.</p>
+<h2>1️⃣ Types de données primitives</h2>
+<p>Les types de données primitives sont les formes de données les plus simples en JavaScript. Ils sont immuables (ils ne peuvent pas être modifiés après leur création).</p>
+<h3>1.1 Chaîne</h3>
+<p>Une <strong>chaîne</strong> est une séquence de caractères utilisée pour représenter du texte. Les chaînes peuvent être placées entre guillemets simples (<code>&#39;</code>), guillemets doubles (<code>&quot;</code>) ou crochets (<code>`</code>).</p>
+<pre><code class="hljs language-javascript"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">let</span> greeting = <span class="hljs-string">&quot;Hello, World!&quot;</span>;
+<span class="hljs-keyword">let</span> name = <span class="hljs-string">&#x27;Alice&#x27;</span>;</code></pre>
+</code></pre><h3>1.2 Nombre</h3>
+<p>Un <strong>nombre</strong> représente à la fois des valeurs entières et des valeurs à virgule flottante.</p>
+<pre><code class="hljs language-javascript"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">let</span> age = <span class="hljs-number">25</span>;  <span class="hljs-comment">// integer</span>
+<span class="hljs-keyword">let</span> price = <span class="hljs-number">19.99</span>;  <span class="hljs-comment">// floating-point number</span></code></pre>
+</code></pre><h3>1.3 Booléen</h3>
+<p>Un <strong>booléen</strong> a deux valeurs possibles : <code>vrai</code> ou <code>faux</code>.</p>
+<pre><code class="hljs language-javascript"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">let</span> isActive = <span class="hljs-literal">true</span>;
+<span class="hljs-keyword">let</span> isCompleted = <span class="hljs-literal">false</span>;</code></pre>
+</code></pre><h3>1.4 Non défini</h3>
+<p>Une valeur <strong>indéfinie</strong> signifie qu&#39;une variable a été déclarée mais qu&#39;aucune valeur ne lui a été attribuée.</p>
+<pre><code class="hljs language-javascript"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">let</span> userName;
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(userName);  <span class="hljs-comment">// Output: undefined</span></code></pre>
+</code></pre><h3>1.5 Nul</h3>
+<p><strong>Null</strong> est une valeur spéciale représentant l&#39;absence de toute valeur d&#39;objet.</p>
+<pre><code class="hljs language-javascript"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">let</span> person = <span class="hljs-literal">null</span>;</code></pre>
+</code></pre><h3>1.6 Symbole (ES6)</h3>
+<p>Un <strong>symbole</strong> est une valeur primitive unique et immuable. Les symboles sont principalement utilisés pour les clés de propriété des objets.</p>
+<pre><code class="hljs language-javascript"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">let</span> sym = <span class="hljs-title class_">Symbol</span>(<span class="hljs-string">&#x27;description&#x27;</span>);</code></pre>
+</code></pre><h3>1.7 BigInt (Nouveau dans ES11)</h3>
+<p>Un <strong>BigInt</strong> vous permet de travailler avec des entiers de grande taille (au-delà de la plage du type <code>Number</code>).</p>
+<pre><code class="hljs language-javascript"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">let</span> bigNumber = <span class="hljs-number">123456789123456789123456789n</span>;  <span class="hljs-comment">// BigInt</span></code></pre>
+</code></pre><h2>2️⃣ Types de données non primitives</h2>
+<p>Les types de données non primitifs sont des objets qui peuvent contenir des collections de données et des entités plus complexes.</p>
+<h3>2.1 Objet</h3>
+<p>Un <strong>objet</strong> est une collection de paires clé-valeur. Il est utilisé pour stocker des structures de données plus complexes.</p>
+<pre><code class="hljs language-javascript"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">let</span> person = {
+  <span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;John&#x27;</span>,
+  <span class="hljs-attr">age</span>: <span class="hljs-number">30</span>,
+  <span class="hljs-attr">isActive</span>: <span class="hljs-literal">true</span>
+};</code></pre>
+</code></pre><h3>2.2 Tableau</h3>
+<p>Un <strong>tableau</strong> est une collection ordonnée de valeurs (pouvant être de n&#39;importe quel type). Les tableaux sont un type d&#39;objet.</p>
+<pre><code class="hljs language-javascript"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">let</span> colors = [<span class="hljs-string">&#x27;red&#x27;</span>, <span class="hljs-string">&#x27;green&#x27;</span>, <span class="hljs-string">&#x27;blue&#x27;</span>];</code></pre>
+</code></pre><h3>2.3 Fonction</h3>
+<p>Une <strong>fonction</strong> est un bloc de code conçu pour effectuer une tâche particulière. Les fonctions sont des objets de première classe en JavaScript.</p>
+<pre><code class="hljs language-javascript"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">function</span> <span class="hljs-title function_">greet</span>(<span class="hljs-params">name</span>) {
+  <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;Hello, &quot;</span> + name;
+}
+
+<span class="hljs-keyword">let</span> message = <span class="hljs-title function_">greet</span>(<span class="hljs-string">&#x27;Alice&#x27;</span>);  <span class="hljs-comment">// &quot;Hello, Alice&quot;</span></code></pre>
+</code></pre><h2>🔄 Conversion de type</h2>
+<p>JavaScript vous permet de convertir des données d&#39;un type à un autre. Ce processus est appelé <strong>type casting</strong>.</p>
+<h3>Conversion implicite des types</h3>
+<p>JavaScript convertit automatiquement les types de données dans certaines opérations.</p>
+<pre><code class="hljs language-javascript"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">let</span> num = <span class="hljs-number">10</span>;
+<span class="hljs-keyword">let</span> str = <span class="hljs-string">&quot;The number is &quot;</span> + num;  <span class="hljs-comment">// Implicit conversion: 10 is converted to a string</span>
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(str);  <span class="hljs-comment">// &quot;The number is 10&quot;</span></code></pre>
+</code></pre><h3>Conversion explicite des types</h3>
+<p>Vous pouvez explicitement convertir une valeur en un type spécifique à l&#39;aide de fonctions telles que <code>String()</code>, <code>Number()</code>, et <code>Boolean()</code>.</p>
+<pre><code class="hljs language-javascript"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">let</span> str = <span class="hljs-string">&quot;123&quot;</span>;
+<span class="hljs-keyword">let</span> num = <span class="hljs-title class_">Number</span>(str);  <span class="hljs-comment">// Explicit conversion: &quot;123&quot; is converted to 123</span>
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(num);  <span class="hljs-comment">// 123</span></code></pre>
+</code></pre><h2>🧠 Recap</h2>
+<ul>
+<li>Les types de données primitifs** comprennent les chaînes de caractères, les nombres, les booléens, les indéfinis, les null, les symboles et les BigInt.</li>
+<li>Les types de données non primitifs** comprennent les objets, les tableaux et les fonctions.  </li>
+<li>JavaScript permet à la fois la conversion de type <strong>implicite</strong> et <strong>explicite</strong>.</li>
+</ul>
+
+      <app-subscribe></app-subscribe>
+      <app-comments></app-comments>
+    </div>
+  </div>
+  <aside>
+    <div class="aside-container">
+      <app-share-buttons></app-share-buttons>
+      <app-aside-promotion></app-aside-promotion>
+    </div>
+  </aside>
+</div>
+
+        </main>
+        <app-scroll-top-button></app-scroll-top-button>
+        <app-footer></app-footer>
+        </div>
+            <script>
+                var lastVisitTime = parseInt(localStorage.getItem('LAST_VISIT_TIME') || '0');
+                var timeoutDuration = 1500;
+                //if ((new Date().valueOf() - lastVisitTime) < 1200000) {
+                //    timeoutDuration = 400;
+                //}
+                setTimeout(() => {
+                    document.querySelector('.loader').classList.add('hide');
+                    document.querySelector('.body-container').style.display = 'block';
+                    document.dispatchEvent(new CustomEvent('page-loader-hide'));
+                }, timeoutDuration);
+                setTimeout(() => {
+                    document.querySelector('.loader').style.display = 'none';
+                }, 2000);
+                localStorage.setItem('LAST_VISIT_TIME', new Date().valueOf());
+            </script>
+        
+                <!-- Google tag (gtag.js) -->
+                <script async src="https://www.googletagmanager.com/gtag/js?id=G-S6JEVF53JZ"></script>
+                <script>
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag() {
+                        dataLayer.push(arguments);
+                    }
+                    gtag('js', new Date());
+
+                    gtag('config', 'G-S6JEVF53JZ');
+                </script>
+            
+            <script>
+                window.axeptioSettings = {
+                    clientId: "67fc2975df7d77940a4ff73d",
+                    cookiesVersion: "13042025",
+                    googleConsentMode: {
+                        default: {
+                            analytics_storage: "denied",
+                            ad_storage: "denied",
+                            ad_user_data: "denied",
+                            ad_personalization: "denied",
+                            wait_for_update: 500
+                        }
+                    }
+                };
+                (function(d, s) {
+                    var t = d.getElementsByTagName(s)[0], e = d.createElement(s);
+                    e.async = true; e.src = "//static.axept.io/sdk.js";
+                    t.parentNode.insertBefore(e, t);
+                })(document, "script");
+            </script>
+            <script src="/assets/scripts/markdown.js"></script></body></html>

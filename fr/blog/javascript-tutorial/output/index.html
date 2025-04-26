@@ -1,0 +1,203 @@
+
+            <!DOCTYPE html>
+            <html lang="fr" data-translated="true" data-breadcrump-title="Sortie JavaScript">
+            <head>
+                <meta charset="utf-8" />
+                <title>Learn Time | JavaScript Tutorial - Sortie JavaScript</title>
+                <meta name="description" content="Découvrez toutes les façons dont JavaScript peut afficher des données à l'utilisateur ou à la console. Apprenez quand utiliser console.log, alert, innerHTML, etc.">
+                
+                <meta name="viewport" content="width=device-width,initial-scale=1" />
+                <!--
+                <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
+                <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
+                <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
+                <link rel="shortcut icon" sizes="192x192" href="/assets/favicon/android-chrome-192x192.png" >
+                <link rel="shortcut icon" sizes="512x512" href="/assets/favicon/android-chrome-512x512.png" >
+                <link rel="manifest" href="/assets/favicon/site.webmanifest">
+                <link rel="shortcut icon" href="/assets/favicon/favicon.ico">
+                <link rel="mask-icon" href="/assets/favicon/safari-pinned-tab.svg" color="#5bbad5">
+                <meta name="msapplication-TileColor" content="#da532c">
+                <meta name="theme-color" content="#ffffff">
+                -->
+                <link rel="shortcut icon" type="image/png" href="/assets/images/logo-circle.png">
+                <link rel="stylesheet" href="/styles.css">
+                <script src="https://kit.fontawesome.com/ff0edf556e.js" crossorigin="anonymous"></script>
+                <script src="https://code.iconify.design/iconify-icon/1.0.2/iconify-icon.min.js"></script>
+                <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+                <script>window.startTime = new Date().getTime();</script>
+                <style>
+                    :root {
+                        --background-color: #f3f2ef;
+                        --loading-bar-background-color: #d6cec2;
+                        --moving-loading-bar-background-color: #D0514D;
+                    }
+                    .loader {transition: all .2s ease-out;z-index: 10000000000;margin-top: -200px;position: fixed;top: 0;left: 0;right: 0;bottom: 0;background-color: var(--background-color);display: flex;align-items: center;justify-content: center;flex-direction: column;}.loader-logo {width: 40px; height: 40px; margin-bottom: 20px;}.loading-bar {width: 130px;height: 4px;border-radius: 100rem;background-color: var(--loading-bar-background-color);position: relative;overflow: hidden;}.moving-loading-bar {height: 100%;width: 68px;position: absolute;border-radius: 100rem;background-color: var(--moving-loading-bar-background-color);animation: initial-loading 1.5s ease infinite;}@keyframes initial-loading {0% {transform: translate(-34px);}50% {transform: translate(96px);}to {transform: translate(-34px);}}
+                    .loader.hide {opacity: 0;}
+                </style>
+                
+            <meta property="og:title" content="JavaScript Tutorial - Sortie JavaScript" />
+            <meta property="og:description" content="Découvrez toutes les façons dont JavaScript peut afficher des données à l'utilisateur ou à la console. Apprenez quand utiliser console.log, alert, innerHTML, etc." />
+            <meta property="og:image" content="https://learntime.net/assets/thumbnail/blog/blog-3.jpg" />
+            <meta name="twitter:card" content="summary_large_image">
+            <meta name="twitter:creator" content="@learntimenet">
+            <meta name="twitter:title" content="JavaScript Tutorial - Sortie JavaScript">
+            <meta name="twitter:description" content="Découvrez toutes les façons dont JavaScript peut afficher des données à l'utilisateur ou à la console. Apprenez quand utiliser console.log, alert, innerHTML, etc.">
+            <meta name="twitter:image" content="https://learntime.net/assets/thumbnail/blog/blog-3.jpg">
+        
+                <script>
+                    var disqus_config = function () {
+                        this.page.url = window.location.origin + window.location.pathname;
+                        this.page.identifier = window.location.pathname.replace('/en', '');
+                    };
+                </script>
+            <script defer src="/fr/blog/javascript-tutorial/output/output.8cf42aaa1556c458951d.js"></script></head>
+            <body>
+                <div class="loader">
+                    <div class="loading-bar">
+                        <div class="moving-loading-bar"></div>
+                    </div>
+                </div>
+                <script>
+                    var lastVisitTime = parseInt(localStorage.getItem('LAST_VISIT_TIME') || '0');
+                    if ((new Date().valueOf() - lastVisitTime) < 1200000) {
+                        document.querySelector('.loading-bar').style.display = 'none';
+                    }
+                </script>
+                <div class="body-container">
+                    <app-navbar></app-navbar>
+                    <div class="max-width"><app-breadcrumbs></app-breadcrumbs></div>
+                    <main>
+        
+<style>
+    :root {
+        --scroll-indicator-height: 0.5rem;
+        --max-width: 150rem;
+    }
+    @media screen and (min-width: 1024px) {
+        :root {
+            --promotion-height: 0rem !important;
+        }
+    }
+</style>
+<div class="max-width tutorial-container">
+  <div class="tutorial-menu-container">
+    <app-tutorial-menu menu="[{&quot;category&quot;:&quot;Tutoriel JavaScript&quot;,&quot;articles&quot;:[{&quot;title&quot;:&quot;Introduction&quot;,&quot;url&quot;:&quot;/fr/blog/javascript-tutorial/&quot;},{&quot;title&quot;:&quot;JS Placement&quot;,&quot;url&quot;:&quot;/fr/blog/javascript-tutorial/placement/&quot;},{&quot;title&quot;:&quot;JS Output&quot;,&quot;url&quot;:&quot;/fr/blog/javascript-tutorial/output/&quot;},{&quot;title&quot;:&quot;JS Statements&quot;,&quot;url&quot;:&quot;/fr/blog/javascript-tutorial/statements/&quot;},{&quot;title&quot;:&quot;JS Syntax&quot;,&quot;url&quot;:&quot;/fr/blog/javascript-tutorial/syntax/&quot;},{&quot;title&quot;:&quot;JS Comments&quot;,&quot;url&quot;:&quot;/fr/blog/javascript-tutorial/comments/&quot;},{&quot;title&quot;:&quot;JS Variables&quot;,&quot;url&quot;:&quot;/fr/blog/javascript-tutorial/variables/&quot;},{&quot;title&quot;:&quot;JS Let&quot;,&quot;url&quot;:&quot;/fr/blog/javascript-tutorial/let/&quot;},{&quot;title&quot;:&quot;JS Const&quot;,&quot;url&quot;:&quot;/fr/blog/javascript-tutorial/const/&quot;},{&quot;title&quot;:&quot;JS Operators&quot;,&quot;url&quot;:&quot;/fr/blog/javascript-tutorial/operators/&quot;},{&quot;title&quot;:&quot;JS Assignment&quot;,&quot;url&quot;:&quot;/fr/blog/javascript-tutorial/assignment/&quot;},{&quot;title&quot;:&quot;JS Data Types&quot;,&quot;url&quot;:&quot;/fr/blog/javascript-tutorial/data-types/&quot;},{&quot;title&quot;:&quot;JS Functions&quot;,&quot;url&quot;:&quot;/fr/blog/javascript-tutorial/functions/&quot;},{&quot;title&quot;:&quot;JS Objects&quot;,&quot;url&quot;:&quot;/fr/blog/javascript-tutorial/objects/&quot;},{&quot;title&quot;:&quot;JS Events&quot;,&quot;url&quot;:&quot;/fr/blog/javascript-tutorial/events/&quot;},{&quot;title&quot;:&quot;JS Strings&quot;,&quot;url&quot;:&quot;/fr/blog/javascript-tutorial/strings/&quot;},{&quot;title&quot;:&quot;JS Numbers&quot;,&quot;url&quot;:&quot;/fr/blog/javascript-tutorial/numbers/&quot;},{&quot;title&quot;:&quot;JS BigInt&quot;,&quot;url&quot;:&quot;/fr/blog/javascript-tutorial/bigint/&quot;},{&quot;title&quot;:&quot;JS Arrays&quot;,&quot;url&quot;:&quot;/fr/blog/javascript-tutorial/arrays/&quot;},{&quot;title&quot;:&quot;JS Dates&quot;,&quot;url&quot;:&quot;/fr/blog/javascript-tutorial/dates/&quot;},{&quot;title&quot;:&quot;JS Math&quot;,&quot;url&quot;:&quot;/fr/blog/javascript-tutorial/math/&quot;},{&quot;title&quot;:&quot;JS Random&quot;,&quot;url&quot;:&quot;/fr/blog/javascript-tutorial/random/&quot;}]}]"></app-tutorial-menu>
+  </div>
+  <div class="main-container">
+    <app-breadcrumbs class="tutorial"></app-breadcrumbs>
+    <app-blog-title class="tutorial" blog-title="Sortie JavaScript" blog-description="Découvrez toutes les façons dont JavaScript peut afficher des données à l'utilisateur ou à la console. Apprenez quand utiliser console.log, alert, innerHTML, etc." blog-image="/assets/images/blog/blog-3.jpg"></app-blog-title>
+    <div class="blog-content markdown">
+      <h2>📝 Ce que vous apprendrez</h2>
+<ul>
+<li>Les différentes façons dont JavaScript peut afficher les résultats</li>
+<li>Quand et où utiliser chaque méthode</li>
+<li>Exemples réels avec code</li>
+<li>Les erreurs courantes des débutants à éviter</li>
+</ul>
+<h2>🖥 Sortie console</h2>
+<p>La méthode <code>console.log()</code> est l&#39;un des moyens les plus couramment utilisés pour afficher la sortie, en particulier pour le <strong>débogage</strong>.</p>
+<pre><code class="hljs language-javascript"><pre class="highlight"><code class="hljs"><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;Hello, console!&quot;</span>);</code></pre>
+</code></pre><p><strong>Où cela s&#39;affiche:</strong> Developer Console dans votre navigateur (généralement ouvert avec F12 ou un clic droit → Inspecter → Console)</p>
+<h2>📦 Boîtes d&#39;alerte</h2>
+<p><code>alert()</code> affiche une boîte de dialogue <strong>popup</strong> avec un message. Elle est utile pour une interaction très basique ou pour des tests.</p>
+<pre><code class="hljs language-javascript"><pre class="highlight"><code class="hljs"><span class="hljs-title function_">alert</span>(<span class="hljs-string">&quot;Hello, user!&quot;</span>);</code></pre>
+</code></pre><p><strong>Note:</strong> Cette méthode interrompt l&#39;expérience de l&#39;utilisateur, c&#39;est pourquoi elle n&#39;est pas utilisée dans le code de production.</p>
+<h2>📄 Écrire sur la page web</h2>
+<p>Vous pouvez utiliser <code>document.write()</code> pour produire du contenu directement dans le code HTML d&#39;une page.</p>
+<pre><code class="hljs language-javascript"><pre class="highlight"><code class="hljs"><span class="hljs-variable language_">document</span>.<span class="hljs-title function_">write</span>(<span class="hljs-string">&quot;This is written to the page.&quot;</span>);</code></pre>
+</code></pre><p>**Attention : si elle est utilisée après le chargement de la page, elle peut écraser l&#39;ensemble du document.</p>
+<h2>✏️ Mise à jour des éléments HTML</h2>
+<p>La façon la plus pratique et la plus moderne d&#39;afficher les résultats est de mettre à jour un élément de la page web à l&#39;aide de <code>innerHTML</code>.</p>
+<pre><code class="hljs language-html"><pre class="highlight"><code class="hljs"><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;demo&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript">
+  <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&quot;demo&quot;</span>).<span class="hljs-property">innerHTML</span> = <span class="hljs-string">&quot;Hello from JavaScript!&quot;</span>;
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></pre>
+</code></pre><p>Cette méthode est <strong>non intrusive</strong>, c&#39;est-à-dire qu&#39;elle ne s&#39;affiche pas et ne remplace pas la page entière - ce qui est idéal pour le travail sur l&#39;interface utilisateur.</p>
+<h2>🛠 Autres méthodes de sortie</h2>
+<ul>
+<li><code>confirm()</code> - affiche une boîte de dialogue avec OK/Annuler</li>
+<li><code>prompt()</code> - demande une entrée à l&#39;utilisateur</li>
+<li><code>console.error()</code> - affiche un message d&#39;erreur</li>
+<li><code>console.table()</code> - affiche les données sous forme de tableau (idéal pour les tableaux et les objets)</li>
+</ul>
+<h2>⚠️ Erreurs courantes</h2>
+<ul>
+<li>Utiliser trop souvent <code>alert()</code> - cela devient vite ennuyeux</li>
+<li>Oublier de cibler le bon élément avec <code>getElementById()</code></li>
+<li>Utilisation de <code>document.write()</code> après le chargement complet de la page (cela efface le contenu)</li>
+</ul>
+<h2>📘 Recap</h2>
+<ul>
+<li>Utiliser <code>console.log()</code> pour le débogage</li>
+<li>Utilisez <code>alert()</code> avec parcimonie, principalement pour l&#39;apprentissage.</li>
+<li>Préférer <code>innerHTML</code> pour afficher la sortie dans l&#39;interface utilisateur</li>
+<li>Éviter <code>document.write()</code> dans les projets réels</li>
+</ul>
+
+      <app-subscribe></app-subscribe>
+      <app-comments></app-comments>
+    </div>
+  </div>
+  <aside>
+    <div class="aside-container">
+      <app-share-buttons></app-share-buttons>
+      <app-aside-promotion></app-aside-promotion>
+    </div>
+  </aside>
+</div>
+
+        </main>
+        <app-scroll-top-button></app-scroll-top-button>
+        <app-footer></app-footer>
+        </div>
+            <script>
+                var lastVisitTime = parseInt(localStorage.getItem('LAST_VISIT_TIME') || '0');
+                var timeoutDuration = 1500;
+                //if ((new Date().valueOf() - lastVisitTime) < 1200000) {
+                //    timeoutDuration = 400;
+                //}
+                setTimeout(() => {
+                    document.querySelector('.loader').classList.add('hide');
+                    document.querySelector('.body-container').style.display = 'block';
+                    document.dispatchEvent(new CustomEvent('page-loader-hide'));
+                }, timeoutDuration);
+                setTimeout(() => {
+                    document.querySelector('.loader').style.display = 'none';
+                }, 2000);
+                localStorage.setItem('LAST_VISIT_TIME', new Date().valueOf());
+            </script>
+        
+                <!-- Google tag (gtag.js) -->
+                <script async src="https://www.googletagmanager.com/gtag/js?id=G-S6JEVF53JZ"></script>
+                <script>
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag() {
+                        dataLayer.push(arguments);
+                    }
+                    gtag('js', new Date());
+
+                    gtag('config', 'G-S6JEVF53JZ');
+                </script>
+            
+            <script>
+                window.axeptioSettings = {
+                    clientId: "67fc2975df7d77940a4ff73d",
+                    cookiesVersion: "13042025",
+                    googleConsentMode: {
+                        default: {
+                            analytics_storage: "denied",
+                            ad_storage: "denied",
+                            ad_user_data: "denied",
+                            ad_personalization: "denied",
+                            wait_for_update: 500
+                        }
+                    }
+                };
+                (function(d, s) {
+                    var t = d.getElementsByTagName(s)[0], e = d.createElement(s);
+                    e.async = true; e.src = "//static.axept.io/sdk.js";
+                    t.parentNode.insertBefore(e, t);
+                })(document, "script");
+            </script>
+            <script src="/assets/scripts/markdown.js"></script></body></html>

@@ -1,0 +1,215 @@
+
+            <!DOCTYPE html>
+            <html lang="fr" data-translated="true" data-breadcrump-title="Opérateurs d'affectation en JavaScript">
+            <head>
+                <meta charset="utf-8" />
+                <title>Learn Time | JavaScript Tutorial - Opérateurs d'affectation en JavaScript</title>
+                <meta name="description" content="Apprenez à utiliser les opérateurs d'affectation JavaScript pour mettre à jour les valeurs des variables. Explorez les opérateurs d'affectation composés tels que +=, -=, et bien d'autres encore, à l'aide d'exemples pratiques.">
+                
+                <meta name="viewport" content="width=device-width,initial-scale=1" />
+                <!--
+                <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
+                <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
+                <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
+                <link rel="shortcut icon" sizes="192x192" href="/assets/favicon/android-chrome-192x192.png" >
+                <link rel="shortcut icon" sizes="512x512" href="/assets/favicon/android-chrome-512x512.png" >
+                <link rel="manifest" href="/assets/favicon/site.webmanifest">
+                <link rel="shortcut icon" href="/assets/favicon/favicon.ico">
+                <link rel="mask-icon" href="/assets/favicon/safari-pinned-tab.svg" color="#5bbad5">
+                <meta name="msapplication-TileColor" content="#da532c">
+                <meta name="theme-color" content="#ffffff">
+                -->
+                <link rel="shortcut icon" type="image/png" href="/assets/images/logo-circle.png">
+                <link rel="stylesheet" href="/styles.css">
+                <script src="https://kit.fontawesome.com/ff0edf556e.js" crossorigin="anonymous"></script>
+                <script src="https://code.iconify.design/iconify-icon/1.0.2/iconify-icon.min.js"></script>
+                <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+                <script>window.startTime = new Date().getTime();</script>
+                <style>
+                    :root {
+                        --background-color: #f3f2ef;
+                        --loading-bar-background-color: #d6cec2;
+                        --moving-loading-bar-background-color: #D0514D;
+                    }
+                    .loader {transition: all .2s ease-out;z-index: 10000000000;margin-top: -200px;position: fixed;top: 0;left: 0;right: 0;bottom: 0;background-color: var(--background-color);display: flex;align-items: center;justify-content: center;flex-direction: column;}.loader-logo {width: 40px; height: 40px; margin-bottom: 20px;}.loading-bar {width: 130px;height: 4px;border-radius: 100rem;background-color: var(--loading-bar-background-color);position: relative;overflow: hidden;}.moving-loading-bar {height: 100%;width: 68px;position: absolute;border-radius: 100rem;background-color: var(--moving-loading-bar-background-color);animation: initial-loading 1.5s ease infinite;}@keyframes initial-loading {0% {transform: translate(-34px);}50% {transform: translate(96px);}to {transform: translate(-34px);}}
+                    .loader.hide {opacity: 0;}
+                </style>
+                
+            <meta property="og:title" content="JavaScript Tutorial - Opérateurs d'affectation en JavaScript" />
+            <meta property="og:description" content="Apprenez à utiliser les opérateurs d'affectation JavaScript pour mettre à jour les valeurs des variables. Explorez les opérateurs d'affectation composés tels que +=, -=, et bien d'autres encore, à l'aide d'exemples pratiques." />
+            <meta property="og:image" content="https://learntime.net/assets/thumbnail/blog/blog-0.jpg" />
+            <meta name="twitter:card" content="summary_large_image">
+            <meta name="twitter:creator" content="@learntimenet">
+            <meta name="twitter:title" content="JavaScript Tutorial - Opérateurs d'affectation en JavaScript">
+            <meta name="twitter:description" content="Apprenez à utiliser les opérateurs d'affectation JavaScript pour mettre à jour les valeurs des variables. Explorez les opérateurs d'affectation composés tels que +=, -=, et bien d'autres encore, à l'aide d'exemples pratiques.">
+            <meta name="twitter:image" content="https://learntime.net/assets/thumbnail/blog/blog-0.jpg">
+        
+                <script>
+                    var disqus_config = function () {
+                        this.page.url = window.location.origin + window.location.pathname;
+                        this.page.identifier = window.location.pathname.replace('/en', '');
+                    };
+                </script>
+            <script defer src="/fr/blog/javascript-tutorial/assignment/assignment.a37019969d20af1fd33d.js"></script></head>
+            <body>
+                <div class="loader">
+                    <div class="loading-bar">
+                        <div class="moving-loading-bar"></div>
+                    </div>
+                </div>
+                <script>
+                    var lastVisitTime = parseInt(localStorage.getItem('LAST_VISIT_TIME') || '0');
+                    if ((new Date().valueOf() - lastVisitTime) < 1200000) {
+                        document.querySelector('.loading-bar').style.display = 'none';
+                    }
+                </script>
+                <div class="body-container">
+                    <app-navbar></app-navbar>
+                    <div class="max-width"><app-breadcrumbs></app-breadcrumbs></div>
+                    <main>
+        
+<style>
+    :root {
+        --scroll-indicator-height: 0.5rem;
+        --max-width: 150rem;
+    }
+    @media screen and (min-width: 1024px) {
+        :root {
+            --promotion-height: 0rem !important;
+        }
+    }
+</style>
+<div class="max-width tutorial-container">
+  <div class="tutorial-menu-container">
+    <app-tutorial-menu menu="[{&quot;category&quot;:&quot;Tutoriel JavaScript&quot;,&quot;articles&quot;:[{&quot;title&quot;:&quot;Introduction&quot;,&quot;url&quot;:&quot;/fr/blog/javascript-tutorial/&quot;},{&quot;title&quot;:&quot;JS Placement&quot;,&quot;url&quot;:&quot;/fr/blog/javascript-tutorial/placement/&quot;},{&quot;title&quot;:&quot;JS Output&quot;,&quot;url&quot;:&quot;/fr/blog/javascript-tutorial/output/&quot;},{&quot;title&quot;:&quot;JS Statements&quot;,&quot;url&quot;:&quot;/fr/blog/javascript-tutorial/statements/&quot;},{&quot;title&quot;:&quot;JS Syntax&quot;,&quot;url&quot;:&quot;/fr/blog/javascript-tutorial/syntax/&quot;},{&quot;title&quot;:&quot;JS Comments&quot;,&quot;url&quot;:&quot;/fr/blog/javascript-tutorial/comments/&quot;},{&quot;title&quot;:&quot;JS Variables&quot;,&quot;url&quot;:&quot;/fr/blog/javascript-tutorial/variables/&quot;},{&quot;title&quot;:&quot;JS Let&quot;,&quot;url&quot;:&quot;/fr/blog/javascript-tutorial/let/&quot;},{&quot;title&quot;:&quot;JS Const&quot;,&quot;url&quot;:&quot;/fr/blog/javascript-tutorial/const/&quot;},{&quot;title&quot;:&quot;JS Operators&quot;,&quot;url&quot;:&quot;/fr/blog/javascript-tutorial/operators/&quot;},{&quot;title&quot;:&quot;JS Assignment&quot;,&quot;url&quot;:&quot;/fr/blog/javascript-tutorial/assignment/&quot;},{&quot;title&quot;:&quot;JS Data Types&quot;,&quot;url&quot;:&quot;/fr/blog/javascript-tutorial/data-types/&quot;},{&quot;title&quot;:&quot;JS Functions&quot;,&quot;url&quot;:&quot;/fr/blog/javascript-tutorial/functions/&quot;},{&quot;title&quot;:&quot;JS Objects&quot;,&quot;url&quot;:&quot;/fr/blog/javascript-tutorial/objects/&quot;},{&quot;title&quot;:&quot;JS Events&quot;,&quot;url&quot;:&quot;/fr/blog/javascript-tutorial/events/&quot;},{&quot;title&quot;:&quot;JS Strings&quot;,&quot;url&quot;:&quot;/fr/blog/javascript-tutorial/strings/&quot;},{&quot;title&quot;:&quot;JS Numbers&quot;,&quot;url&quot;:&quot;/fr/blog/javascript-tutorial/numbers/&quot;},{&quot;title&quot;:&quot;JS BigInt&quot;,&quot;url&quot;:&quot;/fr/blog/javascript-tutorial/bigint/&quot;},{&quot;title&quot;:&quot;JS Arrays&quot;,&quot;url&quot;:&quot;/fr/blog/javascript-tutorial/arrays/&quot;},{&quot;title&quot;:&quot;JS Dates&quot;,&quot;url&quot;:&quot;/fr/blog/javascript-tutorial/dates/&quot;},{&quot;title&quot;:&quot;JS Math&quot;,&quot;url&quot;:&quot;/fr/blog/javascript-tutorial/math/&quot;},{&quot;title&quot;:&quot;JS Random&quot;,&quot;url&quot;:&quot;/fr/blog/javascript-tutorial/random/&quot;}]}]"></app-tutorial-menu>
+  </div>
+  <div class="main-container">
+    <app-breadcrumbs class="tutorial"></app-breadcrumbs>
+    <app-blog-title class="tutorial" blog-title="Opérateurs d'affectation en JavaScript" blog-description="Apprenez à utiliser les opérateurs d'affectation JavaScript pour mettre à jour les valeurs des variables. Explorez les opérateurs d'affectation composés tels que +=, -=, et bien d'autres encore, à l'aide d'exemples pratiques." blog-image="/assets/images/blog/blog-0.jpg"></app-blog-title>
+    <div class="blog-content markdown">
+      <h2>📝 Ce que vous apprendrez</h2>
+<ul>
+<li>Quels sont les opérateurs d&#39;affectation en JavaScript ?</li>
+<li>Les différents types d&#39;opérateurs d&#39;affectation</li>
+<li>Comment les utiliser dans votre code</li>
+<li>Exemples pratiques démontrant le fonctionnement des opérateurs d&#39;affectation</li>
+</ul>
+<h2>🔍 Que sont les opérateurs d&#39;affectation ?</h2>
+<p><strong>Les opérateurs d&#39;affectation</strong> sont utilisés pour attribuer des valeurs aux variables en JavaScript. Ils permettent de modifier la valeur d&#39;une variable en combinant sa valeur actuelle et l&#39;opération spécifiée.</p>
+<h3>Exemple de base :</h3>
+<pre><code class="hljs language-javascript"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">let</span> x = <span class="hljs-number">5</span>; <span class="hljs-comment">// Assigning the value 5 to x</span></code></pre>
+</code></pre><p>Dans l&#39;exemple ci-dessus, l&#39;opérateur d&#39;affectation <code>=</code> affecte la valeur <code>5</code> à la variable <code>x</code>.</p>
+<h2>➕ Opérateur d&#39;affectation de base (<strong>=</strong>)</h2>
+<p>L&#39;opérateur d&#39;affectation de base** <code>=</code> est utilisé pour affecter une valeur à une variable.</p>
+<pre><code class="hljs language-javascript"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">let</span> num = <span class="hljs-number">10</span>;  <span class="hljs-comment">// num is now 10</span></code></pre>
+</code></pre><h2>➕ Opérateurs d&#39;affectation composés</h2>
+<p>Vous pouvez effectuer une opération et affecter le résultat à la variable en une seule étape à l&#39;aide d&#39;opérateurs d&#39;affectation composés.</p>
+<h3><strong>+=</strong> (assignation d&#39;addition)</h3>
+<p>Ajoute l&#39;opérande de droite à l&#39;opérande de gauche et affecte le résultat à l&#39;opérande de gauche.</p>
+<pre><code class="hljs language-javascript"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">let</span> x = <span class="hljs-number">5</span>;
+x += <span class="hljs-number">3</span>;  <span class="hljs-comment">// x = x + 3; → x is now 8</span></code></pre>
+</code></pre><h3><strong>-=</strong> (exercice de soustraction)</h3>
+<p>Soustrait l&#39;opérande de droite de l&#39;opérande de gauche et affecte le résultat à l&#39;opérande de gauche.</p>
+<pre><code class="hljs language-javascript"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">let</span> x = <span class="hljs-number">10</span>;
+x -= <span class="hljs-number">4</span>;  <span class="hljs-comment">// x = x - 4; → x is now 6</span></code></pre>
+</code></pre><h3>***=** (exercice de multiplication)</h3>
+<p>Multiplie l&#39;opérande de gauche par l&#39;opérande de droite et affecte le résultat à l&#39;opérande de gauche.</p>
+<pre><code class="hljs language-javascript"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">let</span> x = <span class="hljs-number">2</span>;
+x *= <span class="hljs-number">4</span>;  <span class="hljs-comment">// x = x * 4; → x is now 8</span></code></pre>
+</code></pre><h3><strong>/=</strong> (affectation de la division)</h3>
+<p>Divise l&#39;opérande de gauche par l&#39;opérande de droite et affecte le résultat à l&#39;opérande de gauche.</p>
+<pre><code class="hljs language-javascript"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">let</span> x = <span class="hljs-number">20</span>;
+x /= <span class="hljs-number">5</span>;  <span class="hljs-comment">// x = x / 5; → x is now 4</span></code></pre>
+</code></pre><h3><strong>%=</strong> (affectation du module)</h3>
+<p>Prend le module (reste) de l&#39;opérande de gauche divisé par l&#39;opérande de droite et affecte le résultat à l&#39;opérande de gauche.</p>
+<pre><code class="hljs language-javascript"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">let</span> x = <span class="hljs-number">9</span>;
+x %= <span class="hljs-number">4</span>;  <span class="hljs-comment">// x = x % 4; → x is now 1</span></code></pre>
+</code></pre><h2>🧠 Pourquoi utiliser les opérateurs d&#39;affectation ?</h2>
+<ul>
+<li><strong>Concision</strong> : Les opérateurs d&#39;affectation vous aident à écrire un code plus court en combinant les opérations et les affectations.</li>
+<li>Lisibilité** : Ils indiquent clairement que la valeur d&#39;une variable est mise à jour sur la base d&#39;une opération mathématique.</li>
+<li><strong>Efficacité</strong> : Particulièrement utiles à l&#39;intérieur des boucles ou des calculs, elles peuvent rendre le code plus compact et plus facile à maintenir.</li>
+</ul>
+<h2>✅ Exemple : Utilisation des opérateurs d&#39;affectation dans une boucle</h2>
+<p>Voici un exemple d&#39;utilisation des opérateurs d&#39;affectation à l&#39;intérieur d&#39;une boucle :</p>
+<pre><code class="hljs language-javascript"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">let</span> sum = <span class="hljs-number">0</span>;
+
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">1</span>; i &lt;= <span class="hljs-number">5</span>; i++) {
+  sum += i;  <span class="hljs-comment">// sum = sum + i;</span>
+}
+
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(sum);  <span class="hljs-comment">// Output: 15</span></code></pre>
+</code></pre><h2>📘 Recap</h2>
+<ul>
+<li><strong><code>=</code></strong> est l&#39;opérateur d&#39;affectation de base</li>
+<li><strong><code>+=</code>, <code>-=</code>, <code>*=</code>, <code>/=</code>, <code>%=</code></strong> sont des opérateurs d&#39;affectation composés</li>
+<li>Ces opérateurs permettent de simplifier le code et d&#39;en améliorer la lisibilité</li>
+<li>Utilisez-les pour des mises à jour efficaces des valeurs dans les boucles ou les calculs</li>
+</ul>
+
+      <app-subscribe></app-subscribe>
+      <app-comments></app-comments>
+    </div>
+  </div>
+  <aside>
+    <div class="aside-container">
+      <app-share-buttons></app-share-buttons>
+      <app-aside-promotion></app-aside-promotion>
+    </div>
+  </aside>
+</div>
+
+        </main>
+        <app-scroll-top-button></app-scroll-top-button>
+        <app-footer></app-footer>
+        </div>
+            <script>
+                var lastVisitTime = parseInt(localStorage.getItem('LAST_VISIT_TIME') || '0');
+                var timeoutDuration = 1500;
+                //if ((new Date().valueOf() - lastVisitTime) < 1200000) {
+                //    timeoutDuration = 400;
+                //}
+                setTimeout(() => {
+                    document.querySelector('.loader').classList.add('hide');
+                    document.querySelector('.body-container').style.display = 'block';
+                    document.dispatchEvent(new CustomEvent('page-loader-hide'));
+                }, timeoutDuration);
+                setTimeout(() => {
+                    document.querySelector('.loader').style.display = 'none';
+                }, 2000);
+                localStorage.setItem('LAST_VISIT_TIME', new Date().valueOf());
+            </script>
+        
+                <!-- Google tag (gtag.js) -->
+                <script async src="https://www.googletagmanager.com/gtag/js?id=G-S6JEVF53JZ"></script>
+                <script>
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag() {
+                        dataLayer.push(arguments);
+                    }
+                    gtag('js', new Date());
+
+                    gtag('config', 'G-S6JEVF53JZ');
+                </script>
+            
+            <script>
+                window.axeptioSettings = {
+                    clientId: "67fc2975df7d77940a4ff73d",
+                    cookiesVersion: "13042025",
+                    googleConsentMode: {
+                        default: {
+                            analytics_storage: "denied",
+                            ad_storage: "denied",
+                            ad_user_data: "denied",
+                            ad_personalization: "denied",
+                            wait_for_update: 500
+                        }
+                    }
+                };
+                (function(d, s) {
+                    var t = d.getElementsByTagName(s)[0], e = d.createElement(s);
+                    e.async = true; e.src = "//static.axept.io/sdk.js";
+                    t.parentNode.insertBefore(e, t);
+                })(document, "script");
+            </script>
+            <script src="/assets/scripts/markdown.js"></script></body></html>

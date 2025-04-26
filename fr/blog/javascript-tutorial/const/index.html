@@ -1,0 +1,239 @@
+
+            <!DOCTYPE html>
+            <html lang="fr" data-translated="true" data-breadcrump-title="JavaScript Const">
+            <head>
+                <meta charset="utf-8" />
+                <title>Learn Time | JavaScript Tutorial - JavaScript Const</title>
+                <meta name="description" content="Apprenez à utiliser const en JavaScript pour déclarer des constantes. Comprendre les règles, la portée et quand utiliser const plutôt que let ou var.">
+                
+                <meta name="viewport" content="width=device-width,initial-scale=1" />
+                <!--
+                <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
+                <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
+                <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
+                <link rel="shortcut icon" sizes="192x192" href="/assets/favicon/android-chrome-192x192.png" >
+                <link rel="shortcut icon" sizes="512x512" href="/assets/favicon/android-chrome-512x512.png" >
+                <link rel="manifest" href="/assets/favicon/site.webmanifest">
+                <link rel="shortcut icon" href="/assets/favicon/favicon.ico">
+                <link rel="mask-icon" href="/assets/favicon/safari-pinned-tab.svg" color="#5bbad5">
+                <meta name="msapplication-TileColor" content="#da532c">
+                <meta name="theme-color" content="#ffffff">
+                -->
+                <link rel="shortcut icon" type="image/png" href="/assets/images/logo-circle.png">
+                <link rel="stylesheet" href="/styles.css">
+                <script src="https://kit.fontawesome.com/ff0edf556e.js" crossorigin="anonymous"></script>
+                <script src="https://code.iconify.design/iconify-icon/1.0.2/iconify-icon.min.js"></script>
+                <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+                <script>window.startTime = new Date().getTime();</script>
+                <style>
+                    :root {
+                        --background-color: #f3f2ef;
+                        --loading-bar-background-color: #d6cec2;
+                        --moving-loading-bar-background-color: #D0514D;
+                    }
+                    .loader {transition: all .2s ease-out;z-index: 10000000000;margin-top: -200px;position: fixed;top: 0;left: 0;right: 0;bottom: 0;background-color: var(--background-color);display: flex;align-items: center;justify-content: center;flex-direction: column;}.loader-logo {width: 40px; height: 40px; margin-bottom: 20px;}.loading-bar {width: 130px;height: 4px;border-radius: 100rem;background-color: var(--loading-bar-background-color);position: relative;overflow: hidden;}.moving-loading-bar {height: 100%;width: 68px;position: absolute;border-radius: 100rem;background-color: var(--moving-loading-bar-background-color);animation: initial-loading 1.5s ease infinite;}@keyframes initial-loading {0% {transform: translate(-34px);}50% {transform: translate(96px);}to {transform: translate(-34px);}}
+                    .loader.hide {opacity: 0;}
+                </style>
+                
+            <meta property="og:title" content="JavaScript Tutorial - JavaScript Const" />
+            <meta property="og:description" content="Apprenez à utiliser const en JavaScript pour déclarer des constantes. Comprendre les règles, la portée et quand utiliser const plutôt que let ou var." />
+            <meta property="og:image" content="https://learntime.net/assets/thumbnail/blog/blog-9.jpg" />
+            <meta name="twitter:card" content="summary_large_image">
+            <meta name="twitter:creator" content="@learntimenet">
+            <meta name="twitter:title" content="JavaScript Tutorial - JavaScript Const">
+            <meta name="twitter:description" content="Apprenez à utiliser const en JavaScript pour déclarer des constantes. Comprendre les règles, la portée et quand utiliser const plutôt que let ou var.">
+            <meta name="twitter:image" content="https://learntime.net/assets/thumbnail/blog/blog-9.jpg">
+        
+                <script>
+                    var disqus_config = function () {
+                        this.page.url = window.location.origin + window.location.pathname;
+                        this.page.identifier = window.location.pathname.replace('/en', '');
+                    };
+                </script>
+            <script defer src="/fr/blog/javascript-tutorial/const/const.c742f32be9860d409f31.js"></script></head>
+            <body>
+                <div class="loader">
+                    <div class="loading-bar">
+                        <div class="moving-loading-bar"></div>
+                    </div>
+                </div>
+                <script>
+                    var lastVisitTime = parseInt(localStorage.getItem('LAST_VISIT_TIME') || '0');
+                    if ((new Date().valueOf() - lastVisitTime) < 1200000) {
+                        document.querySelector('.loading-bar').style.display = 'none';
+                    }
+                </script>
+                <div class="body-container">
+                    <app-navbar></app-navbar>
+                    <div class="max-width"><app-breadcrumbs></app-breadcrumbs></div>
+                    <main>
+        
+<style>
+    :root {
+        --scroll-indicator-height: 0.5rem;
+        --max-width: 150rem;
+    }
+    @media screen and (min-width: 1024px) {
+        :root {
+            --promotion-height: 0rem !important;
+        }
+    }
+</style>
+<div class="max-width tutorial-container">
+  <div class="tutorial-menu-container">
+    <app-tutorial-menu menu="[{&quot;category&quot;:&quot;Tutoriel JavaScript&quot;,&quot;articles&quot;:[{&quot;title&quot;:&quot;Introduction&quot;,&quot;url&quot;:&quot;/fr/blog/javascript-tutorial/&quot;},{&quot;title&quot;:&quot;JS Placement&quot;,&quot;url&quot;:&quot;/fr/blog/javascript-tutorial/placement/&quot;},{&quot;title&quot;:&quot;JS Output&quot;,&quot;url&quot;:&quot;/fr/blog/javascript-tutorial/output/&quot;},{&quot;title&quot;:&quot;JS Statements&quot;,&quot;url&quot;:&quot;/fr/blog/javascript-tutorial/statements/&quot;},{&quot;title&quot;:&quot;JS Syntax&quot;,&quot;url&quot;:&quot;/fr/blog/javascript-tutorial/syntax/&quot;},{&quot;title&quot;:&quot;JS Comments&quot;,&quot;url&quot;:&quot;/fr/blog/javascript-tutorial/comments/&quot;},{&quot;title&quot;:&quot;JS Variables&quot;,&quot;url&quot;:&quot;/fr/blog/javascript-tutorial/variables/&quot;},{&quot;title&quot;:&quot;JS Let&quot;,&quot;url&quot;:&quot;/fr/blog/javascript-tutorial/let/&quot;},{&quot;title&quot;:&quot;JS Const&quot;,&quot;url&quot;:&quot;/fr/blog/javascript-tutorial/const/&quot;},{&quot;title&quot;:&quot;JS Operators&quot;,&quot;url&quot;:&quot;/fr/blog/javascript-tutorial/operators/&quot;},{&quot;title&quot;:&quot;JS Assignment&quot;,&quot;url&quot;:&quot;/fr/blog/javascript-tutorial/assignment/&quot;},{&quot;title&quot;:&quot;JS Data Types&quot;,&quot;url&quot;:&quot;/fr/blog/javascript-tutorial/data-types/&quot;},{&quot;title&quot;:&quot;JS Functions&quot;,&quot;url&quot;:&quot;/fr/blog/javascript-tutorial/functions/&quot;},{&quot;title&quot;:&quot;JS Objects&quot;,&quot;url&quot;:&quot;/fr/blog/javascript-tutorial/objects/&quot;},{&quot;title&quot;:&quot;JS Events&quot;,&quot;url&quot;:&quot;/fr/blog/javascript-tutorial/events/&quot;},{&quot;title&quot;:&quot;JS Strings&quot;,&quot;url&quot;:&quot;/fr/blog/javascript-tutorial/strings/&quot;},{&quot;title&quot;:&quot;JS Numbers&quot;,&quot;url&quot;:&quot;/fr/blog/javascript-tutorial/numbers/&quot;},{&quot;title&quot;:&quot;JS BigInt&quot;,&quot;url&quot;:&quot;/fr/blog/javascript-tutorial/bigint/&quot;},{&quot;title&quot;:&quot;JS Arrays&quot;,&quot;url&quot;:&quot;/fr/blog/javascript-tutorial/arrays/&quot;},{&quot;title&quot;:&quot;JS Dates&quot;,&quot;url&quot;:&quot;/fr/blog/javascript-tutorial/dates/&quot;},{&quot;title&quot;:&quot;JS Math&quot;,&quot;url&quot;:&quot;/fr/blog/javascript-tutorial/math/&quot;},{&quot;title&quot;:&quot;JS Random&quot;,&quot;url&quot;:&quot;/fr/blog/javascript-tutorial/random/&quot;}]}]"></app-tutorial-menu>
+  </div>
+  <div class="main-container">
+    <app-breadcrumbs class="tutorial"></app-breadcrumbs>
+    <app-blog-title class="tutorial" blog-title="JavaScript Const" blog-description="Apprenez à utiliser const en JavaScript pour déclarer des constantes. Comprendre les règles, la portée et quand utiliser const plutôt que let ou var." blog-image="/assets/images/blog/blog-9.jpg"></app-blog-title>
+    <div class="blog-content markdown">
+      <h2>📝 Ce que vous apprendrez</h2>
+<ul>
+<li>Qu&#39;est-ce que le mot-clé <code>const</code> ?</li>
+<li>Comment cela fonctionne-t-il en JavaScript ?</li>
+<li>Quand et pourquoi utiliser <code>const</code> ?</li>
+<li>La différence entre <code>const</code>, <code>let</code> et <code>var</code></li>
+</ul>
+<h2>🔍 Qu&#39;est-ce que <strong>const</strong> ?</h2>
+<p>Le mot-clé <code>const</code> est utilisé pour déclarer des <strong>constantes</strong> - des variables dont la <strong>valeur ne peut pas être réaffectée</strong> après avoir été définie.</p>
+<pre><code class="hljs language-javascript"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">const</span> name = <span class="hljs-string">&quot;Alice&quot;</span>;
+name = <span class="hljs-string">&quot;Bob&quot;</span>; <span class="hljs-comment">// ❌ Error: Assignment to constant variable</span></code></pre>
+</code></pre><p>Une fois déclarée et initialisée, une variable <code>const</code> <strong>ne doit pas être réassignée</strong>.</p>
+<h2>📦 Champ d&#39;application du bloc</h2>
+<p>Comme <code>let</code>, <code>const</code> est <strong>scopé par bloc</strong>, ce qui signifie qu&#39;il n&#39;existe que dans le bloc <code>{}</code> où il est déclaré.</p>
+<pre><code class="hljs language-javascript"><pre class="highlight"><code class="hljs">{
+  <span class="hljs-keyword">const</span> age = <span class="hljs-number">25</span>;
+  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(age); <span class="hljs-comment">// ✅ 25</span>
+}
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(age); <span class="hljs-comment">// ❌ ReferenceError: age is not defined</span></code></pre>
+</code></pre><p>Cela permet d&#39;éviter les conflits et les bogues dans les grands programmes.</p>
+<h2>❗ Doit être initialisé</h2>
+<p>Vous <strong>devez assigner une valeur</strong> lorsque vous déclarez une <code>const</code>. Sinon, vous obtiendrez une erreur.</p>
+<pre><code class="hljs language-javascript"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">const</span> x; <span class="hljs-comment">// ❌ SyntaxError: Missing initializer</span></code></pre>
+</code></pre><p>Utilisation correcte :</p>
+<pre><code class="hljs language-javascript"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">const</span> x = <span class="hljs-number">10</span>;</code></pre>
+</code></pre><h2>🧱 <strong>const</strong> avec les objets et les tableaux</h2>
+<p>Bien que <code>const</code> empêche la réaffectation de la variable <strong>référence</strong>, il ne rend pas la valeur immuable.</p>
+<pre><code class="hljs language-javascript"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">const</span> person = {
+  <span class="hljs-attr">name</span>: <span class="hljs-string">&quot;Alex&quot;</span>
+};
+
+person.<span class="hljs-property">name</span> = <span class="hljs-string">&quot;Jordan&quot;</span>; <span class="hljs-comment">// ✅ This is allowed</span>
+person = {}; <span class="hljs-comment">// ❌ Error: Assignment to constant variable</span></code></pre>
+</code></pre><p>Vous pouvez <strong>changer le contenu</strong> des objets ou des tableaux déclarés avec <code>const</code>, mais vous ne pouvez pas réassigner la variable elle-même.</p>
+<h2>✅ Quand utiliser <strong>const</strong> ?</h2>
+<p>Utilisez <code>const</code> quand :</p>
+<ul>
+<li>La valeur ne doit jamais être réaffectée</li>
+<li>Vous travaillez avec des valeurs fixes ou des données de configuration</li>
+<li>Vous souhaitez protéger la référence d&#39;une réaffectation accidentelle</li>
+</ul>
+<h2>🧠 <strong>const</strong> vs <strong>let</strong> vs <strong>var</strong></h2>
+<p><b>Tableau&gt;</p>
+<thead>
+<tr>
+<th>Mot clé</th>
+<th>Réassignable</th>
+<th>Block Scoped</th> (en anglais)
+<th>Cas d'utilisation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>const</code></td>
+<td>❌ Non</td>
+<td>✅ Oui</td>
+<td>Valeurs constantes, plus sûres</td>
+</tr>
+<tr>
+<td><code>let</code></td>
+<td>✅ Oui</td>
+<td>✅ Oui</td>
+<td>Modifier les valeurs</td>
+</tr>
+<tr>
+<td><code>var</code></td>
+<td>✅ Oui</td>
+<td>❌ Non</td>
+<td>Code héritage uniquement</td>
+</tr>
+</tbody>
+</tableau>
+
+
+
+
+<h2>📘 Recap</h2>
+<ul>
+<li><code>const</code> déclare des <strong>constantes</strong> - aucune réaffectation n&#39;est autorisée</li>
+<li>C&#39;est <strong>scopé en bloc</strong>, comme <code>let</code></li>
+<li>Doit être <strong>initialisé lors de la déclaration</strong></li>
+<li>Un choix sûr et clair pour des valeurs qui ne devraient pas changer</li>
+</ul>
+
+      <app-subscribe></app-subscribe>
+      <app-comments></app-comments>
+    </div>
+  </div>
+  <aside>
+    <div class="aside-container">
+      <app-share-buttons></app-share-buttons>
+      <app-aside-promotion></app-aside-promotion>
+    </div>
+  </aside>
+</div>
+
+        </main>
+        <app-scroll-top-button></app-scroll-top-button>
+        <app-footer></app-footer>
+        </div>
+            <script>
+                var lastVisitTime = parseInt(localStorage.getItem('LAST_VISIT_TIME') || '0');
+                var timeoutDuration = 1500;
+                //if ((new Date().valueOf() - lastVisitTime) < 1200000) {
+                //    timeoutDuration = 400;
+                //}
+                setTimeout(() => {
+                    document.querySelector('.loader').classList.add('hide');
+                    document.querySelector('.body-container').style.display = 'block';
+                    document.dispatchEvent(new CustomEvent('page-loader-hide'));
+                }, timeoutDuration);
+                setTimeout(() => {
+                    document.querySelector('.loader').style.display = 'none';
+                }, 2000);
+                localStorage.setItem('LAST_VISIT_TIME', new Date().valueOf());
+            </script>
+        
+                <!-- Google tag (gtag.js) -->
+                <script async src="https://www.googletagmanager.com/gtag/js?id=G-S6JEVF53JZ"></script>
+                <script>
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag() {
+                        dataLayer.push(arguments);
+                    }
+                    gtag('js', new Date());
+
+                    gtag('config', 'G-S6JEVF53JZ');
+                </script>
+            
+            <script>
+                window.axeptioSettings = {
+                    clientId: "67fc2975df7d77940a4ff73d",
+                    cookiesVersion: "13042025",
+                    googleConsentMode: {
+                        default: {
+                            analytics_storage: "denied",
+                            ad_storage: "denied",
+                            ad_user_data: "denied",
+                            ad_personalization: "denied",
+                            wait_for_update: 500
+                        }
+                    }
+                };
+                (function(d, s) {
+                    var t = d.getElementsByTagName(s)[0], e = d.createElement(s);
+                    e.async = true; e.src = "//static.axept.io/sdk.js";
+                    t.parentNode.insertBefore(e, t);
+                })(document, "script");
+            </script>
+            <script src="/assets/scripts/markdown.js"></script></body></html>

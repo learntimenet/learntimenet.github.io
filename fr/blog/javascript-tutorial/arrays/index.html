@@ -1,0 +1,284 @@
+
+            <!DOCTYPE html>
+            <html lang="fr" data-translated="true" data-breadcrump-title="Tableaux JavaScript">
+            <head>
+                <meta charset="utf-8" />
+                <title>Learn Time | JavaScript Tutorial - Tableaux JavaScript</title>
+                <meta name="description" content="Apprenez à créer et à manipuler des tableaux JavaScript, y compris les méthodes de tableaux telles que .push(), .pop(), .map(), et comment faire des boucles dans les éléments d'un tableau.">
+                
+                <meta name="viewport" content="width=device-width,initial-scale=1" />
+                <!--
+                <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
+                <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
+                <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
+                <link rel="shortcut icon" sizes="192x192" href="/assets/favicon/android-chrome-192x192.png" >
+                <link rel="shortcut icon" sizes="512x512" href="/assets/favicon/android-chrome-512x512.png" >
+                <link rel="manifest" href="/assets/favicon/site.webmanifest">
+                <link rel="shortcut icon" href="/assets/favicon/favicon.ico">
+                <link rel="mask-icon" href="/assets/favicon/safari-pinned-tab.svg" color="#5bbad5">
+                <meta name="msapplication-TileColor" content="#da532c">
+                <meta name="theme-color" content="#ffffff">
+                -->
+                <link rel="shortcut icon" type="image/png" href="/assets/images/logo-circle.png">
+                <link rel="stylesheet" href="/styles.css">
+                <script src="https://kit.fontawesome.com/ff0edf556e.js" crossorigin="anonymous"></script>
+                <script src="https://code.iconify.design/iconify-icon/1.0.2/iconify-icon.min.js"></script>
+                <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+                <script>window.startTime = new Date().getTime();</script>
+                <style>
+                    :root {
+                        --background-color: #f3f2ef;
+                        --loading-bar-background-color: #d6cec2;
+                        --moving-loading-bar-background-color: #D0514D;
+                    }
+                    .loader {transition: all .2s ease-out;z-index: 10000000000;margin-top: -200px;position: fixed;top: 0;left: 0;right: 0;bottom: 0;background-color: var(--background-color);display: flex;align-items: center;justify-content: center;flex-direction: column;}.loader-logo {width: 40px; height: 40px; margin-bottom: 20px;}.loading-bar {width: 130px;height: 4px;border-radius: 100rem;background-color: var(--loading-bar-background-color);position: relative;overflow: hidden;}.moving-loading-bar {height: 100%;width: 68px;position: absolute;border-radius: 100rem;background-color: var(--moving-loading-bar-background-color);animation: initial-loading 1.5s ease infinite;}@keyframes initial-loading {0% {transform: translate(-34px);}50% {transform: translate(96px);}to {transform: translate(-34px);}}
+                    .loader.hide {opacity: 0;}
+                </style>
+                
+            <meta property="og:title" content="JavaScript Tutorial - Tableaux JavaScript" />
+            <meta property="og:description" content="Apprenez à créer et à manipuler des tableaux JavaScript, y compris les méthodes de tableaux telles que .push(), .pop(), .map(), et comment faire des boucles dans les éléments d'un tableau." />
+            <meta property="og:image" content="https://learntime.net/assets/thumbnail/blog/blog-8.jpg" />
+            <meta name="twitter:card" content="summary_large_image">
+            <meta name="twitter:creator" content="@learntimenet">
+            <meta name="twitter:title" content="JavaScript Tutorial - Tableaux JavaScript">
+            <meta name="twitter:description" content="Apprenez à créer et à manipuler des tableaux JavaScript, y compris les méthodes de tableaux telles que .push(), .pop(), .map(), et comment faire des boucles dans les éléments d'un tableau.">
+            <meta name="twitter:image" content="https://learntime.net/assets/thumbnail/blog/blog-8.jpg">
+        
+                <script>
+                    var disqus_config = function () {
+                        this.page.url = window.location.origin + window.location.pathname;
+                        this.page.identifier = window.location.pathname.replace('/en', '');
+                    };
+                </script>
+            <script defer src="/fr/blog/javascript-tutorial/arrays/arrays.57ee1a614d71efe55761.js"></script></head>
+            <body>
+                <div class="loader">
+                    <div class="loading-bar">
+                        <div class="moving-loading-bar"></div>
+                    </div>
+                </div>
+                <script>
+                    var lastVisitTime = parseInt(localStorage.getItem('LAST_VISIT_TIME') || '0');
+                    if ((new Date().valueOf() - lastVisitTime) < 1200000) {
+                        document.querySelector('.loading-bar').style.display = 'none';
+                    }
+                </script>
+                <div class="body-container">
+                    <app-navbar></app-navbar>
+                    <div class="max-width"><app-breadcrumbs></app-breadcrumbs></div>
+                    <main>
+        
+<style>
+    :root {
+        --scroll-indicator-height: 0.5rem;
+        --max-width: 150rem;
+    }
+    @media screen and (min-width: 1024px) {
+        :root {
+            --promotion-height: 0rem !important;
+        }
+    }
+</style>
+<div class="max-width tutorial-container">
+  <div class="tutorial-menu-container">
+    <app-tutorial-menu menu="[{&quot;category&quot;:&quot;Tutoriel JavaScript&quot;,&quot;articles&quot;:[{&quot;title&quot;:&quot;Introduction&quot;,&quot;url&quot;:&quot;/fr/blog/javascript-tutorial/&quot;},{&quot;title&quot;:&quot;JS Placement&quot;,&quot;url&quot;:&quot;/fr/blog/javascript-tutorial/placement/&quot;},{&quot;title&quot;:&quot;JS Output&quot;,&quot;url&quot;:&quot;/fr/blog/javascript-tutorial/output/&quot;},{&quot;title&quot;:&quot;JS Statements&quot;,&quot;url&quot;:&quot;/fr/blog/javascript-tutorial/statements/&quot;},{&quot;title&quot;:&quot;JS Syntax&quot;,&quot;url&quot;:&quot;/fr/blog/javascript-tutorial/syntax/&quot;},{&quot;title&quot;:&quot;JS Comments&quot;,&quot;url&quot;:&quot;/fr/blog/javascript-tutorial/comments/&quot;},{&quot;title&quot;:&quot;JS Variables&quot;,&quot;url&quot;:&quot;/fr/blog/javascript-tutorial/variables/&quot;},{&quot;title&quot;:&quot;JS Let&quot;,&quot;url&quot;:&quot;/fr/blog/javascript-tutorial/let/&quot;},{&quot;title&quot;:&quot;JS Const&quot;,&quot;url&quot;:&quot;/fr/blog/javascript-tutorial/const/&quot;},{&quot;title&quot;:&quot;JS Operators&quot;,&quot;url&quot;:&quot;/fr/blog/javascript-tutorial/operators/&quot;},{&quot;title&quot;:&quot;JS Assignment&quot;,&quot;url&quot;:&quot;/fr/blog/javascript-tutorial/assignment/&quot;},{&quot;title&quot;:&quot;JS Data Types&quot;,&quot;url&quot;:&quot;/fr/blog/javascript-tutorial/data-types/&quot;},{&quot;title&quot;:&quot;JS Functions&quot;,&quot;url&quot;:&quot;/fr/blog/javascript-tutorial/functions/&quot;},{&quot;title&quot;:&quot;JS Objects&quot;,&quot;url&quot;:&quot;/fr/blog/javascript-tutorial/objects/&quot;},{&quot;title&quot;:&quot;JS Events&quot;,&quot;url&quot;:&quot;/fr/blog/javascript-tutorial/events/&quot;},{&quot;title&quot;:&quot;JS Strings&quot;,&quot;url&quot;:&quot;/fr/blog/javascript-tutorial/strings/&quot;},{&quot;title&quot;:&quot;JS Numbers&quot;,&quot;url&quot;:&quot;/fr/blog/javascript-tutorial/numbers/&quot;},{&quot;title&quot;:&quot;JS BigInt&quot;,&quot;url&quot;:&quot;/fr/blog/javascript-tutorial/bigint/&quot;},{&quot;title&quot;:&quot;JS Arrays&quot;,&quot;url&quot;:&quot;/fr/blog/javascript-tutorial/arrays/&quot;},{&quot;title&quot;:&quot;JS Dates&quot;,&quot;url&quot;:&quot;/fr/blog/javascript-tutorial/dates/&quot;},{&quot;title&quot;:&quot;JS Math&quot;,&quot;url&quot;:&quot;/fr/blog/javascript-tutorial/math/&quot;},{&quot;title&quot;:&quot;JS Random&quot;,&quot;url&quot;:&quot;/fr/blog/javascript-tutorial/random/&quot;}]}]"></app-tutorial-menu>
+  </div>
+  <div class="main-container">
+    <app-breadcrumbs class="tutorial"></app-breadcrumbs>
+    <app-blog-title class="tutorial" blog-title="Tableaux JavaScript" blog-description="Apprenez à créer et à manipuler des tableaux JavaScript, y compris les méthodes de tableaux telles que .push(), .pop(), .map(), et comment faire des boucles dans les éléments d'un tableau." blog-image="/assets/images/blog/blog-8.jpg"></app-blog-title>
+    <div class="blog-content markdown">
+      <h2>📝 Ce que vous apprendrez</h2>
+<ul>
+<li>Ce que sont les tableaux en JavaScript</li>
+<li>Comment créer et utiliser des tableaux</li>
+<li>Méthodes courantes de manipulation des données dans les tableaux</li>
+<li>Comment accéder aux éléments d&#39;un tableau et les parcourir ?</li>
+<li>Exemples pratiques pour comprendre les tableaux</li>
+</ul>
+<h2>🔍 Qu&#39;est-ce qu&#39;un tableau ?</h2>
+<p>Un <strong>tableau</strong> en JavaScript est une structure de données utilisée pour stocker plusieurs valeurs dans une seule variable. Contrairement aux variables qui contiennent une seule valeur, les tableaux permettent de stocker des collections ordonnées de données (de n&#39;importe quel type), telles que des nombres, des chaînes ou des objets.</p>
+<p>Les tableaux en JavaScript sont <strong>zéro-indexés</strong>, ce qui signifie que le premier élément est à la position 0, le second à la position 1, et ainsi de suite.</p>
+<h3>Exemple :</h3>
+<pre><code class="hljs language-javascript"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">let</span> fruits = [<span class="hljs-string">&quot;Apple&quot;</span>, <span class="hljs-string">&quot;Banana&quot;</span>, <span class="hljs-string">&quot;Cherry&quot;</span>];
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(fruits[<span class="hljs-number">0</span>]);  <span class="hljs-comment">// Output: Apple</span></code></pre>
+</code></pre><p>Dans cet exemple, <code>fruits</code> est un tableau contenant trois éléments de type chaîne.</p>
+<h2>🧑‍🍳 Création d&#39;un tableau</h2>
+<p>Vous pouvez créer un tableau en utilisant des crochets (<code>[]</code>). Les valeurs à l&#39;intérieur des crochets sont les éléments du tableau.</p>
+<h3>Exemple :</h3>
+<pre><code class="hljs language-javascript"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">let</span> numbers = [<span class="hljs-number">10</span>, <span class="hljs-number">20</span>, <span class="hljs-number">30</span>, <span class="hljs-number">40</span>];
+<span class="hljs-keyword">let</span> mixedArray = [<span class="hljs-number">1</span>, <span class="hljs-string">&quot;Hello&quot;</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">null</span>];</code></pre>
+</code></pre><p>Vous pouvez également créer un tableau vide et y ajouter des éléments ultérieurement :</p>
+<pre><code class="hljs language-javascript"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">let</span> emptyArray = [];
+emptyArray.<span class="hljs-title function_">push</span>(<span class="hljs-number">1</span>);
+emptyArray.<span class="hljs-title function_">push</span>(<span class="hljs-number">2</span>);
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(emptyArray);  <span class="hljs-comment">// Output: [1, 2]</span></code></pre>
+</code></pre><h2>🔄 Accès aux éléments du tableau</h2>
+<p>Vous pouvez accéder aux éléments d&#39;un tableau en utilisant le <strong>index</strong> entre crochets (<code>[]</code>).</p>
+<h3>Exemple :</h3>
+<pre><code class="hljs language-javascript"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">let</span> colors = [<span class="hljs-string">&quot;Red&quot;</span>, <span class="hljs-string">&quot;Green&quot;</span>, <span class="hljs-string">&quot;Blue&quot;</span>];
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(colors[<span class="hljs-number">0</span>]);  <span class="hljs-comment">// Output: Red</span>
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(colors[<span class="hljs-number">1</span>]);  <span class="hljs-comment">// Output: Green</span></code></pre>
+</code></pre><p>Si vous essayez d&#39;accéder à un index qui n&#39;existe pas, vous obtiendrez <code>undefined</code> :</p>
+<pre><code class="hljs language-javascript"><pre class="highlight"><code class="hljs"><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(colors[<span class="hljs-number">5</span>]);  <span class="hljs-comment">// Output: undefined</span></code></pre>
+</code></pre><h2>🛠️ Méthodes de tableau</h2>
+<p>JavaScript fournit de nombreuses méthodes intégrées pour manipuler les tableaux. Voici quelques-unes des méthodes les plus couramment utilisées :</p>
+<h3>1️⃣ .push()</h3>
+<p>La méthode <code>.push()</code> ajoute un ou plusieurs éléments à la <strong>fin</strong> d&#39;un tableau.</p>
+<pre><code class="hljs language-javascript"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">let</span> fruits = [<span class="hljs-string">&quot;Apple&quot;</span>, <span class="hljs-string">&quot;Banana&quot;</span>];
+fruits.<span class="hljs-title function_">push</span>(<span class="hljs-string">&quot;Cherry&quot;</span>);
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(fruits);  <span class="hljs-comment">// Output: [&quot;Apple&quot;, &quot;Banana&quot;, &quot;Cherry&quot;]</span></code></pre>
+</code></pre><h3>2️⃣ .pop()</h3>
+<p>La méthode <code>.pop()</code> supprime le <strong>dernier</strong> élément d&#39;un tableau.</p>
+<pre><code class="hljs language-javascript"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">let</span> fruits = [<span class="hljs-string">&quot;Apple&quot;</span>, <span class="hljs-string">&quot;Banana&quot;</span>, <span class="hljs-string">&quot;Cherry&quot;</span>];
+fruits.<span class="hljs-title function_">pop</span>();
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(fruits);  <span class="hljs-comment">// Output: [&quot;Apple&quot;, &quot;Banana&quot;]</span></code></pre>
+</code></pre><h3>3️⃣ .shift()</h3>
+<p>La méthode <code>.shift()</code> supprime le <strong>premier</strong> élément d&#39;un tableau.</p>
+<pre><code class="hljs language-javascript"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">let</span> fruits = [<span class="hljs-string">&quot;Apple&quot;</span>, <span class="hljs-string">&quot;Banana&quot;</span>, <span class="hljs-string">&quot;Cherry&quot;</span>];
+fruits.<span class="hljs-title function_">shift</span>();
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(fruits);  <span class="hljs-comment">// Output: [&quot;Banana&quot;, &quot;Cherry&quot;]</span></code></pre>
+</code></pre><h3>4️⃣ .unshift()</h3>
+<p>La méthode <code>.unshift()</code> ajoute un ou plusieurs éléments au <strong>début</strong> d&#39;un tableau.</p>
+<pre><code class="hljs language-javascript"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">let</span> fruits = [<span class="hljs-string">&quot;Banana&quot;</span>, <span class="hljs-string">&quot;Cherry&quot;</span>];
+fruits.<span class="hljs-title function_">unshift</span>(<span class="hljs-string">&quot;Apple&quot;</span>);
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(fruits);  <span class="hljs-comment">// Output: [&quot;Apple&quot;, &quot;Banana&quot;, &quot;Cherry&quot;]</span></code></pre>
+</code></pre><h3>5️⃣ .splice()</h3>
+<p>La méthode <code>.splice()</code> vous permet de <strong>supprimer</strong> ou <strong>ajouter</strong> des éléments à n&#39;importe quelle position dans le tableau.</p>
+<h4>Exemple (suppression d&#39;éléments) :</h4>
+<pre><code class="hljs language-javascript"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">let</span> fruits = [<span class="hljs-string">&quot;Apple&quot;</span>, <span class="hljs-string">&quot;Banana&quot;</span>, <span class="hljs-string">&quot;Cherry&quot;</span>];
+fruits.<span class="hljs-title function_">splice</span>(<span class="hljs-number">1</span>, <span class="hljs-number">1</span>);  <span class="hljs-comment">// Removes 1 element starting from index 1</span>
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(fruits);  <span class="hljs-comment">// Output: [&quot;Apple&quot;, &quot;Cherry&quot;]</span></code></pre>
+</code></pre><h4>Exemple (ajout d&#39;éléments) :</h4>
+<pre><code class="hljs language-javascript"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">let</span> fruits = [<span class="hljs-string">&quot;Apple&quot;</span>, <span class="hljs-string">&quot;Banana&quot;</span>];
+fruits.<span class="hljs-title function_">splice</span>(<span class="hljs-number">1</span>, <span class="hljs-number">0</span>, <span class="hljs-string">&quot;Cherry&quot;</span>);  <span class="hljs-comment">// Adds &quot;Cherry&quot; at index 1 without removing any elements</span>
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(fruits);  <span class="hljs-comment">// Output: [&quot;Apple&quot;, &quot;Cherry&quot;, &quot;Banana&quot;]</span></code></pre>
+</code></pre><h3>6️⃣ .forEach()</h3>
+<p>La méthode <code>.forEach()</code> parcourt tous les éléments d&#39;un tableau, en exécutant une fonction fournie sur chaque élément.</p>
+<pre><code class="hljs language-javascript"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">let</span> fruits = [<span class="hljs-string">&quot;Apple&quot;</span>, <span class="hljs-string">&quot;Banana&quot;</span>, <span class="hljs-string">&quot;Cherry&quot;</span>];
+fruits.<span class="hljs-title function_">forEach</span>(<span class="hljs-keyword">function</span>(<span class="hljs-params">fruit</span>) {
+  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(fruit);
+});
+<span class="hljs-comment">// Output:</span>
+<span class="hljs-comment">// Apple</span>
+<span class="hljs-comment">// Banana</span>
+<span class="hljs-comment">// Cherry</span></code></pre>
+</code></pre><h3>7️⃣ .map()</h3>
+<p>La méthode <code>.map()</code> crée un nouveau tableau avec les résultats de l&#39;appel d&#39;une fonction fournie sur chaque élément du tableau.</p>
+<pre><code class="hljs language-javascript"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">let</span> numbers = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>];
+<span class="hljs-keyword">let</span> doubled = numbers.<span class="hljs-title function_">map</span>(<span class="hljs-keyword">function</span>(<span class="hljs-params">num</span>) {
+  <span class="hljs-keyword">return</span> num * <span class="hljs-number">2</span>;
+});
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(doubled);  <span class="hljs-comment">// Output: [2, 4, 6, 8]</span></code></pre>
+</code></pre><h2>🧑‍🍳 Boucler sur des tableaux</h2>
+<p>Il existe plusieurs façons de parcourir des tableaux en JavaScript, comme <code>for</code>, <code>forEach()</code>, et <code>map()</code>.</p>
+<h3>Exemple avec la boucle <strong>for</strong> :</h3>
+<pre><code class="hljs language-javascript"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">let</span> fruits = [<span class="hljs-string">&quot;Apple&quot;</span>, <span class="hljs-string">&quot;Banana&quot;</span>, <span class="hljs-string">&quot;Cherry&quot;</span>];
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; fruits.<span class="hljs-property">length</span>; i++) {
+  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(fruits[i]);
+}
+<span class="hljs-comment">// Output:</span>
+<span class="hljs-comment">// Apple</span>
+<span class="hljs-comment">// Banana</span>
+<span class="hljs-comment">// Cherry</span></code></pre>
+</code></pre><h3>Exemple avec <strong>forEach()</strong> :</h3>
+<pre><code class="hljs language-javascript"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">let</span> fruits = [<span class="hljs-string">&quot;Apple&quot;</span>, <span class="hljs-string">&quot;Banana&quot;</span>, <span class="hljs-string">&quot;Cherry&quot;</span>];
+fruits.<span class="hljs-title function_">forEach</span>(<span class="hljs-keyword">function</span>(<span class="hljs-params">fruit</span>) {
+  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(fruit);
+});
+<span class="hljs-comment">// Output:</span>
+<span class="hljs-comment">// Apple</span>
+<span class="hljs-comment">// Banana</span>
+<span class="hljs-comment">// Cherry</span></code></pre>
+</code></pre><h2>🔄 Tableaux imbriqués</h2>
+<p>Les tableaux peuvent contenir d&#39;autres tableaux comme éléments. C&#39;est ce qu&#39;on appelle les &quot;tableaux imbriqués&quot; (<strong>nested arrays</strong>).</p>
+<h3>Exemple :</h3>
+<pre><code class="hljs language-javascript"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">let</span> nestedArray = [[<span class="hljs-number">1</span>, <span class="hljs-number">2</span>], [<span class="hljs-number">3</span>, <span class="hljs-number">4</span>], [<span class="hljs-number">5</span>, <span class="hljs-number">6</span>]];
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(nestedArray[<span class="hljs-number">0</span>]);  <span class="hljs-comment">// Output: [1, 2]</span>
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(nestedArray[<span class="hljs-number">0</span>][<span class="hljs-number">1</span>]);  <span class="hljs-comment">// Output: 2</span></code></pre>
+</code></pre><p>Vous pouvez accéder aux éléments à l&#39;intérieur du tableau imbriqué en utilisant plusieurs indices.</p>
+<h2>💡 Destructuration des tableaux</h2>
+<p><strong>La déstructuration de tableau</strong> permet d&#39;extraire des valeurs d&#39;un tableau et de les affecter à des variables.</p>
+<h3>Exemple :</h3>
+<pre><code class="hljs language-javascript"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">let</span> fruits = [<span class="hljs-string">&quot;Apple&quot;</span>, <span class="hljs-string">&quot;Banana&quot;</span>, <span class="hljs-string">&quot;Cherry&quot;</span>];
+<span class="hljs-keyword">let</span> [first, second] = fruits;
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(first);  <span class="hljs-comment">// Output: Apple</span>
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(second); <span class="hljs-comment">// Output: Banana</span></code></pre>
+</code></pre><p>Vous pouvez également ignorer des éléments et attribuer des valeurs à des variables :</p>
+<pre><code class="hljs language-javascript"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">let</span> fruits = [<span class="hljs-string">&quot;Apple&quot;</span>, <span class="hljs-string">&quot;Banana&quot;</span>, <span class="hljs-string">&quot;Cherry&quot;</span>];
+<span class="hljs-keyword">let</span> [, , third] = fruits;
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(third); <span class="hljs-comment">// Output: Cherry</span></code></pre>
+</code></pre><h2>🧠 Recap</h2>
+<ul>
+<li>En JavaScript, les tableaux sont utilisés pour stocker plusieurs valeurs dans une seule variable.  </li>
+<li>Vous pouvez accéder aux éléments d&#39;un tableau en utilisant leur index, en commençant par 0.</li>
+<li>JavaScript fournit de nombreuses méthodes de tableaux telles que <code>.push()</code>, <code>.pop()</code>, <code>.shift()</code>, <code>.unshift()</code>, <code>.splice()</code>, <code>.forEach()</code>, et <code>.map()</code>.  </li>
+<li>Vous pouvez effectuer des boucles dans des tableaux en utilisant les boucles <code>for</code>, <code>forEach()</code> et <code>map()</code>.  </li>
+<li>Les tableaux imbriqués sont des tableaux à l&#39;intérieur de tableaux, et vous pouvez utiliser la déstructuration pour en extraire facilement des valeurs.</li>
+</ul>
+
+      <app-subscribe></app-subscribe>
+      <app-comments></app-comments>
+    </div>
+  </div>
+  <aside>
+    <div class="aside-container">
+      <app-share-buttons></app-share-buttons>
+      <app-aside-promotion></app-aside-promotion>
+    </div>
+  </aside>
+</div>
+
+        </main>
+        <app-scroll-top-button></app-scroll-top-button>
+        <app-footer></app-footer>
+        </div>
+            <script>
+                var lastVisitTime = parseInt(localStorage.getItem('LAST_VISIT_TIME') || '0');
+                var timeoutDuration = 1500;
+                //if ((new Date().valueOf() - lastVisitTime) < 1200000) {
+                //    timeoutDuration = 400;
+                //}
+                setTimeout(() => {
+                    document.querySelector('.loader').classList.add('hide');
+                    document.querySelector('.body-container').style.display = 'block';
+                    document.dispatchEvent(new CustomEvent('page-loader-hide'));
+                }, timeoutDuration);
+                setTimeout(() => {
+                    document.querySelector('.loader').style.display = 'none';
+                }, 2000);
+                localStorage.setItem('LAST_VISIT_TIME', new Date().valueOf());
+            </script>
+        
+                <!-- Google tag (gtag.js) -->
+                <script async src="https://www.googletagmanager.com/gtag/js?id=G-S6JEVF53JZ"></script>
+                <script>
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag() {
+                        dataLayer.push(arguments);
+                    }
+                    gtag('js', new Date());
+
+                    gtag('config', 'G-S6JEVF53JZ');
+                </script>
+            
+            <script>
+                window.axeptioSettings = {
+                    clientId: "67fc2975df7d77940a4ff73d",
+                    cookiesVersion: "13042025",
+                    googleConsentMode: {
+                        default: {
+                            analytics_storage: "denied",
+                            ad_storage: "denied",
+                            ad_user_data: "denied",
+                            ad_personalization: "denied",
+                            wait_for_update: 500
+                        }
+                    }
+                };
+                (function(d, s) {
+                    var t = d.getElementsByTagName(s)[0], e = d.createElement(s);
+                    e.async = true; e.src = "//static.axept.io/sdk.js";
+                    t.parentNode.insertBefore(e, t);
+                })(document, "script");
+            </script>
+            <script src="/assets/scripts/markdown.js"></script></body></html>

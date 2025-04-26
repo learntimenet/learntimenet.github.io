@@ -1,0 +1,244 @@
+
+            <!DOCTYPE html>
+            <html lang="fr" data-translated="true" data-breadcrump-title="Numéros JavaScript">
+            <head>
+                <meta charset="utf-8" />
+                <title>Learn Time | JavaScript Tutorial - Nombres en JavaScript</title>
+                <meta name="description" content="Apprenez à connaître les nombres en JavaScript, y compris les opérations de base, les types de nombres spéciaux comme NaN et Infinity, et comment utiliser l'objet Math pour des calculs avancés.">
+                
+                <meta name="viewport" content="width=device-width,initial-scale=1" />
+                <!--
+                <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
+                <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
+                <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
+                <link rel="shortcut icon" sizes="192x192" href="/assets/favicon/android-chrome-192x192.png" >
+                <link rel="shortcut icon" sizes="512x512" href="/assets/favicon/android-chrome-512x512.png" >
+                <link rel="manifest" href="/assets/favicon/site.webmanifest">
+                <link rel="shortcut icon" href="/assets/favicon/favicon.ico">
+                <link rel="mask-icon" href="/assets/favicon/safari-pinned-tab.svg" color="#5bbad5">
+                <meta name="msapplication-TileColor" content="#da532c">
+                <meta name="theme-color" content="#ffffff">
+                -->
+                <link rel="shortcut icon" type="image/png" href="/assets/images/logo-circle.png">
+                <link rel="stylesheet" href="/styles.css">
+                <script src="https://kit.fontawesome.com/ff0edf556e.js" crossorigin="anonymous"></script>
+                <script src="https://code.iconify.design/iconify-icon/1.0.2/iconify-icon.min.js"></script>
+                <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+                <script>window.startTime = new Date().getTime();</script>
+                <style>
+                    :root {
+                        --background-color: #f3f2ef;
+                        --loading-bar-background-color: #d6cec2;
+                        --moving-loading-bar-background-color: #D0514D;
+                    }
+                    .loader {transition: all .2s ease-out;z-index: 10000000000;margin-top: -200px;position: fixed;top: 0;left: 0;right: 0;bottom: 0;background-color: var(--background-color);display: flex;align-items: center;justify-content: center;flex-direction: column;}.loader-logo {width: 40px; height: 40px; margin-bottom: 20px;}.loading-bar {width: 130px;height: 4px;border-radius: 100rem;background-color: var(--loading-bar-background-color);position: relative;overflow: hidden;}.moving-loading-bar {height: 100%;width: 68px;position: absolute;border-radius: 100rem;background-color: var(--moving-loading-bar-background-color);animation: initial-loading 1.5s ease infinite;}@keyframes initial-loading {0% {transform: translate(-34px);}50% {transform: translate(96px);}to {transform: translate(-34px);}}
+                    .loader.hide {opacity: 0;}
+                </style>
+                
+            <meta property="og:title" content="JavaScript Tutorial - Nombres en JavaScript" />
+            <meta property="og:description" content="Apprenez à connaître les nombres en JavaScript, y compris les opérations de base, les types de nombres spéciaux comme NaN et Infinity, et comment utiliser l'objet Math pour des calculs avancés." />
+            <meta property="og:image" content="https://learntime.net/assets/thumbnail/blog/blog-6.jpg" />
+            <meta name="twitter:card" content="summary_large_image">
+            <meta name="twitter:creator" content="@learntimenet">
+            <meta name="twitter:title" content="JavaScript Tutorial - Nombres en JavaScript">
+            <meta name="twitter:description" content="Apprenez à connaître les nombres en JavaScript, y compris les opérations de base, les types de nombres spéciaux comme NaN et Infinity, et comment utiliser l'objet Math pour des calculs avancés.">
+            <meta name="twitter:image" content="https://learntime.net/assets/thumbnail/blog/blog-6.jpg">
+        
+                <script>
+                    var disqus_config = function () {
+                        this.page.url = window.location.origin + window.location.pathname;
+                        this.page.identifier = window.location.pathname.replace('/en', '');
+                    };
+                </script>
+            <script defer src="/fr/blog/javascript-tutorial/numbers/numbers.063090fa56274c5beff4.js"></script></head>
+            <body>
+                <div class="loader">
+                    <div class="loading-bar">
+                        <div class="moving-loading-bar"></div>
+                    </div>
+                </div>
+                <script>
+                    var lastVisitTime = parseInt(localStorage.getItem('LAST_VISIT_TIME') || '0');
+                    if ((new Date().valueOf() - lastVisitTime) < 1200000) {
+                        document.querySelector('.loading-bar').style.display = 'none';
+                    }
+                </script>
+                <div class="body-container">
+                    <app-navbar></app-navbar>
+                    <div class="max-width"><app-breadcrumbs></app-breadcrumbs></div>
+                    <main>
+        
+<style>
+    :root {
+        --scroll-indicator-height: 0.5rem;
+        --max-width: 150rem;
+    }
+    @media screen and (min-width: 1024px) {
+        :root {
+            --promotion-height: 0rem !important;
+        }
+    }
+</style>
+<div class="max-width tutorial-container">
+  <div class="tutorial-menu-container">
+    <app-tutorial-menu menu="[{&quot;category&quot;:&quot;Tutoriel JavaScript&quot;,&quot;articles&quot;:[{&quot;title&quot;:&quot;Introduction&quot;,&quot;url&quot;:&quot;/fr/blog/javascript-tutorial/&quot;},{&quot;title&quot;:&quot;JS Placement&quot;,&quot;url&quot;:&quot;/fr/blog/javascript-tutorial/placement/&quot;},{&quot;title&quot;:&quot;JS Output&quot;,&quot;url&quot;:&quot;/fr/blog/javascript-tutorial/output/&quot;},{&quot;title&quot;:&quot;JS Statements&quot;,&quot;url&quot;:&quot;/fr/blog/javascript-tutorial/statements/&quot;},{&quot;title&quot;:&quot;JS Syntax&quot;,&quot;url&quot;:&quot;/fr/blog/javascript-tutorial/syntax/&quot;},{&quot;title&quot;:&quot;JS Comments&quot;,&quot;url&quot;:&quot;/fr/blog/javascript-tutorial/comments/&quot;},{&quot;title&quot;:&quot;JS Variables&quot;,&quot;url&quot;:&quot;/fr/blog/javascript-tutorial/variables/&quot;},{&quot;title&quot;:&quot;JS Let&quot;,&quot;url&quot;:&quot;/fr/blog/javascript-tutorial/let/&quot;},{&quot;title&quot;:&quot;JS Const&quot;,&quot;url&quot;:&quot;/fr/blog/javascript-tutorial/const/&quot;},{&quot;title&quot;:&quot;JS Operators&quot;,&quot;url&quot;:&quot;/fr/blog/javascript-tutorial/operators/&quot;},{&quot;title&quot;:&quot;JS Assignment&quot;,&quot;url&quot;:&quot;/fr/blog/javascript-tutorial/assignment/&quot;},{&quot;title&quot;:&quot;JS Data Types&quot;,&quot;url&quot;:&quot;/fr/blog/javascript-tutorial/data-types/&quot;},{&quot;title&quot;:&quot;JS Functions&quot;,&quot;url&quot;:&quot;/fr/blog/javascript-tutorial/functions/&quot;},{&quot;title&quot;:&quot;JS Objects&quot;,&quot;url&quot;:&quot;/fr/blog/javascript-tutorial/objects/&quot;},{&quot;title&quot;:&quot;JS Events&quot;,&quot;url&quot;:&quot;/fr/blog/javascript-tutorial/events/&quot;},{&quot;title&quot;:&quot;JS Strings&quot;,&quot;url&quot;:&quot;/fr/blog/javascript-tutorial/strings/&quot;},{&quot;title&quot;:&quot;JS Numbers&quot;,&quot;url&quot;:&quot;/fr/blog/javascript-tutorial/numbers/&quot;},{&quot;title&quot;:&quot;JS BigInt&quot;,&quot;url&quot;:&quot;/fr/blog/javascript-tutorial/bigint/&quot;},{&quot;title&quot;:&quot;JS Arrays&quot;,&quot;url&quot;:&quot;/fr/blog/javascript-tutorial/arrays/&quot;},{&quot;title&quot;:&quot;JS Dates&quot;,&quot;url&quot;:&quot;/fr/blog/javascript-tutorial/dates/&quot;},{&quot;title&quot;:&quot;JS Math&quot;,&quot;url&quot;:&quot;/fr/blog/javascript-tutorial/math/&quot;},{&quot;title&quot;:&quot;JS Random&quot;,&quot;url&quot;:&quot;/fr/blog/javascript-tutorial/random/&quot;}]}]"></app-tutorial-menu>
+  </div>
+  <div class="main-container">
+    <app-breadcrumbs class="tutorial"></app-breadcrumbs>
+    <app-blog-title class="tutorial" blog-title="Numéros JavaScript" blog-description="Apprenez à connaître les nombres en JavaScript, y compris les opérations de base, les types de nombres spéciaux comme NaN et Infinity, et comment utiliser l'objet Math pour des calculs avancés." blog-image="/assets/images/blog/blog-6.jpg"></app-blog-title>
+    <div class="blog-content markdown">
+      <h2>📝 Ce que vous apprendrez</h2>
+<ul>
+<li>Les nombres en JavaScript</li>
+<li>Comment travailler avec des valeurs numériques</li>
+<li>Opérations mathématiques courantes en JavaScript</li>
+<li>Types de nombres spéciaux comme <code>NaN</code> et <code>Infinity</code>.</li>
+<li>Exemples pratiques pour comprendre les nombres en JavaScript</li>
+</ul>
+<h2>🔍 Qu&#39;est-ce qu&#39;un nombre en JavaScript ?</h2>
+<p>Un <strong>nombre</strong> en JavaScript est un type de données utilisé pour représenter à la fois les nombres entiers (entiers) et les nombres à virgule flottante (décimales). Les nombres JavaScript sont dynamiques, ce qui signifie qu&#39;ils ne sont pas explicitement définis par un type de données dans le code ; JavaScript traite automatiquement les valeurs numériques comme des nombres.</p>
+<h3>Exemple :</h3>
+<pre><code class="hljs language-javascript"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">let</span> num1 = <span class="hljs-number">42</span>;      <span class="hljs-comment">// An integer</span>
+<span class="hljs-keyword">let</span> num2 = <span class="hljs-number">3.14</span>;    <span class="hljs-comment">// A floating-point number (decimal)</span></code></pre>
+</code></pre><h2>🧑‍🍳 Travailler avec des nombres</h2>
+<p>JavaScript vous permet d&#39;effectuer une grande variété d&#39;opérations mathématiques sur les nombres. Vous pouvez ajouter, soustraire, multiplier, diviser, etc. </p>
+<h3>Opérations arithmétiques de base :</h3>
+<pre><code class="hljs language-javascript"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">let</span> a = <span class="hljs-number">10</span>;
+<span class="hljs-keyword">let</span> b = <span class="hljs-number">5</span>;
+
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(a + b);  <span class="hljs-comment">// Output: 15 (addition)</span>
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(a - b);  <span class="hljs-comment">// Output: 5  (subtraction)</span>
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(a * b);  <span class="hljs-comment">// Output: 50 (multiplication)</span>
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(a / b);  <span class="hljs-comment">// Output: 2  (division)</span></code></pre>
+</code></pre><h2>🛠️ Nombres spéciaux en JavaScript</h2>
+<p>JavaScript dispose de quelques valeurs numériques spéciales que vous pouvez rencontrer lorsque vous travaillez avec des nombres :</p>
+<h3>1️⃣ <strong>Infini</strong></h3>
+<p>L&#39;infini est une valeur spéciale représentant les nombres qui dépassent le plus grand nombre représentable en JavaScript.</p>
+<pre><code class="hljs language-javascript"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">let</span> largeNumber = <span class="hljs-number">1</span> / <span class="hljs-number">0</span>;
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(largeNumber);  <span class="hljs-comment">// Output: Infinity</span></code></pre>
+</code></pre><p>De même, <code>-Infinity</code> représente l&#39;infini négatif.</p>
+<pre><code class="hljs language-javascript"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">let</span> negativeInfinity = -<span class="hljs-number">1</span> / <span class="hljs-number">0</span>;
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(negativeInfinity);  <span class="hljs-comment">// Output: -Infinity</span></code></pre>
+</code></pre><h3>2️⃣ <strong>NaN</strong> (Not a Number)</h3>
+<p>NaN` représente une valeur qui n&#39;est pas un nombre valide. Il se produit généralement lorsqu&#39;une opération mathématique ne produit pas un résultat valide.</p>
+<pre><code class="hljs language-javascript"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">let</span> invalidNumber = <span class="hljs-string">&quot;hello&quot;</span> / <span class="hljs-number">2</span>;
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(invalidNumber);  <span class="hljs-comment">// Output: NaN</span></code></pre>
+</code></pre><h2>🧮 Méthodes mathématiques</h2>
+<p>JavaScript fournit un objet intégré <code>Math</code> avec diverses méthodes pour effectuer des tâches mathématiques comme arrondir des nombres, trouver des racines carrées et générer des nombres aléatoires.</p>
+<h3>1️⃣ <strong>Math.round()</strong></h3>
+<p>Arrondit un nombre à l&#39;entier le plus proche.</p>
+<pre><code class="hljs language-javascript"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">let</span> num = <span class="hljs-number">3.6</span>;
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-title class_">Math</span>.<span class="hljs-title function_">round</span>(num));  <span class="hljs-comment">// Output: 4</span></code></pre>
+</code></pre><h3>2️⃣ <strong>Math.sqrt()</strong></h3>
+<p>Renvoie la racine carrée d&#39;un nombre.</p>
+<pre><code class="hljs language-javascript"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">let</span> num = <span class="hljs-number">16</span>;
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-title class_">Math</span>.<span class="hljs-title function_">sqrt</span>(num));  <span class="hljs-comment">// Output: 4</span></code></pre>
+</code></pre><h3>3️⃣ <strong>Math.random()</strong></h3>
+<p>Génère un nombre aléatoire entre 0 (inclus) et 1 (exclusif).</p>
+<pre><code class="hljs language-javascript"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">let</span> randomNum = <span class="hljs-title class_">Math</span>.<span class="hljs-title function_">random</span>();
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(randomNum);  <span class="hljs-comment">// Output: A random number between 0 and 1</span></code></pre>
+</code></pre><h3>4️⃣ <strong>Math.max()</strong> et <strong>Math.min()</strong></h3>
+<p>Renvoie la valeur la plus élevée ou la plus basse parmi un ensemble de nombres.</p>
+<pre><code class="hljs language-javascript"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">let</span> max = <span class="hljs-title class_">Math</span>.<span class="hljs-title function_">max</span>(<span class="hljs-number">1</span>, <span class="hljs-number">5</span>, <span class="hljs-number">10</span>, <span class="hljs-number">2</span>);
+<span class="hljs-keyword">let</span> min = <span class="hljs-title class_">Math</span>.<span class="hljs-title function_">min</span>(<span class="hljs-number">1</span>, <span class="hljs-number">5</span>, <span class="hljs-number">10</span>, <span class="hljs-number">2</span>);
+
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(max);  <span class="hljs-comment">// Output: 10</span>
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(min);  <span class="hljs-comment">// Output: 1</span></code></pre>
+</code></pre><h2>🔄 Conversion des nombres</h2>
+<p>Il est parfois nécessaire de convertir d&#39;autres types de données en nombres. JavaScript propose plusieurs façons de le faire.</p>
+<h3>1️⃣ <strong>parseInt()</strong></h3>
+<p>Convertit une chaîne de caractères en un nombre entier.</p>
+<pre><code class="hljs language-javascript"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">let</span> str = <span class="hljs-string">&quot;123&quot;</span>;
+<span class="hljs-keyword">let</span> num = <span class="hljs-built_in">parseInt</span>(str);
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(num);  <span class="hljs-comment">// Output: 123</span></code></pre>
+</code></pre><h3>2️⃣ <strong>parseFloat()</strong></h3>
+<p>Convertit une chaîne de caractères en un nombre à virgule flottante.</p>
+<pre><code class="hljs language-javascript"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">let</span> str = <span class="hljs-string">&quot;3.14&quot;</span>;
+<span class="hljs-keyword">let</span> num = <span class="hljs-built_in">parseFloat</span>(str);
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(num);  <span class="hljs-comment">// Output: 3.14</span></code></pre>
+</code></pre><h3>3️⃣ <strong>Nombre()</strong></h3>
+<p>Convertit une valeur en un nombre.</p>
+<pre><code class="hljs language-javascript"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">let</span> value = <span class="hljs-string">&quot;42&quot;</span>;
+<span class="hljs-keyword">let</span> num = <span class="hljs-title class_">Number</span>(value);
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(num);  <span class="hljs-comment">// Output: 42</span></code></pre>
+</code></pre><h2>💡 Travailler avec de grands nombres</h2>
+<p>JavaScript peut gérer de grands nombres, mais la précision peut devenir un problème lorsqu&#39;il s&#39;agit de valeurs extrêmement grandes ou petites. Pour gérer les très grands nombres entiers, JavaScript fournit <strong>BigInt</strong> (un objet intégré).</p>
+<h3>Exemple :</h3>
+<pre><code class="hljs language-javascript"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">let</span> bigNumber = <span class="hljs-number">1234567890123456789012345678901234567890n</span>;  <span class="hljs-comment">// BigInt</span>
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(bigNumber);  <span class="hljs-comment">// Output: 1234567890123456789012345678901234567890n</span></code></pre>
+</code></pre><p>Notez le <strong><code>n</code></strong> à la fin du nombre, qui indique qu&#39;il s&#39;agit d&#39;un <strong>BigInt</strong>.</p>
+<h2>🧠 Recap</h2>
+<ul>
+<li>Les nombres** en JavaScript représentent à la fois des nombres entiers et des nombres à virgule flottante.  </li>
+<li>Vous pouvez effectuer des <strong>opérations mathématiques</strong> de base telles que l&#39;addition, la soustraction, la multiplication et la division.  </li>
+<li>JavaScript a des valeurs numériques spéciales comme <code>Infinity</code> et <code>NaN</code>.  </li>
+<li>L&#39;objet <code>Math</code> fournit des méthodes pour des opérations mathématiques complexes, telles que l&#39;arrondi et la génération de nombres aléatoires.  </li>
+<li>Vous pouvez convertir d&#39;autres types de données en nombres en utilisant <code>parseInt()</code>, <code>parseFloat()</code>, ou <code>Number()</code>.</li>
+</ul>
+
+      <app-subscribe></app-subscribe>
+      <app-comments></app-comments>
+    </div>
+  </div>
+  <aside>
+    <div class="aside-container">
+      <app-share-buttons></app-share-buttons>
+      <app-aside-promotion></app-aside-promotion>
+    </div>
+  </aside>
+</div>
+
+        </main>
+        <app-scroll-top-button></app-scroll-top-button>
+        <app-footer></app-footer>
+        </div>
+            <script>
+                var lastVisitTime = parseInt(localStorage.getItem('LAST_VISIT_TIME') || '0');
+                var timeoutDuration = 1500;
+                //if ((new Date().valueOf() - lastVisitTime) < 1200000) {
+                //    timeoutDuration = 400;
+                //}
+                setTimeout(() => {
+                    document.querySelector('.loader').classList.add('hide');
+                    document.querySelector('.body-container').style.display = 'block';
+                    document.dispatchEvent(new CustomEvent('page-loader-hide'));
+                }, timeoutDuration);
+                setTimeout(() => {
+                    document.querySelector('.loader').style.display = 'none';
+                }, 2000);
+                localStorage.setItem('LAST_VISIT_TIME', new Date().valueOf());
+            </script>
+        
+                <!-- Google tag (gtag.js) -->
+                <script async src="https://www.googletagmanager.com/gtag/js?id=G-S6JEVF53JZ"></script>
+                <script>
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag() {
+                        dataLayer.push(arguments);
+                    }
+                    gtag('js', new Date());
+
+                    gtag('config', 'G-S6JEVF53JZ');
+                </script>
+            
+            <script>
+                window.axeptioSettings = {
+                    clientId: "67fc2975df7d77940a4ff73d",
+                    cookiesVersion: "13042025",
+                    googleConsentMode: {
+                        default: {
+                            analytics_storage: "denied",
+                            ad_storage: "denied",
+                            ad_user_data: "denied",
+                            ad_personalization: "denied",
+                            wait_for_update: 500
+                        }
+                    }
+                };
+                (function(d, s) {
+                    var t = d.getElementsByTagName(s)[0], e = d.createElement(s);
+                    e.async = true; e.src = "//static.axept.io/sdk.js";
+                    t.parentNode.insertBefore(e, t);
+                })(document, "script");
+            </script>
+            <script src="/assets/scripts/markdown.js"></script></body></html>

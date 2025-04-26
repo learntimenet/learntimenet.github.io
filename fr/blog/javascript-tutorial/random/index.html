@@ -1,0 +1,216 @@
+
+            <!DOCTYPE html>
+            <html lang="fr" data-translated="true" data-breadcrump-title="JavaScript Aléatoire">
+            <head>
+                <meta charset="utf-8" />
+                <title>Learn Time | JavaScript Tutorial - JavaScript Random</title>
+                <meta name="description" content="Apprenez à générer des nombres aléatoires en JavaScript à l'aide de Math.random(). Inclut des exemples pour les entiers aléatoires, les sélections aléatoires, et des cas d'utilisation comme les jeux et le caractère aléatoire de l'interface utilisateur.">
+                
+                <meta name="viewport" content="width=device-width,initial-scale=1" />
+                <!--
+                <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
+                <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
+                <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
+                <link rel="shortcut icon" sizes="192x192" href="/assets/favicon/android-chrome-192x192.png" >
+                <link rel="shortcut icon" sizes="512x512" href="/assets/favicon/android-chrome-512x512.png" >
+                <link rel="manifest" href="/assets/favicon/site.webmanifest">
+                <link rel="shortcut icon" href="/assets/favicon/favicon.ico">
+                <link rel="mask-icon" href="/assets/favicon/safari-pinned-tab.svg" color="#5bbad5">
+                <meta name="msapplication-TileColor" content="#da532c">
+                <meta name="theme-color" content="#ffffff">
+                -->
+                <link rel="shortcut icon" type="image/png" href="/assets/images/logo-circle.png">
+                <link rel="stylesheet" href="/styles.css">
+                <script src="https://kit.fontawesome.com/ff0edf556e.js" crossorigin="anonymous"></script>
+                <script src="https://code.iconify.design/iconify-icon/1.0.2/iconify-icon.min.js"></script>
+                <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+                <script>window.startTime = new Date().getTime();</script>
+                <style>
+                    :root {
+                        --background-color: #f3f2ef;
+                        --loading-bar-background-color: #d6cec2;
+                        --moving-loading-bar-background-color: #D0514D;
+                    }
+                    .loader {transition: all .2s ease-out;z-index: 10000000000;margin-top: -200px;position: fixed;top: 0;left: 0;right: 0;bottom: 0;background-color: var(--background-color);display: flex;align-items: center;justify-content: center;flex-direction: column;}.loader-logo {width: 40px; height: 40px; margin-bottom: 20px;}.loading-bar {width: 130px;height: 4px;border-radius: 100rem;background-color: var(--loading-bar-background-color);position: relative;overflow: hidden;}.moving-loading-bar {height: 100%;width: 68px;position: absolute;border-radius: 100rem;background-color: var(--moving-loading-bar-background-color);animation: initial-loading 1.5s ease infinite;}@keyframes initial-loading {0% {transform: translate(-34px);}50% {transform: translate(96px);}to {transform: translate(-34px);}}
+                    .loader.hide {opacity: 0;}
+                </style>
+                
+            <meta property="og:title" content="JavaScript Tutorial - JavaScript Random" />
+            <meta property="og:description" content="Apprenez à générer des nombres aléatoires en JavaScript à l'aide de Math.random(). Inclut des exemples pour les entiers aléatoires, les sélections aléatoires, et des cas d'utilisation comme les jeux et le caractère aléatoire de l'interface utilisateur." />
+            <meta property="og:image" content="https://learntime.net/assets/thumbnail/blog/blog-0.jpg" />
+            <meta name="twitter:card" content="summary_large_image">
+            <meta name="twitter:creator" content="@learntimenet">
+            <meta name="twitter:title" content="JavaScript Tutorial - JavaScript Random">
+            <meta name="twitter:description" content="Apprenez à générer des nombres aléatoires en JavaScript à l'aide de Math.random(). Inclut des exemples pour les entiers aléatoires, les sélections aléatoires, et des cas d'utilisation comme les jeux et le caractère aléatoire de l'interface utilisateur.">
+            <meta name="twitter:image" content="https://learntime.net/assets/thumbnail/blog/blog-0.jpg">
+        
+                <script>
+                    var disqus_config = function () {
+                        this.page.url = window.location.origin + window.location.pathname;
+                        this.page.identifier = window.location.pathname.replace('/en', '');
+                    };
+                </script>
+            <script defer src="/fr/blog/javascript-tutorial/random/random.c9e6c6c641709424c0a6.js"></script></head>
+            <body>
+                <div class="loader">
+                    <div class="loading-bar">
+                        <div class="moving-loading-bar"></div>
+                    </div>
+                </div>
+                <script>
+                    var lastVisitTime = parseInt(localStorage.getItem('LAST_VISIT_TIME') || '0');
+                    if ((new Date().valueOf() - lastVisitTime) < 1200000) {
+                        document.querySelector('.loading-bar').style.display = 'none';
+                    }
+                </script>
+                <div class="body-container">
+                    <app-navbar></app-navbar>
+                    <div class="max-width"><app-breadcrumbs></app-breadcrumbs></div>
+                    <main>
+        
+<style>
+    :root {
+        --scroll-indicator-height: 0.5rem;
+        --max-width: 150rem;
+    }
+    @media screen and (min-width: 1024px) {
+        :root {
+            --promotion-height: 0rem !important;
+        }
+    }
+</style>
+<div class="max-width tutorial-container">
+  <div class="tutorial-menu-container">
+    <app-tutorial-menu menu="[{&quot;category&quot;:&quot;Tutoriel JavaScript&quot;,&quot;articles&quot;:[{&quot;title&quot;:&quot;Introduction&quot;,&quot;url&quot;:&quot;/fr/blog/javascript-tutorial/&quot;},{&quot;title&quot;:&quot;JS Placement&quot;,&quot;url&quot;:&quot;/fr/blog/javascript-tutorial/placement/&quot;},{&quot;title&quot;:&quot;JS Output&quot;,&quot;url&quot;:&quot;/fr/blog/javascript-tutorial/output/&quot;},{&quot;title&quot;:&quot;JS Statements&quot;,&quot;url&quot;:&quot;/fr/blog/javascript-tutorial/statements/&quot;},{&quot;title&quot;:&quot;JS Syntax&quot;,&quot;url&quot;:&quot;/fr/blog/javascript-tutorial/syntax/&quot;},{&quot;title&quot;:&quot;JS Comments&quot;,&quot;url&quot;:&quot;/fr/blog/javascript-tutorial/comments/&quot;},{&quot;title&quot;:&quot;JS Variables&quot;,&quot;url&quot;:&quot;/fr/blog/javascript-tutorial/variables/&quot;},{&quot;title&quot;:&quot;JS Let&quot;,&quot;url&quot;:&quot;/fr/blog/javascript-tutorial/let/&quot;},{&quot;title&quot;:&quot;JS Const&quot;,&quot;url&quot;:&quot;/fr/blog/javascript-tutorial/const/&quot;},{&quot;title&quot;:&quot;JS Operators&quot;,&quot;url&quot;:&quot;/fr/blog/javascript-tutorial/operators/&quot;},{&quot;title&quot;:&quot;JS Assignment&quot;,&quot;url&quot;:&quot;/fr/blog/javascript-tutorial/assignment/&quot;},{&quot;title&quot;:&quot;JS Data Types&quot;,&quot;url&quot;:&quot;/fr/blog/javascript-tutorial/data-types/&quot;},{&quot;title&quot;:&quot;JS Functions&quot;,&quot;url&quot;:&quot;/fr/blog/javascript-tutorial/functions/&quot;},{&quot;title&quot;:&quot;JS Objects&quot;,&quot;url&quot;:&quot;/fr/blog/javascript-tutorial/objects/&quot;},{&quot;title&quot;:&quot;JS Events&quot;,&quot;url&quot;:&quot;/fr/blog/javascript-tutorial/events/&quot;},{&quot;title&quot;:&quot;JS Strings&quot;,&quot;url&quot;:&quot;/fr/blog/javascript-tutorial/strings/&quot;},{&quot;title&quot;:&quot;JS Numbers&quot;,&quot;url&quot;:&quot;/fr/blog/javascript-tutorial/numbers/&quot;},{&quot;title&quot;:&quot;JS BigInt&quot;,&quot;url&quot;:&quot;/fr/blog/javascript-tutorial/bigint/&quot;},{&quot;title&quot;:&quot;JS Arrays&quot;,&quot;url&quot;:&quot;/fr/blog/javascript-tutorial/arrays/&quot;},{&quot;title&quot;:&quot;JS Dates&quot;,&quot;url&quot;:&quot;/fr/blog/javascript-tutorial/dates/&quot;},{&quot;title&quot;:&quot;JS Math&quot;,&quot;url&quot;:&quot;/fr/blog/javascript-tutorial/math/&quot;},{&quot;title&quot;:&quot;JS Random&quot;,&quot;url&quot;:&quot;/fr/blog/javascript-tutorial/random/&quot;}]}]"></app-tutorial-menu>
+  </div>
+  <div class="main-container">
+    <app-breadcrumbs class="tutorial"></app-breadcrumbs>
+    <app-blog-title class="tutorial" blog-title="JavaScript Aléatoire" blog-description="Apprenez à générer des nombres aléatoires en JavaScript à l'aide de Math.random(). Inclut des exemples pour les entiers aléatoires, les sélections aléatoires, et des cas d'utilisation comme les jeux et le caractère aléatoire de l'interface utilisateur." blog-image="/assets/images/blog/blog-0.jpg"></app-blog-title>
+    <div class="blog-content markdown">
+      <h2>📝 Dans cet article, vous apprendrez :</h2>
+<ul>
+<li>Comment générer des nombres aléatoires en JavaScript</li>
+<li>Comment fonctionne la fonction <code>Math.random()</code> ?</li>
+<li>Comment créer des nombres entiers aléatoires dans une plage personnalisée ?</li>
+<li>Cas concrets d&#39;utilisation de l&#39;aléatoire en JavaScript</li>
+</ul>
+<h2>🔍 La méthode <strong>Math.random()</strong>.</h2>
+<p>JavaScript fournit une méthode intégrée appelée <code>Math.random()</code> pour générer des nombres aléatoires.</p>
+<h3>Ce qu&#39;il fait</h3>
+<ul>
+<li>Renvoie un nombre <strong>en virgule flottante</strong>.</li>
+<li>La valeur est <strong>comprise entre 0 (inclus)</strong> et <strong>1 (exclu)</strong>.</li>
+</ul>
+<h3>📌 Exemple :</h3>
+<pre><code class="hljs language-javascript"><pre class="highlight"><code class="hljs"><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-title class_">Math</span>.<span class="hljs-title function_">random</span>());  
+<span class="hljs-comment">// Output: e.g., 0.568901237</span></code></pre>
+</code></pre><p>Ce résultat sera toujours <strong>0 ou supérieur</strong> et <strong>inférieur à 1</strong>.</p>
+<h2>🎯 Entier aléatoire entre 0 et N</h2>
+<p>Pour générer un entier aléatoire de <code>0</code> à <code>N - 1</code>, utilisez :</p>
+<pre><code class="hljs language-javascript"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">let</span> random = <span class="hljs-title class_">Math</span>.<span class="hljs-title function_">floor</span>(<span class="hljs-title class_">Math</span>.<span class="hljs-title function_">random</span>() * N);</code></pre>
+</code></pre><h3>Exemple : Nombre aléatoire de 0 à 9</h3>
+<pre><code class="hljs language-javascript"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">let</span> random = <span class="hljs-title class_">Math</span>.<span class="hljs-title function_">floor</span>(<span class="hljs-title class_">Math</span>.<span class="hljs-title function_">random</span>() * <span class="hljs-number">10</span>);
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(random);  <span class="hljs-comment">// Output: 0 to 9</span></code></pre>
+</code></pre><h2>🎯 Nombre entier aléatoire entre deux nombres</h2>
+<p>Pour générer un nombre <strong>entre deux valeurs (incluses)</strong> :</p>
+<pre><code class="hljs language-javascript"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">function</span> <span class="hljs-title function_">getRandom</span>(<span class="hljs-params">min, max</span>) {
+  <span class="hljs-keyword">return</span> <span class="hljs-title class_">Math</span>.<span class="hljs-title function_">floor</span>(<span class="hljs-title class_">Math</span>.<span class="hljs-title function_">random</span>() * (max - min + <span class="hljs-number">1</span>)) + min;
+}</code></pre>
+</code></pre><h3>Exemple : Nombre aléatoire entre 5 et 15</h3>
+<pre><code class="hljs language-javascript"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">let</span> result = <span class="hljs-title function_">getRandom</span>(<span class="hljs-number">5</span>, <span class="hljs-number">15</span>);
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(result);  <span class="hljs-comment">// Output: a number from 5 to 15</span></code></pre>
+</code></pre><h2>🎮 Cas d&#39;utilisation pour <strong>Math.random()</strong></h2>
+<h3>🔢 1. Générer des ID aléatoires</h3>
+<pre><code class="hljs language-javascript"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">let</span> id = <span class="hljs-title class_">Math</span>.<span class="hljs-title function_">floor</span>(<span class="hljs-title class_">Math</span>.<span class="hljs-title function_">random</span>() * <span class="hljs-number">10000</span>);
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;User ID:&quot;</span>, id);</code></pre>
+</code></pre><h3>🎰 2. Simuler des lancers de dés</h3>
+<pre><code class="hljs language-javascript"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">let</span> dice = <span class="hljs-title class_">Math</span>.<span class="hljs-title function_">floor</span>(<span class="hljs-title class_">Math</span>.<span class="hljs-title function_">random</span>() * <span class="hljs-number">6</span>) + <span class="hljs-number">1</span>;
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;Dice rolled:&quot;</span>, dice);</code></pre>
+</code></pre><h3>🧠 3. Choisir un élément aléatoire du tableau</h3>
+<pre><code class="hljs language-javascript"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">let</span> colors = [<span class="hljs-string">&quot;red&quot;</span>, <span class="hljs-string">&quot;blue&quot;</span>, <span class="hljs-string">&quot;green&quot;</span>, <span class="hljs-string">&quot;yellow&quot;</span>];
+<span class="hljs-keyword">let</span> randomColor = colors[<span class="hljs-title class_">Math</span>.<span class="hljs-title function_">floor</span>(<span class="hljs-title class_">Math</span>.<span class="hljs-title function_">random</span>() * colors.<span class="hljs-property">length</span>)];
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;Random color:&quot;</span>, randomColor);</code></pre>
+</code></pre><h3>🎵 4. Mélanger le contenu</h3>
+<p>Vous pouvez utiliser le hasard pour mélanger des questions, des cartes, des listes de lecture, etc.</p>
+<h2>🛡️ Avertissement sur le caractère aléatoire en JS</h2>
+<p><code>Math.random()</code> n&#39;est <strong>pas cryptographiquement sûr</strong>. C&#39;est parfait pour un usage occasionnel (jeux, choix d&#39;interface utilisateur), mais ne l&#39;utilisez pas pour générer des mots de passe ou des jetons de sécurité.</p>
+<p>Pour un caractère aléatoire sûr, utilisez :</p>
+<pre><code class="hljs language-javascript"><pre class="highlight"><code class="hljs">crypto.<span class="hljs-title function_">getRandomValues</span>()</code></pre>
+</code></pre><p>Exemple :</p>
+<pre><code class="hljs language-javascript"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">let</span> array = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Uint32Array</span>(<span class="hljs-number">1</span>);
+<span class="hljs-variable language_">window</span>.<span class="hljs-property">crypto</span>.<span class="hljs-title function_">getRandomValues</span>(array);
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(array[<span class="hljs-number">0</span>]);</code></pre>
+</code></pre><h2>🧠 Recap</h2>
+<ul>
+<li>Utilisez <code>Math.random()</code> pour générer des nombres pseudo-aléatoires entre 0 et 1.</li>
+<li>Multiplier et <code>Math.floor()</code> le résultat pour obtenir des nombres entiers dans un intervalle personnalisé.</li>
+<li>Idéal pour les jeux, les effets visuels ou le comportement dynamique.</li>
+<li>À éviter pour les fonctionnalités critiques en termes de sécurité - utiliser <code>crypto</code> à la place.</li>
+</ul>
+
+      <app-subscribe></app-subscribe>
+      <app-comments></app-comments>
+    </div>
+  </div>
+  <aside>
+    <div class="aside-container">
+      <app-share-buttons></app-share-buttons>
+      <app-aside-promotion></app-aside-promotion>
+    </div>
+  </aside>
+</div>
+
+        </main>
+        <app-scroll-top-button></app-scroll-top-button>
+        <app-footer></app-footer>
+        </div>
+            <script>
+                var lastVisitTime = parseInt(localStorage.getItem('LAST_VISIT_TIME') || '0');
+                var timeoutDuration = 1500;
+                //if ((new Date().valueOf() - lastVisitTime) < 1200000) {
+                //    timeoutDuration = 400;
+                //}
+                setTimeout(() => {
+                    document.querySelector('.loader').classList.add('hide');
+                    document.querySelector('.body-container').style.display = 'block';
+                    document.dispatchEvent(new CustomEvent('page-loader-hide'));
+                }, timeoutDuration);
+                setTimeout(() => {
+                    document.querySelector('.loader').style.display = 'none';
+                }, 2000);
+                localStorage.setItem('LAST_VISIT_TIME', new Date().valueOf());
+            </script>
+        
+                <!-- Google tag (gtag.js) -->
+                <script async src="https://www.googletagmanager.com/gtag/js?id=G-S6JEVF53JZ"></script>
+                <script>
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag() {
+                        dataLayer.push(arguments);
+                    }
+                    gtag('js', new Date());
+
+                    gtag('config', 'G-S6JEVF53JZ');
+                </script>
+            
+            <script>
+                window.axeptioSettings = {
+                    clientId: "67fc2975df7d77940a4ff73d",
+                    cookiesVersion: "13042025",
+                    googleConsentMode: {
+                        default: {
+                            analytics_storage: "denied",
+                            ad_storage: "denied",
+                            ad_user_data: "denied",
+                            ad_personalization: "denied",
+                            wait_for_update: 500
+                        }
+                    }
+                };
+                (function(d, s) {
+                    var t = d.getElementsByTagName(s)[0], e = d.createElement(s);
+                    e.async = true; e.src = "//static.axept.io/sdk.js";
+                    t.parentNode.insertBefore(e, t);
+                })(document, "script");
+            </script>
+            <script src="/assets/scripts/markdown.js"></script></body></html>
