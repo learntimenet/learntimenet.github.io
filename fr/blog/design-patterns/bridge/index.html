@@ -1,0 +1,280 @@
+
+            <!DOCTYPE html>
+            <html lang="fr" data-translated="true" data-breadcrump-title="Modèle de pont">
+            <head>
+                <meta charset="utf-8" />
+                <title>Learn Time | Design Patterns - Bridge</title>
+                <meta name="description" content="Apprenez comment le Bridge Pattern en Java permet de découpler l'abstraction de l'implémentation pour un code évolutif et flexible. Inclut des exemples de code et des cas d'utilisation réels.">
+                
+                <meta name="viewport" content="width=device-width,initial-scale=1" />
+                <!--
+                <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
+                <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
+                <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
+                <link rel="shortcut icon" sizes="192x192" href="/assets/favicon/android-chrome-192x192.png" >
+                <link rel="shortcut icon" sizes="512x512" href="/assets/favicon/android-chrome-512x512.png" >
+                <link rel="manifest" href="/assets/favicon/site.webmanifest">
+                <link rel="shortcut icon" href="/assets/favicon/favicon.ico">
+                <link rel="mask-icon" href="/assets/favicon/safari-pinned-tab.svg" color="#5bbad5">
+                <meta name="msapplication-TileColor" content="#da532c">
+                <meta name="theme-color" content="#ffffff">
+                -->
+                <link rel="shortcut icon" type="image/png" href="/assets/images/logo-circle.png">
+                <link rel="stylesheet" href="/styles.css">
+                <script src="https://kit.fontawesome.com/ff0edf556e.js" crossorigin="anonymous"></script>
+                <script src="https://code.iconify.design/iconify-icon/1.0.2/iconify-icon.min.js"></script>
+                <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+                <script>window.startTime = new Date().getTime();</script>
+                <style>
+                    :root {
+                        --background-color: #f3f2ef;
+                        --loading-bar-background-color: #d6cec2;
+                        --moving-loading-bar-background-color: #D0514D;
+                    }
+                    .loader {transition: all .2s ease-out;z-index: 10000000000;margin-top: -200px;position: fixed;top: 0;left: 0;right: 0;bottom: 0;background-color: var(--background-color);display: flex;align-items: center;justify-content: center;flex-direction: column;}.loader-logo {width: 40px; height: 40px; margin-bottom: 20px;}.loading-bar {width: 130px;height: 4px;border-radius: 100rem;background-color: var(--loading-bar-background-color);position: relative;overflow: hidden;}.moving-loading-bar {height: 100%;width: 68px;position: absolute;border-radius: 100rem;background-color: var(--moving-loading-bar-background-color);animation: initial-loading 1.5s ease infinite;}@keyframes initial-loading {0% {transform: translate(-34px);}50% {transform: translate(96px);}to {transform: translate(-34px);}}
+                    .loader.hide {opacity: 0;}
+                </style>
+                
+            <meta property="og:title" content="Design Patterns - Bridge" />
+            <meta property="og:description" content="Apprenez comment le Bridge Pattern en Java permet de découpler l'abstraction de l'implémentation pour un code évolutif et flexible. Inclut des exemples de code et des cas d'utilisation réels." />
+            <meta property="og:image" content="https://learntime.net/assets/thumbnail/blog/blog-10.jpg" />
+            <meta name="twitter:card" content="summary_large_image">
+            <meta name="twitter:creator" content="@learntimenet">
+            <meta name="twitter:title" content="Design Patterns - Bridge">
+            <meta name="twitter:description" content="Apprenez comment le Bridge Pattern en Java permet de découpler l'abstraction de l'implémentation pour un code évolutif et flexible. Inclut des exemples de code et des cas d'utilisation réels.">
+            <meta name="twitter:image" content="https://learntime.net/assets/thumbnail/blog/blog-10.jpg">
+        
+                <script>
+                    var disqus_config = function () {
+                        this.page.url = window.location.origin + window.location.pathname;
+                        this.page.identifier = window.location.pathname.replace('/en', '');
+                    };
+                </script>
+            <script defer src="/fr/blog/design-patterns/bridge/bridge.575a0091b0f3fe14e1d8.js"></script></head>
+            <body>
+                <div class="loader">
+                    <div class="loading-bar">
+                        <div class="moving-loading-bar"></div>
+                    </div>
+                </div>
+                <script>
+                    var lastVisitTime = parseInt(localStorage.getItem('LAST_VISIT_TIME') || '0');
+                    if ((new Date().valueOf() - lastVisitTime) < 1200000) {
+                        document.querySelector('.loading-bar').style.display = 'none';
+                    }
+                </script>
+                <div class="body-container">
+                    <app-navbar></app-navbar>
+                    <div class="max-width"><app-breadcrumbs></app-breadcrumbs></div>
+                    <main>
+        
+<style>
+    :root {
+        --scroll-indicator-height: 0.5rem;
+        --max-width: 150rem;
+    }
+    @media screen and (min-width: 1024px) {
+        :root {
+            --promotion-height: 0rem !important;
+        }
+    }
+</style>
+<div class="max-width tutorial-container">
+  <div class="tutorial-menu-container">
+    <app-tutorial-menu menu="[{&quot;category&quot;:&quot;Design Patterns&quot;,&quot;articles&quot;:[{&quot;title&quot;:&quot;Introduction&quot;,&quot;url&quot;:&quot;/fr/blog/design-patterns/&quot;}]},{&quot;category&quot;:&quot;Creational Patterns&quot;,&quot;articles&quot;:[{&quot;title&quot;:&quot;Singleton&quot;,&quot;url&quot;:&quot;/fr/blog/design-patterns/singleton&quot;},{&quot;title&quot;:&quot;Factory Method&quot;,&quot;url&quot;:&quot;/fr/blog/design-patterns/factory-method&quot;},{&quot;title&quot;:&quot;Abstract Factory&quot;,&quot;url&quot;:&quot;/fr/blog/design-patterns/abstract-factory&quot;},{&quot;title&quot;:&quot;Builder&quot;,&quot;url&quot;:&quot;/fr/blog/design-patterns/builder&quot;},{&quot;title&quot;:&quot;Prototype&quot;,&quot;url&quot;:&quot;/fr/blog/design-patterns/prototype&quot;}]},{&quot;category&quot;:&quot;Structural Patterns&quot;,&quot;articles&quot;:[{&quot;title&quot;:&quot;Adapter&quot;,&quot;url&quot;:&quot;/fr/blog/design-patterns/adapter&quot;},{&quot;title&quot;:&quot;Decorator&quot;,&quot;url&quot;:&quot;/fr/blog/design-patterns/decorator&quot;},{&quot;title&quot;:&quot;Composite&quot;,&quot;url&quot;:&quot;/fr/blog/design-patterns/composite&quot;},{&quot;title&quot;:&quot;Facade&quot;,&quot;url&quot;:&quot;/fr/blog/design-patterns/facade&quot;},{&quot;title&quot;:&quot;Proxy&quot;,&quot;url&quot;:&quot;/fr/blog/design-patterns/proxy&quot;},{&quot;title&quot;:&quot;Bridge&quot;,&quot;url&quot;:&quot;/fr/blog/design-patterns/bridge&quot;},{&quot;title&quot;:&quot;Flyweight&quot;,&quot;url&quot;:&quot;/fr/blog/design-patterns/flyweight&quot;}]},{&quot;category&quot;:&quot;Behavioral Patterns&quot;,&quot;articles&quot;:[{&quot;title&quot;:&quot;Observer&quot;,&quot;url&quot;:&quot;/fr/blog/design-patterns/observer&quot;},{&quot;title&quot;:&quot;Strategy&quot;,&quot;url&quot;:&quot;/fr/blog/design-patterns/strategy&quot;},{&quot;title&quot;:&quot;Command&quot;,&quot;url&quot;:&quot;/fr/blog/design-patterns/command&quot;},{&quot;title&quot;:&quot;Iterator&quot;,&quot;url&quot;:&quot;/fr/blog/design-patterns/iterator&quot;},{&quot;title&quot;:&quot;Mediator&quot;,&quot;url&quot;:&quot;/fr/blog/design-patterns/mediator&quot;},{&quot;title&quot;:&quot;State&quot;,&quot;url&quot;:&quot;/fr/blog/design-patterns/state&quot;},{&quot;title&quot;:&quot;Template Method&quot;,&quot;url&quot;:&quot;/fr/blog/design-patterns/template-method&quot;}]}]"></app-tutorial-menu>
+  </div>
+  <div class="main-container">
+    <app-breadcrumbs class="tutorial"></app-breadcrumbs>
+    <app-blog-title class="tutorial" blog-title="Modèle de pont" blog-description="Apprenez comment le Bridge Pattern en Java permet de découpler l'abstraction de l'implémentation pour un code évolutif et flexible. Inclut des exemples de code et des cas d'utilisation réels." blog-image="/assets/images/blog/blog-10.jpg"></app-blog-title>
+    <div class="blog-content markdown">
+      <h2>📝 Ce que vous apprendrez</h2>
+<ul>
+<li>Qu&#39;est-ce que le modèle de pont ?</li>
+<li>Pourquoi et quand l&#39;utiliser ?</li>
+<li>Comment l&#39;implémenter en Java</li>
+<li>Exemples du monde réel et analogies</li>
+<li>Erreurs courantes et meilleures pratiques</li>
+</ul>
+<h2>🔍 Qu&#39;est-ce que le modèle de pont ?</h2>
+<p>Le <strong>Modèle de pont</strong> est utilisé pour <strong>découpler une abstraction de son implémentation</strong> afin que les deux puissent <strong>varier indépendamment</strong>.</p>
+<blockquote>
+<p>Imaginez une <strong>télécommande de télévision</strong> : différentes télécommandes peuvent contrôler différentes télévisions, mais la télécommande (abstraction) et la télévision (implémentation) peuvent évoluer séparément.</p>
+</blockquote>
+<h2>🧩 Quand l&#39;utiliser ?</h2>
+<p>Utilisez le modèle de pont lorsque :</p>
+<ul>
+<li>Vous voulez éviter une <strong>liaison permanente</strong> entre l&#39;abstraction et l&#39;implémentation</li>
+<li>Vous disposez de <strong>variations multiples</strong> (par exemple, types d&#39;appareils et moyens de les contrôler)</li>
+<li>Vous voulez <strong>réduire la complexité</strong> causée par de nombreuses sous-classes (comme une énorme hiérarchie de classes)</li>
+<li>Vous voulez pouvoir <strong>étendre</strong> à la fois l&#39;abstraction et la mise en œuvre de manière indépendante.</li>
+</ul>
+<h2>🧱 Implémentation Java</h2>
+<h3>🔌 Étape 1 : Créer l&#39;interface de mise en œuvre</h3>
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">public</span> <span class="hljs-keyword">interface</span> <span class="hljs-title class_">Device</span> {
+    <span class="hljs-keyword">void</span> <span class="hljs-title function_">turnOn</span><span class="hljs-params">()</span>;
+    <span class="hljs-keyword">void</span> <span class="hljs-title function_">turnOff</span><span class="hljs-params">()</span>;
+    <span class="hljs-keyword">void</span> <span class="hljs-title function_">setVolume</span><span class="hljs-params">(<span class="hljs-type">int</span> level)</span>;
+}</code></pre>
+</code></pre><h3>📺 Étape 2 : Implémentations concrètes</h3>
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">TV</span> <span class="hljs-keyword">implements</span> <span class="hljs-title class_">Device</span> {
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">turnOn</span><span class="hljs-params">()</span> {
+        System.out.println(<span class="hljs-string">&quot;TV is turned ON&quot;</span>);
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">turnOff</span><span class="hljs-params">()</span> {
+        System.out.println(<span class="hljs-string">&quot;TV is turned OFF&quot;</span>);
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">setVolume</span><span class="hljs-params">(<span class="hljs-type">int</span> level)</span> {
+        System.out.println(<span class="hljs-string">&quot;TV volume set to &quot;</span> + level);
+    }
+}</code></pre>
+</code></pre><pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Radio</span> <span class="hljs-keyword">implements</span> <span class="hljs-title class_">Device</span> {
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">turnOn</span><span class="hljs-params">()</span> {
+        System.out.println(<span class="hljs-string">&quot;Radio is turned ON&quot;</span>);
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">turnOff</span><span class="hljs-params">()</span> {
+        System.out.println(<span class="hljs-string">&quot;Radio is turned OFF&quot;</span>);
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">setVolume</span><span class="hljs-params">(<span class="hljs-type">int</span> level)</span> {
+        System.out.println(<span class="hljs-string">&quot;Radio volume set to &quot;</span> + level);
+    }
+}</code></pre>
+</code></pre><h3>🎮 Étape 3 : Créer l&#39;abstraction</h3>
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">public</span> <span class="hljs-keyword">abstract</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">RemoteControl</span> {
+    <span class="hljs-keyword">protected</span> Device device;
+
+    <span class="hljs-keyword">protected</span> <span class="hljs-title function_">RemoteControl</span><span class="hljs-params">(Device device)</span> {
+        <span class="hljs-built_in">this</span>.device = device;
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">abstract</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">turnOn</span><span class="hljs-params">()</span>;
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">abstract</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">turnOff</span><span class="hljs-params">()</span>;
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">abstract</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">setVolume</span><span class="hljs-params">(<span class="hljs-type">int</span> level)</span>;
+}</code></pre>
+</code></pre><h3>🎛️ Étape 4 : Remontées de béton</h3>
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">BasicRemote</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">RemoteControl</span> {
+
+    <span class="hljs-keyword">public</span> <span class="hljs-title function_">BasicRemote</span><span class="hljs-params">(Device device)</span> {
+        <span class="hljs-built_in">super</span>(device);
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">turnOn</span><span class="hljs-params">()</span> {
+        device.turnOn();
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">turnOff</span><span class="hljs-params">()</span> {
+        device.turnOff();
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">setVolume</span><span class="hljs-params">(<span class="hljs-type">int</span> level)</span> {
+        device.setVolume(level);
+    }
+}</code></pre>
+</code></pre><h3>✅ Usage</h3>
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-type">Device</span> <span class="hljs-variable">tv</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">TV</span>();
+<span class="hljs-type">RemoteControl</span> <span class="hljs-variable">tvRemote</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">BasicRemote</span>(tv);
+
+tvRemote.turnOn();
+tvRemote.setVolume(<span class="hljs-number">10</span>);
+tvRemote.turnOff();
+
+<span class="hljs-type">Device</span> <span class="hljs-variable">radio</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Radio</span>();
+<span class="hljs-type">RemoteControl</span> <span class="hljs-variable">radioRemote</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">BasicRemote</span>(radio);
+
+radioRemote.turnOn();
+radioRemote.setVolume(<span class="hljs-number">5</span>);
+radioRemote.turnOff();</code></pre>
+</code></pre><h2>🌐 Analogie avec le monde réel</h2>
+<ul>
+<li>Télécommandes et appareils** : La même télécommande (abstraction) peut contrôler différents appareils (TV, radio, système audio).  </li>
+<li>Navigateurs web et systèmes d&#39;exploitation** : Le navigateur (abstraction) peut fonctionner sur différentes plates-formes de systèmes d&#39;exploitation (implémentations).</li>
+</ul>
+<h2>⚠️ Les pièges à éviter</h2>
+<ul>
+<li>❌ Introduire une complexité inutile s&#39;il n&#39;existe qu&#39;une seule abstraction ou implémentation</li>
+<li>❌ Couplage étroit si l&#39;abstraction repose sur des détails de mise en œuvre spécifiques</li>
+<li>❌ Une ingénierie trop poussée alors qu&#39;un simple héritage suffirait</li>
+</ul>
+<h2>✅ Meilleures pratiques</h2>
+<ul>
+<li>Préférer la composition à l&#39;héritage</li>
+<li>Permettre à l&#39;abstraction et à la mise en œuvre d&#39;évoluer indépendamment</li>
+<li>Séparer clairement ce que l&#39;abstraction et la mise en œuvre gèrent chacune.</li>
+</ul>
+<h2>📘 Recap</h2>
+<ul>
+<li>Modèle de pont <strong>découple l&#39;abstraction de la mise en œuvre</strong></li>
+<li>Permet une <strong>extension souple</strong> des deux côtés sans affecter l&#39;autre</li>
+<li>Réduit la complexité d&#39;une énorme hiérarchie de classes</li>
+<li>Analogie avec le monde réel : <strong>télécommandes et appareils électroniques</strong></li>
+</ul>
+
+      <app-subscribe></app-subscribe>
+      <app-comments></app-comments>
+    </div>
+  </div>
+  <aside>
+    <div class="aside-container">
+      <app-share-buttons></app-share-buttons>
+      <app-aside-promotion></app-aside-promotion>
+    </div>
+  </aside>
+</div>
+
+        </main>
+        <app-scroll-top-button></app-scroll-top-button>
+        <app-footer></app-footer>
+        </div>
+            <script>
+                var lastVisitTime = parseInt(localStorage.getItem('LAST_VISIT_TIME') || '0');
+                var timeoutDuration = 1500;
+                //if ((new Date().valueOf() - lastVisitTime) < 1200000) {
+                //    timeoutDuration = 400;
+                //}
+                setTimeout(() => {
+                    document.querySelector('.loader').classList.add('hide');
+                    document.querySelector('.body-container').style.display = 'block';
+                    document.dispatchEvent(new CustomEvent('page-loader-hide'));
+                }, timeoutDuration);
+                setTimeout(() => {
+                    document.querySelector('.loader').style.display = 'none';
+                }, 2000);
+                localStorage.setItem('LAST_VISIT_TIME', new Date().valueOf());
+            </script>
+        
+                <!-- Google tag (gtag.js) -->
+                <script async src="https://www.googletagmanager.com/gtag/js?id=G-S6JEVF53JZ"></script>
+                <script>
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag() {
+                        dataLayer.push(arguments);
+                    }
+                    gtag('js', new Date());
+
+                    gtag('config', 'G-S6JEVF53JZ');
+                </script>
+            
+            <script>
+                window.axeptioSettings = {
+                    clientId: "67fc2975df7d77940a4ff73d",
+                    cookiesVersion: "13042025",
+                    googleConsentMode: {
+                        default: {
+                            analytics_storage: "denied",
+                            ad_storage: "denied",
+                            ad_user_data: "denied",
+                            ad_personalization: "denied",
+                            wait_for_update: 500
+                        }
+                    }
+                };
+                (function(d, s) {
+                    var t = d.getElementsByTagName(s)[0], e = d.createElement(s);
+                    e.async = true; e.src = "//static.axept.io/sdk.js";
+                    t.parentNode.insertBefore(e, t);
+                })(document, "script");
+            </script>
+            <script src="/assets/scripts/markdown.js"></script></body></html>

@@ -1,0 +1,271 @@
+
+            <!DOCTYPE html>
+            <html lang="en" data-translated="true" data-breadcrump-title="Mediator Pattern">
+            <head>
+                <meta charset="utf-8" />
+                <title>Learn Time | Design Patterns - Mediator</title>
+                <meta name="description" content="Learn the Mediator Pattern in Java. Understand how to centralize communication between objects to build flexible, decoupled systems.">
+                
+                <meta name="viewport" content="width=device-width,initial-scale=1" />
+                <!--
+                <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
+                <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
+                <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
+                <link rel="shortcut icon" sizes="192x192" href="/assets/favicon/android-chrome-192x192.png" >
+                <link rel="shortcut icon" sizes="512x512" href="/assets/favicon/android-chrome-512x512.png" >
+                <link rel="manifest" href="/assets/favicon/site.webmanifest">
+                <link rel="shortcut icon" href="/assets/favicon/favicon.ico">
+                <link rel="mask-icon" href="/assets/favicon/safari-pinned-tab.svg" color="#5bbad5">
+                <meta name="msapplication-TileColor" content="#da532c">
+                <meta name="theme-color" content="#ffffff">
+                -->
+                <link rel="shortcut icon" type="image/png" href="/assets/images/logo-circle.png">
+                <link rel="stylesheet" href="/styles.css">
+                <script src="https://kit.fontawesome.com/ff0edf556e.js" crossorigin="anonymous"></script>
+                <script src="https://code.iconify.design/iconify-icon/1.0.2/iconify-icon.min.js"></script>
+                <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+                <script>window.startTime = new Date().getTime();</script>
+                <style>
+                    :root {
+                        --background-color: #f3f2ef;
+                        --loading-bar-background-color: #d6cec2;
+                        --moving-loading-bar-background-color: #D0514D;
+                    }
+                    .loader {transition: all .2s ease-out;z-index: 10000000000;margin-top: -200px;position: fixed;top: 0;left: 0;right: 0;bottom: 0;background-color: var(--background-color);display: flex;align-items: center;justify-content: center;flex-direction: column;}.loader-logo {width: 40px; height: 40px; margin-bottom: 20px;}.loading-bar {width: 130px;height: 4px;border-radius: 100rem;background-color: var(--loading-bar-background-color);position: relative;overflow: hidden;}.moving-loading-bar {height: 100%;width: 68px;position: absolute;border-radius: 100rem;background-color: var(--moving-loading-bar-background-color);animation: initial-loading 1.5s ease infinite;}@keyframes initial-loading {0% {transform: translate(-34px);}50% {transform: translate(96px);}to {transform: translate(-34px);}}
+                    .loader.hide {opacity: 0;}
+                </style>
+                
+            <meta property="og:title" content="Design Patterns - Mediator" />
+            <meta property="og:description" content="Learn the Mediator Pattern in Java. Understand how to centralize communication between objects to build flexible, decoupled systems." />
+            <meta property="og:image" content="https://learntime.net/assets/thumbnail/blog/blog-7.jpg" />
+            <meta name="twitter:card" content="summary_large_image">
+            <meta name="twitter:creator" content="@learntimenet">
+            <meta name="twitter:title" content="Design Patterns - Mediator">
+            <meta name="twitter:description" content="Learn the Mediator Pattern in Java. Understand how to centralize communication between objects to build flexible, decoupled systems.">
+            <meta name="twitter:image" content="https://learntime.net/assets/thumbnail/blog/blog-7.jpg">
+        
+                <script>
+                    var disqus_config = function () {
+                        this.page.url = window.location.origin + window.location.pathname;
+                        this.page.identifier = window.location.pathname.replace('/en', '');
+                    };
+                </script>
+            <script defer src="/blog/design-patterns/mediator/mediator.d4af8aeeecb5bfd6f86c.js"></script></head>
+            <body>
+                <div class="loader">
+                    <div class="loading-bar">
+                        <div class="moving-loading-bar"></div>
+                    </div>
+                </div>
+                <script>
+                    var lastVisitTime = parseInt(localStorage.getItem('LAST_VISIT_TIME') || '0');
+                    if ((new Date().valueOf() - lastVisitTime) < 1200000) {
+                        document.querySelector('.loading-bar').style.display = 'none';
+                    }
+                </script>
+                <div class="body-container">
+                    <app-navbar></app-navbar>
+                    <div class="max-width"><app-breadcrumbs></app-breadcrumbs></div>
+                    <main>
+        
+<style>
+    :root {
+        --scroll-indicator-height: 0.5rem;
+        --max-width: 150rem;
+    }
+    @media screen and (min-width: 1024px) {
+        :root {
+            --promotion-height: 0rem !important;
+        }
+    }
+</style>
+<div class="max-width tutorial-container">
+  <div class="tutorial-menu-container">
+    <app-tutorial-menu menu="[{&quot;category&quot;:&quot;Design Patterns&quot;,&quot;articles&quot;:[{&quot;title&quot;:&quot;Introduction&quot;,&quot;url&quot;:&quot;/blog/design-patterns/&quot;}]},{&quot;category&quot;:&quot;Creational Patterns&quot;,&quot;articles&quot;:[{&quot;title&quot;:&quot;Singleton&quot;,&quot;url&quot;:&quot;/blog/design-patterns/singleton&quot;},{&quot;title&quot;:&quot;Factory Method&quot;,&quot;url&quot;:&quot;/blog/design-patterns/factory-method&quot;},{&quot;title&quot;:&quot;Abstract Factory&quot;,&quot;url&quot;:&quot;/blog/design-patterns/abstract-factory&quot;},{&quot;title&quot;:&quot;Builder&quot;,&quot;url&quot;:&quot;/blog/design-patterns/builder&quot;},{&quot;title&quot;:&quot;Prototype&quot;,&quot;url&quot;:&quot;/blog/design-patterns/prototype&quot;}]},{&quot;category&quot;:&quot;Structural Patterns&quot;,&quot;articles&quot;:[{&quot;title&quot;:&quot;Adapter&quot;,&quot;url&quot;:&quot;/blog/design-patterns/adapter&quot;},{&quot;title&quot;:&quot;Decorator&quot;,&quot;url&quot;:&quot;/blog/design-patterns/decorator&quot;},{&quot;title&quot;:&quot;Composite&quot;,&quot;url&quot;:&quot;/blog/design-patterns/composite&quot;},{&quot;title&quot;:&quot;Facade&quot;,&quot;url&quot;:&quot;/blog/design-patterns/facade&quot;},{&quot;title&quot;:&quot;Proxy&quot;,&quot;url&quot;:&quot;/blog/design-patterns/proxy&quot;},{&quot;title&quot;:&quot;Bridge&quot;,&quot;url&quot;:&quot;/blog/design-patterns/bridge&quot;},{&quot;title&quot;:&quot;Flyweight&quot;,&quot;url&quot;:&quot;/blog/design-patterns/flyweight&quot;}]},{&quot;category&quot;:&quot;Behavioral Patterns&quot;,&quot;articles&quot;:[{&quot;title&quot;:&quot;Observer&quot;,&quot;url&quot;:&quot;/blog/design-patterns/observer&quot;},{&quot;title&quot;:&quot;Strategy&quot;,&quot;url&quot;:&quot;/blog/design-patterns/strategy&quot;},{&quot;title&quot;:&quot;Command&quot;,&quot;url&quot;:&quot;/blog/design-patterns/command&quot;},{&quot;title&quot;:&quot;Iterator&quot;,&quot;url&quot;:&quot;/blog/design-patterns/iterator&quot;},{&quot;title&quot;:&quot;Mediator&quot;,&quot;url&quot;:&quot;/blog/design-patterns/mediator&quot;},{&quot;title&quot;:&quot;State&quot;,&quot;url&quot;:&quot;/blog/design-patterns/state&quot;},{&quot;title&quot;:&quot;Template Method&quot;,&quot;url&quot;:&quot;/blog/design-patterns/template-method&quot;}]}]"></app-tutorial-menu>
+  </div>
+  <div class="main-container">
+    <app-breadcrumbs class="tutorial"></app-breadcrumbs>
+    <app-blog-title class="tutorial" blog-title="Mediator Pattern" blog-description="Learn the Mediator Pattern in Java. Understand how to centralize communication between objects to build flexible, decoupled systems." blog-image="/assets/images/blog/blog-7.jpg"></app-blog-title>
+    <div class="blog-content markdown">
+      <h2>📝 What You’ll Learn</h2>
+<ul>
+<li>What the Mediator Pattern is  </li>
+<li>Why and when to use it  </li>
+<li>How to implement it in Java  </li>
+<li>Real-world examples and analogies  </li>
+<li>Common mistakes and best practices</li>
+</ul>
+<h2>🔍 What Is the Mediator Pattern?</h2>
+<p>The <strong>Mediator Pattern</strong> defines an object that <strong>centralizes communication</strong> between other objects. Instead of objects referring to each other directly, they interact through the mediator.</p>
+<blockquote>
+<p>Imagine an <strong>air traffic control tower</strong>: it coordinates planes instead of planes communicating directly with each other.</p>
+</blockquote>
+<h2>🧩 When to Use It</h2>
+<p>You should use the Mediator Pattern when:</p>
+<ul>
+<li>Objects are <strong>too tightly coupled</strong> and you want to reduce direct dependencies  </li>
+<li>You have <strong>complex communication</strong> between many classes  </li>
+<li>You want to <strong>centralize</strong> control and communication logic</li>
+</ul>
+<h2>🧱 Java Implementation</h2>
+<h3>👩‍🏫 Step 1: Define the Mediator Interface</h3>
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">public</span> <span class="hljs-keyword">interface</span> <span class="hljs-title class_">ChatMediator</span> {
+    <span class="hljs-keyword">void</span> <span class="hljs-title function_">sendMessage</span><span class="hljs-params">(String message, User user)</span>;
+    <span class="hljs-keyword">void</span> <span class="hljs-title function_">addUser</span><span class="hljs-params">(User user)</span>;
+}</code></pre>
+</code></pre><h3>🧱 Step 2: Concrete Mediator</h3>
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">import</span> java.util.ArrayList;
+<span class="hljs-keyword">import</span> java.util.List;
+
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">ChatRoomMediator</span> <span class="hljs-keyword">implements</span> <span class="hljs-title class_">ChatMediator</span> {
+    <span class="hljs-keyword">private</span> List&lt;User&gt; users = <span class="hljs-keyword">new</span> <span class="hljs-title class_">ArrayList</span>&lt;&gt;();
+
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">addUser</span><span class="hljs-params">(User user)</span> {
+        users.add(user);
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">sendMessage</span><span class="hljs-params">(String message, User sender)</span> {
+        <span class="hljs-keyword">for</span> (User user : users) {
+            <span class="hljs-comment">// Don&#x27;t send message to the sender</span>
+            <span class="hljs-keyword">if</span> (user != sender) {
+                user.receive(message);
+            }
+        }
+    }
+}</code></pre>
+</code></pre><h3>👤 Step 3: Define the User Abstract Class</h3>
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">public</span> <span class="hljs-keyword">abstract</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">User</span> {
+    <span class="hljs-keyword">protected</span> ChatMediator mediator;
+    <span class="hljs-keyword">protected</span> String name;
+
+    <span class="hljs-keyword">public</span> <span class="hljs-title function_">User</span><span class="hljs-params">(ChatMediator mediator, String name)</span> {
+        <span class="hljs-built_in">this</span>.mediator = mediator;
+        <span class="hljs-built_in">this</span>.name = name;
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">abstract</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">send</span><span class="hljs-params">(String message)</span>;
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">abstract</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">receive</span><span class="hljs-params">(String message)</span>;
+}</code></pre>
+</code></pre><h3>🙋‍♂️ Step 4: Concrete User Implementation</h3>
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">ChatUser</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">User</span> {
+
+    <span class="hljs-keyword">public</span> <span class="hljs-title function_">ChatUser</span><span class="hljs-params">(ChatMediator mediator, String name)</span> {
+        <span class="hljs-built_in">super</span>(mediator, name);
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">send</span><span class="hljs-params">(String message)</span> {
+        System.out.println(<span class="hljs-built_in">this</span>.name + <span class="hljs-string">&quot; sends: &quot;</span> + message);
+        mediator.sendMessage(message, <span class="hljs-built_in">this</span>);
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">receive</span><span class="hljs-params">(String message)</span> {
+        System.out.println(<span class="hljs-built_in">this</span>.name + <span class="hljs-string">&quot; receives: &quot;</span> + message);
+    }
+}</code></pre>
+</code></pre><h3>✅ Usage Example</h3>
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">MediatorPatternDemo</span> {
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> {
+        <span class="hljs-type">ChatMediator</span> <span class="hljs-variable">chatRoom</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">ChatRoomMediator</span>();
+
+        <span class="hljs-type">User</span> <span class="hljs-variable">user1</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">ChatUser</span>(chatRoom, <span class="hljs-string">&quot;Alice&quot;</span>);
+        <span class="hljs-type">User</span> <span class="hljs-variable">user2</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">ChatUser</span>(chatRoom, <span class="hljs-string">&quot;Bob&quot;</span>);
+        <span class="hljs-type">User</span> <span class="hljs-variable">user3</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">ChatUser</span>(chatRoom, <span class="hljs-string">&quot;Charlie&quot;</span>);
+
+        chatRoom.addUser(user1);
+        chatRoom.addUser(user2);
+        chatRoom.addUser(user3);
+
+        user1.send(<span class="hljs-string">&quot;Hi everyone!&quot;</span>);
+    }
+}</code></pre>
+</code></pre><h2>🌐 Real-World Analogy</h2>
+<ul>
+<li><strong>Air traffic control</strong>: Pilots communicate with a control tower instead of directly with each other.  </li>
+<li><strong>Group chat apps</strong>: Messages are routed through a central server.  </li>
+<li><strong>Smart home systems</strong>: Devices report to a hub rather than directly to each other.</li>
+</ul>
+<h2>⚠️ Pitfalls to Avoid</h2>
+<ul>
+<li>❌ Overloading the mediator: it can become <strong>too complex</strong> if it handles too much logic  </li>
+<li>❌ Creating unnecessary mediators for <strong>simple communications</strong>  </li>
+<li>❌ Tight coupling to a specific mediator instead of using an <strong>interface</strong></li>
+</ul>
+<h2>✅ Best Practices</h2>
+<ul>
+<li>Keep the mediator <strong>focused and simple</strong>  </li>
+<li>Abstract the mediator through an <strong>interface</strong> for flexibility  </li>
+<li>Refactor communication logic <strong>gradually</strong> as systems become more complex</li>
+</ul>
+<h2>📘 Recap</h2>
+<ul>
+<li>Mediator Pattern <strong>centralizes communication</strong> to reduce dependencies between classes  </li>
+<li>It promotes <strong>loose coupling</strong> and improves maintainability  </li>
+<li>Best suited for <strong>chat rooms, air traffic control, and smart systems</strong></li>
+</ul>
+
+      <app-subscribe></app-subscribe>
+      <app-comments></app-comments>
+    </div>
+  </div>
+  <aside>
+    <div class="aside-container">
+      <app-share-buttons></app-share-buttons>
+      <app-aside-promotion></app-aside-promotion>
+    </div>
+  </aside>
+</div>
+
+        </main>
+        <app-scroll-top-button></app-scroll-top-button>
+        <app-footer></app-footer>
+        </div>
+            <script>
+                var lastVisitTime = parseInt(localStorage.getItem('LAST_VISIT_TIME') || '0');
+                var timeoutDuration = 1500;
+                //if ((new Date().valueOf() - lastVisitTime) < 1200000) {
+                //    timeoutDuration = 400;
+                //}
+                setTimeout(() => {
+                    document.querySelector('.loader').classList.add('hide');
+                    document.querySelector('.body-container').style.display = 'block';
+                    document.dispatchEvent(new CustomEvent('page-loader-hide'));
+                }, timeoutDuration);
+                setTimeout(() => {
+                    document.querySelector('.loader').style.display = 'none';
+                }, 2000);
+                localStorage.setItem('LAST_VISIT_TIME', new Date().valueOf());
+            </script>
+        
+                <!-- Google tag (gtag.js) -->
+                <script async src="https://www.googletagmanager.com/gtag/js?id=G-S6JEVF53JZ"></script>
+                <script>
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag() {
+                        dataLayer.push(arguments);
+                    }
+                    gtag('js', new Date());
+
+                    gtag('config', 'G-S6JEVF53JZ');
+                </script>
+            
+            <script>
+                window.axeptioSettings = {
+                    clientId: "67fc2975df7d77940a4ff73d",
+                    cookiesVersion: "13042025",
+                    googleConsentMode: {
+                        default: {
+                            analytics_storage: "denied",
+                            ad_storage: "denied",
+                            ad_user_data: "denied",
+                            ad_personalization: "denied",
+                            wait_for_update: 500
+                        }
+                    }
+                };
+                (function(d, s) {
+                    var t = d.getElementsByTagName(s)[0], e = d.createElement(s);
+                    e.async = true; e.src = "//static.axept.io/sdk.js";
+                    t.parentNode.insertBefore(e, t);
+                })(document, "script");
+            </script>
+            <script src="/assets/scripts/markdown.js"></script></body></html>
