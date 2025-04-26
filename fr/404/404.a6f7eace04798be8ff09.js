@@ -325,7 +325,7 @@ eval("// Module\nvar code = \"<div class=\\\"tutorial-menu-container\\\">\\r\\n 
   \***************************************************************/
 /***/ ((module) => {
 
-eval("// Module\nvar code = \"<div class=\\\"layout-error-404\\\">\\r\\n  <h1>404</h1>\\r\\n  <span>Oopss... Page Introuvable</span>\\r\\n  <a href=\\\"/fr/\\\" class=\\\"btn\\\">Retourner à la page d'accueil</a>\\r\\n</div>\";\n// Exports\nmodule.exports = code;\n\n//# sourceURL=webpack://learntime.github.io/./src/app/pages/404/components/main/main.component.html?");
+eval("// Module\nvar code = \"<div class=\\\"layout-error-404 max-width\\\">\\r\\n  <h1>404</h1>\\r\\n  <span>Oopss... Page Introuvable</span>\\r\\n  <a href=\\\"/fr/\\\" class=\\\"btn\\\">Retourner à la page d'accueil</a>\\r\\n</div>\";\n// Exports\nmodule.exports = code;\n\n//# sourceURL=webpack://learntime.github.io/./src/app/pages/404/components/main/main.component.html?");
 
 /***/ }),
 
@@ -636,7 +636,7 @@ eval("module.exports = \":host::-webkit-scrollbar {\\n  width: 0.8rem;\\n  backg
   \***************************************************************/
 /***/ ((module) => {
 
-eval("module.exports = \".layout-error-404 {\\n  height: 100vh;\\n  min-height: 75rem;\\n  display: flex;\\n  flex-direction: column;\\n  justify-content: center;\\n  align-items: center;\\n  color: var(--dark-primary-color);\\n}\\n.layout-error-404 h1 {\\n  font-size: 20rem;\\n  line-height: 1;\\n}\\n.layout-error-404 span {\\n  font-size: 3.2rem;\\n}\\n.layout-error-404 .btn {\\n  background-color: var(--primary-color);\\n  color: var(--white-color);\\n  font-size: 2.4rem;\\n  border-radius: 0.6rem;\\n  padding: 1rem 6rem;\\n  margin-top: 4rem;\\n  transition: transform 0.3s cubic-bezier(0.25, 0, 0.2, 1);\\n}\\n.layout-error-404 .btn:hover {\\n  color: var(--white-color) !important;\\n  transform: scale(1.1);\\n}\";\n\n//# sourceURL=webpack://learntime.github.io/./src/app/pages/404/components/main/main.component.scss?");
+eval("module.exports = \".layout-error-404 {\\n  display: flex;\\n  flex-direction: column;\\n  justify-content: center;\\n  align-items: center;\\n  color: var(--dark-primary-color);\\n}\\n.layout-error-404 h1 {\\n  font-size: clamp(10rem, 30vw, 20rem);\\n  line-height: 1;\\n}\\n.layout-error-404 span {\\n  font-size: clamp(1.8rem, 8vw, 3.2rem);\\n  margin-top: 2rem;\\n  text-align: center;\\n}\\n.layout-error-404 .btn {\\n  background-color: var(--primary-color);\\n  color: var(--white-color);\\n  font-size: 2.4rem;\\n  border-radius: 0.6rem;\\n  padding: 1rem 6rem;\\n  margin-top: 4rem;\\n  transition: transform 0.3s cubic-bezier(0.25, 0, 0.2, 1);\\n  background-image: none;\\n}\\n.layout-error-404 .btn:hover {\\n  color: var(--white-color) !important;\\n  transform: scale(1.1);\\n}\";\n\n//# sourceURL=webpack://learntime.github.io/./src/app/pages/404/components/main/main.component.scss?");
 
 /***/ }),
 
