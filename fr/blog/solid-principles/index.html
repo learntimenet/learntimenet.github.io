@@ -1,0 +1,198 @@
+
+            <!DOCTYPE html>
+            <html lang="fr" data-translated="true" data-breadcrump-title="Principes SOLID">
+            <head>
+                <meta charset="utf-8" />
+                <title>Learn Time | Principes SOLID</title>
+                <meta name="description" content="Découvrez les principes SOLID de la programmation orientée objet. Apprenez ce que signifie SOLID, pourquoi il est important et comment il aide à créer des logiciels propres et évolutifs.">
+                
+                <meta name="viewport" content="width=device-width,initial-scale=1" />
+                <!--
+                <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
+                <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
+                <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
+                <link rel="shortcut icon" sizes="192x192" href="/assets/favicon/android-chrome-192x192.png" >
+                <link rel="shortcut icon" sizes="512x512" href="/assets/favicon/android-chrome-512x512.png" >
+                <link rel="manifest" href="/assets/favicon/site.webmanifest">
+                <link rel="shortcut icon" href="/assets/favicon/favicon.ico">
+                <link rel="mask-icon" href="/assets/favicon/safari-pinned-tab.svg" color="#5bbad5">
+                <meta name="msapplication-TileColor" content="#da532c">
+                <meta name="theme-color" content="#ffffff">
+                -->
+                <link rel="shortcut icon" type="image/png" href="/assets/images/logo-circle.png">
+                <link rel="stylesheet" href="/styles.css">
+                <script src="https://kit.fontawesome.com/ff0edf556e.js" crossorigin="anonymous"></script>
+                <script src="https://code.iconify.design/iconify-icon/1.0.2/iconify-icon.min.js"></script>
+                <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+                <script>window.startTime = new Date().getTime();</script>
+                <style>
+                    :root {
+                        --background-color: #f3f2ef;
+                        --loading-bar-background-color: #d6cec2;
+                        --moving-loading-bar-background-color: #D0514D;
+                    }
+                    .loader {transition: all .2s ease-out;z-index: 10000000000;margin-top: -200px;position: fixed;top: 0;left: 0;right: 0;bottom: 0;background-color: var(--background-color);display: flex;align-items: center;justify-content: center;flex-direction: column;}.loader-logo {width: 40px; height: 40px; margin-bottom: 20px;}.loading-bar {width: 130px;height: 4px;border-radius: 100rem;background-color: var(--loading-bar-background-color);position: relative;overflow: hidden;}.moving-loading-bar {height: 100%;width: 68px;position: absolute;border-radius: 100rem;background-color: var(--moving-loading-bar-background-color);animation: initial-loading 1.5s ease infinite;}@keyframes initial-loading {0% {transform: translate(-34px);}50% {transform: translate(96px);}to {transform: translate(-34px);}}
+                    .loader.hide {opacity: 0;}
+                </style>
+                
+            <meta property="og:title" content="Principes SOLID" />
+            <meta property="og:description" content="Découvrez les principes SOLID de la programmation orientée objet. Apprenez ce que signifie SOLID, pourquoi il est important et comment il aide à créer des logiciels propres et évolutifs." />
+            <meta property="og:image" content="https://learntime.net/assets/thumbnail/blog/blog-4.jpg" />
+            <meta name="twitter:card" content="summary_large_image">
+            <meta name="twitter:creator" content="@learntimenet">
+            <meta name="twitter:title" content="Principes SOLID">
+            <meta name="twitter:description" content="Découvrez les principes SOLID de la programmation orientée objet. Apprenez ce que signifie SOLID, pourquoi il est important et comment il aide à créer des logiciels propres et évolutifs.">
+            <meta name="twitter:image" content="https://learntime.net/assets/thumbnail/blog/blog-4.jpg">
+        
+                <script>
+                    var disqus_config = function () {
+                        this.page.url = window.location.origin + window.location.pathname;
+                        this.page.identifier = window.location.pathname.replace('/en', '');
+                    };
+                </script>
+            <script defer src="/fr/blog/solid-principles/solid-principles.2bc695a6d61ba18a22ec.js"></script></head>
+            <body>
+                <div class="loader">
+                    <div class="loading-bar">
+                        <div class="moving-loading-bar"></div>
+                    </div>
+                </div>
+                <script>
+                    var lastVisitTime = parseInt(localStorage.getItem('LAST_VISIT_TIME') || '0');
+                    if ((new Date().valueOf() - lastVisitTime) < 1200000) {
+                        document.querySelector('.loading-bar').style.display = 'none';
+                    }
+                </script>
+                <div class="body-container">
+                    <app-navbar></app-navbar>
+                    <div class="max-width"><app-breadcrumbs></app-breadcrumbs></div>
+                    <main>
+        
+<style>
+    :root {
+        --scroll-indicator-height: 0.5rem;
+        --max-width: 150rem;
+    }
+    @media screen and (min-width: 1024px) {
+        :root {
+            --promotion-height: 0rem !important;
+        }
+    }
+</style>
+<div class="max-width tutorial-container">
+  <div class="tutorial-menu-container">
+    <app-tutorial-menu menu="[{&quot;category&quot;:&quot;Solid Principles&quot;,&quot;articles&quot;:[{&quot;title&quot;:&quot;Introduction&quot;,&quot;url&quot;:&quot;/blog/solid-principles/&quot;},{&quot;title&quot;:&quot;SOLID SRP Principle&quot;,&quot;url&quot;:&quot;/blog/solid-principles/single-responsibility-principle/&quot;},{&quot;title&quot;:&quot;SOLID OCP Principle&quot;,&quot;url&quot;:&quot;/blog/solid-principles/open-closed-principle/&quot;},{&quot;title&quot;:&quot;SOLID LSP Principle&quot;,&quot;url&quot;:&quot;/blog/solid-principles/liskov-substitution-principle/&quot;},{&quot;title&quot;:&quot;SOLID ISP Principle&quot;,&quot;url&quot;:&quot;/blog/solid-principles/interface-segregation-principle/&quot;}]}]"></app-tutorial-menu>
+  </div>
+  <div class="main-container">
+    <app-breadcrumbs class="tutorial"></app-breadcrumbs>
+    <app-blog-title class="tutorial" blog-title="Principes SOLID" blog-description="Découvrez les principes SOLID de la programmation orientée objet. Apprenez ce que signifie SOLID, pourquoi il est important et comment il aide à créer des logiciels propres et évolutifs." blog-image="/assets/images/blog/blog-4.jpg"></app-blog-title>
+    <div class="blog-content markdown">
+      <p><strong>SOLID</strong> est un acronyme désignant un ensemble de <strong>cinq principes de conception</strong> qui permettent de créer des logiciels orientés objet :</p>
+<ul>
+<li>Plus facile à comprendre</li>
+<li>Plus flexible</li>
+<li>Plus facile à maintenir et à adapter</li>
+</ul>
+<p>Ces principes ont été introduits par <strong>Robert C. Martin (Oncle Bob)</strong> et sont devenus fondamentaux dans l&#39;architecture moderne des logiciels.</p>
+<h2>🔤 Que signifie SOLID ?</h2>
+<ol>
+<li><p><strong>S</strong> - <strong>Principe de responsabilité unique (PRU)</strong>
+Une classe doit avoir <strong>une raison de changer</strong> - se concentrer sur <strong>une responsabilité</strong>.</p>
+</li>
+<li><p><strong>O</strong> - <strong>Principe d&#39;ouverture/fermeture (OCP)</strong>
+Les entités logicielles doivent être <strong>ouvertes à l&#39;extension</strong>, mais <strong>fermées à la modification</strong>.</p>
+</li>
+<li><p><strong>L</strong> - <strong>Principe de substitution de Liskov (PSL)</strong>
+Les objets d&#39;une superclasse doivent être <strong>remplaçables par des objets de sous-classes</strong> sans interrompre l&#39;application.</p>
+</li>
+<li><p><strong>I</strong> - <strong>Principe de séparation des interfaces (ISP)</strong>
+Les clients ne devraient pas être obligés de dépendre d&#39;interfaces qu&#39;ils <strong>n&#39;utilisent pas</strong>.</p>
+</li>
+<li><p><strong>D</strong> - <strong>Principe d&#39;inversion de dépendance (DIP)</strong>
+Dépendent des <strong>abstractions</strong>, et non des <strong>implémentations concrètes</strong>.</p>
+</li>
+</ol>
+<h2>🚀 Pourquoi apprendre les principes SOLID ?</h2>
+<p>L&#39;application de SOLID conduit à :</p>
+<ul>
+<li>⚙️ <strong>Code maintenable</strong></li>
+<li>🔧 <strong>Refactorisation plus facile</strong></li>
+<li>🧪 <strong>Test plus simple</strong></li>
+<li>🧱 <strong>Stronger architecture</strong></li>
+</ul>
+<p>Il permet d&#39;éviter le &quot;code spaghetti&quot; et prépare votre base de code au changement et à la croissance.</p>
+<h2>🏗️ Avantages dans le monde réel</h2>
+<p>✅ Lors de l&#39;utilisation de SOLID :</p>
+<ul>
+<li>Les nouvelles fonctionnalités sont plus faciles à ajouter</li>
+<li>Les bogues sont plus faciles à isoler et à corriger</li>
+<li>Les équipes peuvent travailler indépendamment sur différents composants</li>
+<li>Le code est plus modulaire et testable</li>
+</ul>
+
+      <app-subscribe></app-subscribe>
+      <app-comments></app-comments>
+    </div>
+  </div>
+  <aside>
+    <div class="aside-container">
+      <app-share-buttons></app-share-buttons>
+      <app-aside-promotion></app-aside-promotion>
+    </div>
+  </aside>
+</div>
+
+        </main>
+        <app-scroll-top-button></app-scroll-top-button>
+        <app-footer></app-footer>
+        </div>
+            <script>
+                var lastVisitTime = parseInt(localStorage.getItem('LAST_VISIT_TIME') || '0');
+                var timeoutDuration = 1500;
+                //if ((new Date().valueOf() - lastVisitTime) < 1200000) {
+                //    timeoutDuration = 400;
+                //}
+                setTimeout(() => {
+                    document.querySelector('.loader').classList.add('hide');
+                    document.querySelector('.body-container').style.display = 'block';
+                    document.dispatchEvent(new CustomEvent('page-loader-hide'));
+                }, timeoutDuration);
+                setTimeout(() => {
+                    document.querySelector('.loader').style.display = 'none';
+                }, 2000);
+                localStorage.setItem('LAST_VISIT_TIME', new Date().valueOf());
+            </script>
+        
+                <!-- Google tag (gtag.js) -->
+                <script async src="https://www.googletagmanager.com/gtag/js?id=G-S6JEVF53JZ"></script>
+                <script>
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag() {
+                        dataLayer.push(arguments);
+                    }
+                    gtag('js', new Date());
+
+                    gtag('config', 'G-S6JEVF53JZ');
+                </script>
+            
+            <script>
+                window.axeptioSettings = {
+                    clientId: "67fc2975df7d77940a4ff73d",
+                    cookiesVersion: "13042025",
+                    googleConsentMode: {
+                        default: {
+                            analytics_storage: "denied",
+                            ad_storage: "denied",
+                            ad_user_data: "denied",
+                            ad_personalization: "denied",
+                            wait_for_update: 500
+                        }
+                    }
+                };
+                (function(d, s) {
+                    var t = d.getElementsByTagName(s)[0], e = d.createElement(s);
+                    e.async = true; e.src = "//static.axept.io/sdk.js";
+                    t.parentNode.insertBefore(e, t);
+                })(document, "script");
+            </script>
+            <script src="/assets/scripts/markdown.js"></script></body></html>

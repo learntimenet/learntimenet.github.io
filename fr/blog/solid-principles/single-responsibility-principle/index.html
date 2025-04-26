@@ -1,0 +1,228 @@
+
+            <!DOCTYPE html>
+            <html lang="fr" data-translated="true" data-breadcrump-title="Principe de responsabilité unique">
+            <head>
+                <meta charset="utf-8" />
+                <title>Learn Time | Principes SOLID - Principe de responsabilité unique</title>
+                <meta name="description" content="Apprenez le principe de responsabilité unique, le premier des principes SOLID. Découvrez pourquoi chaque classe ne doit avoir qu'une seule responsabilité et comment l'appliquer dans un code réel.">
+                
+                <meta name="viewport" content="width=device-width,initial-scale=1" />
+                <!--
+                <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
+                <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
+                <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
+                <link rel="shortcut icon" sizes="192x192" href="/assets/favicon/android-chrome-192x192.png" >
+                <link rel="shortcut icon" sizes="512x512" href="/assets/favicon/android-chrome-512x512.png" >
+                <link rel="manifest" href="/assets/favicon/site.webmanifest">
+                <link rel="shortcut icon" href="/assets/favicon/favicon.ico">
+                <link rel="mask-icon" href="/assets/favicon/safari-pinned-tab.svg" color="#5bbad5">
+                <meta name="msapplication-TileColor" content="#da532c">
+                <meta name="theme-color" content="#ffffff">
+                -->
+                <link rel="shortcut icon" type="image/png" href="/assets/images/logo-circle.png">
+                <link rel="stylesheet" href="/styles.css">
+                <script src="https://kit.fontawesome.com/ff0edf556e.js" crossorigin="anonymous"></script>
+                <script src="https://code.iconify.design/iconify-icon/1.0.2/iconify-icon.min.js"></script>
+                <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+                <script>window.startTime = new Date().getTime();</script>
+                <style>
+                    :root {
+                        --background-color: #f3f2ef;
+                        --loading-bar-background-color: #d6cec2;
+                        --moving-loading-bar-background-color: #D0514D;
+                    }
+                    .loader {transition: all .2s ease-out;z-index: 10000000000;margin-top: -200px;position: fixed;top: 0;left: 0;right: 0;bottom: 0;background-color: var(--background-color);display: flex;align-items: center;justify-content: center;flex-direction: column;}.loader-logo {width: 40px; height: 40px; margin-bottom: 20px;}.loading-bar {width: 130px;height: 4px;border-radius: 100rem;background-color: var(--loading-bar-background-color);position: relative;overflow: hidden;}.moving-loading-bar {height: 100%;width: 68px;position: absolute;border-radius: 100rem;background-color: var(--moving-loading-bar-background-color);animation: initial-loading 1.5s ease infinite;}@keyframes initial-loading {0% {transform: translate(-34px);}50% {transform: translate(96px);}to {transform: translate(-34px);}}
+                    .loader.hide {opacity: 0;}
+                </style>
+                
+            <meta property="og:title" content="Principes SOLID - Principe de responsabilité unique" />
+            <meta property="og:description" content="Apprenez le principe de responsabilité unique, le premier des principes SOLID. Découvrez pourquoi chaque classe ne doit avoir qu'une seule responsabilité et comment l'appliquer dans un code réel." />
+            <meta property="og:image" content="https://learntime.net/assets/thumbnail/blog/blog-7.jpg" />
+            <meta name="twitter:card" content="summary_large_image">
+            <meta name="twitter:creator" content="@learntimenet">
+            <meta name="twitter:title" content="Principes SOLID - Principe de responsabilité unique">
+            <meta name="twitter:description" content="Apprenez le principe de responsabilité unique, le premier des principes SOLID. Découvrez pourquoi chaque classe ne doit avoir qu'une seule responsabilité et comment l'appliquer dans un code réel.">
+            <meta name="twitter:image" content="https://learntime.net/assets/thumbnail/blog/blog-7.jpg">
+        
+                <script>
+                    var disqus_config = function () {
+                        this.page.url = window.location.origin + window.location.pathname;
+                        this.page.identifier = window.location.pathname.replace('/en', '');
+                    };
+                </script>
+            <script defer src="/fr/blog/solid-principles/single-responsibility-principle/single-responsibility-principle.3d80e73358c8c540daf8.js"></script></head>
+            <body>
+                <div class="loader">
+                    <div class="loading-bar">
+                        <div class="moving-loading-bar"></div>
+                    </div>
+                </div>
+                <script>
+                    var lastVisitTime = parseInt(localStorage.getItem('LAST_VISIT_TIME') || '0');
+                    if ((new Date().valueOf() - lastVisitTime) < 1200000) {
+                        document.querySelector('.loading-bar').style.display = 'none';
+                    }
+                </script>
+                <div class="body-container">
+                    <app-navbar></app-navbar>
+                    <div class="max-width"><app-breadcrumbs></app-breadcrumbs></div>
+                    <main>
+        
+<style>
+    :root {
+        --scroll-indicator-height: 0.5rem;
+        --max-width: 150rem;
+    }
+    @media screen and (min-width: 1024px) {
+        :root {
+            --promotion-height: 0rem !important;
+        }
+    }
+</style>
+<div class="max-width tutorial-container">
+  <div class="tutorial-menu-container">
+    <app-tutorial-menu menu="[{&quot;category&quot;:&quot;Solid Principles&quot;,&quot;articles&quot;:[{&quot;title&quot;:&quot;Introduction&quot;,&quot;url&quot;:&quot;/blog/solid-principles/&quot;},{&quot;title&quot;:&quot;SOLID SRP Principle&quot;,&quot;url&quot;:&quot;/blog/solid-principles/single-responsibility-principle/&quot;},{&quot;title&quot;:&quot;SOLID OCP Principle&quot;,&quot;url&quot;:&quot;/blog/solid-principles/open-closed-principle/&quot;},{&quot;title&quot;:&quot;SOLID LSP Principle&quot;,&quot;url&quot;:&quot;/blog/solid-principles/liskov-substitution-principle/&quot;},{&quot;title&quot;:&quot;SOLID ISP Principle&quot;,&quot;url&quot;:&quot;/blog/solid-principles/interface-segregation-principle/&quot;}]}]"></app-tutorial-menu>
+  </div>
+  <div class="main-container">
+    <app-breadcrumbs class="tutorial"></app-breadcrumbs>
+    <app-blog-title class="tutorial" blog-title="Principe de responsabilité unique" blog-description="Apprenez le principe de responsabilité unique, le premier des principes SOLID. Découvrez pourquoi chaque classe ne doit avoir qu'une seule responsabilité et comment l'appliquer dans un code réel." blog-image="/assets/images/blog/blog-7.jpg"></app-blog-title>
+    <div class="blog-content markdown">
+      <h2>📝 Ce que vous apprendrez</h2>
+<ul>
+<li>Ce que signifie l&#39;ASR</li>
+<li>Comment l&#39;appliquer dans le code</li>
+<li>Exemples concrets</li>
+<li>Ce qui se passe lorsque vous ignorez l&#39;ASR</li>
+</ul>
+<h2>📖 Qu&#39;est-ce que le principe de responsabilité unique ?</h2>
+<p><strong>SRP</strong> stipule que :</p>
+<blockquote>
+<p>Une classe ne devrait avoir qu&#39;une seule raison de changer.</p>
+</blockquote>
+<p>En termes plus simples :<br>**Chaque classe doit se concentrer sur un seul travail ou une seule responsabilité.</p>
+<p>Cela rend votre code plus facile à comprendre, à modifier et à maintenir.</p>
+<h2>🧱 Application de l&#39;ASR dans le code</h2>
+<p>Imaginons que vous ayez une classe comme celle-ci :</p>
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Invoice</span> {
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">calculateTotal</span><span class="hljs-params">()</span> { ... }
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">printInvoice</span><span class="hljs-params">()</span> { ... }
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">saveToDatabase</span><span class="hljs-params">()</span> { ... }
+}</code></pre>
+</code></pre><p>Cette classe :</p>
+<ul>
+<li>Calcul des totaux (logique d&#39;entreprise)</li>
+<li>Imprime les données (présentation)</li>
+<li>Sauvegarde des données (persistance)</li>
+</ul>
+<p>C&#39;est <strong>trois responsabilités</strong> dans une seule classe.</p>
+<h4>✅ Version conforme à l&#39;ASR</h4>
+<p>Répartir les responsabilités dans des classes distinctes :</p>
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">InvoiceCalculator</span> {
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">calculateTotal</span><span class="hljs-params">(Invoice invoice)</span> { ... }
+}
+
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">InvoicePrinter</span> {
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">print</span><span class="hljs-params">(Invoice invoice)</span> { ... }
+}
+
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">InvoiceRepository</span> {
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">save</span><span class="hljs-params">(Invoice invoice)</span> { ... }
+}</code></pre>
+</code></pre><p>Désormais, chaque classe a <strong>une raison de changer</strong> :</p>
+<ul>
+<li>Logique d&#39;entreprise</li>
+<li>Format d&#39;impression</li>
+<li>Mécanisme de stockage</li>
+</ul>
+<h2>🧪 Exemple du monde réel</h2>
+<p>Imaginez le système de notification d&#39;une application mobile :</p>
+<p><strong>Mauvaise conception:</strong></p>
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Notification</span> {
+    <span class="hljs-keyword">void</span> <span class="hljs-title function_">sendEmail</span><span class="hljs-params">()</span> { ... }
+    <span class="hljs-keyword">void</span> <span class="hljs-title function_">sendSMS</span><span class="hljs-params">()</span> { ... }
+    <span class="hljs-keyword">void</span> <span class="hljs-title function_">logNotification</span><span class="hljs-params">()</span> { ... }
+}</code></pre>
+</code></pre><p><strong>Meilleure conception (SRP):</strong></p>
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">class</span> <span class="hljs-title class_">EmailSender</span> { <span class="hljs-keyword">void</span> <span class="hljs-title function_">send</span><span class="hljs-params">()</span> { ... } }
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">SMSSender</span> { <span class="hljs-keyword">void</span> <span class="hljs-title function_">send</span><span class="hljs-params">()</span> { ... } }
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">NotificationLogger</span> { <span class="hljs-keyword">void</span> <span class="hljs-title function_">log</span><span class="hljs-params">()</span> { ... } }</code></pre>
+</code></pre><h2>⚠️ Pourquoi la violation de l&#39;ASR est risquée</h2>
+<ul>
+<li>Plus difficile à tester</li>
+<li>Plus de risques de rupture en cas de modification</li>
+<li>Ralentit la collaboration au sein de l&#39;équipe</li>
+<li>Ajoute des dépendances inutiles</li>
+</ul>
+<h2>📘 Recap</h2>
+<ul>
+<li>ASR = Une classe = Un emploi</li>
+<li>Permet d&#39;isoler les changements et d&#39;éviter les effets secondaires</li>
+<li>Facilite la lecture, le test et l&#39;extension du code</li>
+</ul>
+
+      <app-subscribe></app-subscribe>
+      <app-comments></app-comments>
+    </div>
+  </div>
+  <aside>
+    <div class="aside-container">
+      <app-share-buttons></app-share-buttons>
+      <app-aside-promotion></app-aside-promotion>
+    </div>
+  </aside>
+</div>
+
+        </main>
+        <app-scroll-top-button></app-scroll-top-button>
+        <app-footer></app-footer>
+        </div>
+            <script>
+                var lastVisitTime = parseInt(localStorage.getItem('LAST_VISIT_TIME') || '0');
+                var timeoutDuration = 1500;
+                //if ((new Date().valueOf() - lastVisitTime) < 1200000) {
+                //    timeoutDuration = 400;
+                //}
+                setTimeout(() => {
+                    document.querySelector('.loader').classList.add('hide');
+                    document.querySelector('.body-container').style.display = 'block';
+                    document.dispatchEvent(new CustomEvent('page-loader-hide'));
+                }, timeoutDuration);
+                setTimeout(() => {
+                    document.querySelector('.loader').style.display = 'none';
+                }, 2000);
+                localStorage.setItem('LAST_VISIT_TIME', new Date().valueOf());
+            </script>
+        
+                <!-- Google tag (gtag.js) -->
+                <script async src="https://www.googletagmanager.com/gtag/js?id=G-S6JEVF53JZ"></script>
+                <script>
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag() {
+                        dataLayer.push(arguments);
+                    }
+                    gtag('js', new Date());
+
+                    gtag('config', 'G-S6JEVF53JZ');
+                </script>
+            
+            <script>
+                window.axeptioSettings = {
+                    clientId: "67fc2975df7d77940a4ff73d",
+                    cookiesVersion: "13042025",
+                    googleConsentMode: {
+                        default: {
+                            analytics_storage: "denied",
+                            ad_storage: "denied",
+                            ad_user_data: "denied",
+                            ad_personalization: "denied",
+                            wait_for_update: 500
+                        }
+                    }
+                };
+                (function(d, s) {
+                    var t = d.getElementsByTagName(s)[0], e = d.createElement(s);
+                    e.async = true; e.src = "//static.axept.io/sdk.js";
+                    t.parentNode.insertBefore(e, t);
+                })(document, "script");
+            </script>
+            <script src="/assets/scripts/markdown.js"></script></body></html>
