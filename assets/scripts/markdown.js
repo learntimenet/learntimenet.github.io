@@ -464,8 +464,7 @@ function addTutorialNextAndPreviousUrls() {
 }
 
 function getCurrentUrl() {
-  const lang = document.querySelector('html').getAttribute('lang');
-  const url = window.location.pathname.replace(/\/+$/, '').replace(new RegExp("^/" + lang), '');
+  const url = window.location.pathname.replace(/\/+$/, '');
   return normalizeUrl(url);
 }
 
