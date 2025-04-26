@@ -1,0 +1,261 @@
+
+            <!DOCTYPE html>
+            <html lang="fr" data-translated="true" data-breadcrump-title="Traitement des exceptions">
+            <head>
+                <meta charset="utf-8" />
+                <title>Learn Time | Tutoriel Java - Gestion des exceptions</title>
+                <meta name="description" content="Apprenez comment Java gère les erreurs à l'aide de blocs try-catch, de clauses finally et d'exceptions personnalisées. Maîtrisez la gestion des exceptions pour obtenir un code robuste et résistant aux erreurs.">
+                
+                <meta name="viewport" content="width=device-width,initial-scale=1" />
+                <!--
+                <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
+                <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
+                <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
+                <link rel="shortcut icon" sizes="192x192" href="/assets/favicon/android-chrome-192x192.png" >
+                <link rel="shortcut icon" sizes="512x512" href="/assets/favicon/android-chrome-512x512.png" >
+                <link rel="manifest" href="/assets/favicon/site.webmanifest">
+                <link rel="shortcut icon" href="/assets/favicon/favicon.ico">
+                <link rel="mask-icon" href="/assets/favicon/safari-pinned-tab.svg" color="#5bbad5">
+                <meta name="msapplication-TileColor" content="#da532c">
+                <meta name="theme-color" content="#ffffff">
+                -->
+                <link rel="shortcut icon" type="image/png" href="/assets/images/logo-circle.png">
+                <link rel="stylesheet" href="/styles.css">
+                <script src="https://kit.fontawesome.com/ff0edf556e.js" crossorigin="anonymous"></script>
+                <script src="https://code.iconify.design/iconify-icon/1.0.2/iconify-icon.min.js"></script>
+                <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+                <script>window.startTime = new Date().getTime();</script>
+                <style>
+                    :root {
+                        --background-color: #f3f2ef;
+                        --loading-bar-background-color: #d6cec2;
+                        --moving-loading-bar-background-color: #D0514D;
+                    }
+                    .loader {transition: all .2s ease-out;z-index: 10000000000;margin-top: -200px;position: fixed;top: 0;left: 0;right: 0;bottom: 0;background-color: var(--background-color);display: flex;align-items: center;justify-content: center;flex-direction: column;}.loader-logo {width: 40px; height: 40px; margin-bottom: 20px;}.loading-bar {width: 130px;height: 4px;border-radius: 100rem;background-color: var(--loading-bar-background-color);position: relative;overflow: hidden;}.moving-loading-bar {height: 100%;width: 68px;position: absolute;border-radius: 100rem;background-color: var(--moving-loading-bar-background-color);animation: initial-loading 1.5s ease infinite;}@keyframes initial-loading {0% {transform: translate(-34px);}50% {transform: translate(96px);}to {transform: translate(-34px);}}
+                    .loader.hide {opacity: 0;}
+                </style>
+                
+            <meta property="og:title" content="Tutoriel Java - Gestion des exceptions" />
+            <meta property="og:description" content="Apprenez comment Java gère les erreurs à l'aide de blocs try-catch, de clauses finally et d'exceptions personnalisées. Maîtrisez la gestion des exceptions pour obtenir un code robuste et résistant aux erreurs." />
+            <meta property="og:image" content="https://learntime.net/assets/thumbnail/blog/blog-8.jpg" />
+            <meta name="twitter:card" content="summary_large_image">
+            <meta name="twitter:creator" content="@learntimenet">
+            <meta name="twitter:title" content="Tutoriel Java - Gestion des exceptions">
+            <meta name="twitter:description" content="Apprenez comment Java gère les erreurs à l'aide de blocs try-catch, de clauses finally et d'exceptions personnalisées. Maîtrisez la gestion des exceptions pour obtenir un code robuste et résistant aux erreurs.">
+            <meta name="twitter:image" content="https://learntime.net/assets/thumbnail/blog/blog-8.jpg">
+        
+                <script>
+                    var disqus_config = function () {
+                        this.page.url = window.location.origin + window.location.pathname;
+                        this.page.identifier = window.location.pathname.replace('/en', '');
+                    };
+                </script>
+            <script defer src="/fr/blog/java-tutorial/exception-handling/exception-handling.bab190765610fcb0a72f.js"></script></head>
+            <body>
+                <div class="loader">
+                    <div class="loading-bar">
+                        <div class="moving-loading-bar"></div>
+                    </div>
+                </div>
+                <script>
+                    var lastVisitTime = parseInt(localStorage.getItem('LAST_VISIT_TIME') || '0');
+                    if ((new Date().valueOf() - lastVisitTime) < 1200000) {
+                        document.querySelector('.loading-bar').style.display = 'none';
+                    }
+                </script>
+                <div class="body-container">
+                    <app-navbar></app-navbar>
+                    <div class="max-width"><app-breadcrumbs></app-breadcrumbs></div>
+                    <main>
+        
+<style>
+    :root {
+        --scroll-indicator-height: 0.5rem;
+        --max-width: 150rem;
+    }
+    @media screen and (min-width: 1024px) {
+        :root {
+            --promotion-height: 0rem !important;
+        }
+    }
+</style>
+<div class="max-width tutorial-container">
+  <div class="tutorial-menu-container">
+    <app-tutorial-menu menu="[{&quot;category&quot;:&quot;Java Tutoriel&quot;,&quot;articles&quot;:[{&quot;title&quot;:&quot;Introduction&quot;,&quot;url&quot;:&quot;/fr/blog/java-tutorial/&quot;},{&quot;title&quot;:&quot;Getting Started&quot;,&quot;url&quot;:&quot;/fr/blog/java-tutorial/getting-started&quot;},{&quot;title&quot;:&quot;Java Syntax&quot;,&quot;url&quot;:&quot;/fr/blog/java-tutorial/syntax&quot;},{&quot;title&quot;:&quot;Java Output&quot;,&quot;url&quot;:&quot;/fr/blog/java-tutorial/output&quot;},{&quot;title&quot;:&quot;Java Input&quot;,&quot;url&quot;:&quot;/fr/blog/java-tutorial/input&quot;},{&quot;title&quot;:&quot;Java Comments&quot;,&quot;url&quot;:&quot;/fr/blog/java-tutorial/comments&quot;},{&quot;title&quot;:&quot;Java Variables&quot;,&quot;url&quot;:&quot;/fr/blog/java-tutorial/variables&quot;},{&quot;title&quot;:&quot;Java Data Types&quot;,&quot;url&quot;:&quot;/fr/blog/java-tutorial/data-types&quot;},{&quot;title&quot;:&quot;Java Type Casting&quot;,&quot;url&quot;:&quot;/fr/blog/java-tutorial/type-casting&quot;},{&quot;title&quot;:&quot;Java Operators&quot;,&quot;url&quot;:&quot;/fr/blog/java-tutorial/operators&quot;},{&quot;title&quot;:&quot;Java Strings&quot;,&quot;url&quot;:&quot;/fr/blog/java-tutorial/strings&quot;},{&quot;title&quot;:&quot;Java Math&quot;,&quot;url&quot;:&quot;/fr/blog/java-tutorial/math&quot;},{&quot;title&quot;:&quot;Java Booleans&quot;,&quot;url&quot;:&quot;/fr/blog/java-tutorial/booleans&quot;},{&quot;title&quot;:&quot;Java If...Else&quot;,&quot;url&quot;:&quot;/fr/blog/java-tutorial/if-else&quot;},{&quot;title&quot;:&quot;Java Switch&quot;,&quot;url&quot;:&quot;/fr/blog/java-tutorial/switch&quot;},{&quot;title&quot;:&quot;Java While Loop&quot;,&quot;url&quot;:&quot;/fr/blog/java-tutorial/while-loop&quot;},{&quot;title&quot;:&quot;Java For Loop&quot;,&quot;url&quot;:&quot;/fr/blog/java-tutorial/for-loop&quot;},{&quot;title&quot;:&quot;Java Continue/Break&quot;,&quot;url&quot;:&quot;/fr/blog/java-tutorial/continue-break&quot;},{&quot;title&quot;:&quot;Java Arrays&quot;,&quot;url&quot;:&quot;/fr/blog/java-tutorial/arrays&quot;}]},{&quot;category&quot;:&quot;Java Advanced&quot;,&quot;articles&quot;:[{&quot;title&quot;:&quot;Control Flow&quot;,&quot;url&quot;:&quot;/fr/blog/java-tutorial/control-flow&quot;},{&quot;title&quot;:&quot;Java Methods&quot;,&quot;url&quot;:&quot;/fr/blog/java-tutorial/methods&quot;},{&quot;title&quot;:&quot;Java OOP&quot;,&quot;url&quot;:&quot;/fr/blog/java-tutorial/object-oriented-programming&quot;},{&quot;title&quot;:&quot;Exception Handling&quot;,&quot;url&quot;:&quot;/fr/blog/java-tutorial/exception-handling&quot;},{&quot;title&quot;:&quot;Java Collections&quot;,&quot;url&quot;:&quot;/fr/blog/java-tutorial/collections&quot;},{&quot;title&quot;:&quot;Java Files&quot;,&quot;url&quot;:&quot;/fr/blog/java-tutorial/files&quot;},{&quot;title&quot;:&quot;Packages and Imports&quot;,&quot;url&quot;:&quot;/fr/blog/java-tutorial/packages-and-imports&quot;},{&quot;title&quot;:&quot;Access Modifiers&quot;,&quot;url&quot;:&quot;/fr/blog/java-tutorial/access-modifiers&quot;},{&quot;title&quot;:&quot;Java Annotations&quot;,&quot;url&quot;:&quot;/fr/blog/java-tutorial/annotations&quot;},{&quot;title&quot;:&quot;Java Multithreading&quot;,&quot;url&quot;:&quot;/fr/blog/java-tutorial/multithreading&quot;},{&quot;title&quot;:&quot;Java Generics&quot;,&quot;url&quot;:&quot;/fr/blog/java-tutorial/generics&quot;},{&quot;title&quot;:&quot;Lambda Expressions&quot;,&quot;url&quot;:&quot;/fr/blog/java-tutorial/lambda-expressions&quot;},{&quot;title&quot;:&quot;ThreadLocal in Java&quot;,&quot;url&quot;:&quot;/fr/blog/java-tutorial/thread-local&quot;},{&quot;title&quot;:&quot;Inheritance with JPA&quot;,&quot;url&quot;:&quot;/fr/blog/java-tutorial/inheritance-with-jpa&quot;}]}]"></app-tutorial-menu>
+  </div>
+  <div class="main-container">
+    <app-breadcrumbs class="tutorial"></app-breadcrumbs>
+    <app-blog-title class="tutorial" blog-title="Traitement des exceptions" blog-description="Apprenez comment Java gère les erreurs à l'aide de blocs try-catch, de clauses finally et d'exceptions personnalisées. Maîtrisez la gestion des exceptions pour obtenir un code robuste et résistant aux erreurs." blog-image="/assets/images/blog/blog-8.jpg"></app-blog-title>
+    <div class="blog-content markdown">
+      <h2>📝 Ce que vous apprendrez</h2>
+<ul>
+<li>Qu&#39;est-ce qu&#39;une exception et comment fonctionne-t-elle en Java ?</li>
+<li>Blocs <code>try</code>, <code>catch</code>, <code>finally</code>.</li>
+<li>Exceptions vérifiées ou non vérifiées</li>
+<li>Créer vos propres exceptions personnalisées</li>
+</ul>
+<h2>💥 Qu&#39;est-ce qu&#39;une exception ?</h2>
+<p>Une <strong>exception</strong> est un <strong>événement qui perturbe le déroulement normal</strong> d&#39;un programme.</p>
+<p>Exemples :</p>
+<ul>
+<li>Diviser par zéro</li>
+<li>Accès à un fichier qui n&#39;existe pas</li>
+<li>Utilisation d&#39;un index de tableau non valide</li>
+</ul>
+<h2>🛡️ Bloc de base Try-Catch</h2>
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Example</span> {
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> {
+        <span class="hljs-keyword">try</span> {
+            <span class="hljs-type">int</span> <span class="hljs-variable">result</span> <span class="hljs-operator">=</span> <span class="hljs-number">10</span> / <span class="hljs-number">0</span>;  <span class="hljs-comment">// will throw ArithmeticException</span>
+        } <span class="hljs-keyword">catch</span> (ArithmeticException e) {
+            System.out.println(<span class="hljs-string">&quot;You can&#x27;t divide by zero!&quot;</span>);
+        }
+    }
+}</code></pre>
+</code></pre><h2>🧹 <strong>finally</strong> Block</h2>
+<p>Utilisé pour le nettoyage. Il s&#39;exécute <strong>toujours</strong>, qu&#39;il y ait eu une exception ou non.</p>
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">try</span> {
+    <span class="hljs-type">int</span>[] arr = {<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>};
+    System.out.println(arr[<span class="hljs-number">5</span>]);
+} <span class="hljs-keyword">catch</span> (ArrayIndexOutOfBoundsException e) {
+    System.out.println(<span class="hljs-string">&quot;Index out of range!&quot;</span>);
+} <span class="hljs-keyword">finally</span> {
+    System.out.println(<span class="hljs-string">&quot;Always runs!&quot;</span>);
+}</code></pre>
+</code></pre><h2>✅ Exceptions vérifiées ou non vérifiées</h2>
+<p><b>Tableau&gt;</p>
+<thead>
+<tr>
+<th>Type</th>
+<th>Exemple</th>
+<th>Manipulation obligatoire?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Vérifié</strong></td>
+<td><code>IOException</code>, <code>SQLException</code></td>
+<td>✅ Oui</td>
+</tr>
+<tr>
+<td><strong>Non coché</strong></td>
+<td><code>NullPointerException</code>, <code>ArithmeticException</code></td>
+<td>❌ Non (mais recommandé)</td>
+</tr>
+</tbody>
+</tableau>
+
+
+<p>Les exceptions vérifiées doivent être capturées ou déclarées en utilisant <code>throws</code>.</p>
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">readFile</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> IOException {
+    <span class="hljs-type">FileReader</span> <span class="hljs-variable">fr</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">FileReader</span>(<span class="hljs-string">&quot;data.txt&quot;</span>);
+}</code></pre>
+</code></pre><h2>🧨 Lancer des exceptions</h2>
+<p>Vous pouvez manuellement <strong>lancer</strong> une exception :</p>
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Validator</span> {
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">checkAge</span><span class="hljs-params">(<span class="hljs-type">int</span> age)</span> {
+        <span class="hljs-keyword">if</span> (age &lt; <span class="hljs-number">18</span>) {
+            <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">IllegalArgumentException</span>(<span class="hljs-string">&quot;Must be 18 or older&quot;</span>);
+        }
+    }
+}</code></pre>
+</code></pre><h2>🧵 Blocs de capture multiples</h2>
+<p>Traiter différemment les différentes exceptions :</p>
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">try</span> {
+    <span class="hljs-comment">// some code</span>
+} <span class="hljs-keyword">catch</span> (NullPointerException e) {
+    System.out.println(<span class="hljs-string">&quot;Null pointer error&quot;</span>);
+} <span class="hljs-keyword">catch</span> (Exception e) {
+    System.out.println(<span class="hljs-string">&quot;Some other error&quot;</span>);
+}</code></pre>
+</code></pre><blockquote>
+<p>Attraper les exceptions les plus spécifiques <strong>en premier</strong>.</p>
+</blockquote>
+<h2>🧱 Création d&#39;exceptions personnalisées</h2>
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">class</span> <span class="hljs-title class_">MyException</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">Exception</span> {
+    <span class="hljs-keyword">public</span> <span class="hljs-title function_">MyException</span><span class="hljs-params">(String message)</span> {
+        <span class="hljs-built_in">super</span>(message);
+    }
+}</code></pre>
+</code></pre><p>Utilisation :</p>
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">MyException</span>(<span class="hljs-string">&quot;Something went wrong!&quot;</span>);</code></pre>
+</code></pre><h2>🧠 Meilleures pratiques</h2>
+<ul>
+<li>N&#39;attrapez que ce que vous pouvez supporter</li>
+<li>Éviter les blocs de capture vides</li>
+<li>Enregistrer les messages d&#39;erreur significatifs</li>
+<li>Utiliser des exceptions personnalisées pour la logique d&#39;entreprise</li>
+</ul>
+<h2>📘 Recap</h2>
+<ul>
+<li>Les exceptions sont des erreurs inattendues qui peuvent être gérées avec <code>try</code>, <code>catch</code>, <code>finally</code></li>
+<li>Java dispose d&#39;exceptions vérifiées et non vérifiées.</li>
+<li>Utiliser des exceptions personnalisées pour plus de clarté dans les systèmes complexes</li>
+</ul>
+
+      <app-subscribe></app-subscribe>
+      <app-comments></app-comments>
+    </div>
+  </div>
+  <aside>
+    <div class="aside-container">
+      <app-share-buttons></app-share-buttons>
+      <app-aside-promotion></app-aside-promotion>
+    </div>
+  </aside>
+</div>
+
+        </main>
+        <app-scroll-top-button></app-scroll-top-button>
+        <app-footer></app-footer>
+        </div>
+            <script>
+                var lastVisitTime = parseInt(localStorage.getItem('LAST_VISIT_TIME') || '0');
+                var timeoutDuration = 1500;
+                //if ((new Date().valueOf() - lastVisitTime) < 1200000) {
+                //    timeoutDuration = 400;
+                //}
+                setTimeout(() => {
+                    document.querySelector('.loader').classList.add('hide');
+                    document.querySelector('.body-container').style.display = 'block';
+                    document.dispatchEvent(new CustomEvent('page-loader-hide'));
+                }, timeoutDuration);
+                setTimeout(() => {
+                    document.querySelector('.loader').style.display = 'none';
+                }, 2000);
+                localStorage.setItem('LAST_VISIT_TIME', new Date().valueOf());
+            </script>
+        
+                <!-- Google tag (gtag.js) -->
+                <script async src="https://www.googletagmanager.com/gtag/js?id=G-S6JEVF53JZ"></script>
+                <script>
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag() {
+                        dataLayer.push(arguments);
+                    }
+                    gtag('js', new Date());
+
+                    gtag('config', 'G-S6JEVF53JZ');
+                </script>
+            
+            <script>
+                window.axeptioSettings = {
+                    clientId: "67fc2975df7d77940a4ff73d",
+                    cookiesVersion: "13042025",
+                    googleConsentMode: {
+                        default: {
+                            analytics_storage: "denied",
+                            ad_storage: "denied",
+                            ad_user_data: "denied",
+                            ad_personalization: "denied",
+                            wait_for_update: 500
+                        }
+                    }
+                };
+                (function(d, s) {
+                    var t = d.getElementsByTagName(s)[0], e = d.createElement(s);
+                    e.async = true; e.src = "//static.axept.io/sdk.js";
+                    t.parentNode.insertBefore(e, t);
+                })(document, "script");
+            </script>
+            <script src="/assets/scripts/markdown.js"></script></body></html>

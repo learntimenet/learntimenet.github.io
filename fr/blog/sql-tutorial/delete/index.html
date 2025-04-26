@@ -1,0 +1,196 @@
+
+            <!DOCTYPE html>
+            <html lang="fr" data-translated="true" data-breadcrump-title="Suppression SQL">
+            <head>
+                <meta charset="utf-8" />
+                <title>Learn Time | Tutoriel SQL - Supprimer</title>
+                <meta name="description" content="Apprenez à utiliser l'instruction SQL DELETE pour supprimer des lignes d'une base de données en toute sécurité. Couvre la syntaxe, les exemples et les meilleures pratiques pour éviter la perte de données.">
+                
+                <meta name="viewport" content="width=device-width,initial-scale=1" />
+                <!--
+                <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
+                <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
+                <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
+                <link rel="shortcut icon" sizes="192x192" href="/assets/favicon/android-chrome-192x192.png" >
+                <link rel="shortcut icon" sizes="512x512" href="/assets/favicon/android-chrome-512x512.png" >
+                <link rel="manifest" href="/assets/favicon/site.webmanifest">
+                <link rel="shortcut icon" href="/assets/favicon/favicon.ico">
+                <link rel="mask-icon" href="/assets/favicon/safari-pinned-tab.svg" color="#5bbad5">
+                <meta name="msapplication-TileColor" content="#da532c">
+                <meta name="theme-color" content="#ffffff">
+                -->
+                <link rel="shortcut icon" type="image/png" href="/assets/images/logo-circle.png">
+                <link rel="stylesheet" href="/styles.css">
+                <script src="https://kit.fontawesome.com/ff0edf556e.js" crossorigin="anonymous"></script>
+                <script src="https://code.iconify.design/iconify-icon/1.0.2/iconify-icon.min.js"></script>
+                <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+                <script>window.startTime = new Date().getTime();</script>
+                <style>
+                    :root {
+                        --background-color: #f3f2ef;
+                        --loading-bar-background-color: #d6cec2;
+                        --moving-loading-bar-background-color: #D0514D;
+                    }
+                    .loader {transition: all .2s ease-out;z-index: 10000000000;margin-top: -200px;position: fixed;top: 0;left: 0;right: 0;bottom: 0;background-color: var(--background-color);display: flex;align-items: center;justify-content: center;flex-direction: column;}.loader-logo {width: 40px; height: 40px; margin-bottom: 20px;}.loading-bar {width: 130px;height: 4px;border-radius: 100rem;background-color: var(--loading-bar-background-color);position: relative;overflow: hidden;}.moving-loading-bar {height: 100%;width: 68px;position: absolute;border-radius: 100rem;background-color: var(--moving-loading-bar-background-color);animation: initial-loading 1.5s ease infinite;}@keyframes initial-loading {0% {transform: translate(-34px);}50% {transform: translate(96px);}to {transform: translate(-34px);}}
+                    .loader.hide {opacity: 0;}
+                </style>
+                
+            <meta property="og:title" content="Tutoriel SQL - Supprimer" />
+            <meta property="og:description" content="Apprenez à utiliser l'instruction SQL DELETE pour supprimer des lignes d'une base de données en toute sécurité. Couvre la syntaxe, les exemples et les meilleures pratiques pour éviter la perte de données." />
+            <meta property="og:image" content="https://learntime.net/assets/thumbnail/blog/blog-0.jpg" />
+            <meta name="twitter:card" content="summary_large_image">
+            <meta name="twitter:creator" content="@learntimenet">
+            <meta name="twitter:title" content="Tutoriel SQL - Supprimer">
+            <meta name="twitter:description" content="Apprenez à utiliser l'instruction SQL DELETE pour supprimer des lignes d'une base de données en toute sécurité. Couvre la syntaxe, les exemples et les meilleures pratiques pour éviter la perte de données.">
+            <meta name="twitter:image" content="https://learntime.net/assets/thumbnail/blog/blog-0.jpg">
+        
+                <script>
+                    var disqus_config = function () {
+                        this.page.url = window.location.origin + window.location.pathname;
+                        this.page.identifier = window.location.pathname.replace('/en', '');
+                    };
+                </script>
+            <script defer src="/fr/blog/sql-tutorial/delete/delete.f5083ea000c77a4c853d.js"></script></head>
+            <body>
+                <div class="loader">
+                    <div class="loading-bar">
+                        <div class="moving-loading-bar"></div>
+                    </div>
+                </div>
+                <script>
+                    var lastVisitTime = parseInt(localStorage.getItem('LAST_VISIT_TIME') || '0');
+                    if ((new Date().valueOf() - lastVisitTime) < 1200000) {
+                        document.querySelector('.loading-bar').style.display = 'none';
+                    }
+                </script>
+                <div class="body-container">
+                    <app-navbar></app-navbar>
+                    <div class="max-width"><app-breadcrumbs></app-breadcrumbs></div>
+                    <main>
+        
+<style>
+    :root {
+        --scroll-indicator-height: 0.5rem;
+        --max-width: 150rem;
+    }
+    @media screen and (min-width: 1024px) {
+        :root {
+            --promotion-height: 0rem !important;
+        }
+    }
+</style>
+<div class="max-width tutorial-container">
+  <div class="tutorial-menu-container">
+    <app-tutorial-menu menu="[{&quot;category&quot;:&quot;SQL Tutorial&quot;,&quot;articles&quot;:[{&quot;title&quot;:&quot;Introduction&quot;,&quot;url&quot;:&quot;/blog/sql-tutorial/&quot;},{&quot;title&quot;:&quot;SQL Syntax&quot;,&quot;url&quot;:&quot;/blog/sql-tutorial/syntax/&quot;},{&quot;title&quot;:&quot;SQL Select&quot;,&quot;url&quot;:&quot;/blog/sql-tutorial/select/&quot;},{&quot;title&quot;:&quot;SQL Select Distinct&quot;,&quot;url&quot;:&quot;/blog/sql-tutorial/select-distinct/&quot;},{&quot;title&quot;:&quot;SQL Where&quot;,&quot;url&quot;:&quot;/blog/sql-tutorial/where/&quot;},{&quot;title&quot;:&quot;SQL Order By&quot;,&quot;url&quot;:&quot;/blog/sql-tutorial/order-by/&quot;},{&quot;title&quot;:&quot;SQL AND Operator&quot;,&quot;url&quot;:&quot;/blog/sql-tutorial/and-operator/&quot;},{&quot;title&quot;:&quot;SQL OR Operator&quot;,&quot;url&quot;:&quot;/blog/sql-tutorial/or-operator/&quot;},{&quot;title&quot;:&quot;SQL NOT Operator&quot;,&quot;url&quot;:&quot;/blog/sql-tutorial/not-operator/&quot;},{&quot;title&quot;:&quot;SQL Update&quot;,&quot;url&quot;:&quot;/blog/sql-tutorial/update/&quot;},{&quot;title&quot;:&quot;SQL Delete&quot;,&quot;url&quot;:&quot;/blog/sql-tutorial/delete/&quot;},{&quot;title&quot;:&quot;SQL Min Max&quot;,&quot;url&quot;:&quot;/blog/sql-tutorial/min-max/&quot;},{&quot;title&quot;:&quot;SQL Count&quot;,&quot;url&quot;:&quot;/blog/sql-tutorial/count/&quot;},{&quot;title&quot;:&quot;SQL Sum&quot;,&quot;url&quot;:&quot;/blog/sql-tutorial/sum/&quot;},{&quot;title&quot;:&quot;SQL Avg&quot;,&quot;url&quot;:&quot;/blog/sql-tutorial/avg/&quot;},{&quot;title&quot;:&quot;SQL Like&quot;,&quot;url&quot;:&quot;/blog/sql-tutorial/like/&quot;},{&quot;title&quot;:&quot;SQL In Operator&quot;,&quot;url&quot;:&quot;/blog/sql-tutorial/in-operator/&quot;},{&quot;title&quot;:&quot;SQL Between Operator&quot;,&quot;url&quot;:&quot;/blog/sql-tutorial/between-operator/&quot;},{&quot;title&quot;:&quot;SQL Aliases&quot;,&quot;url&quot;:&quot;/blog/sql-tutorial/aliases/&quot;},{&quot;title&quot;:&quot;SQL Joins&quot;,&quot;url&quot;:&quot;/blog/sql-tutorial/joins/&quot;},{&quot;title&quot;:&quot;SQL Inner Join&quot;,&quot;url&quot;:&quot;/blog/sql-tutorial/inner-join/&quot;},{&quot;title&quot;:&quot;SQL Left Join&quot;,&quot;url&quot;:&quot;/blog/sql-tutorial/left-join/&quot;},{&quot;title&quot;:&quot;SQL Right Join&quot;,&quot;url&quot;:&quot;/blog/sql-tutorial/right-join/&quot;},{&quot;title&quot;:&quot;SQL Full Join&quot;,&quot;url&quot;:&quot;/blog/sql-tutorial/full-join/&quot;},{&quot;title&quot;:&quot;SQL Cross Join&quot;,&quot;url&quot;:&quot;/blog/sql-tutorial/cross-join/&quot;},{&quot;title&quot;:&quot;SQL Union&quot;,&quot;url&quot;:&quot;/blog/sql-tutorial/union/&quot;},{&quot;title&quot;:&quot;SQL Group By&quot;,&quot;url&quot;:&quot;/blog/sql-tutorial/group-by/&quot;},{&quot;title&quot;:&quot;SQL Having&quot;,&quot;url&quot;:&quot;/blog/sql-tutorial/having/&quot;}]}]"></app-tutorial-menu>
+  </div>
+  <div class="main-container">
+    <app-breadcrumbs class="tutorial"></app-breadcrumbs>
+    <app-blog-title class="tutorial" blog-title="Suppression SQL" blog-description="Apprenez à utiliser l'instruction SQL DELETE pour supprimer des lignes d'une base de données en toute sécurité. Couvre la syntaxe, les exemples et les meilleures pratiques pour éviter la perte de données." blog-image="/assets/images/blog/blog-0.jpg"></app-blog-title>
+    <div class="blog-content markdown">
+      <h2>📝 Ce que vous apprendrez</h2>
+<ul>
+<li>A quoi sert l&#39;instruction <code>DELETE</code> ?</li>
+<li>Syntaxe pour supprimer des lignes spécifiques ou toutes les lignes</li>
+<li>Exemples pratiques</li>
+<li>Comment éviter la perte accidentelle de données</li>
+</ul>
+<h2>🔍 Qu&#39;est-ce que DELETE ?</h2>
+<p>L&#39;instruction <code>DELETE</code> est utilisée pour <strong>supprimer une ou plusieurs lignes</strong> d&#39;une table.</p>
+<p>Il s&#39;agit d&#39;une commande puissante qu&#39;il convient d&#39;utiliser avec précaution : une fois que des données sont supprimées, elles disparaissent généralement, à moins que vous ne disposiez de sauvegardes.</p>
+<h2>🧱 Syntaxe de base</h2>
+<pre><code class="hljs language-sql"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">DELETE</span> <span class="hljs-keyword">FROM</span> table_name
+<span class="hljs-keyword">WHERE</span> <span class="hljs-keyword">condition</span>;</code></pre>
+</code></pre><ul>
+<li><code>WHERE</code> spécifie les lignes à supprimer</li>
+<li><strong>Sans <code>WHERE</code></strong>, toutes les lignes de la table seront supprimées ⚠️</li>
+</ul>
+<h2>🧪 Exemple : Suppression d&#39;enregistrements</h2>
+<h3>Supprimer un utilisateur spécifique</h3>
+<pre><code class="hljs language-sql"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">DELETE</span> <span class="hljs-keyword">FROM</span> users
+<span class="hljs-keyword">WHERE</span> name <span class="hljs-operator">=</span> <span class="hljs-string">&#x27;Alice&#x27;</span>;</code></pre>
+</code></pre><h3>Supprimer les utilisateurs qui n&#39;ont pas d&#39;email</h3>
+<pre><code class="hljs language-sql"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">DELETE</span> <span class="hljs-keyword">FROM</span> users
+<span class="hljs-keyword">WHERE</span> email <span class="hljs-keyword">IS</span> <span class="hljs-keyword">NULL</span>;</code></pre>
+</code></pre><h3>Supprimer toutes les lignes d&#39;un tableau (à utiliser avec précaution)</h3>
+<pre><code class="hljs language-sql"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">DELETE</span> <span class="hljs-keyword">FROM</span> users;</code></pre>
+</code></pre><h2>⚠️ Conseils de sécurité</h2>
+<ul>
+<li>✅ Utilisez toujours une clause <code>WHERE</code> à moins que vous n&#39;effaciez une table intentionnellement.</li>
+<li>🔎 Prévisualisez d&#39;abord votre cible de suppression avec une requête <code>SELECT</code>.</li>
+<li>💾 Utiliser les transactions (<code>BEGIN</code>, <code>ROLLBACK</code>) quand elles sont supportées pour tester en toute sécurité</li>
+<li>🔁 Considérez l&#39;utilisation de <code>TRUNCATE</code> à la place si vous voulez <strong>vider rapidement</strong> une table entière (mais notez que <code>TRUNCATE</code> n&#39;est pas réversible et saute les triggers).</li>
+</ul>
+<h2>📘 Recap</h2>
+<ul>
+<li><code>DELETE</code> supprime des lignes d&#39;une table</li>
+<li>Ajouter une clause <code>WHERE</code> pour cibler des enregistrements spécifiques</li>
+<li>Utilisez <code>SELECT</code> pour vérifier avant d&#39;effacer.</li>
+<li>Soyez prudent : les données supprimées peuvent être irrécupérables.</li>
+</ul>
+
+      <app-subscribe></app-subscribe>
+      <app-comments></app-comments>
+    </div>
+  </div>
+  <aside>
+    <div class="aside-container">
+      <app-share-buttons></app-share-buttons>
+      <app-aside-promotion></app-aside-promotion>
+    </div>
+  </aside>
+</div>
+
+        </main>
+        <app-scroll-top-button></app-scroll-top-button>
+        <app-footer></app-footer>
+        </div>
+            <script>
+                var lastVisitTime = parseInt(localStorage.getItem('LAST_VISIT_TIME') || '0');
+                var timeoutDuration = 1500;
+                //if ((new Date().valueOf() - lastVisitTime) < 1200000) {
+                //    timeoutDuration = 400;
+                //}
+                setTimeout(() => {
+                    document.querySelector('.loader').classList.add('hide');
+                    document.querySelector('.body-container').style.display = 'block';
+                    document.dispatchEvent(new CustomEvent('page-loader-hide'));
+                }, timeoutDuration);
+                setTimeout(() => {
+                    document.querySelector('.loader').style.display = 'none';
+                }, 2000);
+                localStorage.setItem('LAST_VISIT_TIME', new Date().valueOf());
+            </script>
+        
+                <!-- Google tag (gtag.js) -->
+                <script async src="https://www.googletagmanager.com/gtag/js?id=G-S6JEVF53JZ"></script>
+                <script>
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag() {
+                        dataLayer.push(arguments);
+                    }
+                    gtag('js', new Date());
+
+                    gtag('config', 'G-S6JEVF53JZ');
+                </script>
+            
+            <script>
+                window.axeptioSettings = {
+                    clientId: "67fc2975df7d77940a4ff73d",
+                    cookiesVersion: "13042025",
+                    googleConsentMode: {
+                        default: {
+                            analytics_storage: "denied",
+                            ad_storage: "denied",
+                            ad_user_data: "denied",
+                            ad_personalization: "denied",
+                            wait_for_update: 500
+                        }
+                    }
+                };
+                (function(d, s) {
+                    var t = d.getElementsByTagName(s)[0], e = d.createElement(s);
+                    e.async = true; e.src = "//static.axept.io/sdk.js";
+                    t.parentNode.insertBefore(e, t);
+                })(document, "script");
+            </script>
+            <script src="/assets/scripts/markdown.js"></script></body></html>

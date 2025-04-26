@@ -1,0 +1,239 @@
+
+            <!DOCTYPE html>
+            <html lang="fr" data-translated="true" data-breadcrump-title="Flux de contrôle">
+            <head>
+                <meta charset="utf-8" />
+                <title>Learn Time | Tutoriel Java - Flux de contrôle</title>
+                <meta name="description" content="Maîtriser le flux de contrôle Java à l'aide de if-else, switch et de boucles comme for, while et do-while. Apprenez à contrôler le flux d'exécution dans vos programmes Java.">
+                
+                <meta name="viewport" content="width=device-width,initial-scale=1" />
+                <!--
+                <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
+                <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
+                <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
+                <link rel="shortcut icon" sizes="192x192" href="/assets/favicon/android-chrome-192x192.png" >
+                <link rel="shortcut icon" sizes="512x512" href="/assets/favicon/android-chrome-512x512.png" >
+                <link rel="manifest" href="/assets/favicon/site.webmanifest">
+                <link rel="shortcut icon" href="/assets/favicon/favicon.ico">
+                <link rel="mask-icon" href="/assets/favicon/safari-pinned-tab.svg" color="#5bbad5">
+                <meta name="msapplication-TileColor" content="#da532c">
+                <meta name="theme-color" content="#ffffff">
+                -->
+                <link rel="shortcut icon" type="image/png" href="/assets/images/logo-circle.png">
+                <link rel="stylesheet" href="/styles.css">
+                <script src="https://kit.fontawesome.com/ff0edf556e.js" crossorigin="anonymous"></script>
+                <script src="https://code.iconify.design/iconify-icon/1.0.2/iconify-icon.min.js"></script>
+                <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+                <script>window.startTime = new Date().getTime();</script>
+                <style>
+                    :root {
+                        --background-color: #f3f2ef;
+                        --loading-bar-background-color: #d6cec2;
+                        --moving-loading-bar-background-color: #D0514D;
+                    }
+                    .loader {transition: all .2s ease-out;z-index: 10000000000;margin-top: -200px;position: fixed;top: 0;left: 0;right: 0;bottom: 0;background-color: var(--background-color);display: flex;align-items: center;justify-content: center;flex-direction: column;}.loader-logo {width: 40px; height: 40px; margin-bottom: 20px;}.loading-bar {width: 130px;height: 4px;border-radius: 100rem;background-color: var(--loading-bar-background-color);position: relative;overflow: hidden;}.moving-loading-bar {height: 100%;width: 68px;position: absolute;border-radius: 100rem;background-color: var(--moving-loading-bar-background-color);animation: initial-loading 1.5s ease infinite;}@keyframes initial-loading {0% {transform: translate(-34px);}50% {transform: translate(96px);}to {transform: translate(-34px);}}
+                    .loader.hide {opacity: 0;}
+                </style>
+                
+            <meta property="og:title" content="Tutoriel Java - Flux de contrôle" />
+            <meta property="og:description" content="Maîtriser le flux de contrôle Java à l'aide de if-else, switch et de boucles comme for, while et do-while. Apprenez à contrôler le flux d'exécution dans vos programmes Java." />
+            <meta property="og:image" content="https://learntime.net/assets/thumbnail/blog/blog-5.jpg" />
+            <meta name="twitter:card" content="summary_large_image">
+            <meta name="twitter:creator" content="@learntimenet">
+            <meta name="twitter:title" content="Tutoriel Java - Flux de contrôle">
+            <meta name="twitter:description" content="Maîtriser le flux de contrôle Java à l'aide de if-else, switch et de boucles comme for, while et do-while. Apprenez à contrôler le flux d'exécution dans vos programmes Java.">
+            <meta name="twitter:image" content="https://learntime.net/assets/thumbnail/blog/blog-5.jpg">
+        
+                <script>
+                    var disqus_config = function () {
+                        this.page.url = window.location.origin + window.location.pathname;
+                        this.page.identifier = window.location.pathname.replace('/en', '');
+                    };
+                </script>
+            <script defer src="/fr/blog/java-tutorial/control-flow/control-flow.e472e8878e8f9dc4aa6a.js"></script></head>
+            <body>
+                <div class="loader">
+                    <div class="loading-bar">
+                        <div class="moving-loading-bar"></div>
+                    </div>
+                </div>
+                <script>
+                    var lastVisitTime = parseInt(localStorage.getItem('LAST_VISIT_TIME') || '0');
+                    if ((new Date().valueOf() - lastVisitTime) < 1200000) {
+                        document.querySelector('.loading-bar').style.display = 'none';
+                    }
+                </script>
+                <div class="body-container">
+                    <app-navbar></app-navbar>
+                    <div class="max-width"><app-breadcrumbs></app-breadcrumbs></div>
+                    <main>
+        
+<style>
+    :root {
+        --scroll-indicator-height: 0.5rem;
+        --max-width: 150rem;
+    }
+    @media screen and (min-width: 1024px) {
+        :root {
+            --promotion-height: 0rem !important;
+        }
+    }
+</style>
+<div class="max-width tutorial-container">
+  <div class="tutorial-menu-container">
+    <app-tutorial-menu menu="[{&quot;category&quot;:&quot;Java Tutoriel&quot;,&quot;articles&quot;:[{&quot;title&quot;:&quot;Introduction&quot;,&quot;url&quot;:&quot;/fr/blog/java-tutorial/&quot;},{&quot;title&quot;:&quot;Getting Started&quot;,&quot;url&quot;:&quot;/fr/blog/java-tutorial/getting-started&quot;},{&quot;title&quot;:&quot;Java Syntax&quot;,&quot;url&quot;:&quot;/fr/blog/java-tutorial/syntax&quot;},{&quot;title&quot;:&quot;Java Output&quot;,&quot;url&quot;:&quot;/fr/blog/java-tutorial/output&quot;},{&quot;title&quot;:&quot;Java Input&quot;,&quot;url&quot;:&quot;/fr/blog/java-tutorial/input&quot;},{&quot;title&quot;:&quot;Java Comments&quot;,&quot;url&quot;:&quot;/fr/blog/java-tutorial/comments&quot;},{&quot;title&quot;:&quot;Java Variables&quot;,&quot;url&quot;:&quot;/fr/blog/java-tutorial/variables&quot;},{&quot;title&quot;:&quot;Java Data Types&quot;,&quot;url&quot;:&quot;/fr/blog/java-tutorial/data-types&quot;},{&quot;title&quot;:&quot;Java Type Casting&quot;,&quot;url&quot;:&quot;/fr/blog/java-tutorial/type-casting&quot;},{&quot;title&quot;:&quot;Java Operators&quot;,&quot;url&quot;:&quot;/fr/blog/java-tutorial/operators&quot;},{&quot;title&quot;:&quot;Java Strings&quot;,&quot;url&quot;:&quot;/fr/blog/java-tutorial/strings&quot;},{&quot;title&quot;:&quot;Java Math&quot;,&quot;url&quot;:&quot;/fr/blog/java-tutorial/math&quot;},{&quot;title&quot;:&quot;Java Booleans&quot;,&quot;url&quot;:&quot;/fr/blog/java-tutorial/booleans&quot;},{&quot;title&quot;:&quot;Java If...Else&quot;,&quot;url&quot;:&quot;/fr/blog/java-tutorial/if-else&quot;},{&quot;title&quot;:&quot;Java Switch&quot;,&quot;url&quot;:&quot;/fr/blog/java-tutorial/switch&quot;},{&quot;title&quot;:&quot;Java While Loop&quot;,&quot;url&quot;:&quot;/fr/blog/java-tutorial/while-loop&quot;},{&quot;title&quot;:&quot;Java For Loop&quot;,&quot;url&quot;:&quot;/fr/blog/java-tutorial/for-loop&quot;},{&quot;title&quot;:&quot;Java Continue/Break&quot;,&quot;url&quot;:&quot;/fr/blog/java-tutorial/continue-break&quot;},{&quot;title&quot;:&quot;Java Arrays&quot;,&quot;url&quot;:&quot;/fr/blog/java-tutorial/arrays&quot;}]},{&quot;category&quot;:&quot;Java Advanced&quot;,&quot;articles&quot;:[{&quot;title&quot;:&quot;Control Flow&quot;,&quot;url&quot;:&quot;/fr/blog/java-tutorial/control-flow&quot;},{&quot;title&quot;:&quot;Java Methods&quot;,&quot;url&quot;:&quot;/fr/blog/java-tutorial/methods&quot;},{&quot;title&quot;:&quot;Java OOP&quot;,&quot;url&quot;:&quot;/fr/blog/java-tutorial/object-oriented-programming&quot;},{&quot;title&quot;:&quot;Exception Handling&quot;,&quot;url&quot;:&quot;/fr/blog/java-tutorial/exception-handling&quot;},{&quot;title&quot;:&quot;Java Collections&quot;,&quot;url&quot;:&quot;/fr/blog/java-tutorial/collections&quot;},{&quot;title&quot;:&quot;Java Files&quot;,&quot;url&quot;:&quot;/fr/blog/java-tutorial/files&quot;},{&quot;title&quot;:&quot;Packages and Imports&quot;,&quot;url&quot;:&quot;/fr/blog/java-tutorial/packages-and-imports&quot;},{&quot;title&quot;:&quot;Access Modifiers&quot;,&quot;url&quot;:&quot;/fr/blog/java-tutorial/access-modifiers&quot;},{&quot;title&quot;:&quot;Java Annotations&quot;,&quot;url&quot;:&quot;/fr/blog/java-tutorial/annotations&quot;},{&quot;title&quot;:&quot;Java Multithreading&quot;,&quot;url&quot;:&quot;/fr/blog/java-tutorial/multithreading&quot;},{&quot;title&quot;:&quot;Java Generics&quot;,&quot;url&quot;:&quot;/fr/blog/java-tutorial/generics&quot;},{&quot;title&quot;:&quot;Lambda Expressions&quot;,&quot;url&quot;:&quot;/fr/blog/java-tutorial/lambda-expressions&quot;},{&quot;title&quot;:&quot;ThreadLocal in Java&quot;,&quot;url&quot;:&quot;/fr/blog/java-tutorial/thread-local&quot;},{&quot;title&quot;:&quot;Inheritance with JPA&quot;,&quot;url&quot;:&quot;/fr/blog/java-tutorial/inheritance-with-jpa&quot;}]}]"></app-tutorial-menu>
+  </div>
+  <div class="main-container">
+    <app-breadcrumbs class="tutorial"></app-breadcrumbs>
+    <app-blog-title class="tutorial" blog-title="Flux de contrôle" blog-description="Maîtriser le flux de contrôle Java à l'aide de if-else, switch et de boucles comme for, while et do-while. Apprenez à contrôler le flux d'exécution dans vos programmes Java." blog-image="/assets/images/blog/blog-5.jpg"></app-blog-title>
+    <div class="blog-content markdown">
+      <h2>📝 Ce que vous apprendrez</h2>
+<ul>
+<li>les instructions <code>if</code>, <code>else</code> et <code>switch</code>.</li>
+<li>Boucle avec <code>for</code>, <code>while</code>, et <code>do-while</code>.</li>
+<li>Utilisation de <code>break</code> et de <code>continue</code></li>
+<li>Exemples réels et meilleures pratiques</li>
+</ul>
+<h2>🧭 Déclarations conditionnelles</h2>
+<p>Ils permettent à votre programme de prendre des <strong>décisions</strong>.</p>
+<h3>✅ <strong>if</strong>, <strong>else if</strong>, <strong>else</strong></h3>
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-type">int</span> <span class="hljs-variable">score</span> <span class="hljs-operator">=</span> <span class="hljs-number">85</span>;
+
+<span class="hljs-keyword">if</span> (score &gt;= <span class="hljs-number">90</span>) {
+    System.out.println(<span class="hljs-string">&quot;Grade: A&quot;</span>);
+} <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (score &gt;= <span class="hljs-number">80</span>) {
+    System.out.println(<span class="hljs-string">&quot;Grade: B&quot;</span>);
+} <span class="hljs-keyword">else</span> {
+    System.out.println(<span class="hljs-string">&quot;Grade: C or lower&quot;</span>);
+}</code></pre>
+</code></pre><h3>🔄 <strong>switch</strong> Statement</h3>
+<p>La meilleure solution consiste à vérifier une variable par rapport à de nombreuses valeurs possibles.</p>
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-type">int</span> <span class="hljs-variable">day</span> <span class="hljs-operator">=</span> <span class="hljs-number">3</span>;
+
+<span class="hljs-keyword">switch</span> (day) {
+    <span class="hljs-keyword">case</span> <span class="hljs-number">1</span>: System.out.println(<span class="hljs-string">&quot;Monday&quot;</span>); <span class="hljs-keyword">break</span>;
+    <span class="hljs-keyword">case</span> <span class="hljs-number">2</span>: System.out.println(<span class="hljs-string">&quot;Tuesday&quot;</span>); <span class="hljs-keyword">break</span>;
+    <span class="hljs-keyword">case</span> <span class="hljs-number">3</span>: System.out.println(<span class="hljs-string">&quot;Wednesday&quot;</span>); <span class="hljs-keyword">break</span>;
+    <span class="hljs-keyword">default</span>: System.out.println(<span class="hljs-string">&quot;Other day&quot;</span>);
+}</code></pre>
+</code></pre><blockquote>
+<p>⚠️ Utiliser <code>break</code> pour éviter le fall-through (exécution de plusieurs cas).</p>
+</blockquote>
+<h2>🔁 Boucles</h2>
+<p>Les boucles vous permettent de <strong>répéter le code</strong> tant qu&#39;une condition est vraie.</p>
+<h4>➰ <strong>for</strong> Loop (Count-Controlled)</h4>
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>; i &lt;= <span class="hljs-number">5</span>; i++) {
+    System.out.println(<span class="hljs-string">&quot;Count: &quot;</span> + i);
+}</code></pre>
+</code></pre><h3>🔄 Boucle <strong>while</strong> (contrôlée par des conditions)</h3>
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>;
+<span class="hljs-keyword">while</span> (i &lt;= <span class="hljs-number">5</span>) {
+    System.out.println(<span class="hljs-string">&quot;Count: &quot;</span> + i);
+    i++;
+}</code></pre>
+</code></pre><h3>🔂 Boucle <strong>do-while</strong> (s&#39;exécute au moins une fois)</h3>
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>;
+<span class="hljs-keyword">do</span> {
+    System.out.println(<span class="hljs-string">&quot;Count: &quot;</span> + i);
+    i++;
+} <span class="hljs-keyword">while</span> (i &lt;= <span class="hljs-number">5</span>);</code></pre>
+</code></pre><h2>🧨 <strong>break</strong> et <strong>continue</strong></h2>
+<h3><strong>break</strong> : sortir prématurément d&#39;une boucle</h3>
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>; i &lt;= <span class="hljs-number">10</span>; i++) {
+    <span class="hljs-keyword">if</span> (i == <span class="hljs-number">5</span>) <span class="hljs-keyword">break</span>;
+    System.out.println(i);
+}</code></pre>
+</code></pre><h3><strong>continue</strong> : sauter l&#39;itération de la boucle en cours</h3>
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>; i &lt;= <span class="hljs-number">5</span>; i++) {
+    <span class="hljs-keyword">if</span> (i == <span class="hljs-number">3</span>) <span class="hljs-keyword">continue</span>;
+    System.out.println(i);  <span class="hljs-comment">// 3 is skipped</span>
+}</code></pre>
+</code></pre><h2>🧠 Exemple : Logique de tentative de connexion</h2>
+<pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-type">String</span> <span class="hljs-variable">password</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;java123&quot;</span>;
+<span class="hljs-type">int</span> <span class="hljs-variable">attempts</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;
+<span class="hljs-type">boolean</span> <span class="hljs-variable">loggedIn</span> <span class="hljs-operator">=</span> <span class="hljs-literal">false</span>;
+
+<span class="hljs-keyword">while</span> (attempts &lt; <span class="hljs-number">3</span> &amp;&amp; !loggedIn) {
+    <span class="hljs-comment">// simulate input</span>
+    <span class="hljs-type">String</span> <span class="hljs-variable">input</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;java123&quot;</span>;
+    <span class="hljs-keyword">if</span> (input.equals(password)) {
+        System.out.println(<span class="hljs-string">&quot;Welcome!&quot;</span>);
+        loggedIn = <span class="hljs-literal">true</span>;
+    } <span class="hljs-keyword">else</span> {
+        System.out.println(<span class="hljs-string">&quot;Wrong password.&quot;</span>);
+        attempts++;
+    }
+}</code></pre>
+</code></pre><h2>📘 Recap</h2>
+<ul>
+<li>Utiliser <code>if</code>, <code>else</code>, et <code>switch</code> pour prendre des décisions</li>
+<li>Utiliser des boucles pour répéter le code : <code>for</code>, <code>while</code>, <code>do-while</code>.</li>
+<li>Contrôler le comportement de la boucle avec <code>break</code> et <code>continue</code>.</li>
+</ul>
+
+      <app-subscribe></app-subscribe>
+      <app-comments></app-comments>
+    </div>
+  </div>
+  <aside>
+    <div class="aside-container">
+      <app-share-buttons></app-share-buttons>
+      <app-aside-promotion></app-aside-promotion>
+    </div>
+  </aside>
+</div>
+
+        </main>
+        <app-scroll-top-button></app-scroll-top-button>
+        <app-footer></app-footer>
+        </div>
+            <script>
+                var lastVisitTime = parseInt(localStorage.getItem('LAST_VISIT_TIME') || '0');
+                var timeoutDuration = 1500;
+                //if ((new Date().valueOf() - lastVisitTime) < 1200000) {
+                //    timeoutDuration = 400;
+                //}
+                setTimeout(() => {
+                    document.querySelector('.loader').classList.add('hide');
+                    document.querySelector('.body-container').style.display = 'block';
+                    document.dispatchEvent(new CustomEvent('page-loader-hide'));
+                }, timeoutDuration);
+                setTimeout(() => {
+                    document.querySelector('.loader').style.display = 'none';
+                }, 2000);
+                localStorage.setItem('LAST_VISIT_TIME', new Date().valueOf());
+            </script>
+        
+                <!-- Google tag (gtag.js) -->
+                <script async src="https://www.googletagmanager.com/gtag/js?id=G-S6JEVF53JZ"></script>
+                <script>
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag() {
+                        dataLayer.push(arguments);
+                    }
+                    gtag('js', new Date());
+
+                    gtag('config', 'G-S6JEVF53JZ');
+                </script>
+            
+            <script>
+                window.axeptioSettings = {
+                    clientId: "67fc2975df7d77940a4ff73d",
+                    cookiesVersion: "13042025",
+                    googleConsentMode: {
+                        default: {
+                            analytics_storage: "denied",
+                            ad_storage: "denied",
+                            ad_user_data: "denied",
+                            ad_personalization: "denied",
+                            wait_for_update: 500
+                        }
+                    }
+                };
+                (function(d, s) {
+                    var t = d.getElementsByTagName(s)[0], e = d.createElement(s);
+                    e.async = true; e.src = "//static.axept.io/sdk.js";
+                    t.parentNode.insertBefore(e, t);
+                })(document, "script");
+            </script>
+            <script src="/assets/scripts/markdown.js"></script></body></html>

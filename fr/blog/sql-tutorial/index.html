@@ -1,0 +1,217 @@
+
+            <!DOCTYPE html>
+            <html lang="fr" data-translated="true" data-breadcrump-title="Tutoriel SQL">
+            <head>
+                <meta charset="utf-8" />
+                <title>Learn Time | Tutoriel SQL</title>
+                <meta name="description" content="Commencez votre apprentissage du langage SQL avec cette introduction conviviale pour les débutants. Comprenez ce qu'est le langage SQL, comment il fonctionne et pourquoi il est essentiel pour les données et le travail de développement.">
+                
+                <meta name="viewport" content="width=device-width,initial-scale=1" />
+                <!--
+                <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
+                <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
+                <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
+                <link rel="shortcut icon" sizes="192x192" href="/assets/favicon/android-chrome-192x192.png" >
+                <link rel="shortcut icon" sizes="512x512" href="/assets/favicon/android-chrome-512x512.png" >
+                <link rel="manifest" href="/assets/favicon/site.webmanifest">
+                <link rel="shortcut icon" href="/assets/favicon/favicon.ico">
+                <link rel="mask-icon" href="/assets/favicon/safari-pinned-tab.svg" color="#5bbad5">
+                <meta name="msapplication-TileColor" content="#da532c">
+                <meta name="theme-color" content="#ffffff">
+                -->
+                <link rel="shortcut icon" type="image/png" href="/assets/images/logo-circle.png">
+                <link rel="stylesheet" href="/styles.css">
+                <script src="https://kit.fontawesome.com/ff0edf556e.js" crossorigin="anonymous"></script>
+                <script src="https://code.iconify.design/iconify-icon/1.0.2/iconify-icon.min.js"></script>
+                <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+                <script>window.startTime = new Date().getTime();</script>
+                <style>
+                    :root {
+                        --background-color: #f3f2ef;
+                        --loading-bar-background-color: #d6cec2;
+                        --moving-loading-bar-background-color: #D0514D;
+                    }
+                    .loader {transition: all .2s ease-out;z-index: 10000000000;margin-top: -200px;position: fixed;top: 0;left: 0;right: 0;bottom: 0;background-color: var(--background-color);display: flex;align-items: center;justify-content: center;flex-direction: column;}.loader-logo {width: 40px; height: 40px; margin-bottom: 20px;}.loading-bar {width: 130px;height: 4px;border-radius: 100rem;background-color: var(--loading-bar-background-color);position: relative;overflow: hidden;}.moving-loading-bar {height: 100%;width: 68px;position: absolute;border-radius: 100rem;background-color: var(--moving-loading-bar-background-color);animation: initial-loading 1.5s ease infinite;}@keyframes initial-loading {0% {transform: translate(-34px);}50% {transform: translate(96px);}to {transform: translate(-34px);}}
+                    .loader.hide {opacity: 0;}
+                </style>
+                
+            <meta property="og:title" content="Tutoriel SQL" />
+            <meta property="og:description" content="Commencez votre apprentissage du langage SQL avec cette introduction conviviale pour les débutants. Comprenez ce qu'est le langage SQL, comment il fonctionne et pourquoi il est essentiel pour les données et le travail de développement." />
+            <meta property="og:image" content="https://learntime.net/assets/thumbnail/blog/blog-2.jpg" />
+            <meta name="twitter:card" content="summary_large_image">
+            <meta name="twitter:creator" content="@learntimenet">
+            <meta name="twitter:title" content="Tutoriel SQL">
+            <meta name="twitter:description" content="Commencez votre apprentissage du langage SQL avec cette introduction conviviale pour les débutants. Comprenez ce qu'est le langage SQL, comment il fonctionne et pourquoi il est essentiel pour les données et le travail de développement.">
+            <meta name="twitter:image" content="https://learntime.net/assets/thumbnail/blog/blog-2.jpg">
+        
+                <script>
+                    var disqus_config = function () {
+                        this.page.url = window.location.origin + window.location.pathname;
+                        this.page.identifier = window.location.pathname.replace('/en', '');
+                    };
+                </script>
+            <script defer src="/fr/blog/sql-tutorial/sql-tutorial.4268c776514f6a001a94.js"></script></head>
+            <body>
+                <div class="loader">
+                    <div class="loading-bar">
+                        <div class="moving-loading-bar"></div>
+                    </div>
+                </div>
+                <script>
+                    var lastVisitTime = parseInt(localStorage.getItem('LAST_VISIT_TIME') || '0');
+                    if ((new Date().valueOf() - lastVisitTime) < 1200000) {
+                        document.querySelector('.loading-bar').style.display = 'none';
+                    }
+                </script>
+                <div class="body-container">
+                    <app-navbar></app-navbar>
+                    <div class="max-width"><app-breadcrumbs></app-breadcrumbs></div>
+                    <main>
+        
+<style>
+    :root {
+        --scroll-indicator-height: 0.5rem;
+        --max-width: 150rem;
+    }
+    @media screen and (min-width: 1024px) {
+        :root {
+            --promotion-height: 0rem !important;
+        }
+    }
+</style>
+<div class="max-width tutorial-container">
+  <div class="tutorial-menu-container">
+    <app-tutorial-menu menu="[{&quot;category&quot;:&quot;SQL Tutorial&quot;,&quot;articles&quot;:[{&quot;title&quot;:&quot;Introduction&quot;,&quot;url&quot;:&quot;/blog/sql-tutorial/&quot;},{&quot;title&quot;:&quot;SQL Syntax&quot;,&quot;url&quot;:&quot;/blog/sql-tutorial/syntax/&quot;},{&quot;title&quot;:&quot;SQL Select&quot;,&quot;url&quot;:&quot;/blog/sql-tutorial/select/&quot;},{&quot;title&quot;:&quot;SQL Select Distinct&quot;,&quot;url&quot;:&quot;/blog/sql-tutorial/select-distinct/&quot;},{&quot;title&quot;:&quot;SQL Where&quot;,&quot;url&quot;:&quot;/blog/sql-tutorial/where/&quot;},{&quot;title&quot;:&quot;SQL Order By&quot;,&quot;url&quot;:&quot;/blog/sql-tutorial/order-by/&quot;},{&quot;title&quot;:&quot;SQL AND Operator&quot;,&quot;url&quot;:&quot;/blog/sql-tutorial/and-operator/&quot;},{&quot;title&quot;:&quot;SQL OR Operator&quot;,&quot;url&quot;:&quot;/blog/sql-tutorial/or-operator/&quot;},{&quot;title&quot;:&quot;SQL NOT Operator&quot;,&quot;url&quot;:&quot;/blog/sql-tutorial/not-operator/&quot;},{&quot;title&quot;:&quot;SQL Update&quot;,&quot;url&quot;:&quot;/blog/sql-tutorial/update/&quot;},{&quot;title&quot;:&quot;SQL Delete&quot;,&quot;url&quot;:&quot;/blog/sql-tutorial/delete/&quot;},{&quot;title&quot;:&quot;SQL Min Max&quot;,&quot;url&quot;:&quot;/blog/sql-tutorial/min-max/&quot;},{&quot;title&quot;:&quot;SQL Count&quot;,&quot;url&quot;:&quot;/blog/sql-tutorial/count/&quot;},{&quot;title&quot;:&quot;SQL Sum&quot;,&quot;url&quot;:&quot;/blog/sql-tutorial/sum/&quot;},{&quot;title&quot;:&quot;SQL Avg&quot;,&quot;url&quot;:&quot;/blog/sql-tutorial/avg/&quot;},{&quot;title&quot;:&quot;SQL Like&quot;,&quot;url&quot;:&quot;/blog/sql-tutorial/like/&quot;},{&quot;title&quot;:&quot;SQL In Operator&quot;,&quot;url&quot;:&quot;/blog/sql-tutorial/in-operator/&quot;},{&quot;title&quot;:&quot;SQL Between Operator&quot;,&quot;url&quot;:&quot;/blog/sql-tutorial/between-operator/&quot;},{&quot;title&quot;:&quot;SQL Aliases&quot;,&quot;url&quot;:&quot;/blog/sql-tutorial/aliases/&quot;},{&quot;title&quot;:&quot;SQL Joins&quot;,&quot;url&quot;:&quot;/blog/sql-tutorial/joins/&quot;},{&quot;title&quot;:&quot;SQL Inner Join&quot;,&quot;url&quot;:&quot;/blog/sql-tutorial/inner-join/&quot;},{&quot;title&quot;:&quot;SQL Left Join&quot;,&quot;url&quot;:&quot;/blog/sql-tutorial/left-join/&quot;},{&quot;title&quot;:&quot;SQL Right Join&quot;,&quot;url&quot;:&quot;/blog/sql-tutorial/right-join/&quot;},{&quot;title&quot;:&quot;SQL Full Join&quot;,&quot;url&quot;:&quot;/blog/sql-tutorial/full-join/&quot;},{&quot;title&quot;:&quot;SQL Cross Join&quot;,&quot;url&quot;:&quot;/blog/sql-tutorial/cross-join/&quot;},{&quot;title&quot;:&quot;SQL Union&quot;,&quot;url&quot;:&quot;/blog/sql-tutorial/union/&quot;},{&quot;title&quot;:&quot;SQL Group By&quot;,&quot;url&quot;:&quot;/blog/sql-tutorial/group-by/&quot;},{&quot;title&quot;:&quot;SQL Having&quot;,&quot;url&quot;:&quot;/blog/sql-tutorial/having/&quot;}]}]"></app-tutorial-menu>
+  </div>
+  <div class="main-container">
+    <app-breadcrumbs class="tutorial"></app-breadcrumbs>
+    <app-blog-title class="tutorial" blog-title="Tutoriel SQL" blog-description="Commencez votre apprentissage du langage SQL avec cette introduction conviviale pour les débutants. Comprenez ce qu'est le langage SQL, comment il fonctionne et pourquoi il est essentiel pour les données et le travail de développement." blog-image="/assets/images/blog/blog-2.jpg"></app-blog-title>
+    <div class="blog-content markdown">
+      <p>Le <strong>SQL (Structured Query Language)</strong> est un langage de programmation standard permettant de gérer et d&#39;interagir avec des <strong>bases de données relationnelles</strong>.</p>
+<p>Il vous permet de :</p>
+<ul>
+<li>Récupérer des données à l&#39;aide de requêtes</li>
+<li>Ajouter ou modifier des enregistrements</li>
+<li>Supprimer les données inutiles</li>
+<li>Définir la structure de votre base de données</li>
+</ul>
+<p>Qu&#39;il s&#39;agisse de créer une application web, de générer un rapport ou d&#39;analyser des tendances, <strong>SQL est l&#39;outil universel pour communiquer avec les bases de données</strong>.</p>
+<h2>⚙️ Comment fonctionne SQL</h2>
+<p>SQL communique avec les <strong>Systèmes de gestion de bases de données (SGBD)</strong> comme :</p>
+<ul>
+<li>MySQL</li>
+<li>PostgreSQL</li>
+<li>SQLite</li>
+<li>Serveur SQL</li>
+<li>Oracle</li>
+</ul>
+<p>Vous envoyez des requêtes SQL (comme <code>SELECT * FROM users</code>) au SGBD, qui les traite et renvoie les données demandées.</p>
+<p>Il s&#39;agit d&#39;un langage <strong>déclaratif</strong>, c&#39;est-à-dire que vous décrivez ce que vous voulez, et le système trouve comment le faire.</p>
+<h2>🚀 Pourquoi apprendre SQL ?</h2>
+<p>SQL est l&#39;une des <strong>compétences les plus demandées</strong> dans les carrières liées à la technologie et aux données.</p>
+<p>✅ Nécessaire pour le développement du backend
+✅ Critique pour la science des données et l&#39;analytique
+Utile pour l&#39;assurance qualité, l&#39;intelligence économique et les fonctions d&#39;assistance
+✅ Facile à démarrer, mais puissant au fur et à mesure qu&#39;on l&#39;approfondit</p>
+<p>Une fois que vous aurez appris le langage SQL, vous pourrez <strong>poser des questions pertinentes sur les données</strong> et obtenir des réponses.</p>
+<h2>📦 Caractéristiques principales de SQL</h2>
+<ul>
+<li>🧠 Syntaxe simple et lisible</li>
+<li>🔎 Requêtes de données rapides et efficaces</li>
+<li>📊 Fonctions d&#39;agrégation et de regroupement</li>
+<li>🔗 Possibilité de joindre des données provenant de plusieurs tables</li>
+<li>📐 Prise en charge de la conception des schémas et des contraintes de données</li>
+<li>🧩 Fonctionne avec pratiquement toutes les bases de données relationnelles</li>
+</ul>
+<h2>🔍 Où SQL est utilisé</h2>
+<ul>
+<li>Développement web (collecte de données utilisateur, contenu, etc.)</li>
+<li>Analyse des données et rapports</li>
+<li>Applications mobiles et de bureau avec stockage local</li>
+<li>Systèmes de commerce électronique et de gestion de la relation client</li>
+<li>Logiciels d&#39;entreprise et tableaux de bord</li>
+<li>Même intégrés dans des applications (comme Excel ou Power BI)</li>
+</ul>
+<p>S&#39;il y a des <strong>données structurées</strong>, il y a de fortes chances que SQL soit derrière.</p>
+<h2>⚠️ Les pièges les plus courants pour les débutants</h2>
+<ul>
+<li>📛 Oublier la clause <code>WHERE</code> et mettre à jour/supprimer <strong>tout</strong></li>
+<li>🔤 Utilisation incorrecte des <code>&#39;quotes&#39;</code> pour les chaînes de caractères et les noms de colonnes</li>
+<li>💡 Confusion entre <code>=</code> et <code>==</code> (SQL utilise <code>=</code>)</li>
+<li>🔄 Utiliser <code>SELECT *</code> trop souvent sans optimiser les requêtes</li>
+<li>🚫 Ne pas comprendre le fonctionnement des jointures (ne vous inquiétez pas, nous y reviendrons !)</li>
+</ul>
+<h2>📘 Recap</h2>
+<ul>
+<li>SQL est le langage de gestion des bases de données relationnelles.</li>
+<li>Il est puissant, lisible et très demandé.</li>
+<li>Vous l&#39;utiliserez pour interroger, mettre à jour, supprimer et concevoir des structures de base de données.</li>
+<li>Cette série vous guidera, étape par étape, des principes de base à l&#39;utilisation dans le monde réel.</li>
+</ul>
+
+      <app-subscribe></app-subscribe>
+      <app-comments></app-comments>
+    </div>
+  </div>
+  <aside>
+    <div class="aside-container">
+      <app-share-buttons></app-share-buttons>
+      <app-aside-promotion></app-aside-promotion>
+    </div>
+  </aside>
+</div>
+
+        </main>
+        <app-scroll-top-button></app-scroll-top-button>
+        <app-footer></app-footer>
+        </div>
+            <script>
+                var lastVisitTime = parseInt(localStorage.getItem('LAST_VISIT_TIME') || '0');
+                var timeoutDuration = 1500;
+                //if ((new Date().valueOf() - lastVisitTime) < 1200000) {
+                //    timeoutDuration = 400;
+                //}
+                setTimeout(() => {
+                    document.querySelector('.loader').classList.add('hide');
+                    document.querySelector('.body-container').style.display = 'block';
+                    document.dispatchEvent(new CustomEvent('page-loader-hide'));
+                }, timeoutDuration);
+                setTimeout(() => {
+                    document.querySelector('.loader').style.display = 'none';
+                }, 2000);
+                localStorage.setItem('LAST_VISIT_TIME', new Date().valueOf());
+            </script>
+        
+                <!-- Google tag (gtag.js) -->
+                <script async src="https://www.googletagmanager.com/gtag/js?id=G-S6JEVF53JZ"></script>
+                <script>
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag() {
+                        dataLayer.push(arguments);
+                    }
+                    gtag('js', new Date());
+
+                    gtag('config', 'G-S6JEVF53JZ');
+                </script>
+            
+            <script>
+                window.axeptioSettings = {
+                    clientId: "67fc2975df7d77940a4ff73d",
+                    cookiesVersion: "13042025",
+                    googleConsentMode: {
+                        default: {
+                            analytics_storage: "denied",
+                            ad_storage: "denied",
+                            ad_user_data: "denied",
+                            ad_personalization: "denied",
+                            wait_for_update: 500
+                        }
+                    }
+                };
+                (function(d, s) {
+                    var t = d.getElementsByTagName(s)[0], e = d.createElement(s);
+                    e.async = true; e.src = "//static.axept.io/sdk.js";
+                    t.parentNode.insertBefore(e, t);
+                })(document, "script");
+            </script>
+            <script src="/assets/scripts/markdown.js"></script></body></html>

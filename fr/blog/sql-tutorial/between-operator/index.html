@@ -1,0 +1,202 @@
+
+            <!DOCTYPE html>
+            <html lang="fr" data-translated="true" data-breadcrump-title="Opérateur SQL Between">
+            <head>
+                <meta charset="utf-8" />
+                <title>Learn Time | Tutoriel SQL - Opérateur Between</title>
+                <meta name="description" content="Apprenez à utiliser l'opérateur SQL BETWEEN pour filtrer des valeurs à l'intérieur d'une plage. Couvre les nombres, les dates, le texte, et inclut des exemples et des conseils de syntaxe.">
+                
+                <meta name="viewport" content="width=device-width,initial-scale=1" />
+                <!--
+                <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
+                <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
+                <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
+                <link rel="shortcut icon" sizes="192x192" href="/assets/favicon/android-chrome-192x192.png" >
+                <link rel="shortcut icon" sizes="512x512" href="/assets/favicon/android-chrome-512x512.png" >
+                <link rel="manifest" href="/assets/favicon/site.webmanifest">
+                <link rel="shortcut icon" href="/assets/favicon/favicon.ico">
+                <link rel="mask-icon" href="/assets/favicon/safari-pinned-tab.svg" color="#5bbad5">
+                <meta name="msapplication-TileColor" content="#da532c">
+                <meta name="theme-color" content="#ffffff">
+                -->
+                <link rel="shortcut icon" type="image/png" href="/assets/images/logo-circle.png">
+                <link rel="stylesheet" href="/styles.css">
+                <script src="https://kit.fontawesome.com/ff0edf556e.js" crossorigin="anonymous"></script>
+                <script src="https://code.iconify.design/iconify-icon/1.0.2/iconify-icon.min.js"></script>
+                <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+                <script>window.startTime = new Date().getTime();</script>
+                <style>
+                    :root {
+                        --background-color: #f3f2ef;
+                        --loading-bar-background-color: #d6cec2;
+                        --moving-loading-bar-background-color: #D0514D;
+                    }
+                    .loader {transition: all .2s ease-out;z-index: 10000000000;margin-top: -200px;position: fixed;top: 0;left: 0;right: 0;bottom: 0;background-color: var(--background-color);display: flex;align-items: center;justify-content: center;flex-direction: column;}.loader-logo {width: 40px; height: 40px; margin-bottom: 20px;}.loading-bar {width: 130px;height: 4px;border-radius: 100rem;background-color: var(--loading-bar-background-color);position: relative;overflow: hidden;}.moving-loading-bar {height: 100%;width: 68px;position: absolute;border-radius: 100rem;background-color: var(--moving-loading-bar-background-color);animation: initial-loading 1.5s ease infinite;}@keyframes initial-loading {0% {transform: translate(-34px);}50% {transform: translate(96px);}to {transform: translate(-34px);}}
+                    .loader.hide {opacity: 0;}
+                </style>
+                
+            <meta property="og:title" content="Tutoriel SQL - Opérateur Between" />
+            <meta property="og:description" content="Apprenez à utiliser l'opérateur SQL BETWEEN pour filtrer des valeurs à l'intérieur d'une plage. Couvre les nombres, les dates, le texte, et inclut des exemples et des conseils de syntaxe." />
+            <meta property="og:image" content="https://learntime.net/assets/thumbnail/blog/blog-7.jpg" />
+            <meta name="twitter:card" content="summary_large_image">
+            <meta name="twitter:creator" content="@learntimenet">
+            <meta name="twitter:title" content="Tutoriel SQL - Opérateur Between">
+            <meta name="twitter:description" content="Apprenez à utiliser l'opérateur SQL BETWEEN pour filtrer des valeurs à l'intérieur d'une plage. Couvre les nombres, les dates, le texte, et inclut des exemples et des conseils de syntaxe.">
+            <meta name="twitter:image" content="https://learntime.net/assets/thumbnail/blog/blog-7.jpg">
+        
+                <script>
+                    var disqus_config = function () {
+                        this.page.url = window.location.origin + window.location.pathname;
+                        this.page.identifier = window.location.pathname.replace('/en', '');
+                    };
+                </script>
+            <script defer src="/fr/blog/sql-tutorial/between-operator/between-operator.0063896881c5c9ca0bae.js"></script></head>
+            <body>
+                <div class="loader">
+                    <div class="loading-bar">
+                        <div class="moving-loading-bar"></div>
+                    </div>
+                </div>
+                <script>
+                    var lastVisitTime = parseInt(localStorage.getItem('LAST_VISIT_TIME') || '0');
+                    if ((new Date().valueOf() - lastVisitTime) < 1200000) {
+                        document.querySelector('.loading-bar').style.display = 'none';
+                    }
+                </script>
+                <div class="body-container">
+                    <app-navbar></app-navbar>
+                    <div class="max-width"><app-breadcrumbs></app-breadcrumbs></div>
+                    <main>
+        
+<style>
+    :root {
+        --scroll-indicator-height: 0.5rem;
+        --max-width: 150rem;
+    }
+    @media screen and (min-width: 1024px) {
+        :root {
+            --promotion-height: 0rem !important;
+        }
+    }
+</style>
+<div class="max-width tutorial-container">
+  <div class="tutorial-menu-container">
+    <app-tutorial-menu menu="[{&quot;category&quot;:&quot;SQL Tutorial&quot;,&quot;articles&quot;:[{&quot;title&quot;:&quot;Introduction&quot;,&quot;url&quot;:&quot;/blog/sql-tutorial/&quot;},{&quot;title&quot;:&quot;SQL Syntax&quot;,&quot;url&quot;:&quot;/blog/sql-tutorial/syntax/&quot;},{&quot;title&quot;:&quot;SQL Select&quot;,&quot;url&quot;:&quot;/blog/sql-tutorial/select/&quot;},{&quot;title&quot;:&quot;SQL Select Distinct&quot;,&quot;url&quot;:&quot;/blog/sql-tutorial/select-distinct/&quot;},{&quot;title&quot;:&quot;SQL Where&quot;,&quot;url&quot;:&quot;/blog/sql-tutorial/where/&quot;},{&quot;title&quot;:&quot;SQL Order By&quot;,&quot;url&quot;:&quot;/blog/sql-tutorial/order-by/&quot;},{&quot;title&quot;:&quot;SQL AND Operator&quot;,&quot;url&quot;:&quot;/blog/sql-tutorial/and-operator/&quot;},{&quot;title&quot;:&quot;SQL OR Operator&quot;,&quot;url&quot;:&quot;/blog/sql-tutorial/or-operator/&quot;},{&quot;title&quot;:&quot;SQL NOT Operator&quot;,&quot;url&quot;:&quot;/blog/sql-tutorial/not-operator/&quot;},{&quot;title&quot;:&quot;SQL Update&quot;,&quot;url&quot;:&quot;/blog/sql-tutorial/update/&quot;},{&quot;title&quot;:&quot;SQL Delete&quot;,&quot;url&quot;:&quot;/blog/sql-tutorial/delete/&quot;},{&quot;title&quot;:&quot;SQL Min Max&quot;,&quot;url&quot;:&quot;/blog/sql-tutorial/min-max/&quot;},{&quot;title&quot;:&quot;SQL Count&quot;,&quot;url&quot;:&quot;/blog/sql-tutorial/count/&quot;},{&quot;title&quot;:&quot;SQL Sum&quot;,&quot;url&quot;:&quot;/blog/sql-tutorial/sum/&quot;},{&quot;title&quot;:&quot;SQL Avg&quot;,&quot;url&quot;:&quot;/blog/sql-tutorial/avg/&quot;},{&quot;title&quot;:&quot;SQL Like&quot;,&quot;url&quot;:&quot;/blog/sql-tutorial/like/&quot;},{&quot;title&quot;:&quot;SQL In Operator&quot;,&quot;url&quot;:&quot;/blog/sql-tutorial/in-operator/&quot;},{&quot;title&quot;:&quot;SQL Between Operator&quot;,&quot;url&quot;:&quot;/blog/sql-tutorial/between-operator/&quot;},{&quot;title&quot;:&quot;SQL Aliases&quot;,&quot;url&quot;:&quot;/blog/sql-tutorial/aliases/&quot;},{&quot;title&quot;:&quot;SQL Joins&quot;,&quot;url&quot;:&quot;/blog/sql-tutorial/joins/&quot;},{&quot;title&quot;:&quot;SQL Inner Join&quot;,&quot;url&quot;:&quot;/blog/sql-tutorial/inner-join/&quot;},{&quot;title&quot;:&quot;SQL Left Join&quot;,&quot;url&quot;:&quot;/blog/sql-tutorial/left-join/&quot;},{&quot;title&quot;:&quot;SQL Right Join&quot;,&quot;url&quot;:&quot;/blog/sql-tutorial/right-join/&quot;},{&quot;title&quot;:&quot;SQL Full Join&quot;,&quot;url&quot;:&quot;/blog/sql-tutorial/full-join/&quot;},{&quot;title&quot;:&quot;SQL Cross Join&quot;,&quot;url&quot;:&quot;/blog/sql-tutorial/cross-join/&quot;},{&quot;title&quot;:&quot;SQL Union&quot;,&quot;url&quot;:&quot;/blog/sql-tutorial/union/&quot;},{&quot;title&quot;:&quot;SQL Group By&quot;,&quot;url&quot;:&quot;/blog/sql-tutorial/group-by/&quot;},{&quot;title&quot;:&quot;SQL Having&quot;,&quot;url&quot;:&quot;/blog/sql-tutorial/having/&quot;}]}]"></app-tutorial-menu>
+  </div>
+  <div class="main-container">
+    <app-breadcrumbs class="tutorial"></app-breadcrumbs>
+    <app-blog-title class="tutorial" blog-title="Opérateur SQL Between" blog-description="Apprenez à utiliser l'opérateur SQL BETWEEN pour filtrer des valeurs à l'intérieur d'une plage. Couvre les nombres, les dates, le texte, et inclut des exemples et des conseils de syntaxe." blog-image="/assets/images/blog/blog-7.jpg"></app-blog-title>
+    <div class="blog-content markdown">
+      <h2>📝 Ce que vous apprendrez</h2>
+<ul>
+<li>Ce que fait l&#39;opérateur <code>BETWEEN</code> (entre)</li>
+<li>Syntaxe pour les plages numériques, de date et de texte</li>
+<li>Exemples d&#39;utilisation pratique</li>
+<li>Conseils et problèmes courants</li>
+</ul>
+<h2>🔍 Qu&#39;est-ce qui est ENTRE ?</h2>
+<p>L&#39;opérateur <code>BETWEEN</code> filtre les données à l&#39;intérieur d&#39;une <strong>gamme de valeurs</strong>, y compris les <strong>valeurs de début et de fin</strong>.</p>
+<p>Il peut être utilisé avec :</p>
+<ul>
+<li>📅 Dates</li>
+<li>🔢 Numéros</li>
+<li>🔤 Texte (par ordre alphabétique)</li>
+</ul>
+<h2>🧱 Syntaxe de base</h2>
+<pre><code class="hljs language-sql"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">SELECT</span> <span class="hljs-operator">*</span> <span class="hljs-keyword">FROM</span> table_name
+<span class="hljs-keyword">WHERE</span> column_name <span class="hljs-keyword">BETWEEN</span> value1 <span class="hljs-keyword">AND</span> value2;</code></pre>
+</code></pre><blockquote>
+<p>✔️ <code>valeur1</code> et <code>valeur2</code> sont tous deux inclusifs.</p>
+</blockquote>
+<h2>🧪 Exemple : Plage numérique</h2>
+<h3>Obtenir des produits dont le prix est compris entre 50 et 100 dollars</h3>
+<pre><code class="hljs language-sql"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">SELECT</span> <span class="hljs-operator">*</span> <span class="hljs-keyword">FROM</span> products
+<span class="hljs-keyword">WHERE</span> price <span class="hljs-keyword">BETWEEN</span> <span class="hljs-number">50</span> <span class="hljs-keyword">AND</span> <span class="hljs-number">100</span>;</code></pre>
+</code></pre><h2>📅 Exemple : Plage de dates</h2>
+<h3>Trouver les commandes passées en janvier 2024</h3>
+<pre><code class="hljs language-sql"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">SELECT</span> <span class="hljs-operator">*</span> <span class="hljs-keyword">FROM</span> orders
+<span class="hljs-keyword">WHERE</span> order_date <span class="hljs-keyword">BETWEEN</span> <span class="hljs-string">&#x27;2024-01-01&#x27;</span> <span class="hljs-keyword">AND</span> <span class="hljs-string">&#x27;2024-01-31&#x27;</span>;</code></pre>
+</code></pre><h2>🔤 Exemple : Plage de texte</h2>
+<h3>Obtenir les clients dont le nom est compris entre A et D</h3>
+<pre><code class="hljs language-sql"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">SELECT</span> <span class="hljs-operator">*</span> <span class="hljs-keyword">FROM</span> customers
+<span class="hljs-keyword">WHERE</span> name <span class="hljs-keyword">BETWEEN</span> <span class="hljs-string">&#x27;A&#x27;</span> <span class="hljs-keyword">AND</span> <span class="hljs-string">&#x27;D&#x27;</span>;</code></pre>
+</code></pre><h2>⚠️ Notes</h2>
+<ul>
+<li><code>BETWEEN</code> est <strong>inclusif</strong> (inclut les deux points d&#39;extrémité)</li>
+<li>Fonctionne bien avec <code>AND</code> et <code>ORDER BY</code>.</li>
+<li>Pour les plages exclusives, utilisez plutôt <code>&gt;</code> et <code>&lt;</code>.</li>
+</ul>
+<h2>📘 Recap</h2>
+<ul>
+<li><code>BETWEEN</code> filtre les valeurs <strong>à l&#39;intérieur d&#39;un intervalle</strong></li>
+<li>Fonctionne avec des chiffres, des dates et même du texte</li>
+<li>Les deux valeurs limites sont incluses</li>
+<li>Une alternative plus propre à l&#39;utilisation de <code>&gt;=</code> et <code>&lt;=</code></li>
+</ul>
+
+      <app-subscribe></app-subscribe>
+      <app-comments></app-comments>
+    </div>
+  </div>
+  <aside>
+    <div class="aside-container">
+      <app-share-buttons></app-share-buttons>
+      <app-aside-promotion></app-aside-promotion>
+    </div>
+  </aside>
+</div>
+
+        </main>
+        <app-scroll-top-button></app-scroll-top-button>
+        <app-footer></app-footer>
+        </div>
+            <script>
+                var lastVisitTime = parseInt(localStorage.getItem('LAST_VISIT_TIME') || '0');
+                var timeoutDuration = 1500;
+                //if ((new Date().valueOf() - lastVisitTime) < 1200000) {
+                //    timeoutDuration = 400;
+                //}
+                setTimeout(() => {
+                    document.querySelector('.loader').classList.add('hide');
+                    document.querySelector('.body-container').style.display = 'block';
+                    document.dispatchEvent(new CustomEvent('page-loader-hide'));
+                }, timeoutDuration);
+                setTimeout(() => {
+                    document.querySelector('.loader').style.display = 'none';
+                }, 2000);
+                localStorage.setItem('LAST_VISIT_TIME', new Date().valueOf());
+            </script>
+        
+                <!-- Google tag (gtag.js) -->
+                <script async src="https://www.googletagmanager.com/gtag/js?id=G-S6JEVF53JZ"></script>
+                <script>
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag() {
+                        dataLayer.push(arguments);
+                    }
+                    gtag('js', new Date());
+
+                    gtag('config', 'G-S6JEVF53JZ');
+                </script>
+            
+            <script>
+                window.axeptioSettings = {
+                    clientId: "67fc2975df7d77940a4ff73d",
+                    cookiesVersion: "13042025",
+                    googleConsentMode: {
+                        default: {
+                            analytics_storage: "denied",
+                            ad_storage: "denied",
+                            ad_user_data: "denied",
+                            ad_personalization: "denied",
+                            wait_for_update: 500
+                        }
+                    }
+                };
+                (function(d, s) {
+                    var t = d.getElementsByTagName(s)[0], e = d.createElement(s);
+                    e.async = true; e.src = "//static.axept.io/sdk.js";
+                    t.parentNode.insertBefore(e, t);
+                })(document, "script");
+            </script>
+            <script src="/assets/scripts/markdown.js"></script></body></html>
