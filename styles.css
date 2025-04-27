@@ -335,8 +335,6 @@ video {
     margin-top: 0;
     margin-bottom: 1rem;
     padding-left: 2em; }
-  .markdown p + ul {
-    margin-top: -1.5rem; }
   .markdown ol ol,
   .markdown ul ol {
     list-style-type: lower-roman; }
