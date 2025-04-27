@@ -276,6 +276,10 @@ video {
 .nowrap {
   white-space: nowrap; }
 
+.static-page-image {
+  width: 70%;
+  margin-bottom: 4rem; }
+
 .markdown {
   flex: 1; }
   .markdown > *:first-child {
