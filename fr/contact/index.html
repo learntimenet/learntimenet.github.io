@@ -56,12 +56,27 @@
                 </script>
                 <div class="body-container">
                     <app-navbar></app-navbar>
-                    <div class="max-width"><app-breadcrumbs></app-breadcrumbs></div>
+                    
                     <main>
         
+<style>
+    .body-container {
+      display: flex !important;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    main {
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+        min-height: 0 !important;
+        flex: 1;
+    }
+</style>
 <app-page-title page-title="Restons en contact !"></app-page-title>
-<img class="max-width static-page-image" src="../../assets/images/contact.jpg" alt="">
-<div class="max-width markdown"><p>Bonjour ! 👋 Je suis ravie que vous souhaitiez me contacter. Que vous ayez une question, un feedback, une idée de collaboration ou simplement envie de dire bonjour, j'adorerais avoir de vos nouvelles. La meilleure façon de me joindre c'est par mail : <a href="mailto:contact@learntime.net">contact@learntime.net</a>. Je m'efforce de répondre à <b>chaque email</b> dans un délai de <b>1 à 2 jours ouvrés</b>. Si votre message est urgent, n'hésitez pas à mettre <b>[URGENT]</b> dans l'objet !</p><p>Ce siteweb existe grâce à <b>des lecteurs géniaux comme vous</b>. Vos retours, suggestions et mots gentils comptent énormément pour moi. J'ai hâte d'avoir de vos nouvelles !</p></div>
+<div class="static-page max-width">
+    <img class="static-page-image" src="../../assets/images/contact.jpg" alt="">
+    <div class="markdown"><p>Bonjour ! 👋 Je suis ravie que vous souhaitiez me contacter. Que vous ayez une question, un feedback, une idée de collaboration ou simplement envie de dire bonjour, j'adorerais avoir de vos nouvelles. La meilleure façon de me joindre c'est par mail : <a href="mailto:contact@learntime.net">contact@learntime.net</a>. Je m'efforce de répondre à <b>chaque email</b> dans un délai de <b>1 à 2 jours ouvrés</b>. Si votre message est urgent, n'hésitez pas à mettre <b>[URGENT]</b> dans l'objet !</p><p>Ce siteweb existe grâce à <b>des lecteurs géniaux comme vous</b>. Vos retours, suggestions et mots gentils comptent énormément pour moi. J'ai hâte d'avoir de vos nouvelles !</p></div>
+</div>
 
         </main>
         <app-scroll-top-button></app-scroll-top-button>

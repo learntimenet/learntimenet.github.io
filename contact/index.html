@@ -56,12 +56,27 @@
                 </script>
                 <div class="body-container">
                     <app-navbar></app-navbar>
-                    <div class="max-width"><app-breadcrumbs></app-breadcrumbs></div>
+                    
                     <main>
         
+<style>
+    .body-container {
+      display: flex !important;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    main {
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+        min-height: 0 !important;
+        flex: 1;
+    }
+</style>
 <app-page-title page-title="Let’s Connect!"></app-page-title>
-<img class="max-width static-page-image" src="../../assets/images/contact.jpg" alt="">
-<div class="max-width markdown"><p>Hi there! 👋 I’m so glad you want to get in touch. Whether you have a question, feedback, a collaboration idea, or just want to say hello, I’d love to hear from you. The Best Way to Reach Me is by email: <a href="mailto:contact@learntime.net">contact@learntime.net</a>. I do my best to respond to <b>every email</b> within <b>1–2 business days</b>. If your message is time-sensitive, feel free to put <b>[URGENT]</b> in the subject line!</p> <p>This website exists because of <b>awesome readers like you</b>. Your thoughts, suggestions, and kind words mean the world to me. I can’t wait to hear from you!</p></div>
+<div class="static-page max-width">
+    <img class="static-page-image" src="../../assets/images/contact.jpg" alt="">
+    <div class="markdown"><p>Hi there! 👋 I’m so glad you want to get in touch. Whether you have a question, feedback, a collaboration idea, or just want to say hello, I’d love to hear from you. The Best Way to Reach Me is by email: <a href="mailto:contact@learntime.net">contact@learntime.net</a>. I do my best to respond to <b>every email</b> within <b>1–2 business days</b>. If your message is time-sensitive, feel free to put <b>[URGENT]</b> in the subject line!</p> <p>This website exists because of <b>awesome readers like you</b>. Your thoughts, suggestions, and kind words mean the world to me. I can’t wait to hear from you!</p></div>
+</div>
 
         </main>
         <app-scroll-top-button></app-scroll-top-button>

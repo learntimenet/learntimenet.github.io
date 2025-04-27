@@ -276,14 +276,6 @@ video {
 .nowrap {
   white-space: nowrap; }
 
-.static-page-image {
-  width: 80%;
-  margin-top: 2rem;
-  margin-bottom: 4rem; }
-  @media screen and (min-width: 1024px) {
-    .static-page-image {
-      width: 50%; } }
-
 .markdown {
   flex: 1; }
   .markdown > *:first-child {
@@ -1033,6 +1025,27 @@ aside {
   position: -webkit-sticky;
   position: sticky;
   top: calc(var(--navbar-height) + var(--promotion-height) + 3rem); }
+
+.static-page {
+  display: flex;
+  column-gap: clamp(3rem, 5vw, 13rem);
+  margin-top: 6rem;
+  margin-bottom: 6rem; }
+  .static-page .static-page-image {
+    flex: 1;
+    align-self: flex-start;
+    width: 0;
+    position: sticky;
+    top: calc(var(--navbar-height) + var(--promotion-height) + var(--scroll-indicator-height) + 3rem); }
+  @media screen and (max-width: 768px) {
+    .static-page {
+      flex-direction: column;
+      row-gap: 5rem; }
+      .static-page .static-page-image {
+        position: static;
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto; } }
 
 .toast-container {
   z-index: var(--toast-z-index);
