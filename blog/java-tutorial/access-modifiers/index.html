@@ -97,12 +97,51 @@
 <h2>🛡️ What Are Access Modifiers?</h2>
 <p>Access modifiers define <strong>who can access a class, method, or variable</strong>.</p>
 <p>There are <strong>four</strong> types:</p>
-<p>| Modifier   | Accessible Within | Same Package | Subclass | Everywhere |
-|||--|-||
-| <code>private</code>  | ✅                | ❌           | ❌       | ❌         |
-| (default)  | ✅                | ✅           | ❌       | ❌         |
-| <code>protected</code>| ✅                | ✅           | ✅       | ❌         |
-| <code>public</code>   | ✅                | ✅           | ✅       | ✅         |</p>
+<table>
+<thead>
+<tr>
+<th>Modifier</th>
+<th>Accessible Within</th>
+<th>Same Package</th>
+<th>Subclass</th>
+<th>Everywhere</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>private</code></td>
+<td>✅</td>
+<td>❌</td>
+<td>❌</td>
+<td>❌</td>
+</tr>
+<tr>
+<td>(default)</td>
+<td>✅</td>
+<td>✅</td>
+<td>❌</td>
+<td>❌</td>
+</tr>
+<tr>
+<td><code>protected</code></td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+<td>❌</td>
+</tr>
+<tr>
+<td><code>public</code></td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
 <h2>🔒 <strong>private</strong></h2>
 <p>Accessible <strong>only within the same class</strong>.</p>
 <pre><code class="hljs language-java"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">BankAccount</span> {
