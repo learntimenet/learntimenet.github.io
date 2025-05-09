@@ -993,6 +993,7 @@ pre.diagram code.hljs {
 
 .tutorial-container {
   display: flex;
+  justify-content: space-between;
   column-gap: clamp(3rem, 3vw, 6rem); }
 
 .main-container {
