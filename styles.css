@@ -164,7 +164,10 @@ body {
   --toast-warn-border-color: #fcead0;
   --toast-error-color: #8d1a26;
   --toast-error-background-color: #fdecea;
-  --toast-error-border-color: #fadad7; }
+  --toast-error-border-color: #fadad7;
+  --transparent-background: #f9fafb
+  url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMAQMAAABsu86kAAAAA3NCSVQICAjb4U/gAAAABlBMVEXu7u7///8o06qaAAAACXBIWXMAAAsSAAALEgHS3X78AAAAFXRFWHRDcmVhdGlvbiBUaW1lADcvMjIvMTL7FNdCAAAAHHRFWHRTb2Z0d2FyZQBBZG9iZSBGaXJld29ya3MgQ1M1cbXjNgAAABFJREFUCJljYP7AgIb+MKAhAM8/C5vWL6zSAAAAAElFTkSuQmCC)
+  top left repeat; }
 
 *,
 *::after,
