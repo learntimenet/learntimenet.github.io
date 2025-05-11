@@ -1,0 +1,280 @@
+[
+    {
+      "category": "1xx Informational",
+      "responses": [
+        {
+          "name": "100 Continue",
+          "description": "The server has received the request headers and the client should proceed to send the request body."
+        },
+        {
+          "name": "101 Switching Protocols",
+          "description": "The requester has asked the server to switch protocols, and the server has agreed to do so."
+        },
+        {
+          "name": "102 Processing",
+          "description": "The server has received and is processing the request, but no response is available yet."
+        },
+        {
+          "name": "103 Early Hints",
+          "description": "Used to return some response headers before final HTTP message."
+        }
+      ]
+    },
+    {
+      "category": "2xx Success",
+      "responses": [
+        {
+          "name": "200 OK",
+          "description": "The request has succeeded."
+        },
+        {
+          "name": "201 Created",
+          "description": "The request has been fulfilled and resulted in a new resource being created."
+        },
+        {
+          "name": "202 Accepted",
+          "description": "The request has been accepted for processing, but the processing has not been completed."
+        },
+        {
+          "name": "203 Non-Authoritative Information",
+          "description": "The server is a transforming proxy that received a 200 OK from its origin, but is returning a modified version of the origin's response."
+        },
+        {
+          "name": "204 No Content",
+          "description": "The server successfully processed the request, and is not returning any content."
+        },
+        {
+          "name": "205 Reset Content",
+          "description": "The server successfully processed the request, asks that the requester reset its document view, and is not returning any content."
+        },
+        {
+          "name": "206 Partial Content",
+          "description": "The server is delivering only part of the resource due to a range header sent by the client."
+        },
+        {
+          "name": "207 Multi-Status",
+          "description": "The message body that follows is an XML message and can contain a number of separate response codes."
+        },
+        {
+          "name": "208 Already Reported",
+          "description": "The members of a DAV binding have already been enumerated in a preceding part of the response."
+        },
+        {
+          "name": "226 IM Used",
+          "description": "The server has fulfilled a request for the resource, and the response is a representation of the result of one or more instance-manipulations applied to the current instance."
+        }
+      ]
+    },
+    {
+      "category": "3xx Redirection",
+      "responses": [
+        {
+          "name": "300 Multiple Choices",
+          "description": "Indicates multiple options for the resource from which the client may choose."
+        },
+        {
+          "name": "301 Moved Permanently",
+          "description": "This and all future requests should be directed to the given URI."
+        },
+        {
+          "name": "302 Found",
+          "description": "Tells the client to look at another URL."
+        },
+        {
+          "name": "303 See Other",
+          "description": "The response to the request can be found under another URI using the GET method."
+        },
+        {
+          "name": "304 Not Modified",
+          "description": "Indicates that the resource has not been modified since the version specified by the request headers."
+        },
+        {
+          "name": "305 Use Proxy",
+          "description": "The requested resource is available only through a proxy, the address for which is provided in the response."
+        },
+        {
+          "name": "306 Switch Proxy",
+          "description": "No longer used. Originally meant 'Subsequent requests should use the specified proxy.'"
+        },
+        {
+          "name": "307 Temporary Redirect",
+          "description": "In this case, the request should be repeated with another URI; however, future requests should still use the original URI."
+        },
+        {
+          "name": "308 Permanent Redirect",
+          "description": "The request and all future requests should be repeated using another URI."
+        }
+      ]
+    },
+    {
+      "category": "4xx Client Errors",
+      "responses": [
+        {
+          "name": "400 Bad Request",
+          "description": "The server could not understand the request due to invalid syntax."
+        },
+        {
+          "name": "401 Unauthorized",
+          "description": "The client must authenticate itself to get the requested response."
+        },
+        {
+          "name": "402 Payment Required",
+          "description": "Reserved for future use."
+        },
+        {
+          "name": "403 Forbidden",
+          "description": "The client does not have access rights to the content."
+        },
+        {
+          "name": "404 Not Found",
+          "description": "The server can not find the requested resource."
+        },
+        {
+          "name": "405 Method Not Allowed",
+          "description": "The request method is known by the server but is not supported by the target resource."
+        },
+        {
+          "name": "406 Not Acceptable",
+          "description": "The server cannot produce a response matching the list of acceptable values defined in the request's proactive content negotiation headers."
+        },
+        {
+          "name": "407 Proxy Authentication Required",
+          "description": "The client must first authenticate itself with the proxy."
+        },
+        {
+          "name": "408 Request Timeout",
+          "description": "The server would like to shut down this unused connection."
+        },
+        {
+          "name": "409 Conflict",
+          "description": "The request conflicts with the current state of the server."
+        },
+        {
+          "name": "410 Gone",
+          "description": "The content has been permanently deleted from server, with no forwarding address."
+        },
+        {
+          "name": "411 Length Required",
+          "description": "The server refuses to accept the request without a defined Content-Length header."
+        },
+        {
+          "name": "412 Precondition Failed",
+          "description": "The client has indicated preconditions in its headers that the server does not meet."
+        },
+        {
+          "name": "413 Payload Too Large",
+          "description": "Request entity is larger than limits defined by server."
+        },
+        {
+          "name": "414 URI Too Long",
+          "description": "The URI requested by the client is longer than the server is willing to interpret."
+        },
+        {
+          "name": "415 Unsupported Media Type",
+          "description": "The media format of the requested data is not supported by the server."
+        },
+        {
+          "name": "416 Range Not Satisfiable",
+          "description": "The range specified by the Range header field in the request can't be fulfilled."
+        },
+        {
+          "name": "417 Expectation Failed",
+          "description": "The expectation given in the request's Expect header could not be met."
+        },
+        {
+          "name": "418 I'm a teapot",
+          "description": "The server refuses the attempt to brew coffee with a teapot."
+        },
+        {
+          "name": "421 Misdirected Request",
+          "description": "The request was directed at a server that is not able to produce a response."
+        },
+        {
+          "name": "422 Unprocessable Content",
+          "description": "The request was well-formed but was unable to be followed due to semantic errors."
+        },
+        {
+          "name": "423 Locked",
+          "description": "The resource that is being accessed is locked."
+        },
+        {
+          "name": "424 Failed Dependency",
+          "description": "The request failed due to failure of a previous request."
+        },
+        {
+          "name": "425 Too Early",
+          "description": "Indicates that the server is unwilling to risk processing a request that might be replayed."
+        },
+        {
+          "name": "426 Upgrade Required",
+          "description": "The client should switch to a different protocol."
+        },
+        {
+          "name": "428 Precondition Required",
+          "description": "The origin server requires the request to be conditional."
+        },
+        {
+          "name": "429 Too Many Requests",
+          "description": "The user has sent too many requests in a given amount of time."
+        },
+        {
+          "name": "431 Request Header Fields Too Large",
+          "description": "The server is unwilling to process the request because its header fields are too large."
+        },
+        {
+          "name": "451 Unavailable For Legal Reasons",
+          "description": "The user-agent requested a resource that cannot legally be provided."
+        }
+      ]
+    },
+    {
+      "category": "5xx Server Errors",
+      "responses": [
+        {
+          "name": "500 Internal Server Error",
+          "description": "The server has encountered a situation it doesn't know how to handle."
+        },
+        {
+          "name": "501 Not Implemented",
+          "description": "The request method is not supported by the server and cannot be handled."
+        },
+        {
+          "name": "502 Bad Gateway",
+          "description": "The server, while acting as a gateway or proxy, received an invalid response from the upstream server."
+        },
+        {
+          "name": "503 Service Unavailable",
+          "description": "The server is not ready to handle the request."
+        },
+        {
+          "name": "504 Gateway Timeout",
+          "description": "The server is acting as a gateway and cannot get a response in time."
+        },
+        {
+          "name": "505 HTTP Version Not Supported",
+          "description": "The HTTP version used in the request is not supported by the server."
+        },
+        {
+          "name": "506 Variant Also Negotiates",
+          "description": "Transparent content negotiation for the request results in a circular reference."
+        },
+        {
+          "name": "507 Insufficient Storage",
+          "description": "The server is unable to store the representation needed to complete the request."
+        },
+        {
+          "name": "508 Loop Detected",
+          "description": "The server detected an infinite loop while processing the request."
+        },
+        {
+          "name": "510 Not Extended",
+          "description": "Further extensions to the request are required for the server to fulfill it."
+        },
+        {
+          "name": "511 Network Authentication Required",
+          "description": "The client needs to authenticate to gain network access."
+        }
+      ]
+    }
+  ]
+  

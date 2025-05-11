@@ -1,0 +1,279 @@
+[
+  {
+    "category": "1xx Réponse d'information",
+    "responses": [
+      {
+        "name": "100 Continue",
+        "description": "Le serveur a reçu les en-têtes de la requête et le client peut envoyer le corps de la requête."
+      },
+      {
+        "name": "101 Changement de protocole",
+        "description": "Le client a demandé un changement de protocole et le serveur l'a accepté."
+      },
+      {
+        "name": "102 Traitement",
+        "description": "Le serveur a reçu la requête et la traite, mais aucune réponse n'est encore disponible."
+      },
+      {
+        "name": "103 Premiers indices",
+        "description": "Permet d'envoyer des en-têtes de réponse avant la réponse finale."
+      }
+    ]
+  },
+  {
+    "category": "2xx Succès",
+    "responses": [
+      {
+        "name": "200 OK",
+        "description": "La requête a réussi."
+      },
+      {
+        "name": "201 Créé",
+        "description": "La requête a été réussie et une nouvelle ressource a été créée."
+      },
+      {
+        "name": "202 Accepté",
+        "description": "La requête a été acceptée pour traitement, mais le traitement n'est pas terminé."
+      },
+      {
+        "name": "203 Information non autoritaire",
+        "description": "La réponse provient d'un proxy ou a été modifiée."
+      },
+      {
+        "name": "204 Pas de contenu",
+        "description": "La requête a été traitée avec succès mais ne retourne aucun contenu."
+      },
+      {
+        "name": "205 Réinitialiser le contenu",
+        "description": "Le client doit réinitialiser la vue du document."
+      },
+      {
+        "name": "206 Contenu partiel",
+        "description": "Le serveur renvoie une partie de la ressource à cause de l’en-tête Range."
+      },
+      {
+        "name": "207 Multi-Statut",
+        "description": "Réponse XML contenant plusieurs codes d'état."
+      },
+      {
+        "name": "208 Déjà signalé",
+        "description": "Les éléments ont déjà été mentionnés dans une réponse précédente."
+      },
+      {
+        "name": "226 IM Utilisé",
+        "description": "Réponse avec des transformations appliquées à une instance."
+      }
+    ]
+  },
+  {
+    "category": "3xx Redirection",
+    "responses": [
+      {
+        "name": "300 Choix multiples",
+        "description": "Plusieurs options sont disponibles pour la ressource demandée."
+      },
+      {
+        "name": "301 Déplacé de façon permanente",
+        "description": "La ressource demandée a été déplacée définitivement."
+      },
+      {
+        "name": "302 Trouvé",
+        "description": "La ressource demandée réside temporairement sous une autre URI."
+      },
+      {
+        "name": "303 Voir autre",
+        "description": "La réponse se trouve à une autre URI et doit être récupérée avec GET."
+      },
+      {
+        "name": "304 Non modifié",
+        "description": "La ressource n’a pas été modifiée depuis la dernière requête."
+      },
+      {
+        "name": "305 Utiliser un proxy",
+        "description": "La ressource est uniquement accessible via un proxy."
+      },
+      {
+        "name": "306 Changement de proxy",
+        "description": "Code obsolète."
+      },
+      {
+        "name": "307 Redirection temporaire",
+        "description": "La requête doit être répétée avec une autre URI temporairement."
+      },
+      {
+        "name": "308 Redirection permanente",
+        "description": "La requête doit toujours être répétée avec une autre URI."
+      }
+    ]
+  },
+  {
+    "category": "4xx Erreurs côté client",
+    "responses": [
+      {
+        "name": "400 Requête incorrecte",
+        "description": "Le serveur ne peut pas comprendre la requête à cause d’une syntaxe invalide."
+      },
+      {
+        "name": "401 Non autorisé",
+        "description": "Le client doit s’authentifier."
+      },
+      {
+        "name": "402 Paiement requis",
+        "description": "Réservé pour une utilisation future."
+      },
+      {
+        "name": "403 Interdit",
+        "description": "Le serveur comprend la requête mais refuse de l’autoriser."
+      },
+      {
+        "name": "404 Introuvable",
+        "description": "La ressource demandée est introuvable."
+      },
+      {
+        "name": "405 Méthode non autorisée",
+        "description": "La méthode de requête n’est pas autorisée pour la ressource."
+      },
+      {
+        "name": "406 Non acceptable",
+        "description": "Aucune des représentations disponibles n'est acceptable selon les en-têtes envoyés."
+      },
+      {
+        "name": "407 Authentification proxy requise",
+        "description": "Le client doit d'abord s'authentifier auprès du proxy."
+      },
+      {
+        "name": "408 Temps d'attente écoulé",
+        "description": "Le serveur n’a pas reçu la requête complète à temps."
+      },
+      {
+        "name": "409 Conflit",
+        "description": "La requête est en conflit avec l’état actuel de la ressource."
+      },
+      {
+        "name": "410 Parti",
+        "description": "La ressource n’est plus disponible et ne le sera plus."
+      },
+      {
+        "name": "411 Longueur requise",
+        "description": "Le serveur exige un en-tête Content-Length."
+      },
+      {
+        "name": "412 Condition préalable échouée",
+        "description": "Une condition envoyée par le client a échoué."
+      },
+      {
+        "name": "413 Charge utile trop grande",
+        "description": "La requête est trop grande pour être traitée."
+      },
+      {
+        "name": "414 URI trop longue",
+        "description": "L'URI est trop longue pour être traitée par le serveur."
+      },
+      {
+        "name": "415 Type de média non supporté",
+        "description": "Le type de contenu n’est pas supporté par le serveur."
+      },
+      {
+        "name": "416 Plage non satisfaisable",
+        "description": "La plage spécifiée ne peut pas être satisfaite."
+      },
+      {
+        "name": "417 Attente échouée",
+        "description": "L’attente spécifiée dans l’en-tête Expect ne peut pas être satisfaite."
+      },
+      {
+        "name": "418 Je suis une théière",
+        "description": "Code de plaisanterie. Refuse de faire du café dans une théière."
+      },
+      {
+        "name": "421 Requête mal dirigée",
+        "description": "La requête a été envoyée à un serveur incapable d'y répondre."
+      },
+      {
+        "name": "422 Contenu inprocessable",
+        "description": "La requête est bien formée, mais contient des erreurs sémantiques."
+      },
+      {
+        "name": "423 Verrouillé",
+        "description": "La ressource est verrouillée."
+      },
+      {
+        "name": "424 Dépendance échouée",
+        "description": "Une requête précédente a échoué, ce qui empêche cette requête."
+      },
+      {
+        "name": "425 Trop tôt",
+        "description": "Le serveur refuse de traiter la requête en raison du risque de relecture."
+      },
+      {
+        "name": "426 Mise à niveau requise",
+        "description": "Le client doit changer de protocole."
+      },
+      {
+        "name": "428 Condition préalable requise",
+        "description": "Le serveur exige que la requête soit conditionnelle."
+      },
+      {
+        "name": "429 Trop de requêtes",
+        "description": "Le client a envoyé trop de requêtes dans un temps donné."
+      },
+      {
+        "name": "431 Champs d'en-tête trop grands",
+        "description": "Les en-têtes de la requête sont trop volumineux."
+      },
+      {
+        "name": "451 Indisponible pour des raisons légales",
+        "description": "La ressource est bloquée pour des raisons légales."
+      }
+    ]
+  },
+  {
+    "category": "5xx Erreurs côté serveur",
+    "responses": [
+      {
+        "name": "500 Erreur interne du serveur",
+        "description": "Le serveur a rencontré une erreur inattendue."
+      },
+      {
+        "name": "501 Non implémenté",
+        "description": "La méthode de requête n'est pas supportée par le serveur."
+      },
+      {
+        "name": "502 Mauvaise passerelle",
+        "description": "Le serveur, en tant que passerelle, a reçu une réponse invalide."
+      },
+      {
+        "name": "503 Service indisponible",
+        "description": "Le serveur est actuellement indisponible."
+      },
+      {
+        "name": "504 Délai d'attente de la passerelle dépassé",
+        "description": "Le serveur n’a pas reçu de réponse à temps de l’autre serveur."
+      },
+      {
+        "name": "505 Version HTTP non supportée",
+        "description": "La version HTTP utilisée n’est pas supportée."
+      },
+      {
+        "name": "506 La variante négocie également",
+        "description": "Erreur de négociation de contenu circulaire."
+      },
+      {
+        "name": "507 Espace insuffisant",
+        "description": "Le serveur ne peut pas stocker la représentation nécessaire."
+      },
+      {
+        "name": "508 Boucle détectée",
+        "description": "Le serveur a détecté une boucle infinie."
+      },
+      {
+        "name": "510 Non étendu",
+        "description": "Le client doit étendre la requête pour qu'elle soit traitée."
+      },
+      {
+        "name": "511 Authentification réseau requise",
+        "description": "Le client doit s’authentifier pour accéder au réseau."
+      }
+    ]
+  }
+]
