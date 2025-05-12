@@ -119,6 +119,61 @@
     <h1>Java Programming Quiz</h1>
     <app-main quiz="{&quot;date&quot;:&quot;20241103&quot;,&quot;title&quot;:&quot;Java Programming Quiz&quot;,&quot;description&quot;:&quot;Challenge yourself with this advanced Java programming quiz covering multithreading, generics, collections, lambda expressions, and Java 8+ features. Perfect for Java developers, programmers, and coding interview preparation&quot;,&quot;category&quot;:&quot;example&quot;,&quot;slug&quot;:&quot;/quiz/example/example&quot;,&quot;tags&quot;:[],&quot;questions&quot;:[{&quot;question&quot;:&quot;<p>What does HTML stand for?</p>\n&quot;,&quot;code&quot;:&quot;&quot;,&quot;options&quot;:[&quot;<p>HyperText Markup Language</p>\n&quot;,&quot;<p>HighText Machine Language</p>\n&quot;,&quot;<p>HyperTransfer Markup Language</p>\n&quot;,&quot;<p>Hyperlink Text Management Language</p>\n&quot;],&quot;answers&quot;:[&quot;<p>HyperText Markup Language</p>\n&quot;],&quot;explanation&quot;:&quot;<p>HTML stands for HyperText Markup Language.</p>\n\n&quot;},{&quot;question&quot;:&quot;<p>What does this error mean?</p>\n&quot;,&quot;code&quot;:&quot;<pre><code class=\&quot;language-sh\&quot;><pre class=\&quot;highlight\&quot;><code class=\&quot;hljs\&quot;>Warning: Can<span class=\&quot;hljs-string\&quot;>&#x27;t perform state update on unmounted component\n</span></code></pre></code></pre>\n&quot;,&quot;options&quot;:[&quot;<p>Missing useEffect cleanup</p>\n&quot;,&quot;<p>Invalid hook call</p>\n&quot;,&quot;<p>Memory leak</p>\n&quot;,&quot;<p>Both A and C</p>\n&quot;],&quot;answers&quot;:[&quot;<p>Both A and C</p>\n&quot;],&quot;explanation&quot;:&quot;<p>Async operation updating state after component unmounts</p>\n\n&quot;}],&quot;keywords&quot;:&quot;java programming quiz, advanced java questions, java coding test, java interview questions, multithreading quiz, java generics quiz, collections framework quiz, lambda expressions quiz, java stream api quiz, java certification questions, java concurrency quiz, exception handling quiz, java memory management quiz, functional interfaces quiz, java modules quiz, thread-safe java quiz, coding interview prep, java 8 features quiz, java developer test, jvm internals quiz&quot;,&quot;visible&quot;:false,&quot;image&quot;:&quot;/assets/thumbnail/quiz/quiz-0.jpg&quot;,&quot;tutorial&quot;:null}"></app-main>
     <app-mobile-share-buttons class="mobile"></app-mobile-share-buttons>
+    
+        </main>
+        <app-scroll-top-button></app-scroll-top-button>
+        <app-footer></app-footer>
+        </div>
+            <script>
+                var lastVisitTime = parseInt(localStorage.getItem('LAST_VISIT_TIME') || '0');
+                var timeoutDuration = 1500;
+                //if ((new Date().valueOf() - lastVisitTime) < 1200000) {
+                //    timeoutDuration = 400;
+                //}
+                setTimeout(() => {
+                    document.querySelector('.loader').classList.add('hide');
+                    document.querySelector('.body-container').style.display = 'block';
+                    document.dispatchEvent(new CustomEvent('page-loader-hide'));
+                }, timeoutDuration);
+                setTimeout(() => {
+                    document.querySelector('.loader').style.display = 'none';
+                }, 2000);
+                localStorage.setItem('LAST_VISIT_TIME', new Date().valueOf());
+            </script>
+        
+                <!-- Google tag (gtag.js) -->
+                <script async src="https://www.googletagmanager.com/gtag/js?id=G-S6JEVF53JZ"></script>
+                <script>
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag() {
+                        dataLayer.push(arguments);
+                    }
+                    gtag('js', new Date());
+
+                    gtag('config', 'G-S6JEVF53JZ');
+                </script>
+            
+            <script>
+                window.axeptioSettings = {
+                    clientId: "67fc2975df7d77940a4ff73d",
+                    cookiesVersion: "13042025",
+                    googleConsentMode: {
+                        default: {
+                            analytics_storage: "denied",
+                            ad_storage: "denied",
+                            ad_user_data: "denied",
+                            ad_personalization: "denied",
+                            wait_for_update: 500
+                        }
+                    }
+                };
+                (function(d, s) {
+                    var t = d.getElementsByTagName(s)[0], e = d.createElement(s);
+                    e.async = true; e.src = "//static.axept.io/sdk.js";
+                    t.parentNode.insertBefore(e, t);
+                })(document, "script");
+            </script>
+            </body></html>
     <app-subscribe></app-subscribe>
     <app-comments></app-comments>
   </div>
