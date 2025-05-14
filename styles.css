@@ -1076,3 +1076,8 @@ aside {
     background-color: var(--toast-error-background-color);
     color: var(--toast-error-color);
     border: 1px solid var(--toast-error-border-color); }
+
+.adsbygoogle {
+  min-width: 0;
+  padding: 2rem;
+  background-color: #FAFAFA; }
