@@ -427,7 +427,7 @@ function resizeIFrame() {
 }
 
 function addTutorialNextAndPreviousUrls() {
-  const tutorial = document.querySelector('app-tutorial-menu');
+  const tutorial = document.querySelector('app-menu');
   if (!tutorial) return;
   const menu = JSON.parse(tutorial.getAttribute('menu'));
   const currentUrl = getCurrentUrl();
