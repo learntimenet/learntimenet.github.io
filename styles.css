@@ -1000,7 +1000,8 @@ pre.diagram code.hljs {
   column-gap: clamp(3rem, 3vw, 6rem); }
 
 .main-container {
-  flex: 1; }
+  flex: 1;
+  min-width: 0; }
 
 .tutorial-menu-container {
   display: none;
