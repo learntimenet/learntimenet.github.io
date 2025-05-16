@@ -83,8 +83,6 @@
     <app-blog-title blog-title="10 erreurs courantes à éviter lors de l'apprentissage du développement web" blog-description="Découvrez les 10 erreurs les plus courantes commises par les débutants lors de l'apprentissage du développement web et comment les éviter. Ce guide vous aidera à rester sur la bonne voie et à réussir dans votre apprentissage du codage, qu'il s'agisse de sauter les bases ou d'ignorer le contrôle de version" blog-image="/assets/images/blog/blog-8.jpg"></app-blog-title>
     
             <div class="ads-container">
-                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2783240678439274"
-                    crossorigin="anonymous"></script>
                 <ins class="adsbygoogle"
                     style="display:block; text-align:center;"
                     data-ad-layout="in-article"
@@ -92,7 +90,14 @@
                     data-ad-client="ca-pub-2783240678439274"
                     data-ad-slot="4452113801"></ins>
                 <script>
-                    (adsbygoogle = window.adsbygoogle || []).push({});
+                    setTimeout(function() {
+                        var ads = document.createElement('script');
+                        ads.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2783240678439274';
+                        ads.async = true;
+                        ads.crossorigin = 'anonymous';
+                        document.head.appendChild(ads);
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    }, 2000);
                 </script>
             </div>
         

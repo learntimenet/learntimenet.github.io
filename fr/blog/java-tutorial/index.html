@@ -88,8 +88,6 @@
     <app-blog-title class="tutorial" blog-title="Tutoriel Java" blog-description="Maîtrisez la programmation Java grâce à nos tutoriels gratuits, étape par étape. Apprenez le cœur de Java, le multithreading, l'optimisation de la JVM et la préparation aux entretiens. Inclut des exemples pratiques, des projets du monde réel et des conseils de carrière pour les débutants et les développeurs avancés. Commencez à coder dès aujourd'hui !" blog-image="/assets/images/blog/blog-2.jpg"></app-blog-title>
     
             <div class="ads-container">
-                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2783240678439274"
-                    crossorigin="anonymous"></script>
                 <ins class="adsbygoogle"
                     style="display:block; text-align:center;"
                     data-ad-layout="in-article"
@@ -97,7 +95,14 @@
                     data-ad-client="ca-pub-2783240678439274"
                     data-ad-slot="4452113801"></ins>
                 <script>
-                    (adsbygoogle = window.adsbygoogle || []).push({});
+                    setTimeout(function() {
+                        var ads = document.createElement('script');
+                        ads.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2783240678439274';
+                        ads.async = true;
+                        ads.crossorigin = 'anonymous';
+                        document.head.appendChild(ads);
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    }, 2000);
                 </script>
             </div>
         

@@ -88,8 +88,6 @@
     <app-blog-title class="tutorial" blog-title="SQL Where" blog-description="Learn how to use the SQL WHERE clause to filter database records based on conditions. Includes syntax, examples, and common use cases." blog-image="/assets/images/blog/blog-5.jpg"></app-blog-title>
     
             <div class="ads-container">
-                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2783240678439274"
-                    crossorigin="anonymous"></script>
                 <ins class="adsbygoogle"
                     style="display:block; text-align:center;"
                     data-ad-layout="in-article"
@@ -97,7 +95,14 @@
                     data-ad-client="ca-pub-2783240678439274"
                     data-ad-slot="4452113801"></ins>
                 <script>
-                    (adsbygoogle = window.adsbygoogle || []).push({});
+                    setTimeout(function() {
+                        var ads = document.createElement('script');
+                        ads.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2783240678439274';
+                        ads.async = true;
+                        ads.crossorigin = 'anonymous';
+                        document.head.appendChild(ads);
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    }, 2000);
                 </script>
             </div>
         

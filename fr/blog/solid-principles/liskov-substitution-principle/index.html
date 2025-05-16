@@ -88,8 +88,6 @@
     <app-blog-title class="tutorial" blog-title="Principe de substitution de Liskov" blog-description="Comprendre le principe de substitution de Liskov (LSP) à partir des principes de conception SOLID. Apprenez à vous assurer que les sous-classes peuvent remplacer les classes de base en toute sécurité sans casser votre application." blog-image="/assets/images/blog/blog-9.jpg"></app-blog-title>
     
             <div class="ads-container">
-                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2783240678439274"
-                    crossorigin="anonymous"></script>
                 <ins class="adsbygoogle"
                     style="display:block; text-align:center;"
                     data-ad-layout="in-article"
@@ -97,7 +95,14 @@
                     data-ad-client="ca-pub-2783240678439274"
                     data-ad-slot="4452113801"></ins>
                 <script>
-                    (adsbygoogle = window.adsbygoogle || []).push({});
+                    setTimeout(function() {
+                        var ads = document.createElement('script');
+                        ads.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2783240678439274';
+                        ads.async = true;
+                        ads.crossorigin = 'anonymous';
+                        document.head.appendChild(ads);
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    }, 2000);
                 </script>
             </div>
         

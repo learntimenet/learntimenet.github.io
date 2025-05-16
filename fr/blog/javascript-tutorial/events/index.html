@@ -88,8 +88,6 @@
     <app-blog-title class="tutorial" blog-title="Événements JavaScript" blog-description="Apprenez à gérer les événements JavaScript tels que le clic, la pression d'une touche et le chargement. Découvrez comment utiliser des récepteurs d'événements et contrôler la propagation des événements dans vos applications web." blog-image="/assets/images/blog/blog-10.jpg"></app-blog-title>
     
             <div class="ads-container">
-                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2783240678439274"
-                    crossorigin="anonymous"></script>
                 <ins class="adsbygoogle"
                     style="display:block; text-align:center;"
                     data-ad-layout="in-article"
@@ -97,7 +95,14 @@
                     data-ad-client="ca-pub-2783240678439274"
                     data-ad-slot="4452113801"></ins>
                 <script>
-                    (adsbygoogle = window.adsbygoogle || []).push({});
+                    setTimeout(function() {
+                        var ads = document.createElement('script');
+                        ads.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2783240678439274';
+                        ads.async = true;
+                        ads.crossorigin = 'anonymous';
+                        document.head.appendChild(ads);
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    }, 2000);
                 </script>
             </div>
         

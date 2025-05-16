@@ -83,8 +83,6 @@
     <app-blog-title blog-title="L'importance des compétences non techniques dans le développement Web" blog-description="Découvrez pourquoi les compétences non techniques sont essentielles pour les développeurs web. Apprenez comment la communication, le travail en équipe, la résolution de problèmes et d'autres compétences non techniques peuvent améliorer votre carrière et faire de vous un développeur plus efficace." blog-image="/assets/images/blog/blog-7.jpg"></app-blog-title>
     
             <div class="ads-container">
-                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2783240678439274"
-                    crossorigin="anonymous"></script>
                 <ins class="adsbygoogle"
                     style="display:block; text-align:center;"
                     data-ad-layout="in-article"
@@ -92,7 +90,14 @@
                     data-ad-client="ca-pub-2783240678439274"
                     data-ad-slot="4452113801"></ins>
                 <script>
-                    (adsbygoogle = window.adsbygoogle || []).push({});
+                    setTimeout(function() {
+                        var ads = document.createElement('script');
+                        ads.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2783240678439274';
+                        ads.async = true;
+                        ads.crossorigin = 'anonymous';
+                        document.head.appendChild(ads);
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    }, 2000);
                 </script>
             </div>
         
