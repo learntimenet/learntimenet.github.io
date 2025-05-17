@@ -409,13 +409,13 @@ eval("// Module\nvar code = \"<h1>{{title}}</h1>\\r\\n<p>{{description}}</p>\\r\
 
 /***/ }),
 
-/***/ "./src/app/pages/tools/index/components/main/main.component.html":
-/*!***********************************************************************!*\
-  !*** ./src/app/pages/tools/index/components/main/main.component.html ***!
-  \***********************************************************************/
+/***/ "./src/app/pages/blog/index/components/main/main.component.html":
+/*!**********************************************************************!*\
+  !*** ./src/app/pages/blog/index/components/main/main.component.html ***!
+  \**********************************************************************/
 /***/ ((module) => {
 
-eval("// Module\nvar code = \"<app-page-title [page-title]=\\\"pageTitle\\\"></app-page-title>\\r\\n<app-ads-horizontal></app-ads-horizontal>\\r\\n<div class=\\\"max-width\\\">\\r\\n    <app-card-list [items]=\\\"tools\\\"></app-card-list>\\r\\n</div>\";\n// Exports\nmodule.exports = code;\n\n//# sourceURL=webpack://learntime.github.io/./src/app/pages/tools/index/components/main/main.component.html?");
+eval("// Module\nvar code = \"<app-page-title [page-title]=\\\"title\\\"></app-page-title>\\r\\n<div class=\\\"max-width\\\">\\r\\n    <app-ads-horizontal></app-ads-horizontal>\\r\\n    <app-card-list [items]=\\\"blogs\\\"></app-card-list>\\r\\n</div>\";\n// Exports\nmodule.exports = code;\n\n//# sourceURL=webpack://learntime.github.io/./src/app/pages/blog/index/components/main/main.component.html?");
 
 /***/ }),
 
@@ -810,13 +810,13 @@ eval("module.exports = \"h1 {\\n  font-size: clamp(3rem, 8vw, 5rem);\\n  margin-
 
 /***/ }),
 
-/***/ "./src/app/pages/tools/index/components/main/main.component.scss":
-/*!***********************************************************************!*\
-  !*** ./src/app/pages/tools/index/components/main/main.component.scss ***!
-  \***********************************************************************/
+/***/ "./src/app/pages/blog/index/components/main/main.component.scss":
+/*!**********************************************************************!*\
+  !*** ./src/app/pages/blog/index/components/main/main.component.scss ***!
+  \**********************************************************************/
 /***/ ((module) => {
 
-eval("module.exports = \"app-blog-overview-list {\\n  margin-bottom: 4rem;\\n}\";\n\n//# sourceURL=webpack://learntime.github.io/./src/app/pages/tools/index/components/main/main.component.scss?");
+eval("module.exports = \"app-blog-overview-list {\\n  margin-bottom: 4rem;\\n}\";\n\n//# sourceURL=webpack://learntime.github.io/./src/app/pages/blog/index/components/main/main.component.scss?");
 
 /***/ }),
 
@@ -2019,6 +2019,39 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 /***/ }),
 
+/***/ "./src/app/pages/blog/index/blog-index.main.ts":
+/*!*****************************************************!*\
+  !*** ./src/app/pages/blog/index/blog-index.main.ts ***!
+  \*****************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var zone_js_dist_zone__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! zone.js/dist/zone */ \"./node_modules/zone.js/dist/zone.js\");\n/* harmony import */ var zone_js_dist_zone__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(zone_js_dist_zone__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/platform-browser-dynamic */ \"./node_modules/@angular/platform-browser-dynamic/fesm2020/platform-browser-dynamic.mjs\");\n/* harmony import */ var _blog_index_module__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./blog-index.module */ \"./src/app/pages/blog/index/blog-index.module.ts\");\n\r\n\r\n\r\n(0,_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_2__.platformBrowserDynamic)().bootstrapModule(_blog_index_module__WEBPACK_IMPORTED_MODULE_1__.BlogIndexModule);\r\n\n\n//# sourceURL=webpack://learntime.github.io/./src/app/pages/blog/index/blog-index.main.ts?");
+
+/***/ }),
+
+/***/ "./src/app/pages/blog/index/blog-index.module.ts":
+/*!*******************************************************!*\
+  !*** ./src/app/pages/blog/index/blog-index.module.ts ***!
+  \*******************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"BlogIndexModule\": () => (/* binding */ BlogIndexModule)\n/* harmony export */ });\n/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/common */ \"./node_modules/@angular/common/fesm2020/common.mjs\");\n/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/core */ \"./node_modules/@angular/core/fesm2020/core.mjs\");\n/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/platform-browser */ \"./node_modules/@angular/platform-browser/fesm2020/platform-browser.mjs\");\n/* harmony import */ var _components_footer_footer_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../components/footer/footer.component */ \"./src/app/components/footer/footer.component.ts\");\n/* harmony import */ var _components_navbar_navbar_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../components/navbar/navbar.component */ \"./src/app/components/navbar/navbar.component.ts\");\n/* harmony import */ var _components_promotion_navbar_promotion_navbar_promotion_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../components/promotion/navbar-promotion/navbar-promotion.component */ \"./src/app/components/promotion/navbar-promotion/navbar-promotion.component.ts\");\n/* harmony import */ var _components_scroll_top_button_scroll_top_button_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../components/scroll-top-button/scroll-top-button.component */ \"./src/app/components/scroll-top-button/scroll-top-button.component.ts\");\n/* harmony import */ var _components_main_main_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/main/main.component */ \"./src/app/pages/blog/index/components/main/main.component.ts\");\n/* harmony import */ var _components_shared_module__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../components/shared-module */ \"./src/app/components/shared-module.ts\");\n/* harmony import */ var _components_breadcrumbs_breadcrumbs_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../components/breadcrumbs/breadcrumbs.component */ \"./src/app/components/breadcrumbs/breadcrumbs.component.ts\");\nvar __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {\r\n    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;\r\n    if (typeof Reflect === \"object\" && typeof Reflect.decorate === \"function\") r = Reflect.decorate(decorators, target, key, desc);\r\n    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;\r\n    return c > 3 && r && Object.defineProperty(target, key, r), r;\r\n};\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\nvar BlogIndexModule = /** @class */ (function () {\r\n    function BlogIndexModule() {\r\n    }\r\n    BlogIndexModule = __decorate([\r\n        (0,_angular_core__WEBPACK_IMPORTED_MODULE_7__.NgModule)({\r\n            declarations: [\r\n                _components_main_main_component__WEBPACK_IMPORTED_MODULE_4__.MainComponent\r\n            ],\r\n            imports: [\r\n                _angular_common__WEBPACK_IMPORTED_MODULE_8__.CommonModule,\r\n                _angular_platform_browser__WEBPACK_IMPORTED_MODULE_9__.BrowserModule,\r\n                _components_shared_module__WEBPACK_IMPORTED_MODULE_5__.SharedModule,\r\n            ],\r\n            providers: [],\r\n            bootstrap: [\r\n                _components_navbar_navbar_component__WEBPACK_IMPORTED_MODULE_1__.NavbarComponent,\r\n                _components_footer_footer_component__WEBPACK_IMPORTED_MODULE_0__.FooterComponent,\r\n                _components_main_main_component__WEBPACK_IMPORTED_MODULE_4__.MainComponent,\r\n                _components_scroll_top_button_scroll_top_button_component__WEBPACK_IMPORTED_MODULE_3__.ScrollTopButtonComponent,\r\n                _components_promotion_navbar_promotion_navbar_promotion_component__WEBPACK_IMPORTED_MODULE_2__.PromotionNavbarComponent,\r\n                _components_breadcrumbs_breadcrumbs_component__WEBPACK_IMPORTED_MODULE_6__.BreadcrumbsComponent\r\n            ],\r\n            schemas: [_angular_core__WEBPACK_IMPORTED_MODULE_7__.CUSTOM_ELEMENTS_SCHEMA]\r\n        })\r\n    ], BlogIndexModule);\r\n    return BlogIndexModule;\r\n}());\r\n\r\n\n\n//# sourceURL=webpack://learntime.github.io/./src/app/pages/blog/index/blog-index.module.ts?");
+
+/***/ }),
+
+/***/ "./src/app/pages/blog/index/components/main/main.component.ts":
+/*!********************************************************************!*\
+  !*** ./src/app/pages/blog/index/components/main/main.component.ts ***!
+  \********************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"MainComponent\": () => (/* binding */ MainComponent)\n/* harmony export */ });\n/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ \"./node_modules/@angular/core/fesm2020/core.mjs\");\n/* harmony import */ var _i18n_i18n__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../../i18n/i18n */ \"./src/app/i18n/i18n.js\");\nvar __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {\r\n    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;\r\n    if (typeof Reflect === \"object\" && typeof Reflect.decorate === \"function\") r = Reflect.decorate(decorators, target, key, desc);\r\n    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;\r\n    return c > 3 && r && Object.defineProperty(target, key, r), r;\r\n};\r\n\r\n\r\nvar MainComponent = /** @class */ (function () {\r\n    function MainComponent() {\r\n        this.width = 100;\r\n        this.title = (0,_i18n_i18n__WEBPACK_IMPORTED_MODULE_0__.getI18nProperty)('page.blog-index.blog');\r\n    }\r\n    MainComponent.prototype.ngOnInit = function () {\r\n        var _a;\r\n        console.log('title: ', (0,_i18n_i18n__WEBPACK_IMPORTED_MODULE_0__.getI18nProperty)('page.blog-index.blog'));\r\n        this.blogs = JSON.parse((_a = document.querySelector('app-main')) === null || _a === void 0 ? void 0 : _a.getAttribute('blogs'));\r\n        this.blogs = this.blogs.filter(function (blog) { return !blog.isArticleSection || blog.isArticleSection == false; });\r\n    };\r\n    MainComponent = __decorate([\r\n        (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.Component)({\r\n            selector: 'app-main',\r\n            template: __webpack_require__(/*! ./main.component.html */ \"./src/app/pages/blog/index/components/main/main.component.html\"),\r\n            styles: [__webpack_require__(/*! .//main.component.scss */ \"./src/app/pages/blog/index/components/main/main.component.scss\")],\r\n        })\r\n    ], MainComponent);\r\n    return MainComponent;\r\n}());\r\n\r\n\n\n//# sourceURL=webpack://learntime.github.io/./src/app/pages/blog/index/components/main/main.component.ts?");
+
+/***/ }),
+
 /***/ "./src/app/pages/tools/common/components/base-component.ts":
 /*!*****************************************************************!*\
   !*** ./src/app/pages/tools/common/components/base-component.ts ***!
@@ -2236,39 +2269,6 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 "use strict";
 eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nvar NumberUtils = /** @class */ (function () {\r\n    function NumberUtils() {\r\n    }\r\n    NumberUtils.isBetween = function (number, left, right) {\r\n        return number >= left && number <= right;\r\n    };\r\n    NumberUtils.isNotBetween = function (number, left, right) {\r\n        return !NumberUtils.isBetween(number, left, right);\r\n    };\r\n    NumberUtils.randomBetween = function (min, max) {\r\n        return Math.floor(min + Math.random() * (max - min + 1));\r\n    };\r\n    return NumberUtils;\r\n}());\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (NumberUtils);\r\n\n\n//# sourceURL=webpack://learntime.github.io/./src/app/pages/tools/common/utils/number-utils.ts?");
-
-/***/ }),
-
-/***/ "./src/app/pages/tools/index/components/main/main.component.ts":
-/*!*********************************************************************!*\
-  !*** ./src/app/pages/tools/index/components/main/main.component.ts ***!
-  \*********************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"MainComponent\": () => (/* binding */ MainComponent)\n/* harmony export */ });\n/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ \"./node_modules/@angular/core/fesm2020/core.mjs\");\n/* harmony import */ var _i18n_i18n__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../../i18n/i18n */ \"./src/app/i18n/i18n.js\");\nvar __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {\r\n    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;\r\n    if (typeof Reflect === \"object\" && typeof Reflect.decorate === \"function\") r = Reflect.decorate(decorators, target, key, desc);\r\n    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;\r\n    return c > 3 && r && Object.defineProperty(target, key, r), r;\r\n};\r\n\r\n\r\nvar MainComponent = /** @class */ (function () {\r\n    function MainComponent() {\r\n        this.pageTitle = (0,_i18n_i18n__WEBPACK_IMPORTED_MODULE_0__.getI18nProperty)('page.tools.index.ourTools');\r\n    }\r\n    MainComponent.prototype.ngOnInit = function () {\r\n        var _a;\r\n        this.tools = JSON.parse((_a = document.querySelector('app-main')) === null || _a === void 0 ? void 0 : _a.getAttribute('tools'));\r\n    };\r\n    MainComponent = __decorate([\r\n        (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.Component)({\r\n            selector: 'app-main',\r\n            template: __webpack_require__(/*! ./main.component.html */ \"./src/app/pages/tools/index/components/main/main.component.html\"),\r\n            styles: [__webpack_require__(/*! .//main.component.scss */ \"./src/app/pages/tools/index/components/main/main.component.scss\")],\r\n        })\r\n    ], MainComponent);\r\n    return MainComponent;\r\n}());\r\n\r\n\n\n//# sourceURL=webpack://learntime.github.io/./src/app/pages/tools/index/components/main/main.component.ts?");
-
-/***/ }),
-
-/***/ "./src/app/pages/tools/index/tools-index.main.ts":
-/*!*******************************************************!*\
-  !*** ./src/app/pages/tools/index/tools-index.main.ts ***!
-  \*******************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var zone_js_dist_zone__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! zone.js/dist/zone */ \"./node_modules/zone.js/dist/zone.js\");\n/* harmony import */ var zone_js_dist_zone__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(zone_js_dist_zone__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/platform-browser-dynamic */ \"./node_modules/@angular/platform-browser-dynamic/fesm2020/platform-browser-dynamic.mjs\");\n/* harmony import */ var _tools_index_module__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./tools-index.module */ \"./src/app/pages/tools/index/tools-index.module.ts\");\n\r\n\r\n\r\n(0,_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_2__.platformBrowserDynamic)().bootstrapModule(_tools_index_module__WEBPACK_IMPORTED_MODULE_1__.ToolsIndexModule);\r\n\n\n//# sourceURL=webpack://learntime.github.io/./src/app/pages/tools/index/tools-index.main.ts?");
-
-/***/ }),
-
-/***/ "./src/app/pages/tools/index/tools-index.module.ts":
-/*!*********************************************************!*\
-  !*** ./src/app/pages/tools/index/tools-index.module.ts ***!
-  \*********************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"ToolsIndexModule\": () => (/* binding */ ToolsIndexModule)\n/* harmony export */ });\n/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/common */ \"./node_modules/@angular/common/fesm2020/common.mjs\");\n/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/core */ \"./node_modules/@angular/core/fesm2020/core.mjs\");\n/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/platform-browser */ \"./node_modules/@angular/platform-browser/fesm2020/platform-browser.mjs\");\n/* harmony import */ var _components_shared_module__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../components/shared-module */ \"./src/app/components/shared-module.ts\");\n/* harmony import */ var _components_footer_footer_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../components/footer/footer.component */ \"./src/app/components/footer/footer.component.ts\");\n/* harmony import */ var _components_navbar_navbar_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../components/navbar/navbar.component */ \"./src/app/components/navbar/navbar.component.ts\");\n/* harmony import */ var _components_promotion_navbar_promotion_navbar_promotion_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../components/promotion/navbar-promotion/navbar-promotion.component */ \"./src/app/components/promotion/navbar-promotion/navbar-promotion.component.ts\");\n/* harmony import */ var _components_scroll_top_button_scroll_top_button_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../components/scroll-top-button/scroll-top-button.component */ \"./src/app/components/scroll-top-button/scroll-top-button.component.ts\");\n/* harmony import */ var _components_main_main_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/main/main.component */ \"./src/app/pages/tools/index/components/main/main.component.ts\");\n/* harmony import */ var _components_breadcrumbs_breadcrumbs_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../components/breadcrumbs/breadcrumbs.component */ \"./src/app/components/breadcrumbs/breadcrumbs.component.ts\");\nvar __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {\r\n    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;\r\n    if (typeof Reflect === \"object\" && typeof Reflect.decorate === \"function\") r = Reflect.decorate(decorators, target, key, desc);\r\n    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;\r\n    return c > 3 && r && Object.defineProperty(target, key, r), r;\r\n};\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\nvar ToolsIndexModule = /** @class */ (function () {\r\n    function ToolsIndexModule() {\r\n    }\r\n    ToolsIndexModule = __decorate([\r\n        (0,_angular_core__WEBPACK_IMPORTED_MODULE_7__.NgModule)({\r\n            declarations: [\r\n                _components_main_main_component__WEBPACK_IMPORTED_MODULE_5__.MainComponent\r\n            ],\r\n            imports: [\r\n                _angular_common__WEBPACK_IMPORTED_MODULE_8__.CommonModule,\r\n                _angular_platform_browser__WEBPACK_IMPORTED_MODULE_9__.BrowserModule,\r\n                _components_shared_module__WEBPACK_IMPORTED_MODULE_0__.SharedModule,\r\n            ],\r\n            providers: [],\r\n            bootstrap: [\r\n                _components_navbar_navbar_component__WEBPACK_IMPORTED_MODULE_2__.NavbarComponent,\r\n                _components_footer_footer_component__WEBPACK_IMPORTED_MODULE_1__.FooterComponent,\r\n                _components_main_main_component__WEBPACK_IMPORTED_MODULE_5__.MainComponent,\r\n                _components_scroll_top_button_scroll_top_button_component__WEBPACK_IMPORTED_MODULE_4__.ScrollTopButtonComponent,\r\n                _components_promotion_navbar_promotion_navbar_promotion_component__WEBPACK_IMPORTED_MODULE_3__.PromotionNavbarComponent,\r\n                _components_breadcrumbs_breadcrumbs_component__WEBPACK_IMPORTED_MODULE_6__.BreadcrumbsComponent\r\n            ],\r\n            schemas: [_angular_core__WEBPACK_IMPORTED_MODULE_7__.CUSTOM_ELEMENTS_SCHEMA, _angular_core__WEBPACK_IMPORTED_MODULE_7__.NO_ERRORS_SCHEMA]\r\n        })\r\n    ], ToolsIndexModule);\r\n    return ToolsIndexModule;\r\n}());\r\n\r\n\n\n//# sourceURL=webpack://learntime.github.io/./src/app/pages/tools/index/tools-index.module.ts?");
 
 /***/ }),
 
@@ -2636,7 +2636,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module can't be inlined because the eval devtool is used.
-/******/ 	var __webpack_exports__ = __webpack_require__("./src/app/pages/tools/index/tools-index.main.ts");
+/******/ 	var __webpack_exports__ = __webpack_require__("./src/app/pages/blog/index/blog-index.main.ts");
 /******/ 	
 /******/ })()
 ;

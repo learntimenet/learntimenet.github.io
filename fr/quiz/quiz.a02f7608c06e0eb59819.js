@@ -415,7 +415,7 @@ eval("// Module\nvar code = \"<h1>{{title}}</h1>\\r\\n<p>{{description}}</p>\\r\
   \**********************************************************************/
 /***/ ((module) => {
 
-eval("// Module\nvar code = \"<app-page-title [page-title]=\\\"pageTitle\\\"></app-page-title>\\r\\n<app-ads-horizontal></app-ads-horizontal>\\r\\n<div class=\\\"max-width\\\">\\r\\n    <app-card-list [items]=\\\"quizzes\\\"></app-card-list>\\r\\n</div>\";\n// Exports\nmodule.exports = code;\n\n//# sourceURL=webpack://learntime.github.io/./src/app/pages/quiz/index/components/main/main.component.html?");
+eval("// Module\nvar code = \"<app-page-title [page-title]=\\\"pageTitle\\\"></app-page-title>\\r\\n<div class=\\\"max-width\\\">\\r\\n    <app-ads-horizontal></app-ads-horizontal>\\r\\n    <app-card-list [items]=\\\"quizzes\\\"></app-card-list>\\r\\n</div>\";\n// Exports\nmodule.exports = code;\n\n//# sourceURL=webpack://learntime.github.io/./src/app/pages/quiz/index/components/main/main.component.html?");
 
 /***/ }),
 
