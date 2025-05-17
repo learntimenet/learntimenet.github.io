@@ -279,6 +279,13 @@ video {
 .nowrap {
   white-space: nowrap; }
 
+.no-scroll {
+  overflow: clip;
+  /* Disable scrolling */
+  height: 100vh;
+  /* Prevent the body from scrolling */
+  padding-right: var(--scrollbar-width, 1.2rem); }
+
 .markdown {
   flex: 1; }
   .markdown > *:first-child {
