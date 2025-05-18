@@ -35,9 +35,9 @@
 
 <div id="legend">
   <div class="legend-item"><div class="color-box" style="background: #407FD6;"></div>Start</div>
-  <div class="legend-item"><div class="color-box" style="background: #FFB84E;"></div>End</div>
+  <div class="legend-item"><div class="color-box" style="background: #ff4eff;"></div>End</div>
   <div class="legend-item"><div class="color-box" style="background: #F24B61;"></div>Closed Set</div>
-  <div class="legend-item"><div class="color-box" style="background: #da0fab;"></div>Open Set</div>
+  <div class="legend-item"><div class="color-box" style="background: #FFB84E;"></div>Open Set</div>
   <div class="legend-item"><div class="color-box" style="background: #50CE8F;"></div>Path</div>
   <div class="legend-item"><div class="color-box" style="background: black;"></div>Wall</div>
 </div>
@@ -213,7 +213,7 @@ function draw() {
   }
 
   closedSet.forEach(cell => cell.draw("#F24B61"));
-  openSet.forEach(cell => cell.draw("#da0fab"));
+  openSet.forEach(cell => cell.draw("#FFB84E"));
 
   if (found) {
     closedSet.forEach(cell => cell.draw("#FFF"));
@@ -222,7 +222,7 @@ function draw() {
   }
 
   start.draw("#407FD6");
-  end.draw("#FFB84E");
+  end.draw("#ff4eff");
 
   requestAnimationFrame(draw);
 }
