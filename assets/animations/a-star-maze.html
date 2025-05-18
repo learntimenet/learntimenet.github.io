@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>A* Pathfinding – With Legend & Valid Maze</title>
+  <title>A* Pathfinding – Valid Maze with Walls</title>
   <style>
     body {
       margin: 0;
@@ -34,11 +34,11 @@
 <body>
 
 <div id="legend">
-  <div class="legend-item"><div class="color-box" style="background: blue;"></div>Start</div>
-  <div class="legend-item"><div class="color-box" style="background: gold;"></div>End</div>
-  <div class="legend-item"><div class="color-box" style="background: red;"></div>Closed Set</div>
-  <div class="legend-item"><div class="color-box" style="background: blue;"></div>Open Set</div>
-  <div class="legend-item"><div class="color-box" style="background: lime;"></div>Path</div>
+  <div class="legend-item"><div class="color-box" style="background: #407FD6;"></div>Start</div>
+  <div class="legend-item"><div class="color-box" style="background: #FFB84E;"></div>End</div>
+  <div class="legend-item"><div class="color-box" style="background: #F24B61;"></div>Closed Set</div>
+  <div class="legend-item"><div class="color-box" style="background: #da0fab;"></div>Open Set</div>
+  <div class="legend-item"><div class="color-box" style="background: #50CE8F;"></div>Path</div>
   <div class="legend-item"><div class="color-box" style="background: black;"></div>Wall</div>
 </div>
 
@@ -48,8 +48,8 @@
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
 
-const cols = 30;
-const rows = 30;
+const cols = 40;
+const rows = 40;
 const grid = [];
 const openSet = [];
 const closedSet = [];
@@ -66,7 +66,7 @@ class Cell {
     this.h = 0;
     this.neighbors = [];
     this.previous = undefined;
-    this.wall = false;
+    this.wall = true; // default to wall
   }
 
   draw(color) {
@@ -106,38 +106,47 @@ start.wall = false;
 end.wall = false;
 openSet.push(start);
 
-// Randomly assign walls with guaranteed path using DFS
-function generateMazeDFS(cell, visited = new Set()) {
-  const key = `${cell.x},${cell.y}`;
-  visited.add(key);
+function carveMaze(x = 0, y = 0, visited = new Set()) {
+  const cell = grid[x][y];
+  cell.wall = false;
+  visited.add(`${x},${y}`);
 
-  const shuffled = [...cell.neighbors].sort(() => 0.5 - Math.random());
-  for (let neighbor of shuffled) {
-    const nKey = `${neighbor.x},${neighbor.y}`;
-    if (!visited.has(nKey)) {
-      neighbor.wall = false; // clear path
-      generateMazeDFS(neighbor, visited);
+  const dirs = [
+    [1, 0], [-1, 0], [0, 1], [0, -1]
+  ].sort(() => Math.random() - 0.5);
+
+  for (const [dx, dy] of dirs) {
+    const nx = x + dx * 2;
+    const ny = y + dy * 2;
+
+    if (
+      nx >= 0 && ny >= 0 &&
+      nx < cols && ny < rows &&
+      !visited.has(`${nx},${ny}`)
+    ) {
+      // Always carve between
+      grid[x + dx][y + dy].wall = false;
+      carveMaze(nx, ny, visited);
     }
   }
 }
 
-// Initially set all to walls, then carve a path
-for (let x = 0; x < cols; x++) {
-  for (let y = 0; y < rows; y++) {
-    grid[x][y].wall = true;
+// ensure the end cell is not surrounded by walls
+function makeEndReachable(end) {
+  end.wall = false;
+  const neighbors = [
+    [1, 0], [-1, 0], [0, 1], [0, -1]
+  ];
+  for (let [dx, dy] of neighbors) {
+    const nx = end.x + dx;
+    const ny = end.y + dy;
+    if (nx >= 0 && ny >= 0 && nx < cols && ny < rows) {
+      grid[nx][ny].wall = false;
+    }
   }
 }
-start.wall = false;
-generateMazeDFS(start);
-
-// After path exists, randomly open more walls to make it a maze
-for (let x = 0; x < cols; x++) {
-  for (let y = 0; y < rows; y++) {
-    if (Math.random() < 0.3) grid[x][y].wall = false;
-  }
-}
-start.wall = false;
-end.wall = false;
+carveMaze();
+makeEndReachable(end);
 
 let solving = true;
 let found = false;
@@ -203,15 +212,17 @@ function draw() {
     }
   }
 
-  closedSet.forEach(cell => cell.draw("red"));
-  openSet.forEach(cell => cell.draw("blue"));
+  closedSet.forEach(cell => cell.draw("#F24B61"));
+  openSet.forEach(cell => cell.draw("#da0fab"));
 
   if (found) {
-    path.forEach(cell => cell.draw("lime"));
+    closedSet.forEach(cell => cell.draw("#FFF"));
+    openSet.forEach(cell => cell.draw("#FFF"));
+    path.forEach(cell => cell.draw("#50CE8F"));
   }
 
-  start.draw("blue");
-  end.draw("gold");
+  start.draw("#407FD6");
+  end.draw("#FFB84E");
 
   requestAnimationFrame(draw);
 }

@@ -1011,6 +1011,9 @@ pre.diagram code.hljs {
   flex: 1;
   min-width: 0; }
 
+.tool {
+  min-width: 0; }
+
 .tutorial-menu-container {
   display: none;
   flex-shrink: 0;
