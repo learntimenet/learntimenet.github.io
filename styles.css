@@ -1085,12 +1085,3 @@ aside {
     background-color: var(--toast-error-background-color);
     color: var(--toast-error-color);
     border: 1px solid var(--toast-error-border-color); }
-
-.ads-container {
-  margin-top: 3rem;
-  margin-bottom: 3rem; }
-
-.ads-container .adsbygoogle {
-  min-width: 0; }
-  .ads-container .adsbygoogle > div {
-    min-width: 0; }
