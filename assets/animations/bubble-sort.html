@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Bubble Sort – 1000 Elements</title>
+  <style>
+    body {
+      margin: 0;
+      background: #111;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    canvas {
+      border: 1px solid #333;
+    }
+  </style>
+</head>
+<body>
+<canvas id="canvas" width="1200" height="500"></canvas>
+
+<script>
+  const canvas = document.getElementById("canvas");
+  const ctx = canvas.getContext("2d");
+  const width = canvas.width;
+  const height = canvas.height;
+
+  const size = 100;
+  const data = Array.from({ length: size }, (_, i) => i + 1);
+
+  // Fisher-Yates shuffle
+  for (let i = data.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [data[i], data[j]] = [data[j], data[i]];
+  }
+
+  const barWidth = width / size;
+
+  function draw(array, highlight = []) {
+    ctx.clearRect(0, 0, width, height);
+    array.forEach((val, i) => {
+      ctx.fillStyle = highlight.includes(i) ? "red" : "skyblue";
+      const barHeight = (val / size) * height;
+      ctx.fillRect(i * barWidth, height - barHeight, barWidth, barHeight);
+    });
+  }
+
+  async function bubbleSortVisual(array) {
+    const len = array.length;
+    for (let i = 0; i < len; i++) {
+      for (let j = 0; j < len - i - 1; j++) {
+        draw(array, [j, j + 1]);
+        await new Promise(r => setTimeout(r, 10)); // Adjust speed here (0 = fastest)
+        if (array[j] > array[j + 1]) {
+          [array[j], array[j + 1]] = [array[j + 1], array[j]];
+        }
+      }
+    }
+    draw(array);
+  }
+
+  draw(data);
+  bubbleSortVisual(data);
+</script>
+</body>
+</html>

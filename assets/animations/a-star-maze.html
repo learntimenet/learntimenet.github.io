@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>A* Pathfinding in a Maze</title>
+  <style>
+    body { margin: 0; background: #111; display: flex; justify-content: center; align-items: center; height: 100vh; }
+    canvas { background: #222; border: 1px solid #333; }
+  </style>
+</head>
+<body>
+<canvas id="canvas" width="600" height="600"></canvas>
+
+<script>
+const canvas = document.getElementById("canvas");
+const ctx = canvas.getContext("2d");
+
+const cols = 60;
+const rows = 60;
+const grid = [];
+const openSet = [];
+const closedSet = [];
+let path = [];
+
+const cellSize = canvas.width / cols;
+
+// A* Node
+class Cell {
+  constructor(x, y) {
+    this.x = x;
+    this.y = y;
+    this.f = 0;
+    this.g = 0;
+    this.h = 0;
+    this.neighbors = [];
+    this.previous = undefined;
+    this.wall = Math.random() < 0.3; // 30% walls
+  }
+
+  draw(color) {
+    ctx.fillStyle = this.wall ? "#000" : color;
+    ctx.fillRect(this.x * cellSize, this.y * cellSize, cellSize - 1, cellSize - 1);
+  }
+
+  addNeighbors(grid) {
+    const { x, y } = this;
+    if (x < cols - 1) this.neighbors.push(grid[x + 1][y]);
+    if (x > 0) this.neighbors.push(grid[x - 1][y]);
+    if (y < rows - 1) this.neighbors.push(grid[x][y + 1]);
+    if (y > 0) this.neighbors.push(grid[x][y - 1]);
+  }
+}
+
+// Heuristic function
+function heuristic(a, b) {
+  return Math.abs(a.x - b.x) + Math.abs(a.y - b.y); // Manhattan distance
+}
+
+// Init grid
+for (let x = 0; x < cols; x++) {
+  grid[x] = [];
+  for (let y = 0; y < rows; y++) {
+    grid[x][y] = new Cell(x, y);
+  }
+}
+for (let x = 0; x < cols; x++) {
+  for (let y = 0; y < rows; y++) {
+    grid[x][y].addNeighbors(grid);
+  }
+}
+
+// Start and end
+const start = grid[0][0];
+const end = grid[cols - 1][rows - 1];
+start.wall = false;
+end.wall = false;
+openSet.push(start);
+
+// A* Algorithm Step-by-Step
+function draw() {
+  if (openSet.length > 0) {
+    let lowest = 0;
+    for (let i = 1; i < openSet.length; i++) {
+      if (openSet[i].f < openSet[lowest].f) {
+        lowest = i;
+      }
+    }
+
+    const current = openSet[lowest];
+
+    if (current === end) {
+      // Found path
+      path = [];
+      let temp = current;
+      path.push(temp);
+      while (temp.previous) {
+        path.push(temp.previous);
+        temp = temp.previous;
+      }
+      console.log("Path found!");
+      clearInterval(interval);
+    }
+
+    openSet.splice(lowest, 1);
+    closedSet.push(current);
+
+    current.neighbors.forEach(neighbor => {
+      if (!closedSet.includes(neighbor) && !neighbor.wall) {
+        const tempG = current.g + 1;
+        let newPath = false;
+        if (openSet.includes(neighbor)) {
+          if (tempG < neighbor.g) {
+            neighbor.g = tempG;
+            newPath = true;
+          }
+        } else {
+          neighbor.g = tempG;
+          newPath = true;
+          openSet.push(neighbor);
+        }
+
+        if (newPath) {
+          neighbor.h = heuristic(neighbor, end);
+          neighbor.f = neighbor.g + neighbor.h;
+          neighbor.previous = current;
+        }
+      }
+    });
+  } else {
+    console.log("No solution");
+    clearInterval(interval);
+    return;
+  }
+
+  // Draw everything
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  for (let x = 0; x < cols; x++) {
+    for (let y = 0; y < rows; y++) {
+      grid[x][y].draw("white");
+    }
+  }
+
+  closedSet.forEach(cell => cell.draw("red"));
+  openSet.forEach(cell => cell.draw("blue"));
+
+  path = [];
+  let temp = openSet.find(c => c === end) || closedSet[closedSet.length - 1];
+  if (temp) {
+    path.push(temp);
+    while (temp.previous) {
+      path.push(temp.previous);
+      temp = temp.previous;
+    }
+  }
+
+  path.forEach(cell => cell.draw("lime"));
+}
+
+// Animate with interval
+const interval = setInterval(draw, 20);
+</script>
+</body>
+</html>
