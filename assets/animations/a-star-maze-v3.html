@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Leaflet A* Route on Real Streets</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+  />
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet-routing-machine@3.2.12/dist/leaflet-routing-machine.css"
+  />
+  <style>
+    #map {
+      height: 100vh;
+    }
+  </style>
+</head>
+<body>
+  <div id="map"></div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="https://unpkg.com/leaflet-routing-machine@3.2.12/dist/leaflet-routing-machine.min.js"></script>
+
+  <script>
+    const map = L.map("map").setView([48.8584, 2.2945], 14); // Paris
+
+    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+      attribution: "&copy; OpenStreetMap contributors",
+    }).addTo(map);
+
+    // Leaflet Routing Machine (uses OSRM/A* under the hood)
+    L.Routing.control({
+      waypoints: [
+        L.latLng(48.8584, 2.2945), // Eiffel Tower
+        L.latLng(48.8606, 2.3376), // Louvre
+      ],
+      routeWhileDragging: true,
+      showAlternatives: true,
+      lineOptions: {
+        styles: [{ color: 'blue', opacity: 0.8, weight: 6 }],
+      },
+      router: L.Routing.osrmv1({
+        language: 'en',
+        profile: 'foot' // or 'car', 'bike'
+      }),
+    }).addTo(map);
+  </script>
+</body>
+</html>
