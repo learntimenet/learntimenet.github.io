@@ -54,7 +54,7 @@
 
   <h1>A* Search Algorithm</h1>
 
-  <canvas id="maze" width="600" height="600"></canvas>
+  <canvas id="maze" width="1000" height="1000"></canvas>
 
   <div id="legend">
     <div class="legend-item"><div class="color-box" style="background: #FFB84F;"></div>Start</div>
@@ -69,8 +69,8 @@ const canvas = document.getElementById('maze');
 const ctx = canvas.getContext('2d');
 
 const delay = 30;
-const cols = 30;
-const rows = 30;
+const cols = 100;
+const rows = 100;
 const cellSize = canvas.width / cols;
 
 // Maze cells grid
@@ -194,7 +194,8 @@ function getNeighborsForAStar(cell) {
 // Draw a rectangle in the maze grid
 function drawCell(cell, color) {
   ctx.fillStyle = color;
-  ctx.fillRect(cell.x * cellSize + 4, cell.y * cellSize + 4, cellSize - 8, cellSize - 8);
+  // ctx.fillRect(cell.x * cellSize + 4, cell.y * cellSize + 4, cellSize - 8, cellSize - 8);
+  ctx.fillRect(cell.x * cellSize + 2, cell.y * cellSize + 2, cellSize - 4, cellSize - 4);
   // const cx = cell.x * cellSize + cellSize / 2;
   // const cy = cell.y * cellSize + cellSize / 2;
   // const radius = (cellSize - 8) / 2;
