@@ -439,6 +439,16 @@ eval("// Module\nvar code = \"<h1>{{title}}</h1>\\r\\n<p>{{description}}</p>\\r\
 
 /***/ }),
 
+/***/ "./src/app/pages/404/components/main/main.component.html":
+/*!***************************************************************!*\
+  !*** ./src/app/pages/404/components/main/main.component.html ***!
+  \***************************************************************/
+/***/ ((module) => {
+
+eval("// Module\nvar code = \"<div class=\\\"layout-error-404 max-width\\\">\\r\\n  <h1>404</h1>\\r\\n  <span>{{ content }}</span>\\r\\n  <a [href]=\\\"baseUrl + '/'\\\" class=\\\"btn\\\">{{ button }}</a>\\r\\n</div>\";\n// Exports\nmodule.exports = code;\n\n//# sourceURL=webpack://learntime.github.io/./src/app/pages/404/components/main/main.component.html?");
+
+/***/ }),
+
 /***/ "./node_modules/html-loader/dist/runtime/getUrl.js":
 /*!*********************************************************!*\
   !*** ./node_modules/html-loader/dist/runtime/getUrl.js ***!
@@ -857,6 +867,16 @@ eval("module.exports = \":host {\\n  position: absolute;\\n  top: 2rem;\\n  righ
 /***/ ((module) => {
 
 eval("module.exports = \"h1 {\\n  font-size: clamp(3rem, 8vw, 5rem);\\n  margin-bottom: 2rem !important;\\n  font-weight: bold;\\n}\\n\\np {\\n  font-size: 1.7rem;\\n  margin-bottom: 3.5rem;\\n  font-weight: 300;\\n}\";\n\n//# sourceURL=webpack://learntime.github.io/./src/app/components/tool-title/tool-title.component.scss?");
+
+/***/ }),
+
+/***/ "./src/app/pages/404/components/main/main.component.scss":
+/*!***************************************************************!*\
+  !*** ./src/app/pages/404/components/main/main.component.scss ***!
+  \***************************************************************/
+/***/ ((module) => {
+
+eval("module.exports = \".layout-error-404 {\\n  display: flex;\\n  flex-direction: column;\\n  justify-content: center;\\n  align-items: center;\\n  color: var(--dark-primary-color);\\n}\\n.layout-error-404 h1 {\\n  font-size: clamp(10rem, 30vw, 20rem);\\n  line-height: 1;\\n}\\n.layout-error-404 span {\\n  font-size: clamp(1.8rem, 8vw, 3.2rem);\\n  margin-top: 2rem;\\n  text-align: center;\\n}\\n.layout-error-404 .btn {\\n  background-color: var(--primary-color);\\n  color: var(--white-color);\\n  font-size: 2.4rem;\\n  border-radius: 0.6rem;\\n  padding: 1rem 6rem;\\n  margin-top: 4rem;\\n  margin-bottom: 4rem;\\n  transition: transform 0.3s cubic-bezier(0.25, 0, 0.2, 1);\\n  background-image: none;\\n}\\n.layout-error-404 .btn:hover {\\n  color: var(--white-color) !important;\\n  transform: scale(1.1);\\n}\";\n\n//# sourceURL=webpack://learntime.github.io/./src/app/pages/404/components/main/main.component.scss?");
 
 /***/ }),
 
@@ -2092,25 +2112,36 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 /***/ }),
 
-/***/ "./src/app/pages/about/about.main.ts":
-/*!*******************************************!*\
-  !*** ./src/app/pages/about/about.main.ts ***!
-  \*******************************************/
+/***/ "./src/app/pages/404/404.main.ts":
+/*!***************************************!*\
+  !*** ./src/app/pages/404/404.main.ts ***!
+  \***************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/platform-browser-dynamic */ \"./node_modules/@angular/platform-browser-dynamic/fesm2020/platform-browser-dynamic.mjs\");\n/* harmony import */ var _about_module__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./about.module */ \"./src/app/pages/about/about.module.ts\");\n/* harmony import */ var zone_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! zone.js */ \"./node_modules/zone.js/fesm2015/zone.js\");\n/* harmony import */ var zone_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(zone_js__WEBPACK_IMPORTED_MODULE_1__);\n\r\n\r\n\r\n(0,_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_2__.platformBrowserDynamic)().bootstrapModule(_about_module__WEBPACK_IMPORTED_MODULE_0__.AboutModule);\r\n\n\n//# sourceURL=webpack://learntime.github.io/./src/app/pages/about/about.main.ts?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/platform-browser-dynamic */ \"./node_modules/@angular/platform-browser-dynamic/fesm2020/platform-browser-dynamic.mjs\");\n/* harmony import */ var _404_module__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./404.module */ \"./src/app/pages/404/404.module.ts\");\n/* harmony import */ var zone_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! zone.js */ \"./node_modules/zone.js/fesm2015/zone.js\");\n/* harmony import */ var zone_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(zone_js__WEBPACK_IMPORTED_MODULE_1__);\n\r\n\r\n\r\n(0,_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_2__.platformBrowserDynamic)().bootstrapModule(_404_module__WEBPACK_IMPORTED_MODULE_0__.Error404Module);\r\n\n\n//# sourceURL=webpack://learntime.github.io/./src/app/pages/404/404.main.ts?");
 
 /***/ }),
 
-/***/ "./src/app/pages/about/about.module.ts":
-/*!*********************************************!*\
-  !*** ./src/app/pages/about/about.module.ts ***!
-  \*********************************************/
+/***/ "./src/app/pages/404/404.module.ts":
+/*!*****************************************!*\
+  !*** ./src/app/pages/404/404.module.ts ***!
+  \*****************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"AboutModule\": () => (/* binding */ AboutModule)\n/* harmony export */ });\n/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/common */ \"./node_modules/@angular/common/fesm2020/common.mjs\");\n/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/core */ \"./node_modules/@angular/core/fesm2020/core.mjs\");\n/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/platform-browser */ \"./node_modules/@angular/platform-browser/fesm2020/platform-browser.mjs\");\n/* harmony import */ var _components_footer_footer_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../components/footer/footer.component */ \"./src/app/components/footer/footer.component.ts\");\n/* harmony import */ var _components_navbar_navbar_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../components/navbar/navbar.component */ \"./src/app/components/navbar/navbar.component.ts\");\n/* harmony import */ var _components_page_title_page_title_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../components/page-title/page-title.component */ \"./src/app/components/page-title/page-title.component.ts\");\n/* harmony import */ var _components_shared_module__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../components/shared-module */ \"./src/app/components/shared-module.ts\");\n/* harmony import */ var _components_promotion_navbar_promotion_navbar_promotion_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../components/promotion/navbar-promotion/navbar-promotion.component */ \"./src/app/components/promotion/navbar-promotion/navbar-promotion.component.ts\");\nvar __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {\r\n    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;\r\n    if (typeof Reflect === \"object\" && typeof Reflect.decorate === \"function\") r = Reflect.decorate(decorators, target, key, desc);\r\n    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;\r\n    return c > 3 && r && Object.defineProperty(target, key, r), r;\r\n};\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\nvar AboutModule = /** @class */ (function () {\r\n    function AboutModule() {\r\n    }\r\n    AboutModule = __decorate([\r\n        (0,_angular_core__WEBPACK_IMPORTED_MODULE_5__.NgModule)({\r\n            declarations: [],\r\n            imports: [\r\n                _angular_common__WEBPACK_IMPORTED_MODULE_6__.CommonModule,\r\n                _angular_platform_browser__WEBPACK_IMPORTED_MODULE_7__.BrowserModule,\r\n                _components_shared_module__WEBPACK_IMPORTED_MODULE_3__.SharedModule\r\n            ],\r\n            providers: [],\r\n            bootstrap: [\r\n                _components_navbar_navbar_component__WEBPACK_IMPORTED_MODULE_1__.NavbarComponent,\r\n                _components_page_title_page_title_component__WEBPACK_IMPORTED_MODULE_2__.PageTitleComponent,\r\n                _components_footer_footer_component__WEBPACK_IMPORTED_MODULE_0__.FooterComponent,\r\n                _components_promotion_navbar_promotion_navbar_promotion_component__WEBPACK_IMPORTED_MODULE_4__.PromotionNavbarComponent\r\n            ],\r\n            schemas: [_angular_core__WEBPACK_IMPORTED_MODULE_5__.CUSTOM_ELEMENTS_SCHEMA, _angular_core__WEBPACK_IMPORTED_MODULE_5__.NO_ERRORS_SCHEMA]\r\n        })\r\n    ], AboutModule);\r\n    return AboutModule;\r\n}());\r\n\r\n\n\n//# sourceURL=webpack://learntime.github.io/./src/app/pages/about/about.module.ts?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"Error404Module\": () => (/* binding */ Error404Module)\n/* harmony export */ });\n/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/core */ \"./node_modules/@angular/core/fesm2020/core.mjs\");\n/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/platform-browser */ \"./node_modules/@angular/platform-browser/fesm2020/platform-browser.mjs\");\n/* harmony import */ var _components_navbar_navbar_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../components/navbar/navbar.component */ \"./src/app/components/navbar/navbar.component.ts\");\n/* harmony import */ var _components_main_main_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/main/main.component */ \"./src/app/pages/404/components/main/main.component.ts\");\n/* harmony import */ var _components_shared_module__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../components/shared-module */ \"./src/app/components/shared-module.ts\");\n/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/common */ \"./node_modules/@angular/common/fesm2020/common.mjs\");\n/* harmony import */ var _components_footer_footer_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../components/footer/footer.component */ \"./src/app/components/footer/footer.component.ts\");\n/* harmony import */ var _components_promotion_navbar_promotion_navbar_promotion_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../components/promotion/navbar-promotion/navbar-promotion.component */ \"./src/app/components/promotion/navbar-promotion/navbar-promotion.component.ts\");\nvar __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {\r\n    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;\r\n    if (typeof Reflect === \"object\" && typeof Reflect.decorate === \"function\") r = Reflect.decorate(decorators, target, key, desc);\r\n    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;\r\n    return c > 3 && r && Object.defineProperty(target, key, r), r;\r\n};\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\nvar Error404Module = /** @class */ (function () {\r\n    function Error404Module() {\r\n    }\r\n    Error404Module = __decorate([\r\n        (0,_angular_core__WEBPACK_IMPORTED_MODULE_5__.NgModule)({\r\n            declarations: [\r\n                _components_main_main_component__WEBPACK_IMPORTED_MODULE_1__.MainComponent,\r\n            ],\r\n            imports: [\r\n                _angular_common__WEBPACK_IMPORTED_MODULE_6__.CommonModule,\r\n                _angular_platform_browser__WEBPACK_IMPORTED_MODULE_7__.BrowserModule,\r\n                _components_shared_module__WEBPACK_IMPORTED_MODULE_2__.SharedModule\r\n            ],\r\n            providers: [],\r\n            bootstrap: [\r\n                _components_navbar_navbar_component__WEBPACK_IMPORTED_MODULE_0__.NavbarComponent,\r\n                _components_main_main_component__WEBPACK_IMPORTED_MODULE_1__.MainComponent,\r\n                _components_footer_footer_component__WEBPACK_IMPORTED_MODULE_3__.FooterComponent,\r\n                _components_promotion_navbar_promotion_navbar_promotion_component__WEBPACK_IMPORTED_MODULE_4__.PromotionNavbarComponent\r\n            ],\r\n            schemas: [_angular_core__WEBPACK_IMPORTED_MODULE_5__.CUSTOM_ELEMENTS_SCHEMA, _angular_core__WEBPACK_IMPORTED_MODULE_5__.NO_ERRORS_SCHEMA]\r\n        })\r\n    ], Error404Module);\r\n    return Error404Module;\r\n}());\r\n\r\n\n\n//# sourceURL=webpack://learntime.github.io/./src/app/pages/404/404.module.ts?");
+
+/***/ }),
+
+/***/ "./src/app/pages/404/components/main/main.component.ts":
+/*!*************************************************************!*\
+  !*** ./src/app/pages/404/components/main/main.component.ts ***!
+  \*************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"MainComponent\": () => (/* binding */ MainComponent)\n/* harmony export */ });\n/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ \"./node_modules/@angular/core/fesm2020/core.mjs\");\n/* harmony import */ var _utils_language_utils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../utils/language-utils */ \"./src/app/utils/language-utils.js\");\n/* harmony import */ var _i18n_i18n__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../i18n/i18n */ \"./src/app/i18n/i18n.js\");\nvar __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {\r\n    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;\r\n    if (typeof Reflect === \"object\" && typeof Reflect.decorate === \"function\") r = Reflect.decorate(decorators, target, key, desc);\r\n    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;\r\n    return c > 3 && r && Object.defineProperty(target, key, r), r;\r\n};\r\n\r\n\r\n\r\nvar MainComponent = /** @class */ (function () {\r\n    function MainComponent() {\r\n        this.baseUrl = (0,_i18n_i18n__WEBPACK_IMPORTED_MODULE_1__.getI18nProperty)('page.base');\r\n        this.content = (0,_i18n_i18n__WEBPACK_IMPORTED_MODULE_1__.getI18nProperty)('page.404.content');\r\n        this.button = (0,_i18n_i18n__WEBPACK_IMPORTED_MODULE_1__.getI18nProperty)('page.404.button.text');\r\n    }\r\n    MainComponent.prototype.ngOnInit = function () {\r\n        var pathname = this.getLocationPathName();\r\n        if (_utils_language_utils__WEBPACK_IMPORTED_MODULE_0__.get() == 'fr' && !pathname.startsWith('/fr/404')) {\r\n            this.setLocationPathName('/fr/404');\r\n        }\r\n    };\r\n    MainComponent.prototype.getLocationPathName = function () {\r\n        return window.location.pathname;\r\n    };\r\n    MainComponent.prototype.setLocationPathName = function (pathname) {\r\n        window.location.pathname = pathname;\r\n    };\r\n    MainComponent = __decorate([\r\n        (0,_angular_core__WEBPACK_IMPORTED_MODULE_2__.Component)({\r\n            selector: 'app-main',\r\n            template: __webpack_require__(/*! ./main.component.html */ \"./src/app/pages/404/components/main/main.component.html\"),\r\n            styles: [__webpack_require__(/*! .//main.component.scss */ \"./src/app/pages/404/components/main/main.component.scss\")],\r\n        })\r\n    ], MainComponent);\r\n    return MainComponent;\r\n}());\r\n\r\n\n\n//# sourceURL=webpack://learntime.github.io/./src/app/pages/404/components/main/main.component.ts?");
 
 /***/ }),
 
@@ -2407,7 +2438,7 @@ eval("module.exports = __webpack_require__.p + \"assets/fr-fc7fac3e5cf206f0b2e4.
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
-eval("module.exports = __webpack_require__.p + \"assets/logo-text-1c8406f92dfdb468e0a9.png\";\n\n//# sourceURL=webpack://learntime.github.io/./src/app/assets/images/logo-text.png?");
+eval("module.exports = __webpack_require__.p + \"assets/logo-text-2a693369bf5a10bc6844.png\";\n\n//# sourceURL=webpack://learntime.github.io/./src/app/assets/images/logo-text.png?");
 
 /***/ }),
 
@@ -2698,7 +2729,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module can't be inlined because the eval devtool is used.
-/******/ 	var __webpack_exports__ = __webpack_require__("./src/app/pages/about/about.main.ts");
+/******/ 	var __webpack_exports__ = __webpack_require__("./src/app/pages/404/404.main.ts");
 /******/ 	
 /******/ })()
 ;
