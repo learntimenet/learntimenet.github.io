@@ -173,8 +173,8 @@ With shadcn/ui and TailwindCSS, the goal is to <strong>separate base UI, common 
     <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">Button</span> <span class="hljs-attr">className</span>=<span class="hljs-string">&quot;bg-blue-600 hover:bg-blue-700 text-white&quot;</span> {<span class="hljs-attr">...props</span>} /&gt;</span></span>
   )
 }</code></pre>
-</code></pre><h2>Styling with <code>cva</code> and <code>cn</code></h2>
-<h3><code>cva</code> — Class Variance Authority</h3>
+</code></pre><h2>Styling with cva and cn</h2>
+<h3>cva — Class Variance Authority</h3>
 <p>Use <code>cva</code> to define style variants for reusable components:</p>
 <pre><code class="hljs language-tsx"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">import</span> { cva } <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;class-variance-authority&quot;</span>
 
@@ -198,7 +198,7 @@ With shadcn/ui and TailwindCSS, the goal is to <strong>separate base UI, common 
 <span class="hljs-keyword">export</span> <span class="hljs-keyword">function</span> <span class="hljs-title function_">Badge</span>(<span class="hljs-params">{ children, color, size }</span>) {
   <span class="hljs-keyword">return</span> <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">className</span>=<span class="hljs-string">{badge({</span> <span class="hljs-attr">color</span>, <span class="hljs-attr">size</span> })}&gt;</span>{children}<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span></span>
 }</code></pre>
-</code></pre><h3><code>cn</code> — Conditional Class Merging</h3>
+</code></pre><h3>cn — Conditional Class Merging</h3>
 <p>Merge Tailwind classes dynamically:</p>
 <pre><code class="hljs language-tsx"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">import</span> { cn } <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;@/lib/utils&quot;</span>
 
@@ -215,7 +215,7 @@ With shadcn/ui and TailwindCSS, the goal is to <strong>separate base UI, common 
     <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
   )
 }</code></pre>
-</code></pre><h2>Using <code>index.ts</code> for Cleaner Imports</h2>
+</code></pre><h2>Using index.ts for Cleaner Imports</h2>
 <p><code>index.ts</code> files act as “barrels” to re-export components, reducing import paths.</p>
 <p>Instead of:</p>
 <pre><code class="hljs language-ts"><pre class="highlight"><code class="hljs"><span class="hljs-keyword">import</span> { <span class="hljs-title class_">PrimaryButton</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;@/components/common/PrimaryButton&quot;</span>
