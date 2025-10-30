@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>A* Pathfinding – Valid Maze with Walls</title>
+  <style>
+    body {
+      margin: 0;
+      background: #111;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: white;
+      font-family: sans-serif;
+    }
+    #legend {
+      display: flex;
+      gap: 1rem;
+      padding: 1rem;
+      font-size: 14px;
+    }
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .color-box {
+      width: 16px;
+      height: 16px;
+      border: 1px solid #444;
+    }
+  </style>t
+</head>
+<body>
+
+    <img src="/src/app/assets/images/logo-with-white-text.png" alt="">
+
+<div id="legend">
+  <div class="legend-item"><div class="color-box" style="background: #FFB84F;"></div>Start</div>
+  <div class="legend-item"><div class="color-box" style="background: #ff4eff;"></div>End</div>
+  <div class="legend-item"><div class="color-box" style="background: #F24B61;"></div>Closed Set</div>
+  <div class="legend-item"><div class="color-box" style="background: #407FD6;"></div>Open Set</div>
+  <div class="legend-item"><div class="color-box" style="background: #1cd728;"></div>Path</div>
+  <div class="legend-item"><div class="color-box" style="background: black;"></div>Wall</div>
+</div>
+
+<canvas id="canvas" width="600" height="600"></canvas>
+
+<script>
+const canvas = document.getElementById("canvas");
+const ctx = canvas.getContext("2d");
+
+const cols = 40;
+const rows = 40;
+const grid = [];
+const openSet = [];
+const closedSet = [];
+let path = [];
+
+const cellSize = canvas.width / cols;
+
+class Cell {
+  constructor(x, y) {
+    this.x = x;
+    this.y = y;
+    this.f = 0;
+    this.g = 0;
+    this.h = 0;
+    this.neighbors = [];
+    this.previous = undefined;
+    this.wall = true; // default to wall
+  }
+
+  draw(color) {
+    ctx.fillStyle = this.wall ? "#000" : color;
+    ctx.fillRect(this.x * cellSize, this.y * cellSize, cellSize - 1, cellSize - 1);
+  }
+
+  addNeighbors(grid) {
+    const { x, y } = this;
+    if (x < cols - 1) this.neighbors.push(grid[x + 1][y]);
+    if (x > 0) this.neighbors.push(grid[x - 1][y]);
+    if (y < rows - 1) this.neighbors.push(grid[x][y + 1]);
+    if (y > 0) this.neighbors.push(grid[x][y - 1]);
+  }
+}
+
+function heuristic(a, b) {
+  return Math.abs(a.x - b.x) + Math.abs(a.y - b.y);
+}
+
+// Create grid
+for (let x = 0; x < cols; x++) {
+  grid[x] = [];
+  for (let y = 0; y < rows; y++) {
+    grid[x][y] = new Cell(x, y);
+  }
+}
+for (let x = 0; x < cols; x++) {
+  for (let y = 0; y < rows; y++) {
+    grid[x][y].addNeighbors(grid);
+  }
+}
+
+const start = grid[0][0];
+const end = grid[cols - 1][rows - 1];
+start.wall = false;
+end.wall = false;
+openSet.push(start);
+
+function carveMaze(x = 0, y = 0, visited = new Set()) {
+  const cell = grid[x][y];
+  cell.wall = false;
+  visited.add(`${x},${y}`);
+
+  const dirs = [
+    [1, 0], [-1, 0], [0, 1], [0, -1]
+  ].sort(() => Math.random() - 0.5);
+
+  for (const [dx, dy] of dirs) {
+    const nx = x + dx * 2;
+    const ny = y + dy * 2;
+
+    if (
+      nx >= 0 && ny >= 0 &&
+      nx < cols && ny < rows &&
+      !visited.has(`${nx},${ny}`)
+    ) {
+      // Always carve between
+      grid[x + dx][y + dy].wall = false;
+      carveMaze(nx, ny, visited);
+    }
+  }
+}
+
+// ensure the end cell is not surrounded by walls
+function makeEndReachable(end) {
+  end.wall = false;
+  const neighbors = [
+    [1, 0], [-1, 0], [0, 1], [0, -1]
+  ];
+  for (let [dx, dy] of neighbors) {
+    const nx = end.x + dx;
+    const ny = end.y + dy;
+    if (nx >= 0 && ny >= 0 && nx < cols && ny < rows) {
+      grid[nx][ny].wall = false;
+    }
+  }
+}
+carveMaze();
+makeEndReachable(end);
+
+let solving = true;
+let found = false;
+
+async function draw() {
+  if (solving) {
+    if (openSet.length > 0) {
+      let lowest = 0;
+      for (let i = 1; i < openSet.length; i++) {
+        if (openSet[i].f < openSet[lowest].f) lowest = i;
+      }
+
+      const current = openSet[lowest];
+
+      if (current === end) {
+        found = true;
+        solving = false;
+        path = [];
+        let temp = current;
+        path.push(temp);
+        while (temp.previous) {
+          path.push(temp.previous);
+          temp = temp.previous;
+        }
+        console.log("Path found!");
+      }
+
+      openSet.splice(lowest, 1);
+      closedSet.push(current);
+
+      current.neighbors.forEach(neighbor => {
+        if (!closedSet.includes(neighbor) && !neighbor.wall) {
+          const tempG = current.g + 1;
+          let newPath = false;
+          if (openSet.includes(neighbor)) {
+            if (tempG < neighbor.g) {
+              neighbor.g = tempG;
+              newPath = true;
+            }
+          } else {
+            neighbor.g = tempG;
+            newPath = true;
+            openSet.push(neighbor);
+          }
+
+          if (newPath) {
+            neighbor.h = heuristic(neighbor, end);
+            neighbor.f = neighbor.g + neighbor.h;
+            neighbor.previous = current;
+          }
+        }
+      });
+    } else {
+      console.log("No solution");
+      solving = false;
+    }
+  }
+
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  for (let x = 0; x < cols; x++) {
+    for (let y = 0; y < rows; y++) {
+      grid[x][y].draw("white");
+    }
+  }
+
+  closedSet.forEach(cell => cell.draw("#F24B61"));
+  openSet.forEach(cell => cell.draw("#407FD6"));
+
+  if (found) {
+    closedSet.forEach(cell => cell.draw("#FFF"));
+    openSet.forEach(cell => cell.draw("#FFF"));
+    path.forEach(cell => cell.draw("#50CE8F"));
+  }
+
+  start.draw("#FFB84F");
+  end.draw("#ff4eff");
+
+  requestAnimationFrame(draw);
+}
+
+draw();
+</script>
+</body>
+</html>

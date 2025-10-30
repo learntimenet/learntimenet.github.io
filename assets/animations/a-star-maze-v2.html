@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Maze Carving + A* Algorithm Visualization</title>
+<style>
+  canvas {
+    border: 1px solid black;
+    image-rendering: pixelated;
+  }
+</style>
+<style>
+  body {
+    margin: 0;
+    background: #111;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    font-family: sans-serif;
+  }
+  #legend {
+    display: flex;
+    gap: 1rem;
+    padding: 1rem;
+    font-size: 14px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .color-box {
+    width: 16px;
+    height: 16px;
+    border: 1px solid #444;
+  }
+
+  img {
+    margin: 2rem;
+    width: 300px;
+  }
+
+  h1 {
+    margin-top: 0;
+    font-size: 3rem;
+  }
+</style>
+</head>
+<body>
+
+  <img src="/src/app/assets/images/logo-with-white-text.png" alt="">
+
+  <h1>A* Search Algorithm</h1>
+
+  <canvas id="maze" width="1000" height="1000"></canvas>
+
+  <div id="legend">
+    <div class="legend-item"><div class="color-box" style="background: #FFB84F;"></div>Start</div>
+    <div class="legend-item"><div class="color-box" style="background: #ff4eff;"></div>End</div>
+    <div class="legend-item"><div class="color-box" style="background: #F24B61;"></div>Closed Set</div>
+    <div class="legend-item"><div class="color-box" style="background: #407FD6;"></div>Open Set</div>
+    <div class="legend-item"><div class="color-box" style="background: #1cd728;"></div>Path</div>
+  </div>
+
+<script>
+const canvas = document.getElementById('maze');
+const ctx = canvas.getContext('2d');
+
+const delay = 30;
+const cols = 100;
+const rows = 100;
+const cellSize = canvas.width / cols;
+
+// Maze cells grid
+let grid = [];
+for (let y = 0; y < rows; y++) {
+  let row = [];
+  for (let x = 0; x < cols; x++) {
+    row.push({
+      x, y,
+      walls: {top: true, right: true, bottom: true, left: true},
+      visited: false,
+      f: 0, g: 0, h: 0,
+      parent: null,
+    });
+  }
+  grid.push(row);
+}
+
+// Helper to get neighbors for maze carving (recursive backtracking)
+function getUnvisitedNeighbors(cell) {
+  const {x, y} = cell;
+  const neighbors = [];
+  if (y > 0 && !grid[y - 1][x].visited) neighbors.push(grid[y - 1][x]);
+  if (x < cols - 1 && !grid[y][x + 1].visited) neighbors.push(grid[y][x + 1]);
+  if (y < rows - 1 && !grid[y + 1][x].visited) neighbors.push(grid[y + 1][x]);
+  if (x > 0 && !grid[y][x - 1].visited) neighbors.push(grid[y][x - 1]);
+  return neighbors;
+}
+
+// Remove walls between two adjacent cells
+function removeWalls(a, b) {
+  let x = a.x - b.x;
+  if (x === 1) {
+    a.walls.left = false;
+    b.walls.right = false;
+  } else if (x === -1) {
+    a.walls.right = false;
+    b.walls.left = false;
+  }
+  let y = a.y - b.y;
+  if (y === 1) {
+    a.walls.top = false;
+    b.walls.bottom = false;
+  } else if (y === -1) {
+    a.walls.bottom = false;
+    b.walls.top = false;
+  }
+}
+
+// Recursive backtracking maze generation
+function carveMaze(current) {
+  current.visited = true;
+  let neighbors = getUnvisitedNeighbors(current);
+  while (neighbors.length > 0) {
+    let next = neighbors[Math.floor(Math.random() * neighbors.length)];
+    if (!next.visited) {
+      removeWalls(current, next);
+      carveMaze(next);
+    }
+    neighbors = getUnvisitedNeighbors(current);
+  }
+}
+
+// Draw the maze
+function drawMaze() {
+  ctx.fillStyle = 'white';
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+  ctx.strokeStyle = 'black';
+  ctx.lineWidth = 2;
+  
+  for (let y = 0; y < rows; y++) {
+    for (let x = 0; x < cols; x++) {
+      const cell = grid[y][x];
+      const px = x * cellSize;
+      const py = y * cellSize;
+
+      if (cell.walls.top) {
+        ctx.beginPath();
+        ctx.moveTo(px, py);
+        ctx.lineTo(px + cellSize, py);
+        ctx.stroke();
+      }
+      if (cell.walls.right) {
+        ctx.beginPath();
+        ctx.moveTo(px + cellSize, py);
+        ctx.lineTo(px + cellSize, py + cellSize);
+        ctx.stroke();
+      }
+      if (cell.walls.bottom) {
+        ctx.beginPath();
+        ctx.moveTo(px + cellSize, py + cellSize);
+        ctx.lineTo(px, py + cellSize);
+        ctx.stroke();
+      }
+      if (cell.walls.left) {
+        ctx.beginPath();
+        ctx.moveTo(px, py + cellSize);
+        ctx.lineTo(px, py);
+        ctx.stroke();
+      }
+    }
+  }
+}
+
+// A* algorithm helpers
+function heuristic(a, b) {
+  return Math.abs(a.x - b.x) + Math.abs(a.y - b.y);
+}
+
+function getNeighborsForAStar(cell) {
+  const neighbors = [];
+  const {x, y} = cell;
+  // check each direction if no wall exists
+  if (!cell.walls.top && y > 0) neighbors.push(grid[y - 1][x]);
+  if (!cell.walls.right && x < cols - 1) neighbors.push(grid[y][x + 1]);
+  if (!cell.walls.bottom && y < rows - 1) neighbors.push(grid[y + 1][x]);
+  if (!cell.walls.left && x > 0) neighbors.push(grid[y][x - 1]);
+  return neighbors;
+}
+
+// Draw a rectangle in the maze grid
+function drawCell(cell, color) {
+  ctx.fillStyle = color;
+  // ctx.fillRect(cell.x * cellSize + 4, cell.y * cellSize + 4, cellSize - 8, cellSize - 8);
+  ctx.fillRect(cell.x * cellSize + 2, cell.y * cellSize + 2, cellSize - 4, cellSize - 4);
+  // const cx = cell.x * cellSize + cellSize / 2;
+  // const cy = cell.y * cellSize + cellSize / 2;
+  // const radius = (cellSize - 8) / 2;
+
+  // ctx.fillStyle = color;
+  // ctx.beginPath();
+  // ctx.arc(cx, cy, radius, 0, Math.PI * 2);
+  // ctx.fill();
+}
+
+// Run A* pathfinding
+async function aStar(start, goal) {
+  let openSet = [start];
+  let closedSet = [];
+
+  while (openSet.length > 0) {
+    // Find node in openSet with lowest f
+    let current = openSet.reduce((a, b) => (a.f < b.f ? a : b));
+    if (current === goal) {
+      // Path found, reconstruct path
+      let path = [];
+      let temp = current;
+      while (temp) {
+        path.push(temp);
+        temp = temp.parent;
+      }
+      await new Promise(r => setTimeout(r, 1000));
+      closedSet.forEach(cell => drawCell(cell, '#FFF'));
+      openSet.forEach(cell => drawCell(cell, 'FFF'));
+      drawCell(start, '#FFB84F');
+      drawCell(goal, '#ff4eff');
+      return path.reverse();
+    }
+
+    openSet = openSet.filter(n => n !== current);
+    closedSet.push(current);
+
+    closedSet.forEach(cell => drawCell(cell, '#F24B61'));
+    openSet.forEach(cell => drawCell(cell, '#407FD6'));
+    drawCell(start, '#FFB84F');
+    drawCell(goal, '#ff4eff');
+    await new Promise(r => setTimeout(r, delay)); // small delay to visualize
+
+    let neighbors = getNeighborsForAStar(current);
+    for (let neighbor of neighbors) {
+      if (closedSet.includes(neighbor)) continue;
+      let tentativeG = current.g + 1;
+
+      if (!openSet.includes(neighbor)) {
+        openSet.push(neighbor);
+      } else if (tentativeG >= neighbor.g) {
+        continue;
+      }
+
+      neighbor.g = tentativeG;
+      neighbor.h = heuristic(neighbor, goal);
+      neighbor.f = neighbor.g + neighbor.h;
+      neighbor.parent = current;
+    }
+  }
+  return [];
+}
+
+function drawPathLine(path, color = 'yellow', lineWidth = 4) {
+  if (path.length === 0) return;
+  ctx.strokeStyle = color;
+  ctx.lineWidth = lineWidth;
+  ctx.lineJoin = 'round';
+  ctx.lineCap = 'round';
+
+  ctx.beginPath();
+  // Move to the center of the first cell
+  ctx.moveTo(path[0].x * cellSize + cellSize / 2, path[0].y * cellSize + cellSize / 2);
+
+  // Draw lines connecting centers of each cell in the path
+  for (let i = 1; i < path.length; i++) {
+    ctx.lineTo(path[i].x * cellSize + cellSize / 2, path[i].y * cellSize + cellSize / 2);
+  }
+
+  ctx.stroke();
+}
+
+async function drawPathLineAnimated(path, color = '#1cd728', lineWidth = 6, delay = 20) {
+  if (path.length < 2) return;
+
+  ctx.strokeStyle = color;
+  ctx.lineWidth = lineWidth;
+  ctx.lineJoin = 'round';
+  ctx.lineCap = 'round';
+
+  ctx.beginPath();
+  ctx.moveTo(path[0].x * cellSize + cellSize / 2, path[0].y * cellSize + cellSize / 2);
+
+  for (let i = 1; i < path.length; i++) {
+    const cx = path[i].x * cellSize + cellSize / 2;
+    const cy = path[i].y * cellSize + cellSize / 2;
+    ctx.lineTo(cx, cy);
+    ctx.stroke(); // draw the line segment
+    await new Promise(r => setTimeout(r, delay));
+  }
+}
+
+async function main() {
+  carveMaze(grid[0][0]);
+  drawMaze();
+  const start = grid[0][0];
+  const goal = grid[rows - 1][cols - 1];
+
+  drawCell(start, '#FFB84F');
+  drawCell(goal, '#ff4eff');
+  await new Promise(r => setTimeout(r, 5000));
+
+  let path = await aStar(start, goal);
+  // Soltion 1
+  // for (const cell of path) {
+  //   drawCell(cell, '#1cd728');
+  //   await new Promise(r => setTimeout(r, delay));
+  // }
+
+  // Solution 2
+  // for (let i = 0; i < path.length; i++) {
+  //   const cell = path[i];
+  //   // Calculate gradient color from green to red
+  //   const t = i / (path.length - 1);
+  //   const r = Math.floor(255 * t);
+  //   const g = Math.floor(255 * (1 - t));
+  //   const color = `rgb(${r},${g},0)`;
+    
+  //   drawCell(cell, color);
+  //   await new Promise(r => setTimeout(r, delay));
+  // }
+  await new Promise(r => setTimeout(r, 500));
+  drawPathLineAnimated(path)
+}
+
+main();
+</script>
+
+</body>
+</html>
