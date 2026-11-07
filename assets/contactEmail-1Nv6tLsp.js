@@ -1,0 +1,1 @@
+var e=`contact@learntime.net`;export{e as t};
