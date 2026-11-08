@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://learntime.net/</loc>
-    <lastmod>2026-11-07</lastmod>
+    <lastmod>2026-11-08</lastmod>
   </url>
   <url>
     <loc>https://learntime.net/about/</loc>
@@ -34,10 +34,6 @@
   </url>
   <url>
     <loc>https://learntime.net/contact/</loc>
-    <lastmod>2026-11-07</lastmod>
-  </url>
-  <url>
-    <loc>https://learntime.net/extensions/</loc>
     <lastmod>2026-11-07</lastmod>
   </url>
   <url>
@@ -75,6 +71,10 @@
   <url>
     <loc>https://learntime.net/privacy/</loc>
     <lastmod>2026-11-07</lastmod>
+  </url>
+  <url>
+    <loc>https://learntime.net/products/</loc>
+    <lastmod>2026-11-08</lastmod>
   </url>
   <url>
     <loc>https://learntime.net/quiz/</loc>
