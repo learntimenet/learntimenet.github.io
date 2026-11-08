@@ -1,8 +1,0 @@
-.markdown .qrcode img {
-  border: none !important;
-  width: auto !important;
-  margin: 0 !important; }
-
-.qrcode {
-  display: flex;
-  justify-content: center; }
