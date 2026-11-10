@@ -1,0 +1,1 @@
+var e=[[`year`,365*24*3600],[`month`,720*3600],[`day`,24*3600],[`hour`,3600],[`minute`,60],[`second`,1]],t=new Intl.RelativeTimeFormat(`en`,{numeric:`auto`});function n(n,r){let i=Math.round((n.getTime()-r.getTime())/1e3),[a,o]=e.find(([,e])=>Math.abs(i)>=e)??e.at(-1);return t.format(Math.trunc(i/o),a)}export{n as t};
