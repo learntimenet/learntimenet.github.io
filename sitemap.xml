@@ -122,7 +122,7 @@
   </url>
   <url>
     <loc>https://learntime.net/tools/</loc>
-    <lastmod>2026-11-10</lastmod>
+    <lastmod>2026-11-11</lastmod>
   </url>
   <url>
     <loc>https://learntime.net/tools/base64/</loc>
@@ -131,6 +131,10 @@
   <url>
     <loc>https://learntime.net/tools/blind-type/</loc>
     <lastmod>2026-11-10</lastmod>
+  </url>
+  <url>
+    <loc>https://learntime.net/tools/color-converter/</loc>
+    <lastmod>2026-11-11</lastmod>
   </url>
   <url>
     <loc>https://learntime.net/tools/cron-explainer/</loc>
