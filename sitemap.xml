@@ -162,7 +162,7 @@
   </url>
   <url>
     <loc>https://learntime.net/quiz/</loc>
-    <lastmod>2026-11-10</lastmod>
+    <lastmod>2026-11-12</lastmod>
   </url>
   <url>
     <loc>https://learntime.net/quiz/docker/</loc>
@@ -183,6 +183,10 @@
   <url>
     <loc>https://learntime.net/quiz/react/</loc>
     <lastmod>2026-11-10</lastmod>
+  </url>
+  <url>
+    <loc>https://learntime.net/quiz/sql/</loc>
+    <lastmod>2026-11-12</lastmod>
   </url>
   <url>
     <loc>https://learntime.net/quiz/typescript/</loc>
