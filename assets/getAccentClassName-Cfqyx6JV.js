@@ -1,0 +1,1 @@
+var e=[`bg-brand`,`bg-accent-coral`,`bg-amber-500`,`bg-sky-500`,`bg-emerald-500`,`bg-pink-500`,`bg-violet-500`,`bg-teal-500`];function t(t){let n=0;for(let e of t)n=n*31+e.charCodeAt(0)>>>0;return e[n%e.length]}export{t};
