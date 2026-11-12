@@ -10,7 +10,7 @@
   </url>
   <url>
     <loc>https://learntime.net/blog/</loc>
-    <lastmod>2026-11-11</lastmod>
+    <lastmod>2026-11-12</lastmod>
   </url>
   <url>
     <loc>https://learntime.net/blog/cheatsheet/</loc>
@@ -35,6 +35,10 @@
   <url>
     <loc>https://learntime.net/blog/essentials/big-o-notation-explained/</loc>
     <lastmod>2026-11-11</lastmod>
+  </url>
+  <url>
+    <loc>https://learntime.net/blog/essentials/how-to-read-a-stack-trace/</loc>
+    <lastmod>2026-11-12</lastmod>
   </url>
   <url>
     <loc>https://learntime.net/blog/projects/bmi-calculator/</loc>
