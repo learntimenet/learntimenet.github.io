@@ -1,0 +1,2 @@
+var e=(e,t)=>{let n=e.slice(0,t).split(`
+`);return{line:n.length,column:n.at(-1).length+1}};function t(t,n){let r=/line (\d+) column (\d+)/.exec(n);if(r)return{line:Number(r[1]),column:Number(r[2])};let i=/at position (\d+)/.exec(n);return i?e(t,Number(i[1])):/unexpected end/i.test(n)?e(t,t.trimEnd().length):{}}export{t};
