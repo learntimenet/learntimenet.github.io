@@ -1,0 +1,1 @@
+function e(t){return Array.isArray(t)?t.map(e):typeof t!=`object`||!t?t:Object.fromEntries(Object.keys(t).sort((e,t)=>e.localeCompare(t)).map(n=>[n,e(t[n])]))}export{e as t};

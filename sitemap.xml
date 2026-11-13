@@ -194,7 +194,7 @@
   </url>
   <url>
     <loc>https://learntime.net/tools/</loc>
-    <lastmod>2026-11-12</lastmod>
+    <lastmod>2026-11-13</lastmod>
   </url>
   <url>
     <loc>https://learntime.net/tools/base64/</loc>
@@ -283,6 +283,10 @@
   <url>
     <loc>https://learntime.net/tools/word-counter/</loc>
     <lastmod>2026-11-12</lastmod>
+  </url>
+  <url>
+    <loc>https://learntime.net/tools/yaml-json-converter/</loc>
+    <lastmod>2026-11-13</lastmod>
   </url>
   <url>
     <loc>https://learntime.net/visualizers/</loc>
