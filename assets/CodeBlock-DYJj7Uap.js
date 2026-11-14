@@ -1,1 +1,0 @@
-import{_ as e,y as t}from"./LoaderHider-ms3Rz5rt.js";var n=t();function r({code:t,html:r,className:i}){return r?(0,n.jsx)(`div`,{className:i,dangerouslySetInnerHTML:{__html:r}}):(0,n.jsx)(`pre`,{className:e(`code-block`,i),tabIndex:0,children:(0,n.jsx)(`code`,{children:t})})}export{r as t};
