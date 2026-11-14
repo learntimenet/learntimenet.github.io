@@ -1,0 +1,1 @@
+var e=[`bytes`,`KB`,`MB`,`GB`];function t(t){let n=t,r=0;for(;n>=1024&&r<e.length-1;)n/=1024,r++;return`${r===0?String(n):n.toFixed(1).replace(/\.0$/,``)} ${n===1&&r===0?`byte`:e[r]}`}export{t};
