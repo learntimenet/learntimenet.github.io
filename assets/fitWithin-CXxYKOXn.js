@@ -1,1 +1,0 @@
-function e(e,t,n){let r=Math.max(e,t);if(!n||r<=n)return{width:e,height:t};let i=n/r;return{width:Math.max(1,Math.round(e*i)),height:Math.max(1,Math.round(t*i))}}export{e as t};
