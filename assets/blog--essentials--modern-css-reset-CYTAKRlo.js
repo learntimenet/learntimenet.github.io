@@ -20,6 +20,21 @@ import{b as e,t,x as n,y as r}from"./LoaderHider-CmQGgsdY.js";import{t as i}from
 <div data-code-panel><pre class="shiki shiki-themes github-light-default github-dark-default code-block" tabindex="0"><code><span class="line"><span style="color:#116329;--shiki-dark:#7EE787">body</span><span style="color:#1F2328;--shiki-dark:#E6EDF3"> {</span></span>
 <span class="line"><span style="color:#0550AE;--shiki-dark:#79C0FF">  line-height</span><span style="color:#1F2328;--shiki-dark:#E6EDF3">: </span><span style="color:#0550AE;--shiki-dark:#79C0FF">1.5</span><span style="color:#1F2328;--shiki-dark:#E6EDF3">;</span></span>
 <span class="line"><span style="color:#1F2328;--shiki-dark:#E6EDF3">}</span></span></code></pre><button type="button" data-copy-code>Copy</button></div><p>Browsers default to a line height of about 1.2, which feels cramped for paragraphs. Around 1.5 is easier to read, and it&#39;s the line spacing WCAG asks for at its highest (AAA) level. Leave it without a unit, so it scales with each element&#39;s font size. Headings usually look better tighter, at 1.1 to 1.25.</p>
+<h3 id="use-the-system-font">Use the system font</h3>
+<div data-code-panel><pre class="shiki shiki-themes github-light-default github-dark-default code-block" tabindex="0"><code><span class="line"><span style="color:#116329;--shiki-dark:#7EE787">body</span><span style="color:#1F2328;--shiki-dark:#E6EDF3"> {</span></span>
+<span class="line"><span style="color:#0550AE;--shiki-dark:#79C0FF">  font-family</span><span style="color:#1F2328;--shiki-dark:#E6EDF3">:</span></span>
+<span class="line"><span style="color:#0550AE;--shiki-dark:#79C0FF">    system-ui</span><span style="color:#1F2328;--shiki-dark:#E6EDF3">,</span></span>
+<span class="line"><span style="color:#0550AE;--shiki-dark:#79C0FF">    -apple-system</span><span style="color:#1F2328;--shiki-dark:#E6EDF3">,</span></span>
+<span class="line"><span style="color:#0A3069;--shiki-dark:#A5D6FF">    "Segoe UI"</span><span style="color:#1F2328;--shiki-dark:#E6EDF3">,</span></span>
+<span class="line"><span style="color:#1F2328;--shiki-dark:#E6EDF3">    Roboto,</span></span>
+<span class="line"><span style="color:#0A3069;--shiki-dark:#A5D6FF">    "Helvetica Neue"</span><span style="color:#1F2328;--shiki-dark:#E6EDF3">,</span></span>
+<span class="line"><span style="color:#0550AE;--shiki-dark:#79C0FF">    Arial</span><span style="color:#1F2328;--shiki-dark:#E6EDF3">,</span></span>
+<span class="line"><span style="color:#0A3069;--shiki-dark:#A5D6FF">    "Noto Sans"</span><span style="color:#1F2328;--shiki-dark:#E6EDF3">,</span></span>
+<span class="line"><span style="color:#0550AE;--shiki-dark:#79C0FF">    sans-serif</span><span style="color:#1F2328;--shiki-dark:#E6EDF3">,</span></span>
+<span class="line"><span style="color:#0A3069;--shiki-dark:#A5D6FF">    "Apple Color Emoji"</span><span style="color:#1F2328;--shiki-dark:#E6EDF3">,</span></span>
+<span class="line"><span style="color:#0A3069;--shiki-dark:#A5D6FF">    "Segoe UI Emoji"</span><span style="color:#1F2328;--shiki-dark:#E6EDF3">;</span></span>
+<span class="line"><span style="color:#1F2328;--shiki-dark:#E6EDF3">}</span></span></code></pre><button type="button" data-copy-code>Copy</button></div><p>Browsers default to a serif font like Times New Roman, which few designs want. <code>system-ui</code> uses the operating system&#39;s own interface font: San Francisco on Apple devices, Segoe UI on Windows, Roboto on Android, and Cantarell or Ubuntu on Linux. It looks native, reads well on screens, and loads instantly because nothing is downloaded.</p>
+<p>The names after it are fallbacks for older browsers that don&#39;t know <code>system-ui</code>: <code>-apple-system</code> for older Safari, then the same fonts by name, then <code>sans-serif</code> if none is installed. The two emoji fonts at the end make emoji show in color on Apple and Windows devices. If your design uses its own font, put it first, like <code>font-family: &quot;Inter&quot;, system-ui, sans-serif;</code>, and keep the system stack as the fallback while it loads.</p>
 <h3 id="keep-fonts-the-same-size-on-phones">Keep fonts the same size on phones</h3>
 <div data-code-panel><pre class="shiki shiki-themes github-light-default github-dark-default code-block" tabindex="0"><code><span class="line"><span style="color:#116329;--shiki-dark:#7EE787">html</span><span style="color:#1F2328;--shiki-dark:#E6EDF3"> {</span></span>
 <span class="line"><span style="color:#0550AE;--shiki-dark:#79C0FF">  -webkit-text-size-adjust</span><span style="color:#1F2328;--shiki-dark:#E6EDF3">: </span><span style="color:#0550AE;--shiki-dark:#79C0FF">none</span><span style="color:#1F2328;--shiki-dark:#E6EDF3">;</span></span>
@@ -108,6 +123,17 @@ import{b as e,t,x as n,y as r}from"./LoaderHider-CmQGgsdY.js";import{t as i}from
 <span class="line"></span>
 <span class="line"><span style="color:#116329;--shiki-dark:#7EE787">  body</span><span style="color:#1F2328;--shiki-dark:#E6EDF3"> {</span></span>
 <span class="line"><span style="color:#0550AE;--shiki-dark:#79C0FF">    min-height</span><span style="color:#1F2328;--shiki-dark:#E6EDF3">: </span><span style="color:#0550AE;--shiki-dark:#79C0FF">100</span><span style="color:#CF222E;--shiki-dark:#FF7B72">vh</span><span style="color:#1F2328;--shiki-dark:#E6EDF3">;</span></span>
+<span class="line"><span style="color:#0550AE;--shiki-dark:#79C0FF">    font-family</span><span style="color:#1F2328;--shiki-dark:#E6EDF3">:</span></span>
+<span class="line"><span style="color:#0550AE;--shiki-dark:#79C0FF">      system-ui</span><span style="color:#1F2328;--shiki-dark:#E6EDF3">,</span></span>
+<span class="line"><span style="color:#0550AE;--shiki-dark:#79C0FF">      -apple-system</span><span style="color:#1F2328;--shiki-dark:#E6EDF3">,</span></span>
+<span class="line"><span style="color:#0A3069;--shiki-dark:#A5D6FF">      "Segoe UI"</span><span style="color:#1F2328;--shiki-dark:#E6EDF3">,</span></span>
+<span class="line"><span style="color:#1F2328;--shiki-dark:#E6EDF3">      Roboto,</span></span>
+<span class="line"><span style="color:#0A3069;--shiki-dark:#A5D6FF">      "Helvetica Neue"</span><span style="color:#1F2328;--shiki-dark:#E6EDF3">,</span></span>
+<span class="line"><span style="color:#0550AE;--shiki-dark:#79C0FF">      Arial</span><span style="color:#1F2328;--shiki-dark:#E6EDF3">,</span></span>
+<span class="line"><span style="color:#0A3069;--shiki-dark:#A5D6FF">      "Noto Sans"</span><span style="color:#1F2328;--shiki-dark:#E6EDF3">,</span></span>
+<span class="line"><span style="color:#0550AE;--shiki-dark:#79C0FF">      sans-serif</span><span style="color:#1F2328;--shiki-dark:#E6EDF3">,</span></span>
+<span class="line"><span style="color:#0A3069;--shiki-dark:#A5D6FF">      "Apple Color Emoji"</span><span style="color:#1F2328;--shiki-dark:#E6EDF3">,</span></span>
+<span class="line"><span style="color:#0A3069;--shiki-dark:#A5D6FF">      "Segoe UI Emoji"</span><span style="color:#1F2328;--shiki-dark:#E6EDF3">;</span></span>
 <span class="line"><span style="color:#0550AE;--shiki-dark:#79C0FF">    line-height</span><span style="color:#1F2328;--shiki-dark:#E6EDF3">: </span><span style="color:#0550AE;--shiki-dark:#79C0FF">1.5</span><span style="color:#1F2328;--shiki-dark:#E6EDF3">;</span></span>
 <span class="line"><span style="color:#1F2328;--shiki-dark:#E6EDF3">  }</span></span>
 <span class="line"></span>
