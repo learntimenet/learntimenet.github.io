@@ -2,11 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://learntime.net/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
   </url>
   <url>
     <loc>https://learntime.net/about/</loc>
-    <lastmod>2026-11-11</lastmod>
+    <lastmod>2026-11-15</lastmod>
   </url>
   <url>
     <loc>https://learntime.net/blog/</loc>
@@ -98,7 +98,7 @@
   </url>
   <url>
     <loc>https://learntime.net/contact/</loc>
-    <lastmod>2026-11-11</lastmod>
+    <lastmod>2026-11-15</lastmod>
   </url>
   <url>
     <loc>https://learntime.net/interview/</loc>
@@ -198,11 +198,11 @@
   </url>
   <url>
     <loc>https://learntime.net/tools/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
   </url>
   <url>
     <loc>https://learntime.net/tools/background-remover/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
   </url>
   <url>
     <loc>https://learntime.net/tools/base64/</loc>
@@ -242,7 +242,7 @@
   </url>
   <url>
     <loc>https://learntime.net/tools/cv-generator/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
   </url>
   <url>
     <loc>https://learntime.net/tools/hash-generator/</loc>
@@ -250,11 +250,11 @@
   </url>
   <url>
     <loc>https://learntime.net/tools/http-status-codes/</loc>
-    <lastmod>2026-11-13</lastmod>
+    <lastmod>2026-11-15</lastmod>
   </url>
   <url>
     <loc>https://learntime.net/tools/image-compressor/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
   </url>
   <url>
     <loc>https://learntime.net/tools/json-formatter/</loc>
@@ -282,7 +282,7 @@
   </url>
   <url>
     <loc>https://learntime.net/tools/password-generator/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
   </url>
   <url>
     <loc>https://learntime.net/tools/qr-code-generator/</loc>
@@ -294,7 +294,7 @@
   </url>
   <url>
     <loc>https://learntime.net/tools/sql-formatter/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
   </url>
   <url>
     <loc>https://learntime.net/tools/text-diff/</loc>
@@ -314,11 +314,11 @@
   </url>
   <url>
     <loc>https://learntime.net/tools/uuid-generator/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
   </url>
   <url>
     <loc>https://learntime.net/tools/whiteboard/</loc>
-    <lastmod>2026-11-13</lastmod>
+    <lastmod>2026-11-15</lastmod>
   </url>
   <url>
     <loc>https://learntime.net/tools/word-counter/</loc>
