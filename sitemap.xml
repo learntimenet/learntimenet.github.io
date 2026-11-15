@@ -26,7 +26,7 @@
   </url>
   <url>
     <loc>https://learntime.net/blog/cheatsheet/git/</loc>
-    <lastmod>2026-11-11</lastmod>
+    <lastmod>2026-11-15</lastmod>
   </url>
   <url>
     <loc>https://learntime.net/blog/essentials/12-practical-web-projects-using-html-css-and-javascript/</loc>
@@ -42,7 +42,7 @@
   </url>
   <url>
     <loc>https://learntime.net/blog/essentials/how-to-undo-almost-anything-in-git/</loc>
-    <lastmod>2026-11-12</lastmod>
+    <lastmod>2026-11-15</lastmod>
   </url>
   <url>
     <loc>https://learntime.net/blog/essentials/modern-css-reset/</loc>
@@ -159,6 +159,14 @@
   <url>
     <loc>https://learntime.net/interview/typescript/</loc>
     <lastmod>2026-11-14</lastmod>
+  </url>
+  <url>
+    <loc>https://learntime.net/playgrounds/</loc>
+    <lastmod>2026-11-15</lastmod>
+  </url>
+  <url>
+    <loc>https://learntime.net/playgrounds/git/</loc>
+    <lastmod>2026-11-15</lastmod>
   </url>
   <url>
     <loc>https://learntime.net/privacy/</loc>
