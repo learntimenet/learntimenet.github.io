@@ -222,7 +222,7 @@
   </url>
   <url>
     <loc>https://learntime.net/tools/</loc>
-    <lastmod>2026-11-15</lastmod>
+    <lastmod>2026-11-16</lastmod>
   </url>
   <url>
     <loc>https://learntime.net/tools/background-remover/</loc>
@@ -235,6 +235,10 @@
   <url>
     <loc>https://learntime.net/tools/blind-type/</loc>
     <lastmod>2026-11-13</lastmod>
+  </url>
+  <url>
+    <loc>https://learntime.net/tools/box-shadow-generator/</loc>
+    <lastmod>2026-11-16</lastmod>
   </url>
   <url>
     <loc>https://learntime.net/tools/case-converter/</loc>
