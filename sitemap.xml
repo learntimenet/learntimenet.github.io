@@ -101,7 +101,19 @@
     <lastmod>2026-11-11</lastmod>
   </url>
   <url>
+    <loc>https://learntime.net/blog/system-design/caching-without-stale-data/</loc>
+    <lastmod>2026-11-16</lastmod>
+  </url>
+  <url>
     <loc>https://learntime.net/blog/system-design/idempotent-order-api/</loc>
+    <lastmod>2026-11-16</lastmod>
+  </url>
+  <url>
+    <loc>https://learntime.net/blog/system-design/prevent-overselling/</loc>
+    <lastmod>2026-11-16</lastmod>
+  </url>
+  <url>
+    <loc>https://learntime.net/blog/system-design/rate-limiter/</loc>
     <lastmod>2026-11-16</lastmod>
   </url>
   <url>
