@@ -10,7 +10,7 @@
   </url>
   <url>
     <loc>https://learntime.net/blog/</loc>
-    <lastmod>2026-11-15</lastmod>
+    <lastmod>2026-11-16</lastmod>
   </url>
   <url>
     <loc>https://learntime.net/blog/cheatsheet/</loc>
@@ -99,6 +99,10 @@
   <url>
     <loc>https://learntime.net/blog/projects/weather-app/</loc>
     <lastmod>2026-11-11</lastmod>
+  </url>
+  <url>
+    <loc>https://learntime.net/blog/system-design/idempotent-order-api/</loc>
+    <lastmod>2026-11-16</lastmod>
   </url>
   <url>
     <loc>https://learntime.net/contact/</loc>
