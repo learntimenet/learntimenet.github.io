@@ -1,0 +1,1 @@
+var e=`inline-flex min-h-10 cursor-pointer items-center rounded-full border border-border bg-surface px-4 text-sm font-semibold text-ink-soft transition-colors hover:border-brand/30 hover:bg-brand-soft hover:text-brand disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:border-border disabled:hover:bg-surface disabled:hover:text-ink-soft`;export{e as t};
