@@ -14,7 +14,7 @@
   </url>
   <url>
     <loc>https://learntime.net/blog/cheatsheet/</loc>
-    <lastmod>2026-11-11</lastmod>
+    <lastmod>2026-11-13</lastmod>
   </url>
   <url>
     <loc>https://learntime.net/blog/cheatsheet/angular/</loc>
@@ -30,7 +30,7 @@
   </url>
   <url>
     <loc>https://learntime.net/blog/essentials/12-practical-web-projects-using-html-css-and-javascript/</loc>
-    <lastmod>2026-11-11</lastmod>
+    <lastmod>2026-11-13</lastmod>
   </url>
   <url>
     <loc>https://learntime.net/blog/essentials/big-o-notation-explained/</loc>
@@ -38,6 +38,10 @@
   </url>
   <url>
     <loc>https://learntime.net/blog/essentials/claude-certified-associate-foundations-study-guide/</loc>
+    <lastmod>2026-11-17</lastmod>
+  </url>
+  <url>
+    <loc>https://learntime.net/blog/essentials/delete-old-documents-keep-latest-per-type/</loc>
     <lastmod>2026-11-17</lastmod>
   </url>
   <url>
@@ -58,15 +62,15 @@
   </url>
   <url>
     <loc>https://learntime.net/blog/projects/bmi-calculator/</loc>
-    <lastmod>2026-11-11</lastmod>
+    <lastmod>2026-11-13</lastmod>
   </url>
   <url>
     <loc>https://learntime.net/blog/projects/calculator/</loc>
-    <lastmod>2026-11-11</lastmod>
+    <lastmod>2026-11-13</lastmod>
   </url>
   <url>
     <loc>https://learntime.net/blog/projects/countdown-timer/</loc>
-    <lastmod>2026-11-11</lastmod>
+    <lastmod>2026-11-13</lastmod>
   </url>
   <url>
     <loc>https://learntime.net/blog/projects/hash-generator/</loc>
@@ -74,7 +78,7 @@
   </url>
   <url>
     <loc>https://learntime.net/blog/projects/music-player/</loc>
-    <lastmod>2026-11-11</lastmod>
+    <lastmod>2026-11-13</lastmod>
   </url>
   <url>
     <loc>https://learntime.net/blog/projects/password-generator/</loc>
@@ -90,19 +94,19 @@
   </url>
   <url>
     <loc>https://learntime.net/blog/projects/tic-tac-toe-game/</loc>
-    <lastmod>2026-11-11</lastmod>
+    <lastmod>2026-11-13</lastmod>
   </url>
   <url>
     <loc>https://learntime.net/blog/projects/todo-list-app/</loc>
-    <lastmod>2026-11-11</lastmod>
+    <lastmod>2026-11-13</lastmod>
   </url>
   <url>
     <loc>https://learntime.net/blog/projects/typing-speed-test/</loc>
-    <lastmod>2026-11-11</lastmod>
+    <lastmod>2026-11-13</lastmod>
   </url>
   <url>
     <loc>https://learntime.net/blog/projects/weather-app/</loc>
-    <lastmod>2026-11-11</lastmod>
+    <lastmod>2026-11-13</lastmod>
   </url>
   <url>
     <loc>https://learntime.net/blog/system-design/caching-without-stale-data/</loc>
@@ -126,7 +130,7 @@
   </url>
   <url>
     <loc>https://learntime.net/daily/</loc>
-    <lastmod>2026-11-12</lastmod>
+    <lastmod>2026-11-13</lastmod>
   </url>
   <url>
     <loc>https://learntime.net/exams/</loc>
@@ -238,35 +242,35 @@
   </url>
   <url>
     <loc>https://learntime.net/quiz/</loc>
-    <lastmod>2026-11-12</lastmod>
+    <lastmod>2026-11-13</lastmod>
   </url>
   <url>
     <loc>https://learntime.net/quiz/docker/</loc>
-    <lastmod>2026-11-11</lastmod>
+    <lastmod>2026-11-13</lastmod>
   </url>
   <url>
     <loc>https://learntime.net/quiz/git/</loc>
-    <lastmod>2026-11-11</lastmod>
+    <lastmod>2026-11-13</lastmod>
   </url>
   <url>
     <loc>https://learntime.net/quiz/java/</loc>
-    <lastmod>2026-11-11</lastmod>
+    <lastmod>2026-11-13</lastmod>
   </url>
   <url>
     <loc>https://learntime.net/quiz/javascript/</loc>
-    <lastmod>2026-11-11</lastmod>
+    <lastmod>2026-11-13</lastmod>
   </url>
   <url>
     <loc>https://learntime.net/quiz/react/</loc>
-    <lastmod>2026-11-11</lastmod>
+    <lastmod>2026-11-13</lastmod>
   </url>
   <url>
     <loc>https://learntime.net/quiz/sql/</loc>
-    <lastmod>2026-11-12</lastmod>
+    <lastmod>2026-11-13</lastmod>
   </url>
   <url>
     <loc>https://learntime.net/quiz/typescript/</loc>
-    <lastmod>2026-11-11</lastmod>
+    <lastmod>2026-11-13</lastmod>
   </url>
   <url>
     <loc>https://learntime.net/tools/</loc>
