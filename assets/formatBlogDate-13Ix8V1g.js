@@ -1,0 +1,1 @@
+var e=new Intl.DateTimeFormat(`en-US`,{dateStyle:`long`,timeZone:`UTC`});function t(t){return e.format(new Date(t))}export{t};

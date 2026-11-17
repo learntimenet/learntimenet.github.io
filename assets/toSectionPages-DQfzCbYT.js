@@ -1,0 +1,1 @@
+function e(e){return Object.values(e).map(({title:e,description:t,generatedFilesFolder:n})=>({title:e,description:t,url:`/${n}/`})).sort((e,t)=>e.title.localeCompare(t.title,`en`))}export{e as t};
