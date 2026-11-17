@@ -1,0 +1,1 @@
+import{o as e}from"./ColorPicker-XQqgFQm8.js";var t=({r:t,g:n,b:r})=>.2126*e(t)+.7152*e(n)+.0722*e(r);function n(e,n){let[r,i]=[t(e),t(n)].sort((e,t)=>t-e);return(r+.05)/(i+.05)}export{n as t};

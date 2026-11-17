@@ -1,0 +1,1 @@
+var e=`inline-flex min-h-11 cursor-pointer items-center rounded-full bg-brand px-6 text-sm font-bold text-on-brand transition-colors hover:bg-brand-hover disabled:cursor-not-allowed disabled:opacity-50`;export{e as t};

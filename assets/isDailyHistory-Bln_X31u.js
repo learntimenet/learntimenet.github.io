@@ -1,0 +1,1 @@
+function e(e){return typeof e==`object`&&!!e&&!Array.isArray(e)&&Object.entries(e).every(([e,t])=>{let n=t;return/^\d{4}-\d{2}-\d{2}$/.test(e)&&typeof n==`object`&&!!n&&typeof n.key==`string`&&typeof n.selected==`number`&&typeof n.correct==`boolean`})}export{e as t};
