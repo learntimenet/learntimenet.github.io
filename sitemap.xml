@@ -290,7 +290,7 @@
   </url>
   <url>
     <loc>https://learntime.net/tools/</loc>
-    <lastmod>2026-11-18</lastmod>
+    <lastmod>2026-11-19</lastmod>
   </url>
   <url>
     <loc>https://learntime.net/tools/background-remover/</loc>
@@ -347,6 +347,10 @@
   <url>
     <loc>https://learntime.net/tools/hash-generator/</loc>
     <lastmod>2026-11-14</lastmod>
+  </url>
+  <url>
+    <loc>https://learntime.net/tools/html-email-generator/</loc>
+    <lastmod>2026-11-19</lastmod>
   </url>
   <url>
     <loc>https://learntime.net/tools/http-status-codes/</loc>
