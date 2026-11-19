@@ -1,0 +1,1 @@
+function e(e){if(!/^(https?:\/\/|mailto:)/i.test(e.trim()))return!1;try{return new URL(e.trim()),!0}catch{return!1}}export{e as t};

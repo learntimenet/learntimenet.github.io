@@ -190,7 +190,7 @@
   </url>
   <url>
     <loc>https://learntime.net/games/</loc>
-    <lastmod>2026-11-18</lastmod>
+    <lastmod>2026-11-19</lastmod>
   </url>
   <url>
     <loc>https://learntime.net/games/bit-flip/</loc>
@@ -215,6 +215,10 @@
   <url>
     <loc>https://learntime.net/games/grid-memory/</loc>
     <lastmod>2026-11-17</lastmod>
+  </url>
+  <url>
+    <loc>https://learntime.net/games/odd-one-out/</loc>
+    <lastmod>2026-11-19</lastmod>
   </url>
   <url>
     <loc>https://learntime.net/games/typing-rain/</loc>
@@ -423,6 +427,10 @@
   <url>
     <loc>https://learntime.net/tools/markdown-editor/</loc>
     <lastmod>2026-11-18</lastmod>
+  </url>
+  <url>
+    <loc>https://learntime.net/tools/meta-tags-generator/</loc>
+    <lastmod>2026-11-19</lastmod>
   </url>
   <url>
     <loc>https://learntime.net/tools/number-base-converter/</loc>
