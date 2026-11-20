@@ -1,0 +1,1 @@
+import{h as e}from"./LoaderHider-CxaxRTy_.js";var t=e.contactEmail;export{t};
