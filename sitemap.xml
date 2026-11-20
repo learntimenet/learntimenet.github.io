@@ -190,7 +190,11 @@
   </url>
   <url>
     <loc>https://learntime.net/games/</loc>
-    <lastmod>2026-11-19</lastmod>
+    <lastmod>2026-11-20</lastmod>
+  </url>
+  <url>
+    <loc>https://learntime.net/games/balanced-brackets/</loc>
+    <lastmod>2026-11-20</lastmod>
   </url>
   <url>
     <loc>https://learntime.net/games/bit-flip/</loc>
@@ -217,8 +221,24 @@
     <lastmod>2026-11-17</lastmod>
   </url>
   <url>
+    <loc>https://learntime.net/games/number-sequence/</loc>
+    <lastmod>2026-11-20</lastmod>
+  </url>
+  <url>
     <loc>https://learntime.net/games/odd-one-out/</loc>
     <lastmod>2026-11-19</lastmod>
+  </url>
+  <url>
+    <loc>https://learntime.net/games/reaction-time/</loc>
+    <lastmod>2026-11-20</lastmod>
+  </url>
+  <url>
+    <loc>https://learntime.net/games/slide-puzzle/</loc>
+    <lastmod>2026-11-20</lastmod>
+  </url>
+  <url>
+    <loc>https://learntime.net/games/switch-off/</loc>
+    <lastmod>2026-11-20</lastmod>
   </url>
   <url>
     <loc>https://learntime.net/games/typing-rain/</loc>
@@ -341,6 +361,10 @@
     <lastmod>2026-11-20</lastmod>
   </url>
   <url>
+    <loc>https://learntime.net/tools/aspect-ratio-calculator/</loc>
+    <lastmod>2026-11-20</lastmod>
+  </url>
+  <url>
     <loc>https://learntime.net/tools/background-remover/</loc>
     <lastmod>2026-11-15</lastmod>
   </url>
@@ -381,6 +405,10 @@
     <lastmod>2026-11-14</lastmod>
   </url>
   <url>
+    <loc>https://learntime.net/tools/css-clamp-generator/</loc>
+    <lastmod>2026-11-20</lastmod>
+  </url>
+  <url>
     <loc>https://learntime.net/tools/css-gradient-generator/</loc>
     <lastmod>2026-11-14</lastmod>
   </url>
@@ -399,6 +427,10 @@
   <url>
     <loc>https://learntime.net/tools/html-email-generator/</loc>
     <lastmod>2026-11-19</lastmod>
+  </url>
+  <url>
+    <loc>https://learntime.net/tools/html-entity-encoder/</loc>
+    <lastmod>2026-11-20</lastmod>
   </url>
   <url>
     <loc>https://learntime.net/tools/http-status-codes/</loc>
@@ -423,6 +455,10 @@
   <url>
     <loc>https://learntime.net/tools/linkedin-text-formatter/</loc>
     <lastmod>2026-11-13</lastmod>
+  </url>
+  <url>
+    <loc>https://learntime.net/tools/lorem-ipsum-generator/</loc>
+    <lastmod>2026-11-20</lastmod>
   </url>
   <url>
     <loc>https://learntime.net/tools/markdown-editor/</loc>
@@ -451,6 +487,10 @@
   <url>
     <loc>https://learntime.net/tools/regex-tester/</loc>
     <lastmod>2026-11-13</lastmod>
+  </url>
+  <url>
+    <loc>https://learntime.net/tools/sort-lines/</loc>
+    <lastmod>2026-11-20</lastmod>
   </url>
   <url>
     <loc>https://learntime.net/tools/sql-formatter/</loc>
