@@ -338,7 +338,7 @@
   </url>
   <url>
     <loc>https://learntime.net/tools/</loc>
-    <lastmod>2026-11-19</lastmod>
+    <lastmod>2026-11-20</lastmod>
   </url>
   <url>
     <loc>https://learntime.net/tools/background-remover/</loc>
@@ -439,6 +439,10 @@
   <url>
     <loc>https://learntime.net/tools/password-generator/</loc>
     <lastmod>2026-11-15</lastmod>
+  </url>
+  <url>
+    <loc>https://learntime.net/tools/px-to-rem-converter/</loc>
+    <lastmod>2026-11-20</lastmod>
   </url>
   <url>
     <loc>https://learntime.net/tools/qr-code-generator/</loc>
