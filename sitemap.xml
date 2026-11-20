@@ -221,14 +221,6 @@
     <lastmod>2026-11-13</lastmod>
   </url>
   <url>
-    <loc>https://learntime.net/ebooks/</loc>
-    <lastmod>2026-11-20</lastmod>
-  </url>
-  <url>
-    <loc>https://learntime.net/ebooks/system-design-interview/</loc>
-    <lastmod>2026-11-20</lastmod>
-  </url>
-  <url>
     <loc>https://learntime.net/exams/</loc>
     <lastmod>2026-11-20</lastmod>
   </url>
@@ -406,7 +398,11 @@
   </url>
   <url>
     <loc>https://learntime.net/products/</loc>
-    <lastmod>2026-11-16</lastmod>
+    <lastmod>2026-11-20</lastmod>
+  </url>
+  <url>
+    <loc>https://learntime.net/products/system-design-interview-ebook/</loc>
+    <lastmod>2026-11-20</lastmod>
   </url>
   <url>
     <loc>https://learntime.net/quiz/</loc>
