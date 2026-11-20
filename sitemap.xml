@@ -305,11 +305,19 @@
     <lastmod>2026-11-18</lastmod>
   </url>
   <url>
+    <loc>https://learntime.net/games/git-command-match/</loc>
+    <lastmod>2026-11-20</lastmod>
+  </url>
+  <url>
     <loc>https://learntime.net/games/grid-memory/</loc>
     <lastmod>2026-11-17</lastmod>
   </url>
   <url>
     <loc>https://learntime.net/games/hex-guess/</loc>
+    <lastmod>2026-11-20</lastmod>
+  </url>
+  <url>
+    <loc>https://learntime.net/games/http-status-match/</loc>
     <lastmod>2026-11-20</lastmod>
   </url>
   <url>
@@ -321,7 +329,15 @@
     <lastmod>2026-11-19</lastmod>
   </url>
   <url>
+    <loc>https://learntime.net/games/port-match/</loc>
+    <lastmod>2026-11-20</lastmod>
+  </url>
+  <url>
     <loc>https://learntime.net/games/reaction-time/</loc>
+    <lastmod>2026-11-20</lastmod>
+  </url>
+  <url>
+    <loc>https://learntime.net/games/regex-match/</loc>
     <lastmod>2026-11-20</lastmod>
   </url>
   <url>
@@ -334,6 +350,10 @@
   </url>
   <url>
     <loc>https://learntime.net/games/tech-scramble/</loc>
+    <lastmod>2026-11-20</lastmod>
+  </url>
+  <url>
+    <loc>https://learntime.net/games/truthy-or-falsy/</loc>
     <lastmod>2026-11-20</lastmod>
   </url>
   <url>

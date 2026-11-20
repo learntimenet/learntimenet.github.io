@@ -1,0 +1,1 @@
+import{t as e}from"./shuffle-DG-lNcLb.js";function t(t,n,r=4,i=Math.random){let a=n(t[Math.floor(i()*t.length)]),o=new Set;for(let s of e(t,i)){if(o.size===r-1)break;let{answer:e}=n(s);e!==a.answer&&o.add(e)}return{...a,options:e([a.answer,...o],i)}}export{t};
