@@ -37,6 +37,10 @@
     <lastmod>2026-11-20</lastmod>
   </url>
   <url>
+    <loc>https://learntime.net/blog/cheatsheet/typescript/</loc>
+    <lastmod>2026-11-20</lastmod>
+  </url>
+  <url>
     <loc>https://learntime.net/blog/essentials/12-practical-web-projects-using-html-css-and-javascript/</loc>
     <lastmod>2026-11-16</lastmod>
   </url>
@@ -53,8 +57,16 @@
     <lastmod>2026-11-20</lastmod>
   </url>
   <url>
+    <loc>https://learntime.net/blog/essentials/cors-explained/</loc>
+    <lastmod>2026-11-20</lastmod>
+  </url>
+  <url>
     <loc>https://learntime.net/blog/essentials/delete-old-documents-keep-latest-per-type/</loc>
     <lastmod>2026-11-17</lastmod>
+  </url>
+  <url>
+    <loc>https://learntime.net/blog/essentials/git-merge-vs-rebase/</loc>
+    <lastmod>2026-11-20</lastmod>
   </url>
   <url>
     <loc>https://learntime.net/blog/essentials/how-to-read-a-stack-trace/</loc>
@@ -106,6 +118,10 @@
   </url>
   <url>
     <loc>https://learntime.net/blog/leetcode/contains-duplicate/</loc>
+    <lastmod>2026-11-20</lastmod>
+  </url>
+  <url>
+    <loc>https://learntime.net/blog/leetcode/group-anagrams/</loc>
     <lastmod>2026-11-20</lastmod>
   </url>
   <url>
@@ -195,6 +211,10 @@
   <url>
     <loc>https://learntime.net/blog/system-design/idempotent-order-api/</loc>
     <lastmod>2026-11-16</lastmod>
+  </url>
+  <url>
+    <loc>https://learntime.net/blog/system-design/news-feed/</loc>
+    <lastmod>2026-11-20</lastmod>
   </url>
   <url>
     <loc>https://learntime.net/blog/system-design/notification-system/</loc>
