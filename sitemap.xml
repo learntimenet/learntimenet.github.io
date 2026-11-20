@@ -29,6 +29,14 @@
     <lastmod>2026-11-16</lastmod>
   </url>
   <url>
+    <loc>https://learntime.net/blog/cheatsheet/regex/</loc>
+    <lastmod>2026-11-20</lastmod>
+  </url>
+  <url>
+    <loc>https://learntime.net/blog/cheatsheet/sql/</loc>
+    <lastmod>2026-11-20</lastmod>
+  </url>
+  <url>
     <loc>https://learntime.net/blog/essentials/12-practical-web-projects-using-html-css-and-javascript/</loc>
     <lastmod>2026-11-13</lastmod>
   </url>
@@ -57,12 +65,28 @@
     <lastmod>2026-11-16</lastmod>
   </url>
   <url>
+    <loc>https://learntime.net/blog/essentials/http-caching-explained/</loc>
+    <lastmod>2026-11-20</lastmod>
+  </url>
+  <url>
+    <loc>https://learntime.net/blog/essentials/javascript-event-loop-explained/</loc>
+    <lastmod>2026-11-20</lastmod>
+  </url>
+  <url>
     <loc>https://learntime.net/blog/essentials/modern-css-reset/</loc>
     <lastmod>2026-11-16</lastmod>
   </url>
   <url>
+    <loc>https://learntime.net/blog/essentials/rest-api-design-best-practices/</loc>
+    <lastmod>2026-11-20</lastmod>
+  </url>
+  <url>
     <loc>https://learntime.net/blog/essentials/row-number-in-sql/</loc>
     <lastmod>2026-11-18</lastmod>
+  </url>
+  <url>
+    <loc>https://learntime.net/blog/essentials/sql-joins-explained/</loc>
+    <lastmod>2026-11-20</lastmod>
   </url>
   <url>
     <loc>https://learntime.net/blog/essentials/what-happens-when-you-type-a-url/</loc>
@@ -81,6 +105,10 @@
     <lastmod>2026-11-19</lastmod>
   </url>
   <url>
+    <loc>https://learntime.net/blog/leetcode/contains-duplicate/</loc>
+    <lastmod>2026-11-20</lastmod>
+  </url>
+  <url>
     <loc>https://learntime.net/blog/leetcode/longest-substring-without-repeating-characters/</loc>
     <lastmod>2026-11-19</lastmod>
   </url>
@@ -95,6 +123,10 @@
   <url>
     <loc>https://learntime.net/blog/leetcode/number-of-islands/</loc>
     <lastmod>2026-11-19</lastmod>
+  </url>
+  <url>
+    <loc>https://learntime.net/blog/leetcode/product-of-array-except-self/</loc>
+    <lastmod>2026-11-20</lastmod>
   </url>
   <url>
     <loc>https://learntime.net/blog/leetcode/two-sum/</loc>
@@ -165,12 +197,20 @@
     <lastmod>2026-11-16</lastmod>
   </url>
   <url>
+    <loc>https://learntime.net/blog/system-design/notification-system/</loc>
+    <lastmod>2026-11-20</lastmod>
+  </url>
+  <url>
     <loc>https://learntime.net/blog/system-design/prevent-overselling/</loc>
     <lastmod>2026-11-16</lastmod>
   </url>
   <url>
     <loc>https://learntime.net/blog/system-design/rate-limiter/</loc>
     <lastmod>2026-11-16</lastmod>
+  </url>
+  <url>
+    <loc>https://learntime.net/blog/system-design/url-shortener/</loc>
+    <lastmod>2026-11-20</lastmod>
   </url>
   <url>
     <loc>https://learntime.net/contact/</loc>
@@ -221,8 +261,20 @@
     <lastmod>2026-11-20</lastmod>
   </url>
   <url>
+    <loc>https://learntime.net/games/big-o-race/</loc>
+    <lastmod>2026-11-20</lastmod>
+  </url>
+  <url>
     <loc>https://learntime.net/games/bit-flip/</loc>
     <lastmod>2026-11-17</lastmod>
+  </url>
+  <url>
+    <loc>https://learntime.net/games/bug-sweeper/</loc>
+    <lastmod>2026-11-20</lastmod>
+  </url>
+  <url>
+    <loc>https://learntime.net/games/code-pairs/</loc>
+    <lastmod>2026-11-20</lastmod>
   </url>
   <url>
     <loc>https://learntime.net/games/codebreaker/</loc>
@@ -245,6 +297,10 @@
     <lastmod>2026-11-17</lastmod>
   </url>
   <url>
+    <loc>https://learntime.net/games/hex-guess/</loc>
+    <lastmod>2026-11-20</lastmod>
+  </url>
+  <url>
     <loc>https://learntime.net/games/number-sequence/</loc>
     <lastmod>2026-11-20</lastmod>
   </url>
@@ -262,6 +318,10 @@
   </url>
   <url>
     <loc>https://learntime.net/games/switch-off/</loc>
+    <lastmod>2026-11-20</lastmod>
+  </url>
+  <url>
+    <loc>https://learntime.net/games/tech-scramble/</loc>
     <lastmod>2026-11-20</lastmod>
   </url>
   <url>
