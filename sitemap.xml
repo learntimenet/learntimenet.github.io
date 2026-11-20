@@ -238,7 +238,7 @@
   </url>
   <url>
     <loc>https://learntime.net/daily/</loc>
-    <lastmod>2026-11-16</lastmod>
+    <lastmod>2026-11-20</lastmod>
   </url>
   <url>
     <loc>https://learntime.net/exams/</loc>
@@ -434,7 +434,11 @@
   </url>
   <url>
     <loc>https://learntime.net/quiz/</loc>
-    <lastmod>2026-11-16</lastmod>
+    <lastmod>2026-11-20</lastmod>
+  </url>
+  <url>
+    <loc>https://learntime.net/quiz/css/</loc>
+    <lastmod>2026-11-20</lastmod>
   </url>
   <url>
     <loc>https://learntime.net/quiz/docker/</loc>
@@ -445,6 +449,10 @@
     <lastmod>2026-11-16</lastmod>
   </url>
   <url>
+    <loc>https://learntime.net/quiz/html/</loc>
+    <lastmod>2026-11-20</lastmod>
+  </url>
+  <url>
     <loc>https://learntime.net/quiz/java/</loc>
     <lastmod>2026-11-16</lastmod>
   </url>
@@ -453,8 +461,20 @@
     <lastmod>2026-11-16</lastmod>
   </url>
   <url>
+    <loc>https://learntime.net/quiz/kafka/</loc>
+    <lastmod>2026-11-20</lastmod>
+  </url>
+  <url>
+    <loc>https://learntime.net/quiz/python/</loc>
+    <lastmod>2026-11-20</lastmod>
+  </url>
+  <url>
     <loc>https://learntime.net/quiz/react/</loc>
     <lastmod>2026-11-16</lastmod>
+  </url>
+  <url>
+    <loc>https://learntime.net/quiz/spring/</loc>
+    <lastmod>2026-11-20</lastmod>
   </url>
   <url>
     <loc>https://learntime.net/quiz/sql/</loc>
