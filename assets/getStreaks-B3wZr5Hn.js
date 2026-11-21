@@ -1,0 +1,1 @@
+import{t as e}from"./toDayNumber-1ZoO83bE.js";function t(t,n){let r=Object.keys(t).map(e).sort((e,t)=>e-t),i=new Set(r),a=e(n),o=0,s=i.has(a)?a:a-1;for(;i.has(s);)o+=1,--s;let c=0,l=0,u=null;for(let e of r)l=u!==null&&e===u+1?l+1:1,c=Math.max(c,l),u=e;return{current:o,best:c}}export{t};

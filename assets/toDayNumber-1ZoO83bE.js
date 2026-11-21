@@ -1,0 +1,1 @@
+function e(e){let t=String(e.getMonth()+1).padStart(2,`0`),n=String(e.getDate()).padStart(2,`0`);return`${e.getFullYear()}-${t}-${n}`}function t(e){let[t=1970,n=1,r=1]=e.split(`-`).map(Number);return Math.round(Date.UTC(t,n-1,r)/864e5)}export{e as n,t};
