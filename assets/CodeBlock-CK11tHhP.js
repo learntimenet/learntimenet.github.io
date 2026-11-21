@@ -1,1 +1,0 @@
-import{S as e,b as t}from"./LoaderHider-UqLPXW91.js";var n=e();function r({code:e,html:r,className:i}){return r?(0,n.jsx)(`div`,{className:i,dangerouslySetInnerHTML:{__html:r}}):(0,n.jsx)(`pre`,{className:t(`code-block`,i),tabIndex:0,children:(0,n.jsx)(`code`,{children:e})})}export{r as t};
