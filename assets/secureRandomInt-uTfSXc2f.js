@@ -1,0 +1,1 @@
+function e(e,t){let n=t-e+1;if(n<=1)return e;if(n>4294967296){let t=new Uint32Array(2);crypto.getRandomValues(t);let r=(t[0]*2097152+(t[1]>>>11))/2**53;return e+Math.floor(r*n)}let r=Math.floor(4294967296/n)*n,i=new Uint32Array(1);do crypto.getRandomValues(i);while(i[0]>=r);return e+i[0]%n}export{e as t};
