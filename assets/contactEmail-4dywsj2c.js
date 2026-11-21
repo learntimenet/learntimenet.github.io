@@ -1,1 +1,0 @@
-import{g as e}from"./LoaderHider-BMRaL647.js";var t=e.contactEmail;export{t};
