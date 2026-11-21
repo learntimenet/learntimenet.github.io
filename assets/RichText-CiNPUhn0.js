@@ -1,1 +1,0 @@
-import{x as e}from"./LoaderHider-BKE1Lu6H.js";var t=e();function n({text:e}){return(0,t.jsx)(t.Fragment,{children:e.split("`").map((e,n)=>n%2==1?(0,t.jsx)(`code`,{className:`rounded-md bg-brand-soft/70 px-1.5 py-0.5 font-mono text-[0.85em] text-brand-hover`,children:e},n):e)})}export{n as t};
