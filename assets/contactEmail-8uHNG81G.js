@@ -1,1 +1,0 @@
-import{g as e}from"./LoaderHider-BAgxpyQX.js";var t=e.contactEmail;export{t};

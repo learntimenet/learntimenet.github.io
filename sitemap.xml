@@ -646,7 +646,7 @@
   </url>
   <url>
     <loc>https://learntime.net/tools/</loc>
-    <lastmod>2026-11-21</lastmod>
+    <lastmod>2026-11-22</lastmod>
   </url>
   <url>
     <loc>https://learntime.net/tools/aspect-ratio-calculator/</loc>
@@ -727,6 +727,10 @@
   <url>
     <loc>https://learntime.net/tools/decision-wheel/</loc>
     <lastmod>2026-11-21</lastmod>
+  </url>
+  <url>
+    <loc>https://learntime.net/tools/device-mockup/</loc>
+    <lastmod>2026-11-22</lastmod>
   </url>
   <url>
     <loc>https://learntime.net/tools/dice-roller/</loc>
