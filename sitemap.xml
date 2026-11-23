@@ -10,7 +10,7 @@
   </url>
   <url>
     <loc>https://learntime.net/blog/</loc>
-    <lastmod>2026-11-21</lastmod>
+    <lastmod>2026-11-23</lastmod>
   </url>
   <url>
     <loc>https://learntime.net/blog/cheatsheet/</loc>
@@ -53,6 +53,10 @@
     <lastmod>2026-11-19</lastmod>
   </url>
   <url>
+    <loc>https://learntime.net/blog/essentials/build-a-rest-api-with-spring-boot/</loc>
+    <lastmod>2026-11-23</lastmod>
+  </url>
+  <url>
     <loc>https://learntime.net/blog/essentials/claude-certified-associate-foundations-study-guide/</loc>
     <lastmod>2026-11-21</lastmod>
   </url>
@@ -81,6 +85,14 @@
     <lastmod>2026-11-20</lastmod>
   </url>
   <url>
+    <loc>https://learntime.net/blog/essentials/java-collections-explained/</loc>
+    <lastmod>2026-11-23</lastmod>
+  </url>
+  <url>
+    <loc>https://learntime.net/blog/essentials/java-streams-and-lambdas-explained/</loc>
+    <lastmod>2026-11-23</lastmod>
+  </url>
+  <url>
     <loc>https://learntime.net/blog/essentials/javascript-event-loop-explained/</loc>
     <lastmod>2026-11-20</lastmod>
   </url>
@@ -99,6 +111,10 @@
   <url>
     <loc>https://learntime.net/blog/essentials/sql-joins-explained/</loc>
     <lastmod>2026-11-20</lastmod>
+  </url>
+  <url>
+    <loc>https://learntime.net/blog/essentials/unit-testing-java-with-junit/</loc>
+    <lastmod>2026-11-23</lastmod>
   </url>
   <url>
     <loc>https://learntime.net/blog/essentials/what-happens-when-you-type-a-url/</loc>
