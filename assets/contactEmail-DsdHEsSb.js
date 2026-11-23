@@ -1,1 +1,0 @@
-import{g as e}from"./LoaderHider-w0i5Hj1w.js";var t=e.contactEmail;export{t};
