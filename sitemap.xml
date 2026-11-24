@@ -97,16 +97,48 @@
     <lastmod>2026-11-20</lastmod>
   </url>
   <url>
+    <loc>https://learntime.net/blog/essentials/java-classes-and-objects/</loc>
+    <lastmod>2026-11-24</lastmod>
+  </url>
+  <url>
     <loc>https://learntime.net/blog/essentials/java-collections-explained/</loc>
     <lastmod>2026-11-23</lastmod>
+  </url>
+  <url>
+    <loc>https://learntime.net/blog/essentials/java-concurrency-basics/</loc>
+    <lastmod>2026-11-24</lastmod>
+  </url>
+  <url>
+    <loc>https://learntime.net/blog/essentials/java-control-flow-if-switch-loops/</loc>
+    <lastmod>2026-11-24</lastmod>
+  </url>
+  <url>
+    <loc>https://learntime.net/blog/essentials/java-exceptions-explained/</loc>
+    <lastmod>2026-11-24</lastmod>
+  </url>
+  <url>
+    <loc>https://learntime.net/blog/essentials/java-inheritance-interfaces-polymorphism/</loc>
+    <lastmod>2026-11-24</lastmod>
+  </url>
+  <url>
+    <loc>https://learntime.net/blog/essentials/java-records-enums-sealed-classes/</loc>
+    <lastmod>2026-11-24</lastmod>
   </url>
   <url>
     <loc>https://learntime.net/blog/essentials/java-streams-and-lambdas-explained/</loc>
     <lastmod>2026-11-23</lastmod>
   </url>
   <url>
+    <loc>https://learntime.net/blog/essentials/java-variables-types-and-operators/</loc>
+    <lastmod>2026-11-24</lastmod>
+  </url>
+  <url>
     <loc>https://learntime.net/blog/essentials/javascript-event-loop-explained/</loc>
     <lastmod>2026-11-20</lastmod>
+  </url>
+  <url>
+    <loc>https://learntime.net/blog/essentials/jdbc-and-jpa-basics/</loc>
+    <lastmod>2026-11-24</lastmod>
   </url>
   <url>
     <loc>https://learntime.net/blog/essentials/latency-numbers-every-engineer-should-know/</loc>
@@ -114,6 +146,10 @@
   </url>
   <url>
     <loc>https://learntime.net/blog/essentials/load-balancers-explained/</loc>
+    <lastmod>2026-11-24</lastmod>
+  </url>
+  <url>
+    <loc>https://learntime.net/blog/essentials/maven-and-gradle-basics/</loc>
     <lastmod>2026-11-24</lastmod>
   </url>
   <url>
@@ -135,6 +171,14 @@
   <url>
     <loc>https://learntime.net/blog/essentials/row-number-in-sql/</loc>
     <lastmod>2026-11-19</lastmod>
+  </url>
+  <url>
+    <loc>https://learntime.net/blog/essentials/securing-a-spring-boot-api/</loc>
+    <lastmod>2026-11-24</lastmod>
+  </url>
+  <url>
+    <loc>https://learntime.net/blog/essentials/spring-dependency-injection-explained/</loc>
+    <lastmod>2026-11-24</lastmod>
   </url>
   <url>
     <loc>https://learntime.net/blog/essentials/sql-joins-explained/</loc>
