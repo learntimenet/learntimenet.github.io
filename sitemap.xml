@@ -10,7 +10,7 @@
   </url>
   <url>
     <loc>https://learntime.net/blog/</loc>
-    <lastmod>2026-11-23</lastmod>
+    <lastmod>2026-11-24</lastmod>
   </url>
   <url>
     <loc>https://learntime.net/blog/cheatsheet/</loc>
@@ -57,6 +57,10 @@
     <lastmod>2026-11-23</lastmod>
   </url>
   <url>
+    <loc>https://learntime.net/blog/essentials/cap-theorem-and-consistency-models/</loc>
+    <lastmod>2026-11-24</lastmod>
+  </url>
+  <url>
     <loc>https://learntime.net/blog/essentials/claude-certified-associate-foundations-study-guide/</loc>
     <lastmod>2026-11-21</lastmod>
   </url>
@@ -65,12 +69,20 @@
     <lastmod>2026-11-20</lastmod>
   </url>
   <url>
+    <loc>https://learntime.net/blog/essentials/database-indexes-explained/</loc>
+    <lastmod>2026-11-24</lastmod>
+  </url>
+  <url>
     <loc>https://learntime.net/blog/essentials/delete-old-documents-keep-latest-per-type/</loc>
     <lastmod>2026-11-19</lastmod>
   </url>
   <url>
     <loc>https://learntime.net/blog/essentials/git-merge-vs-rebase/</loc>
     <lastmod>2026-11-20</lastmod>
+  </url>
+  <url>
+    <loc>https://learntime.net/blog/essentials/how-to-approach-a-system-design-interview/</loc>
+    <lastmod>2026-11-24</lastmod>
   </url>
   <url>
     <loc>https://learntime.net/blog/essentials/how-to-read-a-stack-trace/</loc>
@@ -97,8 +109,24 @@
     <lastmod>2026-11-20</lastmod>
   </url>
   <url>
+    <loc>https://learntime.net/blog/essentials/latency-numbers-every-engineer-should-know/</loc>
+    <lastmod>2026-11-24</lastmod>
+  </url>
+  <url>
+    <loc>https://learntime.net/blog/essentials/load-balancers-explained/</loc>
+    <lastmod>2026-11-24</lastmod>
+  </url>
+  <url>
+    <loc>https://learntime.net/blog/essentials/message-queues-explained/</loc>
+    <lastmod>2026-11-24</lastmod>
+  </url>
+  <url>
     <loc>https://learntime.net/blog/essentials/modern-css-reset/</loc>
     <lastmod>2026-11-21</lastmod>
+  </url>
+  <url>
+    <loc>https://learntime.net/blog/essentials/replication-and-sharding-explained/</loc>
+    <lastmod>2026-11-24</lastmod>
   </url>
   <url>
     <loc>https://learntime.net/blog/essentials/rest-api-design-best-practices/</loc>
@@ -113,8 +141,16 @@
     <lastmod>2026-11-20</lastmod>
   </url>
   <url>
+    <loc>https://learntime.net/blog/essentials/sql-vs-nosql/</loc>
+    <lastmod>2026-11-24</lastmod>
+  </url>
+  <url>
     <loc>https://learntime.net/blog/essentials/unit-testing-java-with-junit/</loc>
     <lastmod>2026-11-23</lastmod>
+  </url>
+  <url>
+    <loc>https://learntime.net/blog/essentials/vertical-vs-horizontal-scaling/</loc>
+    <lastmod>2026-11-24</lastmod>
   </url>
   <url>
     <loc>https://learntime.net/blog/essentials/what-happens-when-you-type-a-url/</loc>
