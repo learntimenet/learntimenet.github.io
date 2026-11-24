@@ -1,0 +1,1 @@
+function e(e){return`quiz:${e}:result`}export{e as t};
