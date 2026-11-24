@@ -1,1 +1,0 @@
-import{y as e}from"./LoaderHider-DmHOT98K.js";var t=e.contactEmail;export{t};

@@ -69,12 +69,24 @@
     <lastmod>2026-11-20</lastmod>
   </url>
   <url>
+    <loc>https://learntime.net/blog/essentials/css-basics/</loc>
+    <lastmod>2026-11-24</lastmod>
+  </url>
+  <url>
     <loc>https://learntime.net/blog/essentials/database-indexes-explained/</loc>
     <lastmod>2026-11-24</lastmod>
   </url>
   <url>
     <loc>https://learntime.net/blog/essentials/delete-old-documents-keep-latest-per-type/</loc>
     <lastmod>2026-11-19</lastmod>
+  </url>
+  <url>
+    <loc>https://learntime.net/blog/essentials/fetching-data-in-react/</loc>
+    <lastmod>2026-11-24</lastmod>
+  </url>
+  <url>
+    <loc>https://learntime.net/blog/essentials/forms-in-react/</loc>
+    <lastmod>2026-11-24</lastmod>
   </url>
   <url>
     <loc>https://learntime.net/blog/essentials/git-merge-vs-rebase/</loc>
@@ -91,6 +103,10 @@
   <url>
     <loc>https://learntime.net/blog/essentials/how-to-undo-almost-anything-in-git/</loc>
     <lastmod>2026-11-21</lastmod>
+  </url>
+  <url>
+    <loc>https://learntime.net/blog/essentials/html-basics/</loc>
+    <lastmod>2026-11-24</lastmod>
   </url>
   <url>
     <loc>https://learntime.net/blog/essentials/http-caching-explained/</loc>
@@ -133,6 +149,10 @@
     <lastmod>2026-11-24</lastmod>
   </url>
   <url>
+    <loc>https://learntime.net/blog/essentials/javascript-basics/</loc>
+    <lastmod>2026-11-24</lastmod>
+  </url>
+  <url>
     <loc>https://learntime.net/blog/essentials/javascript-event-loop-explained/</loc>
     <lastmod>2026-11-20</lastmod>
   </url>
@@ -161,6 +181,26 @@
     <lastmod>2026-11-21</lastmod>
   </url>
   <url>
+    <loc>https://learntime.net/blog/essentials/modern-javascript-for-react/</loc>
+    <lastmod>2026-11-24</lastmod>
+  </url>
+  <url>
+    <loc>https://learntime.net/blog/essentials/promises-and-async-await-explained/</loc>
+    <lastmod>2026-11-24</lastmod>
+  </url>
+  <url>
+    <loc>https://learntime.net/blog/essentials/react-components-jsx-and-props/</loc>
+    <lastmod>2026-11-24</lastmod>
+  </url>
+  <url>
+    <loc>https://learntime.net/blog/essentials/react-state-usestate/</loc>
+    <lastmod>2026-11-24</lastmod>
+  </url>
+  <url>
+    <loc>https://learntime.net/blog/essentials/react-useeffect-explained/</loc>
+    <lastmod>2026-11-24</lastmod>
+  </url>
+  <url>
     <loc>https://learntime.net/blog/essentials/replication-and-sharding-explained/</loc>
     <lastmod>2026-11-24</lastmod>
   </url>
@@ -186,6 +226,18 @@
   </url>
   <url>
     <loc>https://learntime.net/blog/essentials/sql-vs-nosql/</loc>
+    <lastmod>2026-11-24</lastmod>
+  </url>
+  <url>
+    <loc>https://learntime.net/blog/essentials/testing-react-components/</loc>
+    <lastmod>2026-11-24</lastmod>
+  </url>
+  <url>
+    <loc>https://learntime.net/blog/essentials/the-dom-explained/</loc>
+    <lastmod>2026-11-24</lastmod>
+  </url>
+  <url>
+    <loc>https://learntime.net/blog/essentials/typescript-for-react/</loc>
     <lastmod>2026-11-24</lastmod>
   </url>
   <url>
