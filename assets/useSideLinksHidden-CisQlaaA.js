@@ -1,0 +1,1 @@
+import{t as e}from"./usePersistentState-CarXDWRO.js";function t(){return e(`layout:side-links-hidden`,!1)}export{t};
