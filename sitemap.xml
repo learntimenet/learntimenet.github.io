@@ -10,7 +10,7 @@
   </url>
   <url>
     <loc>https://learntime.net/blog/</loc>
-    <lastmod>2026-11-24</lastmod>
+    <lastmod>2026-11-25</lastmod>
   </url>
   <url>
     <loc>https://learntime.net/blog/cheatsheet/</loc>
@@ -163,6 +163,10 @@
   <url>
     <loc>https://learntime.net/blog/essentials/latency-numbers-every-engineer-should-know/</loc>
     <lastmod>2026-11-24</lastmod>
+  </url>
+  <url>
+    <loc>https://learntime.net/blog/essentials/lead-and-lag-in-sql/</loc>
+    <lastmod>2026-11-25</lastmod>
   </url>
   <url>
     <loc>https://learntime.net/blog/essentials/load-balancers-explained/</loc>
