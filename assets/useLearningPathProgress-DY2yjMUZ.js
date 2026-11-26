@@ -1,0 +1,1 @@
+import{t as e}from"./usePersistentState-C3o0bDQY.js";var t=e=>Array.isArray(e)&&e.every(e=>typeof e==`string`);function n(n){return e(`learning-path:${n}`,[],t)}export{n as t};
