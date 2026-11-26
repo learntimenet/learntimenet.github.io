@@ -10,7 +10,7 @@
   </url>
   <url>
     <loc>https://learntime.net/blog/</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-26</lastmod>
   </url>
   <url>
     <loc>https://learntime.net/blog/cheatsheet/</loc>
@@ -191,6 +191,10 @@
   <url>
     <loc>https://learntime.net/blog/essentials/promises-and-async-await-explained/</loc>
     <lastmod>2026-11-24</lastmod>
+  </url>
+  <url>
+    <loc>https://learntime.net/blog/essentials/publish-expo-app-google-play/</loc>
+    <lastmod>2026-11-26</lastmod>
   </url>
   <url>
     <loc>https://learntime.net/blog/essentials/react-components-jsx-and-props/</loc>
