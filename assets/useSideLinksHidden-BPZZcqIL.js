@@ -1,0 +1,1 @@
+import{t as e}from"./usePersistentState-hHflT7_o.js";function t(){return e(`layout:side-links-hidden`,!1)}export{t};
