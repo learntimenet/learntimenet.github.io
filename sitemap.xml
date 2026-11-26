@@ -794,11 +794,11 @@
   </url>
   <url>
     <loc>https://learntime.net/products/</loc>
-    <lastmod>2026-11-24</lastmod>
+    <lastmod>2026-11-26</lastmod>
   </url>
   <url>
     <loc>https://learntime.net/products/cheat-sheets-ebook/</loc>
-    <lastmod>2026-11-21</lastmod>
+    <lastmod>2026-11-26</lastmod>
   </url>
   <url>
     <loc>https://learntime.net/products/claude-associate-exams-ebook/</loc>
@@ -882,7 +882,11 @@
   </url>
   <url>
     <loc>https://learntime.net/tools/</loc>
-    <lastmod>2026-11-23</lastmod>
+    <lastmod>2026-11-26</lastmod>
+  </url>
+  <url>
+    <loc>https://learntime.net/tools/app-screenshot-maker/</loc>
+    <lastmod>2026-11-26</lastmod>
   </url>
   <url>
     <loc>https://learntime.net/tools/aspect-ratio-calculator/</loc>
