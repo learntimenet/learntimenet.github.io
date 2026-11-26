@@ -1,1 +1,0 @@
-import{r as e}from"./resolveBackground-DoYW3hIB.js";function t(t,n){return typeof t==`string`&&(n.some(({id:e})=>e===t)||e(t)!==null)}export{t};
