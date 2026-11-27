@@ -13,26 +13,6 @@
     <lastmod>2026-11-27</lastmod>
   </url>
   <url>
-    <loc>https://learntime.net/blog/big-tech/cloudflare-nginx2root/</loc>
-    <lastmod>2026-11-27</lastmod>
-  </url>
-  <url>
-    <loc>https://learntime.net/blog/big-tech/github-agent-host-protocol/</loc>
-    <lastmod>2026-11-27</lastmod>
-  </url>
-  <url>
-    <loc>https://learntime.net/blog/big-tech/meta-cuttlefish-on-mac/</loc>
-    <lastmod>2026-11-27</lastmod>
-  </url>
-  <url>
-    <loc>https://learntime.net/blog/big-tech/uber-agent-skills-evals/</loc>
-    <lastmod>2026-11-27</lastmod>
-  </url>
-  <url>
-    <loc>https://learntime.net/blog/big-tech/uber-shard-manager/</loc>
-    <lastmod>2026-11-27</lastmod>
-  </url>
-  <url>
     <loc>https://learntime.net/blog/cheatsheet/</loc>
     <lastmod>2026-11-19</lastmod>
   </url>
@@ -103,6 +83,10 @@
   <url>
     <loc>https://learntime.net/blog/essentials/claude-certified-associate-foundations-study-guide/</loc>
     <lastmod>2026-11-21</lastmod>
+  </url>
+  <url>
+    <loc>https://learntime.net/blog/essentials/cloudflare-nginx2root/</loc>
+    <lastmod>2026-11-27</lastmod>
   </url>
   <url>
     <loc>https://learntime.net/blog/essentials/cors-explained/</loc>
@@ -221,6 +205,10 @@
     <lastmod>2026-11-24</lastmod>
   </url>
   <url>
+    <loc>https://learntime.net/blog/essentials/meta-cuttlefish-on-mac/</loc>
+    <lastmod>2026-11-27</lastmod>
+  </url>
+  <url>
     <loc>https://learntime.net/blog/essentials/modern-css-reset/</loc>
     <lastmod>2026-11-21</lastmod>
   </url>
@@ -291,6 +279,10 @@
   <url>
     <loc>https://learntime.net/blog/essentials/typescript-for-react/</loc>
     <lastmod>2026-11-24</lastmod>
+  </url>
+  <url>
+    <loc>https://learntime.net/blog/essentials/uber-agent-skills-evals/</loc>
+    <lastmod>2026-11-27</lastmod>
   </url>
   <url>
     <loc>https://learntime.net/blog/essentials/unit-testing-java-with-junit/</loc>
@@ -409,6 +401,10 @@
     <lastmod>2026-11-19</lastmod>
   </url>
   <url>
+    <loc>https://learntime.net/blog/system-design/github-agent-host-protocol/</loc>
+    <lastmod>2026-11-27</lastmod>
+  </url>
+  <url>
     <loc>https://learntime.net/blog/system-design/idempotent-order-api/</loc>
     <lastmod>2026-11-19</lastmod>
   </url>
@@ -427,6 +423,10 @@
   <url>
     <loc>https://learntime.net/blog/system-design/rate-limiter/</loc>
     <lastmod>2026-11-19</lastmod>
+  </url>
+  <url>
+    <loc>https://learntime.net/blog/system-design/uber-shard-manager/</loc>
+    <lastmod>2026-11-27</lastmod>
   </url>
   <url>
     <loc>https://learntime.net/blog/system-design/url-shortener/</loc>
