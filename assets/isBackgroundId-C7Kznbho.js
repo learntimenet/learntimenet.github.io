@@ -1,0 +1,1 @@
+import{r as e}from"./resolveBackground-CBmxE2y0.js";function t(t,n){return typeof t==`string`&&(n.some(({id:e})=>e===t)||e(t)!==null)}export{t};
