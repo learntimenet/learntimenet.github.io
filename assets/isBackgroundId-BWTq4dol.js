@@ -1,0 +1,1 @@
+import{r as e}from"./resolveBackground-VrN2cP9r.js";function t(t,n){return typeof t==`string`&&(n.some(({id:e})=>e===t)||e(t)!==null)}export{t};
