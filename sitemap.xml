@@ -981,6 +981,10 @@
     <lastmod>2026-11-19</lastmod>
   </url>
   <url>
+    <loc>https://learntime.net/tools/curl-converter/</loc>
+    <lastmod>2026-11-27</lastmod>
+  </url>
+  <url>
     <loc>https://learntime.net/tools/cv-generator/</loc>
     <lastmod>2026-11-21</lastmod>
   </url>
@@ -995,6 +999,10 @@
   <url>
     <loc>https://learntime.net/tools/device-mockup/</loc>
     <lastmod>2026-11-26</lastmod>
+  </url>
+  <url>
+    <loc>https://learntime.net/tools/device-test/</loc>
+    <lastmod>2026-11-27</lastmod>
   </url>
   <url>
     <loc>https://learntime.net/tools/dice-roller/</loc>
@@ -1025,7 +1033,15 @@
     <lastmod>2026-11-19</lastmod>
   </url>
   <url>
+    <loc>https://learntime.net/tools/image-converter/</loc>
+    <lastmod>2026-11-27</lastmod>
+  </url>
+  <url>
     <loc>https://learntime.net/tools/jira-markup-editor/</loc>
+    <lastmod>2026-11-27</lastmod>
+  </url>
+  <url>
+    <loc>https://learntime.net/tools/json-diff/</loc>
     <lastmod>2026-11-27</lastmod>
   </url>
   <url>
@@ -1071,6 +1087,14 @@
   <url>
     <loc>https://learntime.net/tools/password-generator/</loc>
     <lastmod>2026-11-19</lastmod>
+  </url>
+  <url>
+    <loc>https://learntime.net/tools/pdf-merge-split/</loc>
+    <lastmod>2026-11-27</lastmod>
+  </url>
+  <url>
+    <loc>https://learntime.net/tools/pomodoro-timer/</loc>
+    <lastmod>2026-11-27</lastmod>
   </url>
   <url>
     <loc>https://learntime.net/tools/px-to-rem-converter/</loc>
