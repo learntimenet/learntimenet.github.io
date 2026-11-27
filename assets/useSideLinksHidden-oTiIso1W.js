@@ -1,1 +1,0 @@
-import{t as e}from"./usePersistentState-2GRroaZg.js";function t(){return e(`layout:side-links-hidden`,!1)}export{t};
