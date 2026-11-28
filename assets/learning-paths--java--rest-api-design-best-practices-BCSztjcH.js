@@ -1,0 +1,123 @@
+import{C as e,S as t,t as n,x as r}from"./LoaderHider-B2RGA5Hn.js";import{t as i}from"./LearningPathPage-RbsayvTn.js";var a=e(),o=t(),s=r();(0,o.createRoot)(document.getElementById(`root`)).render((0,s.jsx)(a.StrictMode,{children:(0,s.jsx)(n,{children:(0,s.jsx)(i,{path:{slug:`java`,name:`Java`,description:`A step-by-step path to learn Java: the language, objects, collections and streams, exceptions, tests and build tools, databases and Spring Boot, then interview practice.`,keywords:`learn java, java roadmap, java learning path, how to learn java, java for beginners, java backend developer roadmap, spring boot, java interview`,level:`Beginner`,prerequisites:`None. Basic computer skills are enough.`,accentClassName:`bg-orange-500`,stages:[{title:`Java basics`,description:`Install Java, run your first program, and learn types, conditions and loops.`,steps:[{id:`getting-started-dev-java`,href:`https://dev.java/learn/getting-started/`,note:`Install the JDK and run your first program from the command line.`,minutes:45,title:`Getting started (dev.java)`,kind:`Outside link`,external:!0},{id:`java-variables-types-and-operators`,href:`/blog/essentials/java-variables-types-and-operators/`,note:"Primitive types, `String`, `var`, and the operators you'll use every day.",minutes:45,title:`Java Basics: Variables, Types and Operators`,kind:`Article`,external:!1},{id:`java-control-flow-if-switch-loops`,href:`/blog/essentials/java-control-flow-if-switch-loops/`,note:`Make decisions and repeat work, including the modern switch expression.`,minutes:45,title:`Control Flow in Java: if, switch and Loops`,kind:`Article`,external:!1},{id:`java-quiz`,href:`/quiz/java/`,note:`Check what you learned. Read the explanation of every question you miss.`,minutes:20,title:`Java Quiz`,kind:`Quiz`,external:!1}]},{title:`Objects`,description:`Java is built on classes and objects. Learn to model your own data and behavior.`,steps:[{id:`java-classes-and-objects`,href:`/blog/essentials/java-classes-and-objects/`,note:"Fields, methods, constructors, `this`, and why fields should be private.",minutes:45,title:`Classes and Objects in Java`,kind:`Article`,external:!1},{id:`java-inheritance-interfaces-polymorphism`,href:`/blog/essentials/java-inheritance-interfaces-polymorphism/`,note:`Share behavior, program to interfaces, and let the right method run.`,minutes:45,title:`Inheritance, Interfaces and Polymorphism in Java`,kind:`Article`,external:!1},{id:`java-records-enums-sealed-classes`,href:`/blog/essentials/java-records-enums-sealed-classes/`,note:`The short, safe ways modern Java models data.`,minutes:30,title:`Records, Enums and Sealed Classes in Modern Java`,kind:`Article`,external:!1}]},{title:`Core APIs`,description:`Collections, streams and exceptions appear in every Java program you'll read.`,steps:[{id:`java-collections-explained`,href:`/blog/essentials/java-collections-explained/`,note:"`List`, `Set`, `Map` and `Queue`: which to pick, and the traps behind most bugs.",minutes:60,title:`Java Collections Explained: List, Set, Map and Queue`,kind:`Article`,external:!1},{id:`java-streams-and-lambdas-explained`,href:`/blog/essentials/java-streams-and-lambdas-explained/`,note:`Lambdas, method references and streams: filter, sort and group data in modern Java.`,minutes:60,title:`Java Streams and Lambdas Explained With Real Examples`,kind:`Article`,external:!1},{id:`java-exceptions-explained`,href:`/blog/essentials/java-exceptions-explained/`,note:`When to throw, when to catch, and how to always close files and connections.`,minutes:30,title:`Exceptions in Java: Checked, Unchecked and try-with-resources`,kind:`Article`,external:!1},{id:`how-to-read-a-stack-trace`,href:`/blog/essentials/how-to-read-a-stack-trace/`,note:`When your program crashes, the stack trace tells you where and why.`,minutes:15,title:`How to Read a Stack Trace Without Panicking`,kind:`Article`,external:!1}]},{title:`Tests and build tools`,description:`Build your code, test it and keep its history, like on a real team.`,steps:[{id:`maven-and-gradle-basics`,href:`/blog/essentials/maven-and-gradle-basics/`,note:`Create a project, add a library and build a JAR file.`,minutes:45,title:`Maven and Gradle Basics for Java Projects`,kind:`Article`,external:!1},{id:`unit-testing-java-with-junit`,href:`/blog/essentials/unit-testing-java-with-junit/`,note:`Write your first JUnit tests, then test everything you build from here on.`,minutes:60,title:`Unit Testing in Java With JUnit: A Beginner's Guide`,kind:`Article`,external:!1},{id:`git-playground`,href:`/playgrounds/git/`,note:`Commit, branch and merge in a safe practice repository.`,minutes:45,title:`Git Playground`,kind:`Playground`,external:!1}]},{title:`Practice with problems`,description:`Solve small problems to make the language stick. These are also the problems interviewers like.`,steps:[{id:`big-o-notation-explained`,href:`/blog/essentials/big-o-notation-explained/`,note:`How to tell a fast solution from a slow one.`,minutes:15,title:`Big O Notation Explained, With Examples`,kind:`Article`,external:!1},{id:`two-sum`,href:`/blog/leetcode/two-sum/`,note:`From a nested loop to a single pass with a map.`,minutes:30,title:`LeetCode 1: Two Sum, Explained`,kind:`Coding problem`,external:!1},{id:`valid-parentheses`,href:`/blog/leetcode/valid-parentheses/`,note:`Use a stack, one of the most useful data structures.`,minutes:30,title:`LeetCode 20: Valid Parentheses, Explained`,kind:`Coding problem`,external:!1}]},{title:`Databases`,description:`Almost every Java backend stores its data in a database. Learn SQL, then how Java talks to it.`,steps:[{id:`sql-playground`,href:`/playgrounds/sql/`,note:`Write real queries on a small database, right in your browser.`,minutes:60,title:`SQL Playground`,kind:`Playground`,external:!1},{id:`sql-joins-explained`,href:`/blog/essentials/sql-joins-explained/`,note:`Combine tables with inner, left and full joins.`,minutes:15,title:`SQL Joins Explained With One Small Example`,kind:`Article`,external:!1},{id:`jdbc-and-jpa-basics`,href:`/blog/essentials/jdbc-and-jpa-basics/`,note:`From a plain SQL query in Java to entities and repositories with JPA.`,minutes:45,title:`JDBC and JPA Basics: How Java Talks to a Database`,kind:`Article`,external:!1}]},{title:`Spring Boot`,description:`Spring Boot is the most used framework for Java backends. Build a REST API that saves its data in a database.`,steps:[{id:`spring-dependency-injection-explained`,href:`/blog/essentials/spring-dependency-injection-explained/`,note:`Beans, constructor injection and why Spring creates your objects for you.`,minutes:30,title:`Dependency Injection in Spring, Explained`,kind:`Article`,external:!1},{id:`rest-api-design-best-practices`,href:`/blog/essentials/rest-api-design-best-practices/`,note:`Before you build one: how to name URLs, pick status codes and shape errors.`,minutes:20,title:`REST API Design: 10 Rules That Age Well`,kind:`Article`,external:!1},{id:`build-a-rest-api-with-spring-boot`,href:`/blog/essentials/build-a-rest-api-with-spring-boot/`,note:`Build a book API with a database, validation, clear errors and a test. Then add a second resource on your own.`,minutes:180,title:`Build a REST API With Spring Boot, Step by Step`,kind:`Article`,external:!1},{id:`securing-a-spring-boot-api`,href:`/blog/essentials/securing-a-spring-boot-api/`,note:`Protect your endpoints with Spring Security and tokens.`,minutes:45,title:`Securing a Spring Boot API: Authentication Basics`,kind:`Article`,external:!1},{id:`spring-quiz`,href:`/quiz/spring/`,note:`Check beans, dependency injection and Spring Boot basics.`,minutes:20,title:`Spring Boot Quiz`,kind:`Quiz`,external:!1}]},{title:`Ready for a job`,description:`Practice the questions interviewers ask, and learn the topics that come up as you grow.`,steps:[{id:`java-interview-questions`,href:`/interview/java/`,note:`The Java questions asked in most interviews, with clear answers.`,minutes:90,title:`Java interview questions`,kind:`Interview questions`,external:!1},{id:`spring-interview-questions`,href:`/interview/spring/`,note:`Spring and Spring Boot questions.`,minutes:60,title:`Spring interview questions`,kind:`Interview questions`,external:!1},{id:`java-concurrency-basics`,href:`/blog/essentials/java-concurrency-basics/`,note:`Run work in parallel safely, a favorite topic for experienced roles.`,minutes:45,title:`Java Concurrency Basics: Threads, Executors and Virtual Threads`,kind:`Article`,external:!1},{id:`java-se-21-developer-practice-exam`,href:`/exams/java-se-21-developer/`,note:`Going for the Oracle certification? Take a timed practice exam.`,minutes:72,title:`Java SE 21 Developer Practice Exam (1Z0-830)`,kind:`Practice exam`,external:!1}]}]},paths:[{slug:`react`,name:`React`,description:`A step-by-step path to learn React: the HTML, CSS and JavaScript you need first, components, state and hooks, data, TypeScript and testing, then interview practice.`,level:`Beginner`,prerequisites:`None. Basic computer skills are enough.`,accentClassName:`bg-sky-500`,stepHrefs:`/blog/essentials/html-basics/,/blog/essentials/css-basics/,/playgrounds/css-layout/,/quiz/css/,/blog/essentials/javascript-basics/,/blog/essentials/modern-javascript-for-react/,/blog/essentials/promises-and-async-await-explained/,/blog/essentials/javascript-event-loop-explained/,/quiz/javascript/,/blog/essentials/the-dom-explained/,/blog/projects/todo-list-app/,https://react.dev/learn,/blog/essentials/react-components-jsx-and-props/,/blog/essentials/react-state-usestate/,https://react.dev/learn/thinking-in-react,/quiz/react/,/blog/essentials/react-useeffect-explained/,/blog/essentials/fetching-data-in-react/,/blog/essentials/forms-in-react/,/blog/essentials/cors-explained/,/blog/essentials/typescript-for-react/,/blog/cheatsheet/typescript/,https://react.dev/learn/creating-a-react-app,/playgrounds/git/,/blog/essentials/testing-react-components/,/interview/javascript/,/interview/senior-react-developer/`.split(`,`),hours:19},{slug:`java`,name:`Java`,description:`A step-by-step path to learn Java: the language, objects, collections and streams, exceptions, tests and build tools, databases and Spring Boot, then interview practice.`,level:`Beginner`,prerequisites:`None. Basic computer skills are enough.`,accentClassName:`bg-orange-500`,stepHrefs:`https://dev.java/learn/getting-started/,/blog/essentials/java-variables-types-and-operators/,/blog/essentials/java-control-flow-if-switch-loops/,/quiz/java/,/blog/essentials/java-classes-and-objects/,/blog/essentials/java-inheritance-interfaces-polymorphism/,/blog/essentials/java-records-enums-sealed-classes/,/blog/essentials/java-collections-explained/,/blog/essentials/java-streams-and-lambdas-explained/,/blog/essentials/java-exceptions-explained/,/blog/essentials/how-to-read-a-stack-trace/,/blog/essentials/maven-and-gradle-basics/,/blog/essentials/unit-testing-java-with-junit/,/playgrounds/git/,/blog/essentials/big-o-notation-explained/,/blog/leetcode/two-sum/,/blog/leetcode/valid-parentheses/,/playgrounds/sql/,/blog/essentials/sql-joins-explained/,/blog/essentials/jdbc-and-jpa-basics/,/blog/essentials/spring-dependency-injection-explained/,/blog/essentials/rest-api-design-best-practices/,/blog/essentials/build-a-rest-api-with-spring-boot/,/blog/essentials/securing-a-spring-boot-api/,/quiz/spring/,/interview/java/,/interview/spring/,/blog/essentials/java-concurrency-basics/,/exams/java-se-21-developer/`.split(`,`),hours:22},{slug:`system-design`,name:`System Design`,description:`A step-by-step path to learn system design: how requests travel, scaling, databases, caching and queues, consistency, then classic design problems and interview practice.`,level:`Intermediate`,prerequisites:`You can build a small web app with a database.`,accentClassName:`bg-emerald-500`,stepHrefs:[`/blog/essentials/what-happens-when-you-type-a-url/`,`/blog/essentials/latency-numbers-every-engineer-should-know/`,`/blog/essentials/vertical-vs-horizontal-scaling/`,`/blog/essentials/rest-api-design-best-practices/`,`/blog/essentials/sql-vs-nosql/`,`/blog/essentials/database-indexes-explained/`,`/blog/essentials/replication-and-sharding-explained/`,`/blog/essentials/scale-database-vertically-or-horizontally/`,`/interview/databases-jpa/`,`/blog/essentials/load-balancers-explained/`,`/blog/essentials/http-caching-explained/`,`/blog/system-design/caching-without-stale-data/`,`/blog/essentials/message-queues-explained/`,`/blog/system-design/rate-limiter/`,`/blog/essentials/cap-theorem-and-consistency-models/`,`/blog/system-design/prevent-overselling/`,`/blog/system-design/idempotent-order-api/`,`/blog/system-design/url-shortener/`,`/blog/system-design/notification-system/`,`/blog/system-design/news-feed/`,`/blog/essentials/how-to-approach-a-system-design-interview/`,`/interview/system-design/`],hours:13}],stepId:`rest-api-design-best-practices`,html:`<p>An API is a promise: once clients depend on it, every change can break someone. These ten rules keep APIs predictable for the people who call them, and leave you room to change them later.</p>
+<h2 id="1-name-resources-with-plural-nouns">1. Name Resources With Plural Nouns</h2>
+<p>URLs name things; HTTP methods say what to do with them.</p>
+<div data-code-panel><pre class="shiki shiki-themes github-light-default github-dark-default code-block" tabindex="0"><code><span class="line"><span>GET    /orders          list orders</span></span>
+<span class="line"><span>POST   /orders          create an order</span></span>
+<span class="line"><span>GET    /orders/42       read order 42</span></span>
+<span class="line"><span>PATCH  /orders/42       change part of order 42</span></span>
+<span class="line"><span>DELETE /orders/42       delete order 42</span></span></code></pre><button type="button" data-copy-code>Copy</button></div><p>Avoid verbs in paths like <code>/getOrders</code> or <code>/createOrder</code>. Nest only to show ownership, and only one level deep: <code>/customers/7/orders</code> is clear, <code>/customers/7/orders/42/items/3/notes</code> is not.</p>
+<h2 id="2-use-the-methods-for-what-they-mean">2. Use the Methods for What They Mean</h2>
+<div data-table-scroll><table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Use</th>
+<th>Safe</th>
+<th>Idempotent</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>GET</code></td>
+<td>Read</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><code>POST</code></td>
+<td>Create, or run an action</td>
+<td>No</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>PUT</code></td>
+<td>Replace a whole resource</td>
+<td>No</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><code>PATCH</code></td>
+<td>Change some fields</td>
+<td>No</td>
+<td>Not necessarily</td>
+</tr>
+<tr>
+<td><code>DELETE</code></td>
+<td>Remove</td>
+<td>No</td>
+<td>Yes</td>
+</tr>
+</tbody></table>
+</div>
+<p><em>Safe</em> means it changes nothing; <em>idempotent</em> means doing it twice has the same effect as once. A <code>GET</code> must never change data: crawlers, prefetching and caches call it freely.</p>
+<p>For actions that don&#39;t fit, like cancelling an order, a sub-resource reads well: <code>POST /orders/42/cancellation</code>.</p>
+<h2 id="3-return-honest-status-codes">3. Return Honest Status Codes</h2>
+<p>Clients and monitoring tools rely on them. The ones you need most:</p>
+<ul>
+<li><code>200 OK</code>, <code>201 Created</code> (with a <code>Location</code> header), <code>204 No Content</code>.</li>
+<li><code>400 Bad Request</code> for malformed input, <code>422 Unprocessable Content</code> for valid JSON that breaks rules.</li>
+<li><code>401 Unauthorized</code> when not logged in, <code>403 Forbidden</code> when logged in but not allowed.</li>
+<li><code>404 Not Found</code>, <code>409 Conflict</code> for a state clash, like a duplicate email.</li>
+<li><code>429 Too Many Requests</code>, with <code>Retry-After</code>.</li>
+<li><code>500</code> for your bugs, <code>503</code> when temporarily down.</li>
+</ul>
+<p>Never answer <code>200</code> with <code>{&quot;error&quot;: &quot;...&quot;}</code> in the body: every client then has to read the body to know whether it worked. The <a href="/tools/http-status-codes/">HTTP status codes reference</a> explains each one.</p>
+<h2 id="4-use-one-error-format-everywhere">4. Use One Error Format Everywhere</h2>
+<p>Pick a shape and use it for every error, so clients write the handling once:</p>
+<div data-code-panel><pre class="shiki shiki-themes github-light-default github-dark-default code-block" tabindex="0"><code><span class="line"><span style="color:#1F2328;--shiki-dark:#E6EDF3">{</span></span>
+<span class="line"><span style="color:#116329;--shiki-dark:#7EE787">  "type"</span><span style="color:#1F2328;--shiki-dark:#E6EDF3">: </span><span style="color:#0A3069;--shiki-dark:#A5D6FF">"validation_error"</span><span style="color:#1F2328;--shiki-dark:#E6EDF3">,</span></span>
+<span class="line"><span style="color:#116329;--shiki-dark:#7EE787">  "message"</span><span style="color:#1F2328;--shiki-dark:#E6EDF3">: </span><span style="color:#0A3069;--shiki-dark:#A5D6FF">"Some fields are invalid."</span><span style="color:#1F2328;--shiki-dark:#E6EDF3">,</span></span>
+<span class="line"><span style="color:#116329;--shiki-dark:#7EE787">  "errors"</span><span style="color:#1F2328;--shiki-dark:#E6EDF3">: [</span></span>
+<span class="line"><span style="color:#1F2328;--shiki-dark:#E6EDF3">    { </span><span style="color:#116329;--shiki-dark:#7EE787">"field"</span><span style="color:#1F2328;--shiki-dark:#E6EDF3">: </span><span style="color:#0A3069;--shiki-dark:#A5D6FF">"email"</span><span style="color:#1F2328;--shiki-dark:#E6EDF3">, </span><span style="color:#116329;--shiki-dark:#7EE787">"message"</span><span style="color:#1F2328;--shiki-dark:#E6EDF3">: </span><span style="color:#0A3069;--shiki-dark:#A5D6FF">"Must be a valid email address."</span><span style="color:#1F2328;--shiki-dark:#E6EDF3"> },</span></span>
+<span class="line"><span style="color:#1F2328;--shiki-dark:#E6EDF3">    { </span><span style="color:#116329;--shiki-dark:#7EE787">"field"</span><span style="color:#1F2328;--shiki-dark:#E6EDF3">: </span><span style="color:#0A3069;--shiki-dark:#A5D6FF">"quantity"</span><span style="color:#1F2328;--shiki-dark:#E6EDF3">, </span><span style="color:#116329;--shiki-dark:#7EE787">"message"</span><span style="color:#1F2328;--shiki-dark:#E6EDF3">: </span><span style="color:#0A3069;--shiki-dark:#A5D6FF">"Must be at least 1."</span><span style="color:#1F2328;--shiki-dark:#E6EDF3"> }</span></span>
+<span class="line"><span style="color:#1F2328;--shiki-dark:#E6EDF3">  ],</span></span>
+<span class="line"><span style="color:#116329;--shiki-dark:#7EE787">  "requestId"</span><span style="color:#1F2328;--shiki-dark:#E6EDF3">: </span><span style="color:#0A3069;--shiki-dark:#A5D6FF">"req_8f2a"</span></span>
+<span class="line"><span style="color:#1F2328;--shiki-dark:#E6EDF3">}</span></span></code></pre><button type="button" data-copy-code>Copy</button></div><p>A stable <code>type</code> lets code react; <code>message</code> is for people; a <code>requestId</code> lets support find the logs. The standard RFC 9457 &quot;problem details&quot; format is a good starting point.</p>
+<h2 id="5-paginate-every-list">5. Paginate Every List</h2>
+<p>A list that&#39;s small today grows. Return pages from day one:</p>
+<div data-code-panel><pre class="shiki shiki-themes github-light-default github-dark-default code-block" tabindex="0"><code><span class="line"><span>GET /orders?limit=50&#x26;cursor=eyJpZCI6MTA0fQ</span></span></code></pre><button type="button" data-copy-code>Copy</button></div><div data-code-panel><pre class="shiki shiki-themes github-light-default github-dark-default code-block" tabindex="0"><code><span class="line"><span style="color:#1F2328;--shiki-dark:#E6EDF3">{</span></span>
+<span class="line"><span style="color:#116329;--shiki-dark:#7EE787">  "data"</span><span style="color:#1F2328;--shiki-dark:#E6EDF3">: [ </span><span style="color:#82071E;--shiki-light-font-style:italic;--shiki-dark:#FFA198;--shiki-dark-font-style:italic">...</span><span style="color:#1F2328;--shiki-dark:#E6EDF3"> ],</span></span>
+<span class="line"><span style="color:#116329;--shiki-dark:#7EE787">  "nextCursor"</span><span style="color:#1F2328;--shiki-dark:#E6EDF3">: </span><span style="color:#0A3069;--shiki-dark:#A5D6FF">"eyJpZCI6MTU0fQ"</span></span>
+<span class="line"><span style="color:#1F2328;--shiki-dark:#E6EDF3">}</span></span></code></pre><button type="button" data-copy-code>Copy</button></div><p><strong>Cursor pagination</strong> (start after the last item seen) stays fast on huge tables and doesn&#39;t skip or repeat items when new rows arrive. <strong>Offset pagination</strong> (<code>?page=3</code>) is simpler and allows jumping to a page, but slows down deep into large tables. Cap <code>limit</code>, so no one asks for a million rows.</p>
+<h2 id="6-filter-sort-and-select-with-query-parameters">6. Filter, Sort and Select With Query Parameters</h2>
+<div data-code-panel><pre class="shiki shiki-themes github-light-default github-dark-default code-block" tabindex="0"><code><span class="line"><span>GET /orders?status=paid&#x26;created_after=2026-01-01&#x26;sort=-created_at&#x26;fields=id,total</span></span></code></pre><button type="button" data-copy-code>Copy</button></div><p>Use the same names across the whole API. A minus sign for descending order and a <code>fields</code> parameter for smaller responses are common conventions.</p>
+<h2 id="7-make-retries-safe-with-idempotency-keys">7. Make Retries Safe With Idempotency Keys</h2>
+<p>Networks fail, and clients retry. Retrying a <code>POST /payments</code> after a timeout must not charge twice. Let clients send a key:</p>
+<div data-code-panel><pre class="shiki shiki-themes github-light-default github-dark-default code-block" tabindex="0"><code><span class="line"><span>POST /payments</span></span>
+<span class="line"><span>Idempotency-Key: 6c1a2e9b-3f4d-4a7e-9a51-0e2c8b7d4f10</span></span></code></pre><button type="button" data-copy-code>Copy</button></div><p>The server stores the result under that key and returns the same response for a repeat, without doing the work again. It matters for anything that creates or moves something valuable.</p>
+<h2 id="8-version-from-the-start">8. Version From the Start</h2>
+<p>Breaking changes will come. Put a version in the path, <code>/v1/orders</code>, or in a header. Then:</p>
+<ul>
+<li><strong>Additive changes</strong>, like a new optional field or a new endpoint, don&#39;t need a new version.</li>
+<li><strong>Breaking changes</strong>, like removing or renaming a field or changing its type, do.</li>
+<li>Announce deprecations early and give clients months to move.</li>
+</ul>
+<p>Clients should ignore fields they don&#39;t know, so you can add fields freely.</p>
+<h2 id="9-be-consistent-in-the-small-things">9. Be Consistent in the Small Things</h2>
+<p>Inconsistency costs clients more than any single choice:</p>
+<ul>
+<li>One naming style for JSON fields: <code>camelCase</code> or <code>snake_case</code>, not both.</li>
+<li>Dates in ISO 8601 with a time zone: <code>2026-11-21T09:30:00Z</code>.</li>
+<li>Money as an integer in the smallest unit, plus a currency: <code>{&quot;amount&quot;: 1999, &quot;currency&quot;: &quot;EUR&quot;}</code>. Floats round badly.</li>
+<li>IDs as strings, so they can change format later.</li>
+</ul>
+<h2 id="10-secure-and-document-it">10. Secure and Document It</h2>
+<ul>
+<li>HTTPS only, with authentication on every endpoint except the ones meant to be public.</li>
+<li>Check permissions per resource: being logged in doesn&#39;t mean you may read order 42.</li>
+<li>Rate limit, and validate every input.</li>
+<li>Publish an OpenAPI description, with examples of real requests and responses. If an example is hard to write, the endpoint is probably hard to use.</li>
+</ul>
+<h2 id="the-rules-in-short">The Rules in Short</h2>
+<ol>
+<li>Plural nouns for resources, methods for actions.</li>
+<li>Methods with their real meaning; <code>GET</code> never changes data.</li>
+<li>Honest status codes, never <code>200</code> with an error.</li>
+<li>One error format, with a type, a message and a request ID.</li>
+<li>Paginate every list, preferably with cursors.</li>
+<li>Filtering, sorting and fields through query parameters.</li>
+<li>Idempotency keys for anything that mustn&#39;t happen twice.</li>
+<li>A version from day one; additive changes don&#39;t need a new one.</li>
+<li>Consistent names, dates, money and IDs.</li>
+<li>HTTPS, permissions per resource, rate limits and real documentation.</li>
+</ol>
+`})})}));

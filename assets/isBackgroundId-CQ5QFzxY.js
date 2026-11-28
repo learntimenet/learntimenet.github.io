@@ -1,0 +1,1 @@
+import{r as e}from"./resolveBackground-BQa1tMU-.js";function t(t,n){return typeof t==`string`&&(n.some(({id:e})=>e===t)||e(t)!==null)}export{t};
