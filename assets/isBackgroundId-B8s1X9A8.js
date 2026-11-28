@@ -1,0 +1,1 @@
+import{r as e}from"./resolveBackground-Ci-u8Mvz.js";function t(t,n){return typeof t==`string`&&(n.some(({id:e})=>e===t)||e(t)!==null)}export{t};
